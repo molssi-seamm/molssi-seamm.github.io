@@ -28,8 +28,8 @@ help:
 
 github:
 	@make html
-	@cp -a build/html/. docs
-	$(BROWSER) docs/index.html
+	@cp -a build/html/. .
+	$(BROWSER) index.html
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
