@@ -1,28 +1,34 @@
 **************
 What is SEAMM?
 **************
-SEAMM is a computational environment for creating and running
-simulations of molecular, crystalline, amorphous or fluid systems
-that are described at the level of atoms. While SEAMM provides the
-overall environment, plugins provide specific functionality. While
-some plugins handle their task internally, many are wrappers about
-well-known, widely used simulation tools such as:
+SEAMM is a user-friendly environment for computational molecular and
+materials science, using plug-ins to provide a wide range of building,
+simulation and analysis tools. SEAMM handles the entire range of
+atomic, molecular, crystalline, amorphous, and fluid systems that are
+described at the level of atoms and electrons.  SEAMM provides three
+important capabilities:
 
-* MOPAC for semiempirical quantum chemistry
-* GAMESS, NWChem and Psi4 for quantum cehmistry
-* VASP, Quantum Espresso, FHI*aims and NWChem for periodic DFT
-* GROMACS, NAMD, etc. for biomolecular molecular dynamics (MD)
-* LAMMPS for molecular dynamics (MD) for materials
-* Cassandra and Towhee for Monte Carlo simulations of fluids
+* Productivity_: The computational tools are wrapped with plug-ins that
+  adapt them to SEAMM and provide graphical interfaces (GUIs) that help
+  you set up calculations without editing complex input files and
+  structures by hand.
+* Reproducibility and replicability: Computational protocols are
+  captured as shareable graphical flowcharts. You can create your own,
+  or start with ones created by experts in a particular domain, tweaking
+  them to fit your problem.
+* A home for tools: SEAMM makes it straightforward for
+  developers and other experts to publish their existing and new codes
+  and scripts as plug-ins and flowcharts, making them immediately
+  available to the entire community.
 
-Other plugins provide functionality for building structures,
-e.g. Packmol, for converting file formats using Open Babel, and
-cheminformatics functionality in RDKit.
-
-Of course, at the moment SEAMM is just getting started and only has
-functionality from MOPAC, LAMMPS, Open Babel, Packmol and RDKit, but
-is built to cover the wide range of molecular and material modeling
-illustrated by the codes above.
+SEAMM already has plug-ins for LAMMPS and MOPAC, with other quantum
+chemistry and forcefield-based MD and Monte Carlo codes coming
+soon. Other plug-ins use OpenBabel , RDKit and Packmol for reading in
+structures, building fluid boxes, cheminformatic functionality,
+etc. The SEAMM environment also provides integrated job management for
+running your calculations, and a job database for storing them,
+helping you manage the many projects and large numbers of calculations
+you do each year.
 
 How do you run a simulation?
 ############################
@@ -49,3 +55,5 @@ flowcharts, and running.
     :hidden:
 
     installation.rst     
+
+.. _Productivity: productivity.html
