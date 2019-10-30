@@ -30,30 +30,6 @@ running your calculations, and a job database for storing them,
 helping you manage the many projects and large numbers of calculations
 you do each year.
 
-
-SEAMM is a computational environment for creating and running
-simulations of molecular, crystalline, amorphous or fluid systems
-that are described at the level of atoms. While SEAMM provides the
-overall environment, plugins provide specific functionality. While
-some plugins handle their task internally, many are wrappers about
-well-known, widely used simulation tools such as:
-
-* MOPAC for semiempirical quantum chemistry
-* GAMESS, NWChem and Psi4 for quantum cehmistry
-* VASP, Quantum Espresso, FHI*aims and NWChem for periodic DFT
-* GROMACS, NAMD, etc. for biomolecular molecular dynamics (MD)
-* LAMMPS for molecular dynamics (MD) for materials
-* Cassandra and Towhee for Monte Carlo simulations of fluids
-
-Other plugins provide functionality for building structures,
-e.g. Packmol, for converting file formats using Open Babel, and
-cheminformatics functionality in RDKit.
-
-Of course, at the moment SEAMM is just getting started and only has
-functionality from MOPAC, LAMMPS, Open Babel, Packmol and RDKit, but
-is built to cover the wide range of molecular and material modeling
-illustrated by the codes above.
-
 How do you run a simulation?
 ############################
 You create a flowchart, like this:
