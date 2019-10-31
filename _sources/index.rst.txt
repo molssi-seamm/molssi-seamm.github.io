@@ -12,7 +12,7 @@ important capabilities:
   adapt them to SEAMM and provide graphical interfaces (GUIs) that help
   you set up calculations without editing complex input files and
   structures by hand.
-* Reproducibility and replicability: Computational protocols are
+* `Reproducibility and replicability`_: Computational protocols are
   captured as shareable graphical flowcharts. You can create your own,
   or start with ones created by experts in a particular domain, tweaking
   them to fit your problem.
@@ -53,7 +53,9 @@ flowcharts, and running.
     :glob:
     :hidden:
 
-    html/installation.rst     
-    html/productivity.rst
+    html/installation
+    html/productivity
+    html/reproducibility
 
 .. _Productivity: html/productivity.html
+.. _Reproducibility and replicability: html/reproducibility.html
