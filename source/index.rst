@@ -16,7 +16,7 @@ important capabilities:
   captured as shareable graphical flowcharts. You can create your own,
   or start with ones created by experts in a particular domain, tweaking
   them to fit your problem.
-* A home for tools: SEAMM makes it straightforward for
+* `A home for tools`_: SEAMM makes it straightforward for
   developers and other experts to publish their existing and new codes
   and scripts as plug-ins and flowcharts, making them immediately
   available to the entire community.
@@ -35,8 +35,6 @@ How do you run a simulation?
 You create a flowchart, like this:
 
 .. image:: source/images/flowchart.png
-	    :width: 906px
-	    :height: 731px
 	    :align: center
 	    :alt: An example flowchart
 
@@ -56,6 +54,8 @@ flowcharts, and running.
     html/installation
     html/productivity
     html/reproducibility
+    html/home_for_tools
 
 .. _Productivity: html/productivity.html
 .. _Reproducibility and replicability: html/reproducibility.html
+.. _A home for tools: html/home_for_tools.html
