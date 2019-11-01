@@ -84,8 +84,8 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">1. Installing SEAMM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html#installing-the-compute-engines">2. Installing the Compute Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing SEAMM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html#installing-the-compute-engines">Installing the Compute Engines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../productivity.html">Productivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reproducibility.html">Reproducibility and Replicability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../home_for_tools.html">A Home for Tools</a></li>
@@ -161,8 +161,75 @@
             
   <div class="section" id="plug-ins">
 <h1>Plug-ins<a class="headerlink" href="#plug-ins" title="Permalink to this headline">¶</a></h1>
+<p>The plug-ins are composed from three parts:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Parameters: the control parameters for the method implemented by
+the plug-in.</p></li>
+<li><p>Executable core: the implementation that takes the control
+parameters and does the work.</p></li>
+<li><p>Graphical User Interface (GUI): the implementation of the GUI
+that the user can use to adjust the parameters.</p></li>
+</ol>
+</div></blockquote>
+<p>Each of these parts is subclassed from the appropriate base class
+provided by SEAMM, which ensure consistency amongst plug-ins and also
+minimizes the work for developers. They only need implement the parts
+that make their plugin different. This structure looks like this:</p>
+<div class="align-center figure" id="id1">
+<img alt="UML diagram for plug-ins" src="/source/images/Plug-in_UML.png" />
+<p class="caption"><span class="caption-text">UML Diagram of a Plug-in</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The classes with <strong>&lt;plug-in&gt;</strong> in the name are the specializations of
+the base class supplied with SEAMM. For example, while <strong>Parameters</strong>
+is a perfectly useable class, <strong>&lt;plug-in&gt;Parameters</strong>,
+e.g. <strong>LAMMPSParameters</strong> is a specialization that sets up the
+specific parameters for the module, with their defaults, etc. when it
+is instantiated.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Parameters</strong> must be serializable, that is the object provide a
+method to transform it to a text format such as json, and it must
+be possible to reconstruct the instance from the serialized
+representation.</p></li>
+<li><p>Individual <strong>Parameter</strong> instances must contain meta-data defining
+the type or  <em>kind</em> of values, e.g. integer, float, string or
+enumeration.</p></li>
+<li><p>Whilst a <strong>Parameter</strong> may have a defined <em>kind</em> such as integer,
+it must be capable of storing an enumerated value or a mathematical
+equation instead of a specific value.</p>
+<ol class="loweralpha simple">
+<li><p>An enumerated value allows e.g. a convergence criterion to be
+either a numerical value, or a predefined value such as
+‘normal’, ‘tight’ or ‘loose’.</p></li>
+<li><p>Mathematical equations – at least basic ones – allow
+substitution with either a variable, e.g. ‘T’ or an expression
+such as ‘T + 20’ at some point in the execution of the plugin,
+implicitly replacing the parameters with either a numerical
+value (if it is numerical, like ‘T’) or one of the enumerated
+values.</p></li>
+</ol>
+</li>
+<li><p>A plugin needs, when it executes, to be able to run in its own
+unique environment.</p></li>
+<li><p>If a plugin executes one or more standalone executables, each
+executbale must have the possibility of executing in its own,
+separate standalone environment. Two or more plugins may share
+executables and their environments, or may require different
+versions and environments for the same executable.</p></li>
+<li><p>Mechanisms must be provided to locate both the plugins and any
+other standalone executables that they use.</p></li>
+<li><p>A mechanism and approach needs to be defined and implemented for
+access both the molecular system(s) needed by the plug-in, and for
+auxilliary information such as basis sets and forcefields. Although
+these might be considered as control parameters they are
+sufficiently large and commonly used so as to warrant special
+handling.</p></li>
+<li><p>A mechanism for returning data from the plugin to the entity that
+executed it must be defined and provided. At a minimum this should
+be able to handle file-based transfer of the data.</p></li>
+</ol>
 </div>
 </div>
 
