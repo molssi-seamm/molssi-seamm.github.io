@@ -1,0 +1,21 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'Parameter', 'x':572, 'y':366, 'width':100, 'height':234, 'attrs': 'value|default|kind|dimensionality|units|default_units|enumeration|format_string|description|help_text', 'meths': 'get|set|update|reset|copy|to_dict|widget|set_from_widget'}
+{'type':'umlshape', 'id':'Parameters', 'x':550, 'y':201, 'width':142, 'height':134, 'attrs': 'defaults', 'meths': 'values_to_dict|current_values_to_dict|to_dict|update|from_dict|initialize|copy'}
+{'type':'umlshape', 'id':'collections.abc.MutableMapping', 'x':706, 'y':465, 'width':262, 'height':24, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'Node', 'x':315, 'y':152, 'width':106, 'height':244, 'attrs': 'title|parameters|parent|flowchart|tag|uuid|header|directory|extension|visited|formatter|description', 'meths': 'description_text|describe|to_json||get_input|run|analyze|store_results'}
+{'type':'umlshape', 'id':'abc.ABC', 'x':570, 'y':13, 'width':69, 'height':24, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'TkNode', 'x':816, 'y':139, 'width':88, 'height':254, 'attrs': 'title|parameters|w, h + x, y|canvas|tag|dialog|selected|flowchart|anchor_points|tk_flowchart', 'meths': 'move|end_move|draw|undraw|activate|deactivate|right_click|double_click|is_inside|edit'}
+{'type':'umlshape', 'id':'<plug-in>Parameters', 'x':531, 'y':125, 'width':170, 'height':24, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'<plug-in>Node', 'x':128, 'y':223, 'width':119, 'height':104, 'attrs': '.', 'meths': 'description_text||get_input|run|analyze'}
+{'type':'umlshape', 'id':'Tk<plug-in>Node', 'x':973, 'y':232, 'width':136, 'height':74, 'attrs': '.', 'meths': 'edit'}
+{'type':'edge', 'id':'Parameters_to_collections.abc.MutableMapping', 'source':'Parameters', 'target':'collections.abc.MutableMapping', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Parameter_to_collections.abc.MutableMapping', 'source':'Parameter', 'target':'collections.abc.MutableMapping', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Parameter_to_Parameters', 'source':'Parameter', 'target':'Parameters', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Node_to_abc.ABC', 'source':'Node', 'target':'abc.ABC', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'TkNode_to_abc.ABC', 'source':'TkNode', 'target':'abc.ABC', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Parameters_to_Node', 'source':'Parameters', 'target':'Node', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Parameters_to_TkNode', 'source':'Parameters', 'target':'TkNode', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Parameters_to_<plug-in>Parameters', 'source':'Parameters', 'target':'<plug-in>Parameters', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'<plug-in>Node_to_Node', 'source':'<plug-in>Node', 'target':'Node', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Tk<plug-in>Node_to_TkNode', 'source':'Tk<plug-in>Node', 'target':'TkNode', 'uml_edge_type': 'generalisation'}
