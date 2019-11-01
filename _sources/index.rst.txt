@@ -46,7 +46,7 @@ See the menu for the details about installing SEAMM, making
 flowcharts, and running.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 4
     :titlesonly:
     :glob:
     :hidden:
@@ -55,6 +55,7 @@ flowcharts, and running.
     html/productivity
     html/reproducibility
     html/home_for_tools
+    html/design/overview
 
 .. _Productivity: html/productivity.html
 .. _Reproducibility and replicability: html/reproducibility.html
