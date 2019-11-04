@@ -211,6 +211,89 @@ within a datastore, but different datastores will have duplicate job
 id’s.</p>
 </dd>
 </dl>
+<p>The command-line options when running a flowchart either directly or
+by calling:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">run_flowchart</span> <span class="o">&lt;</span><span class="n">flowchart</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>are as follows:</p>
+<dl class="simple">
+<dt>usage:</dt><dd><p>run_flowchart or &lt;flowchart&gt;
+[-h]
+[–seamm-configfile SEAMM_CONFIGFILE]
+[-v]
+[–title TITLE]
+[–datastore DATASTORE]
+[–job_id_file JOB_ID_FILE]
+[–project PROJECTS]
+[–force]
+[–output {files,stdout,both}]
+filename</p>
+</dd>
+</dl>
+<p>Execute a SEAMM flowchart Args that start with ‘–’ (eg. -v) can also
+be set in a config file (/etc/seamm/seamm.ini or ~/.seamm/seamm.ini or
+specified via –seamm-configfile).  Config file syntax allows:
+key=value, flag=true, stuff=[a,b,c] (for details, see syntax at
+<a class="reference external" href="https://goo.gl/R74nmi">https://goo.gl/R74nmi</a>). If an arg is specified in more than one place,
+then commandline values override environment variables which override
+config file values which override defaults.</p>
+<dl>
+<dt>positional arguments:</dt><dd><dl class="simple">
+<dt>filename</dt><dd><p>the filename of the flowchart if using <em>run_flowchart</em></p>
+</dd>
+</dl>
+</dd>
+<dt>optional arguments:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></dt>
+<dd><p>show this help message and exit</p>
+</dd>
+<dt><kbd><span class="option">--seamm-configfile <var>SEAMM_CONFIGFILE</var></span></kbd></dt>
+<dd><p>a configuration file to override others [env var: SEAMM_CONFIGFILE]</p>
+</dd>
+<dt><kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></dt>
+<dd><p>increases log verbosity for each occurence. [env var: VERBOSE]</p>
+</dd>
+<dt><kbd><span class="option">--title <var>TITLE</var></span></kbd></dt>
+<dd><p>The title for this run. [env var: SEAMM_TITLE]</p>
+</dd>
+<dt><kbd><span class="option">--datastore <var>DATASTORE</var></span></kbd></dt>
+<dd><p>The datastore (directory) for this run. [env var: SEAMM_DATASTORE]</p>
+</dd>
+<dt><kbd><span class="option">--job_id_file</span></kbd></dt>
+<dd><p>The job_id file to use. [env var: JOB_ID_FILE]</p>
+</dd>
+<dt><kbd><span class="option">--project <var>PROJECTS</var></span></kbd></dt>
+<dd><p>The project(s) for this job. [env var: SEAMM_PROJECT]</p>
+</dd>
+<dt><kbd><span class="option">--force</span></kbd></dt>
+<dd><p>Force deleting the directory if it exists [env var: FORCE]</p>
+</dd>
+<dt><kbd><span class="option">--output</span></kbd></dt>
+<dd><p>{files,stdout,both} whether to put the output in files, direct to stdout, or both [env var: OUTPUT]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The default for the datastore is <em>./</em>, i.e. the current directory, and
+the default projects is <em>default</em>. <em>–job-id-file</em> defaults to the
+file <em>job.id</em> in the toplevel datastore directory. You can also set
+any of these parameters in the file <em>~/.seamm/seamm.ini</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration options for SEAMM.</span>
+<span class="c1">#</span>
+<span class="c1"># Options in this file override those in all other</span>
+<span class="c1"># configuration files, but may in turn be overridden</span>
+<span class="c1"># by environment variables or commandline options.</span>
+
+<span class="c1"># datastore = ~/SEAMM</span>
+<span class="c1"># project = MyProject</span>
+</pre></div>
+</div>
+<p>The two options, which are commented out in the example above, are the
+ones that you are most likely to use. Even if these are set in
+<em>seamm.ini</em> you can override them on the command line. Also, if you
+want the job to be in more than one project, repeat <strong>–project
+&lt;project&gt;</strong> for each project.</p>
 </div>
 
 
