@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>A Home for Tools &mdash; SEAMM 0.1 documentation</title>
+  <title>How do you run a simulation? &mdash; SEAMM 0.1 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installing SEAMM" href="installation.html" />
-    <link rel="prev" title="Reproducibility and Replicability" href="reproducibility.html" /> 
+    <link rel="next" title="Running a Flowchart" href="running_a_flowchart.html" />
+    <link rel="prev" title="Installing SEAMM" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,10 +87,12 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="productivity.html">Productivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility and Replicability</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">A Home for Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="home_for_tools.html">A Home for Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing SEAMM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-the-compute-engines">Installing the Compute Engines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running.html">How do you run a simulation?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How do you run a simulation?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="design/overview.html">Design Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="design/plug-ins.html">Plug-ins</a></li>
 </ul>
@@ -140,13 +142,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>A Home for Tools</li>
+      <li>How do you run a simulation?</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/html/home_for_tools.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/html/running.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,36 +161,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="a-home-for-tools">
-<h1>A Home for Tools<a class="headerlink" href="#a-home-for-tools" title="Permalink to this headline">¶</a></h1>
-<p>You’ve written the latest and greatest code for a particular
-task. Perhaps it is a large code like an MD code or a DFT code or
-perhaps it is more focused code for analyzing results, driving other
-codes for e.g. advanced sampling, or trained a model using machine
-learning. Congratulations! It is quite an accomplishment.</p>
-<p>But how do you get it in the hands of other people, so they can use
-it?</p>
-<p>If it is a capable, standalone code that solves the entire problem,
-maybe it doesn’t need much help. But if it is a code that works with
-other codes – driving them, analyzing their results, etc. or is
-e.g. an ML model that is a surrogate for a more expensive method, but
-users will ocasionally need to check the results or even do a bit more
-training, then you life is more complicated. You might need to choose
-one code and integrate yours into its environment. Or try to write
-translators so that it can work with several codes.</p>
-<p>Or you can put it into SEAMM as a plug-in, which is quite
-straightforward, and connect with the other codes that are in SEAMM,
-using the translators already in SEAMM. At worst, there is not much
-already in SEAMM that is helpful and you have to do the wrok you would
-have anyway. But hopefully at there are several useful codes already
-in SEAMM, and you don’t have to do much work.</p>
-<p>Either way, if you put your code into the SEAMM environment, all of
-the users of SEAMM can see it and use it. And because you made it easy
-to use, and published some example flowcharts, they will have an
-easier time getting started. You did do that, right? And in the
-future, as other developers add codes to SEAMM, they will work with
-yours with little or no extra work.</p>
-<p>This is good for you, and good for users. Everyone wins.</p>
+  <div class="section" id="how-do-you-run-a-simulation">
+<h1>How do you run a simulation?<a class="headerlink" href="#how-do-you-run-a-simulation" title="Permalink to this headline">¶</a></h1>
+<p>You create a flowchart, like this:</p>
+<img alt="An example flowchart" class="align-center" src="/source/images/flowchart.png" />
+<p>that defines the steps you want in your simulation. Once you are
+satisfied with it, there are a number ways to run it … but first,
+some more detail in running the SEAMM GUI and creating flowcharts.</p>
+<div class="section" id="starting-the-seamm-gui">
+<h2>Starting the SEAMM GUI<a class="headerlink" href="#starting-the-seamm-gui" title="Permalink to this headline">¶</a></h2>
+<p>Activate the seamm conda environment that you <a class="reference external" href="//html/installation.html">installed</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+</pre></div>
+</div>
+<p>Then run <strong>seamm</strong> from the command prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(seamm) pwsmac:~ psaxe$ seamm
+</pre></div>
+</div>
+<p>In a few seconds a window like this should appear:</p>
+<img alt="The SEAMM window" class="align-center" src="/source/images/seamm.png" />
+</div>
+<div class="section" id="creating-a-flowchart">
+<h2>Creating a Flowchart<a class="headerlink" href="#creating-a-flowchart" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 </div>
 
 
@@ -199,10 +196,10 @@ yours with little or no extra work.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installing SEAMM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running_a_flowchart.html" class="btn btn-neutral float-right" title="Running a Flowchart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="reproducibility.html" class="btn btn-neutral float-left" title="Reproducibility and Replicability" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installing SEAMM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

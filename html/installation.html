@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Productivity" href="productivity.html" />
-    <link rel="prev" title="What is SEAMM?" href="../index.html" /> 
+    <link rel="next" title="How do you run a simulation?" href="running.html" />
+    <link rel="prev" title="A Home for Tools" href="home_for_tools.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,11 +85,14 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing SEAMM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#installing-the-compute-engines">Installing the Compute Engines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="productivity.html">Productivity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility and Replicability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing SEAMM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">How do you run a simulation?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="design/overview.html">Design Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="design/plug-ins.html">Plug-ins</a></li>
 </ul>
@@ -180,7 +183,7 @@ environment, add that name like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">seamm</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Once the enironment is installed, activate it with:</p>
+<p>Once the environment is installed, activate it with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
 </pre></div>
 </div>
@@ -191,9 +194,8 @@ environment, add that name like this:</p>
 </div>
 <p>There are some sample flowcharts in <em>misc/flowcharts</em> to help you get
 started.</p>
-</div>
 <div class="section" id="installing-the-compute-engines">
-<h1>Installing the Compute Engines<a class="headerlink" href="#installing-the-compute-engines" title="Permalink to this headline">¶</a></h1>
+<h2>Installing the Compute Engines<a class="headerlink" href="#installing-the-compute-engines" title="Permalink to this headline">¶</a></h2>
 <p><strong>N.B. Currently only Linux and MacOS versions of Packmol and LAMMPS
 are supported by conda-forge. So, at the moment, these instructions
 will not work under Windows.</strong></p>
@@ -208,7 +210,7 @@ their tasks.</p>
 </ul>
 </div></blockquote>
 <div class="section" id="installing-lammps-openbabel-and-packmol">
-<h2>Installing LAMMPS, OpenBabel and Packmol<a class="headerlink" href="#installing-lammps-openbabel-and-packmol" title="Permalink to this headline">¶</a></h2>
+<h3>Installing LAMMPS, OpenBabel and Packmol<a class="headerlink" href="#installing-lammps-openbabel-and-packmol" title="Permalink to this headline">¶</a></h3>
 <p>If you want to run flowcharts using these plugins, you will need to
 install the correct executables. All of these except MOPAC can be
 installed using the conda environment specified in <em>seamm-compute.yml</em>:</p>
@@ -219,7 +221,7 @@ installed using the conda environment specified in <em>seamm-compute.yml</em>:</
 you can override the default with the -n option.</p>
 </div>
 <div class="section" id="installing-mopac">
-<h2>Installing MOPAC<a class="headerlink" href="#installing-mopac" title="Permalink to this headline">¶</a></h2>
+<h3>Installing MOPAC<a class="headerlink" href="#installing-mopac" title="Permalink to this headline">¶</a></h3>
 <p>Head to the <a class="reference external" href="http://openmopac.net">MOPAC</a> homepage and click on one of the download links in
 the section on MOPAC2016. MOPAC is free for academics, so if you are
 at a university or school you can request a copy and license. Follow
@@ -231,11 +233,11 @@ script create the file, then edit ~/.seamm/mopac.ini to put in the
 correct path – usually /opt/mopac/MOPAC2016.exe on Linux or Windows.</p>
 </div>
 <div class="section" id="finishing-up">
-<h2>Finishing Up<a class="headerlink" href="#finishing-up" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt>After the installation completes, activate the environment::</dt><dd><p>conda activate seamm-compute</p>
-</dd>
-</dl>
+<h3>Finishing Up<a class="headerlink" href="#finishing-up" title="Permalink to this headline">¶</a></h3>
+<p>After the installation completes, activate the environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span><span class="o">-</span><span class="n">compute</span>
+</pre></div>
+</div>
 <p>There is one more step needed to let SEAMM know the location of the
 executables. Execute the script <em>find_executables.py</em> in the
 <strong>seamm-compute</strong> environment:</p>
@@ -249,6 +251,7 @@ directory <em>~/.seamm</em> is where SEAMM expects to find configuration
 files.</p>
 </div>
 </div>
+</div>
 
 
            </div>
@@ -258,10 +261,10 @@ files.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="productivity.html" class="btn btn-neutral float-right" title="Productivity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running.html" class="btn btn-neutral float-right" title="How do you run a simulation?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral float-left" title="What is SEAMM?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="home_for_tools.html" class="btn btn-neutral float-left" title="A Home for Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

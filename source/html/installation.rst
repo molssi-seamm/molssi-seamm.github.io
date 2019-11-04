@@ -1,5 +1,7 @@
+****************
 Installing SEAMM
-----------------
+****************
+
 The graphical part of SEAMM is installed in the **seamm** conda
 environment. If you do not have conda (or anaconda) installed, head
 over to Miniconda_ or Anaconda_ and grab the installer, following
@@ -21,7 +23,7 @@ environment, add that name like this::
 
   conda env create -f seamm.yml -n <name>
 
-Once the enironment is installed, activate it with::
+Once the environment is installed, activate it with::
 
   conda activate seamm
 
@@ -75,6 +77,7 @@ correct path -- usually /opt/mopac/MOPAC2016.exe on Linux or Windows.
 Finishing Up
 ~~~~~~~~~~~~
 After the installation completes, activate the environment::
+
   conda activate seamm-compute
 
 There is one more step needed to let SEAMM know the location of the

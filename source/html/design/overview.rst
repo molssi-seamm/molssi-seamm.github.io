@@ -10,8 +10,6 @@ An overall diagram of SEAMM:
 
 .. toctree::
     :maxdepth: 4
-    :titlesonly:
-    :glob:
     :hidden:
 
     plug-ins

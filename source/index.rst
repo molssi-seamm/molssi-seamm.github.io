@@ -30,31 +30,19 @@ running your calculations, and a job database for storing them,
 helping you manage the many projects and large numbers of calculations
 you do each year.
 
-How do you run a simulation?
-############################
-You create a flowchart, like this:
-
-.. image:: source/images/flowchart.png
-	    :align: center
-	    :alt: An example flowchart
-
-that defines the steps you want in your simulation. Once you are
-satisfied with it, there are a number ways to run it ... but we are
-getting ahead of ourselves!
-
 See the menu for the details about installing SEAMM, making
 flowcharts, and running.
 
 .. toctree::
     :maxdepth: 4
-    :titlesonly:
     :glob:
     :hidden:
 
-    html/installation
     html/productivity
     html/reproducibility
     html/home_for_tools
+    html/installation
+    html/running
     html/design/overview
 
 .. _Productivity: html/productivity.html
