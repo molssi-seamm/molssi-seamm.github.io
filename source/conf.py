@@ -157,6 +157,11 @@ html_theme_options = {
 # "default.css".
 html_static_path = ['_static']
 
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    'css/custom.css',
+]
 # If not '', a 'Last updated on:' timestamp is inserted at every page
 # bottom, using the given strftime format.
 #html_last_updated_fmt = '%b %d, %Y'
@@ -186,11 +191,11 @@ html_static_path = ['_static']
 
 # If true, "Created using Sphinx" is shown in the HTML footer.
 # Default is True.
-#html_show_sphinx = True
+html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer.
 # Default is True.
-#html_show_copyright = True
+html_show_copyright = False
 
 # If true, an OpenSearch description file will be output, and all pages
 # will contain a <link> tag referring to it.  The value of this option

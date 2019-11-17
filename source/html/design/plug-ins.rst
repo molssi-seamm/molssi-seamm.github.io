@@ -16,7 +16,7 @@ provided by SEAMM, which ensure consistency amongst plug-ins and also
 minimizes the work for developers. They only need implement the parts
 that make their plugin different. This structure looks like this:
 
-.. figure:: //source/images/Plug-in_UML.png
+.. figure:: /images/Plug-in_UML.png
    :align: center
    :alt: UML diagram for plug-ins
    :figclass: align-center

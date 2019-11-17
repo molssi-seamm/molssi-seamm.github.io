@@ -4,7 +4,7 @@ How do you run a simulation?
 
 You create a flowchart, like this:
 
-.. image:: //source/images/flowchart.png
+.. image:: /images/flowchart.png
 	    :align: center
 	    :alt: An example flowchart
 
@@ -25,7 +25,7 @@ Then run **seamm** from the command prompt::
 
 In a few seconds a window like this should appear:
 
-.. image:: //source/images/seamm.png
+.. image:: /images/seamm.png
 	    :align: center
 	    :alt: The SEAMM window
 

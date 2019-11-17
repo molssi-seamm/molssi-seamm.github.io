@@ -27,10 +27,10 @@ help:
 .PHONY: help Makefile
 
 github:
+	@rm -fr build
 	@make html
 	@cp -a build/html/. .
-
-#	$(BROWSER) index.html
+	$(BROWSER) index.html
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

@@ -1,0 +1,20 @@
+.column_left {
+  display: table-cell;
+  width: 60px;
+  vertical-align: middle;
+}
+.column {
+  display: table-cell;
+}
+.column_right {
+  display: table-cell;
+  width: 60px;
+  vertical-align: middle;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
