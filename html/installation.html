@@ -172,10 +172,11 @@ is perfectly fine for our use. <a class="reference external" href="https://www.a
 preinstalled and also a graphical interface, so if you plan to use it
 for your own work it might be more useful. But <a class="reference external" href="https://www.anaconda.com/distribution">Anaconda</a> is more than
 is needed for SEAMM.</p>
-<p>Once you have conda installed, get the <em>seamm.yml</em> file from the
-<em>conda_environments/</em> subfolder. You can download it from GitHub or just
-clone this entire repository. Either way, once you have it run the
-conda command to create the environment:</p>
+<p>Once you have conda installed, get the <a class="reference external" href="https://github.com/molssi-seamm/misc/blob/master/conda_environments/seamm.yml">seamm.yml</a> file from the
+<a class="reference external" href="https://github.com/molssi-seamm/misc/conda_environnments/">conda_environments/</a> subfolder of the <a class="reference external" href="https://github.com/molssi-seamm/misc/">molssi-seamm/misc</a> GitHub
+project. You can download it from GitHub (right-click <a class="reference external" href="https://raw.githubusercontent.com/molssi-seamm/misc/master/conda_environments/seamm.yml">here</a> and select
+download) or just clone this entire repository. Either way, once you
+have it run the conda command to create the environment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">seamm</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
@@ -193,7 +194,7 @@ environment, add that name like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span>
 </pre></div>
 </div>
-<p>There are some sample flowcharts in <em>misc/flowcharts</em> to help you get
+<p>There are some sample flowcharts in <a class="reference external" href="https://github.com/molssi-seamm/misc/flowcharts/">misc/flowcharts</a> to help you get
 started.</p>
 <div class="section" id="installing-the-compute-engines">
 <h2>Installing the Compute Engines<a class="headerlink" href="#installing-the-compute-engines" title="Permalink to this headline">¶</a></h2>
@@ -214,7 +215,8 @@ their tasks.</p>
 <h3>Installing LAMMPS, OpenBabel and Packmol<a class="headerlink" href="#installing-lammps-openbabel-and-packmol" title="Permalink to this headline">¶</a></h3>
 <p>If you want to run flowcharts using these plugins, you will need to
 install the correct executables. All of these except MOPAC can be
-installed using the conda environment specified in <em>seamm-compute.yml</em>:</p>
+installed using the conda environment specified in
+<a class="reference external" href="https://github.com/molssi-seamm/misc/conda_environments/seamm-compute.yml">seamm-compute.yml</a> (right-click to <a class="reference external" href="https://raw.githubusercontent.com/molssi-seamm/misc/master/conda_environments/seamm-compute.yml">download</a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">seamm</span><span class="o">-</span><span class="n">compute</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
@@ -240,8 +242,8 @@ correct path – usually /opt/mopac/MOPAC2016.exe on Linux or Windows.</p>
 </pre></div>
 </div>
 <p>There is one more step needed to let SEAMM know the location of the
-executables. Execute the script <em>find_executables.py</em> in the
-<strong>seamm-compute</strong> environment:</p>
+executables. Execute the script <a class="reference external" href="https://github.com/molssi-seamm/misc/scripts/find_executables.py">find_executables.py</a> (<a class="reference external" href="https://raw.githubusercontent.com/molssi-seamm/misc/master/scripts/find_executables.py">right-click
+to download</a>) in the <strong>seamm-compute</strong> environment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">find_executables</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
