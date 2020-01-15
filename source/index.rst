@@ -38,6 +38,7 @@ flowcharts, and running.
     :glob:
     :hidden:
 
+    html/status
     html/productivity
     html/reproducibility
     html/home_for_tools
