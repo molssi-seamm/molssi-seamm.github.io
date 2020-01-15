@@ -4,38 +4,37 @@ Status
 
 The current build status for the modules and plugins:
 
-Core
-----
-
 .. csv-table:: Core Modules
-   :header: "Core Module", "Build Status", "Code Coverage", "Code Quality", "Documentation", "Dependencies", "PyPi"
-   :widths: 15, 10, 10, 40, 10, 10, 10
+   :header-rows: 1
 
-   seamm,              |seamm1|,     |seamm2|,      |seamm3|,   	   |seamm4|,      |seamm5|,     |seamm6|
-   seamm_util,         |su1|,        |su2|,         |su3|,      	   |su4|,         |su5|,        |su6|
-   seamm_widgets,      |sw1|,        |sw2|,         |sw3|,      	   |sw4|,         |sw5|,        |sw6|
-   seamm_ff_util,      |sf1|,        |sf2|,         |sf3|,      	   |sf4|,         |sf5|,        |sf6|
-   reference_handler,  |rh1|,        |rh2|,         |rh3|,      	   |rh4|,         |rh5|,        |rh6|
+   "Core Module", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi ---"
+   seamm_,             |seamm1|,     |seamm2|,      |seamm3|,   	   |seamm4|,      |seamm5|,     |seamm6|
+   seamm_util_,        |su1|,        |su2|,         |su3|,      	   |su4|,         |su5|,        |su6|
+   seamm_widgets_,     |sw1|,        |sw2|,         |sw3|,      	   |sw4|,         |sw5|,        |sw6|
+   seamm_ff_util_,     |sf1|,        |sf2|,         |sf3|,      	   |sf4|,         |sf5|,        |sf6|
+   reference_handler_, |rh1|,        |rh2|,         |rh3|,      	   |rh4|,         |rh5|,        |rh6|
 
 
 
-===================   ============  =============  ================  =============  ============  ============
-Plugin                Build Status  Code Coverage  Code Quality	     Documentation  Dependencies  PyPi       
-===================   ============  =============  ================  =============  ============  ============
-custom_step           |custom1|     |custom2|      |custom3|   	     |custom4|      |custom5|     |custom6|
-forcefield_step       |ffield1|     |ffield2|      |ffield3|   	     |ffield4|      |ffield5|     |ffield6|
-from_smiles_step      |smiles1|     |smiles2|      |smiles3|   	     |smiles4|      |smiles5|     |smiles6|
-lammps_step           |lammps1|     |lammps2|      |lammps3|   	     |lammps4|      |lammps5|     |lammps6|
-loop_step             |loop1|       |loop2|        |loop3|     	     |loop4|        |loop5|       |loop6|
-mopac_step            |mopac1|      |mopac2|       |mopac3|    	     |mopac4|       |mopac5|      |mopac6|
-packmol_step          |packmol1|    |packmol2|     |packmol3|  	     |packmol4|     |packmol5|    |packmol6|
-read_structure_step   |structure1|  |structure2|   |structure3|	     |structure4|   |structure5|  |structure6|
-table_step            |table1|      |table2|       |table3|    	     |table4|       |table5|      |table6|
-===================   ============  =============  ================  =============  ============  ============
+.. csv-table:: Plugins
+   :header-rows: 1
+
+   Plugin,                "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi---"
+   custom_step_,          |custom1|,      |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom5|,      |custom6|
+   forcefield_step_,      |ffield1|,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield5|,      |ffield6|
+   from_smiles_step_,     |smiles1|,      |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles5|,      |smiles6|
+   lammps_step_,          |lammps1|,      |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps5|,      |lammps6|
+   loop_step_,            |loop1|,        |loop2|,         |loop3|,    	     	       	 |loop4|,         |loop5|,        |loop6|
+   mopac_step_,           |mopac1|,       |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac5|,       |mopac6|
+   packmol_step_,         |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
+   read_structure_step_,  |structure1|,   |structure2|,    |structure3|	     	       	 |structure4|,    |structure5|,   |structure6|
+   table_step_,           |table1|,       |table2|,        |table3|,   	     	       	 |table4|,        |table5|,       |table6|
 
 
 
 .. seamm badges
+
+.. _seamm: https://github.com/molssi-seamm/seamm
 
 .. |seamm1| image:: https://img.shields.io/travis/molssi-seamm/seamm.svg
    :target: https://travis-ci.org/molssi-seamm/seamm
@@ -63,6 +62,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
 
 .. seamm_util badges
 
+.. _seamm_util: https://github.com/molssi-seamm/seamm_util
+
 .. |su1| image:: https://img.shields.io/travis/molssi-seamm/seamm_util.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_util
    :alt: Build Status
@@ -88,6 +89,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
    :alt: PyPi VERSION
 
 .. seamm_widgets badges
+
+.. _seamm_widgets: https://github.com/molssi-seamm/seamm_wdigets
 
 .. |sw1| image:: https://img.shields.io/travis/molssi-seamm/seamm_widgets.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_widgets
@@ -115,6 +118,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
 
 .. seamm_ff_util badges
 
+.. _seamm_ff_util: https://github.com/molssi-seamm/seamm_ff_util
+
 .. |sf1| image:: https://img.shields.io/travis/molssi-seamm/seamm_ff_util.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_ff_util
    :alt: Build Status
@@ -140,6 +145,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
    :alt: PyPi VERSION
 
 .. reference_handler badges
+
+.. _reference_handler: https://github.com/molssi/reference_handler
 
 .. |rh1| image:: https://img.shields.io/travis/molssi/reference_handler.svg
    :target: https://travis-ci.org/molssi/reference_handler
@@ -167,6 +174,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
 
 .. custom step badges
 
+.. _custom_step: https://github.com/molssi-seamm/custom_step
+
 .. |custom1| image:: https://img.shields.io/travis/molssi-seamm/custom_step.svg
    :target: https://travis-ci.org/molssi-seamm/custom_step
    :alt: Build Status
@@ -192,6 +201,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
    :alt: PyPi VERSION
 
 .. forcefield step badges
+
+.. _forcefield_step: https://github.com/molssi-seamm/forcefield_step
 
 .. |ffield1| image:: https://img.shields.io/travis/molssi-seamm/forcefield_step.svg
    :target: https://travis-ci.org/molssi-seamm/forcefield_step
@@ -219,6 +230,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
 
 .. from SMILES step badges
 
+.. _from_smiles_step: https://github.com/molssi-seamm/from_smiles_step
+
 .. |smiles1| image:: https://img.shields.io/travis/molssi-seamm/from_smiles_step.svg
    :target: https://travis-ci.org/molssi-seamm/from_smiles_step
    :alt: Build Status
@@ -244,6 +257,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
    :alt: PyPi VERSION
 
 .. LAMMPS step badges
+
+.. _lammps_step: https://github.com/molssi-seamm/lammps_step
 
 .. |lammps1| image:: https://img.shields.io/travis/molssi-seamm/lammps_step.svg
    :target: https://travis-ci.org/molssi-seamm/lammps_step
@@ -271,6 +286,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
 
 .. Loop step badges
 
+.. _loop_step: https://github.com/molssi-seamm/loop_step
+
 .. |loop1| image:: https://img.shields.io/travis/molssi-seamm/loop_step.svg
    :target: https://travis-ci.org/molssi-seamm/loop_step
    :alt: Build Status
@@ -296,6 +313,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
    :alt: PyPi VERSION
 
 .. MOPAC step badges
+
+.. _mopac_step: https://github.com/molssi-seamm/mopac_step
 
 .. |mopac1| image:: https://img.shields.io/travis/molssi-seamm/mopac_step.svg
    :target: https://travis-ci.org/molssi-seamm/mopac_step
@@ -323,6 +342,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
 
 .. PACKMOL step badges
 
+.. _packmol_step: https://github.com/molssi-seamm/packmol_step
+
 .. |packmol1| image:: https://img.shields.io/travis/molssi-seamm/packmol_step.svg
    :target: https://travis-ci.org/molssi-seamm/packmol_step
    :alt: Build Status
@@ -349,6 +370,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
 
 .. Read Structure step badges
 
+.. _read_structure_step: https://github.com/molssi-seamm/read_structure_step
+
 .. |structure1| image:: https://img.shields.io/travis/molssi-seamm/read_structure_step.svg
    :target: https://travis-ci.org/molssi-seamm/read_structure_step
    :alt: Build Status
@@ -374,6 +397,8 @@ table_step            |table1|      |table2|       |table3|    	     |table4|   
    :alt: PyPi VERSION
 
 .. Table step badges
+
+.. _table_step: https://github.com/molssi-seamm/table_step
 
 .. |table1| image:: https://img.shields.io/travis/molssi-seamm/table_step.svg
    :target: https://travis-ci.org/molssi-seamm/table_step
