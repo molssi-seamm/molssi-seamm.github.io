@@ -1,3 +1,7 @@
+/* Make the page wider so e.g. the status table can be seen fully */
+.wy-nav-content {
+    max-width: 1200px !important;
+}
 .column_left {
   display: table-cell;
   width: 60px;

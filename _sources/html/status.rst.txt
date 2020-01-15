@@ -27,7 +27,7 @@ The current build status for the modules and plugins:
    loop_step_,            |loop1|,        |loop2|,         |loop3|,    	     	       	 |loop4|,         |loop5|,        |loop6|
    mopac_step_,           |mopac1|,       |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac5|,       |mopac6|
    packmol_step_,         |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
-   read_structure_step_,  |structure1|,   |structure2|,    |structure3|	     	       	 |structure4|,    |structure5|,   |structure6|
+   read_structure_step_,  |structure1|,   |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|
    table_step_,           |table1|,       |table2|,        |table3|,   	     	       	 |table4|,        |table5|,       |table6|
 
 
