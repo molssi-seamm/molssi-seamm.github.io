@@ -48,8 +48,8 @@ The current build status for the modules and plugins:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm/context:python
    :alt: Code Quality
 
-.. |seamm4| image:: https://readthedocs.org/projects/mopac-step/badge/?version=latest
-   :target: https://mopac-step.readthedocs.io/en/latest/?badge=latest
+.. |seamm4| image:: https://readthedocs.org/projects/seamm/badge/?version=latest
+   :target: https://seamm.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. |seamm5| image:: https://pyup.io/repos/github/molssi-seamm/seamm/shield.svg
@@ -76,8 +76,8 @@ The current build status for the modules and plugins:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm_util/context:python
    :alt: Code Quality
 
-.. |su4| image:: https://readthedocs.org/projects/seamm-util-step/badge/?version=latest
-   :target: https://seamm-util-step.readthedocs.io/en/latest/?badge=latest
+.. |su4| image:: https://readthedocs.org/projects/seamm-util/badge/?version=latest
+   :target: https://seamm-util.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. |su5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_util/shield.svg
@@ -104,8 +104,8 @@ The current build status for the modules and plugins:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm_widgets/context:python
    :alt: Code Quality
 
-.. |sw4| image:: https://readthedocs.org/projects/seamm-widgets-step/badge/?version=latest
-   :target: https://seamm-widgets-step.readthedocs.io/en/latest/?badge=latest
+.. |sw4| image:: https://readthedocs.org/projects/seamm-widgets/badge/?version=latest
+   :target: https://seamm-widgets.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. |sw5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_widgets/shield.svg
@@ -132,8 +132,8 @@ The current build status for the modules and plugins:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm_ff_util/context:python
    :alt: Code Quality
 
-.. |sf4| image:: https://readthedocs.org/projects/seamm-ff-util-step/badge/?version=latest
-   :target: https://seamm-ff-util-step.readthedocs.io/en/latest/?badge=latest
+.. |sf4| image:: https://readthedocs.org/projects/seamm-ff-util/badge/?version=latest
+   :target: https://seamm-ff-util.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. |sf5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_ff_util/shield.svg
@@ -160,8 +160,8 @@ The current build status for the modules and plugins:
    :target: https://lgtm.com/projects/g/molssi/reference_handler/context:python
    :alt: Code Quality
 
-.. |rh4| image:: https://readthedocs.org/projects/reference-handle-step/badge/?version=latest
-   :target: https://reference-handler-step.readthedocs.io/en/latest/?badge=latest
+.. |rh4| image:: https://readthedocs.org/projects/reference-handle/badge/?version=latest
+   :target: https://reference-handler.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. |rh5| image:: https://pyup.io/repos/github/molssi/reference_handler/shield.svg
