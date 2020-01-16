@@ -156,8 +156,8 @@ The current build status for the modules and plugins:
    :target: https://codecov.io/gh/molssi/reference_handler
    :alt: Code Coverage
 
-.. |rh3| image:: https://img.shields.io/lgtm/grade/python/g/molssi/reference_handler.svg?logo=lgtm&logoWidth=18
-   :target: https://lgtm.com/projects/g/molssi/reference_handler/context:python
+.. |rh3| image:: https://img.shields.io/lgtm/grade/python/g/MolSSI/reference_handler.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/MolSSI/reference_handler/context:python
    :alt: Code Quality
 
 .. |rh4| image:: https://readthedocs.org/projects/reference-handle/badge/?version=latest
