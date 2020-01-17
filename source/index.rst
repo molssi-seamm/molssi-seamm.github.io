@@ -44,7 +44,7 @@ flowcharts, and running.
     html/home_for_tools
     html/installation
     html/running
-    html/design/overview
+    html/developers/index
 
 .. _Productivity: html/productivity.html
 .. _Reproducibility and replicability: html/reproducibility.html
