@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Use Case: MOPAC (2020) &mdash; SEAMM 0.7 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Use Case: Fluid Properties (2020)" href="fluids_use_case.html" />
+    <link rel="prev" title="Job Submission (2020)" href="job_submission.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> SEAMM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../status.html">Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../users/index.html">For Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../users/productivity.html">Productivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../users/reproducibility.html">Reproducibility and Replicability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../users/installation/index.html">Installing SEAMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../users/using_seamm/index.html">How do you run a simulation?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../users/using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">For Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/index.html">The Design of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../design/plug-ins.html">Plug-ins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2019/index.html">Development Plans for 2019</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2019/fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2019/mopac_use_case.html">Use Case: MOPAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Development Plans for 2020</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="general_improvements.html">General Improvements (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefield_plugins.html">Forcefield Plugins (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="versions.html">Support for Plugin Versions (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fluids_use_case.html">Use Case: Fluid Properties (2020)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fluids/automatic_convergence.html">Automatic Convergence in MD/MC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fluids/system_size_effects.html">System Size Effects in Fluid Simulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fluids/validation_of_statistical_analysis.html">Validation of Statistical Analysis for MD/MC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SEAMM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">For Developers</a> &raquo;</li>
+        
+          <li><a href="index.html">Development Plans for 2020</a> &raquo;</li>
+        
+      <li>Use Case: MOPAC (2020)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/html/developers/2020/mopac_use_case.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="use-case-mopac-2020">
+<span id="mopac-use-case"></span><h1>Use Case: MOPAC (2020)<a class="headerlink" href="#use-case-mopac-2020" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://openmopac.net">MOPAC</a> has an extensive <a class="reference external" href="http://openmopac.net/PM7_accuracy/PM7_accuracy.html">suite</a> for the validation of the semiempirical
+Hamiltonions, which have culminated with PM7. Dr. Stewart has
+graciously given us the set of datafiles underlying the calculations
+presented on the MOPAC website. The initial goals for the project were
+to use this large dataset to</p>
+<ol class="arabic simple">
+<li><p>Facilitate the creation and execution of a single or many
+semi-empirical quantum chemistry calculations using MOPAC.</p></li>
+<li><p>Serve as a guiding application to develop the necessary
+functionality and infrastructure in SEAMM that execute any
+arbitrary plugin.</p></li>
+</ol>
+<p>This was a very valuable project, in which we made considerable
+progress, but also learnt about issues and areas that needed more
+work. The goals of this second phase of the project remains the
+same. There is more to be done!</p>
+<div class="section" id="tasks">
+<h2>Tasks:<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Finalize current MOPAC plugin project (estimated time:)</p>
+<ol class="loweralpha simple">
+<li><p>FINISH CATCHING ERRORS</p></li>
+<li><p>Plot flowchart energies/enthalpies of vaporization vs reference values</p></li>
+<li><p>Explore the extent to which input SMILES strings can be used
+instead of input MOPAC files for running MOPAC calculations.</p></li>
+</ol>
+</li>
+<li><p>Think about the requirements of SEAMM for automatic execution of
+SEAMM flowcharts in clusters (estimated time:)</p></li>
+<li><p>Investigate which current workflow execution software offers the
+cluster requirements that SEAMM needs (estimated time:)</p></li>
+<li><p>Create ‘mock’ use cases (i.e. without actually writing the plugins)
+to explore the limitations of SEAMM flowcharts. For instance, free
+energy calculations, path sampling methods, flowcharts with ‘IF’
+statements.</p></li>
+<li><p>Design more example flowcharts to keep developing SEAMM internals
+(estimated time:)</p></li>
+<li><p>The next project could be a set of MM high throughput flowcharts
+that compute the following thermodynamic quantities of liquids of
+an existing database, such as</p>
+<ol class="loweralpha simple">
+<li><p>Liquid densities</p></li>
+<li><p>Surface tension</p></li>
+<li><p>Volumetric expansion coefficient</p></li>
+<li><p>Isothermal compressibility</p></li>
+<li><p>Enthalpy of vaporization</p></li>
+<li><p>Vapor pressures</p></li>
+<li><p>Saturated liquid (and vapor) densities</p></li>
+<li><p>Viscosities</p></li>
+</ol>
+</li>
+<li><p>This would involve creating the following tools</p>
+<ol class="loweralpha simple">
+<li><p>A plugin that wraps system building tools (Packmol or mBuild for
+liquids, for instance)</p></li>
+<li><p>A plugin that automatically wraps existing tools that atom type
+a variety of systems, such as antechamber, foyer, gromacs
+atom-typing tools, amber tools, SEAMM atom-typing tool, etc.</p></li>
+<li><p>Make the plugin for LAMMPS (MD code) and Cassandra (MC) more
+robust.</p></li>
+<li><p>A plugin for each of the desired thermodynamic properties or one
+that encompass several of them.</p></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="potential-issues">
+<h2>Potential Issues<a class="headerlink" href="#potential-issues" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Whether and how ions and spin can be handled in SMILES.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fluids_use_case.html" class="btn btn-neutral float-right" title="Use Case: Fluid Properties (2020)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="job_submission.html" class="btn btn-neutral float-left" title="Job Submission (2020)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+
+<p>
+<div class="row">
+  <div class="column_left">
+    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
+    </a>
+  </div>
+  <div class="column">
+    &copy; Copyright 2019, the Molecular Sciences Software Institute,
+    which receives funding from the National Science Foundation under award ACI-1547580
+  </div>
+  <div class="column_right">
+    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
+    </a>
+  </div>
+</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-149770118-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

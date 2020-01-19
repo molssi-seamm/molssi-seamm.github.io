@@ -35,16 +35,13 @@ flowcharts, and running.
 
 .. toctree::
     :maxdepth: 5
+    :titlesonly:
     :hidden:
 
     html/status
-    html/productivity
-    html/reproducibility
-    html/home_for_tools
-    html/installation
-    html/running
+    html/users/index
     html/developers/index
 
-.. _Productivity: html/productivity.html
-.. _Reproducibility and replicability: html/reproducibility.html
-.. _A home for tools: html/home_for_tools.html
+.. _Productivity: html/users/seamm_description/productivity.html
+.. _Reproducibility and replicability: html/users/seamm_description/reproducibility.html
+.. _A home for tools: html/users/seamm_description/home_for_tools.html
