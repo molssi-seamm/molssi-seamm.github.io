@@ -21,7 +21,7 @@ Tasks:
    starting from SMILES.
 
 Accomplishments
-_______________
+---------------
 1. Created a flowchart that runs ~8,300 MOPAC calculations of a wide
    variety of molecular systems that include elements such as
    lanthanides or transition metals (Note: inputs to the flowchart
@@ -59,7 +59,31 @@ _______________
    errors in MOPAC or OpenBabel.
 #. Include the citation manager into the MOPAC plugin to produce the
    relevant bibliography for any given run.
-   
+
+Discussion
+__________
+Figure 1, below, shows on the left the experimental heat of formation
+vs that calculated with MOPAC. The pink points are those from the
+MOPAC validation suite_, which uses customize input files for some
+molecules. The blue dots are those resulting from the SEAMM flowchart,
+which is generic and has no customization for particulalr
+molecules. The panel on the right is the same data, but expressed as
+the absolute deviation from the experimental results.
+
+.. image:: /images/MOPAC_Hf_2019.png
+	    :align: center
+	    :alt: Heat of Formation
+
+Molecules for which the SEAMM results differ from the MOPAC test
+suite_ are either errors, probably in SEAMM, or cases where the
+special input to MOPAC makes a difference. Some examples are the four
+large differences, which are due to a different treatment of
+lanthanide elements between SEAMM and the customized MOPAC runs.
+
+In the next phase of this project, we need to examine all of the
+differences, undertand the cause and correct them if possible to do so
+in a generic fashion.
+
 .. _MOPAC: http://openmopac.net
 .. _suite: http://openmopac.net/PM7_accuracy/PM7_accuracy.html
 .. _Read Structure: https://github.com/molssi-seamm/read_structure_step

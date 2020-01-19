@@ -90,7 +90,7 @@ The current build status for the modules and plugins:
 
 .. seamm_widgets badges
 
-.. _seamm_widgets: https://github.com/molssi-seamm/seamm_wdigets
+.. _seamm_widgets: https://github.com/molssi-seamm/seamm_widgets
 
 .. |sw1| image:: https://img.shields.io/travis/molssi-seamm/seamm_widgets.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_widgets

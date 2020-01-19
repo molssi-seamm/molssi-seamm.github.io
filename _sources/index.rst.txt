@@ -34,8 +34,7 @@ See the menu for the details about installing SEAMM, making
 flowcharts, and running.
 
 .. toctree::
-    :maxdepth: 4
-    :glob:
+    :maxdepth: 5
     :hidden:
 
     html/status

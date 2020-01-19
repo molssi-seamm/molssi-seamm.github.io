@@ -38,5 +38,6 @@ The goals for this first six-month phase of the project, starting July
    :titlesonly:
    :glob:
 
-   *
+   [a-h]*
+   [j-z]*
    

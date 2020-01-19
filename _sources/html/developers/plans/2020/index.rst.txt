@@ -34,17 +34,47 @@ through June 2020, are as follows:
    versions.
 #. To add the dashboard as the principal user interface for the jobs
    database.
-#. To simplify and strealine the submission of jobs, and have them
-   automatically enterd in the job database.
+#. To simplify and streamline the submission of jobs, and have them
+   automatically entered in the job database.
 #. To build on the first phase of the MOPAC validation use case to
    improve the overall functionality of SEAMM and of the MOPAC plugin
    specifically to simplify such use cases and make more robust.
 #. To build on the first phase of the fluid properties use case to
    more completely automate the workflow and to add other properties.
    
+Tasks
+-----
+1. General improvements to installation and usability
+#. Switch to the new Molsystem_ object for storing the molecular
+   system in SEAMM, moving it to the user space in the process.
+#. Finalize the design for and implement the forcefield plugins, along
+   with a cookiecutter for forcefield plugins.
+#. Develop the `SEAMM Dashboard`_, building on the prototype currently
+   in place.
+#. Add support for having different versions of plugins, with
+   flowcharts able to use specific versions.
+#. Improve the job submission process, and integrate it with the
+   dashboard.
+#. Continue to develop the :ref:`2020_mopac_use_case`, improving SEAMM
+   in the process
+#. Continue to develop the :ref:`2020_fluids_use_case`, improving SEAMM
+   in the process
+
+Results and Discussion
+----------------------
 
 .. toctree::
-   :glob:
+   :titlesonly:
 
-   *
-   
+   general_improvements
+   molecular_system
+   forcefield_plugins
+   dashboard
+   versions
+   job_submission
+   mopac_use_case
+   fluids_use_case
+
+
+.. _Molsystem: https://github.com/molssi-seamm/molsystem
+.. _SEAMM Dashboard: https://github.com/molssi-seamm/seamm_dashboard

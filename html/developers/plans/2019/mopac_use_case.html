@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Use Case: MOPAC &mdash; SEAMM 0.1 documentation</title>
+  <title>Use Case: MOPAC &mdash; SEAMM 0.7 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Development Plans for 2020" href="../2020/index.html" />
-    <link rel="prev" title="Development Plans for 2019" href="index.html" /> 
+    <link rel="prev" title="Use Case: Fluid Properties (2019)" href="fluids_use_case.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1
+                0.7
               </div>
             
           
@@ -102,11 +102,19 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Development Plans</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Development Plans for 2019</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Use Case: MOPAC</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../2020/index.html">Development Plans for 2020</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../2020/mopac_use_case.html">Use Case: MOPAC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/general_improvements.html">General Improvements (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/forcefield_plugins.html">Forcefield Plugins (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/versions.html">Support for Plugin Versions (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/fluids_use_case.html">Use Case: Fluid Properties (2020)</a></li>
 </ul>
 </li>
 </ul>
@@ -204,8 +212,9 @@ arbitrary plugin.</p></li>
 MOPAC, with no more than 2% failures and 2% incorrect conformations
 starting from SMILES.</p></li>
 </ol>
+</div>
 <div class="section" id="accomplishments">
-<h3>Accomplishments<a class="headerlink" href="#accomplishments" title="Permalink to this headline">¶</a></h3>
+<h2>Accomplishments<a class="headerlink" href="#accomplishments" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Created a flowchart that runs ~8,300 MOPAC calculations of a wide
 variety of molecular systems that include elements such as
@@ -247,6 +256,24 @@ errors in MOPAC or OpenBabel.</p></li>
 <li><p>Include the citation manager into the MOPAC plugin to produce the
 relevant bibliography for any given run.</p></li>
 </ol>
+<div class="section" id="discussion">
+<h3>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h3>
+<p>Figure 1, below, shows on the left the experimental heat of formation
+vs that calculated with MOPAC. The pink points are those from the
+MOPAC validation <a class="reference external" href="http://openmopac.net/PM7_accuracy/PM7_accuracy.html">suite</a>, which uses customize input files for some
+molecules. The blue dots are those resulting from the SEAMM flowchart,
+which is generic and has no customization for particulalr
+molecules. The panel on the right is the same data, but expressed as
+the absolute deviation from the experimental results.</p>
+<img alt="Heat of Formation" class="align-center" src="../../../../_images/MOPAC_Hf_2019.png" />
+<p>Molecules for which the SEAMM results differ from the MOPAC test
+<a class="reference external" href="http://openmopac.net/PM7_accuracy/PM7_accuracy.html">suite</a> are either errors, probably in SEAMM, or cases where the
+special input to MOPAC makes a difference. Some examples are the four
+large differences, which are due to a different treatment of
+lanthanide elements between SEAMM and the customized MOPAC runs.</p>
+<p>In the next phase of this project, we need to examine all of the
+differences, undertand the cause and correct them if possible to do so
+in a generic fashion.</p>
 </div>
 </div>
 </div>
@@ -262,7 +289,7 @@ relevant bibliography for any given run.</p></li>
         <a href="../2020/index.html" class="btn btn-neutral float-right" title="Development Plans for 2020" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Development Plans for 2019" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="fluids_use_case.html" class="btn btn-neutral float-left" title="Use Case: Fluid Properties (2019)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

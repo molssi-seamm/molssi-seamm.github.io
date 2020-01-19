@@ -1,6 +1,8 @@
-****************
- Use Case: MOPAC
-****************
+.. _2020_mopac_use_case:
+
+***********************
+ Use Case: MOPAC (2020)
+***********************
 
 MOPAC_ has an extensive suite_ for the validation of the semiempirical
 Hamiltonions, which have culminated with PM7. Dr. Stewart has
@@ -13,6 +15,11 @@ to use this large dataset to
 #. Serve as a guiding application to develop the necessary
    functionality and infrastructure in SEAMM that execute any
    arbitrary plugin.
+
+This was a very valuable project, in which we made considerable
+progress, but also learnt about issues and areas that needed more
+work. The goals of this second phase of the project remains the
+same. There is more to be done!
 
 Tasks:
 ------

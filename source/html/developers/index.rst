@@ -12,7 +12,7 @@ editor and get to coding.
 * Plans_ are the historical and current development plans for SEAMM.
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 5
 
     design/overview
     plans/index

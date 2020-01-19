@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Development Plans for 2020 &mdash; SEAMM 0.1 documentation</title>
+  <title>Development Plans for 2020 &mdash; SEAMM 0.7 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Use Case: MOPAC" href="mopac_use_case.html" />
+    <link rel="next" title="General Improvements (2020)" href="general_improvements.html" />
     <link rel="prev" title="Use Case: MOPAC" href="../2019/mopac_use_case.html" /> 
 </head>
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1
+                0.7
               </div>
             
           
@@ -102,11 +102,19 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Development Plans</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../2019/index.html">Development Plans for 2019</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../2019/fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../2019/mopac_use_case.html">Use Case: MOPAC</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Development Plans for 2020</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mopac_use_case.html">Use Case: MOPAC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="general_improvements.html">General Improvements (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="forcefield_plugins.html">Forcefield Plugins (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="versions.html">Support for Plugin Versions (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fluids_use_case.html">Use Case: Fluid Properties (2020)</a></li>
 </ul>
 </li>
 </ul>
@@ -213,22 +221,53 @@ either the original versions (for reproducibility) or other
 versions.</p></li>
 <li><p>To add the dashboard as the principal user interface for the jobs
 database.</p></li>
-<li><p>To simplify and strealine the submission of jobs, and have them
-automatically enterd in the job database.</p></li>
+<li><p>To simplify and streamline the submission of jobs, and have them
+automatically entered in the job database.</p></li>
 <li><p>To build on the first phase of the MOPAC validation use case to
 improve the overall functionality of SEAMM and of the MOPAC plugin
 specifically to simplify such use cases and make more robust.</p></li>
 <li><p>To build on the first phase of the fluid properties use case to
 more completely automate the workflow and to add other properties.</p></li>
 </ol>
+<div class="section" id="tasks">
+<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>General improvements to installation and usability</p></li>
+<li><p>Switch to the new <a class="reference external" href="https://github.com/molssi-seamm/molsystem">Molsystem</a> object for storing the molecular
+system in SEAMM, moving it to the user space in the process.</p></li>
+<li><p>Finalize the design for and implement the forcefield plugins, along
+with a cookiecutter for forcefield plugins.</p></li>
+<li><p>Develop the <a class="reference external" href="https://github.com/molssi-seamm/seamm_dashboard">SEAMM Dashboard</a>, building on the prototype currently
+in place.</p></li>
+<li><p>Add support for having different versions of plugins, with
+flowcharts able to use specific versions.</p></li>
+<li><p>Improve the job submission process, and integrate it with the
+dashboard.</p></li>
+<li><p>Continue to develop the <a class="reference internal" href="mopac_use_case.html#mopac-use-case"><span class="std std-ref">Use Case: MOPAC (2020)</span></a>, improving SEAMM
+in the process</p></li>
+<li><p>Continue to develop the <a class="reference internal" href="fluids_use_case.html#fluids-use-case"><span class="std std-ref">Use Case: Fluid Properties (2020)</span></a>, improving SEAMM
+in the process</p></li>
+</ol>
+</div>
+<div class="section" id="results-and-discussion">
+<h3>Results and Discussion<a class="headerlink" href="#results-and-discussion" title="Permalink to this headline">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mopac_use_case.html">Use Case: MOPAC</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mopac_use_case.html#tasks">Tasks:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mopac_use_case.html#potential-issues">Potential Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general_improvements.html">General Improvements (2020)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forcefield_plugins.html">Forcefield Plugins (2020)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Support for Plugin Versions (2020)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fluids_use_case.html">Use Case: Fluid Properties (2020)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fluids/automatic_convergence.html">Automatic Convergence in MD/MC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluids/system_size_effects.html">System Size Effects in Fluid Simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluids/validation_of_statistical_analysis.html">Validation of Statistical Analysis for MD/MC</a></li>
 </ul>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -241,7 +280,7 @@ more completely automate the workflow and to add other properties.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mopac_use_case.html" class="btn btn-neutral float-right" title="Use Case: MOPAC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="general_improvements.html" class="btn btn-neutral float-right" title="General Improvements (2020)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../2019/mopac_use_case.html" class="btn btn-neutral float-left" title="Use Case: MOPAC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
