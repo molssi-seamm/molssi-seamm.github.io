@@ -1,3 +1,5 @@
+.. _for_developers:
+
 **************
 For Developers
 **************
@@ -6,17 +8,23 @@ and plugins for SEAMM. However, some sections such as the design of
 SEAMM might be of interest even if you don't plan to pull out an
 editor and get to coding.
 
-* Design_ documents the design of SEAMM from top to bottom.
-* `Developer documentation`_ provides an overview for how to work with
-  SEAMM.
-* Plans_ are the historical and current development plans for SEAMM.
+:ref:`home_for_tools`:
+----------------------
+SEAMM makes it straightforward for developers and other experts to
+publish their existing and new codes and scripts as plug-ins and
+flowcharts, making them immediately available to the entire
+community.
+
+* :ref:`design`
+* :ref:`2020_plans`
+* :ref:`2019_plans`
 
 .. toctree::
     :maxdepth: 5
+    :titlesonly:
+    :hidden:
 
-    design/overview
-    plans/index
-
-.. _Design: design/overview
-.. _Developer documentation: developer/index
-.. _Plans: plans/index
+    home_for_tools
+    design/index
+    2019/index
+    2020/index
