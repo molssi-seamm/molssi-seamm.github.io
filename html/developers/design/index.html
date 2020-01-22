@@ -126,6 +126,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 </ul>
 
             
@@ -194,8 +195,23 @@
             
   <div class="section" id="the-design-of-seamm">
 <span id="design"></span><h1>The Design of SEAMM<a class="headerlink" href="#the-design-of-seamm" title="Permalink to this headline">¶</a></h1>
-<p>An overall diagram of SEAMM:</p>
-<img alt="Overview of the SEAMM architecture" class="align-center" src="../../../_images/SEAMM_Overview.png" />
+<p>SEAMM comprises six components:</p>
+<ol class="arabic simple">
+<li><p>A <span class="xref std std-ref">graphical user interface</span> (GUI) for creating and editing flowcharts.</p></li>
+<li><p>A <span class="xref std std-ref">serializable implementation of a flowchart</span> that contains all of
+the information needed to run the workflow and to reproduce it at a
+later time.</p></li>
+<li><p>An <span class="xref std std-ref">Flowchart Interpreter</span> that executes the flowchart.</p></li>
+<li><p>A <span class="xref std std-ref">Job Manager</span> to manage jobs and run tasks via a queueing
+system (in design).</p></li>
+<li><p>A <span class="xref std std-ref">Job Datastore</span> to hold the jobs – the flowchart, inputs
+and outputs.</p></li>
+<li><p>A <span class="xref std std-ref">Dashboard</span> for managing and viewing the jobs in the
+datastore.</p></li>
+</ol>
+<p>shown in this diagram, which also shows the flow of data between
+the components.</p>
+<img alt="Overview of SEAMM" class="align-center" src="../../../_images/SEAMM Components.png" />
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -232,7 +248,7 @@
     </a>
   </div>
   <div class="column">
-    &copy; Copyright 2019, the Molecular Sciences Software Institute,
+    &copy; Copyright 2019-2020, the Molecular Sciences Software Institute,
     which receives funding from the National Science Foundation under award ACI-1547580
   </div>
   <div class="column_right">

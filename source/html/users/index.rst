@@ -22,6 +22,32 @@ important capabilities:
   or start with ones created by experts in a particular domain, tweaking
   them to fit your problem.
 
+
+Getting Oriented
+----------------
+
+
+SEAMM comprises six components:
+
+1. A :ref:`graphical user interface` (GUI) for creating and editing flowcharts.
+#. A :ref:`serializable implementation of a flowchart` that contains all of
+   the information needed to run the workflow and to reproduce it at a
+   later time. 
+#. An :ref:`Flowchart Interpreter` that executes the flowchart.
+#. A :ref:`Job Manager` to manage jobs and run tasks via a queueing
+   system (in design). 
+#. A :ref:`Job Datastore` to hold the jobs -- the flowchart, inputs
+   and outputs.
+#. A :ref:`Dashboard` for managing and viewing the jobs in the
+   datastore.
+
+shown in this diagram, which also shows the flow of data between
+the components.
+
+.. image:: /images/SEAMM\ Components.png
+	    :align: center
+	    :alt: Overview of SEAMM
+  
 Next steps
 ----------
 * :ref:`installation`

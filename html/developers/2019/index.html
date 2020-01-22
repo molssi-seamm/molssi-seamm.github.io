@@ -126,6 +126,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 </ul>
 
             
@@ -224,11 +225,80 @@ MOPAC plugin.</p></li>
 improve and test  the overall functionality of SEAMM and of the
 LAMMPS plugin.</p></li>
 </ol>
+<div class="section" id="discussion-and-achievements">
+<h3>Discussion and Achievements<a class="headerlink" href="#discussion-and-achievements" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>The goal was to Implement a continuous integration system based on
+MolSSI best-practices, with testing and documentation covering 50%
+of the non-GUI code. Investigate ways to automate testing of GUI
+code, which at the moment is an unknown.</p>
+<p>This was partially acoomplished. Of a total of 18 repositories (6
+for the core of SEAMM, 9 plugins, the dashboard, a cookiecutter,
+the website and a miscellaneous directory of support files) for a
+total of 12,479 lines of code, 40% of the nongraphical code is
+currently tested automatically. All of the core and plugins have
+documentation at ReadTheDocs, and there is a beginning of user
+documentation at <a class="reference external" href="https://molssi-seamm.github.io/">https://molssi-seamm.github.io/</a></p>
+</li>
+<li><p>Design and implement a reference management system suitable for the
+requirements and use cases in SEAMM. Add the appropriate citations for
+all the modules and plugins.</p>
+<p>Mostly Achieved: Developed MolSSI/reference_handler and added 53
+references for MOPAC – though this is not yet the full number
+needed for the functionality covered in the plugin. Have not yet
+added references to the other plugins, though most should be
+simple. LAMMPS, however, will be considerable work, like MOPAC.</p>
+</li>
+<li><p>Work out and implement a scheme to archive versions of the code
+with DOI’s using, for example Zenodo.</p>
+<p>This task was postponed.</p>
+</li>
+<li><p>Learn about web design and programming in order to implement a
+dashboard fronting a datastore for jobs run using SEAMM.</p>
+<p>Achieved: Jessica has done an excellent job learning about web
+technology and has an impressive prototype dashboard, including a
+preliminary display of flowcharts. A database for storing job,
+project, and flowcharts is implemented in SQLAlchemy. The front end
+uses flask and a web template from CoreUI. We have basic CI which
+builds an environment for the dashboard using Travis CI.  This can
+be found at <a class="reference external" href="https://github.com/molssi-seamm/seamm_dashboard">https://github.com/molssi-seamm/seamm_dashboard</a>.</p>
+</li>
+<li><p>Develop a robust workflow and calculate the density and cohesive
+energy of 50 fluids using LAMMPS, with no more than 2 failures.</p>
+<p>Partly Achieved: Accomplished most of this goal, developing an
+effective, robust workflow to predict the fluid density starting
+with a SMILES string representing the compound, and finished
+calculations on 9 fluids with no issues. However, it became clear
+that the standard approach of running “long enough” was not
+satisfactory for high throughput calculations, and that it would be
+straightforward to extend the plugin to target an accuracy rather
+than the number of steps. This is proposed for the next project
+period, at which time the full 50 calculations will be
+completed. Also, it will require a minor modification to LAMMPS to
+calculate the cohesive energy, which has not yet been accomplished
+and fed back into the LAMMPS source.</p>
+</li>
+<li><p>At least 200 comparisons of heat of formation with NIST WebBook and
+MOPAC, with no more than 2% failures and 2% incorrect conformations
+starting from SMILES.</p>
+<p>Achieved: Eliseo went far beyond the initial scope, running all
+8,000+ structures in the MOPAC validation set. Several systematic
+problems were encountered and some of them fixed, including charges
+on systems and systems containing lanthanides, which require
+special treatment in MOPAC. Outstanding issues revolve around the
+definition of open-shell systems, and bugs in MOPAC and OpenBabel
+which are being investigated. There was one small change to the
+plan: rather than start with SMILES we started with structure
+files, but will move to SMILES files next iteration of the
+project.</p>
+</li>
+</ol>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mopac_use_case.html">Use Case: MOPAC</a></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -265,7 +335,7 @@ LAMMPS plugin.</p></li>
     </a>
   </div>
   <div class="column">
-    &copy; Copyright 2019, the Molecular Sciences Software Institute,
+    &copy; Copyright 2019-2020, the Molecular Sciences Software Institute,
     which receives funding from the National Science Foundation under award ACI-1547580
   </div>
   <div class="column_right">

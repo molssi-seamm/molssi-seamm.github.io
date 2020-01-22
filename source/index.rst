@@ -30,8 +30,6 @@ running your calculations, and a job database for storing them,
 helping you manage the many projects and large numbers of calculations
 you do each year.
 
-See the menu for the details about installing SEAMM, making
-flowcharts, and running.
 
 .. toctree::
     :maxdepth: 5
@@ -41,6 +39,7 @@ flowcharts, and running.
     html/status
     html/users/index
     html/developers/index
+    html/glossary
 
 .. _Productivity: html/users/seamm_description/productivity.html
 .. _Reproducibility and replicability: html/users/seamm_description/reproducibility.html
