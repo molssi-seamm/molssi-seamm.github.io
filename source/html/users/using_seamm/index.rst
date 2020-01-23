@@ -4,7 +4,7 @@
 How do you run a simulation?
 ****************************
 
-You create a flowchart, like this:
+You create a :term:`flowchart`, like this:
 
 .. image:: /images/flowchart.png
 	    :align: center

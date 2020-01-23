@@ -26,7 +26,8 @@ Tasks:
 1. Finalize current MOPAC plugin project (estimated time:)
 
    a. FINISH CATCHING ERRORS
-   #. Plot flowchart energies/enthalpies of vaporization vs reference values 
+   #. Plot :term:`flowchart` energies/enthalpies of vaporization vs
+      reference values
    #. Explore the extent to which input SMILES strings can be used
       instead of input MOPAC files for running MOPAC calculations.
 

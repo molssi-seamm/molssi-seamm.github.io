@@ -22,8 +22,8 @@ Tasks:
 
 Accomplishments
 ---------------
-1. Created a flowchart that runs ~8,300 MOPAC calculations of a wide
-   variety of molecular systems that include elements such as
+1. Created a :term:`flowchart` that runs ~8,300 MOPAC calculations of
+   a wide variety of molecular systems that include elements such as
    lanthanides or transition metals (Note: inputs to the flowchart
    were MOPAC input files provided by Stewart).
 #. Created the `Read Structure`_ plugin for reading structure files.

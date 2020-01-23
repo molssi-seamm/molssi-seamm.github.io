@@ -19,11 +19,12 @@ properties as a function of the cell size. In order to do this we need
 good control of the precision of the calculated properties since as
 the cell size increases the error decreases, so we are looking for
 small differences in values, which will be very difficult if the
-statistical uncertainty is large. The :ref:`automatic_convergence_2020`
-portion of this subproject should solve that issue, allowing this part
-to concentrate on developing flowcharts for determining the size
-effect, providing guidance to users, and allowing plugin and flowchart
-writers to use reasonable defaults for the system size.
+statistical uncertainty is large. The
+:ref:`automatic_convergence_2020` portion of this subproject should
+solve that issue, allowing this part to concentrate on developing
+:term:`flowcharts<flowchart>` for determining the size effect,
+providing guidance to users, and allowing plugin and flowchart writers
+to use reasonable defaults for the system size.
 
 Tasks
 -----

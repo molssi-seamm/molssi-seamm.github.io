@@ -20,8 +20,8 @@ reproducibility.
 
 Requirements
 ------------
-1. Ability to run a flowchart a second time, at some later date, using
-   the same version of the plugins and background codes. 
+1. Ability to run a :term:`flowchart` a second time, at some later
+   date, using the same version of the plug-ins and background codes.
 #. Ability to run a flowchart with the latest versions of all codes.
 #. Possibility of running a flowchart with specified versions of each
    plugin and code, where the specified version is neither the

@@ -12,7 +12,8 @@ Monte Carlo (MC) simulations in our field. However, our field is not
 terribly fluent in statistical analysis, and many codes do at best a
 partial job of the analysis. Therefore it is is important for SEAMM to
 provide a convenient library for plugins, examples of implementation,
-and approaches and flowcharts for testing implementations.
+and approaches and :term:`flowcharts<flowchart>` for testing
+implementations.
 
 Tasks
 -----

@@ -12,8 +12,8 @@ editor and get to coding.
 ----------------------
 SEAMM makes it straightforward for developers and other experts to
 publish their existing and new codes and scripts as plug-ins and
-flowcharts, making them immediately available to the entire
-community.
+:term:`flowcharts<flowchart>`, making them immediately available to
+the entire community.
 
 * :ref:`design`
 * :ref:`2020_plans`

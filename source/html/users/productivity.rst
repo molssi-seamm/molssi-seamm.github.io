@@ -35,22 +35,22 @@ molecules, or do a parameter sweep, you can easily automate the
 workflow. Results can be captured in tables and output for
 e.g. analysis in a spreadsheet program.
 
-The last aspect is that the flowcharts that you, and others, develop
-in SEAMM can be saved, rerun and shared. You probably already do this
-with scripts that you write, but creating flowcharts in SEAMM is
-easier than writing scripts -- and they will run in any other copy of
-SEAMM. So you can build up a library of flowcharts for common tasks
-and share them in your group. Or email them to a colleague. This means
-that if you need to some calculations that you are not completely
-expert at, you can get a flowchart written by an expert to use as-is
-or tweak it to do precisely what you need.
+The last aspect is that the :term:`flowcharts<flowchart>` that you,
+and others, develop in SEAMM can be saved, rerun and shared. You
+probably already do this with scripts that you write, but creating
+flowcharts in SEAMM is easier than writing scripts -- and they will
+run in any other copy of SEAMM. So you can build up a library of
+flowcharts for common tasks and share them in your group. Or email
+them to a colleague. This means that if you need to some calculations
+that you are not completely expert at, you can get a flowchart written
+by an expert to use as-is or tweak it to do precisely what you need.
 
 These features help you get more done more quickly. It also helps you
 make fewer mistakes and waste less time tracking them down. But now
 that you can do more, SEAMM helps you in other ways. The integrated
-job management helps you control the jobs that you are running, and
-the job database captures every job that you run. When it comes time
-to write the paper or project report, everything is there at your
-fingertips.
+:term:`Job Management` helps you control the jobs that you are
+running, and the `Job Datastore` captures every job that you run. When
+it comes time to write the paper or project report, everything is
+there at your fingertips.
 
 
