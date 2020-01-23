@@ -67,15 +67,17 @@ Discussion and Achievements
    This task was postponed.
 
 #. Learn about web design and programming in order to implement a
-   dashboard fronting a datastore for jobs run using SEAMM. 
+   :term:`Dashboard` fronting a datastore for :term:`jobs<job>` run
+   using SEAMM.
 
    Achieved: Jessica has done an excellent job learning about web
    technology and has an impressive prototype dashboard, including a
-   preliminary display of flowcharts. A database for storing job,
-   project, and flowcharts is implemented in SQLAlchemy. The front end
-   uses flask and a web template from CoreUI. We have basic CI which
-   builds an environment for the dashboard using Travis CI.  This can
-   be found at https://github.com/molssi-seamm/seamm_dashboard.
+   preliminary display of :term:`flowcharts<flowchart>`. A database
+   for storing job, project, and flowcharts is implemented in
+   SQLAlchemy. The front end uses flask and a web template from
+   CoreUI. We have basic CI which builds an environment for the
+   dashboard using Travis CI.  This can be found at
+   https://github.com/molssi-seamm/seamm_dashboard.
 
 #. Develop a robust workflow and calculate the density and cohesive
    energy of 50 fluids using LAMMPS, with no more than 2 failures.

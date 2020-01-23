@@ -31,9 +31,9 @@ in SEAMM, and you don't have to do much work.
 
 Either way, if you put your code into the SEAMM environment, all of
 the users of SEAMM can see it and use it. And because you made it easy
-to use, and published some example flowcharts, they will have an
-easier time getting started. You did do that, right? And in the
-future, as other developers add codes to SEAMM, they will work with
-yours with little or no extra work.
+to use, and published some example :term:`flowcharts<flowchart>`, they
+will have an easier time getting started. You did do that, right? And
+in the future, as other developers add codes to SEAMM, they will work
+with yours with little or no extra work.
 
 This is good for you, and good for users. Everyone wins.

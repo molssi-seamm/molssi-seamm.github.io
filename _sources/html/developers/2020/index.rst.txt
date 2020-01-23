@@ -31,13 +31,13 @@ The goals for this next phase of development, running from January
 through June 2020, are as follows:
 
 #. To make the installation easier and more robust
-#. To track versions of plugins used in a flowchart, and handle using
-   either the original versions (for reproducibility) or other
-   versions.
-#. To add the dashboard as the principal user interface for the jobs
-   database.
-#. To simplify and streamline the submission of jobs, and have them
-   automatically entered in the job database.
+#. To track versions of :term:`plug-ins<plug-in>` used in a
+   :term:`flowchart`, and handle using either the original versions
+   (for reproducibility) or other versions.
+#. To add the :term:`Dashboard` as the principal user interface for
+   the :term:`Job Datastore`
+#. To simplify and streamline the submission of :term:`jobs<job>`, and
+   have them automatically entered in the Job Datastore.
 #. To build on the first phase of the MOPAC validation use case to
    improve the overall functionality of SEAMM and of the MOPAC plugin
    specifically to simplify such use cases and make more robust.

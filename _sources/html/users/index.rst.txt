@@ -18,9 +18,9 @@ important capabilities:
   you set up calculations without editing complex input files and
   structures by hand.
 * :ref:`reproducibility`: Computational protocols are
-  captured as shareable graphical flowcharts. You can create your own,
-  or start with ones created by experts in a particular domain, tweaking
-  them to fit your problem.
+  captured as shareable graphical :term:`flowcharts<flowchart>`. You
+  can create your own, or start with ones created by experts in a
+  particular domain, tweaking them to fit your problem.
 
 
 Getting Oriented

@@ -25,8 +25,8 @@ SEAMM already has plug-ins for LAMMPS and MOPAC, with other quantum
 chemistry and forcefield-based MD and Monte Carlo codes coming
 soon. Other plug-ins use OpenBabel , RDKit and Packmol for reading in
 structures, building fluid boxes, cheminformatic functionality,
-etc. The SEAMM environment also provides integrated :term:`Job
-Management` for running your calculations, and a :term:`Job Datastore`
+etc. The SEAMM environment also provides an integrated :term:`Job
+Manager` for running your calculations, and a :term:`Job Datastore`
 for storing them, helping you manage the many projects and large
 numbers of calculations you do each year.
 

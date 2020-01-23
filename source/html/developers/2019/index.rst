@@ -68,7 +68,7 @@ Discussion and Achievements
 
 #. Learn about web design and programming in order to implement a
    :term:`Dashboard` fronting a datastore for :term:`jobs<job>` run
-	 using SEAMM.
+   using SEAMM.
 
    Achieved: Jessica has done an excellent job learning about web
    technology and has an impressive prototype dashboard, including a

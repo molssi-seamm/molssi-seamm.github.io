@@ -31,9 +31,9 @@ The goals for this next phase of development, running from January
 through June 2020, are as follows:
 
 #. To make the installation easier and more robust
-#. To track versions of :term:`plug-ins` used in a :term:`flowchart`,
-   and handle using either the original versions (for reproducibility)
-   or other versions.
+#. To track versions of :term:`plug-ins<plug-in>` used in a
+   :term:`flowchart`, and handle using either the original versions
+   (for reproducibility) or other versions.
 #. To add the :term:`Dashboard` as the principal user interface for
    the :term:`Job Datastore`
 #. To simplify and streamline the submission of :term:`jobs<job>`, and

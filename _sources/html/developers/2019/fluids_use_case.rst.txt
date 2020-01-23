@@ -9,8 +9,8 @@ Goals and Motivation
 Starting initially with LAMMPS_, this project intends to develop the
 use case of calculating properties of fluids to
 
-1. Create, test and refine flowcharts for predicting the density and
-   cohesive energy of organic liquids.
+1. Create, test and refine :term:`flowcharts<flowchart>` for
+   predicting the density and cohesive energy of organic liquids.
 #. Develop the capabilities of the `LAMMPS plugin`_ as needed for the
    flowcharts.
 #. Create or enhance any other plugins needed.
