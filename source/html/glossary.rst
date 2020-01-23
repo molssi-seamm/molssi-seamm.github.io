@@ -6,12 +6,13 @@ Glossary
    :sorted:
       
    flowchart
-      A graphical representation of a multistep simulation protocol.
+      A graphical representation of a multistep simulation
+      protocol. See :ref:`Flowchart`
 
    step
-      A step in a flowchart, represented visually by a box with lines
-      connecting it to other steps. Steps are implemented by
-      plug-ins.
+      A step in the simulation protocol, typically representing a
+      single piece of work. Represented in a flowchart by a box, steps
+      are implemented by plug-ins.
 
    plug-in
       The implementation of a step, comprised of a GUI for setting the
@@ -20,24 +21,34 @@ Glossary
       the step.
 
    job
-      Execution of a single flowchart. Job is also widely used as the
-      unit of work submitted for execution to e.g. a queueing system
-      on a computer, which can be confusing. The SEAMM documentation
-      will use “batch job” to refer to this second type unless it is
-      clear from the context. A flowchart may be executed directly
-      with no batch job, as a single batch job, or may result in many
-      batch jobs for individual tasks.
+      Execution of a single flowchart. This definition stands in
+      contrast with the common  meaning of job as a unit of work
+      submitted to a queue for execution. The SEAMM documentation will
+      use “batch job” to refer to this second type unless it is clear
+      from the context. A flowchart can be run as a single batch job,
+      or may result in many batch jobs for individual tasks, or can be
+      run directly with no batch job involved.
 
    task
       A batch process created by a step, often the execution of a
       simulation engine such as LAMMPS, GAMESS, Quantum Espresso,
-      etc. A step need not create tasks, or may create more than one
-      task. SEAMM may run tasks directly, or it may submit them as
-      batch jobs to a queueing system.
+      etc.
 
-   job datastore
-      A database for storing the flowchart, inputs and outputs for
-      jobs. The implementation of the datastore may use a traditional
-      database, or files on disk, or a combination of a database and
-      files, but for practical purposes it appears to be a database.
+   Job Datastore
+      Is the central place where information about and results of jobs
+      are stored -- the flowchart, inputs, and outputs of jobs -- so
+      they can be viewed and retrieved later.
+
+   DFT
+      Density functional theory is a computational quantum mechanical
+      method to approximately solve the Schrödinger equation. DFT is
+      very popular because it is simple to use and provides a good
+      compromise between cost and accuracy.
     
+   Dashboard
+      The web interface to the Job Datastore and to the jobs that are
+      running or have run in the past.
+
+   Job Manager
+      The part of SEAMM that handles running jobs, hiding the messy
+      details.

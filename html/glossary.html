@@ -89,6 +89,12 @@
 <li class="toctree-l1"><a class="reference internal" href="users/index.html">For Users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="users/productivity.html">Productivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="users/reproducibility.html">Reproducibility and Replicability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users/seamm_description/gui.html">SEAMM GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users/seamm_description/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users/seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users/seamm_description/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users/seamm_description/job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users/seamm_description/dashboard.html">Dashboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="users/installation/index.html">Installing SEAMM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="users/using_seamm/index.html">How do you run a simulation?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="users/using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
@@ -193,35 +199,44 @@
   <div class="section" id="glossary">
 <h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
 <dl class="glossary simple">
-<dt id="term-flowchart">flowchart</dt><dd><p>A graphical representation of a multistep simulation protocol.</p>
+<dt id="term-dashboard">Dashboard</dt><dd><p>The web interface to the Job Datastore and to the jobs that are
+running or have run in the past.</p>
 </dd>
-<dt id="term-job">job</dt><dd><p>Execution of a single flowchart. Job is also widely used as the
-unit of work submitted for execution to e.g. a queueing system
-on a computer, which can be confusing. The SEAMM documentation
-will use “batch job” to refer to this second type unless it is
-clear from the context. A flowchart may be executed directly
-with no batch job, as a single batch job, or may result in many
-batch jobs for individual tasks.</p>
+<dt id="term-dft">DFT</dt><dd><p>Density functional theory is a computational quantum mechanical
+method to approximately solve the Schrödinger equation. DFT is
+very popular because it is simple to use and provides a good
+compromise between cost and accuracy.</p>
 </dd>
-<dt id="term-job-datastore">job datastore</dt><dd><p>A database for storing the flowchart, inputs and outputs for
-jobs. The implementation of the datastore may use a traditional
-database, or files on disk, or a combination of a database and
-files, but for practical purposes it appears to be a database.</p>
+<dt id="term-flowchart">flowchart</dt><dd><p>A graphical representation of a multistep simulation
+protocol. See <a class="reference internal" href="users/seamm_description/flowchart.html#flowchart"><span class="std std-ref">Flowchart</span></a></p>
+</dd>
+<dt id="term-job">job</dt><dd><p>Execution of a single flowchart. This definition stands in
+contrast with the common  meaning of job as a unit of work
+submitted to a queue for execution. The SEAMM documentation will
+use “batch job” to refer to this second type unless it is clear
+from the context. A flowchart can be run as a single batch job,
+or may result in many batch jobs for individual tasks, or can be
+run directly with no batch job involved.</p>
+</dd>
+<dt id="term-job-datastore">Job Datastore</dt><dd><p>Is the central place where information about and results of jobs
+are stored – the flowchart, inputs, and outputs of jobs – so
+they can be viewed and retrieved later.</p>
+</dd>
+<dt id="term-job-manager">Job Manager</dt><dd><p>The part of SEAMM that handles running jobs, hiding the messy
+details.</p>
 </dd>
 <dt id="term-plug-in">plug-in</dt><dd><p>The implementation of a step, comprised of a GUI for setting the
 control values for the step, a container to hold the control
 values, and finally the implementation of the functionality of
 the step.</p>
 </dd>
-<dt id="term-step">step</dt><dd><p>A step in a flowchart, represented visually by a box with lines
-connecting it to other steps. Steps are implemented by
-plug-ins.</p>
+<dt id="term-step">step</dt><dd><p>A step in the simulation protocol, typically representing a
+single piece of work. Represented in a flowchart by a box, steps
+are implemented by plug-ins.</p>
 </dd>
 <dt id="term-task">task</dt><dd><p>A batch process created by a step, often the execution of a
 simulation engine such as LAMMPS, GAMESS, Quantum Espresso,
-etc. A step need not create tasks, or may create more than one
-task. SEAMM may run tasks directly, or it may submit them as
-batch jobs to a queueing system.</p>
+etc.</p>
 </dd>
 </dl>
 </div>

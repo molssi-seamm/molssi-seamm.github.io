@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How do you run a simulation? &mdash; SEAMM 0.7 documentation</title>
+  <title>Flowchart &mdash; SEAMM 0.7 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Running a Flowchart" href="running_a_flowchart.html" />
-    <link rel="prev" title="Installing SEAMM" href="../installation/index.html" /> 
+    <link rel="next" title="Flowchart Interpreter" href="flowchart_interpreter.html" />
+    <link rel="prev" title="SEAMM GUI" href="gui.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,15 +90,15 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">For Users</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../productivity.html">Productivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reproducibility.html">Reproducibility and Replicability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../seamm_description/gui.html">SEAMM GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../seamm_description/flowchart.html">Flowchart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../seamm_description/job_manager.html">Job Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../seamm_description/job_datastore.html">Job Datastore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../seamm_description/dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html">SEAMM GUI</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">How do you run a simulation?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="running_a_flowchart.html">Running a Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_seamm/index.html">How do you run a simulation?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
 </ul>
 </li>
 </ul>
@@ -180,13 +180,13 @@
         
           <li><a href="../index.html">For Users</a> &raquo;</li>
         
-      <li>How do you run a simulation?</li>
+      <li>Flowchart</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../_sources/html/users/using_seamm/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/html/users/seamm_description/flowchart.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,31 +199,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="how-do-you-run-a-simulation">
-<span id="using-seamm"></span><h1>How do you run a simulation?<a class="headerlink" href="#how-do-you-run-a-simulation" title="Permalink to this headline">¶</a></h1>
-<p>You create a flowchart, like this:</p>
-<img alt="An example flowchart" class="align-center" src="../../../_images/flowchart.png" />
-<p>that defines the steps you want in your simulation. Once you are
-satisfied with it, there are a number ways to run it … but first,
-some more detail in running the SEAMM GUI and creating flowcharts.</p>
-<div class="section" id="starting-the-seamm-gui">
-<h2>Starting the SEAMM GUI<a class="headerlink" href="#starting-the-seamm-gui" title="Permalink to this headline">¶</a></h2>
-<p>Activate the seamm conda environment that you <a class="reference external" href="//html/installation.html">installed</a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
-</pre></div>
+  <div class="section" id="flowchart">
+<span id="id1"></span><h1>Flowchart<a class="headerlink" href="#flowchart" title="Permalink to this headline">¶</a></h1>
+<p>A <a class="reference internal" href="../../glossary.html#term-flowchart"><span class="xref std std-term">flowchart</span></a> is a simple way to represent a workflow or
+protocol for accomplishing something. SEAMM is designed for
+computational molecular and materials science, so the
+<a class="reference internal" href="../../glossary.html#term-step"><span class="xref std std-term">steps</span></a> in a SEAMM flowchart correspond to the
+types of things we do. For example, a very simple workflow might be to
+create a structure from a SMILES string and optimize the structure
+using <a class="reference internal" href="../../glossary.html#term-dft"><span class="xref std std-term">DFT</span></a> or a more advanced quantum chemical method. The simple
+flowchart to do this would have two steps:</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../../_images/dft_flowchart.png"><img alt="A Simple Flowchart" src="../../../_images/dft_flowchart.png" style="width: 254.0px; height: 216.0px;" /></a>
+<p class="caption"><span class="caption-text">A Simple Flowchart</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Then run <strong>seamm</strong> from the command prompt:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(seamm) pwsmac:~ psaxe$ seamm
-</pre></div>
-</div>
-<p>In a few seconds a window like this should appear:</p>
-<img alt="The SEAMM window" class="align-center" src="../../../_images/seamm.png" />
-</div>
-<div class="section" id="creating-a-flowchart">
-<h2>Creating a Flowchart<a class="headerlink" href="#creating-a-flowchart" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-</div>
-</div>
+<p>Of course such flowcharts can be much more
+complicated. Even in this simple case, if the starting structure is
+bad, the DFT calculation might not converge. A more complex
+workflow would catch this error and perhaps try a simple, more robust
+method to clean up the initial structure, and then run the DFT
+optimization again.</p>
+<p>The flowcharts in SEAMM can be converted to plain
+text – a process known as <a class="reference external" href="https://en.wikipedia.org/wiki/Serialization">serialization</a> in computer science. This is
+important because it lets you and SEAMM do many useful things. It
+allows SEAMM to store the flowchart in the <a class="reference internal" href="../../glossary.html#term-job-datastore"><span class="xref std std-term">Job Datastore</span></a> and
+ship it to other machines when you want to run a <a class="reference internal" href="../../glossary.html#term-job"><span class="xref std std-term">job</span></a>. For you
+it means that you can save a flowchart to a file, edit it later, email
+it to a colleague so they can use it, etc.</p>
 </div>
 
 
@@ -234,10 +236,10 @@ some more detail in running the SEAMM GUI and creating flowcharts.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="running_a_flowchart.html" class="btn btn-neutral float-right" title="Running a Flowchart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="flowchart_interpreter.html" class="btn btn-neutral float-right" title="Flowchart Interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../installation/index.html" class="btn btn-neutral float-left" title="Installing SEAMM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gui.html" class="btn btn-neutral float-left" title="SEAMM GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

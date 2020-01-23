@@ -7,7 +7,7 @@ The Design of SEAMM
 SEAMM comprises six components:
 
 1. A :ref:`graphical user interface` (GUI) for creating and editing flowcharts.
-#. A :ref:`serializable implementation of a flowchart` that contains all of
+#. A serializable implementation of a :ref:`flowchart` that contains all of
    the information needed to run the workflow and to reproduce it at a
    later time. 
 #. An :ref:`Flowchart Interpreter` that executes the flowchart.

@@ -90,6 +90,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">For Users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="productivity.html">Productivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reproducibility.html">Reproducibility and Replicability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seamm_description/gui.html">SEAMM GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seamm_description/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seamm_description/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seamm_description/job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seamm_description/dashboard.html">Dashboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/index.html">Installing SEAMM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_seamm/index.html">How do you run a simulation?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
@@ -216,16 +222,16 @@ them to fit your problem.</p></li>
 <h2>Getting Oriented<a class="headerlink" href="#getting-oriented" title="Permalink to this headline">¶</a></h2>
 <p>SEAMM comprises six components:</p>
 <ol class="arabic simple">
-<li><p>A <span class="xref std std-ref">graphical user interface</span> (GUI) for creating and editing flowcharts.</p></li>
-<li><p>A <span class="xref std std-ref">serializable implementation of a flowchart</span> that contains all of
-the information needed to run the workflow and to reproduce it at a
-later time.</p></li>
-<li><p>An <span class="xref std std-ref">Flowchart Interpreter</span> that executes the flowchart.</p></li>
-<li><p>A <span class="xref std std-ref">Job Manager</span> to manage jobs and run tasks via a queueing
+<li><p>A <a class="reference internal" href="seamm_description/gui.html#graphical-user-interface"><span class="std std-ref">SEAMM GUI</span></a> (GUI) for creating and editing flowcharts.</p></li>
+<li><p>A serializable implementation of a <a class="reference internal" href="seamm_description/flowchart.html#flowchart"><span class="std std-ref">flowchart</span></a> that
+contains all of the information needed to run the workflow and to
+reproduce it at a later time.</p></li>
+<li><p>A <a class="reference internal" href="seamm_description/flowchart_interpreter.html#flowchart-interpreter"><span class="std std-ref">Flowchart Interpreter</span></a> that executes the flowchart.</p></li>
+<li><p>A <a class="reference internal" href="seamm_description/job_manager.html#job-manager"><span class="std std-ref">Job Manager</span></a> to manage jobs and run tasks via a queueing
 system (in design).</p></li>
-<li><p>A <span class="xref std std-ref">Job Datastore</span> to hold the jobs – the flowchart, inputs
+<li><p>A <a class="reference internal" href="seamm_description/job_datastore.html#job-datastore"><span class="std std-ref">Job Datastore</span></a> to hold the jobs – the flowchart, inputs
 and outputs.</p></li>
-<li><p>A <span class="xref std std-ref">Dashboard</span> for managing and viewing the jobs in the
+<li><p>A <a class="reference internal" href="seamm_description/dashboard.html#dashboard"><span class="std std-ref">Dashboard</span></a> for managing and viewing the jobs in the
 datastore.</p></li>
 </ol>
 <p>shown in this diagram, which also shows the flow of data between

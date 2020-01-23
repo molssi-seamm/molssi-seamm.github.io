@@ -52,7 +52,7 @@ Tasks:
    preferably be embedded in e.g. a fluids plugin or flowcharts. See
    :ref:`system_size_effects_2020` for more detail.
 #. Implement one or more other forcefields using the new forcefield
-   plugin approach. See :ref:`_forcefield_plugins_2020` for details on
+   plugin approach. See :ref:`forcefield_plugins_2020` for details on
    the forcefield plugins.
 #. Calculate and analyze the liquid density of 50 compounds, using the
    new protocols and tools.

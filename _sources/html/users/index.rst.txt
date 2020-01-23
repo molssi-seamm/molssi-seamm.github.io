@@ -26,14 +26,13 @@ important capabilities:
 Getting Oriented
 ----------------
 
-
 SEAMM comprises six components:
 
 1. A :ref:`graphical user interface` (GUI) for creating and editing flowcharts.
-#. A :ref:`serializable implementation of a flowchart` that contains all of
-   the information needed to run the workflow and to reproduce it at a
-   later time. 
-#. An :ref:`Flowchart Interpreter` that executes the flowchart.
+#. A serializable implementation of a :ref:`flowchart<Flowchart>` that
+   contains all of the information needed to run the workflow and to
+   reproduce it at a later time.
+#. A :ref:`Flowchart Interpreter` that executes the flowchart.
 #. A :ref:`Job Manager` to manage jobs and run tasks via a queueing
    system (in design). 
 #. A :ref:`Job Datastore` to hold the jobs -- the flowchart, inputs
@@ -60,6 +59,12 @@ Next steps
 
     productivity
     reproducibility
+    seamm_description/gui
+    seamm_description/flowchart
+    seamm_description/flowchart_interpreter
+    seamm_description/job_manager
+    seamm_description/job_datastore
+    seamm_description/dashboard
     installation/index
     using_seamm/index
     
