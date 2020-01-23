@@ -23,8 +23,8 @@ statistical uncertainty is large. The
 :ref:`automatic_convergence_2020` portion of this subproject should
 solve that issue, allowing this part to concentrate on developing
 :term:`flowcharts<flowchart>` for determining the size effect,
-providing guidance to users, and allowing plugin and flowchart writers
-to use reasonable defaults for the system size.
+providing guidance to users, and allowing :term:`plug-in` and
+flowchart writers to use reasonable defaults for the system size.
 
 Tasks
 -----

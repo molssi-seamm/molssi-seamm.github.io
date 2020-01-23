@@ -6,12 +6,12 @@ Productivity
 
 SEAMM helps you get your work done faster and more easily. First, it
 helps you set up your calculations. The large simulation codes are
-wrapped in plug-ins which provide intuitive graphical user interfaces
-(GUIs) so you don't have to start with an empty input file in a text
-editor and remember all the keywords and commands for each code. While
-you maybe very comfortable with one or two codes, you probably can use
-other codes in your research, but don't know their input as
-well. SEAMM supports a wide range of codes, such as
+wrapped in :term:`plug-ins<plug-in>` which provide intuitive graphical
+user interfaces (GUIs) so you don't have to start with an empty input
+file in a text editor and remember all the keywords and commands for
+each code. While you maybe very comfortable with one or two codes, you
+probably can use other codes in your research, but don't know their
+input as well. SEAMM supports a wide range of codes, such as
 
 * MOPAC for semiempirical quantum chemistry
 * GAMESS, NWChem and Psi4 for quantum cehmistry
@@ -20,14 +20,14 @@ well. SEAMM supports a wide range of codes, such as
 * LAMMPS for molecular dynamics (MD) for materials
 * Cassandra and Towhee for Monte Carlo simulations of fluids
 
-Other plugins provide functionality for building structures,
+Other plug-ins provide functionality for building structures,
 e.g. Packmol, for converting file formats using Open Babel, and
 cheminformatics functionality with RDKit. The 'helpers' do the little
 tasks that you need to wrangle structures into the simulation codes
 and analyze results, things you either had to do yourself or had to
 find scripts and codes that did what you needed.
 
-Between the GUI's and the convenient 'helper' plugins setting up your
+Between the GUI's and the convenient 'helper' plug-ins setting up your
 workflow will indeed be faster and less error prone. Two other aspects
 of SEAMM will help you do even more. First, SEAMM has loops and other
 control structures built in, so when you want to run over several

@@ -117,7 +117,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Development Plans for 2020</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">General Improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="molecular_system.html">Molecular System (2020)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="forcefield_plugins.html">Forcefield Plugins (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefield_plugins.html">Forcefield Plug-Ins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dashboard.html">Dashboard (2020)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="versions.html">Support for Plugin Versions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="job_submission.html">Job Submission (2020)</a></li>
@@ -221,15 +221,15 @@ elsewhere.</p>
 <div class="section" id="tasks">
 <h2>Tasks:<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Develop an <strong>Input</strong> plugin to provide both a GUI for setting
-variables as well as commandline argument definitions.</p></li>
+<li><p>Develop an <strong>Input</strong> <a class="reference internal" href="../../glossary.html#term-plug-in"><span class="xref std std-term">plug-in</span></a> to provide both a GUI for
+setting variables as well as commandline argument definitions.</p></li>
 <li><p>Serialization of the execution state within an executing
 flowchart. The “execution state” is the collection of
-variables created by and used by the plugins in the
+variables created by and used by the plug-ins in the
 flowchart. This includes the molecular system object, which is
 stored in a global variable in the execution state.</p></li>
-<li><p>Restart in flowcharts, at the granularity of the plugins. This
-requires storing the execution state between executing plugins,
+<li><p>Restart in flowcharts, at the granularity of the plug-ins. This
+requires storing the execution state between executing plug-ins,
 along with the location in the flowchart.</p></li>
 </ol>
 </div>

@@ -11,13 +11,13 @@ use case of calculating properties of fluids to
 
 1. Create, test and refine :term:`flowcharts<flowchart>` for
    predicting the density and cohesive energy of organic liquids.
-#. Develop the capabilities of the `LAMMPS plugin`_ as needed for the
+#. Develop the capabilities of the `LAMMPS plug-in`_ as needed for the
    flowcharts.
-#. Create or enhance any other plugins needed.
+#. Create or enhance any other :term:`plug-ins<plug-in>` needed.
 
 While there are a large number of fluid properties that can be
 calculated, and a wide range of different types of fluids, this first
-phase will concentrate mostly on the plugins and flowcharts, and hence
+phase will concentrate mostly on the plug-ins and flowcharts, and hence
 uses on two simple properties, density and cohesive energy, for
 straighforward organic liquids such as benzene, toluene, alkanes,  and
 alcohols.
@@ -104,7 +104,7 @@ project, :ref:`2020_fluids_use_case`.
       *
 
 .. _LAMMPS: https://lammps.sandia.gov
-.. _LAMMPS plugin: https://github.com/molssi-seamm/lammps_step
+.. _LAMMPS plug-in: https://github.com/molssi-seamm/lammps_step
 .. _density of Ar: https://github.com/molssi-seamm/misc/blob/master/flowcharts/demos/ar_npt.flow
 .. _organic liquids: https://github.com/molssi-seamm/misc/blob/master/flowcharts/demos/ethane_npt.flow
 .. _COMPASS: https://doi.org/10.1021/jp980939v

@@ -15,9 +15,9 @@ The overall goals for SEAMM are
    computational molecular and materials codes (CMS), with a wide
    range of tools for building, simulation and analysis of molecular,
    fluid and crystalline materials.
-#. Provide developers an easy-to-use, well-defined plugin framework
-   for integrating their codes in the SEAMM environment so that users
-   can use their code. 
+#. Provide developers an easy-to-use, well-defined :term:`plug-in`
+   framework for integrating their codes in the SEAMM environment so
+   that users can use their code.
 #. Provide system managers and support staff an easier, more
    productive way to provide CMS functionality to end users. 
 
@@ -26,14 +26,14 @@ The goals for this first six-month phase of the project, starting July
 
 #. To establish a development process in accord with MolSSI best practices.
 #. To develop enough of the SEAMM framework to be useful
-#. To create sufficient plugins to run realistic, useful simulations
+#. To create sufficient plug-ins to run realistic, useful simulations
    with both forcefield and quantum methods.
 #. To use the MOPAC validation suite case as a use case to
    improve and test  the overall functionality of SEAMM and of the
-   MOPAC plugin.
+   MOPAC plug-in.
 #. To use the predicition of fluid properties as a use case to
    improve and test  the overall functionality of SEAMM and of the
-   LAMMPS plugin.
+   LAMMPS plug-in.
    
 
 Discussion and Achievements
@@ -44,21 +44,21 @@ Discussion and Achievements
    code, which at the moment is an unknown.
 
    This was partially acoomplished. Of a total of 18 repositories (6
-   for the core of SEAMM, 9 plugins, the dashboard, a cookiecutter,
+   for the core of SEAMM, 9 plug-ins, the dashboard, a cookiecutter,
    the website and a miscellaneous directory of support files) for a
    total of 12,479 lines of code, 40% of the nongraphical code is
-   currently tested automatically. All of the core and plugins have
+   currently tested automatically. All of the core and plug-ins have
    documentation at ReadTheDocs, and there is a beginning of user
    documentation at https://molssi-seamm.github.io/
 
 #. Design and implement a reference management system suitable for the
    requirements and use cases in SEAMM. Add the appropriate citations for
-   all the modules and plugins.
+   all the modules and plug-ins.
 
    Mostly Achieved: Developed MolSSI/reference_handler and added 53
    references for MOPAC -- though this is not yet the full number
-   needed for the functionality covered in the plugin. Have not yet
-   added references to the other plugins, though most should be
+   needed for the functionality covered in the plug-in. Have not yet
+   added references to the other plug-ins, though most should be
    simple. LAMMPS, however, will be considerable work, like MOPAC.
 
 #. Work out and implement a scheme to archive versions of the code
@@ -88,7 +88,7 @@ Discussion and Achievements
    calculations on 9 fluids with no issues. However, it became clear
    that the standard approach of running “long enough” was not
    satisfactory for high throughput calculations, and that it would be
-   straightforward to extend the plugin to target an accuracy rather
+   straightforward to extend the plug-in to target an accuracy rather
    than the number of steps. This is proposed for the next project
    period, at which time the full 50 calculations will be
    completed. Also, it will require a minor modification to LAMMPS to

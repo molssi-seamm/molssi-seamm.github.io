@@ -22,7 +22,7 @@ training, then you life is more complicated. You might need to choose
 one code and integrate yours into its environment. Or try to write
 translators so that it can work with several codes.
 
-Or you can put it into SEAMM as a plug-in, which is quite
+Or you can put it into SEAMM as a :term:`plug-in`, which is quite
 straightforward, and connect with the other codes that are in SEAMM,
 using the translators already in SEAMM. At worst, there is not much
 already in SEAMM that is helpful and you have to do the wrok you would

@@ -23,15 +23,15 @@ elsewhere.
 
 Tasks:
 ------
-1. Develop an **Input** plugin to provide both a GUI for setting
-   variables as well as commandline argument definitions.
+1. Develop an **Input** :term:`plug-in` to provide both a GUI for
+   setting variables as well as commandline argument definitions.
 #. Serialization of the execution state within an executing
    flowchart. The "execution state" is the collection of
-   variables created by and used by the plugins in the
+   variables created by and used by the plug-ins in the
    flowchart. This includes the molecular system object, which is
    stored in a global variable in the execution state.
-#. Restart in flowcharts, at the granularity of the plugins. This
-   requires storing the execution state between executing plugins,
+#. Restart in flowcharts, at the granularity of the plug-ins. This
+   requires storing the execution state between executing plug-ins,
    along with the location in the flowchart.
 
 Results and Discussion

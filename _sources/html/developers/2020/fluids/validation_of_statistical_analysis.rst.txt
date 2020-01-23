@@ -11,9 +11,9 @@ science, and is extremely relevant to molecular dynamics (MD) and
 Monte Carlo (MC) simulations in our field. However, our field is not
 terribly fluent in statistical analysis, and many codes do at best a
 partial job of the analysis. Therefore it is is important for SEAMM to
-provide a convenient library for plugins, examples of implementation,
-and approaches and :term:`flowcharts<flowchart>` for testing
-implementations.
+provide a convenient library for :term:`plug-ins<plug-in>`, examples
+of implementation, and approaches and :term:`flowcharts<flowchart>`
+for testing implementations.
 
 Tasks
 -----

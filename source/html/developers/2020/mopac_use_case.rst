@@ -14,7 +14,7 @@ to use this large dataset to
    semi-empirical quantum chemistry calculations using MOPAC. 
 #. Serve as a guiding application to develop the necessary
    functionality and infrastructure in SEAMM that execute any
-   arbitrary plugin.
+   arbitrary :term:`plug-in`.
 
 This was a very valuable project, in which we made considerable
 progress, but also learnt about issues and areas that needed more
@@ -23,7 +23,7 @@ same. There is more to be done!
 
 Tasks:
 ------
-1. Finalize current MOPAC plugin project (estimated time:)
+1. Finalize current MOPAC plug-in project (estimated time:)
 
    a. FINISH CATCHING ERRORS
    #. Plot :term:`flowchart` energies/enthalpies of vaporization vs
@@ -35,7 +35,7 @@ Tasks:
    SEAMM flowcharts in clusters (estimated time:)
 #. Investigate which current workflow execution software offers the
    cluster requirements that SEAMM needs (estimated time:)
-#. Create ‘mock’ use cases (i.e. without actually writing the plugins)
+#. Create ‘mock’ use cases (i.e. without actually writing the plug-ins)
    to explore the limitations of SEAMM flowcharts. For instance, free
    energy calculations, path sampling methods, flowcharts with ‘IF’
    statements.
@@ -56,14 +56,14 @@ Tasks:
 
 #. This would involve creating the following tools
 
-   a. A plugin that wraps system building tools (Packmol or mBuild for
+   a. A plug-in that wraps system building tools (Packmol or mBuild for
       liquids, for instance) 
-   #. A plugin that automatically wraps existing tools that atom type
+   #. A plug-in that automatically wraps existing tools that atom type
       a variety of systems, such as antechamber, foyer, gromacs
       atom-typing tools, amber tools, SEAMM atom-typing tool, etc. 
-   #. Make the plugin for LAMMPS (MD code) and Cassandra (MC) more
+   #. Make the plug-in for LAMMPS (MD code) and Cassandra (MC) more
       robust.
-   #. A plugin for each of the desired thermodynamic properties or one
+   #. A plug-in for each of the desired thermodynamic properties or one
       that encompass several of them.
 
 Potential Issues

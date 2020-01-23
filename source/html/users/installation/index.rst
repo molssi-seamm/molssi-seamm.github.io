@@ -45,8 +45,8 @@ Installing the Compute Engines
 are supported by conda-forge. So, at the moment, these instructions
 will not work under Windows.**
 
-The plugins in SEAMM use a number of external executables to accomplish
-their tasks.
+The :term:`plug-ins<plug-in>` in SEAMM use a number of external
+executables to accomplish their tasks.
 
    - **seamm_util** and **from_smiles_step** use parts of OpenBabel
    - **packmol_step** uses Packmol to build fluid systems
@@ -55,7 +55,7 @@ their tasks.
 
 Installing LAMMPS, OpenBabel and Packmol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you want to run flowcharts using these plugins, you will need to
+If you want to run flowcharts using these plug-ins, you will need to
 install the correct executables. All of these except MOPAC can be
 installed using the conda environment specified in
 `seamm-compute.yml`_ (right-click to download_)::

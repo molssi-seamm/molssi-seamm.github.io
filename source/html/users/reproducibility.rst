@@ -49,17 +49,17 @@ the codes usually set the seed for the random number generator
 randomly. In this case, while the physical results of duplicate runs
 should be identical within the statistical error bars, the details
 including the trajectory will be quite different. It is a good
-practice for the plug-ins to ensure that the seed actually used is
-printed, and the setup allows you to specifiy the seed so that you can
-indeed reproduce the run. Whether the plug-ins follow this advice is
-up to them, not SEAMM.
+practice for the :term:`plug-ins<plug-in>` to ensure that the seed
+actually used is printed, and the setup allows you to specifiy the
+seed so that you can indeed reproduce the run. Whether the plug-ins
+follow this advice is up to them, not SEAMM.
 
 Replicability
 -------------
 SEAMM does not guarantee replicability -- after all, replicability
 implies that two different people or groups tackle the same scientific
 problem, but don't share e.g. flowcharts. Nonetheless, SEAMM and the
-plugins can help a great deal. Because plug-ins simplify and clarify
+plug-ins can help a great deal. Because plug-ins simplify and clarify
 the input to the underlying codes, and should provide guidance to
 which parameters are relevant as well as provide use default values
 where possible, it is more likely that independent researchers will

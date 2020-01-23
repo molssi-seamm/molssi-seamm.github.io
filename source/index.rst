@@ -2,11 +2,11 @@
 What is SEAMM?
 **************
 SEAMM is a user-friendly environment for computational molecular and
-materials science, using plug-ins to provide a wide range of building,
-simulation and analysis tools. SEAMM handles the entire range of
-atomic, molecular, crystalline, amorphous, and fluid systems that are
-described at the level of atoms and electrons.  SEAMM provides three
-important capabilities:
+materials science, using :term:`plug-ins<plug-in>` to provide a wide
+range of building, simulation and analysis tools. SEAMM handles the
+entire range of atomic, molecular, crystalline, amorphous, and fluid
+systems that are described at the level of atoms and electrons.  SEAMM
+provides three important capabilities:
 
 * Productivity_: The computational tools are wrapped with plug-ins that
   adapt them to SEAMM and provide graphical interfaces (GUIs) that help

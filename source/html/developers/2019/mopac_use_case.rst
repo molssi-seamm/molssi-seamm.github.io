@@ -12,7 +12,7 @@ to use this large dataset to
    semi-empirical quantum chemistry calculations using MOPAC. 
 #. Serve as a guiding application to develop the necessary
    functionality and infrastructure in SEAMM that execute any
-   arbitrary plugin.
+   arbitrary :term:`plug-in`.
 
 Tasks:
 ------
@@ -26,17 +26,17 @@ Accomplishments
    a wide variety of molecular systems that include elements such as
    lanthanides or transition metals (Note: inputs to the flowchart
    were MOPAC input files provided by Stewart).
-#. Created the `Read Structure`_ plugin for reading structure files.
+#. Created the `Read Structure`_ plug-in for reading structure files.
 #. Debugged GUI or other internal errors found in the SEAMM core, the
-   read structure plugin and the MOPAC plugin.
+   read structure plug-in and the MOPAC plug-in.
 #. Identified systematic bugs in MOPAC and OpenBabel. Both are related
    to systems such as Li+ or Na + with zero valence electrons.
 #. Identify those keywords that “minimum common set” of keywords
    required to run any MOPAC job. 
 
-   a. The MOPAC plugin is a program that is designed to run a bulk of
+   a. The MOPAC plug-in is a program that is designed to run a bulk of
       MOPAC calculations (i.e. organic molecules, molecules with
-      transition metals or Lanthanides, etc). The plugin is not a GUI to
+      transition metals or Lanthanides, etc). The plug-in is not a GUI to
       run a single MOPAC calculation. Consequently,  we do not have to
       present every single MOPAC keyword in the GUI, but only those that
       are absolutely required to run any calculation, such as the
@@ -53,11 +53,11 @@ Accomplishments
       OPENSHELL 
 #. Execute most of the 8,300 MOPAC jobs, except those that generate
    errors in MOPAC or OpenBabel
-#. Include the citation manager into the MOPAC plugin to produce the
+#. Include the citation manager into the MOPAC plug-in to produce the
    relevant bibliography for any given run
 #. Execute most of the 8,300 MOPAC jobs, except those that generate
    errors in MOPAC or OpenBabel.
-#. Include the citation manager into the MOPAC plugin to produce the
+#. Include the citation manager into the MOPAC plug-in to produce the
    relevant bibliography for any given run.
 
 Discussion
