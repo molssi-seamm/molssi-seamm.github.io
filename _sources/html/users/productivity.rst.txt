@@ -4,11 +4,11 @@
 Productivity
 ************
 
-SEAMM helps you get your work done faster and more easilty. First, it
+SEAMM helps you get your work done faster and more easily. First, it
 helps you set up your calculations. The large simulation codes are
 wrapped in plug-ins which provide intuitive graphical user interfaces
 (GUIs) so you don't have to start with an empty input file in a text
-editor and remeber all the keywords and commands for each code. While
+editor and remember all the keywords and commands for each code. While
 you maybe very comfortable with one or two codes, you probably can use
 other codes in your research, but don't know their input as
 well. SEAMM supports a wide range of codes, such as
