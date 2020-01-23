@@ -10,9 +10,10 @@ You create a :term:`flowchart`, like this:
 	    :align: center
 	    :alt: An example flowchart
 
-that defines the steps you want in your simulation. Once you are
-satisfied with it, there are a number ways to run it ... but first,
-some more detail in running the SEAMM GUI and creating flowcharts.
+that defines the :term:`steps<step>` you want in your simulation. Once
+you are satisfied with it, there are a number ways to run it ... but
+first, some more detail in running the SEAMM GUI and creating
+flowcharts.
 
 Starting the SEAMM GUI
 **********************
