@@ -8,7 +8,7 @@ crystalline, amorphous, and fluid systems that are described at the
 level of atoms and electrons. 
 
 SEAMM is composed of plug-ins that wrap popular software packages and tools.
-As a result, users can create customized
+As a result, users can create 
 simulation protocols that include any combination of the following:
 
 1. **Quantum Chemistry (QC) calculations**
