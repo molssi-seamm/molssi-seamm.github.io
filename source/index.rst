@@ -5,8 +5,11 @@ What is SEAMM?
 SEAMM is a user-friendly environment for computational molecular and
 materials science. SEAMM handles the entire range of atomic, molecular,
 crystalline, amorphous, and fluid systems that are described at the
-level of atoms and electrons. SEAMM allow users to easily create simulation
-protocols that include any combination of the following:
+level of atoms and electrons. 
+
+SEAMM is composed of plug-ins that wrap popular software packages and tools.
+As a result, users can create customized
+simulation protocols that include any combination of the following:
 
 1. **Quantum Chemistry (QC) calculations**
  - *Ab-initio* and molecular Density Functional Theory (DFT)
@@ -27,7 +30,7 @@ Features
 2. A :ref:`graphical user interface` (GUI) to help you edit flowcharts and simulation input files.
 3. A :ref:`Dashboard` for monitoring your jobs.
 4. A :ref:`Job Manager` to automatically execute flowcharts in laptops, university clusters, supercomputers or in the cloud.
-5. A :ref:`Job Datastore` to help you manage the many calculation you do throughout the year.
+5. A :ref:`Job Datastore` to help you manage the many calculations you do throughout the year.
 6. A plug-in architecture that makes it straightforward for developers to implement and incorporate their codes and scripts into SEAMM.
 
 Getting Started
