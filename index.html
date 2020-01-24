@@ -86,7 +86,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="html/status.html">Status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="html/users/index.html">For Users</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="html/users/index.html">User Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="html/users/productivity.html">Productivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html/users/reproducibility.html">Reproducibility and Replicability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html/users/seamm_description/gui.html">SEAMM GUI</a></li>
@@ -102,7 +102,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="html/developers/index.html">For Developers</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="html/developers/index.html">Developers Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="html/developers/home_for_tools.html">A Home for Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html/developers/design/index.html">The Design of SEAMM</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="html/developers/design/plug-ins.html">Plug-ins</a></li>
@@ -199,34 +199,56 @@
   <div class="section" id="what-is-seamm">
 <h1>What is SEAMM?<a class="headerlink" href="#what-is-seamm" title="Permalink to this headline">¶</a></h1>
 <p>SEAMM is a user-friendly environment for computational molecular and
-materials science, using plug-ins to provide a wide range of building,
-simulation and analysis tools. SEAMM handles the entire range of
-atomic, molecular, crystalline, amorphous, and fluid systems that are
-described at the level of atoms and electrons.  SEAMM provides three
-important capabilities:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="html/users/seamm_description/productivity.html">Productivity</a>: The computational tools are wrapped with plug-ins that
-adapt them to SEAMM and provide graphical interfaces (GUIs) that help
-you set up calculations without editing complex input files and
-structures by hand.</p></li>
-<li><p><a class="reference external" href="html/users/seamm_description/reproducibility.html">Reproducibility and replicability</a>: Computational protocols are
-captured as shareable graphical flowcharts. You can create your own,
-or start with ones created by experts in a particular domain, tweaking
-them to fit your problem.</p></li>
-<li><p><a class="reference external" href="html/users/seamm_description/home_for_tools.html">A home for tools</a>: SEAMM makes it straightforward for
-developers and other experts to publish their existing and new codes
-and scripts as plug-ins and flowcharts, making them immediately
-available to the entire community.</p></li>
+materials science. SEAMM handles the entire range of atomic, molecular,
+crystalline, amorphous, and fluid systems that are described at the
+level of atoms and electrons. SEAMM allow users to easily create simulation
+protocols that include any combination of the following:</p>
+<ol class="arabic simple">
+<li><p><strong>Quantum Chemistry (QC) calculations</strong></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Ab-initio</em> and molecular Density Functional Theory (DFT)</p></li>
+<li><p>Semi-empirical using MOPAC</p></li>
+<li><p>Periodic DFT using Quantum Espresso or VASP</p></li>
 </ul>
-<p>SEAMM already has plug-ins for LAMMPS and MOPAC, with other quantum
-chemistry and forcefield-based MD and Monte Carlo codes coming
-soon. Other plug-ins use OpenBabel , RDKit and Packmol for reading in
-structures, building fluid boxes, cheminformatic functionality,
-etc. The SEAMM environment also provides integrated job management for
-running your calculations, and a job database for storing them,
-helping you manage the many projects and large numbers of calculations
-you do each year.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>Atomistic Molecular Mechanics (MM) simulations</strong></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Molecular Dynamics (MD)</p></li>
+<li><p>Monte Carlo (MC)</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>Helper tools</strong></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>System builders and atom typers for MM simulations</p></li>
+<li><p>Simulation analysis tools</p></li>
+<li><p>Cheminformatics capabilities using RDKit and OpenBabel</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="html/users/seamm_description/flowchart.html">Shareable and reproducible flowcharts</a> that visually represent simulation protocols.</p></li>
+<li><p>A <a class="reference internal" href="html/users/seamm_description/gui.html#graphical-user-interface"><span class="std std-ref">SEAMM GUI</span></a> (GUI) to help you edit flowcharts and simulation input files.</p></li>
+<li><p>A <a class="reference internal" href="html/users/seamm_description/dashboard.html#dashboard"><span class="std std-ref">Dashboard</span></a> for monitoring your jobs.</p></li>
+<li><p>A <a class="reference internal" href="html/users/seamm_description/job_manager.html#job-manager"><span class="std std-ref">Job Manager</span></a> to automatically execute flowcharts in laptops, university clusters, supercomputers or in the cloud.</p></li>
+<li><p>A <a class="reference internal" href="html/users/seamm_description/job_datastore.html#job-datastore"><span class="std std-ref">Job Datastore</span></a> to help you manage the many calculation you do throughout the year.</p></li>
+<li><p>A plug-in architecture that makes it straightforward for developers to implement and incorporate their codes and scripts into SEAMM.</p></li>
+</ol>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>If you would like to use SEAMM, please read the <a class="reference internal" href="html/users/index.html#users-docs"><span class="std std-ref">User Documentation</span></a>.</p>
+<p>If you are a developer and would like to incorporate your tool into SEAMM, please read the <a class="reference internal" href="html/developers/index.html#developers-docs"><span class="std std-ref">Developers Documentation</span></a>.</p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 

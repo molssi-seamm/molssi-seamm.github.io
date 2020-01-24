@@ -1,8 +1,8 @@
-.. _for_users:
+.. _users_docs:
 
-*********
-For Users
-*********
+******************
+User Documentation
+******************
 
 What is SEAMM?
 --------------
