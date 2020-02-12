@@ -1,8 +1,8 @@
-.. _for_developers:
+.. _developers_docs:
 
-**************
-For Developers
-**************
+************************
+Developers Documentation
+************************
 This subsection of the website is primarily about developing both
 SEAMM and :term:`plug-ins<plug-in>` for SEAMM. However, some sections
 such as the design of SEAMM might be of interest even if you don't

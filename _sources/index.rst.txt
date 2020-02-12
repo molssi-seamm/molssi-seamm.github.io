@@ -1,35 +1,50 @@
 **************
 What is SEAMM?
 **************
+
 SEAMM is a user-friendly environment for computational molecular and
-materials science, using :term:`plug-ins<plug-in>` to provide a wide
-range of building, simulation and analysis tools. SEAMM handles the
-entire range of atomic, molecular, crystalline, amorphous, and fluid
-systems that are described at the level of atoms and electrons.  SEAMM
-provides three important capabilities:
+materials science. SEAMM handles the entire range of atomic, molecular,
+crystalline, amorphous, and fluid systems that are described at the
+level of atoms and electrons. 
 
-* Productivity_: The computational tools are wrapped with plug-ins that
-  adapt them to SEAMM and provide graphical interfaces (GUIs) that help
-  you set up calculations without editing complex input files and
-  structures by hand.
-* `Reproducibility and replicability`_: Computational protocols are
-  captured as shareable graphical :term:`flowcharts<flowchart>`. You
-  can create your own, or start with ones created by experts in a
-  particular domain, tweaking them to fit your problem.
-* `A home for tools`_: SEAMM makes it straightforward for
-  developers and other experts to publish their existing and new codes
-  and scripts as plug-ins and flowcharts, making them immediately
-  available to the entire community.
+SEAMM is composed of :term:`plug-ins<plug-in>` that wrap popular
+software packages and tools.  As a result, users can create customized
+simulation protocols that include any combination of the following:
 
-SEAMM already has plug-ins for LAMMPS and MOPAC, with other quantum
-chemistry and forcefield-based MD and Monte Carlo codes coming
-soon. Other plug-ins use OpenBabel , RDKit and Packmol for reading in
-structures, building fluid boxes, cheminformatic functionality,
-etc. The SEAMM environment also provides an integrated :term:`Job
-Manager` for running your calculations, and a :term:`Job Datastore`
-for storing them, helping you manage the many projects and large
-numbers of calculations you do each year.
+1. **Quantum Chemistry (QC) calculations**
+ - *Ab-initio* and molecular Density Functional Theory (DFT)
+ - Semi-empirical using MOPAC
+ - Periodic DFT using Quantum Espresso or VASP
+2. **Atomistic Molecular Mechanics (MM) simulations**
+ - Molecular Dynamics (MD)
+ - Monte Carlo (MC)
+3. **Helper tools**
+ - System builders and atom typers for MM simulations
+ - Simulation analysis tools
+ - Cheminformatics capabilities using RDKit and OpenBabel
 
+Features
+--------
+
+1. `Shareable and reproducible flowcharts`_ that visually represent
+   simulation protocols.
+2. A :ref:`graphical user interface` (GUI) to help you edit flowcharts
+   and simulation input files. 
+3. A :ref:`Dashboard` for monitoring your jobs.
+4. A :ref:`Job Manager` to automatically execute flowcharts in
+   laptops, university clusters, supercomputers or in the cloud.
+5. A :ref:`Job Datastore` to help you manage the many calculations you
+   do throughout the year.
+6. A plug-in architecture that makes it straightforward for developers
+   to implement and incorporate their codes and scripts into SEAMM.
+
+Getting Started
+---------------
+
+If you would like to use SEAMM, please read the :ref:`users_docs`.
+
+If you are a developer and would like to incorporate your tool into
+SEAMM, please read the :ref:`developers_docs`.
 
 .. toctree::
     :maxdepth: 5
@@ -41,6 +56,4 @@ numbers of calculations you do each year.
     html/developers/index
     html/glossary
 
-.. _Productivity: html/users/seamm_description/productivity.html
-.. _Reproducibility and replicability: html/users/seamm_description/reproducibility.html
-.. _A home for tools: html/users/seamm_description/home_for_tools.html
+.. _Shareable and reproducible flowcharts: html/users/seamm_description/flowchart.html
