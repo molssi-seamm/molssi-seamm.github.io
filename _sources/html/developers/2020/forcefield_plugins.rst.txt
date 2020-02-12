@@ -1,8 +1,8 @@
-.. _forcefield_plugins_2020:
+.. _forcefield_plug-ins_2020:
 
-*************************
-Forcefield Plugins (2020)
-*************************
+*******************
+Forcefield Plug-Ins
+*******************
 
 Goals and Motivation
 --------------------

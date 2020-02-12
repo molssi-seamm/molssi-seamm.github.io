@@ -2,7 +2,7 @@
 Plug-ins
 ********
 
-The plug-ins are composed from three parts:
+The :term:`plug-ins<plug-in>` are composed from three parts:
 
    1. Parameters: the control parameters for the method implemented by
       the plug-in.
@@ -14,7 +14,7 @@ The plug-ins are composed from three parts:
 Each of these parts is subclassed from the appropriate base class
 provided by SEAMM, which ensure consistency amongst plug-ins and also
 minimizes the work for developers. They only need implement the parts
-that make their plugin different. This structure looks like this:
+that make their plug-in different. This structure looks like this:
 
 .. figure:: /images/Plug-in_UML.png
    :align: center
@@ -52,21 +52,21 @@ Requirements
 
    #. Mathematical equations -- at least basic ones -- allow
       substitution with either a variable, e.g. 'T' or an expression
-      such as 'T + 20' at some point in the execution of the plugin,
+      such as 'T + 20' at some point in the execution of the plug-in,
       implicitly replacing the parameters with either a numerical
       value (if it is numerical, like 'T') or one of the enumerated
       values.
 
-#. A plugin needs, when it executes, to be able to run in its own
+#. A plug-in needs, when it executes, to be able to run in its own
    unique environment.
 
-#. If a plugin executes one or more standalone executables, each
+#. If a plug-in executes one or more standalone executables, each
    executbale must have the possibility of executing in its own,
-   separate standalone environment. Two or more plugins may share
+   separate standalone environment. Two or more plug-ins may share
    executables and their environments, or may require different
    versions and environments for the same executable.
 
-#. Mechanisms must be provided to locate both the plugins and any
+#. Mechanisms must be provided to locate both the plug-ins and any
    other standalone executables that they use.
 
 #. A mechanism and approach needs to be defined and implemented for
@@ -76,7 +76,7 @@ Requirements
    sufficiently large and commonly used so as to warrant special
    handling.
 
-#. A mechanism for returning data from the plugin to the entity that
+#. A mechanism for returning data from the plug-in to the entity that
    executed it must be defined and provided. At a minimum this should
    be able to handle file-based transfer of the data.
 

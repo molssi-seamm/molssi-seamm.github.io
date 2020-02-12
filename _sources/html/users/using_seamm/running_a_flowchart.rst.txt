@@ -20,7 +20,8 @@ this::
 The asterisk (*) indicates the active environment. Note that it is
 also the first part of the prompt, depending on your setup.
 
-Once you have a flowchart, save it to disk and then execute it::
+Once you have a :term:`flowchart`, save it to disk and then execute
+it::
 
   flowcharts/mopac.flow --title 'A test of the MOPAC flowchart'
 

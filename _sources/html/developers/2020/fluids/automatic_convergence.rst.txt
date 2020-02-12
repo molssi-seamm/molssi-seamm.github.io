@@ -6,7 +6,7 @@ Automatic Convergence in MD/MC
 
 Goals and Motivation
 --------------------
-The `LAMMPS plugin`_ already has excellent capabilities for
+The `LAMMPS plug-in`_ already has excellent capabilities for
 statistical analysis of data generated during MD simulations. However,
 it is currently used for analysis after the run, not for control of
 the run itself. Typically there are two phases for any MD or MC
@@ -36,7 +36,7 @@ Tasks:
 #. Implement any needed statistical analysis methods in the
    `SEAMM utility library`_.
 #. Add the protocols chosen from those tested in steps 1 & 2 to the
-   `LAMMPS plugin`_, adding the appropriate user controls to the GUI.
+   `LAMMPS plug-in`_, adding the appropriate user controls to the GUI.
 #. Document both the new code and the new functionality in the user
    manual.
 #. Create both unit and functional tests for the new functionality.
@@ -44,6 +44,6 @@ Tasks:
 Results and Discussion
 ----------------------
 
-.. _LAMMPS plugin: https://github.com/molssi-seamm/lammps_step
+.. _LAMMPS plug-in: https://github.com/molssi-seamm/lammps_step
 .. _SEAMM utility library: https://github.com/molssi-seamm/seamm_util
    

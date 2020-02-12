@@ -22,7 +22,7 @@ training, then you life is more complicated. You might need to choose
 one code and integrate yours into its environment. Or try to write
 translators so that it can work with several codes.
 
-Or you can put it into SEAMM as a plug-in, which is quite
+Or you can put it into SEAMM as a :term:`plug-in`, which is quite
 straightforward, and connect with the other codes that are in SEAMM,
 using the translators already in SEAMM. At worst, there is not much
 already in SEAMM that is helpful and you have to do the wrok you would
@@ -31,9 +31,9 @@ in SEAMM, and you don't have to do much work.
 
 Either way, if you put your code into the SEAMM environment, all of
 the users of SEAMM can see it and use it. And because you made it easy
-to use, and published some example flowcharts, they will have an
-easier time getting started. You did do that, right? And in the
-future, as other developers add codes to SEAMM, they will work with
-yours with little or no extra work.
+to use, and published some example :term:`flowcharts<flowchart>`, they
+will have an easier time getting started. You did do that, right? And
+in the future, as other developers add codes to SEAMM, they will work
+with yours with little or no extra work.
 
 This is good for you, and good for users. Everyone wins.

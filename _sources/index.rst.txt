@@ -7,8 +7,8 @@ materials science. SEAMM handles the entire range of atomic, molecular,
 crystalline, amorphous, and fluid systems that are described at the
 level of atoms and electrons. 
 
-SEAMM is composed of plug-ins that wrap popular software packages and tools.
-As a result, users can create customized
+SEAMM is composed of :term:`plug-ins<plug-in>` that wrap popular
+software packages and tools.  As a result, users can create customized
 simulation protocols that include any combination of the following:
 
 1. **Quantum Chemistry (QC) calculations**
@@ -26,20 +26,25 @@ simulation protocols that include any combination of the following:
 Features
 --------
 
-1. `Shareable and reproducible flowcharts`_ that visually represent simulation protocols.
-2. A :ref:`graphical user interface` (GUI) to help you edit flowcharts and simulation input files.
+1. `Shareable and reproducible flowcharts`_ that visually represent
+   simulation protocols.
+2. A :ref:`graphical user interface` (GUI) to help you edit flowcharts
+   and simulation input files. 
 3. A :ref:`Dashboard` for monitoring your jobs.
-4. A :ref:`Job Manager` to automatically execute flowcharts in laptops, university clusters, supercomputers or in the cloud.
-5. A :ref:`Job Datastore` to help you manage the many calculations you do throughout the year.
-6. A plug-in architecture that makes it straightforward for developers to implement and incorporate their codes and scripts into SEAMM.
+4. A :ref:`Job Manager` to automatically execute flowcharts in
+   laptops, university clusters, supercomputers or in the cloud.
+5. A :ref:`Job Datastore` to help you manage the many calculations you
+   do throughout the year.
+6. A plug-in architecture that makes it straightforward for developers
+   to implement and incorporate their codes and scripts into SEAMM.
 
 Getting Started
 ---------------
 
 If you would like to use SEAMM, please read the :ref:`users_docs`.
 
-If you are a developer and would like to incorporate your tool into SEAMM, please read the :ref:`developers_docs`. 
-
+If you are a developer and would like to incorporate your tool into
+SEAMM, please read the :ref:`developers_docs`.
 
 .. toctree::
     :maxdepth: 5

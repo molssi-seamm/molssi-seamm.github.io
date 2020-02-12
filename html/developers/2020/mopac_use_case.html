@@ -117,7 +117,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Development Plans for 2020</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="general_improvements.html">General Improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="molecular_system.html">Molecular System (2020)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="forcefield_plugins.html">Forcefield Plugins (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefield_plugins.html">Forcefield Plug-Ins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dashboard.html">Dashboard (2020)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="versions.html">Support for Plugin Versions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="job_submission.html">Job Submission (2020)</a></li>
@@ -213,7 +213,7 @@ to use this large dataset to</p>
 semi-empirical quantum chemistry calculations using MOPAC.</p></li>
 <li><p>Serve as a guiding application to develop the necessary
 functionality and infrastructure in SEAMM that execute any
-arbitrary plugin.</p></li>
+arbitrary <a class="reference internal" href="../../glossary.html#term-plug-in"><span class="xref std std-term">plug-in</span></a>.</p></li>
 </ol>
 <p>This was a very valuable project, in which we made considerable
 progress, but also learnt about issues and areas that needed more
@@ -222,10 +222,11 @@ same. There is more to be done!</p>
 <div class="section" id="tasks">
 <h2>Tasks:<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Finalize current MOPAC plugin project (estimated time:)</p>
+<li><p>Finalize current MOPAC plug-in project (estimated time:)</p>
 <ol class="loweralpha simple">
 <li><p>FINISH CATCHING ERRORS</p></li>
-<li><p>Plot flowchart energies/enthalpies of vaporization vs reference values</p></li>
+<li><p>Plot <a class="reference internal" href="../../glossary.html#term-flowchart"><span class="xref std std-term">flowchart</span></a> energies/enthalpies of vaporization vs
+reference values</p></li>
 <li><p>Explore the extent to which input SMILES strings can be used
 instead of input MOPAC files for running MOPAC calculations.</p></li>
 </ol>
@@ -234,7 +235,7 @@ instead of input MOPAC files for running MOPAC calculations.</p></li>
 SEAMM flowcharts in clusters (estimated time:)</p></li>
 <li><p>Investigate which current workflow execution software offers the
 cluster requirements that SEAMM needs (estimated time:)</p></li>
-<li><p>Create ‘mock’ use cases (i.e. without actually writing the plugins)
+<li><p>Create ‘mock’ use cases (i.e. without actually writing the plug-ins)
 to explore the limitations of SEAMM flowcharts. For instance, free
 energy calculations, path sampling methods, flowcharts with ‘IF’
 statements.</p></li>
@@ -256,14 +257,14 @@ an existing database, such as</p>
 </li>
 <li><p>This would involve creating the following tools</p>
 <ol class="loweralpha simple">
-<li><p>A plugin that wraps system building tools (Packmol or mBuild for
+<li><p>A plug-in that wraps system building tools (Packmol or mBuild for
 liquids, for instance)</p></li>
-<li><p>A plugin that automatically wraps existing tools that atom type
+<li><p>A plug-in that automatically wraps existing tools that atom type
 a variety of systems, such as antechamber, foyer, gromacs
 atom-typing tools, amber tools, SEAMM atom-typing tool, etc.</p></li>
-<li><p>Make the plugin for LAMMPS (MD code) and Cassandra (MC) more
+<li><p>Make the plug-in for LAMMPS (MD code) and Cassandra (MC) more
 robust.</p></li>
-<li><p>A plugin for each of the desired thermodynamic properties or one
+<li><p>A plug-in for each of the desired thermodynamic properties or one
 that encompass several of them.</p></li>
 </ol>
 </li>

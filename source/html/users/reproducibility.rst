@@ -4,13 +4,13 @@
 Reproducibility and Replicability
 *********************************
 
-The Productivity_ section mentioned that the flowcharts are reusable
-and shareable. Let's look into that a bit more, because it is a much
-more powerful feature than is perhaps obvious at first glance. But
-before that, lets define some terms, because there is a lot of
-confusion in the literature and common usage. We will follow the
-National Academies of Sciences report `Reproducibility and
-Replicability in Science`_
+The Productivity_ section mentioned that the
+:term:`flowcharts<flowchart>` are reusable and shareable. Let's look
+into that a bit more, because it is a much more powerful feature than
+is perhaps obvious at first glance. But before that, lets define some
+terms, because there is a lot of confusion in the literature and
+common usage. We will follow the National Academies of Sciences report
+`Reproducibility and Replicability in Science`_
 
 Reproducibility
    is obtaining consistent results using the same input data,
@@ -49,17 +49,17 @@ the codes usually set the seed for the random number generator
 randomly. In this case, while the physical results of duplicate runs
 should be identical within the statistical error bars, the details
 including the trajectory will be quite different. It is a good
-practice for the plug-ins to ensure that the seed actually used is
-printed, and the setup allows you to specifiy the seed so that you can
-indeed reproduce the run. Whether the plug-ins follow this advice is
-up to them, not SEAMM.
+practice for the :term:`plug-ins<plug-in>` to ensure that the seed
+actually used is printed, and the setup allows you to specifiy the
+seed so that you can indeed reproduce the run. Whether the plug-ins
+follow this advice is up to them, not SEAMM.
 
 Replicability
 -------------
 SEAMM does not guarantee replicability -- after all, replicability
 implies that two different people or groups tackle the same scientific
 problem, but don't share e.g. flowcharts. Nonetheless, SEAMM and the
-plugins can help a great deal. Because plug-ins simplify and clarify
+plug-ins can help a great deal. Because plug-ins simplify and clarify
 the input to the underlying codes, and should provide guidance to
 which parameters are relevant as well as provide use default values
 where possible, it is more likely that independent researchers will

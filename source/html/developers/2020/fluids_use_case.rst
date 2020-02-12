@@ -13,9 +13,9 @@ fluids to
 
 1. Create, test and refine flowcharts for predicting the density and
    cohesive energy of organic liquids.
-#. Develop the capabilities of the `LAMMPS plugin`_ as needed for the
+#. Develop the capabilities of the `LAMMPS plug-in`_ as needed for the
    flowcharts.
-#. Create or enhance any other plugins needed.
+#. Create or enhance any other :term:`plug-ins<plug-in>` needed.
 
 The first phase of the project identified the following areas of
 difficulties and questions for performing the study:
@@ -39,7 +39,7 @@ difficulties and questions for performing the study:
 
 Tasks:
 ------
-1. Enhance the `LAMMPS plugin`_ to automatically equilibrate a system
+1. Enhance the `LAMMPS plug-in`_ to automatically equilibrate a system
    until specified variables are converged and to automatically
    determine the length of a simulation to deliver specified
    properties to given error bars. See
@@ -49,11 +49,11 @@ Tasks:
 #. Determine the effect of fluid system size on resulting properties,
    and produce both flowcharts to automate this determination as well
    as guides to users for reasonable system size. This guidance should
-   preferably be embedded in e.g. a fluids plugin or flowcharts. See
+   preferably be embedded in e.g. a fluids plug-in or flowcharts. See
    :ref:`system_size_effects_2020` for more detail.
 #. Implement one or more other forcefields using the new forcefield
-   plugin approach. See :ref:`forcefield_plugins_2020` for details on
-   the forcefield plugins.
+   plug-in approach. See :ref:`forcefield_plug-ins_2020` for details on
+   the forcefield plug-ins.
 #. Calculate and analyze the liquid density of 50 compounds, using the
    new protocols and tools.
 
@@ -67,5 +67,5 @@ Discussion
    fluids/*
 
 .. _LAMMPS: https://lammps.sandia.gov
-.. _LAMMPS plugin: https://github.com/molssi-seamm/lammps_step
+.. _LAMMPS plug-in: https://github.com/molssi-seamm/lammps_step
 .. _COMPASS: https://doi.org/10.1021/jp980939v

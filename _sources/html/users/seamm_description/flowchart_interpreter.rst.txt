@@ -4,7 +4,7 @@
 Flowchart Interpreter
 *********************
 
-A :term:flowchart is a set of instructions for how to carry out a
+A :term:`flowchart` is a set of instructions for how to carry out a
 simulation protocol. In the middle of SEAMM is an intepreter that
 reads the language of a flowchart and turns it into instructions for
 what to do, which programs to run, what data to collect and all the

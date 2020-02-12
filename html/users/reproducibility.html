@@ -117,7 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/2020/index.html">Development Plans for 2020</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developers/2020/general_improvements.html">General Improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developers/2020/molecular_system.html">Molecular System (2020)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../developers/2020/forcefield_plugins.html">Forcefield Plugins (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/forcefield_plugins.html">Forcefield Plug-Ins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developers/2020/dashboard.html">Dashboard (2020)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developers/2020/versions.html">Support for Plugin Versions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developers/2020/job_submission.html">Job Submission (2020)</a></li>
@@ -201,13 +201,13 @@
             
   <div class="section" id="reproducibility-and-replicability">
 <span id="reproducibility"></span><h1>Reproducibility and Replicability<a class="headerlink" href="#reproducibility-and-replicability" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference external" href="/html/productivity.html">Productivity</a> section mentioned that the flowcharts are reusable
-and shareable. Let’s look into that a bit more, because it is a much
-more powerful feature than is perhaps obvious at first glance. But
-before that, lets define some terms, because there is a lot of
-confusion in the literature and common usage. We will follow the
-National Academies of Sciences report <a class="reference external" href="https://www.nap.edu/catalog/25303/reproducibility-and-replicability-in-science">Reproducibility and
-Replicability in Science</a></p>
+<p>The <a class="reference external" href="/html/productivity.html">Productivity</a> section mentioned that the
+<a class="reference internal" href="../glossary.html#term-flowchart"><span class="xref std std-term">flowcharts</span></a> are reusable and shareable. Let’s look
+into that a bit more, because it is a much more powerful feature than
+is perhaps obvious at first glance. But before that, lets define some
+terms, because there is a lot of confusion in the literature and
+common usage. We will follow the National Academies of Sciences report
+<a class="reference external" href="https://www.nap.edu/catalog/25303/reproducibility-and-replicability-in-science">Reproducibility and Replicability in Science</a></p>
 <dl class="simple">
 <dt>Reproducibility</dt><dd><p>is obtaining consistent results using the same input data,
 computational steps, methods, and code, and conditions of
@@ -242,17 +242,17 @@ the codes usually set the seed for the random number generator
 randomly. In this case, while the physical results of duplicate runs
 should be identical within the statistical error bars, the details
 including the trajectory will be quite different. It is a good
-practice for the plug-ins to ensure that the seed actually used is
-printed, and the setup allows you to specifiy the seed so that you can
-indeed reproduce the run. Whether the plug-ins follow this advice is
-up to them, not SEAMM.</p>
+practice for the <a class="reference internal" href="../glossary.html#term-plug-in"><span class="xref std std-term">plug-ins</span></a> to ensure that the seed
+actually used is printed, and the setup allows you to specifiy the
+seed so that you can indeed reproduce the run. Whether the plug-ins
+follow this advice is up to them, not SEAMM.</p>
 </div>
 <div class="section" id="replicability">
 <h2>Replicability<a class="headerlink" href="#replicability" title="Permalink to this headline">¶</a></h2>
 <p>SEAMM does not guarantee replicability – after all, replicability
 implies that two different people or groups tackle the same scientific
 problem, but don’t share e.g. flowcharts. Nonetheless, SEAMM and the
-plugins can help a great deal. Because plug-ins simplify and clarify
+plug-ins can help a great deal. Because plug-ins simplify and clarify
 the input to the underlying codes, and should provide guidance to
 which parameters are relevant as well as provide use default values
 where possible, it is more likely that independent researchers will
