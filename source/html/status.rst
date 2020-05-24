@@ -28,6 +28,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    mopac_step_,           |mopac1|,       |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac5|,       |mopac6|
    packmol_step_,         |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
    read_structure_step_,  |structure1|,   |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|
+   solvate_step_,         |solvate1|,     |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate5|,     |solvate6|
    table_step_,           |table1|,       |table2|,        |table3|,   	     	       	 |table4|,        |table5|,       |table6|
 
 
@@ -394,6 +395,34 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. |structure6| image:: https://img.shields.io/pypi/v/read_structure_step.svg
    :target: https://pypi.python.org/pypi/read_structure_step
+   :alt: PyPi VERSION
+
+.. Solvate step badges
+
+.. _solvate_step: https://github.com/molssi-seamm/solvate_step
+
+.. |solvate1| image:: https://img.shields.io/travis/molssi-seamm/solvate_step.svg
+   :target: https://travis-ci.org/molssi-seamm/solvate_step
+   :alt: Build Status
+
+.. |solvate2| image:: https://codecov.io/gh/molssi-seamm/solvate_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/solvate_step
+   :alt: Code Coverage
+
+.. |solvate3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/solvate_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/solvate_step/context:python
+   :alt: Code Quality
+
+.. |solvate4| image:: https://readthedocs.org/projects/solvate-step/badge/?version=latest
+   :target: https://solvate-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |solvate5| image:: https://pyup.io/repos/github/molssi-seamm/solvate_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/solvate_step/
+   :alt: Updates for Dependencies
+
+.. |solvate6| image:: https://img.shields.io/pypi/v/solvate_step.svg
+   :target: https://pypi.python.org/pypi/solvate_step
    :alt: PyPi VERSION
 
 .. Table step badges
