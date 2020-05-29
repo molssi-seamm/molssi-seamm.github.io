@@ -11,6 +11,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    seamm_,             |seamm1|,     |seamm2|,      |seamm3|,   	   |seamm4|,      |seamm5|,     |seamm6|
    seamm_util_,        |su1|,        |su2|,         |su3|,      	   |su4|,         |su5|,        |su6|
    seamm_widgets_,     |sw1|,        |sw2|,         |sw3|,      	   |sw4|,         |sw5|,        |sw6|
+   seamm_jobserver_,   |sj1|,        |sj2|,         |sj3|,      	   |sj4|,         |sj5|,        |sj6|
    seamm_ff_util_,     |sf1|,        |sf2|,         |sf3|,      	   |sf4|,         |sf5|,        |sf6|
    reference_handler_, |rh1|,        |rh2|,         |rh3|,      	   |rh4|,         |rh5|,        |rh6|
 
@@ -115,6 +116,34 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. |sw6| image:: https://img.shields.io/pypi/v/seamm_widgets.svg
    :target: https://pypi.python.org/pypi/seamm_widgets
+   :alt: PyPi VERSION
+
+.. seamm_jobserver badges
+
+.. _seamm_jobserver: https://github.com/molssi-seamm/seamm_jobserver
+
+.. |sj1| image:: https://img.shields.io/travis/molssi-seamm/seamm_jobserver.svg
+   :target: https://travis-ci.org/molssi-seamm/seamm_jobserver
+   :alt: Build Status
+
+.. |sj2| image:: https://codecov.io/gh/molssi-seamm/seamm_jobserver/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_jobserver
+   :alt: Code Coverage
+
+.. |sj3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/seamm_jobserver.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/seamm_jobserver/context:python
+   :alt: Code Quality
+
+.. |sj4| image:: https://readthedocs.org/projects/seamm-jobserver/badge/?version=latest
+   :target: https://seamm-jobserver.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |sj5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_jobserver/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/seamm_jobserver/
+   :alt: Updates for Dependencies
+
+.. |sj6| image:: https://img.shields.io/pypi/v/seamm_jobserver.svg
+   :target: https://pypi.python.org/pypi/seamm_jobserver
    :alt: PyPi VERSION
 
 .. seamm_ff_util badges
