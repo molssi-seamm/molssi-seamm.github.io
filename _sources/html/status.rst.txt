@@ -30,6 +30,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    packmol_step_,         |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
    read_structure_step_,  |structure1|,   |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|
    solvate_step_,         |solvate1|,     |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate5|,     |solvate6|
+   supercell_step_,       |supercell1|,   |supercell2|,    |supercell3|,		 |supercell4|,    |supercell5|,   |supercell6|
    table_step_,           |table1|,       |table2|,        |table3|,   	     	       	 |table4|,        |table5|,       |table6|
 
 
@@ -452,6 +453,34 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. |solvate6| image:: https://img.shields.io/pypi/v/solvate_step.svg
    :target: https://pypi.python.org/pypi/solvate_step
+   :alt: PyPi VERSION
+
+.. Supercell step badges
+
+.. _supercell_step: https://github.com/molssi-seamm/supercell_step
+
+.. |supercell1| image:: https://img.shields.io/travis/molssi-seamm/supercell_step.svg
+   :target: https://travis-ci.org/molssi-seamm/supercell_step
+   :alt: Build Status
+
+.. |supercell2| image:: https://codecov.io/gh/molssi-seamm/supercell_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/supercell_step
+   :alt: Code Coverage
+
+.. |supercell3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/supercell_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/supercell_step/context:python
+   :alt: Code Quality
+
+.. |supercell4| image:: https://readthedocs.org/projects/supercell-step/badge/?version=latest
+   :target: https://supercell-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |supercell5| image:: https://pyup.io/repos/github/molssi-seamm/supercell_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/supercell_step/
+   :alt: Updates for Dependencies
+
+.. |supercell6| image:: https://img.shields.io/pypi/v/supercell_step.svg
+   :target: https://pypi.python.org/pypi/supercell_step
    :alt: PyPi VERSION
 
 .. Table step badges
