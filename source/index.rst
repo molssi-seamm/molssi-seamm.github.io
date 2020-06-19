@@ -14,14 +14,14 @@ protocols that include any combination of the following:
 
 1. **Quantum Chemistry (QC) calculations**
 
- - *Ab-initio* and molecular Density Functional Theory (DFT)
+ - *Ab-initio* and molecular Density Functional Theory (DFT) (in progress)
  - Semi-empirical using MOPAC
- - Periodic DFT using Quantum Espresso or VASP
+ - Periodic DFT using Quantum Espresso or VASP (in progress)
 
 2. **Atomistic Molecular Mechanics (MM) simulations**
 
  - Molecular Dynamics (MD)
- - Monte Carlo (MC)
+ - Monte Carlo (MC) (in progress)
 
 3. **Helper tools**
 
@@ -52,6 +52,8 @@ If you would like to use SEAMM, please read the :ref:`users_docs`.
 If you are a developer and would like to incorporate your tool into
 SEAMM, please read the :ref:`developers_docs`.
 
+The source is at GitHub in the `MolSSI SEAMM project`_
+
 .. toctree::
     :maxdepth: 5
     :titlesonly:
@@ -60,6 +62,8 @@ SEAMM, please read the :ref:`developers_docs`.
     html/status
     html/users/index
     html/developers/index
+    https://github.com/molssi-seamm
     html/glossary
 
 .. _Shareable and reproducible flowcharts: html/users/seamm_description/flowchart.html
+.. _MolSSI SEAMM project: https://github.com/molssi-seamm
