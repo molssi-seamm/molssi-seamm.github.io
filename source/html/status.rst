@@ -13,6 +13,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    seamm_widgets_,     |sw1|,        |sw2|,         |sw3|,      	   |sw4|,         |sw5|,        |sw6|
    seamm_jobserver_,   |sj1|,        |sj2|,         |sj3|,      	   |sj4|,         |sj5|,        |sj6|
    seamm_ff_util_,     |sf1|,        |sf2|,         |sf3|,      	   |sf4|,         |sf5|,        |sf6|
+   molsystem_,         |sy1|,        |sy2|,         |sy3|,      	   |sy4|,         |sy5|,        |sy6|
    reference_handler_, |rh1|,        |rh2|,         |rh3|,      	   |rh4|,         |rh5|,        |rh6|
 
 
@@ -175,6 +176,34 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pypi.python.org/pypi/seamm_ff_util
    :alt: PyPi VERSION
 
+.. molsystem badges
+
+.. _molsystem: https://github.com/molssi-seamm/molsystem
+
+.. |sy1| image:: https://img.shields.io/travis/molssi-seamm/molsystem.svg
+   :target: https://travis-ci.org/molssi-seamm/molsystem
+   :alt: Build Status
+
+.. |sy2| image:: https://codecov.io/gh/molssi-seamm/molsystem/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/molsystem
+   :alt: Code Coverage
+
+.. |sy3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/molsystem.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/molsystem/context:python
+   :alt: Code Quality
+
+.. |sy4| image:: https://readthedocs.org/projects/molsystem/badge/?version=latest
+   :target: https://molsystem.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |sy5| image:: https://pyup.io/repos/github/molssi-seamm/molsystem/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/molsystem/
+   :alt: Updates for Dependencies
+
+.. |sy6| image:: https://img.shields.io/pypi/v/molsystem.svg
+   :target: https://pypi.python.org/pypi/molsystem
+   :alt: PyPi VERSION
+
 .. reference_handler badges
 
 .. _reference_handler: https://github.com/molssi/reference_handler
@@ -191,7 +220,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/MolSSI/reference_handler/context:python
    :alt: Code Quality
 
-.. |rh4| image:: https://readthedocs.org/projects/reference-handle/badge/?version=latest
+.. |rh4| image:: https://readthedocs.org/projects/reference-handler/badge/?version=latest
    :target: https://reference-handler.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
