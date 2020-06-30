@@ -7,32 +7,32 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 .. csv-table:: Core Modules
    :header-rows: 1
 
-   "Core Module", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi ---"
-   seamm_,             |seamm1|,     |seamm2|,      |seamm3|,   	   |seamm4|,      |seamm5|,     |seamm6|
-   seamm_util_,        |su1|,        |su2|,         |su3|,      	   |su4|,         |su5|,        |su6|
-   seamm_widgets_,     |sw1|,        |sw2|,         |sw3|,      	   |sw4|,         |sw5|,        |sw6|
-   seamm_jobserver_,   |sj1|,        |sj2|,         |sj3|,      	   |sj4|,         |sj5|,        |sj6|
-   seamm_ff_util_,     |sf1|,        |sf2|,         |sf3|,      	   |sf4|,         |sf5|,        |sf6|
-   molsystem_,         |sy1|,        |sy2|,         |sy3|,      	   |sy4|,         |sy5|,        |sy6|
-   reference_handler_, |rh1|,        |rh2|,         |rh3|,      	   |rh4|,         |rh5|,        |rh6|
+   "Core Module",   "Pull Requests", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi ---"
+   seamm_,             |seamm0|,     |seamm1|,       |seamm2|,         |seamm3|,   	   |seamm4|,      |seamm5|,     |seamm6|
+   seamm_util_,        |su0|,        |su1|,          |su2|,            |su3|,      	   |su4|,         |su5|,        |su6|
+   seamm_widgets_,     |sw0|,        |sw1|,          |sw2|,            |sw3|,      	   |sw4|,         |sw5|,        |sw6|
+   seamm_jobserver_,   |sj0|,        |sj1|,          |sj2|,            |sj3|,      	   |sj4|,         |sj5|,        |sj6|
+   seamm_ff_util_,     |sf0|,        |sf1|,          |sf2|,            |sf3|,      	   |sf4|,         |sf5|,        |sf6|
+   molsystem_,         |sy0|,        |sy1|,          |sy2|,            |sy3|,      	   |sy4|,         |sy5|,        |sy6|
+   reference_handler_, |rh0|,        |rh1|,          |rh2|,            |rh3|,      	   |rh4|,         |rh5|,        |rh6|
 
 
 
 .. csv-table:: Plug-Ins
    :header-rows: 1
 
-   Plug-In,                "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi---"
-   custom_step_,          |custom1|,      |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom5|,      |custom6|
-   forcefield_step_,      |ffield1|,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield5|,      |ffield6|
-   from_smiles_step_,     |smiles1|,      |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles5|,      |smiles6|
-   lammps_step_,          |lammps1|,      |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps5|,      |lammps6|
-   loop_step_,            |loop1|,        |loop2|,         |loop3|,    	     	       	 |loop4|,         |loop5|,        |loop6|
-   mopac_step_,           |mopac1|,       |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac5|,       |mopac6|
-   packmol_step_,         |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
-   read_structure_step_,  |structure1|,   |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|
-   solvate_step_,         |solvate1|,     |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate5|,     |solvate6|
-   supercell_step_,       |supercell1|,   |supercell2|,    |supercell3|,		 |supercell4|,    |supercell5|,   |supercell6|
-   table_step_,           |table1|,       |table2|,        |table3|,   	     	       	 |table4|,        |table5|,       |table6|
+   Plug-In,                "Pull Requests", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi---"
+   custom_step_,          |custom0|,      |custom1|,      |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom5|,      |custom6|
+   forcefield_step_,      |ffield0|,      |ffield1|,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield5|,      |ffield6|
+   from_smiles_step_,     |smiles0|,      |smiles1|,      |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles5|,      |smiles6|
+   lammps_step_,          |lammps0|,      |lammps1|,      |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps5|,      |lammps6|
+   loop_step_,            |loop0|,        |loop1|,        |loop2|,         |loop3|,    	     	       	 |loop4|,         |loop5|,        |loop6|
+   mopac_step_,           |mopac0|,       |mopac1|,       |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac5|,       |mopac6|
+   packmol_step_,         |packmol0|,     |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
+   read_structure_step_,  |structure0|,   |structure1|,   |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|
+   solvate_step_,         |solvate0|,     |solvate1|,     |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate5|,     |solvate6|
+   supercell_step_,       |supercell0|,   |supercell1|,   |supercell2|,    |supercell3|,		 |supercell4|,    |supercell5|,   |supercell6|
+   table_step_,           |table0|,       |table1|,       |table2|,        |table3|,   	     	       	 |table4|,        |table5|,       |table6|
 
 
 
@@ -40,7 +40,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _seamm: https://github.com/molssi-seamm/seamm
 
-.. |seamm1| image:: https://img.shields.io/travis/molssi-seamm/seamm.svg
+.. |seamm0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/seamm
+   :target: https://github.com/molssi-seamm/seamm/pulls
+   :alt: GitHub pull requests
+
+.. |seamm1| image:: https://travis-ci.org/molssi-seamm/seamm.svg
    :target: https://travis-ci.org/molssi-seamm/seamm
    :alt: Build Status
 
@@ -68,7 +72,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _seamm_util: https://github.com/molssi-seamm/seamm_util
 
-.. |su1| image:: https://img.shields.io/travis/molssi-seamm/seamm_util.svg
+.. |su0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/seamm_util
+   :target: https://github.com/molssi-seamm/seamm_util/pulls
+   :alt: GitHub pull requests
+
+.. |su1| image:: https://travis-ci.org/molssi-seamm/seamm_util.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_util
    :alt: Build Status
 
@@ -96,7 +104,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _seamm_widgets: https://github.com/molssi-seamm/seamm_widgets
 
-.. |sw1| image:: https://img.shields.io/travis/molssi-seamm/seamm_widgets.svg
+.. |sw0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/seamm_widgets
+   :target: https://github.com/molssi-seamm/seamm_widgets/pulls
+   :alt: GitHub pull requests
+
+.. |sw1| image:: https://travis-ci.org/molssi-seamm/seamm_widgets.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_widgets
    :alt: Build Status
 
@@ -124,7 +136,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _seamm_jobserver: https://github.com/molssi-seamm/seamm_jobserver
 
-.. |sj1| image:: https://img.shields.io/travis/molssi-seamm/seamm_jobserver.svg
+.. |sj0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/seamm_jobserver
+   :target: https://github.com/molssi-seamm/seamm_jobserver/pulls
+   :alt: GitHub pull requests
+
+.. |sj1| image:: https://travis-ci.org/molssi-seamm/seamm_jobserver.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_jobserver
    :alt: Build Status
 
@@ -152,7 +168,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _seamm_ff_util: https://github.com/molssi-seamm/seamm_ff_util
 
-.. |sf1| image:: https://img.shields.io/travis/molssi-seamm/seamm_ff_util.svg
+.. |sf0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/seamm_widgets
+   :target: https://github.com/molssi-seamm/seamm_widgets/pulls
+   :alt: GitHub pull requests
+
+.. |sf1| image:: https://travis-ci.org/molssi-seamm/seamm_ff_util.svg
    :target: https://travis-ci.org/molssi-seamm/seamm_ff_util
    :alt: Build Status
 
@@ -180,7 +200,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _molsystem: https://github.com/molssi-seamm/molsystem
 
-.. |sy1| image:: https://img.shields.io/travis/molssi-seamm/molsystem.svg
+.. |sy0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/molsystem
+   :target: https://github.com/molssi-seamm/molsystem/pulls
+   :alt: GitHub pull requests
+
+.. |sy1| image:: https://travis-ci.org/molssi-seamm/molsystem.svg
    :target: https://travis-ci.org/molssi-seamm/molsystem
    :alt: Build Status
 
@@ -208,7 +232,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _reference_handler: https://github.com/molssi/reference_handler
 
-.. |rh1| image:: https://img.shields.io/travis/molssi/reference_handler.svg
+.. |rh0| image:: https://img.shields.io/github/issues-pr-raw/molssi/reference_handler
+   :target: https://github.com/molssi-seamm/reference/pulls
+   :alt: GitHub pull requests
+
+.. |rh1| image:: https://travis-ci.org/molssi/reference_handler.svg
    :target: https://travis-ci.org/molssi/reference_handler
    :alt: Build Status
 
@@ -236,7 +264,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _custom_step: https://github.com/molssi-seamm/custom_step
 
-.. |custom1| image:: https://img.shields.io/travis/molssi-seamm/custom_step.svg
+.. |custom0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/custom_step
+   :target: https://github.com/molssi-seamm/custom_step/pulls
+   :alt: GitHub pull requests
+
+.. |custom1| image:: https://travis-ci.org/molssi-seamm/custom_step.svg
    :target: https://travis-ci.org/molssi-seamm/custom_step
    :alt: Build Status
 
@@ -264,7 +296,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _forcefield_step: https://github.com/molssi-seamm/forcefield_step
 
-.. |ffield1| image:: https://img.shields.io/travis/molssi-seamm/forcefield_step.svg
+.. |ffield0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/forcefield_step
+   :target: https://github.com/molssi-seamm/forcefield_step/pulls
+   :alt: GitHub pull requests
+
+.. |ffield1| image:: https://travis-ci.org/molssi-seamm/forcefield_step.svg?branch=master
    :target: https://travis-ci.org/molssi-seamm/forcefield_step
    :alt: Build Status
 
@@ -292,7 +328,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _from_smiles_step: https://github.com/molssi-seamm/from_smiles_step
 
-.. |smiles1| image:: https://img.shields.io/travis/molssi-seamm/from_smiles_step.svg
+.. |smiles0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/from_smiles_step
+   :target: https://github.com/molssi-seamm/from_smiles_step/pulls
+   :alt: GitHub pull requests
+
+.. |smiles1| image:: https://travis-ci.org/molssi-seamm/from_smiles_step.svg
    :target: https://travis-ci.org/molssi-seamm/from_smiles_step
    :alt: Build Status
 
@@ -320,7 +360,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _lammps_step: https://github.com/molssi-seamm/lammps_step
 
-.. |lammps1| image:: https://img.shields.io/travis/molssi-seamm/lammps_step.svg
+.. |lammps0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/lammps_step
+   :target: https://github.com/molssi-seamm/lammps_step/pulls
+   :alt: GitHub pull requests
+
+.. |lammps1| image:: https://travis-ci.org/molssi-seamm/lammps_step.svg
    :target: https://travis-ci.org/molssi-seamm/lammps_step
    :alt: Build Status
 
@@ -348,7 +392,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _loop_step: https://github.com/molssi-seamm/loop_step
 
-.. |loop1| image:: https://img.shields.io/travis/molssi-seamm/loop_step.svg
+.. |loop0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/loop_step
+   :target: https://github.com/molssi-seamm/loop_step/pulls
+   :alt: GitHub pull requests
+
+.. |loop1| image:: https://travis-ci.org/molssi-seamm/loop_step.svg
    :target: https://travis-ci.org/molssi-seamm/loop_step
    :alt: Build Status
 
@@ -376,7 +424,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _mopac_step: https://github.com/molssi-seamm/mopac_step
 
-.. |mopac1| image:: https://img.shields.io/travis/molssi-seamm/mopac_step.svg
+.. |mopac0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/mopac_step
+   :target: https://github.com/molssi-seamm/mopac_step/pulls
+   :alt: GitHub pull requests
+
+.. |mopac1| image:: https://travis-ci.org/molssi-seamm/mopac_step.svg
    :target: https://travis-ci.org/molssi-seamm/mopac_step
    :alt: Build Status
 
@@ -404,7 +456,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _packmol_step: https://github.com/molssi-seamm/packmol_step
 
-.. |packmol1| image:: https://img.shields.io/travis/molssi-seamm/packmol_step.svg
+.. |packmol0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/packmol_step
+   :target: https://github.com/molssi-seamm/packmol_step/pulls
+   :alt: GitHub pull requests
+
+.. |packmol1| image:: https://travis-ci.org/molssi-seamm/packmol_step.svg
    :target: https://travis-ci.org/molssi-seamm/packmol_step
    :alt: Build Status
 
@@ -432,7 +488,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _read_structure_step: https://github.com/molssi-seamm/read_structure_step
 
-.. |structure1| image:: https://img.shields.io/travis/molssi-seamm/read_structure_step.svg
+.. |structure0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/read_structure_step
+   :target: https://github.com/molssi-seamm/read_structure_step/pulls
+   :alt: GitHub pull requests
+
+.. |structure1| image:: https://travis-ci.org/molssi-seamm/read_structure_step.svg
    :target: https://travis-ci.org/molssi-seamm/read_structure_step
    :alt: Build Status
 
@@ -460,7 +520,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _solvate_step: https://github.com/molssi-seamm/solvate_step
 
-.. |solvate1| image:: https://img.shields.io/travis/molssi-seamm/solvate_step.svg
+.. |solvate0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/solvate_step
+   :target: https://github.com/molssi-seamm/solvate_step/pulls
+   :alt: GitHub pull requests
+
+.. |solvate1| image:: https://travis-ci.org/molssi-seamm/solvate_step.svg
    :target: https://travis-ci.org/molssi-seamm/solvate_step
    :alt: Build Status
 
@@ -488,7 +552,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _supercell_step: https://github.com/molssi-seamm/supercell_step
 
-.. |supercell1| image:: https://img.shields.io/travis/molssi-seamm/supercell_step.svg
+.. |supercell0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/supercell_step
+   :target: https://github.com/molssi-seamm/supercell_step/pulls
+   :alt: GitHub pull requests
+
+.. |supercell1| image:: https://travis-ci.org/molssi-seamm/supercell_step.svg
    :target: https://travis-ci.org/molssi-seamm/supercell_step
    :alt: Build Status
 
@@ -516,7 +584,11 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. _table_step: https://github.com/molssi-seamm/table_step
 
-.. |table1| image:: https://img.shields.io/travis/molssi-seamm/table_step.svg
+.. |table0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/table_step
+   :target: https://github.com/molssi-seamm/table_step/pulls
+   :alt: GitHub pull requests
+
+.. |table1| image:: https://travis-ci.org/molssi-seamm/table_step.svg
    :target: https://travis-ci.org/molssi-seamm/table_step
    :alt: Build Status
 
