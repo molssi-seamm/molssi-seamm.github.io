@@ -24,6 +24,7 @@ the entire community.
     :titlesonly:
     :hidden:
 
+    status
     home_for_tools
     design/index
     2019/index
