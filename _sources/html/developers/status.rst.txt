@@ -29,6 +29,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    loop_step_,            |loop0|,        |loop1|,        |loop2|,         |loop3|,    	     	       	 |loop4|,         |loop5|,        |loop6|
    mopac_step_,           |mopac0|,       |mopac1|,       |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac5|,       |mopac6|
    packmol_step_,         |packmol0|,     |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
+   psi4_step_,            |psi4_0|,       |psi4_1|,       |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_5|,       |psi4_6|
    read_structure_step_,  |structure0|,   |structure1|,   |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|
    solvate_step_,         |solvate0|,     |solvate1|,     |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate5|,     |solvate6|
    supercell_step_,       |supercell0|,   |supercell1|,   |supercell2|,    |supercell3|,		 |supercell4|,    |supercell5|,   |supercell6|
@@ -482,6 +483,39 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. |packmol6| image:: https://img.shields.io/pypi/v/packmol_step.svg
    :target: https://pypi.python.org/pypi/packmol_step
+   :alt: PyPi VERSION
+
+
+.. Psi4 step badges
+
+.. _psi4_step: https://github.com/molssi-seamm/psi4_step
+
+.. |psi4_0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/psi4_step
+   :target: https://github.com/molssi-seamm/psi4_step/pulls
+   :alt: GitHub pull requests
+
+.. |psi4_1| image:: https://travis-ci.org/molssi-seamm/psi4_step.svg
+   :target: https://travis-ci.org/molssi-seamm/psi4_step
+   :alt: Build Status
+
+.. |psi4_2| image:: https://codecov.io/gh/molssi-seamm/psi4_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/psi4_step
+   :alt: Code Coverage
+
+.. |psi4_3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/psi4_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/psi4_step/context:python
+   :alt: Code Quality
+
+.. |psi4_4| image:: https://readthedocs.org/projects/psi4-step/badge/?version=latest
+   :target: https://psi4-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |psi4_5| image:: https://pyup.io/repos/github/molssi-seamm/psi4_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/psi4_step/
+   :alt: Updates for Dependencies
+
+.. |psi4_6| image:: https://img.shields.io/pypi/v/psi4_step.svg
+   :target: https://pypi.python.org/pypi/psi4_step
    :alt: PyPi VERSION
 
 .. Read Structure step badges

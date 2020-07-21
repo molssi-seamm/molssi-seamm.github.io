@@ -29,6 +29,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    loop_step_,            |loop2|,         |loop3|,    	     	       	 |loop4|,         |loop5|,        |loop6|,	|loop7|
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac5|,       |mopac6|,	|mopac7|
    packmol_step_,         |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|,	|packmol7|
+   psi4_step_,            |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_5|,       |psi4_6|,	|psi4_7|
    read_structure_step_,  |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|,	|structure7|
    solvate_step_,         |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate5|,     |solvate6|,	|solvate7|
    supercell_step_,       |supercell2|,    |supercell3|,		 |supercell4|,    |supercell5|,   |supercell6|,	|supercell7|
@@ -426,6 +427,35 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. |packmol7| image:: https://img.shields.io/pypi/dm/packmol_step
    :target: https://pypistats.org/packages/packmol_step
+   :alt: PyPI - Downloads
+
+
+.. Psi4 step badges
+
+.. _psi4_step: https://github.com/molssi-seamm/psi4_step
+
+.. |psi4_2| image:: https://codecov.io/gh/molssi-seamm/psi4_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/psi4_step
+   :alt: Code Coverage
+
+.. |psi4_3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/psi4_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/psi4_step/context:python
+   :alt: Code Quality
+
+.. |psi4_4| image:: https://readthedocs.org/projects/psi4-step/badge/?version=latest
+   :target: https://psi4-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |psi4_5| image:: https://pyup.io/repos/github/molssi-seamm/psi4_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/psi4_step/
+   :alt: Updates for Dependencies
+
+.. |psi4_6| image:: https://img.shields.io/pypi/v/psi4_step.svg
+   :target: https://pypi.python.org/pypi/psi4_step
+   :alt: PyPi VERSION
+
+.. |psi4_7| image:: https://img.shields.io/pypi/dm/psi4_step
+   :target: https://pypistats.org/packages/psi4_step
    :alt: PyPI - Downloads
 
 .. Read Structure step badges
