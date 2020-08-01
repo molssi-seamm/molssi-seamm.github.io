@@ -54,6 +54,8 @@ SEAMM, please read the :ref:`developers_docs`.
 
 The source is at GitHub in the `MolSSI SEAMM project`_
 
+You can also join our Slack channel by cliking here: |slack|
+
 .. toctree::
     :maxdepth: 5
     :titlesonly:
@@ -67,3 +69,6 @@ The source is at GitHub in the `MolSSI SEAMM project`_
 
 .. _Shareable and reproducible flowcharts: html/users/seamm_description/flowchart.html
 .. _MolSSI SEAMM project: https://github.com/molssi-seamm
+.. |slack| image:: https://img.shields.io/badge/chat-on_slack-808493.svg?longCache=true&style=flat&logo=slack)
+   :target: https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA
+   :alt: SEAMM Slack Channel
