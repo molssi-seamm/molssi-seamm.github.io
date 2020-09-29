@@ -7,7 +7,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 .. csv-table:: Core Modules
    :header-rows: 1
 
-   "Core Module",   "Pull Requests", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi ---"
+   "Core Module",   "Pull Requests", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--------- PyPi ---------"
    seamm_,             |seamm0|,     |seamm1|,       |seamm2|,         |seamm3|,   	   |seamm4|,      |seamm5|,     |seamm6|
    seamm_util_,        |su0|,        |su1|,          |su2|,            |su3|,      	   |su4|,         |su5|,        |su6|
    seamm_widgets_,     |sw0|,        |sw1|,          |sw2|,            |sw3|,      	   |sw4|,         |sw5|,        |sw6|
@@ -21,7 +21,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 .. csv-table:: Plug-Ins
    :header-rows: 1
 
-   Plug-In,                "Pull Requests", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--- PyPi---"
+   Plug-In,                "Pull Requests", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--------- PyPi---------"
    custom_step_,          |custom0|,      |custom1|,      |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom5|,      |custom6|
    forcefield_step_,      |ffield0|,      |ffield1|,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield5|,      |ffield6|
    from_smiles_step_,     |smiles0|,      |smiles1|,      |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles5|,      |smiles6|

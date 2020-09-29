@@ -7,7 +7,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 .. csv-table:: Core Modules
    :header-rows: 1
 
-   "Core Module",      "Test Coverage", "------ Code Quality ------",   "Documentation", "Dependencies", "Version", "Downloads"
+   "Core Module",      "Test Coverage", "------ Code Quality ------",   "Documentation", "Dependencies", "------ Version ------", "Downloads"
    seamm_,             |seamm2|,        |seamm3|,   	   		|seamm4|,      	 |seamm5|,     	 |seamm6|,  |seamm7|
    seamm_util_,        |su2|,           |su3|,      	   		|su4|,         	 |su5|,        	 |su6|,     |su7|
    seamm_widgets_,     |sw2|,           |sw3|,      	   		|sw4|,         	 |sw5|,        	 |sw6|,     |sw7|
@@ -21,7 +21,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 .. csv-table:: Plug-Ins
    :header-rows: 1
 
-   Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "Version",    "Downloads"
+   Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "------ Version ------",    "Downloads"
    custom_step_,          |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom5|,      |custom6|,    |custom7|
    forcefield_step_,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield5|,      |ffield6|,	|ffield7|
    from_smiles_step_,     |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles5|,      |smiles6|,	|smiles7|
