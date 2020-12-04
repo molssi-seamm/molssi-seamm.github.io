@@ -22,7 +22,10 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :header-rows: 1
 
    Plug-In,                "Pull Requests", "Build Status", "Code Coverage", "------ Code Quality ------", "Documentation", "Dependencies", "--------- PyPi---------"
+   control_parameters_step_, |control0|,  |control1|,     |control2|,      |control3|, 	     	       	 |control4|,      |control5|,     |control6|
+   crystal_builder_step_, |crystal0|,     |crystal1|,     |crystal2|,      |crystal3|, 	     	       	 |crystal4|,      |crystal5|,     |crystal6|
    custom_step_,          |custom0|,      |custom1|,      |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom5|,      |custom6|
+   dftbplus_step_,        |dftb0|,        |dftb1|,        |dftb2|,         |dftb3|,  	     	       	 |dftb4|,         |dftb5|,        |dftb6|
    forcefield_step_,      |ffield0|,      |ffield1|,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield5|,      |ffield6|
    from_smiles_step_,     |smiles0|,      |smiles1|,      |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles5|,      |smiles6|
    lammps_step_,          |lammps0|,      |lammps1|,      |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps5|,      |lammps6|
@@ -31,6 +34,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    packmol_step_,         |packmol0|,     |packmol1|,     |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol5|,     |packmol6|
    psi4_step_,            |psi4_0|,       |psi4_1|,       |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_5|,       |psi4_6|
    read_structure_step_,  |structure0|,   |structure1|,   |structure2|,    |structure3|,     	       	 |structure4|,    |structure5|,   |structure6|
+   set_cell_step_,        |set_cell0|,    |set_cell1|,    |set_cell2|,     |set_cell3|,	     	       	 |set_cell4|,     |set_cell5|,    |set_cell6|
    solvate_step_,         |solvate0|,     |solvate1|,     |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate5|,     |solvate6|
    supercell_step_,       |supercell0|,   |supercell1|,   |supercell2|,    |supercell3|,		 |supercell4|,    |supercell5|,   |supercell6|
    table_step_,           |table0|,       |table1|,       |table2|,        |table3|,   	     	       	 |table4|,        |table5|,       |table6|
@@ -45,8 +49,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm/pulls
    :alt: GitHub pull requests
 
-.. |seamm1| image:: https://travis-ci.org/molssi-seamm/seamm.svg
-   :target: https://travis-ci.org/molssi-seamm/seamm
+.. |seamm1| image:: https://github.com/molssi-seamm/seamm/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/seamm/actions
    :alt: Build Status
 
 .. |seamm2| image:: https://codecov.io/gh/molssi-seamm/seamm/branch/master/graph/badge.svg
@@ -77,8 +81,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_util/pulls
    :alt: GitHub pull requests
 
-.. |su1| image:: https://travis-ci.org/molssi-seamm/seamm_util.svg
-   :target: https://travis-ci.org/molssi-seamm/seamm_util
+.. |su1| image:: https://github.com/molssi-seamm/seamm_util/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_util/actions
    :alt: Build Status
 
 .. |su2| image:: https://codecov.io/gh/molssi-seamm/seamm_util/branch/master/graph/badge.svg
@@ -109,8 +113,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_widgets/pulls
    :alt: GitHub pull requests
 
-.. |sw1| image:: https://travis-ci.org/molssi-seamm/seamm_widgets.svg
-   :target: https://travis-ci.org/molssi-seamm/seamm_widgets
+.. |sw1| image:: https://github.com/molssi-seamm/seamm_widgets/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_widgets/actions
    :alt: Build Status
 
 .. |sw2| image:: https://codecov.io/gh/molssi-seamm/seamm_widgets/branch/master/graph/badge.svg
@@ -141,8 +145,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_jobserver/pulls
    :alt: GitHub pull requests
 
-.. |sj1| image:: https://travis-ci.org/molssi-seamm/seamm_jobserver.svg
-   :target: https://travis-ci.org/molssi-seamm/seamm_jobserver
+.. |sj1| image:: https://github.com/molssi-seamm/seamm_jobserver/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_jobserver/actions
    :alt: Build Status
 
 .. |sj2| image:: https://codecov.io/gh/molssi-seamm/seamm_jobserver/branch/master/graph/badge.svg
@@ -173,8 +177,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_widgets/pulls
    :alt: GitHub pull requests
 
-.. |sf1| image:: https://travis-ci.org/molssi-seamm/seamm_ff_util.svg
-   :target: https://travis-ci.org/molssi-seamm/seamm_ff_util
+.. |sf1| image:: https://github.com/molssi-seamm/seamm_ff_util/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_ff_util/actions
    :alt: Build Status
 
 .. |sf2| image:: https://codecov.io/gh/molssi-seamm/seamm_ff_util/branch/master/graph/badge.svg
@@ -205,8 +209,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/molsystem/pulls
    :alt: GitHub pull requests
 
-.. |sy1| image:: https://travis-ci.org/molssi-seamm/molsystem.svg
-   :target: https://travis-ci.org/molssi-seamm/molsystem
+.. |sy1| image:: https://github.com/molssi-seamm/molsystem/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/molsystem/actions
    :alt: Build Status
 
 .. |sy2| image:: https://codecov.io/gh/molssi-seamm/molsystem/branch/master/graph/badge.svg
@@ -237,8 +241,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/reference/pulls
    :alt: GitHub pull requests
 
-.. |rh1| image:: https://travis-ci.org/molssi/reference_handler.svg
-   :target: https://travis-ci.org/molssi/reference_handler
+.. |rh1| image:: https://github.com/molssi/reference_handler.svg
+   :target: https://github.com/molssi/reference_handler
    :alt: Build Status
 
 .. |rh2| image:: https://codecov.io/gh/molssi/reference_handler/branch/master/graph/badge.svg
@@ -261,6 +265,70 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pypi.python.org/pypi/reference_handler
    :alt: PyPi VERSION
 
+.. control parameters step badges
+
+.. _control_parameters_step: https://github.com/molssi-seamm/control_parameters_step
+
+.. |control0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/control_parameters_step
+   :target: https://github.com/molssi-seamm/control_parameters_step/pulls
+   :alt: GitHub pull requests
+
+.. |control1| image:: https://github.com/molssi-seamm/control_parameters_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/control_parameters_step/actions
+   :alt: Build Status
+
+.. |control2| image:: https://codecov.io/gh/molssi-seamm/control_parameters_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/control_parameters_step
+   :alt: Code Coverage
+
+.. |control3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/control_parameters_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/control_parameters_step/context:python
+   :alt: Code Quality
+
+.. |control4| image:: https://readthedocs.org/projects/control-parameters-step/badge/?version=latest
+   :target: https://control-parameters-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |control5| image:: https://pyup.io/repos/github/molssi-seamm/control_parameters_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/control_parameters_step/
+   :alt: Updates for Dependencies
+
+.. |control6| image:: https://img.shields.io/pypi/v/control_parameters_step.svg
+   :target: https://pypi.python.org/pypi/control_parameters_step
+   :alt: PyPi VERSION
+
+.. crystal builder step badges
+
+.. _crystal_builder_step: https://github.com/molssi-seamm/crystal_builder_step
+
+.. |crystal0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/crystal_builder_step
+   :target: https://github.com/molssi-seamm/crystal_builder_step/pulls
+   :alt: GitHub pull requests
+
+.. |crystal1| image:: https://github.com/molssi-seamm/crystal_builder_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/crystal_builder_step/actions
+   :alt: Build Status
+
+.. |crystal2| image:: https://codecov.io/gh/molssi-seamm/crystal_builder_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/crystal_builder_step
+   :alt: Code Coverage
+
+.. |crystal3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/crystal_builder_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/crystal_builder_step/context:python
+   :alt: Code Quality
+
+.. |crystal4| image:: https://readthedocs.org/projects/crystal-builder-step/badge/?version=latest
+   :target: https://crystal-builder-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |crystal5| image:: https://pyup.io/repos/github/molssi-seamm/crystal_builder_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/crystal_builder_step/
+   :alt: Updates for Dependencies
+
+.. |crystal6| image:: https://img.shields.io/pypi/v/crystal_builder_step.svg
+   :target: https://pypi.python.org/pypi/crystal_builder_step
+   :alt: PyPi VERSION
+
 .. custom step badges
 
 .. _custom_step: https://github.com/molssi-seamm/custom_step
@@ -269,8 +337,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/custom_step/pulls
    :alt: GitHub pull requests
 
-.. |custom1| image:: https://travis-ci.org/molssi-seamm/custom_step.svg
-   :target: https://travis-ci.org/molssi-seamm/custom_step
+.. |custom1| image:: https://github.com/molssi-seamm/custom_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/custom_step/actions
    :alt: Build Status
 
 .. |custom2| image:: https://codecov.io/gh/molssi-seamm/custom_step/branch/master/graph/badge.svg
@@ -293,6 +361,38 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pypi.python.org/pypi/custom_step
    :alt: PyPi VERSION
 
+.. dftb+ step badges
+
+.. _dftbplus_step: https://github.com/molssi-seamm/dftbplus_step
+
+.. |dftb0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/dftbplus_step
+   :target: https://github.com/molssi-seamm/dftbplus_step/pulls
+   :alt: GitHub pull requests
+
+.. |dftb1| image:: https://github.com/molssi-seamm/dftbplus_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/dftbplus_step/actions
+   :alt: Build Status
+
+.. |dftb2| image:: https://codecov.io/gh/molssi-seamm/dftbplus_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/dftbplus_step
+   :alt: Code Coverage
+
+.. |dftb3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/dftbplus_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/dftbplus_step/context:python
+   :alt: Code Quality
+
+.. |dftb4| image:: https://readthedocs.org/projects/dftbplus-step/badge/?version=latest
+   :target: https://dftbplus-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |dftb5| image:: https://pyup.io/repos/github/molssi-seamm/dftbplus_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/dftbplus_step/
+   :alt: Updates for Dependencies
+
+.. |dftb6| image:: https://img.shields.io/pypi/v/dftbplus_step.svg
+   :target: https://pypi.python.org/pypi/dftbplus_step
+   :alt: PyPi VERSION
+
 .. forcefield step badges
 
 .. _forcefield_step: https://github.com/molssi-seamm/forcefield_step
@@ -301,8 +401,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/forcefield_step/pulls
    :alt: GitHub pull requests
 
-.. |ffield1| image:: https://travis-ci.org/molssi-seamm/forcefield_step.svg?branch=master
-   :target: https://travis-ci.org/molssi-seamm/forcefield_step
+.. |ffield1| image:: https://github.com/molssi-seamm/forcefield_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/forcefield_step
    :alt: Build Status
 
 .. |ffield2| image:: https://codecov.io/gh/molssi-seamm/forcefield_step/branch/master/graph/badge.svg
@@ -333,8 +433,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/from_smiles_step/pulls
    :alt: GitHub pull requests
 
-.. |smiles1| image:: https://travis-ci.org/molssi-seamm/from_smiles_step.svg
-   :target: https://travis-ci.org/molssi-seamm/from_smiles_step
+.. |smiles1| image:: https://github.com/molssi-seamm/from_smiles_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/from_smiles_step/actions
    :alt: Build Status
 
 .. |smiles2| image:: https://codecov.io/gh/molssi-seamm/from_smiles_step/branch/master/graph/badge.svg
@@ -365,8 +465,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/lammps_step/pulls
    :alt: GitHub pull requests
 
-.. |lammps1| image:: https://travis-ci.org/molssi-seamm/lammps_step.svg
-   :target: https://travis-ci.org/molssi-seamm/lammps_step
+.. |lammps1| image:: https://github.com/molssi-seamm/lammps_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/lammps_step/actions
    :alt: Build Status
 
 .. |lammps2| image:: https://codecov.io/gh/molssi-seamm/lammps_step/branch/master/graph/badge.svg
@@ -397,8 +497,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/loop_step/pulls
    :alt: GitHub pull requests
 
-.. |loop1| image:: https://travis-ci.org/molssi-seamm/loop_step.svg
-   :target: https://travis-ci.org/molssi-seamm/loop_step
+.. |loop1| image:: https://github.com/molssi-seamm/loop_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/loop_step/actions
    :alt: Build Status
 
 .. |loop2| image:: https://codecov.io/gh/molssi-seamm/loop_step/branch/master/graph/badge.svg
@@ -429,8 +529,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/mopac_step/pulls
    :alt: GitHub pull requests
 
-.. |mopac1| image:: https://travis-ci.org/molssi-seamm/mopac_step.svg
-   :target: https://travis-ci.org/molssi-seamm/mopac_step
+.. |mopac1| image:: https://github.com/molssi-seamm/mopac_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/mopac_step/actions
    :alt: Build Status
 
 .. |mopac2| image:: https://codecov.io/gh/molssi-seamm/mopac_step/branch/master/graph/badge.svg
@@ -461,8 +561,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/packmol_step/pulls
    :alt: GitHub pull requests
 
-.. |packmol1| image:: https://travis-ci.org/molssi-seamm/packmol_step.svg
-   :target: https://travis-ci.org/molssi-seamm/packmol_step
+.. |packmol1| image:: https://github.com/molssi-seamm/packmol_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/packmol_step/actions
    :alt: Build Status
 
 .. |packmol2| image:: https://codecov.io/gh/molssi-seamm/packmol_step/branch/master/graph/badge.svg
@@ -494,8 +594,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/psi4_step/pulls
    :alt: GitHub pull requests
 
-.. |psi4_1| image:: https://travis-ci.org/molssi-seamm/psi4_step.svg
-   :target: https://travis-ci.org/molssi-seamm/psi4_step
+.. |psi4_1| image:: https://github.com/molssi-seamm/psi4_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/psi4_step/actions
    :alt: Build Status
 
 .. |psi4_2| image:: https://codecov.io/gh/molssi-seamm/psi4_step/branch/master/graph/badge.svg
@@ -526,8 +626,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/read_structure_step/pulls
    :alt: GitHub pull requests
 
-.. |structure1| image:: https://travis-ci.org/molssi-seamm/read_structure_step.svg
-   :target: https://travis-ci.org/molssi-seamm/read_structure_step
+.. |structure1| image:: https://github.com/molssi-seamm/read_structure_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/read_structure_step/actions
    :alt: Build Status
 
 .. |structure2| image:: https://codecov.io/gh/molssi-seamm/read_structure_step/branch/master/graph/badge.svg
@@ -550,6 +650,38 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pypi.python.org/pypi/read_structure_step
    :alt: PyPi VERSION
 
+.. Set Cell step badges
+
+.. _set_cell_step: https://github.com/molssi-seamm/set_cell_step
+
+.. |set_cell0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/set_cell_step
+   :target: https://github.com/molssi-seamm/set_cell_step/pulls
+   :alt: GitHub pull requests
+
+.. |set_cell1| image:: https://github.com/molssi-seamm/set_cell_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/set_cell_step/actions
+   :alt: Build Status
+
+.. |set_cell2| image:: https://codecov.io/gh/molssi-seamm/set_cell_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/set_cell_step
+   :alt: Code Coverage
+
+.. |set_cell3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/set_cell_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/set_cell_step/context:python
+   :alt: Code Quality
+
+.. |set_cell4| image:: https://readthedocs.org/projects/set_cell-step/badge/?version=latest
+   :target: https://set_cell-step.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. |set_cell5| image:: https://pyup.io/repos/github/molssi-seamm/set_cell_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/set_cell_step/
+   :alt: Updates for Dependencies
+
+.. |set_cell6| image:: https://img.shields.io/pypi/v/set_cell_step.svg
+   :target: https://pypi.python.org/pypi/set_cell_step
+   :alt: PyPi VERSION
+
 .. Solvate step badges
 
 .. _solvate_step: https://github.com/molssi-seamm/solvate_step
@@ -558,8 +690,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/solvate_step/pulls
    :alt: GitHub pull requests
 
-.. |solvate1| image:: https://travis-ci.org/molssi-seamm/solvate_step.svg
-   :target: https://travis-ci.org/molssi-seamm/solvate_step
+.. |solvate1| image:: https://github.com/molssi-seamm/solvate_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/solvate_step/actions
    :alt: Build Status
 
 .. |solvate2| image:: https://codecov.io/gh/molssi-seamm/solvate_step/branch/master/graph/badge.svg
@@ -590,8 +722,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/supercell_step/pulls
    :alt: GitHub pull requests
 
-.. |supercell1| image:: https://travis-ci.org/molssi-seamm/supercell_step.svg
-   :target: https://travis-ci.org/molssi-seamm/supercell_step
+.. |supercell1| image:: https://github.com/molssi-seamm/supercell_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/supercell_step/actions
    :alt: Build Status
 
 .. |supercell2| image:: https://codecov.io/gh/molssi-seamm/supercell_step/branch/master/graph/badge.svg
@@ -622,8 +754,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/table_step/pulls
    :alt: GitHub pull requests
 
-.. |table1| image:: https://travis-ci.org/molssi-seamm/table_step.svg
-   :target: https://travis-ci.org/molssi-seamm/table_step
+.. |table1| image:: https://github.com/molssi-seamm/table_step/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/table_step/actions
    :alt: Build Status
 
 .. |table2| image:: https://codecov.io/gh/molssi-seamm/table_step/branch/master/graph/badge.svg
