@@ -1,0 +1,3 @@
+pygments
+pystemmer
+sphinx-rtd-theme
