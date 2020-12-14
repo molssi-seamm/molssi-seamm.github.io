@@ -105,7 +105,7 @@ cat > "${docroot}/index.html" <<EOF
 EOF
 
 for current_version in ${versions}; do
-    if [ "current_version" = "main" ]
+    if [ "$current_version" = "main" ]
     then
 	cat >> "${docroot}/index.html" <<EOF
         <li><a href="en/${current_version}/">Stable version (main)</a></li>
@@ -121,7 +121,7 @@ for current_version in ${versions}; do
       echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
       continue
    fi
-   if [ "current_version" != "main" ]
+   if [ "$current_version" != "main" ]
    then
        cat >> "${docroot}/index.html" <<EOF
         <li><a href="en/${current_version}/">${current_version}</a></li>
