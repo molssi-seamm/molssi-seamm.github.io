@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+# set -x
 ################################################################################
 # File:    buildDocs.sh
 # Purpose: Script that builds our documentation using sphinx and updates GitHub
@@ -80,8 +80,8 @@ for current_version in ${versions}; do
  
 done
  
-# return to master branch
-git checkout master
+# return to main branch
+git checkout main
  
 #######################
 # Update GitHub Pages #
@@ -126,7 +126,7 @@ EOF
 # Now go to the directory...
 pushd "${docroot}"
 
-ls -laR .
+# ls -laR .
 
 # don't bother maintaining history; just generate fresh
 git init
