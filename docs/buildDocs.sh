@@ -126,6 +126,7 @@ for current_version in ${versions}; do
        cat >> "${docroot}/index.html" <<EOF
         <li><a href="en/${current_version}/">${current_version}</a></li>
 EOF
+   fi
 done
 
 cat >> "${docroot}/index.html" <<EOF
