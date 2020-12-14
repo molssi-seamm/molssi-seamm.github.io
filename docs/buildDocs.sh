@@ -80,8 +80,8 @@ for current_version in ${versions}; do
  
 done
  
-# return to main branch
-git checkout main
+# return to master branch
+git checkout master
  
 #######################
 # Update GitHub Pages #
@@ -113,7 +113,7 @@ for current_version in ${versions}; do
       continue
    fi
    cat >> "${docroot}/index.html" <<EOF
-        <li><a href="/${REPO_NAME}/en/${current_version}/">${current_version}</a></li>
+        <li><a href="en/${current_version}/">${current_version}</a></li>
 EOF
 done
 
@@ -126,7 +126,7 @@ EOF
 # Now go to the directory...
 pushd "${docroot}"
 
-# ls -laR .
+ls -laR .
 
 # don't bother maintaining history; just generate fresh
 git init
