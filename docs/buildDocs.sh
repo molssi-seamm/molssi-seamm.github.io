@@ -96,13 +96,22 @@ cat > "${docroot}/index.html" <<EOF
 <!DOCTYPE html>
 <html>
    <head>
-      <title>System Step Documentation</title>
+      <title>Documentation for MolSSI SEAMM</title>
    </head>
    <body>
-      <h1>System Step Documentation</h1>
+      <h1>Documentation for MolSSI SEAMM</h1>
       <h2>Branches</h2>
       <ul>
 EOF
+
+for current_version in ${versions}; do
+    if [ "current_version" = "main" ]
+    then
+	cat >> "${docroot}/index.html" <<EOF
+        <li><a href="en/${current_version}/">Stable version (main)</a></li>
+EOF
+    fi
+done
 
 for current_version in ${versions}; do
    git checkout --no-guess ${current_version}
@@ -112,7 +121,9 @@ for current_version in ${versions}; do
       echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
       continue
    fi
-   cat >> "${docroot}/index.html" <<EOF
+   if [ "current_version" != "main" ]
+   then
+       cat >> "${docroot}/index.html" <<EOF
         <li><a href="en/${current_version}/">${current_version}</a></li>
 EOF
 done
