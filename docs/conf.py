@@ -63,7 +63,7 @@ copyright = u"2019-2020, the Molecular Sciences Software Institute"
 # the built documents.
 #
 # The full version, including alpha/beta/rc tags.
-release = os.popen('git describe --tags').read().strip()
+release = os.popen('git describe --always --tags').read().strip()
 # The short X.Y version.
 version = release
 
