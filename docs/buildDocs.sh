@@ -17,6 +17,7 @@
 # DECLARE VARIABLES #
 #####################
  
+echo "::group::setup"
 pwd
 ls -lah
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
@@ -26,11 +27,13 @@ docroot=`mktemp -d`
 mkdir "${docroot}/dev"
 
 export REPO_NAME="${GITHUB_REPOSITORY##*/}"
+echo "::endgroup::"
  
 ##############
 # BUILD DOCS #
 ##############
- 
+
+echo "::group::branches"
 # get a list of branches, excluding 'HEAD' and 'gh-pages'
 versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
 echo "INFO: Branches"
@@ -38,73 +41,71 @@ for current_version in ${versions}
 do
     echo "INFO:        ${current_version}"
 done
+echo "::endgroup::"
 
 for current_version in ${versions}
 do
-   echo "INFO: Building sites for ${current_version}"
+    echo "::group::build ${current_version}"
  
-   # make the current language available to conf.py
-   export current_version
-   git checkout ${current_version}
+    # make the current language available to conf.py
+    export current_version
+    git checkout ${current_version}
  
-   # skip this branch if it doesn't have our docs dir & sphinx config
-   if [ ! -e 'docs/conf.py' ]; then
-      echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
-      continue
-   fi
+    # skip this branch if it doesn't have our docs dir & sphinx config
+    if [ ! -e 'docs/conf.py' ]; then
+	echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
+	continue
+    fi
  
-   languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
-   for current_language in ${languages}
-   do
-      # make the current language available to conf.py
-      export current_language
- 
-      ##########
-      # BUILDS #
-      ##########
-      echo "INFO: Building for ${current_language}"
+    languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
+    for current_language in ${languages}
+    do
+	# make the current language available to conf.py
+	export current_language
+	
+	##########
+	# BUILDS #
+	##########
+	echo "INFO: Building for ${current_language}"
 
-      # first, cleanup any old builds' static assets
-      make -C docs clean
- 
-      # HTML #
-      sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
- 
-      # # PDF #
-      # sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
-      # mkdir -p "${docroot}/${current_language}/${current_version}"
-      # cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.pdf"
- 
-      # # EPUB #
-      # sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
-      # mkdir -p "${docroot}/${current_language}/${current_version}"
-      # cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.epub"
- 
-      # copy the static assets produced by the above build into our docroot
-      if [ "${current_version}" = "main" -a "${current_language}" = "en" ]
-      then
-	  echo "INFO: publishing main to /"
-	  rsync -a "docs/_build/html/en/main/" "${docroot}/"
-      else
-	  echo "INFO: publishing ${current_version} to /dev/${current_language}/${current_version}/"
-	  rsync -a "docs/_build/html/" "${docroot}/dev/"
-      fi
-   done
-   echo ""
-   echo "################################################################################"
-   echo ""
+	# first, cleanup any old builds' static assets
+	make -C docs clean
+	
+	# HTML #
+	sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
+	
+	# # PDF #
+	# sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
+	# mkdir -p "${docroot}/${current_language}/${current_version}"
+	# cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.pdf"
+	
+	# # EPUB #
+	# sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
+	# mkdir -p "${docroot}/${current_language}/${current_version}"
+	# cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.epub"
+	
+	# copy the static assets produced by the above build into our docroot
+	if [ "${current_version}" = "main" -a "${current_language}" = "en" ]
+	then
+	    echo "INFO: publishing main to /"
+	    rsync -a "docs/_build/html/en/main/" "${docroot}/"
+	else
+	    echo "INFO: publishing ${current_version} to /dev/${current_language}/${current_version}/"
+	    rsync -a "docs/_build/html/" "${docroot}/dev/"
+	fi
+    done
+    echo "::endgroup::"
 done
- 
-# return to main branch
-git checkout main
  
 #######################
 # Update GitHub Pages #
 #######################
  
+# return to main branch
+git checkout main
+ 
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-
  
 # add redirect from the docroot to our default docs language/version
 cat > "${docroot}/dev/index.html" <<EOF
@@ -131,19 +132,19 @@ done
 
 for current_version in ${versions}
 do
-   git checkout --no-guess ${current_version}
+    git checkout --no-guess ${current_version}
 
-   # skip this branch if it doesn't have our docs dir & sphinx config
-   if [ ! -e 'docs/conf.py' ]; then
-      echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
-      continue
-   fi
-   if [ "${current_version}" != "main" ]
-   then
-       cat >> "${docroot}/dev/index.html" <<EOF
+    # skip this branch if it doesn't have our docs dir & sphinx config
+    if [ ! -e 'docs/conf.py' ]; then
+	echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
+	continue
+    fi
+    if [ "${current_version}" != "main" ]
+    then
+	cat >> "${docroot}/dev/index.html" <<EOF
         <li><a href="en/${current_version}/">${current_version}</a></li>
 EOF
-   fi
+    fi
 done
 
 cat >> "${docroot}/dev/index.html" <<EOF
