@@ -14,7 +14,6 @@
 
 import sys
 import os
-import re
 
 # If extensions (or modules to document with autodoc) are in another
 # directory, add these directories to sys.path here. If the directory is
@@ -64,7 +63,7 @@ copyright = u"2019-2020, the Molecular Sciences Software Institute"
 # the built documents.
 #
 # The full version, including alpha/beta/rc tags.
-release = re.sub('^v', '', os.popen('git describe').read().strip())
+release = os.popen('git describe').read().strip()
 # The short X.Y version.
 version = release
 
