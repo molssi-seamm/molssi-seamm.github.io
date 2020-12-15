@@ -23,6 +23,7 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
  
 # make a new temp dir which will be our GitHub Pages docroot
 docroot=`mktemp -d`
+mkdir "${docroot}/dev"
 
 export REPO_NAME="${GITHUB_REPOSITORY##*/}"
  
@@ -74,8 +75,12 @@ for current_version in ${versions}; do
       # cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.epub"
  
       # copy the static assets produced by the above build into our docroot
-      rsync -av "docs/_build/html/" "${docroot}/"
- 
+      if [ "${current_version}" = "main" -a "${current_language}" = "en"]
+      then
+	  rsync -av "docs/_build/html/en/main/" "${docroot}/"
+      else
+	  rsync -av "docs/_build/html/" "${docroot}/dev/"
+      fi
    done
  
 done
@@ -92,7 +97,7 @@ git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
  
 # add redirect from the docroot to our default docs language/version
-cat > "${docroot}/index.html" <<EOF
+cat > "${docroot}/dev/index.html" <<EOF
 <!DOCTYPE html>
 <html>
    <head>
@@ -105,9 +110,9 @@ cat > "${docroot}/index.html" <<EOF
 EOF
 
 for current_version in ${versions}; do
-    if [ "$current_version" = "main" ]
+    if [ "${current_version}" = "main" ]
     then
-	cat >> "${docroot}/index.html" <<EOF
+	cat >> "${docroot}/dev/index.html" <<EOF
         <li><a href="en/${current_version}/">Stable version (main)</a></li>
 EOF
     fi
@@ -121,15 +126,15 @@ for current_version in ${versions}; do
       echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
       continue
    fi
-   if [ "$current_version" != "main" ]
+   if [ "${current_version}" != "main" ]
    then
-       cat >> "${docroot}/index.html" <<EOF
+       cat >> "${docroot}/dev/index.html" <<EOF
         <li><a href="en/${current_version}/">${current_version}</a></li>
 EOF
    fi
 done
 
-cat >> "${docroot}/index.html" <<EOF
+cat >> "${docroot}/dev/index.html" <<EOF
       </ul>
    </body>
 </html>
