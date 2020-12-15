@@ -20,8 +20,8 @@
 echo "::group::Setup"
 pwd
 ls -lah
-printenv
-echo "git describe = `git describe --always --tags`"
+export DOC_VERSION=$(git describe --always --tags)
+echo "Documentation version = ${DOC_VERSION}"
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
  
 # make a new temp dir which will be our GitHub Pages docroot
