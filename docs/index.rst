@@ -76,6 +76,7 @@ Documentation Versions
     html/developers/index
     https://github.com/molssi-seamm
     html/glossary
+    acknowledgements
 
 .. _Shareable and reproducible flowcharts: html/users/seamm_description/flowchart.html
 .. _MolSSI SEAMM project: https://github.com/molssi-seamm
