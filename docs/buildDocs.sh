@@ -100,6 +100,7 @@ done
 #######################
 # Update GitHub Pages #
 #######################
+echo "::group::create index files, etc."
  
 # return to main branch
 git checkout main
@@ -136,7 +137,7 @@ do
 
     # skip this branch if it doesn't have our docs dir & sphinx config
     if [ ! -e 'docs/conf.py' ]; then
-	echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
+	echo "::warning::Skipping because could not find 'docs/conf.py'"
 	continue
     fi
     if [ "${current_version}" != "main" ]
@@ -152,23 +153,13 @@ cat >> "${docroot}/dev/index.html" <<EOF
    </body>
 </html>
 EOF
-
-# Now go to the directory...
-pushd "${docroot}"
-
-# ls -laR .
-
-# don't bother maintaining history; just generate fresh
-git init
-git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-git checkout -b gh-pages
  
 # add .nojekyll to the root so that github won't 404 on content added to dirs
 # that start with an underscore (_), such as our "_content" dir..
-touch .nojekyll
+touch ${docroot}/.nojekyll
  
 # Add README
-cat > README.md <<EOF
+cat > ${docroot}/README.md <<EOF
 # GitHub Pages Cache
  
 Nothing to see here. The contents of this branch are essentially a cache that's not intended to be viewed on github.com.
@@ -180,6 +171,17 @@ For more information on how this documentation is built using Sphinx, Read the D
  
  * https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1
 EOF
+
+echo "::endgroup::"
+echo "::group::push to gh-pages"
+
+# Now go to the directory...
+pushd "${docroot}"
+
+# don't bother maintaining history; just generate fresh
+git init
+git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git checkout -b gh-pages
  
 # copy the resulting html pages built from sphinx above to our new git repo
 git add .
@@ -190,8 +192,8 @@ git commit -am "${msg}"
  
 # overwrite the contents of the gh-pages branch on our github.com repo
 git push deploy gh-pages --force
- 
+
+echo "::endgroup" 
+
 popd # return to main repo sandbox root
- 
-# exit cleanly
-# exit 0
+echo "All done! Documentation build successfully."
