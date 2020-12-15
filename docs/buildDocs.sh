@@ -36,6 +36,7 @@ make -C docs clean
  
 # get a list of branches, excluding 'HEAD' and 'gh-pages'
 versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
+echo "INFO: Branches = ${versions}"
 for current_version in ${versions}; do
  
    # make the current language available to conf.py
@@ -84,7 +85,9 @@ for current_version in ${versions}; do
 	  rsync -av "docs/_build/html/" "${docroot}/dev/"
       fi
    done
- 
+   echo ""
+   echo "################################################################################"
+   echo ""
 done
  
 # return to main branch
