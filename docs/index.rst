@@ -62,7 +62,9 @@ Documentation Versions
 .. raw:: html
 
    <iframe
-   src="https://molssi-seamm.github.io/dev/versions.html" title="Documentation Versions"></iframe>
+   src="https://molssi-seamm.github.io/dev/versions.html"
+   title="Documentation Versions"  style="border:none;">
+   </iframe>
 
 .. toctree::
     :maxdepth: 5
