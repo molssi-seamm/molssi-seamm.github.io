@@ -121,12 +121,25 @@ cat > "${docroot}/dev/index.html" <<EOF
       <ul>
 EOF
 
+cat > "${docroot}/dev/versions.html" <<EOF
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Documentation for MolSSI SEAMM</title>
+   </head>
+   <body>
+      <ul>
+EOF
+
 for current_version in ${versions}
 do
     if [ "${current_version}" = "main" ]
     then
 	cat >> "${docroot}/dev/index.html" <<EOF
-        <li><a href="../">Stable version (main)</a></li>
+        <li><a href="../">main -- stable version</a></li>
+EOF
+	cat >> "${docroot}/dev/versions.html" <<EOF
+        <li><a href="../">main -- stable version</a></li>
 EOF
     fi
 done
@@ -144,10 +157,19 @@ do
 	cat >> "${docroot}/dev/index.html" <<EOF
         <li><a href="en/${current_version}/">${current_version}</a></li>
 EOF
+	cat >> "${docroot}/dev/versions.html" <<EOF
+        <li><a href="en/${current_version}/">${current_version}</a></li>
+EOF
     fi
 done
 
 cat >> "${docroot}/dev/index.html" <<EOF
+      </ul>
+   </body>
+</html>
+EOF
+ 
+cat >> "${docroot}/dev/versions.html" <<EOF
       </ul>
    </body>
 </html>
