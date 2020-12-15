@@ -20,8 +20,6 @@
 echo "::group::Setup"
 pwd
 ls -lah
-export DOC_VERSION=$(git describe --always --tags)
-echo "Documentation version = ${DOC_VERSION}"
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
  
 # make a new temp dir which will be our GitHub Pages docroot
@@ -52,6 +50,9 @@ do
     # make the current language available to conf.py
     export current_version
     git checkout ${current_version}
+
+    export DOC_VERSION=$(git describe --always --tags)
+    echo "Documentation version = ${DOC_VERSION}"
  
     # skip this branch if it doesn't have our docs dir & sphinx config
     if [ ! -e 'docs/conf.py' ]; then
