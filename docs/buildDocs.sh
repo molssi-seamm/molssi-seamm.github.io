@@ -17,7 +17,7 @@
 # DECLARE VARIABLES #
 #####################
  
-echo "::group::setup"
+echo "::group::Setup"
 pwd
 ls -lah
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
@@ -33,10 +33,10 @@ echo "::endgroup::"
 # BUILD DOCS #
 ##############
 
-echo "::group::branches"
+echo "::group::Branches"
 # get a list of branches, excluding 'HEAD' and 'gh-pages'
 versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
-echo "Branches"
+echo "Branches to document"
 for current_version in ${versions}
 do
     echo "       ${current_version}"
@@ -45,7 +45,7 @@ echo "::endgroup::"
 
 for current_version in ${versions}
 do
-    echo "::group::build ${current_version}"
+    echo "::group::Documentation for ${current_version} branch"
  
     # make the current language available to conf.py
     export current_version
@@ -100,7 +100,7 @@ done
 #######################
 # Update GitHub Pages #
 #######################
-echo "::group::create index files, etc."
+echo "::group::Create index files, etc."
  
 # return to main branch
 git checkout main
@@ -172,7 +172,7 @@ For more information on how this documentation is built using Sphinx, Read the D
 EOF
 
 echo "::endgroup::"
-echo "::group::push to gh-pages"
+echo "::group::Push to gh-pages"
 
 # Now go to the directory...
 pushd "${docroot}"
@@ -192,7 +192,7 @@ git commit -am "${msg}"
 # overwrite the contents of the gh-pages branch on our github.com repo
 git push deploy gh-pages --force
 
+popd # return to main repo sandbox root
 echo "::endgroup::" 
 
-popd # return to main repo sandbox root
 echo "All done! Documentation built successfully."
