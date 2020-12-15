@@ -75,10 +75,12 @@ for current_version in ${versions}; do
       # cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/helloWorld-docs_${current_language}_${current_version}.epub"
  
       # copy the static assets produced by the above build into our docroot
-      if [ "${current_version}" = "main" -a "${current_language}" = "en"]
+      if [ "${current_version}" = "main" -a "${current_language}" = "en" ]
       then
+	  echo "INFO: publishing main to /"
 	  rsync -av "docs/_build/html/en/main/" "${docroot}/"
       else
+	  echo "INFO: publishing ${current_version} to /dev/${current_language}/${current_version}/"
 	  rsync -av "docs/_build/html/" "${docroot}/dev/"
       fi
    done
