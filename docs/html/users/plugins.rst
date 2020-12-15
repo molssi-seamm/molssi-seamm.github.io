@@ -24,3 +24,12 @@ Simulation
 
 .. _System Step: https://molssi-seamm.github.io/system_step/user
 .. _DFTB+ Step: https://molssi-seamm.github.io/dftbplus_step/user
+
+.. toctree::
+    :maxdepth: 5
+    :titlesonly:
+    :hidden:
+
+    DFTB+ Step <https://molssi-seamm.github.io/dftbplus_step/user>
+    System Step <https://molssi-seamm.github.io/system_step/user>
+    
