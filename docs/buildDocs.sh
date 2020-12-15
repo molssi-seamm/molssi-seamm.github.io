@@ -31,19 +31,21 @@ export REPO_NAME="${GITHUB_REPOSITORY##*/}"
 # BUILD DOCS #
 ##############
  
-# first, cleanup any old builds' static assets
-make -C docs clean
- 
 # get a list of branches, excluding 'HEAD' and 'gh-pages'
 versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
-echo "INFO: Branches = ${versions}"
-for current_version in ${versions}; do
+echo "INFO: Branches"
+for current_version in ${versions}
+do
+    echo "INFO:        ${current_version}"
+done
+
+for current_version in ${versions}
+do
+   echo "INFO: Building sites for ${current_version}"
  
    # make the current language available to conf.py
    export current_version
-   git checkout --no-guess ${current_version}
- 
-   echo "INFO: Building sites for ${current_version}"
+   git checkout ${current_version}
  
    # skip this branch if it doesn't have our docs dir & sphinx config
    if [ ! -e 'docs/conf.py' ]; then
@@ -52,8 +54,8 @@ for current_version in ${versions}; do
    fi
  
    languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
-   for current_language in ${languages}; do
- 
+   for current_language in ${languages}
+   do
       # make the current language available to conf.py
       export current_language
  
@@ -61,6 +63,9 @@ for current_version in ${versions}; do
       # BUILDS #
       ##########
       echo "INFO: Building for ${current_language}"
+
+      # first, cleanup any old builds' static assets
+      make -C docs clean
  
       # HTML #
       sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
@@ -79,10 +84,10 @@ for current_version in ${versions}; do
       if [ "${current_version}" = "main" -a "${current_language}" = "en" ]
       then
 	  echo "INFO: publishing main to /"
-	  rsync -av "docs/_build/html/en/main/" "${docroot}/"
+	  rsync -a "docs/_build/html/en/main/" "${docroot}/"
       else
 	  echo "INFO: publishing ${current_version} to /dev/${current_language}/${current_version}/"
-	  rsync -av "docs/_build/html/" "${docroot}/dev/"
+	  rsync -a "docs/_build/html/" "${docroot}/dev/"
       fi
    done
    echo ""
@@ -114,7 +119,8 @@ cat > "${docroot}/dev/index.html" <<EOF
       <ul>
 EOF
 
-for current_version in ${versions}; do
+for current_version in ${versions}
+do
     if [ "${current_version}" = "main" ]
     then
 	cat >> "${docroot}/dev/index.html" <<EOF
@@ -123,7 +129,8 @@ EOF
     fi
 done
 
-for current_version in ${versions}; do
+for current_version in ${versions}
+do
    git checkout --no-guess ${current_version}
 
    # skip this branch if it doesn't have our docs dir & sphinx config
