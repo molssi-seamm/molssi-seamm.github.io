@@ -20,6 +20,7 @@
 echo "::group::Setup"
 pwd
 ls -lah
+printenv
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
  
 # make a new temp dir which will be our GitHub Pages docroot
