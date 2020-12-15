@@ -50,6 +50,9 @@ do
     # make the current language available to conf.py
     export current_version
     git checkout ${current_version}
+
+    export DOC_VERSION=$(git describe --always --tags)
+    echo "Documentation version = ${DOC_VERSION}"
  
     # skip this branch if it doesn't have our docs dir & sphinx config
     if [ ! -e 'docs/conf.py' ]; then
@@ -121,12 +124,25 @@ cat > "${docroot}/dev/index.html" <<EOF
       <ul>
 EOF
 
+cat > "${docroot}/dev/versions.html" <<EOF
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Documentation for MolSSI SEAMM</title>
+   </head>
+   <body>
+      <ul>
+EOF
+
 for current_version in ${versions}
 do
     if [ "${current_version}" = "main" ]
     then
 	cat >> "${docroot}/dev/index.html" <<EOF
-        <li><a href="../">Stable version (main)</a></li>
+        <li><a href="../">main -- stable version</a></li>
+EOF
+	cat >> "${docroot}/dev/versions.html" <<EOF
+        <li><a href="../" target="_parent">main -- stable version</a></li>
 EOF
     fi
 done
@@ -144,10 +160,19 @@ do
 	cat >> "${docroot}/dev/index.html" <<EOF
         <li><a href="en/${current_version}/">${current_version}</a></li>
 EOF
+	cat >> "${docroot}/dev/versions.html" <<EOF
+        <li><a href="en/${current_version}/" target="_parent">${current_version}</a></li>
+EOF
     fi
 done
 
 cat >> "${docroot}/dev/index.html" <<EOF
+      </ul>
+   </body>
+</html>
+EOF
+ 
+cat >> "${docroot}/dev/versions.html" <<EOF
       </ul>
    </body>
 </html>

@@ -67,4 +67,4 @@ Next steps
     seamm_description/dashboard
     installation/index
     using_seamm/index
-    
+    plugins

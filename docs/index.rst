@@ -54,7 +54,17 @@ SEAMM, please read the :ref:`developers_docs`.
 
 The source is at GitHub in the `MolSSI SEAMM project`_
 
-You can also join our Slack channel by cliking here: |slack|
+You can also join our Slack channel by clicking here: |slack|
+
+Documentation Versions
+======================
+
+.. raw:: html
+
+   <iframe
+   src="https://molssi-seamm.github.io/dev/versions.html"
+   title="Documentation Versions"  style="border:none;">
+   </iframe>
 
 .. toctree::
     :maxdepth: 5
