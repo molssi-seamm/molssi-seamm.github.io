@@ -36,10 +36,10 @@ echo "::endgroup::"
 echo "::group::branches"
 # get a list of branches, excluding 'HEAD' and 'gh-pages'
 versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
-echo "INFO: Branches"
+echo "Branches"
 for current_version in ${versions}
 do
-    echo "INFO:        ${current_version}"
+    echo "       ${current_version}"
 done
 echo "::endgroup::"
 
@@ -53,7 +53,7 @@ do
  
     # skip this branch if it doesn't have our docs dir & sphinx config
     if [ ! -e 'docs/conf.py' ]; then
-	echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
+	echo "::warning::Skipping because could not find 'docs/conf.py'"
 	continue
     fi
  
@@ -66,7 +66,7 @@ do
 	##########
 	# BUILDS #
 	##########
-	echo "INFO: Building for ${current_language}"
+	echo "Building for ${current_language}"
 
 	# first, cleanup any old builds' static assets
 	make -C docs clean
@@ -87,10 +87,10 @@ do
 	# copy the static assets produced by the above build into our docroot
 	if [ "${current_version}" = "main" -a "${current_language}" = "en" ]
 	then
-	    echo "INFO: publishing main to /"
+	    echo "Publishing main to /"
 	    rsync -a "docs/_build/html/en/main/" "${docroot}/"
 	else
-	    echo "INFO: publishing ${current_version} to /dev/${current_language}/${current_version}/"
+	    echo "Publishing ${current_version} to /dev/${current_language}/${current_version}/"
 	    rsync -a "docs/_build/html/" "${docroot}/dev/"
 	fi
     done
@@ -137,7 +137,6 @@ do
 
     # skip this branch if it doesn't have our docs dir & sphinx config
     if [ ! -e 'docs/conf.py' ]; then
-	echo "::warning::Skipping because could not find 'docs/conf.py'"
 	continue
     fi
     if [ "${current_version}" != "main" ]
@@ -193,7 +192,7 @@ git commit -am "${msg}"
 # overwrite the contents of the gh-pages branch on our github.com repo
 git push deploy gh-pages --force
 
-echo "::endgroup" 
+echo "::endgroup::" 
 
 popd # return to main repo sandbox root
-echo "All done! Documentation build successfully."
+echo "All done! Documentation built successfully."
