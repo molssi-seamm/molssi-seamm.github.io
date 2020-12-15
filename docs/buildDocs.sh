@@ -113,7 +113,7 @@ for current_version in ${versions}; do
     if [ "${current_version}" = "main" ]
     then
 	cat >> "${docroot}/dev/index.html" <<EOF
-        <li><a href="en/${current_version}/">Stable version (main)</a></li>
+        <li><a href="../">Stable version (main)</a></li>
 EOF
     fi
 done
