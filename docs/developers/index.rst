@@ -27,5 +27,6 @@ the entire community.
     status
     home_for_tools
     design/index
+    tips-and-tricks/index
     2019/index
     2020/index

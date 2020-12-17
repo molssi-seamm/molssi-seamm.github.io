@@ -71,11 +71,12 @@ Documentation Versions
     :titlesonly:
     :hidden:
 
-    html/status
-    html/users/index
-    html/developers/index
+    status
+    users/index
+    developers/index
+    plug-ins/index
     https://github.com/molssi-seamm
-    html/glossary
+    glossary
     acknowledgements
 
 .. _Shareable and reproducible flowcharts: html/users/seamm_description/flowchart.html
