@@ -22,3 +22,11 @@
   display: table;
   clear: both;
 }
+
+/* Numbering equations */
+.math {
+    text-align: left;
+}
+.eqno {
+    float: right;
+}
