@@ -17,14 +17,20 @@ In order to use a forcefield in a simulation the following steps are needed in g
 #. The user selects the forcefield or interatomic potentials to use.
 #. The system is 'atom typed', i.e. atom types are associated with each relevant atom in
    the system.
-#. The energy expression for the system is created and passed to the simulation code
+#. The energy expression for the system is created and passed to the simulattion code
    along with the system itself.
 
-Occasionally the second step, atom typing, is not needed
+Occasionally the second step, atom typing, is not needed or is minimal; however, this is
+the general flow in SEAMM.
+
+The following sections will explore each phase in more depth
 
 .. toctree::
     :maxdepth: 4
-    :hidden:
 
+    plugin_anatomy
+    selection
+    atom_typing
+    energy_expression
 
     
