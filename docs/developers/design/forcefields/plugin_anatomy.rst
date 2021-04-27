@@ -46,9 +46,8 @@ the forcefield, and a factory method to create the object that handles the force
    We need to flesh out the metadata. For instance, should it include the terms
    in the functional form?
 
-The factory method is equally simple:
+The factory method is equally simple::
 
-::	
     def create_atomtyper(self):
         """Create and return the new GAFF forcefield object.
 
