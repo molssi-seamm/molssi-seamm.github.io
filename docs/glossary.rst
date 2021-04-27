@@ -52,3 +52,28 @@ Glossary
    Job Manager
       The part of SEAMM that handles running jobs, hiding the messy
       details.
+
+   forcefield
+      An approximate, parameterized description of the potential energy surface (PES)
+      for a system composed of atoms or atom-like entities. A forcefield provides a
+      mathematical description of the PES as a function of the coordinates of the atoms,
+      using parameters to fit the physical PES. Typically a forcefield is composed of a
+      functional form -- Lennard-Jones potentials for the non-bonded (van der Waals)
+      interactions between atoms; harmonic or quartic or Morse potentials to describe
+      bonds, etc. -- and the parameters for specific interactions, such as the
+      Lennard-Jones parameters :math:`\epsilon` (well depth) and :math:`\sigma`
+      (particle size). A reference such as "AMBER forcefield" can refer to the
+      functional form, or to a specific set of parameters, or to the combination of the
+      two depending on the context. Usually it is clear from the context which use is
+      intended, but sometimes it can be a bit tricky, so be careful.
+
+      See :doc:`users/forcefields/overview` for a more complete discussion.
+
+   combining rules
+      A rule for how to combine the Lennard-Jones-type parameters for single atoms
+      into parameters for the interaction between two atoms. Common rules are
+      * geometric
+      * arithmetic or Lorentz-Bertholet
+      * sixth-power or Waldman-Hagler
+      Wikipedia has a useful page describing `combining rules
+      <https://en.wikipedia.org/wiki/Combining_rules>`_

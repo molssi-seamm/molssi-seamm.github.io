@@ -31,3 +31,4 @@ the components.
     :hidden:
 
     plug-ins
+    forcefields/index
