@@ -32,5 +32,4 @@ The following sections will explore each phase in more depth
     selection
     atom_typing
     energy_expression
-
-    
+    using_energy_expressions
