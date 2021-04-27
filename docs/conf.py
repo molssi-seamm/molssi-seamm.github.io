@@ -40,7 +40,11 @@ sys.path.insert(0, project_root)
 extensions = [
     'sphinx.ext.githubpages',
     'recommonmark',
+    'sphinx.ext.todo',
 ]
+
+# Display todos by setting to True
+todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
