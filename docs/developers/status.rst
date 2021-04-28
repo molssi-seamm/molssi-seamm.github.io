@@ -50,7 +50,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |seamm1| image:: https://github.com/molssi-seamm/seamm/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/seamm/actions
+   :target: https://github.com/molssi-seamm/seamm/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |seamm2| image:: https://codecov.io/gh/molssi-seamm/seamm/branch/master/graph/badge.svg
@@ -61,8 +61,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm/context:python
    :alt: Code Quality
 
-.. |seamm4| image:: https://readthedocs.org/projects/seamm/badge/?version=latest
-   :target: https://seamm.readthedocs.io/en/latest/?badge=latest
+.. |seamm4| image:: https://github.com/molssi-seamm/seamm/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/seamm/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |seamm5| image:: https://pyup.io/repos/github/molssi-seamm/seamm/shield.svg
@@ -82,7 +82,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |su1| image:: https://github.com/molssi-seamm/seamm_util/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_util/actions
+   :target: https://github.com/molssi-seamm/seamm_util/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |su2| image:: https://codecov.io/gh/molssi-seamm/seamm_util/branch/master/graph/badge.svg
@@ -93,8 +93,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm_util/context:python
    :alt: Code Quality
 
-.. |su4| image:: https://readthedocs.org/projects/seamm-util/badge/?version=latest
-   :target: https://seamm-util.readthedocs.io/en/latest/?badge=latest
+.. |su4| image:: https://github.com/molssi-seamm/seamm_util/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_util/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |su5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_util/shield.svg
@@ -114,7 +114,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |sw1| image:: https://github.com/molssi-seamm/seamm_widgets/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_widgets/actions
+   :target: https://github.com/molssi-seamm/seamm_widgets/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |sw2| image:: https://codecov.io/gh/molssi-seamm/seamm_widgets/branch/master/graph/badge.svg
@@ -125,8 +125,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm_widgets/context:python
    :alt: Code Quality
 
-.. |sw4| image:: https://readthedocs.org/projects/seamm-widgets/badge/?version=latest
-   :target: https://seamm-widgets.readthedocs.io/en/latest/?badge=latest
+.. |sw4| image:: https://github.com/molssi-seamm/seamm_widgets/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_widgets/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |sw5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_widgets/shield.svg
@@ -146,7 +146,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |sj1| image:: https://github.com/molssi-seamm/seamm_jobserver/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_jobserver/actions
+   :target: https://github.com/molssi-seamm/seamm_jobserver/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |sj2| image:: https://codecov.io/gh/molssi-seamm/seamm_jobserver/branch/master/graph/badge.svg
@@ -157,8 +157,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm_jobserver/context:python
    :alt: Code Quality
 
-.. |sj4| image:: https://readthedocs.org/projects/seamm-jobserver/badge/?version=latest
-   :target: https://seamm-jobserver.readthedocs.io/en/latest/?badge=latest
+.. |sj4| image:: https://github.com/molssi-seamm/seamm_jobserver/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_jobserver/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |sj5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_jobserver/shield.svg
@@ -178,7 +178,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |sf1| image:: https://github.com/molssi-seamm/seamm_ff_util/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_ff_util/actions
+   :target: https://github.com/molssi-seamm/seamm_ff_util/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |sf2| image:: https://codecov.io/gh/molssi-seamm/seamm_ff_util/branch/master/graph/badge.svg
@@ -189,8 +189,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/seamm_ff_util/context:python
    :alt: Code Quality
 
-.. |sf4| image:: https://readthedocs.org/projects/seamm-ff-util/badge/?version=latest
-   :target: https://seamm-ff-util.readthedocs.io/en/latest/?badge=latest
+.. |sf4| image:: https://github.com/molssi-seamm/seamm_ff_util/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_ff_util/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |sf5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_ff_util/shield.svg
@@ -210,7 +210,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |sy1| image:: https://github.com/molssi-seamm/molsystem/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/molsystem/actions
+   :target: https://github.com/molssi-seamm/molsystem/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |sy2| image:: https://codecov.io/gh/molssi-seamm/molsystem/branch/master/graph/badge.svg
@@ -221,8 +221,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/molsystem/context:python
    :alt: Code Quality
 
-.. |sy4| image:: https://readthedocs.org/projects/molsystem/badge/?version=latest
-   :target: https://molsystem.readthedocs.io/en/latest/?badge=latest
+.. |sy4| image:: https://github.com/molssi-seamm/molsystem/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/molsystem/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |sy5| image:: https://pyup.io/repos/github/molssi-seamm/molsystem/shield.svg
@@ -241,8 +241,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/reference/pulls
    :alt: GitHub pull requests
 
-.. |rh1| image:: https://github.com/molssi/reference_handler.svg
-   :target: https://github.com/molssi/reference_handler
+.. |rh1| image:: https://github.com/molssi-seamm/reference_handler/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/reference_handler/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |rh2| image:: https://codecov.io/gh/molssi/reference_handler/branch/master/graph/badge.svg
@@ -253,8 +253,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/MolSSI/reference_handler/context:python
    :alt: Code Quality
 
-.. |rh4| image:: https://readthedocs.org/projects/reference-handler/badge/?version=latest
-   :target: https://reference-handler.readthedocs.io/en/latest/?badge=latest
+.. |rh4| image:: https://github.com/molssi-seamm/reference_handler/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/reference_handler/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |rh5| image:: https://pyup.io/repos/github/molssi/reference_handler/shield.svg
@@ -274,7 +274,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |control1| image:: https://github.com/molssi-seamm/control_parameters_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/control_parameters_step/actions
+   :target: https://github.com/molssi-seamm/control_parameters_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |control2| image:: https://codecov.io/gh/molssi-seamm/control_parameters_step/branch/master/graph/badge.svg
@@ -285,8 +285,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/control_parameters_step/context:python
    :alt: Code Quality
 
-.. |control4| image:: https://readthedocs.org/projects/control-parameters-step/badge/?version=latest
-   :target: https://control-parameters-step.readthedocs.io/en/latest/?badge=latest
+.. |control4| image:: https://github.com/molssi-seamm/control_parameters_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/control_parameters_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |control5| image:: https://pyup.io/repos/github/molssi-seamm/control_parameters_step/shield.svg
@@ -306,7 +306,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |crystal1| image:: https://github.com/molssi-seamm/crystal_builder_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/crystal_builder_step/actions
+   :target: https://github.com/molssi-seamm/crystal_builder_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |crystal2| image:: https://codecov.io/gh/molssi-seamm/crystal_builder_step/branch/master/graph/badge.svg
@@ -317,8 +317,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/crystal_builder_step/context:python
    :alt: Code Quality
 
-.. |crystal4| image:: https://readthedocs.org/projects/crystal-builder-step/badge/?version=latest
-   :target: https://crystal-builder-step.readthedocs.io/en/latest/?badge=latest
+.. |crystal4| image:: https://github.com/molssi-seamm/crystal_builder_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/crystal_builder_step/actions/workflows/Documentation.yam
    :alt: Documentation Status
 
 .. |crystal5| image:: https://pyup.io/repos/github/molssi-seamm/crystal_builder_step/shield.svg
@@ -338,7 +338,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |custom1| image:: https://github.com/molssi-seamm/custom_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/custom_step/actions
+   :target: https://github.com/molssi-seamm/custom_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |custom2| image:: https://codecov.io/gh/molssi-seamm/custom_step/branch/master/graph/badge.svg
@@ -349,8 +349,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/custom_step/context:python
    :alt: Code Quality
 
-.. |custom4| image:: https://readthedocs.org/projects/custom-step/badge/?version=latest
-   :target: https://custom-step.readthedocs.io/en/latest/?badge=latest
+.. |custom4| image:: https://github.com/molssi-seamm/custom_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/custom_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |custom5| image:: https://pyup.io/repos/github/molssi-seamm/custom_step/shield.svg
@@ -370,7 +370,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |dftb1| image:: https://github.com/molssi-seamm/dftbplus_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/dftbplus_step/actions
+   :target: https://github.com/molssi-seamm/dftbplus_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |dftb2| image:: https://codecov.io/gh/molssi-seamm/dftbplus_step/branch/master/graph/badge.svg
@@ -381,8 +381,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/dftbplus_step/context:python
    :alt: Code Quality
 
-.. |dftb4| image:: https://readthedocs.org/projects/dftbplus-step/badge/?version=latest
-   :target: https://dftbplus-step.readthedocs.io/en/latest/?badge=latest
+.. |dftb4| image:: https://github.com/molssi-seamm/dftbplus_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/dftbplus_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |dftb5| image:: https://pyup.io/repos/github/molssi-seamm/dftbplus_step/shield.svg
@@ -402,7 +402,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |ffield1| image:: https://github.com/molssi-seamm/forcefield_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/forcefield_step
+   :target: https://github.com/molssi-seamm/forcefield_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |ffield2| image:: https://codecov.io/gh/molssi-seamm/forcefield_step/branch/master/graph/badge.svg
@@ -413,8 +413,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/forcefield_step/context:python
    :alt: Code Quality
 
-.. |ffield4| image:: https://readthedocs.org/projects/forcefield-step/badge/?version=latest
-   :target: https://forcefield-step.readthedocs.io/en/latest/?badge=latest
+.. |ffield4| image:: https://github.com/molssi-seamm/forcefield_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/forcefield_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |ffield5| image:: https://pyup.io/repos/github/molssi-seamm/forcefield_step/shield.svg
@@ -434,7 +434,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |smiles1| image:: https://github.com/molssi-seamm/from_smiles_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/from_smiles_step/actions
+   :target: https://github.com/molssi-seamm/from_smiles_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |smiles2| image:: https://codecov.io/gh/molssi-seamm/from_smiles_step/branch/master/graph/badge.svg
@@ -445,8 +445,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/from_smiles_step/context:python
    :alt: Code Quality
 
-.. |smiles4| image:: https://readthedocs.org/projects/from-smiles-step/badge/?version=latest
-   :target: https://from-smiles-step.readthedocs.io/en/latest/?badge=latest
+.. |smiles4| image:: https://github.com/molssi-seamm/from_smiles_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/from_smiles_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |smiles5| image:: https://pyup.io/repos/github/molssi-seamm/from_smiles_step/shield.svg
@@ -466,7 +466,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |lammps1| image:: https://github.com/molssi-seamm/lammps_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/lammps_step/actions
+   :target: https://github.com/molssi-seamm/lammps_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |lammps2| image:: https://codecov.io/gh/molssi-seamm/lammps_step/branch/master/graph/badge.svg
@@ -477,8 +477,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/lammps_step/context:python
    :alt: Code Quality
 
-.. |lammps4| image:: https://readthedocs.org/projects/lammps-step/badge/?version=latest
-   :target: https://lammps-step.readthedocs.io/en/latest/?badge=latest
+.. |lammps4| image:: https://github.com/molssi-seamm/lammps_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/lammps_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |lammps5| image:: https://pyup.io/repos/github/molssi-seamm/lammps_step/shield.svg
@@ -498,7 +498,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |loop1| image:: https://github.com/molssi-seamm/loop_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/loop_step/actions
+   :target: https://github.com/molssi-seamm/loop_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |loop2| image:: https://codecov.io/gh/molssi-seamm/loop_step/branch/master/graph/badge.svg
@@ -509,8 +509,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/loop_step/context:python
    :alt: Code Quality
 
-.. |loop4| image:: https://readthedocs.org/projects/loop-step/badge/?version=latest
-   :target: https://loop-step.readthedocs.io/en/latest/?badge=latest
+.. |loop4| image:: https://github.com/molssi-seamm/loop_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/loop_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |loop5| image:: https://pyup.io/repos/github/molssi-seamm/loop_step/shield.svg
@@ -530,7 +530,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |mopac1| image:: https://github.com/molssi-seamm/mopac_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/mopac_step/actions
+   :target: https://github.com/molssi-seamm/mopac_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |mopac2| image:: https://codecov.io/gh/molssi-seamm/mopac_step/branch/master/graph/badge.svg
@@ -541,8 +541,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/mopac_step/context:python
    :alt: Code Quality
 
-.. |mopac4| image:: https://readthedocs.org/projects/mopac-step/badge/?version=latest
-   :target: https://mopac-step.readthedocs.io/en/latest/?badge=latest
+.. |mopac4| image:: https://github.com/molssi-seamm/mopac_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/mopac_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |mopac5| image:: https://pyup.io/repos/github/molssi-seamm/mopac_step/shield.svg
@@ -562,7 +562,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |packmol1| image:: https://github.com/molssi-seamm/packmol_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/packmol_step/actions
+   :target: https://github.com/molssi-seamm/packmol_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |packmol2| image:: https://codecov.io/gh/molssi-seamm/packmol_step/branch/master/graph/badge.svg
@@ -573,8 +573,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/packmol_step/context:python
    :alt: Code Quality
 
-.. |packmol4| image:: https://readthedocs.org/projects/packmol-step/badge/?version=latest
-   :target: https://packmol-step.readthedocs.io/en/latest/?badge=latest
+.. |packmol4| image:: https://github.com/molssi-seamm/packmol_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/packmol_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |packmol5| image:: https://pyup.io/repos/github/molssi-seamm/packmol_step/shield.svg
@@ -595,7 +595,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |psi4_1| image:: https://github.com/molssi-seamm/psi4_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/psi4_step/actions
+   :target: https://github.com/molssi-seamm/psi4_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |psi4_2| image:: https://codecov.io/gh/molssi-seamm/psi4_step/branch/master/graph/badge.svg
@@ -606,8 +606,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/psi4_step/context:python
    :alt: Code Quality
 
-.. |psi4_4| image:: https://readthedocs.org/projects/psi4-step/badge/?version=latest
-   :target: https://psi4-step.readthedocs.io/en/latest/?badge=latest
+.. |psi4_4| image:: https://github.com/molssi-seamm/psi4_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/psi4_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |psi4_5| image:: https://pyup.io/repos/github/molssi-seamm/psi4_step/shield.svg
@@ -627,7 +627,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |structure1| image:: https://github.com/molssi-seamm/read_structure_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/read_structure_step/actions
+   :target: https://github.com/molssi-seamm/read_structure_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |structure2| image:: https://codecov.io/gh/molssi-seamm/read_structure_step/branch/master/graph/badge.svg
@@ -638,8 +638,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/read_structure_step/context:python
    :alt: Code Quality
 
-.. |structure4| image:: https://readthedocs.org/projects/read_structure-step/badge/?version=latest
-   :target: https://read_structure-step.readthedocs.io/en/latest/?badge=latest
+.. |structure4| image:: https://github.com/molssi-seamm/read_structure_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/read_structure_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |structure5| image:: https://pyup.io/repos/github/molssi-seamm/read_structure_step/shield.svg
@@ -659,7 +659,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |set_cell1| image:: https://github.com/molssi-seamm/set_cell_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/set_cell_step/actions
+   :target: https://github.com/molssi-seamm/set_cell_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |set_cell2| image:: https://codecov.io/gh/molssi-seamm/set_cell_step/branch/master/graph/badge.svg
@@ -670,8 +670,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/set_cell_step/context:python
    :alt: Code Quality
 
-.. |set_cell4| image:: https://readthedocs.org/projects/set_cell-step/badge/?version=latest
-   :target: https://set_cell-step.readthedocs.io/en/latest/?badge=latest
+.. |set_cell4| image:: https://github.com/molssi-seamm/set_cell_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/set_cell_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |set_cell5| image:: https://pyup.io/repos/github/molssi-seamm/set_cell_step/shield.svg
@@ -691,7 +691,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |solvate1| image:: https://github.com/molssi-seamm/solvate_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/solvate_step/actions
+   :target: https://github.com/molssi-seamm/solvate_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |solvate2| image:: https://codecov.io/gh/molssi-seamm/solvate_step/branch/master/graph/badge.svg
@@ -702,8 +702,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/solvate_step/context:python
    :alt: Code Quality
 
-.. |solvate4| image:: https://readthedocs.org/projects/solvate-step/badge/?version=latest
-   :target: https://solvate-step.readthedocs.io/en/latest/?badge=latest
+.. |solvate4| image:: https://github.com/molssi-seamm/solvate_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/solvate_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |solvate5| image:: https://pyup.io/repos/github/molssi-seamm/solvate_step/shield.svg
@@ -723,7 +723,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |supercell1| image:: https://github.com/molssi-seamm/supercell_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/supercell_step/actions
+   :target: https://github.com/molssi-seamm/supercell_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |supercell2| image:: https://codecov.io/gh/molssi-seamm/supercell_step/branch/master/graph/badge.svg
@@ -734,8 +734,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/supercell_step/context:python
    :alt: Code Quality
 
-.. |supercell4| image:: https://readthedocs.org/projects/supercell-step/badge/?version=latest
-   :target: https://supercell-step.readthedocs.io/en/latest/?badge=latest
+.. |supercell4| image:: https://github.com/molssi-seamm/supercell_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/supercell_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |supercell5| image:: https://pyup.io/repos/github/molssi-seamm/supercell_step/shield.svg
@@ -755,7 +755,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :alt: GitHub pull requests
 
 .. |table1| image:: https://github.com/molssi-seamm/table_step/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/table_step/actions
+   :target: https://github.com/molssi-seamm/table_step/actions/workflows/CI.yaml
    :alt: Build Status
 
 .. |table2| image:: https://codecov.io/gh/molssi-seamm/table_step/branch/master/graph/badge.svg
@@ -766,8 +766,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/molssi-seamm/table_step/context:python
    :alt: Code Quality
 
-.. |table4| image:: https://readthedocs.org/projects/table-step/badge/?version=latest
-   :target: https://table-step.readthedocs.io/en/latest/?badge=latest
+.. |table4| image:: https://github.com/molssi-seamm/table_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/table_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
 .. |table5| image:: https://pyup.io/repos/github/molssi-seamm/table_step/shield.svg
