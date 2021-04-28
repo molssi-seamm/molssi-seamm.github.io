@@ -22,7 +22,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :header-rows: 1
 
    Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "------ Version ------",    "Downloads"
+   control_parameters_step_,          |control2|,       |control3|,
+   |control4|,       |control6|,    |control7|
+   crystal_builder_step_,          |crystal2|,       |crystal3|,  	     	       	 |crystal4|,       |crystal6|,    |crystal7|
    custom_step_,          |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom6|,    |custom7|
+   dftbplus_step_,      |dftb2|,       |dftb3|,  	     	       	 |dftb4|,       |dftb6|,	|dftb7|
    forcefield_step_,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield6|,	|ffield7|
    from_smiles_step_,     |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles6|,	|smiles7|
    lammps_step_,          |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps6|,	|lammps7|
@@ -30,6 +34,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac6|,	|mopac7|
    packmol_step_,         |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol6|,	|packmol7|
    psi4_step_,            |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_6|,	|psi4_7|
+   set_cell_step_,  |set_cell2|,    |set_cell3|,     	       	 |set_cell4|,    |set_cell6|,	|set_cell7|
    read_structure_step_,  |structure2|,    |structure3|,     	       	 |structure4|,    |structure6|,	|structure7|
    solvate_step_,         |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate6|,	|solvate7|
    supercell_step_,       |supercell2|,    |supercell3|,		 |supercell4|,    |supercell6|,	|supercell7|
@@ -63,7 +68,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. seamm_util badges
 
-.. _seamm_util: https://molssi-seamm.github.io/seamm_util
+.. _seamm_util: https://molssi-seamm.github.io/seamm_util/index.html
 
 .. |su2| image:: https://codecov.io/gh/molssi-seamm/seamm_util/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/seamm_util
@@ -87,7 +92,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. seamm_widgets badges
 
-.. _seamm_widgets: https://molssi-seamm.github.io/seamm_widgets
+.. _seamm_widgets: https://molssi-seamm.github.io/seamm_widgets/index.html
 
 .. |sw2| image:: https://codecov.io/gh/molssi-seamm/seamm_widgets/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/seamm_widgets
@@ -111,7 +116,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. seamm_jobserver badges
 
-.. _seamm_jobserver: https://molssi-seamm.github.io/seamm_jobserver
+.. _seamm_jobserver: https://molssi-seamm.github.io/seamm_jobserver/index.html
 
 .. |sj2| image:: https://codecov.io/gh/molssi-seamm/seamm_jobserver/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/seamm_jobserver
@@ -135,7 +140,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. seamm_ff_util badges
 
-.. _seamm_ff_util: https://molssi-seamm.github.io/seamm_ff_util
+.. _seamm_ff_util: https://molssi-seamm.github.io/seamm_ff_util/index.html
 
 .. |sf2| image:: https://codecov.io/gh/molssi-seamm/seamm_ff_util/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/seamm_ff_util
@@ -159,7 +164,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. molsystem badges
 
-.. _molsystem: https://molssi-seamm.github.io/molsystem
+.. _molsystem: https://molssi-seamm.github.io/molsystem/index.html
 
 .. |sy2| image:: https://codecov.io/gh/molssi-seamm/molsystem/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/molsystem
@@ -183,7 +188,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. reference_handler badges
 
-.. _reference_handler: https://github.com/molssi/reference_handler
+.. _reference_handler: https://github.com/molssi/reference_handler/index.html
 
 .. |rh2| image:: https://codecov.io/gh/molssi/reference_handler/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi/reference_handler
@@ -207,7 +212,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. control parameters step badges
 
-.. _control_parameters_step: https://molssi-seamm.github.io/control_parameters_step
+.. _control_parameters_step: https://molssi-seamm.github.io/control_parameters_step/index.html
 
 .. |control2| image:: https://codecov.io/gh/molssi-seamm/control_parameters_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/control_parameters_step
@@ -229,13 +234,41 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pypi.python.org/pypi/control_parameters_step
    :alt: PyPi VERSION
 
-.. |control7| image:: https://img.shields.io/pypi/dm/control_step
-   :target: https://pypistats.org/packages/control_step
+.. |control7| image:: https://img.shields.io/pypi/dm/control_parameters_step
+   :target: https://pypistats.org/packages/control_parameters_step
+   :alt: PyPI - Downloads
+
+.. crystal builder step badges
+
+.. _crystal_builder_step: https://molssi-seamm.github.io/crystal_builder_step/index.html
+
+.. |crystal2| image:: https://codecov.io/gh/molssi-seamm/crystal_builder_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/crystal_builder_step
+   :alt: Code Coverage
+
+.. |crystal3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/crystal_builder_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/crystal_builder_step/context:python
+   :alt: Code Quality
+
+.. |crystal4| image:: https://github.com/molssi-seamm/crystal_builder_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/crystal_builder_step/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |crystal5| image:: https://pyup.io/repos/github/molssi-seamm/crystal_builder_step/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/crystal_builder_step/
+   :alt: Updates for Dependencies
+
+.. |crystal6| image:: https://img.shields.io/pypi/v/crystal_builder_step.svg
+   :target: https://pypi.python.org/pypi/crystal_builder_step
+   :alt: PyPi VERSION
+
+.. |crystal7| image:: https://img.shields.io/pypi/dm/crystal_builder_step
+   :target: https://pypistats.org/packages/crystal_builder_step
    :alt: PyPI - Downloads
 
 .. custom step badges
 
-.. _custom_step: https://molssi-seamm.github.io/custom_step
+.. _custom_step: https://molssi-seamm.github.io/custom_step/index.html
 
 .. |custom2| image:: https://codecov.io/gh/molssi-seamm/custom_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/custom_step
@@ -259,7 +292,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. dftb+ step badges
 
-.. _dftbplus_step: https://molssi-seamm.github.io/dftbplus_step
+.. _dftbplus_step: https://molssi-seamm.github.io/dftbplus_step/index.html
 
 .. |dftb2| image:: https://codecov.io/gh/molssi-seamm/dftbplus_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/dftbplus_step
@@ -281,13 +314,13 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pypi.python.org/pypi/dftbplus_step
    :alt: PyPi VERSION
 
-.. |dftbplus7| image:: https://img.shields.io/pypi/dm/dftbplus_step
+.. |dftb7| image:: https://img.shields.io/pypi/dm/dftbplus_step
    :target: https://pypistats.org/packages/dftbplus_step
    :alt: PyPI - Downloads
 
 .. forcefield step badges
 
-.. _forcefield_step: https://molssi-seamm.github.io/forcefield_step
+.. _forcefield_step: https://molssi-seamm.github.io/forcefield_step/index.html
 
 .. |ffield2| image:: https://codecov.io/gh/molssi-seamm/forcefield_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/forcefield_step
@@ -311,7 +344,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. from SMILES step badges
 
-.. _from_smiles_step: https://molssi-seamm.github.io/from_smiles_step
+.. _from_smiles_step: https://molssi-seamm.github.io/from_smiles_step/index.html
 
 .. |smiles2| image:: https://codecov.io/gh/molssi-seamm/from_smiles_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/from_smiles_step
@@ -335,7 +368,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. LAMMPS step badges
 
-.. _lammps_step: https://molssi-seamm.github.io/lammps_step
+.. _lammps_step: https://molssi-seamm.github.io/lammps_step/index.html
 
 .. |lammps2| image:: https://codecov.io/gh/molssi-seamm/lammps_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/lammps_step
@@ -359,7 +392,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. Loop step badges
 
-.. _loop_step: https://molssi-seamm.github.io/loop_step
+.. _loop_step: https://molssi-seamm.github.io/loop_step/index.html
 
 .. |loop2| image:: https://codecov.io/gh/molssi-seamm/loop_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/loop_step
@@ -383,7 +416,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. MOPAC step badges
 
-.. _mopac_step: https://molssi-seamm.github.io/mopac_step
+.. _mopac_step: https://molssi-seamm.github.io/mopac_step/index.html
 
 .. |mopac2| image:: https://codecov.io/gh/molssi-seamm/mopac_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/mopac_step
@@ -407,7 +440,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. PACKMOL step badges
 
-.. _packmol_step: https://molssi-seamm.github.io/packmol_step
+.. _packmol_step: https://molssi-seamm.github.io/packmol_step/index.html
 
 .. |packmol2| image:: https://codecov.io/gh/molssi-seamm/packmol_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/packmol_step
@@ -432,7 +465,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. Psi4 step badges
 
-.. _psi4_step: https://molssi-seamm.github.io/psi4_step
+.. _psi4_step: https://molssi-seamm.github.io/psi4_step/index.html
 
 .. |psi4_2| image:: https://codecov.io/gh/molssi-seamm/psi4_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/psi4_step
@@ -456,7 +489,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. Read Structure step badges
 
-.. _read_structure_step: https://molssi-seamm.github.io/read_structure_step
+.. _read_structure_step: https://molssi-seamm.github.io/read_structure_step/index.html
 
 .. |structure2| image:: https://codecov.io/gh/molssi-seamm/read_structure_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/read_structure_step
@@ -480,7 +513,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. Set Cell step badges
 
-.. _set_cell_step: https://molssi-seamm.github.io/set_cell_step
+.. _set_cell_step: https://molssi-seamm.github.io/set_cell_step/index.html
 
 .. |set_cell2| image:: https://codecov.io/gh/molssi-seamm/set_cell_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/set_cell_step
@@ -504,7 +537,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. Solvate step badges
 
-.. _solvate_step: https://molssi-seamm.github.io/solvate_step
+.. _solvate_step: https://molssi-seamm.github.io/solvate_step/index.html
 
 .. |solvate2| image:: https://codecov.io/gh/molssi-seamm/solvate_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/solvate_step
@@ -528,7 +561,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. Supercell step badges
 
-.. _supercell_step: https://molssi-seamm.github.io/supercell_step
+.. _supercell_step: https://molssi-seamm.github.io/supercell_step/index.html
 
 .. |supercell2| image:: https://codecov.io/gh/molssi-seamm/supercell_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/supercell_step
@@ -552,7 +585,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. Table step badges
 
-.. _table_step: https://molssi-seamm.github.io/table_step
+.. _table_step: https://molssi-seamm.github.io/table_step/index.html
 
 .. |table2| image:: https://codecov.io/gh/molssi-seamm/table_step/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi-seamm/table_step
