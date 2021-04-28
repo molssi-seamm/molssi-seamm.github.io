@@ -22,11 +22,10 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :header-rows: 1
 
    Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "------ Version ------",    "Downloads"
-   control_parameters_step_,          |control2|,       |control3|,
-   |control4|,       |control6|,    |control7|
-   crystal_builder_step_,          |crystal2|,       |crystal3|,  	     	       	 |crystal4|,       |crystal6|,    |crystal7|
+   control_parameters_step_, |control2|,   |control3|,                   |control4|,      |control6|,   |control7|
+   crystal_builder_step_, |crystal2|,      |crystal3|,       	         |crystal4|,      |crystal6|,   |crystal7|
    custom_step_,          |custom2|,       |custom3|,  	     	       	 |custom4|,       |custom6|,    |custom7|
-   dftbplus_step_,      |dftb2|,       |dftb3|,  	     	       	 |dftb4|,       |dftb6|,	|dftb7|
+   dftbplus_step_,        |dftb2|,         |dftb3|,  	     	       	 |dftb4|,         |dftb6|,	|dftb7|
    forcefield_step_,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield6|,	|ffield7|
    from_smiles_step_,     |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles6|,	|smiles7|
    lammps_step_,          |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps6|,	|lammps7|
@@ -34,7 +33,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac6|,	|mopac7|
    packmol_step_,         |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol6|,	|packmol7|
    psi4_step_,            |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_6|,	|psi4_7|
-   set_cell_step_,  |set_cell2|,    |set_cell3|,     	       	 |set_cell4|,    |set_cell6|,	|set_cell7|
+   set_cell_step_,        |set_cell2|,     |set_cell3|,     	       	 |set_cell4|,     |set_cell6|,	|set_cell7|
    read_structure_step_,  |structure2|,    |structure3|,     	       	 |structure4|,    |structure6|,	|structure7|
    solvate_step_,         |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate6|,	|solvate7|
    supercell_step_,       |supercell2|,    |supercell3|,		 |supercell4|,    |supercell6|,	|supercell7|
