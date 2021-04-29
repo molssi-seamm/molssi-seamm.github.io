@@ -187,7 +187,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. reference_handler badges
 
-.. _reference_handler: https://github.com/molssi/reference_handler/index.html
+.. _reference_handler: https://reference-handler.readthedocs.io/en/latest/?badge=latest
 
 .. |rh2| image:: https://codecov.io/gh/molssi/reference_handler/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/molssi/reference_handler
@@ -197,8 +197,8 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/MolSSI/reference_handler/context:python
    :alt: Code Quality
 
-.. |rh4| image:: https://github.com/molssi-seamm/reference_handler/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/reference_handler/actions/workflows/Docs.yaml
+.. |rh4| image:: https://readthedocs.org/projects/reference-handler/badge/?version=latest
+   :target: https://reference-handler.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. |rh6| image:: https://img.shields.io/pypi/v/reference_handler.svg

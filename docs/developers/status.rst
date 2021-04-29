@@ -241,8 +241,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/reference/pulls
    :alt: GitHub pull requests
 
-.. |rh1| image:: https://github.com/molssi-seamm/reference_handler/workflows/CI/badge.svg
-   :target: https://github.com/molssi-seamm/reference_handler/actions/workflows/CI.yaml
+.. |rh1| image:: https://travis-ci.org/molssi/reference_handler.png
+   :target: https://travis-ci.org/molssi/reference_handler
    :alt: Build Status
 
 .. |rh2| image:: https://codecov.io/gh/molssi/reference_handler/branch/master/graph/badge.svg
@@ -253,8 +253,8 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    :target: https://lgtm.com/projects/g/MolSSI/reference_handler/context:python
    :alt: Code Quality
 
-.. |rh4| image:: https://github.com/molssi-seamm/reference_handler/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/reference_handler/actions/workflows/Docs.yaml
+.. |rh4| image:: https://readthedocs.org/projects/reference-handler/badge/?version=latest
+   :target: https://reference-handler.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. |rh5| image:: https://pyup.io/repos/github/molssi/reference_handler/shield.svg
