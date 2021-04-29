@@ -57,11 +57,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |seamm6| image:: https://img.shields.io/pypi/v/seamm.svg
+.. |seamm6| image:: https://img.shields.io/pypi/v/seamm.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/seamm
    :alt: PyPi VERSION
 
-.. |seamm7| image:: https://img.shields.io/pypi/dm/seamm
+.. |seamm7| image:: https://img.shields.io/pypi/dm/seamm?cacheSeconds=36000
    :target: https://pypistats.org/packages/seamm
    :alt: PyPI - Downloads
 
@@ -81,11 +81,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_util/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |su6| image:: https://img.shields.io/pypi/v/seamm_util.svg
+.. |su6| image:: https://img.shields.io/pypi/v/seamm_util.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/seamm_util
    :alt: PyPi VERSION
 
-.. |su7| image:: https://img.shields.io/pypi/dm/seamm_util
+.. |su7| image:: https://img.shields.io/pypi/dm/seamm_util?cacheSeconds=36000
    :target: https://pypistats.org/packages/seamm_util
    :alt: PyPI - Downloads
 
@@ -105,11 +105,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_widgets/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |sw6| image:: https://img.shields.io/pypi/v/seamm_widgets.svg
+.. |sw6| image:: https://img.shields.io/pypi/v/seamm_widgets.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/seamm_widgets
    :alt: PyPi VERSION
 
-.. |sw7| image:: https://img.shields.io/pypi/dm/seamm_widgets
+.. |sw7| image:: https://img.shields.io/pypi/dm/seamm_widgets?cacheSeconds=36000
    :target: https://pypistats.org/packages/seamm_widgets
    :alt: PyPI - Downloads
 
@@ -129,11 +129,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_jobserver/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |sj6| image:: https://img.shields.io/pypi/v/seamm_jobserver.svg
+.. |sj6| image:: https://img.shields.io/pypi/v/seamm_jobserver.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/seamm_jobserver
    :alt: PyPi VERSION
 
-.. |sj7| image:: https://img.shields.io/pypi/dm/seamm_jobserver
+.. |sj7| image:: https://img.shields.io/pypi/dm/seamm_jobserver?cacheSeconds=36000
    :target: https://pypistats.org/packages/seamm_jobserver
    :alt: PyPI - Downloads
 
@@ -153,11 +153,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/seamm_ff_util/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |sf6| image:: https://img.shields.io/pypi/v/seamm_ff_util.svg
+.. |sf6| image:: https://img.shields.io/pypi/v/seamm_ff_util.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/seamm_ff_util
    :alt: PyPi VERSION
 
-.. |sf7| image:: https://img.shields.io/pypi/dm/seamm_ff_util
+.. |sf7| image:: https://img.shields.io/pypi/dm/seamm_ff_util?cacheSeconds=36000
    :target: https://pypistats.org/packages/seamm_ff_util
    :alt: PyPI - Downloads
 
@@ -177,11 +177,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/molsystem/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |sy6| image:: https://img.shields.io/pypi/v/molsystem.svg
+.. |sy6| image:: https://img.shields.io/pypi/v/molsystem.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/molsystem
    :alt: PyPi VERSION
 
-.. |sy7| image:: https://img.shields.io/pypi/dm/molsystem
+.. |sy7| image:: https://img.shields.io/pypi/dm/molsystem?cacheSeconds=36000
    :target: https://pypistats.org/packages/molsystem
    :alt: PyPI - Downloads
 
@@ -201,11 +201,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://reference-handler.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
-.. |rh6| image:: https://img.shields.io/pypi/v/reference_handler.svg
+.. |rh6| image:: https://img.shields.io/pypi/v/reference_handler.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/reference_handler
    :alt: PyPi VERSION
 
-.. |rh7| image:: https://img.shields.io/pypi/dm/reference_handler
+.. |rh7| image:: https://img.shields.io/pypi/dm/reference_handler?cacheSeconds=36000
    :target: https://pypistats.org/packages/reference_handler
    :alt: PyPI - Downloads
 
@@ -229,11 +229,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pyup.io/repos/github/molssi-seamm/control_parameters_step/
    :alt: Updates for Dependencies
 
-.. |control6| image:: https://img.shields.io/pypi/v/control_parameters_step.svg
+.. |control6| image:: https://img.shields.io/pypi/v/control_parameters_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/control_parameters_step
    :alt: PyPi VERSION
 
-.. |control7| image:: https://img.shields.io/pypi/dm/control_parameters_step
+.. |control7| image:: https://img.shields.io/pypi/dm/control_parameters_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/control_parameters_step
    :alt: PyPI - Downloads
 
@@ -257,11 +257,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pyup.io/repos/github/molssi-seamm/crystal_builder_step/
    :alt: Updates for Dependencies
 
-.. |crystal6| image:: https://img.shields.io/pypi/v/crystal_builder_step.svg
+.. |crystal6| image:: https://img.shields.io/pypi/v/crystal_builder_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/crystal_builder_step
    :alt: PyPi VERSION
 
-.. |crystal7| image:: https://img.shields.io/pypi/dm/crystal_builder_step
+.. |crystal7| image:: https://img.shields.io/pypi/dm/crystal_builder_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/crystal_builder_step
    :alt: PyPI - Downloads
 
@@ -281,11 +281,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/custom_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |custom6| image:: https://img.shields.io/pypi/v/custom_step.svg
+.. |custom6| image:: https://img.shields.io/pypi/v/custom_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/custom_step
    :alt: PyPi VERSION
 
-.. |custom7| image:: https://img.shields.io/pypi/dm/custom_step
+.. |custom7| image:: https://img.shields.io/pypi/dm/custom_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/custom_step
    :alt: PyPI - Downloads
 
@@ -309,11 +309,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pyup.io/repos/github/molssi-seamm/dftbplus_step/
    :alt: Updates for Dependencies
 
-.. |dftb6| image:: https://img.shields.io/pypi/v/dftbplus_step.svg
+.. |dftb6| image:: https://img.shields.io/pypi/v/dftbplus_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/dftbplus_step
    :alt: PyPi VERSION
 
-.. |dftb7| image:: https://img.shields.io/pypi/dm/dftbplus_step
+.. |dftb7| image:: https://img.shields.io/pypi/dm/dftbplus_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/dftbplus_step
    :alt: PyPI - Downloads
 
@@ -333,11 +333,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/forcefield_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |ffield6| image:: https://img.shields.io/pypi/v/forcefield_step.svg
+.. |ffield6| image:: https://img.shields.io/pypi/v/forcefield_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/forcefield_step
    :alt: PyPi VERSION
 
-.. |ffield7| image:: https://img.shields.io/pypi/dm/forcefield_step
+.. |ffield7| image:: https://img.shields.io/pypi/dm/forcefield_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/forcefield_step
    :alt: PyPI - Downloads
 
@@ -357,11 +357,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/from_smiles_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |smiles6| image:: https://img.shields.io/pypi/v/from_smiles_step.svg
+.. |smiles6| image:: https://img.shields.io/pypi/v/from_smiles_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/from_smiles_step
    :alt: PyPi VERSION
 
-.. |smiles7| image:: https://img.shields.io/pypi/dm/from_smiles_step
+.. |smiles7| image:: https://img.shields.io/pypi/dm/from_smiles_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/from_smiles_step
    :alt: PyPI - Downloads
 
@@ -381,11 +381,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/lammps_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |lammps6| image:: https://img.shields.io/pypi/v/lammps_step.svg
+.. |lammps6| image:: https://img.shields.io/pypi/v/lammps_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/lammps_step
    :alt: PyPi VERSION
 
-.. |lammps7| image:: https://img.shields.io/pypi/dm/lammps_step
+.. |lammps7| image:: https://img.shields.io/pypi/dm/lammps_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/lammps_step
    :alt: PyPI - Downloads
 
@@ -405,11 +405,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/loop_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |loop6| image:: https://img.shields.io/pypi/v/loop_step.svg
+.. |loop6| image:: https://img.shields.io/pypi/v/loop_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/loop_step
    :alt: PyPi VERSION
 
-.. |loop7| image:: https://img.shields.io/pypi/dm/loop_step
+.. |loop7| image:: https://img.shields.io/pypi/dm/loop_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/loop_step
    :alt: PyPI - Downloads
 
@@ -429,11 +429,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/mopac_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |mopac6| image:: https://img.shields.io/pypi/v/mopac_step.svg
+.. |mopac6| image:: https://img.shields.io/pypi/v/mopac_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/mopac_step
    :alt: PyPi VERSION
 
-.. |mopac7| image:: https://img.shields.io/pypi/dm/mopac_step
+.. |mopac7| image:: https://img.shields.io/pypi/dm/mopac_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/mopac_step
    :alt: PyPI - Downloads
 
@@ -453,11 +453,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/packmol_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |packmol6| image:: https://img.shields.io/pypi/v/packmol_step.svg
+.. |packmol6| image:: https://img.shields.io/pypi/v/packmol_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/packmol_step
    :alt: PyPi VERSION
 
-.. |packmol7| image:: https://img.shields.io/pypi/dm/packmol_step
+.. |packmol7| image:: https://img.shields.io/pypi/dm/packmol_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/packmol_step
    :alt: PyPI - Downloads
 
@@ -478,11 +478,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/psi4_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |psi4_6| image:: https://img.shields.io/pypi/v/psi4_step.svg
+.. |psi4_6| image:: https://img.shields.io/pypi/v/psi4_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/psi4_step
    :alt: PyPi VERSION
 
-.. |psi4_7| image:: https://img.shields.io/pypi/dm/psi4_step
+.. |psi4_7| image:: https://img.shields.io/pypi/dm/psi4_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/psi4_step
    :alt: PyPI - Downloads
 
@@ -502,11 +502,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/read_structure_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |structure6| image:: https://img.shields.io/pypi/v/read_structure_step.svg
+.. |structure6| image:: https://img.shields.io/pypi/v/read_structure_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/read_structure_step
    :alt: PyPi VERSION
 
-.. |structure7| image:: https://img.shields.io/pypi/dm/read_structure_step
+.. |structure7| image:: https://img.shields.io/pypi/dm/read_structure_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/read_structure_step
    :alt: PyPI - Downloads
 
@@ -526,11 +526,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/set_cell_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |set_cell6| image:: https://img.shields.io/pypi/v/set_cell_step.svg
+.. |set_cell6| image:: https://img.shields.io/pypi/v/set_cell_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/set_cell_step
    :alt: PyPi VERSION
 
-.. |set_cell7| image:: https://img.shields.io/pypi/dm/set_cell_step
+.. |set_cell7| image:: https://img.shields.io/pypi/dm/set_cell_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/set_cell_step
    :alt: PyPI - Downloads
 
@@ -550,11 +550,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/solvate_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |solvate6| image:: https://img.shields.io/pypi/v/solvate_step.svg
+.. |solvate6| image:: https://img.shields.io/pypi/v/solvate_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/solvate_step
    :alt: PyPi VERSION
 
-.. |solvate7| image:: https://img.shields.io/pypi/dm/solvate_step
+.. |solvate7| image:: https://img.shields.io/pypi/dm/solvate_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/solvate_step
    :alt: PyPI - Downloads
 
@@ -574,11 +574,11 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/supercell_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |supercell6| image:: https://img.shields.io/pypi/v/supercell_step.svg
+.. |supercell6| image:: https://img.shields.io/pypi/v/supercell_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/supercell_step
    :alt: PyPi VERSION
 
-.. |supercell7| image:: https://img.shields.io/pypi/dm/supercell_step
+.. |supercell7| image:: https://img.shields.io/pypi/dm/supercell_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/supercell_step
    :alt: PyPI - Downloads
 
@@ -598,10 +598,10 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://github.com/molssi-seamm/table_step/actions/workflows/Docs.yaml
    :alt: Documentation Status
 
-.. |table6| image:: https://img.shields.io/pypi/v/table_step.svg
+.. |table6| image:: https://img.shields.io/pypi/v/table_step.svg?cacheSeconds=36000
    :target: https://pypi.python.org/pypi/table_step
    :alt: PyPi VERSION
 
-.. |table7| image:: https://img.shields.io/pypi/dm/table_step
+.. |table7| image:: https://img.shields.io/pypi/dm/table_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/table_step
    :alt: PyPI - Downloads
