@@ -530,8 +530,8 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :target: https://pypi.python.org/pypi/set_cell_step
    :alt: PyPi VERSION
 
-.. |set_cell7| image:: https://img.shields.io/pypi/dm/read_set_cell_step
-   :target: https://pypistats.org/packages/read_set_cell_step
+.. |set_cell7| image:: https://img.shields.io/pypi/dm/set_cell_step
+   :target: https://pypistats.org/packages/set_cell_step
    :alt: PyPI - Downloads
 
 .. Solvate step badges
