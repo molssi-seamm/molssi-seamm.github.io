@@ -15,6 +15,7 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
    seamm_ff_util_,     |sf0|,        |sf1|,          |sf2|,            |sf3|,      	   |sf4|,         |sf5|,        |sf6|
    molsystem_,         |sy0|,        |sy1|,          |sy2|,            |sy3|,      	   |sy4|,         |sy5|,        |sy6|
    reference_handler_, |rh0|,        |rh1|,          |rh2|,            |rh3|,      	   |rh4|,         |rh5|,        |rh6|
+   seamm_installer_,   |si0|,        |si1|,          |si2|,            |si3|,      	   |si4|,         |si5|,        |si6|
 
 
 
@@ -263,6 +264,38 @@ The current build status for the modules and :term:`plug-ins<plug-in>`:
 
 .. |rh6| image:: https://img.shields.io/pypi/v/reference_handler.svg
    :target: https://pypi.python.org/pypi/reference_handler
+   :alt: PyPi VERSION
+
+.. seamm_installer badges
+
+.. _seamm_installer: https://github.com/molssi-seamm/seamm_installer
+
+.. |si0| image:: https://img.shields.io/github/issues-pr-raw/molssi-seamm/seamm_installer
+   :target: https://github.com/molssi-seamm/seamm_installer/pulls
+   :alt: GitHub pull requests
+
+.. |si1| image:: https://github.com/molssi-seamm/seamm_installer/workflows/CI/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_installer/actions/workflows/CI.yaml
+   :alt: Build Status
+
+.. |si2| image:: https://codecov.io/gh/molssi-seamm/seamm_installer/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_installer
+   :alt: Code Coverage
+
+.. |si3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/seamm_installer.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/seamm_installer/context:python
+   :alt: Code Quality
+
+.. |si4| image:: https://github.com/molssi-seamm/seamm_installer/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_installer/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |si5| image:: https://pyup.io/repos/github/molssi-seamm/seamm_installer/shield.svg
+   :target: https://pyup.io/repos/github/molssi-seamm/seamm_installer/
+   :alt: Updates for Dependencies
+
+.. |si6| image:: https://img.shields.io/pypi/v/seamm_installer.svg
+   :target: https://pypi.python.org/pypi/seamm_installer
    :alt: PyPi VERSION
 
 .. control parameters step badges

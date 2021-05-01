@@ -15,6 +15,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    seamm_ff_util_,     |sf2|,           |sf3|,      	   		|sf4|,         	 |sf6|,     |sf7|
    molsystem_,         |sy2|,           |sy3|,      	   		|sy4|,         	 |sy6|,     |sy7|
    reference_handler_, |rh2|,           |rh3|,      	   		|rh4|,         	 |rh6|,     |rh7|
+   seamm_installer_,   |si2|,           |si3|,      	   		|si4|,         	 |si6|,     |si7|
 
 
 
@@ -33,8 +34,8 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac6|,	|mopac7|
    packmol_step_,         |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol6|,	|packmol7|
    psi4_step_,            |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_6|,	|psi4_7|
-   set_cell_step_,        |set_cell2|,     |set_cell3|,     	       	 |set_cell4|,     |set_cell6|,	|set_cell7|
    read_structure_step_,  |structure2|,    |structure3|,     	       	 |structure4|,    |structure6|,	|structure7|
+   set_cell_step_,        |set_cell2|,     |set_cell3|,     	       	 |set_cell4|,     |set_cell6|,	|set_cell7|
    solvate_step_,         |solvate2|,      |solvate3|,	     	       	 |solvate4|,      |solvate6|,	|solvate7|
    supercell_step_,       |supercell2|,    |supercell3|,		 |supercell4|,    |supercell6|,	|supercell7|
    table_step_,           |table2|,        |table3|,   	     	       	 |table4|,        |table6|,    	|table7|
@@ -207,6 +208,30 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. |rh7| image:: https://img.shields.io/pypi/dm/reference_handler?cacheSeconds=36000
    :target: https://pypistats.org/packages/reference_handler
+   :alt: PyPI - Downloads
+
+.. seamm_installer badges
+
+.. _seamm_installer: https://molssi-seamm.github.io/seamm_installer/index.html
+
+.. |si2| image:: https://codecov.io/gh/molssi-seamm/seamm_installer/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_installer
+   :alt: Code Coverage
+
+.. |si3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/seamm_installer.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/seamm_installer/context:python
+   :alt: Code Quality
+
+.. |si4| image:: https://github.com/molssi-seamm/seamm_installer/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/seamm_installer/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |si6| image:: https://img.shields.io/pypi/v/seamm_installer.svg?cacheSeconds=36000
+   :target: https://pypi.python.org/pypi/seamm_installer
+   :alt: PyPi VERSION
+
+.. |si7| image:: https://img.shields.io/pypi/dm/seamm_installer?cacheSeconds=36000
+   :target: https://pypistats.org/packages/seamm_installer
    :alt: PyPI - Downloads
 
 .. control parameters step badges
