@@ -11,10 +11,10 @@ that you know how build flowcharts, run jobs and look at the output, so will not
 much detail, but will focus instead on the problem to be solved and how to set up a
 flowchart to address it.
 
-Make sure that the Dashboard and JobServer are running -- look at the installation_
-section if you don't remember how to get them up. In any convenient terminal window,
-make sure that the `seamm` conda environment is active and type `seamm` to start the
-SEAMM GUI::
+Make sure that the Dashboard and JobServer are running -- look at the
+:ref:`installation` section if you don't remember how to get them up. In any convenient
+terminal window, make sure that the `seamm` conda environment is active and type `seamm`
+to start the SEAMM GUI::
 
   conda activate seamm
   seamm
