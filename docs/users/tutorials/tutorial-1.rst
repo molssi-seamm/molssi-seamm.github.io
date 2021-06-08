@@ -4,12 +4,13 @@
 Tutorial 1: Getting Started
 ***************************
 
-This first tutorial covers creating a very simple flowchart, running the calculation,
-and examining the results in the Dashboard. It will go through the steps carefully and
-in detail, because this is your first time using SEAMM. Subsequent tutorials will assume
-that you know how build flowcharts, run jobs and look at the output, so will not go into
-much detail, but will focus instead on the problem to be solved and how to set up a
-flowchart to address it.
+This first tutorial covers creating a very simple flowchart and running the calculation.
+The next tutorial, :ref:`tutorial_2` will familiarize you wth the Dashboard and looking
+at the result for jobs. These first couple tutorials will go through the steps carefully
+and in detail, because this is your first time using SEAMM. Subsequent tutorials will
+assume that you know how build flowcharts, run jobs and look at the output, so will not
+go into much detail, but will focus instead on the problem to be solved and how to set
+up a flowchart to address it.
 
 Make sure that the Dashboard and JobServer are running -- look at the
 :ref:`installation` section if you don't remember how to get them up. In any convenient
@@ -190,5 +191,6 @@ If it is not set, type "default" into the Project field, a useful title in the t
 field, and in the large area at the bottom of the dialog you can type a description of
 the calculation. Or not. Finally, click **OK** to run the calculation.
 
+:ref:`tutorial_2` will show you how to look at the results of this job in the Dashboard.
 
 .. _DFTB website: https://dftb.org/parameters/download

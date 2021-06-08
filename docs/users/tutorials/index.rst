@@ -7,6 +7,7 @@ Tutorials
 .. toctree::
     :maxdepth: 5
     :titlesonly:
-
-    tutorial-1
+    :glob:
+       
+    tutorial-*
     
