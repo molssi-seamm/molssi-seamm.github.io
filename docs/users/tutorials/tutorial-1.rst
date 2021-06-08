@@ -22,7 +22,7 @@ SEAMM GUI::
 This will bring up a window like this (the first time it may take a little while to
 appear. subsequently it tend to be faster):
 
-.. figure:: /images/EmptySEAMMWindow.jpg
+.. figure:: /images/tutorial_1/EmptySEAMMWindow.png
    :align: center
    :alt: An empty SEAMM window
 
@@ -35,7 +35,7 @@ sash to adjust the sizes of the panes.
 The left pane contains a list of types of plug-ins. Clicking on one of the categories
 expands it to show the plug-ins. Clicking again hides them:
 
-.. figure:: /images/SEAMMWindow_BuildingExpanded.jpg
+.. figure:: /images/tutorial_1/SEAMMWindow_BuildingExpanded.png
    :align: center
    :alt: Building category of plug-ins expanded
 
@@ -52,7 +52,7 @@ a semiempirical quantum chemistry code. Let's get started!
 In the Building section, click on the FromSmilesStep. It will appear in the right pane,
 connected to the start step:
 
-.. figure:: /images/SEAMMWindow_FromSMILES.jpg
+.. figure:: /images/tutorial_1/SEAMMWindow_FromSMILES.png
    :align: center
    :alt: FLowchart with FromSMILESStep
 
@@ -61,7 +61,7 @@ connected to the start step:
 If you accidentally click twice, or put in a step that you don't want, just delete
 it. Right click on any of the steps and a menu will appear:
 
-.. figure:: /images/SEAMMWindow_DeleteStep.png
+.. figure:: /images/tutorial_1/SEAMMWindow_DeleteStep.png
    :align: center
    :alt: Deleting a step.
 
@@ -72,7 +72,7 @@ step has a has a dialog for setting parameters to control what the step does. To
 the dialog, either right click on the step and select `Edit...` from the menu, or just
 double click on the step to open it:
 
-.. figure:: /images/SEAMMWindow_FromSMILESDialog.png
+.. figure:: /images/tutorial_1/SEAMMWindow_FromSMILESDialog.png
    :align: center
    :alt: The dialog for the FromSMILES step.
 
@@ -82,7 +82,7 @@ Click in the field labeled SMILES and type `CCS`, which is the SMILES for
 ethanethiol. Leave everything else the same and close the dialog with the **OK**
 button:
 
-.. figure:: /images/SEAMMWindow_FromSMILESDialog2.png
+.. figure:: /images/tutorial_1/SEAMMWindow_FromSMILESDialog2.png
    :align: center
    :alt: The dialog for the FromSMILES step.
 
@@ -90,7 +90,7 @@ button:
 
 Now open the Simulations section in the left panel and add a DFTB+ step:
 
-.. figure:: /images/SEAMMWindow_DFTBplus.png
+.. figure:: /images/tutorial_1/SEAMMWindow_DFTBplus.png
    :align: center
    :alt: The flowchart with the DFTB+ step added.
 
@@ -98,7 +98,7 @@ Now open the Simulations section in the left panel and add a DFTB+ step:
 
 And open the dialog for the DFTB+ step:
 
-.. figure:: /images/SEAMMWindow_DFTBplusDialog.png
+.. figure:: /images/tutorial_1/SEAMMWindow_DFTBplusDialog.png
    :align: center
    :alt: The dialog for the DFTB+ step.
 
@@ -110,7 +110,7 @@ simulation codes, such as DFTB+, do many different things and often have an inte
 language for control. Open the Setup and Simulation sections in the left panel and add a
 ChooseParameters step followed by Optimization:
 
-.. figure:: /images/SEAMMWindow_DFTBplusFlowchart.png
+.. figure:: /images/tutorial_1/SEAMMWindow_DFTBplusFlowchart.png
    :align: center
    :alt: The flowchart for DFTB+
 
@@ -118,7 +118,7 @@ ChooseParameters step followed by Optimization:
 
 Open the dialog for the ChooseParameters step by double clicking it:
 
-.. figure:: /images/SEAMMWindow_DFTBplusChooseParameters.png
+.. figure:: /images/tutorial_1/SEAMMWindow_DFTBplusChooseParameters.png
    :align: center
    :alt: The DFTB+ ChooseParameters dialog
 
@@ -145,7 +145,7 @@ Alternatively, we can select the elements that we are interested in. Suppose tha
 want to run a number of compounds, including ethanethiol, but also other molecules
 containing H, C, N, O, S, and Zn, Select those elements and see what choices are left:
 
-.. figure:: /images/SEAMMWindow_ChooseParametersSelected.png
+.. figure:: /images/tutorial_1/SEAMMWindow_ChooseParametersSelected.png
    :align: center
    :alt: The ChooseParameters dialog with elements selected.
 
@@ -157,7 +157,7 @@ more general datasets.
 
 Almost done! Let's take a look at the Optimization dialog:
 
-.. figure:: /images/SEAMMWindow_Optimization.png
+.. figure:: /images/tutorial_1/SEAMMWindow_Optimization.png
    :align: center
    :alt: The DFTB+ Optimization dialog.
 
@@ -180,7 +180,7 @@ Click **OK** to close the DFTB+ dialog, saving the changes that you have made. N
 are ready to run the calculation. Click on the **File** menu and select **Run**, or use
 the accelerator (⌘R on a Mac, ^R on Windows or Linux) to get the following dialog:
 
-.. figure:: /images/SEAMMWindow_RunDialog.png
+.. figure:: /images/tutorial_1/SEAMMWindow_RunDialog.png
    :align: center
    :alt: The Run Dialog
 

@@ -7,7 +7,8 @@ Installing SEAMM
 There are two parts to SEAMM that you can install:
 
   * The graphical application and environment, which we tend to call
-   SEAMM
+    SEAMM
+    
   * The web-based Dashboard
 
 Both of these rely on having conda installed.  If you do not have
