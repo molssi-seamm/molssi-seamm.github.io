@@ -10,4 +10,4 @@ User Documentation
 
     seamm_overview
     forcefields/overview
-    
+    tutorials/index
