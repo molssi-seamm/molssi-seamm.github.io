@@ -30,7 +30,7 @@ following commands.
 The graphical part of SEAMM should be installed in the **seamm** conda
 environment as follows::
 
-  conda create -n seamm -c conda-forge seamm_installer
+  conda create -n seamm -c conda-forge seamm-installer
 
 Once the environment is installed, activate it with::
 
