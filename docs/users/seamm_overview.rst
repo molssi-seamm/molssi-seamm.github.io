@@ -65,5 +65,4 @@ Next steps
     seamm_description/job_manager
     seamm_description/job_datastore
     seamm_description/dashboard
-    installation/index
     using_seamm/index

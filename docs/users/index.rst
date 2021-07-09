@@ -9,5 +9,7 @@ User Documentation
     :titlesonly:
 
     seamm_overview
+    installation/index
+    system
     forcefields/overview
     tutorials/index
