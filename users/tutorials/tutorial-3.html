@@ -1,0 +1,536 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tutorial 3: Tables and Loops &mdash; SEAMM 2020.12.15.1-30-g91ddb29 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Developers Documentation" href="../../developers/index.html" />
+    <link rel="prev" title="Tutorial 2: The Dashboard" href="tutorial-2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQXXTJ2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SEAMM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.12.15.1-30-g91ddb29
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../status.html">Status</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../seamm_overview.html">Overview of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../productivity.html">Productivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reproducibility.html">Reproducibility and Replicability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/gui.html">SEAMM GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/flowchart.html">Flowchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/job_manager.html">Job Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_seamm/index.html">How do you run a simulation?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system.html">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcefields/overview.html">Overview of Forcefields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/functional_form.html">Functional Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/parameters.html">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/atom_types.html">Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tutorial-1.html">Tutorial 1: Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial-2.html">Tutorial 2: The Dashboard</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial 3: Tables and Loops</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/status.html">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/design/index.html">The Design of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/design/plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/design/forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/tips-and-tricks/index.html">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/2019/index.html">Development Plans for 2019</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2019/fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2019/mopac_use_case.html">Use Case: MOPAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/2020/index.html">Development Plans for 2020</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/general_improvements.html">General Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/forcefield_plugins.html">Forcefield Plug-Ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/versions.html">Support for Plugin Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/fluids_use_case.html">Use Case: Fluid Properties (2020)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/2020/fluids/automatic_convergence.html">Automatic Convergence in MD/MC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/2020/fluids/system_size_effects.html">System Size Effects in Fluid Simulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/2020/fluids/validation_of_statistical_analysis.html">Validation of Statistical Analysis for MD/MC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins/index.html">Plug-ins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/building.html">Building</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/crystal_builder_step/index.html">Crystal Builder</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/packmol_step/index.html">PACKMOL</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/set_cell_step/index.html">Set Cell</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/solvate_step/index.html">Solvate</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/supercell_step/index.html">Supercell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/control.html">Control</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/control_parameters_step/index.html">Control Parameters</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/loop_step/index.html">Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/data.html">Data</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/read_structure_step/index.html">Read Structure</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/table_step/index.html">Table</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/system_step/index.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/simulations.html">Simulations</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/dftbplus_step/index.html">DFTB+</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/lammps_step/index.html">LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/mopac_step/index.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/psi4_step/index.html">Psi4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/molssi-seamm">https://github.com/molssi-seamm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SEAMM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">User Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Tutorial 3: Tables and Loops</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/users/tutorials/tutorial-3.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorial-3-tables-and-loops">
+<span id="tutorial-3"></span><h1>Tutorial 3: Tables and Loops<a class="headerlink" href="#tutorial-3-tables-and-loops" title="Permalink to this headline">¶</a></h1>
+<p>By now you should be able to set up a flowchart, run a job, and look at the results in
+the Dashboard. If not, please go back to <a class="reference internal" href="tutorial-1.html#tutorial-1"><span class="std std-ref">Tutorial 1: Getting Started</span></a> and <a class="reference internal" href="tutorial-1.html#tutorial-1"><span class="std std-ref">Tutorial 1: Getting Started</span></a> because
+from now on these tutorial assume that you have mastered the basics, so much less detail
+will be given.</p>
+<p>While it is nice to be able to run a complicated simulation on a single compound, it is
+often much more useful to run the same protocol on a number of compounds to look for
+trends of find the compounds with the desired properties. In this tutorial we will
+explore how to do this in SEAMM. To keep this simple, we’ll again create molecules from
+SMILES but rather than one at a time, we’ll put the list of SMILES strings in a .csv
+file, loop over the lines of the file, and calculate some properties, this time using
+MOPAC.</p>
+<p>First, prepare a file in a well-known place with SMILES strings, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SMILES</span>
+<span class="n">C</span>
+<span class="n">CC</span>
+<span class="n">CCO</span>
+<span class="n">CCS</span>
+<span class="n">OCCO</span>
+<span class="n">c1ccccc1</span>
+<span class="n">c1ccccc1O</span>
+</pre></div>
+</div>
+<p>Use the extension <em>.csv</em> (for comma-separated-values, which is a standard format for
+spreadsheets like Excel). For this tutorial I made a subdirectory of ~/SEAMM called
+<strong>data</strong> and named the file <strong>smiles.csv</strong>.</p>
+<p>Make sure the the Dashboard and JobServer are running – see <a class="reference internal" href="../installation/index.html#installation"><span class="std std-ref">Installing SEAMM</span></a> if you
+need help with this. And start SEAMM:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+<span class="n">seamm</span>
+</pre></div>
+</div>
+<p>Create flowchart with the following steps:</p>
+<ol class="arabic simple">
+<li><p>Table – this is where we will read the table that you made</p></li>
+<li><p>Join</p></li>
+<li><p>Loop – this will be set to loop over the molecules in the table</p></li>
+<li><p>FromSMILES – will create each structure in turn</p></li>
+<li><p>MOPAC – will optimize the geometry and calculate properties</p></li>
+<li><p>Table – will print the table so we can see the progress</p></li>
+<li><p>Table – will save the table</p></li>
+</ol>
+<p>It should look like this:</p>
+<div class="figure align-center" id="id1">
+<img alt="A partial flowchart for looping over a table." src="../../_images/partial_flowchart.png" />
+<p class="caption"><span class="caption-text"><em>The initial skeleton of the flowchart.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open the dialog for the first Table step either by right-clicking and selecting
+<strong>Edit…</strong> from the menu, or simply double-clicking the step. Change the <strong>Operation</strong>
+to <em>read</em> and type the path to your file in the <strong>from file</strong> entryfield:</p>
+<div class="figure align-center" id="id2">
+<img alt="The dialog for a Table step." src="../../_images/table_1.png" />
+<p class="caption"><span class="caption-text"><em>The dialog for the first Table step.</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now edit the Loop step and change the first item from <strong>For</strong> to <strong>For rows in table</strong>
+by clicking on the arrow on the right and selecting that option from the menu.</p>
+<p>Next is the FromSMILES step. Edit it, and set the SMILES entry to <cite>$_row[“SMILES”]</cite>:</p>
+<div class="figure align-center" id="id3">
+<img alt="The dialog for a FromSMILES step." src="../../_images/from_smiles.png" />
+<p class="caption"><span class="caption-text"><em>The dialog for the FromSMILES step.</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The loop automatically sets some variables with useful information. All of these
+variables start with and underscore <cite>_</cite> to prevent clashing with any variables you
+use. So don’t create variables starting with an underscore! When looping over a table,
+the variable <cite>_row</cite> is a dictionary labeled by the column headers containing the values
+for the current row. Hence <cite>$_row[“SMILES”]</cite> is the SMILES string. If our table had more
+columns we could access each value using the name of the column.</p>
+<p>Now edit MOPAC. Like DFTB+, MOPAC presents a sub-flowchart. Add a single Optimization
+stage and edit it:</p>
+<div class="figure align-center" id="id4">
+<img alt="The dialog for a MOPAC Optimization step." src="../../_images/mopac_optimization.png" />
+<p class="caption"><span class="caption-text"><em>The dialog for the MOPAC Optimization step.</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Click on the <strong>Results</strong> tab at the top of the page:</p>
+<div class="figure align-center" id="id5">
+<img alt="The results tab for MOPAC Optimization." src="../../_images/mopac_results.png" />
+<p class="caption"><span class="caption-text"><em>Saving the results from a MOPAC optimization calculation.</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>There are five columns in the table of results:</p>
+<dl class="simple">
+<dt>Result</dt><dd><p>The property or other calculated result</p>
+</dd>
+<dt>Save</dt><dd><p>Check this if you want to save the value in a variable.</p>
+</dd>
+<dt>Variable name</dt><dd><p>The name for the variable, with a default name. You can edit this name.</p>
+</dd>
+<dt>In table</dt><dd><p>The table to store the result in.</p>
+</dd>
+<dt>Column name</dt><dd><p>The name of the column in the table.</p>
+</dd>
+</dl>
+<p>Only scalar values can be stored in tables, which is why more results can be stored in
+variables than in tables. We aren’t interesting in using variables in this tutorial, so
+we will ignore those columns. However, let’s save the area, dipole, heat of formation,
+ionization potential, and volume to our table, which was named <strong>table1</strong>. Type in
+<strong>table1</strong> in the Table column for each of the above properties.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can copy and past as you normally do, by using ⌘C or ^C to copy and ⌘V or ^V to
+paste.</p>
+</div>
+<div class="figure align-center" id="id6">
+<img alt="The dialog showing MOPAC Optimization results." src="../../_images/mopac_results_2.png" />
+<p class="caption"><span class="caption-text"><em>Saving results from Optimization in MOPAC.</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Note that I changed the column name for the ionization potential to <strong>IP</strong> to make it a
+bit shorter than the default. Click OK to save the changes to the results, and click OK
+to save the sub-flowchart for MOPAC.</p>
+<p>Now for the last two Table steps. In the first, change the Operation to <strong>save</strong>, and in
+the second change it to <strong>print current row</strong>. We save the table after every molecule so
+we don’t lose work if e.g. the machine crashes, and by printing the current row we’ll
+be able to see progress. MOPAC is very fast, and we are only running a handful of
+molecules, but these aspects would be important if we were running thousands of
+structures and particulalrly if we were using a slower quantum chemistry method where
+each calculation might take minutes or hours.</p>
+<p>Just about done! We have set up all the steps needed and are almost ready to run the
+calculation, but first we need to close the loop in the flowchart. To do this we are
+going to drag an arrow from the last Table step up to the Join step just before the
+loop. You’ve probably noticed that when the mouse is over a step, red dots appear around
+the edge of the step. These are connection points. When you put the mouse over one of
+the connection points, the red dot becomes larger indicating that it is active:</p>
+<div class="figure align-center" id="id7">
+<img alt="The flowchart with an active connection" src="../../_images/closing_1.png" />
+<p class="caption"><span class="caption-text"><em>Active connection dot on last Table step.</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>When the connection dot is active, click on the mouse and drag to the Join step. As you
+get close connection dots will appear on the Join step, hover over the one on the right
+side until it becomes active and release the mouse button to make the connection.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the moment the positioning of the mouse on the Join step is quite sensitive, so
+you will need to be careful. Move the mouse around a little bit until the correct dot
+becomes active. If you release the mouse button and the line disappears it is becuase
+you weren’t actually on the dot – perhaps the mouse moved a little as you let the button
+go. If so, just try again. We’ll fix this issue shortly!</p>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="Dropping the connection on the Join step." src="../../_images/closing_2.png" />
+<p class="caption"><span class="caption-text"><em>Dropping the connection on the Join step.</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>When you have successfully connected the last Table step to the Join step, your
+flowchart will look like this:</p>
+<div class="figure align-center" id="id9">
+<img alt="Initial connection closing a loop." src="../../_images/closing_3.png" />
+<p class="caption"><span class="caption-text"><em>The connection closing the loop.</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>While the flowchart will work, it is not very pretty. Let’s celan it up. Under the Edit
+menu click on <strong>Clean layout</strong>. This will automatically clean the layout of the
+flowchart to a standard form:</p>
+<div class="figure align-center" id="id10">
+<img alt="Final flowchart." src="../../_images/closing_4.png" />
+<p class="caption"><span class="caption-text"><em>Completed flowchart.</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now all that is left is to run the flowchart. Select Run from the File menu, fill out
+the form with an appropriate title and description and click the <strong>OK</strong> button. Next
+move to your browser and open the DashBoard at <a class="reference external" href="http://localhost:5000">http://localhost:5000</a>, log in, list your
+jobs and explore the results for this job.</p>
+<p>The first thing to notice is the table of results printed in job.out:</p>
+<div class="figure align-center" id="id11">
+<img alt="Job.ou showing the table of results" src="../../_images/table.png" />
+<p class="caption"><span class="caption-text"><em>The printed table of results.</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you double-click on the folder for Step 3 in the directory on the left, it will open
+to show the iterations of the loop over the molecules. If you open one of the iterations
+you will see all the files for that iteration, includign the structure and
+<strong>iteration.out</strong>, which is a summary much like <strong>job.out</strong> but for just the one
+iteration:</p>
+<div class="figure align-center" id="id12">
+<img alt="Dashboard showing iterations of a loop" src="../../_images/iterations.png" />
+<p class="caption"><span class="caption-text"><em>DashBoard show an iteration of the loop.</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>Finally, if you look at the CSV file that you created it will have been updated with the
+properties from MOPAC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">,</span><span class="n">SMILES</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">dipole</span><span class="p">,</span><span class="n">heat_of_formation</span><span class="p">,</span><span class="n">IP</span><span class="p">,</span><span class="n">volume</span>
+<span class="mi">0</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="mf">54.8143</span><span class="p">,</span><span class="mf">0.00181763</span><span class="p">,</span><span class="o">-</span><span class="mf">14.4037</span><span class="p">,</span><span class="mf">13.7252</span><span class="p">,</span><span class="mf">37.0557</span>
+<span class="mi">1</span><span class="p">,</span><span class="n">CC</span><span class="p">,</span><span class="mf">75.9592</span><span class="p">,</span><span class="mf">0.00060312</span><span class="p">,</span><span class="o">-</span><span class="mf">18.1965</span><span class="p">,</span><span class="mf">11.9601</span><span class="p">,</span><span class="mf">57.5002</span>
+<span class="mi">2</span><span class="p">,</span><span class="n">CCO</span><span class="p">,</span><span class="mf">86.8539</span><span class="p">,</span><span class="mf">2.05345</span><span class="p">,</span><span class="o">-</span><span class="mf">57.8213</span><span class="p">,</span><span class="mf">10.6488</span><span class="p">,</span><span class="mf">68.9072</span>
+<span class="mi">3</span><span class="p">,</span><span class="n">CCS</span><span class="p">,</span><span class="mf">102.311</span><span class="p">,</span><span class="mf">2.12867</span><span class="p">,</span><span class="o">-</span><span class="mf">11.5302</span><span class="p">,</span><span class="mf">8.86456</span><span class="p">,</span><span class="mf">87.7266</span>
+<span class="mi">4</span><span class="p">,</span><span class="n">OCCO</span><span class="p">,</span><span class="mf">96.9126</span><span class="p">,</span><span class="mf">0.507571</span><span class="p">,</span><span class="o">-</span><span class="mf">95.5368</span><span class="p">,</span><span class="mf">10.4813</span><span class="p">,</span><span class="mf">80.4314</span>
+<span class="mi">5</span><span class="p">,</span><span class="n">c1ccccc1</span><span class="p">,</span><span class="mf">119.695</span><span class="p">,</span><span class="mf">6.72145e-05</span><span class="p">,</span><span class="mf">22.9566</span><span class="p">,</span><span class="mf">9.82405</span><span class="p">,</span><span class="mf">108.368</span>
+<span class="mi">6</span><span class="p">,</span><span class="n">c1ccccc1O</span><span class="p">,</span><span class="mf">129.604</span><span class="p">,</span><span class="mf">1.30752</span><span class="p">,</span><span class="o">-</span><span class="mf">22.1564</span><span class="p">,</span><span class="mf">9.2356</span><span class="p">,</span><span class="mf">119.327</span>
+</pre></div>
+</div>
+<p>This finishes this tutorial. You have learnt how to use loops to iterate over the rows
+of a table, and how to use the tables to store results from the calculations.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../developers/index.html" class="btn btn-neutral float-right" title="Developers Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial-2.html" class="btn btn-neutral float-left" title="Tutorial 2: The Dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+
+<p>
+<div class="row">
+  <div class="column_left">
+    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
+    </a>
+  </div>
+  <div class="column">
+    &copy; Copyright 2019-2021, the Molecular Sciences Software Institute,
+    which receives funding from the National Science Foundation under award OAC-1547580
+  </div>
+  <div class="column_right">
+    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
+    </a>
+  </div>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

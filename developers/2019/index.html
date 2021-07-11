@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Development Plans for 2019 &mdash; SEAMM 2020.12.15.1-30-g91ddb29 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Use Case: Fluid Properties (2019)" href="fluids_use_case.html" />
+    <link rel="prev" title="Updating with Cookiecutter" href="../tips-and-tricks/update-with-cookiecutter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQXXTJ2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SEAMM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.12.15.1-30-g91ddb29
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../status.html">Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../users/index.html">User Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../users/seamm_overview.html">Overview of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../users/productivity.html">Productivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/reproducibility.html">Reproducibility and Replicability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/seamm_description/gui.html">SEAMM GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/seamm_description/flowchart.html">Flowchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/seamm_description/job_manager.html">Job Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/seamm_description/job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/seamm_description/dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/using_seamm/index.html">How do you run a simulation?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../users/using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../users/installation/index.html">Installing SEAMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../users/system.html">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../users/forcefields/overview.html">Overview of Forcefields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../users/forcefields/functional_form.html">Functional Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/forcefields/parameters.html">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/forcefields/atom_types.html">Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/forcefields/types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../users/tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../users/tutorials/tutorial-1.html">Tutorial 1: Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/tutorials/tutorial-2.html">Tutorial 2: The Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users/tutorials/tutorial-3.html">Tutorial 3: Tables and Loops</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Developers Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../status.html">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/index.html">The Design of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../design/plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../design/forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../design/forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../design/forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../design/forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../design/forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../design/forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tips-and-tricks/index.html">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Development Plans for 2019</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mopac_use_case.html">Use Case: MOPAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2020/index.html">Development Plans for 2020</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2020/general_improvements.html">General Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2020/molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2020/forcefield_plugins.html">Forcefield Plug-Ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2020/dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2020/versions.html">Support for Plugin Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2020/job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2020/mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2020/fluids_use_case.html">Use Case: Fluid Properties (2020)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../2020/fluids/automatic_convergence.html">Automatic Convergence in MD/MC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/fluids/system_size_effects.html">System Size Effects in Fluid Simulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2020/fluids/validation_of_statistical_analysis.html">Validation of Statistical Analysis for MD/MC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins/index.html">Plug-ins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/building.html">Building</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/crystal_builder_step/index.html">Crystal Builder</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/packmol_step/index.html">PACKMOL</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/set_cell_step/index.html">Set Cell</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/solvate_step/index.html">Solvate</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/supercell_step/index.html">Supercell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/control.html">Control</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/control_parameters_step/index.html">Control Parameters</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/loop_step/index.html">Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/data.html">Data</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/read_structure_step/index.html">Read Structure</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/table_step/index.html">Table</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/system_step/index.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/simulations.html">Simulations</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/dftbplus_step/index.html">DFTB+</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/lammps_step/index.html">LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/mopac_step/index.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/psi4_step/index.html">Psi4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/molssi-seamm">https://github.com/molssi-seamm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SEAMM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Developers Documentation</a> &raquo;</li>
+        
+      <li>Development Plans for 2019</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/developers/2019/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="development-plans-for-2019">
+<span id="plans"></span><h1>Development Plans for 2019<a class="headerlink" href="#development-plans-for-2019" title="Permalink to this headline">¶</a></h1>
+<p>These are the plans for the development of SEAMM in the last half
+of 2019.</p>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>The overall goals for SEAMM are</p>
+<ol class="arabic simple">
+<li><p>Create an easy-to-use productivity environment for users of
+computational molecular and materials codes (CMS), with a wide
+range of tools for building, simulation and analysis of molecular,
+fluid and crystalline materials.</p></li>
+<li><p>Provide developers an easy-to-use, well-defined <a class="reference internal" href="../../glossary.html#term-plug-in"><span class="xref std std-term">plug-in</span></a>
+framework for integrating their codes in the SEAMM environment so
+that users can use their code.</p></li>
+<li><p>Provide system managers and support staff an easier, more
+productive way to provide CMS functionality to end users.</p></li>
+</ol>
+<p>The goals for this first six-month phase of the project, starting July
+2019, are</p>
+<ol class="arabic simple">
+<li><p>To establish a development process in accord with MolSSI best practices.</p></li>
+<li><p>To develop enough of the SEAMM framework to be useful</p></li>
+<li><p>To create sufficient plug-ins to run realistic, useful simulations
+with both forcefield and quantum methods.</p></li>
+<li><p>To use the MOPAC validation suite case as a use case to
+improve and test  the overall functionality of SEAMM and of the
+MOPAC plug-in.</p></li>
+<li><p>To use the predicition of fluid properties as a use case to
+improve and test  the overall functionality of SEAMM and of the
+LAMMPS plug-in.</p></li>
+</ol>
+<div class="section" id="discussion-and-achievements">
+<h3>Discussion and Achievements<a class="headerlink" href="#discussion-and-achievements" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>The goal was to Implement a continuous integration system based on
+MolSSI best-practices, with testing and documentation covering 50%
+of the non-GUI code. Investigate ways to automate testing of GUI
+code, which at the moment is an unknown.</p>
+<p>This was partially acoomplished. Of a total of 18 repositories (6
+for the core of SEAMM, 9 plug-ins, the dashboard, a cookiecutter,
+the website and a miscellaneous directory of support files) for a
+total of 12,479 lines of code, 40% of the nongraphical code is
+currently tested automatically. All of the core and plug-ins have
+documentation at ReadTheDocs, and there is a beginning of user
+documentation at <a class="reference external" href="https://molssi-seamm.github.io/">https://molssi-seamm.github.io/</a></p>
+</li>
+<li><p>Design and implement a reference management system suitable for the
+requirements and use cases in SEAMM. Add the appropriate citations for
+all the modules and plug-ins.</p>
+<p>Mostly Achieved: Developed MolSSI/reference_handler and added 53
+references for MOPAC – though this is not yet the full number
+needed for the functionality covered in the plug-in. Have not yet
+added references to the other plug-ins, though most should be
+simple. LAMMPS, however, will be considerable work, like MOPAC.</p>
+</li>
+<li><p>Work out and implement a scheme to archive versions of the code
+with DOI’s using, for example Zenodo.</p>
+<p>This task was postponed.</p>
+</li>
+<li><p>Learn about web design and programming in order to implement a
+<a class="reference internal" href="../../glossary.html#term-Dashboard"><span class="xref std std-term">Dashboard</span></a> fronting a datastore for <a class="reference internal" href="../../glossary.html#term-job"><span class="xref std std-term">jobs</span></a> run
+using SEAMM.</p>
+<p>Achieved: Jessica has done an excellent job learning about web
+technology and has an impressive prototype dashboard, including a
+preliminary display of <a class="reference internal" href="../../glossary.html#term-flowchart"><span class="xref std std-term">flowcharts</span></a>. A database
+for storing job, project, and flowcharts is implemented in
+SQLAlchemy. The front end uses flask and a web template from
+CoreUI. We have basic CI which builds an environment for the
+dashboard using Travis CI.  This can be found at
+<a class="reference external" href="https://github.com/molssi-seamm/seamm_dashboard">https://github.com/molssi-seamm/seamm_dashboard</a>.</p>
+</li>
+<li><p>Develop a robust workflow and calculate the density and cohesive
+energy of 50 fluids using LAMMPS, with no more than 2 failures.</p>
+<p>Partly Achieved: Accomplished most of this goal, developing an
+effective, robust workflow to predict the fluid density starting
+with a SMILES string representing the compound, and finished
+calculations on 9 fluids with no issues. However, it became clear
+that the standard approach of running “long enough” was not
+satisfactory for high throughput calculations, and that it would be
+straightforward to extend the plug-in to target an accuracy rather
+than the number of steps. This is proposed for the next project
+period, at which time the full 50 calculations will be
+completed. Also, it will require a minor modification to LAMMPS to
+calculate the cohesive energy, which has not yet been accomplished
+and fed back into the LAMMPS source.</p>
+</li>
+<li><p>At least 200 comparisons of heat of formation with NIST WebBook and
+MOPAC, with no more than 2% failures and 2% incorrect conformations
+starting from SMILES.</p>
+<p>Achieved: Eliseo went far beyond the initial scope, running all
+8,000+ structures in the MOPAC validation set. Several systematic
+problems were encountered and some of them fixed, including charges
+on systems and systems containing lanthanides, which require
+special treatment in MOPAC. Outstanding issues revolve around the
+definition of open-shell systems, and bugs in MOPAC and OpenBabel
+which are being investigated. There was one small change to the
+plan: rather than start with SMILES we started with structure
+files, but will move to SMILES files next iteration of the
+project.</p>
+</li>
+</ol>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mopac_use_case.html">Use Case: MOPAC</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="fluids_use_case.html" class="btn btn-neutral float-right" title="Use Case: Fluid Properties (2019)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../tips-and-tricks/update-with-cookiecutter.html" class="btn btn-neutral float-left" title="Updating with Cookiecutter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+
+<p>
+<div class="row">
+  <div class="column_left">
+    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
+    </a>
+  </div>
+  <div class="column">
+    &copy; Copyright 2019-2021, the Molecular Sciences Software Institute,
+    which receives funding from the National Science Foundation under award OAC-1547580
+  </div>
+  <div class="column_right">
+    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
+    </a>
+  </div>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

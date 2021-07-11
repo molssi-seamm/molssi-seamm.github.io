@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Reproducibility and Replicability &mdash; SEAMM 2020.12.15.1-30-g91ddb29 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SEAMM GUI" href="seamm_description/gui.html" />
+    <link rel="prev" title="Productivity" href="productivity.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQXXTJ2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SEAMM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.12.15.1-30-g91ddb29
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="seamm_overview.html">Overview of SEAMM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="productivity.html">Productivity</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Reproducibility and Replicability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/gui.html">SEAMM GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/flowchart.html">Flowchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/job_manager.html">Job Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_seamm/index.html">How do you run a simulation?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation/index.html">Installing SEAMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="system.html">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forcefields/overview.html">Overview of Forcefields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/functional_form.html">Functional Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/parameters.html">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/atom_types.html">Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial-1.html">Tutorial 1: Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial-2.html">Tutorial 2: The Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial-3.html">Tutorial 3: Tables and Loops</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers/index.html">Developers Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers/status.html">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/design/index.html">The Design of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/design/plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/design/forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/tips-and-tricks/index.html">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/2019/index.html">Development Plans for 2019</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2019/fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2019/mopac_use_case.html">Use Case: MOPAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/2020/index.html">Development Plans for 2020</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/general_improvements.html">General Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/forcefield_plugins.html">Forcefield Plug-Ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/versions.html">Support for Plugin Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/fluids_use_case.html">Use Case: Fluid Properties (2020)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developers/2020/fluids/automatic_convergence.html">Automatic Convergence in MD/MC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/2020/fluids/system_size_effects.html">System Size Effects in Fluid Simulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/2020/fluids/validation_of_statistical_analysis.html">Validation of Statistical Analysis for MD/MC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../plug-ins/index.html">Plug-ins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/building.html">Building</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/crystal_builder_step/index.html">Crystal Builder</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/packmol_step/index.html">PACKMOL</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/set_cell_step/index.html">Set Cell</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/solvate_step/index.html">Solvate</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/supercell_step/index.html">Supercell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/control.html">Control</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/control_parameters_step/index.html">Control Parameters</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/loop_step/index.html">Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/data.html">Data</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/read_structure_step/index.html">Read Structure</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/table_step/index.html">Table</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/system_step/index.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/simulations.html">Simulations</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/dftbplus_step/index.html">DFTB+</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/lammps_step/index.html">LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/mopac_step/index.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/psi4_step/index.html">Psi4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/molssi-seamm">https://github.com/molssi-seamm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SEAMM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">User Documentation</a> &raquo;</li>
+        
+          <li><a href="seamm_overview.html">Overview of SEAMM</a> &raquo;</li>
+        
+      <li>Reproducibility and Replicability</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/users/reproducibility.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reproducibility-and-replicability">
+<span id="reproducibility"></span><h1>Reproducibility and Replicability<a class="headerlink" href="#reproducibility-and-replicability" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="/html/productivity.html">Productivity</a> section mentioned that the
+<a class="reference internal" href="../glossary.html#term-flowchart"><span class="xref std std-term">flowcharts</span></a> are reusable and shareable. Let’s look
+into that a bit more, because it is a much more powerful feature than
+is perhaps obvious at first glance. But before that, lets define some
+terms, because there is a lot of confusion in the literature and
+common usage. We will follow the National Academies of Sciences report
+<a class="reference external" href="https://www.nap.edu/catalog/25303/reproducibility-and-replicability-in-science">Reproducibility and Replicability in Science</a></p>
+<dl class="simple">
+<dt>Reproducibility</dt><dd><p>is obtaining consistent results using the same input data,
+computational steps, methods, and code, and conditions of
+analysis. This definition is synonymous with “computational
+reproducibility”.</p>
+</dd>
+<dt>Replicability</dt><dd><p>is obtaining consistent results across studies aimed at answering
+the same scientific question, each of which has obtained its own
+data. Two studies may be considered to have replicated if they
+obtain consistent results given the level of uncertainty inherent
+in the system under study.</p>
+</dd>
+<dt>Generalizability</dt><dd><p>another term frequently used in science, refers to the extent that
+results of a study apply in other contexts or populations that
+differ from the original one.</p>
+</dd>
+</dl>
+<div class="section" id="id1">
+<h2>Reproducibility<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>How does SEAMM help with this? Flowcharts are reproducible, by
+definition. If you run a flowchart twice on the same system or
+systems, it will replicate the steps identically. Provided the steps
+themselves are deterministic, then the entire workflow will create
+identical results. Of course, many codes give slightly different
+results if run on different numbers of cores, or between versions, in
+which case the results will be similar but not identical.</p>
+<p>Some algorithms, such as molecular dynamics and Monte Carlo methods,
+depend on random numbers for initialization, in which case the
+simulation will differ in detail unless the random numbers are the
+same. Normally you’d actually like separate runs to be different, so
+the codes usually set the seed for the random number generator
+randomly. In this case, while the physical results of duplicate runs
+should be identical within the statistical error bars, the details
+including the trajectory will be quite different. It is a good
+practice for the <a class="reference internal" href="../glossary.html#term-plug-in"><span class="xref std std-term">plug-ins</span></a> to ensure that the seed
+actually used is printed, and the setup allows you to specifiy the
+seed so that you can indeed reproduce the run. Whether the plug-ins
+follow this advice is up to them, not SEAMM.</p>
+</div>
+<div class="section" id="replicability">
+<h2>Replicability<a class="headerlink" href="#replicability" title="Permalink to this headline">¶</a></h2>
+<p>SEAMM does not guarantee replicability – after all, replicability
+implies that two different people or groups tackle the same scientific
+problem, but don’t share e.g. flowcharts. Nonetheless, SEAMM and the
+plug-ins can help a great deal. Because plug-ins simplify and clarify
+the input to the underlying codes, and should provide guidance to
+which parameters are relevant as well as provide use default values
+where possible, it is more likely that independent researchers will
+use similar, reasonable settings. Even if using different codes, the
+plug-ins still insulate users from more of the detail, and provide the
+concepts of the code in a more general way. This helps!</p>
+<p>If people share flowcharts – particulalrly if experts publish
+flowcharts that emobdy their knowlege and experience, replicability
+can be achieved through reproducibility and generalizability. For
+example, if an expert publishes a flowchart to calculate e.g. the
+viscosity of fluids using LAMMPS, and another expert publishes a
+flowchart using GROMACS, they almost certainly will get comparable
+results. After all, they are experts! You can then use one of the
+flowcharts for different fluids and are likely to also get good
+results. Another researcher starting for the same flowchart as you, or
+the one using the other code, is still quite likely to replicate your
+results.</p>
+</div>
+<div class="section" id="generalizability">
+<h2>Generalizability<a class="headerlink" href="#generalizability" title="Permalink to this headline">¶</a></h2>
+<p>This is the area where SEAMM really shines. The flowcharts and
+plug-ins are designed with this in mind, so where possible flowcharts
+can be applied to similar molecules. Obviously you can’t extend
+calculations to far. You can’t calculate the elastic properties, which
+are property of solids, for fluids or individual molecules. If the
+forcefield doesn’t have parameters for the elements or functional
+groups in the new molecule, or a quantum chemistry code doesn’t have
+basis sets for an element, the flowchart won’t work. But for similar
+enough molecules it will. And with care, flowcharts can be quite
+general.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="seamm_description/gui.html" class="btn btn-neutral float-right" title="SEAMM GUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="productivity.html" class="btn btn-neutral float-left" title="Productivity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+
+<p>
+<div class="row">
+  <div class="column_left">
+    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
+    </a>
+  </div>
+  <div class="column">
+    &copy; Copyright 2019-2021, the Molecular Sciences Software Institute,
+    which receives funding from the National Science Foundation under award OAC-1547580
+  </div>
+  <div class="column_right">
+    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
+    </a>
+  </div>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

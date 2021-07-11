@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Systems: Molecules, Crystal, Fluids and all that &mdash; SEAMM 2020.12.15.1-30-g91ddb29 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview of Forcefields" href="forcefields/overview.html" />
+    <link rel="prev" title="Installing SEAMM" href="installation/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQXXTJ2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SEAMM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.12.15.1-30-g91ddb29
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seamm_overview.html">Overview of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="productivity.html">Productivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reproducibility.html">Reproducibility and Replicability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/gui.html">SEAMM GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/flowchart.html">Flowchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/job_manager.html">Job Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seamm_description/dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_seamm/index.html">How do you run a simulation?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation/index.html">Installing SEAMM</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forcefields/overview.html">Overview of Forcefields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/functional_form.html">Functional Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/parameters.html">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/atom_types.html">Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forcefields/types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial-1.html">Tutorial 1: Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial-2.html">Tutorial 2: The Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial-3.html">Tutorial 3: Tables and Loops</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers/index.html">Developers Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers/status.html">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/design/index.html">The Design of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/design/plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/design/forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/design/forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/tips-and-tricks/index.html">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/2019/index.html">Development Plans for 2019</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2019/fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2019/mopac_use_case.html">Use Case: MOPAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/2020/index.html">Development Plans for 2020</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/general_improvements.html">General Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/forcefield_plugins.html">Forcefield Plug-Ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/versions.html">Support for Plugin Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developers/2020/fluids_use_case.html">Use Case: Fluid Properties (2020)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developers/2020/fluids/automatic_convergence.html">Automatic Convergence in MD/MC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/2020/fluids/system_size_effects.html">System Size Effects in Fluid Simulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developers/2020/fluids/validation_of_statistical_analysis.html">Validation of Statistical Analysis for MD/MC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../plug-ins/index.html">Plug-ins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/building.html">Building</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/crystal_builder_step/index.html">Crystal Builder</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/packmol_step/index.html">PACKMOL</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/set_cell_step/index.html">Set Cell</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/solvate_step/index.html">Solvate</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/supercell_step/index.html">Supercell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/control.html">Control</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/control_parameters_step/index.html">Control Parameters</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/loop_step/index.html">Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/data.html">Data</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/read_structure_step/index.html">Read Structure</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/table_step/index.html">Table</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/system_step/index.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plug-ins/simulations.html">Simulations</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/dftbplus_step/index.html">DFTB+</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/lammps_step/index.html">LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/mopac_step/index.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/psi4_step/index.html">Psi4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/molssi-seamm">https://github.com/molssi-seamm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SEAMM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">User Documentation</a> &raquo;</li>
+        
+      <li>Systems: Molecules, Crystal, Fluids and all that</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/users/system.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="systems-molecules-crystal-fluids-and-all-that">
+<span id="system"></span><h1>Systems: Molecules, Crystal, Fluids and all that<a class="headerlink" href="#systems-molecules-crystal-fluids-and-all-that" title="Permalink to this headline">¶</a></h1>
+<p>In computational molecular/materials science (CMS), systems made of atoms are often
+investigated. Such systems might consist of one to many molecules in crystalline,
+amorphous, or liquid forms or even some combination of them. Unfortunately, we don’t
+have a commonly used or general term to describe such atomistic systems.
+“Atomistic system” is a reasonable term but a bit cumbersome. Thus, in this documentation,
+we will simply use the term “system” in order to refer to the collection of atoms
+under the study. This usage is not too far from the idea of a <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_system">thermodynamic system</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">thermodynamic</span> <span class="n">system</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">body</span> <span class="n">of</span> <span class="n">matter</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">radiation</span><span class="p">,</span> <span class="n">confined</span> <span class="ow">in</span> <span class="n">space</span> <span class="n">by</span>
+<span class="n">walls</span><span class="p">,</span> <span class="k">with</span> <span class="n">defined</span> <span class="n">permeabilities</span><span class="p">,</span> <span class="n">which</span> <span class="n">separate</span> <span class="n">it</span> <span class="kn">from</span> <span class="nn">its</span> <span class="n">surroundings</span><span class="o">.</span> <span class="n">The</span>
+<span class="n">surroundings</span> <span class="n">may</span> <span class="n">include</span> <span class="n">other</span> <span class="n">thermodynamic</span> <span class="n">systems</span><span class="p">,</span> <span class="ow">or</span> <span class="n">physical</span> <span class="n">systems</span> <span class="n">that</span> <span class="n">are</span>
+<span class="ow">not</span> <span class="n">thermodynamic</span> <span class="n">systems</span><span class="o">.</span> <span class="n">A</span> <span class="n">wall</span> <span class="n">of</span> <span class="n">a</span> <span class="n">thermodynamic</span> <span class="n">system</span> <span class="n">may</span> <span class="n">be</span> <span class="n">purely</span> <span class="n">notional</span><span class="p">,</span>
+<span class="n">when</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">described</span> <span class="k">as</span> <span class="n">being</span> <span class="s1">&#39;permeable&#39;</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">matter</span><span class="p">,</span> <span class="nb">all</span> <span class="n">radiation</span><span class="p">,</span> <span class="ow">and</span> <span class="nb">all</span>
+<span class="n">forces</span><span class="o">.</span> <span class="n">A</span> <span class="n">thermodynamic</span> <span class="n">system</span> <span class="n">can</span> <span class="n">be</span> <span class="n">fully</span> <span class="n">described</span> <span class="n">by</span> <span class="n">a</span> <span class="n">definite</span> <span class="nb">set</span> <span class="n">of</span>
+<span class="n">thermodynamic</span> <span class="n">state</span> <span class="n">variables</span><span class="p">,</span> <span class="n">which</span> <span class="n">always</span> <span class="n">covers</span> <span class="n">both</span> <span class="n">intensive</span> <span class="ow">and</span> <span class="n">extensive</span>
+<span class="n">properties</span><span class="o">.</span>
+
+<span class="o">--</span><span class="n">Wikipedia</span>
+</pre></div>
+</div>
+<p>In the present context, a system is either 0, 1, 2, or 3-dimensional, and effectively infinite
+in size which occupies the entire space. For example, a molecule is usually described as
+being isolated in a vacuum which is notionally infinite in size. Similarly, a crystal is
+represented as a 3-dimensional unit cell which infinitely extends in all directions.</p>
+<div class="section" id="handling-in-seamm">
+<h2>Handling in SEAMM<a class="headerlink" href="#handling-in-seamm" title="Permalink to this headline">¶</a></h2>
+<p>SEAMM provides general functionalities for handling a system, for which we need to introduce
+some terminology:</p>
+<dl class="simple">
+<dt>System Database</dt><dd><p>A system database, which contains all systems used in a flowchart, is stored in the file
+<cite>seamm.db</cite>.</p>
+</dd>
+<dt>System</dt><dd><p>Systems are stored in the system database and can be accessed through indices 1, 2, 3, …
+or a unique name. A system consists of one more configurations.</p>
+</dd>
+<dt>Configuration</dt><dd><p>Configuration contains the coordinates of the atoms or the cell dimensions corresponding to
+specific molecular topologies and conformers, or periodic system, respectively. Various
+configurations of a system may have distinct bonds in order to support e.g. reactive
+forcefields such as ReaxFF. Configurations may also have different atoms in order to
+support e.g. grand canonical ensembles.</p>
+</dd>
+</dl>
+<p>The configuration object corresponds to what most programs refer to as molecules or
+crystals. It consists of atomic symbols and coordinates as well as other parameters
+such as forcefield atom types needed for simulations.</p>
+<p>A system contains configurations. Therefore, in an empty system, one can only create
+a configuration. However, the concept of a non-empty system makes it easy to support
+operatios such as conformational searches, where each conformation is saved as a configuration of
+the system. Furthermore, a molecular dynamics trajectory can also be thought of as a set of
+configurations of a system.</p>
+<p>When a flowchart starts the system database, it is empty by default. Reading or creating
+a structure using a plug-in gives the option of overwriting the current configuration,
+adding a new configuration to the current system, or creating a new system. If the current
+system or configuration is overwritten (while neither do exist in the first place), they will be
+automatically created. Therefore, there is often no need to create a new system. For example,
+if the first step in a flowchart reads a structure from a file, SEAMM will automatically
+create a system and configuration to hold it because the system database is empty by default.</p>
+<p>SEAMM has the concept of the current system and configuration. Thus, one does not need to
+specify the system and configuration all the time. Typically, the current system and
+configuration are the last objects being created. However, plug-ins may provide the user with
+the option to change the default system or configuration, or temporarily override the default.
+The <a class="reference external" href="https://molssi-seamm.github.io/system_step/index.html">System Step</a> also allows the users to create and copy the systems and configurations, modify
+or update them etc.</p>
+<p>The aforementioned approach, which may seem a bit complicated at first, makes it easy to handle
+multiple systems. For example, if a flowchart loops over a number of structures in different files,
+one can choose to overwrite the previous one(s), resulting in only
+one system with one configuration. However, one can choose to read each structure into a new system,
+allowing for comparison or switch among the systems.</p>
+<p>The <a class="reference external" href="https://molssi-seamm.github.io/loop_step/index.html">Loop Step</a> can loop over structures or configurations. Thus, if a number of structures
+are loaded or a flowchart is created using an existing system database, it is easy to process
+all the structures, simultaneously.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="forcefields/overview.html" class="btn btn-neutral float-right" title="Overview of Forcefields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation/index.html" class="btn btn-neutral float-left" title="Installing SEAMM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+
+<p>
+<div class="row">
+  <div class="column_left">
+    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
+    </a>
+  </div>
+  <div class="column">
+    &copy; Copyright 2019-2021, the Molecular Sciences Software Institute,
+    which receives funding from the National Science Foundation under award OAC-1547580
+  </div>
+  <div class="column_right">
+    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
+    </a>
+  </div>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tutorial 2: The Dashboard &mdash; SEAMM 2020.12.15.1-30-g91ddb29 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorial 3: Tables and Loops" href="tutorial-3.html" />
+    <link rel="prev" title="Tutorial 1: Getting Started" href="tutorial-1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQXXTJ2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SEAMM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.12.15.1-30-g91ddb29
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../status.html">Status</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../seamm_overview.html">Overview of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../productivity.html">Productivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reproducibility.html">Reproducibility and Replicability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/gui.html">SEAMM GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/flowchart.html">Flowchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/job_manager.html">Job Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/job_datastore.html">Job Datastore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../seamm_description/dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_seamm/index.html">How do you run a simulation?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../using_seamm/running_a_flowchart.html">Running a Flowchart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system.html">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcefields/overview.html">Overview of Forcefields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/functional_form.html">Functional Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/parameters.html">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/atom_types.html">Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forcefields/types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tutorial-1.html">Tutorial 1: Getting Started</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial 2: The Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial-3.html">Tutorial 3: Tables and Loops</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/status.html">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/design/index.html">The Design of SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/design/plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/design/forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/design/forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/tips-and-tricks/index.html">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/2019/index.html">Development Plans for 2019</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2019/fluids_use_case.html">Use Case: Fluid Properties (2019)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2019/mopac_use_case.html">Use Case: MOPAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/2020/index.html">Development Plans for 2020</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/general_improvements.html">General Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/molecular_system.html">Molecular System (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/forcefield_plugins.html">Forcefield Plug-Ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/dashboard.html">Dashboard (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/versions.html">Support for Plugin Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/job_submission.html">Job Submission (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/mopac_use_case.html">Use Case: MOPAC (2020)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/2020/fluids_use_case.html">Use Case: Fluid Properties (2020)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/2020/fluids/automatic_convergence.html">Automatic Convergence in MD/MC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/2020/fluids/system_size_effects.html">System Size Effects in Fluid Simulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developers/2020/fluids/validation_of_statistical_analysis.html">Validation of Statistical Analysis for MD/MC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins/index.html">Plug-ins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/building.html">Building</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/crystal_builder_step/index.html">Crystal Builder</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/packmol_step/index.html">PACKMOL</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/set_cell_step/index.html">Set Cell</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/solvate_step/index.html">Solvate</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/supercell_step/index.html">Supercell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/control.html">Control</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/control_parameters_step/index.html">Control Parameters</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/loop_step/index.html">Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/data.html">Data</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/read_structure_step/index.html">Read Structure</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/table_step/index.html">Table</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/system_step/index.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../plug-ins/simulations.html">Simulations</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/dftbplus_step/index.html">DFTB+</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/lammps_step/index.html">LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/mopac_step/index.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/psi4_step/index.html">Psi4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/molssi-seamm">https://github.com/molssi-seamm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SEAMM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">User Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Tutorial 2: The Dashboard</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/users/tutorials/tutorial-2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorial-2-the-dashboard">
+<span id="tutorial-2"></span><h1>Tutorial 2: The Dashboard<a class="headerlink" href="#tutorial-2-the-dashboard" title="Permalink to this headline">¶</a></h1>
+<p>Before getting to this tutorial, you need to have finished <a class="reference internal" href="tutorial-1.html#tutorial-1"><span class="std std-ref">Tutorial 1: Getting Started</span></a> so that
+there is at least one job to look at.</p>
+<p>You access the Dashboard in your web browser, by default at <a class="reference external" href="http://localhost:5000">http://localhost:5000</a> (you
+might want to open the link in a new tab or window!):</p>
+<div class="figure align-center" id="id1">
+<img alt="The Dashboard in a browser window." src="../../_images/initial_dashboard.png" />
+<p class="caption"><span class="caption-text"><em>The Dashboard when you first access it.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The left pane is a menu of sections in the Dashboard. The left arrow at the bottom right
+of the pane collapses the menu to icons, freeing up more space for the right pane, which
+may be useful when looking at e.g. outputs from the simulation codes. The right pane of
+this initial view shows a summary of the jobs, flowcharts and projects visible to the
+current user. When you first access the Dashboard webpage, it shows everything available
+to anyone without logging in.</p>
+<p>Now let’s log in and see what happens. Click the <strong>Public</strong> <strong>User</strong> menu at the upper
+right and select <strong>Login</strong>. Use you username and password. The initial password is
+<em>default</em>. Once you are logged in the front page of the Dashboard should change
+slightly:</p>
+<div class="figure align-center" id="id2">
+<img alt="The Dashboard after logging in." src="../../_images/logged_in.png" />
+<p class="caption"><span class="caption-text"><em>The Dashboard after logging in.</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notice that now there are a couple jobs, one flowchart, and one project. You can use
+either the menu at the top of each panel or the items in the menu in the left pane to
+see the job, flowcharts, and projects that you have access to. Feel free to look around,
+but eventually click on <strong>Jobs List</strong> in the menus to the left:</p>
+<div class="figure align-center" id="id3">
+<img alt="The Dashboard showing the Jobs List." src="../../_images/job_list.png" />
+<p class="caption"><span class="caption-text"><em>The list of jobs in the Dashboard.</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you are just starting, you hopefully have just one job in the list. I ran it twice
+while testing so have two copies. Notice the title that you gave to the job is
+listed. It is important to use good but short titles! There isn’t much space, so try to
+keep your titles down to 50-80 characters.</p>
+<p>If you click on the number of the job, it will open the results from the job:</p>
+<div class="figure align-center" id="id4">
+<img alt="The Dashboard showing the main page for a job." src="../../_images/job_page.png" />
+<p class="caption"><span class="caption-text"><em>The main page of a job.</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>The title appears again at the top of the left pane of the window, followed by
+information about the job. Below this is a listing of the files from the job. The job’s
+description is at the top of the right pane, below which is a large empty space that
+will be used to display the files from the job when you click on them in the directory
+to the left. Note that I collapsed the main menus at the very left to gain space.</p>
+<p>Now click on the <strong>final_structure.mmcif</strong> file in the driectory section:</p>
+<div class="figure align-center" id="id5">
+<img alt="The Dashboard displaying a structure from a job." src="../../_images/structure_display.png" />
+<p class="caption"><span class="caption-text"><em>Displaying the final structure.</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>You can rotate the molecule using your mouse, change the representation using the menu at
+the top of the page, and export the current view as a picture.</p>
+<p>Move on to <strong>job.out</strong>, clicking on it:</p>
+<div class="figure align-center" id="id6">
+<img alt="The main job output in a browser window." src="../../_images/job_out.png" />
+<p class="caption"><span class="caption-text"><em>The main output of the job.</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>This is the main output for the job, which gives a summary of the job, the results, and
+a list of citations at the end. Let’s spend some time understanding the information
+being presented.</p>
+<p>The first section is always a summary of the job:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">flowchart</span>
+<span class="o">----------------------------</span>
+<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2021.6.2</span>
+
+<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.6.3</span>
+    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="s1">&#39;CCS&#39;</span>
+
+<span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="n">DFTB</span><span class="o">+</span>  <span class="mf">2021.6.5</span>
+
+   <span class="n">Step</span> <span class="mf">2.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
+       <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
+
+   <span class="n">Step</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">Optimization</span>
+       <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Direct</span> <span class="n">inversion</span> <span class="n">of</span> <span class="n">iterative</span> <span class="n">subspace</span>
+       <span class="p">(</span><span class="n">gDIIS</span><span class="p">)</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0</span> <span class="n">hartree</span><span class="o">/</span><span class="n">bohr</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span>
+       <span class="n">of</span> <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This summary is printed before the job starts actually running so even if the job takes
+a long time you can review what it is going to do. If you see a mistake you can kill the
+job and fix the problem. The summary tries to proved the key parameters for the
+calculations, giving enough information that someone else could replicate the
+calculation given just the summary. Also note that the version of each plug-in is given,
+in case there is a bug in particular version.</p>
+<p>The second section is a summary of the results from running the flowcharts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">the</span> <span class="n">flowchart</span>
+<span class="o">---------------------</span>
+<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2021.6.8</span>
+
+<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.6.3</span>
+    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="s1">&#39;CCS&#39;</span>
+    <span class="n">Created</span> <span class="n">a</span> <span class="n">molecular</span> <span class="n">structure</span> <span class="k">with</span> <span class="mi">9</span> <span class="n">atoms</span><span class="o">.</span>
+
+    <span class="n">Step</span> <span class="mf">2.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
+        <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
+
+    <span class="n">Step</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">Optimization</span>
+        <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Direct</span> <span class="n">inversion</span> <span class="n">of</span> <span class="n">iterative</span> <span class="n">subspace</span>
+        <span class="p">(</span><span class="n">gDIIS</span><span class="p">)</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0001</span> <span class="n">E_h</span><span class="o">/</span><span class="n">a_0</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span>
+        <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+
+    <span class="n">Step</span> <span class="mf">2.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
+        <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
+
+
+    <span class="n">Step</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">Optimization</span>
+        <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Direct</span> <span class="n">inversion</span> <span class="n">of</span> <span class="n">iterative</span> <span class="n">subspace</span>
+        <span class="p">(</span><span class="n">gDIIS</span><span class="p">)</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0001</span> <span class="n">E_h</span><span class="o">/</span><span class="n">a_0</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span>
+        <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+
+
+        <span class="n">The</span> <span class="n">geometry</span> <span class="n">optimization</span> <span class="n">converged</span> <span class="ow">in</span> <span class="mi">25</span> <span class="n">steps</span> <span class="n">to</span> <span class="n">a</span> <span class="n">total</span> <span class="n">energy</span> <span class="n">of</span>
+        <span class="o">-</span><span class="mf">8.115704</span> <span class="n">Ha</span><span class="o">.</span>
+
+<span class="n">Wrote</span> <span class="n">the</span> <span class="n">final</span> <span class="n">structure</span> <span class="n">to</span> <span class="s1">&#39;final_structure.mmcif&#39;</span> <span class="k">for</span> <span class="n">viewing</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>In this case the results are similar to the initial summary. Note, however, that the
+FromSMILES step reports how many atoms are in the created structure and the DFTB+
+Optimization reports the total energy and number of steps taken. Other types of
+calculations and other plug-ins might have more results to report.</p>
+<p>The last section of the main job output provides references that should be cited for the
+calculations done:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Primary</span> <span class="n">references</span><span class="p">:</span>
+
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Jessica</span> <span class="n">Nash</span><span class="p">,</span> <span class="n">Eliseo</span> <span class="n">Marin</span><span class="o">-</span><span class="n">Rimoldi</span><span class="p">,</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">SEAMM</span><span class="p">:</span> <span class="n">Simulation</span> <span class="n">Environment</span>
+    <span class="k">for</span> <span class="n">Atomistic</span> <span class="ow">and</span> <span class="n">Molecular</span> <span class="n">Modeling</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2021.6.8</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span>
+    <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span>
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">seamm</span>
+
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">Hourahine</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Aradi</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Blum</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="p">;</span> <span class="n">Bonafé</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">;</span> <span class="n">Buccheri</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Camacho</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span>
+    <span class="n">Cevallos</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Deshaye</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span> <span class="n">Y</span><span class="o">.</span><span class="p">;</span> <span class="n">Dumitrică</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Dominguez</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Ehlert</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span>
+    <span class="n">Elstner</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">;</span> <span class="n">van</span> <span class="n">der</span> <span class="n">Heide</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Hermann</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Irle</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span> <span class="n">Kranz</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Köhler</span><span class="p">,</span>
+    <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Kowalczyk</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Kubař</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Lee</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span> <span class="n">Lutsker</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="p">;</span> <span class="n">Maurer</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Min</span><span class="p">,</span>
+    <span class="n">S</span><span class="o">.</span> <span class="n">K</span><span class="o">.</span><span class="p">;</span> <span class="n">Mitchell</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="p">;</span> <span class="n">Negre</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Niehaus</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Niklasson</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span> <span class="n">M</span><span class="o">.</span> <span class="n">N</span><span class="o">.</span><span class="p">;</span> <span class="n">Page</span><span class="p">,</span>
+    <span class="n">A</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Pecchia</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Penazzi</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="p">;</span> <span class="n">Persson</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span> <span class="n">P</span><span class="o">.</span><span class="p">;</span> <span class="n">Řezáč</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Sánchez</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span> <span class="n">G</span><span class="o">.</span><span class="p">;</span>
+    <span class="n">Sternberg</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">;</span> <span class="n">Stöhr</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">;</span> <span class="n">Stuckenberg</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">;</span> <span class="n">Tkatchenko</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Yu</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span> <span class="n">W</span><span class="o">.-</span><span class="n">z</span><span class="o">.</span><span class="p">;</span>
+    <span class="n">Frauenheim</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="n">DFTB</span><span class="o">+</span><span class="p">,</span> <span class="n">a</span> <span class="n">software</span> <span class="n">package</span> <span class="k">for</span> <span class="n">efficient</span> <span class="n">approximate</span> <span class="n">density</span>
+    <span class="n">functional</span> <span class="n">theory</span> <span class="n">based</span> <span class="n">atomistic</span> <span class="n">simulations</span><span class="o">.</span> <span class="n">The</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span>
+    <span class="n">Physics</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mf">124101.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1063</span><span class="o">/</span><span class="mf">1.5143190</span>
+
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">Gaus</span><span class="p">,</span> <span class="n">Michael</span><span class="p">;</span> <span class="n">Lu</span><span class="p">,</span> <span class="n">Xiya</span><span class="p">;</span> <span class="n">Elstner</span><span class="p">,</span> <span class="n">Marcus</span><span class="p">;</span> <span class="n">Cui</span><span class="p">,</span> <span class="n">Qiang</span><span class="o">.</span> <span class="n">Parameterization</span> <span class="n">of</span>
+    <span class="n">DFTB3</span><span class="o">/</span><span class="mi">3</span><span class="n">OB</span> <span class="k">for</span> <span class="n">Sulfur</span> <span class="ow">and</span> <span class="n">Phosphorus</span> <span class="k">for</span> <span class="n">Chemical</span> <span class="ow">and</span> <span class="n">Biological</span>
+    <span class="n">Applications</span><span class="o">.</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span> <span class="n">Theory</span> <span class="ow">and</span> <span class="n">Computation</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="mi">1518</span><span class="o">-</span><span class="mf">1537.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1021</span><span class="o">/</span><span class="n">ct401002w</span>
+
+<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">Gaus</span><span class="p">,</span> <span class="n">Michael</span><span class="p">;</span> <span class="n">Goez</span><span class="p">,</span> <span class="n">Albrecht</span><span class="p">;</span> <span class="n">Elstner</span><span class="p">,</span> <span class="n">Marcus</span><span class="o">.</span> <span class="n">Parametrization</span> <span class="ow">and</span>
+    <span class="n">Benchmark</span> <span class="n">of</span> <span class="n">DFTB3</span> <span class="k">for</span> <span class="n">Organic</span> <span class="n">Molecules</span><span class="o">.</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span> <span class="n">Theory</span> <span class="ow">and</span>
+    <span class="n">Computation</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">338</span><span class="o">-</span><span class="mf">354.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1021</span><span class="o">/</span><span class="n">ct300849w</span>
+
+<span class="n">Secondary</span> <span class="n">references</span><span class="p">:</span>
+
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">DFTB</span><span class="o">+</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2021.6.5</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span> <span class="n">Sciences</span>
+    <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span>
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">dftbplus_step</span>
+
+<span class="n">Process</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">01.408026</span> <span class="p">(</span><span class="mf">1.408</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">02.932646</span> <span class="p">(</span><span class="mf">2.933</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The references are sometimes divided by a sense of how important they are. For more
+complicated flowcharts the number of references can be very large, so SEAMM tries to
+help you decide which are the most important references.</p>
+<p>The references are also stored in a small database file, <em>references.db</em>. Future
+versions of SEAMM will provide tools to merge the references from all of the jobs you
+used in a particular project. This will help you properly cite the tools that you used.</p>
+<p>If you now click on the folder labeled <strong>2</strong>, which corresponds to the second step of
+the flowchart, which was the DFTB+ geometry optimization:</p>
+<div class="figure align-center" id="id7">
+<img alt="The files for the DFTB+ step" src="../../_images/dftbplus_files.png" />
+<p class="caption"><span class="caption-text"><em>The files for the DFTB+ step.</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>The main output for DFTB+ is <strong>stdout.txt</strong> which has been selected in the picture
+above, and is displayed in the right pane. The left panel is the directory of the files
+in this step, which are the input and output from DFTB+. You can use these to see in
+detail the input generated by the plug-in, as well as the outputs.</p>
+<p>If you look at <strong>dftb_in.hsd</strong> you will see the raw input for DFTB+. It was certainly
+easier to use the GUI than hand-edit the input file directly.</p>
+<p>This concludes the second tutorial, covering using the Dashboard and examining the
+output from you calculations. The Dashboard will display files in different ways
+depending on their content. Text files are display as text; molecules as 3-D structures;
+tabular data as sortable tables; and graphs as graphs.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorial-3.html" class="btn btn-neutral float-right" title="Tutorial 3: Tables and Loops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial-1.html" class="btn btn-neutral float-left" title="Tutorial 1: Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+
+<p>
+<div class="row">
+  <div class="column_left">
+    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
+    </a>
+  </div>
+  <div class="column">
+    &copy; Copyright 2019-2021, the Molecular Sciences Software Institute,
+    which receives funding from the National Science Foundation under award OAC-1547580
+  </div>
+  <div class="column_right">
+    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
+    </a>
+  </div>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
