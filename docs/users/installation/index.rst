@@ -42,10 +42,11 @@ available plug-ins::
 
   seamm-installer install
 
-This will take perhaps 10-15 minutes because not only is it installing
-SEAMM and the plug-ins, but it is also installed codes such as LAMMPS,
-Psi4, Packmol, and DFTB+ so that they can be used in the SEAMM
-environment.
+This will take perhaps 10-15, though maybe as much as 30 minutes because not only is it
+installing SEAMM and the plug-ins, but it is also installed codes such as LAMMPS, Psi4,
+Packmol, and DFTB+ so that they can be used in the SEAMM environment. Some of these
+codes are quite large, so particularly if your Internet connection is a bit slow, it may
+take longer. Be patient!
 
 You can check on the environments created as follows::
 
@@ -62,9 +63,9 @@ which will produce an output like this::
   seamm-packmol            /Users/tester/opt/miniconda3/envs/seamm-packmol
   seamm-psi4               /Users/tester/opt/miniconda3/envs/seamm-psi4
 
-The reason that SEAMM uses individual environments for each simulation
-engine is that it eliminates the version conflicts between the
-installations, which otherwise can be very difficult.
+SEAMM uses individual environments for each simulation engine because they often require
+many other tools. Sometimes two different codes require different versions of the same
+tool which causes problems unless each installation is kept separate from the others.
 
 You can start the flowchart editor by typing::
 
@@ -75,15 +76,14 @@ started.
 
 Installing MOPAC
 ~~~~~~~~~~~~~~~~
-Head to the MOPAC_ homepage and click on one of the download links in
-the section on MOPAC2016. MOPAC is free for academics, so if you are
-at a university or school you can request a copy and license. Follow
-the instructions included with the download for installing MOPAC and
-activating MOPAC.
+The MolSSI is in the process of taking MOPAC over, and will shortly release it as a
+fully open-source code. This will make the installation automatic, like it is for other
+codes, but in the meantime, head to the MOPAC_ homepage and click on one of the download
+links in the section on MOPAC2016 and follow the instructions included with the download
+for installing MOPAC and activating MOPAC.
 
 Installing the Dashboard
 --------------------------------------
-
 The Dashboard is installed in its own conda environment to keep its
 dependencies separate from those of SEAMM::
 
