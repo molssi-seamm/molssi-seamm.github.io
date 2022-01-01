@@ -83,12 +83,13 @@ Documentation Versions
     :titlesonly:
     :hidden:
 
-    status
+    status/index
     users/installation/index
     users/index
     developers/index
     plug-ins/index
     https://github.com/molssi-seamm
+    statistics/index
     glossary
     acknowledgements
 

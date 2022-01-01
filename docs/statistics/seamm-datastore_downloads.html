@@ -1,0 +1,310 @@
+
+<div id="chart" style="width:100%;height:80%;"></div>
+<script>
+  var data = [
+      {
+	  x: [''],
+	  y: [],
+          name: 'Sweden',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Peru',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Australia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Cabo Verde',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Moldova, Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Taiwan, Province of China',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Italy',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Canada',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Brazil',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Argentina',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Switzerland',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Tanzania, United Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Bangladesh',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12'],
+	  y: [1],
+          name: 'Netherlands',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Yemen',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Morocco',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Turkey',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Armenia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Algeria',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Hungary',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Greece',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'France',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12'],
+	  y: [1],
+          name: 'Pakistan',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12'],
+	  y: [1],
+          name: 'Iran, Islamic Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Poland',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Indonesia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Thailand',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12'],
+	  y: [1],
+          name: 'Spain',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Singapore',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11', '2021-12'],
+	  y: [4, 1],
+          name: 'Israel',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Russian Federation',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'United Kingdom',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Japan',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11'],
+	  y: [1],
+          name: 'Korea, Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'India',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12'],
+	  y: [3],
+          name: 'Egypt',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11'],
+	  y: [1],
+          name: 'Germany',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11', '2021-12'],
+	  y: [8, 6],
+          name: 'unknown',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11', '2021-12'],
+	  y: [17, 27],
+          name: 'China',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11', '2021-12'],
+	  y: [17, 10],
+          name: 'Hong Kong',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11', '2021-12'],
+	  y: [63, 127],
+          name: 'United States',
+	  type: 'bar'
+      },
+  ];
+  var layout = {
+      title: 'Downloads of seamm-datastore from PyPi by Country in the Last Year',
+      barmode: 'stack',
+      xaxis: {
+          categoryorder: 'category ascending',
+	  title: 'Month',
+          tickangle: 35,
+          showticklabels: true,
+          type: 'category'
+      },
+      yaxis: {
+	  title: '# of Downloads'
+      }
+  };
+  var config = {
+      responsive: true
+  }
+  Plotly.newPlot('chart', data, layout, config);
+</script>

@@ -20,7 +20,7 @@ form of the forcefield.
 
 Assuming that the plug-in can create the generic SEAMM energy epxression, the class
 needs to provide a method `energy_expression` that creates the energy expression. See
-`/XXXX`_ for the documentation of the energy expression within SEAMM.
+XXXX for the documentation of the energy expression within SEAMM.
 
 .. todo::
    We need to bite the bullet and document the energy expression class and perhaps data
