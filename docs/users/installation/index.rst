@@ -119,7 +119,7 @@ Then run the dashboard::
 
 You can access the Dashboard using your browser at this address `http://localhost:5000`_
 
-The Dashboard will be accessible for until you close the window running it. If you want
+The Dashboard will be accessible until you close the window running it. If you want
 it to remain running, use `nohup`::
 
   (seamm-dashboard) tester@paul ~ % nohup seamm-dashboard &
