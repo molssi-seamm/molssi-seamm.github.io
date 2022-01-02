@@ -28,7 +28,7 @@ following commands.
 
 .. attention::
    While SEAMM can be installed natively on Windows, significant pieces of functionality
-   are missing because 3rd party package often don't support Windows. However, the
+   are missing because 3rd party packages often don't support Windows. However, the
    Windows Subsystem for Linux (WSL) supports running Linux programs, including SEAMM,
    natively. Shortly we'll add instructions for setting up WSL and installing
    SEAMM. With Windows 11 all functionality is available; however, Windows 10 is a bit

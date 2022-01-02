@@ -96,7 +96,7 @@ presents a number of choices:
 
    *Choices for controlling the temperature in LAMMPS*
 
-If we choose Berendsen's method for controlling the temperature, the dialog reconfgiures
+If we choose Berendsen's method for controlling the temperature, the dialog reconfigures
 to show only the relevant options:
 
 .. figure:: /images/berendsen_parameters.png
