@@ -7,7 +7,7 @@ Reproducibility and Replicability
 The Productivity_ section mentioned that the
 :term:`flowcharts<flowchart>` are reusable and shareable. Let's look
 into that a bit more, because it is a much more powerful feature than
-is perhaps obvious at first glance. But before that, lets define some
+is perhaps obvious at first glance. But before that, let's define some
 terms, because there is a lot of confusion in the literature and
 common usage. We will follow the National Academies of Sciences report
 `Reproducibility and Replicability in Science`_
