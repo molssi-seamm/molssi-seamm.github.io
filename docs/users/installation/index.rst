@@ -160,7 +160,7 @@ As with the Dashboard, you can leave the JobServer running using
   [1] 10366
 
 The magic incantation at the end sends any error messages (`2>&1`) and
-output (`>jobserver.out`) to the file `jobserver.out`. The final `&`
+output (`>jobserver.out`) to the file `jobserver.out`. The final '`&`'
 causes it to run in the background so it doesn't tie up the
 terminal. If we didn't redirect the output, it would be automatically
 appended to `nohup.out`. There are two problems with this. First, it
