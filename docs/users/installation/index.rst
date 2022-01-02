@@ -50,8 +50,8 @@ available plug-ins::
 
   seamm-installer install
 
-This will take perhaps 10-15, though maybe as much as 30 minutes because not only is it
-installing SEAMM and the plug-ins, but it is also installed codes such as LAMMPS, Psi4,
+This will take perhaps 10-15, though maybe as many as 30 minutes, because not only is it
+installing SEAMM and the plug-ins, but it is also installing codes such as LAMMPS, Psi4,
 Packmol, and DFTB+ so that they can be used in the SEAMM environment. Some of these
 codes are quite large, so particularly if your Internet connection is a bit slow, it may
 take longer. Be patient!
