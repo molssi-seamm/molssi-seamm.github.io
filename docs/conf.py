@@ -60,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SEAMM'
-copyright = u"2019-2020, the Molecular Sciences Software Institute"
+copyright = u"2019-2022, the Molecular Sciences Software Institute"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -155,7 +155,7 @@ html_theme_options = {
 # here, relative to this directory. They are copied after the builtin
 # static files, so a file named "default.css" will overwrite the builtin
 # "default.css".
-html_static_path = ['_static', 'charts']
+html_static_path = ['_static']
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)

@@ -9,7 +9,7 @@ if you are doing these types of simulations, or want to get started with them, S
 let's you focus on your science or engineering, not on how to run code X, and get more
 done. Faster. SEAMM helps you from beginning to end:
 
-`Installation`_
+:ref:`Installation`
    SEAMM is easy to install on your Linux or Mac system, and we are working on
    Windows. It installs everything that you need, not only SEAMM itself, but the
    simulation codes such as LAMMPS, DFTB+, Psi4, and Packmol.
@@ -25,7 +25,7 @@ done. Faster. SEAMM helps you from beginning to end:
    As you learn more about the code you can customize your calculation more, but getting
    started is the hard part.
 
-Reproducibility
+:ref:`Reproducibility<reproducibility>`
    In SEAMM you use flowcharts, which are a high-level, intuitive way of describing what
    you want to do.  No more scripting in a shell or Python. These flowcharts are
    reproducible, meaning you can run them again and do the same thing over. While such
@@ -49,15 +49,15 @@ Track all of your work
 
 Do you need a data management plan?
    Most granting agencies now require a data management plan and require you to publish
-   your data. SEAMM has that covered! You can use the dashboard to publish the
-   computational campaign for a project or paper. And we are working on bundling up all
-   the files and publishing to Zenodo and getting a DOI, just as we already do for
-   flowcharts. Of course, you don't have to publish your results. But even if you are
-   doing proprietary work it is still a good idea to use these tools to make a local
-   copy just in case.
+   your data. SEAMM will shortly have that covered! You will be able to use the
+   dashboard to publish the computational campaign for a project or paper. And we are
+   working on bundling up all the files and publishing to Zenodo and getting a DOI, just
+   as we already do for flowcharts. Of course, you don't have to publish your
+   results. But even if you are doing proprietary work it is still a good idea to use
+   these tools to make a local copy just in case.
 
 Citations and references
-   Speaking of writing up you results, SEAMM helps you gether the right citations for
+   Speaking of writing up you results, SEAMM helps you gather the right citations for
    the codes and parameter sets you used in your computational campaign. Each job
    creates a list of the appropriate citations for what you just did, and saves it in a
    small database. And we are working on tools to merge the citations for a campaign.
@@ -85,6 +85,8 @@ Documentation Versions
 
     status/index
     users/installation/index
+    users/ease-of-use
+    users/reproducibility
     users/index
     developers/index
     plug-ins/index

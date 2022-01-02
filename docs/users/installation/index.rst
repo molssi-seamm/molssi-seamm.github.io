@@ -6,10 +6,9 @@ Installing SEAMM
 
 There are two parts to SEAMM that you can install:
 
-  * The graphical application and environment, which we tend to call
-    SEAMM
-    
-  * The web-based Dashboard
+  * The SEAMM environment and the graphical application for building flowcharts, running
+    jobs, etc.
+  * The web-based Dashboard, used for exploring the results of jobs.
 
 Both of these rely on having conda installed.  If you do not have
 conda (or anaconda) installed, head over to Miniconda_ or Anaconda_
@@ -27,10 +26,19 @@ under Linux, you already know how to do this. On a Mac start the
 Terminal (Applications/Utilities/Terminal) and use that window for the
 following commands.
 
+.. attention::
+   While SEAMM can be installed natively on Windows, significant pieces of functionality
+   are missing because 3rd party package often don't support Windows. However, the
+   Windows Subsystem for Linux (WSL) supports running Linux programs, including SEAMM,
+   natively. Shortly we'll add instructions for setting up WSL and installing
+   SEAMM. With Windows 11 all functionality is available; however, Windows 10 is a bit
+   more difficult and we are still working to see how to get all the functionality
+   working.
+
 The graphical part of SEAMM should be installed in the **seamm** conda
 environment as follows::
 
-  conda create -n seamm -c conda-forge seamm-installer
+  conda create -n seamm -c conda-forge seamm
 
 Once the environment is installed, activate it with::
 
@@ -71,8 +79,6 @@ You can start the flowchart editor by typing::
 
   seamm
 
-There are some sample flowcharts in `misc/flowcharts`_ to help you get
-started.
 
 Installing MOPAC
 ~~~~~~~~~~~~~~~~
@@ -87,13 +93,7 @@ Installing the Dashboard
 The Dashboard is installed in its own conda environment to keep its
 dependencies separate from those of SEAMM::
 
-  conda create -n seamm-dashboard python=3.9
-
-Once the environment is create, activate it and use `pip` to install
-the dashboard::
-
-  conda activate seamm-dashboard
-  pip install seamm-dashboard
+  conda create -n seamm-dashboard -c conda-forge seamm-installer
 
 
 Running the Dashboard
@@ -119,9 +119,8 @@ Then run the dashboard::
 
 You can access the Dashboard using your browser at this address `http://localhost:5000`_
 
-The Dashboard will be accessible for as long as you leave it
-running. However, if you logout it will probably be killed. If you
-want it to remain running, use `nohup`::
+The Dashboard will be accessible for until you close the window running it. If you want
+it to remain running, use `nohup`::
 
   (seamm-dashboard) tester@paul ~ % nohup seamm-dashboard &
   [1] 10102
@@ -170,6 +169,11 @@ to find the current information; and secondly, if we ran e.g. the
 Dashboard and the JobServer in the same directory their output would
 be intermingled in `nohup.out`, which is very confusing. So it is
 recomended to always redirect the output as above.
+
+.. attention::
+   It is straightforward to create daemons or services to run the DashBoard and
+   JobServer automatically when your machine is running or when you are logged in. Check
+   back soon for how to setup this up!
 
 .. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
 .. _Anaconda: https://www.anaconda.com/distribution

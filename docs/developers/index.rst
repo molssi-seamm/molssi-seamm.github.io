@@ -16,8 +16,6 @@ publish their existing and new codes and scripts as plug-ins and
 the entire community.
 
 * :ref:`design`
-* :ref:`2020_plans`
-* :ref:`2019_plans`
 
 .. toctree::
     :maxdepth: 5
@@ -28,5 +26,3 @@ the entire community.
     home_for_tools
     design/index
     tips-and-tricks/index
-    2019/index
-    2020/index
