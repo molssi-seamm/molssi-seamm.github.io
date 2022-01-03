@@ -44,7 +44,7 @@ which case the results will be similar but not identical.
 Some algorithms, such as molecular dynamics and Monte Carlo methods,
 depend on random numbers for initialization, in which case the
 simulation will differ in detail unless the random numbers are the
-same. Normally you'd actually like separate runs to be different, so
+same. Normally, you'd actually like separate runs to be different, so
 the codes usually set the seed for the random number generator
 randomly. In this case, while the physical results of duplicate runs
 should be identical within the statistical error bars, the details
