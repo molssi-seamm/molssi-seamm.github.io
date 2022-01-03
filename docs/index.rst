@@ -2,6 +2,24 @@
 SEAMM: the Simulation Environment for Atomistic and Molecular Modeling
 **********************************************************************
 
+.. attention::
+   SEAMM is ready to be used; however, it is still early days so you will probably find
+   a few problems and definitely find things missing that you would really like. Please
+   help us make SEAMM better! Let us know about problems so that we can fix them. If the
+   documentation is not clear or is lacking, let us know. If there is functionality
+   missing, let us know!
+
+   We will shortly have a forum where you can report problems and help others, too. In
+   the meantime feel free to email us at seamm@molssi.org or join the Slack channel
+   |slack|.
+
+   This is a fully open-source project so you can also help directly by making changes
+   in the code or documentation and submitting pull requests. The documentation for
+   developers is still minimal, but we are working on that too.
+
+   SEAMM is a large project, with many moving parts. It will take us a while to get to
+   everything! We appreciate your patience and help!
+
 SEAMM is an easy-to-use environment for simulations of organic molecules, biological
 molecules, fluids, synthetic polymers, and materials -- oxides, ceramics, semiconductors,
 metals, and alloys -- described at the atomic level. Why should you use SEAMM? Because
