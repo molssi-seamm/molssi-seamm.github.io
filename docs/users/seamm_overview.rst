@@ -40,7 +40,7 @@ SEAMM comprises six components:
 #. A :ref:`Dashboard` for managing and viewing the jobs in the
    datastore.
 
-shown in this diagram, which also shows the flow of data between
+These components are shown in this diagram, which also shows the flow of data between
 the components.
 
 .. image:: /images/SEAMM\ Components.png

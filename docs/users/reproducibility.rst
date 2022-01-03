@@ -7,7 +7,7 @@ Reproducibility and Replicability
 The Productivity_ section mentioned that the
 :term:`flowcharts<flowchart>` are reusable and shareable. Let's look
 into that a bit more, because it is a much more powerful feature than
-is perhaps obvious at first glance. But before that, lets define some
+is perhaps obvious at first glance. But before that, let's define some
 terms, because there is a lot of confusion in the literature and
 common usage. We will follow the National Academies of Sciences report
 `Reproducibility and Replicability in Science`_
@@ -44,7 +44,7 @@ which case the results will be similar but not identical.
 Some algorithms, such as molecular dynamics and Monte Carlo methods,
 depend on random numbers for initialization, in which case the
 simulation will differ in detail unless the random numbers are the
-same. Normally you'd actually like separate runs to be different, so
+same. Normally, you'd actually like separate runs to be different, so
 the codes usually set the seed for the random number generator
 randomly. In this case, while the physical results of duplicate runs
 should be identical within the statistical error bars, the details

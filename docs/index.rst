@@ -1,58 +1,88 @@
-**************
-What is SEAMM?
-**************
+**********************************************************************
+SEAMM: the Simulation Environment for Atomistic and Molecular Modeling
+**********************************************************************
 
-The Simulation Environment for Atomistic and Molecular Modeling --
-SEAMM -- is a user-friendly environment for computational molecular
-and materials science. SEAMM handles the entire range of atomic,
-molecular, crystalline, amorphous, and fluid systems that are
-described at the level of atoms and electrons.
+.. attention::
+   SEAMM is ready to be used; however, it is still early days so you will probably find
+   a few problems and definitely find things missing that you would really like. Please
+   help us make SEAMM better! Let us know about problems so that we can fix them. If the
+   documentation is not clear or is lacking, let us know. If there is functionality
+   missing, let us know!
 
-SEAMM is composed of :term:`plug-ins<plug-in>` that wrap popular
-software packages and tools.  As a result, users can create simulation
-protocols that include any combination of the following:
+   We will shortly have a forum where you can report problems and help others, too. In
+   the meantime feel free to email us at seamm@molssi.org or join the Slack channel
+   |slack|.
 
-1. **Quantum Chemistry (QC) calculations**
+   This is a fully open-source project so you can also help directly by making changes
+   in the code or documentation and submitting pull requests. The documentation for
+   developers is still minimal, but we are working on that too.
 
- - *Ab-initio* and molecular Density Functional Theory (DFT) (in progress)
- - Semi-empirical using MOPAC
- - Periodic DFT using Quantum Espresso or VASP (in progress)
+   SEAMM is a large project, with many moving parts. It will take us a while to get to
+   everything! We appreciate your patience and help!
 
-2. **Atomistic Molecular Mechanics (MM) simulations**
+SEAMM is an easy-to-use environment for simulations of organic molecules, biological
+molecules, fluids, synthetic polymers, and materials -- oxides, ceramics, semiconductors,
+metals, and alloys -- described at the atomic level. Why should you use SEAMM? Because
+if you are doing these types of simulations, or want to get started with them, SEAMM
+let's you focus on your science or engineering, not on how to run code X, and get more
+done. Faster. SEAMM helps you from beginning to end:
 
- - Molecular Dynamics (MD)
- - Monte Carlo (MC) (in progress)
+:ref:`Installation`
+   SEAMM is easy to install on your Linux or Mac system, and we are working on
+   Windows. It installs everything that you need, not only SEAMM itself, but the
+   simulation codes such as LAMMPS, DFTB+, Psi4, and Packmol.
 
-3. **Helper tools**
+:ref:`Ease-of-Use<ease-of-use>`
+   Have you ever looked at a code that you wanted to use, but when you read the
+   documentation said to yourself "Wow, this is complicated ... a zillion keywords and
+   they don't make sense. This is too much!"? SEAMM has graphical user interfaces (GUIs)
+   for all the codes, so you don't have to learn their keywords and languages, nor do
+   you start with an empty screen wondering how to start. The GUI puts it all in front
+   of you, with reasonable defaults for most parameters. Even if you don't know much
+   about a code, SEAMM will have you started and getting reasonable results quickly.
+   As you learn more about the code you can customize your calculation more, but getting
+   started is the hard part.
 
- - System builders and atom typers for MM simulations
- - Simulation analysis tools
- - Cheminformatics capabilities using RDKit and OpenBabel
+:ref:`Reproducibility<reproducibility>`
+   In SEAMM you use flowcharts, which are a high-level, intuitive way of describing what
+   you want to do.  No more scripting in a shell or Python. These flowcharts are
+   reproducible, meaning you can run them again and do the same thing over. While such
+   reproducibility is critical, being able to change what you do a little bit is even
+   more useful. Say you want to do the same calculation on a different molecule or
+   materials. Or change a few parameters, like the pressure or temperature of the
+   simulation. Flowcharts make this easy and safe.
 
-Features
---------
+Build on the work of others
+   Because flowcharts are simple text files, and are reproducible, you can send them to
+   coworkers and share them. Which means that you can get flowcharts from experts in
+   areas that you don't know so much about, and use them to get started. If they do what
+   you need, wonderful! If not, at least you have a good place to start. SEAMM lets you
+   publish workflows to Zenodo and get a DOI. You can also search Zenodo from SEAMM to
+   find just the right flowchart.
 
-1. `Shareable and reproducible flowcharts`_ that visually represent
-   simulation protocols.
-2. A :ref:`graphical user interface` (GUI) to help you edit flowcharts
-   and simulation input files.
-3. A :ref:`Dashboard` for monitoring your jobs.
-4. A :ref:`Job Manager` to automatically execute flowcharts in
-   laptops, university clusters, supercomputers or in the cloud.
-5. A :ref:`Job Datastore` to help you manage the many calculations you
-   do throughout the year.
-6. A plug-in architecture that makes it straightforward for developers
-   to implement and incorporate their codes and scripts into SEAMM.
+Track all of your work
+   SEAMM includes a datastore for all your calculations, and a web-based dashboard for
+   looking at results. The datastore is organized by projects and provides access
+   control so you can say who can see your work and who can add to it. And who can't.
 
-Getting Started
----------------
+Do you need a data management plan?
+   Most granting agencies now require a data management plan and require you to publish
+   your data. SEAMM will shortly have that covered! You will be able to use the
+   dashboard to publish the computational campaign for a project or paper. And we are
+   working on bundling up all the files and publishing to Zenodo and getting a DOI, just
+   as we already do for flowcharts. Of course, you don't have to publish your
+   results. But even if you are doing proprietary work it is still a good idea to use
+   these tools to make a local copy just in case.
 
-If you would like to use SEAMM, please read the :ref:`users_docs`.
+Citations and references
+   Speaking of writing up you results, SEAMM helps you gather the right citations for
+   the codes and parameter sets you used in your computational campaign. Each job
+   creates a list of the appropriate citations for what you just did, and saves it in a
+   small database. And we are working on tools to merge the citations for a campaign.
 
-If you are a developer and would like to incorporate your tool into
-SEAMM, please read the :ref:`developers_docs`.
-
-The source is at GitHub in the `MolSSI SEAMM project`_
+To learn more, look at the :ref:`installation` and the :ref:`users_docs`. If you are a
+developer and would like to incorporate your tool into SEAMM, please read the
+:ref:`developers_docs`. 
 
 You can also join our Slack channel by clicking here: |slack|
 
@@ -71,11 +101,15 @@ Documentation Versions
     :titlesonly:
     :hidden:
 
-    status
+    status/index
+    users/installation/index
+    users/ease-of-use
+    users/reproducibility
     users/index
     developers/index
     plug-ins/index
     https://github.com/molssi-seamm
+    statistics/index
     glossary
     acknowledgements
 
@@ -84,3 +118,5 @@ Documentation Versions
 .. |slack| image:: https://img.shields.io/badge/chat-on_slack-808493.svg?longCache=true&style=flat&logo=slack)
    :target: https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA
    :alt: SEAMM Slack Channel
+
+.. _Installation: html/users/installation/index
