@@ -103,7 +103,7 @@ Installing the Dashboard
 The Dashboard is installed in its own conda environment to keep its
 dependencies separate from those of SEAMM::
 
-  conda create -n seamm-dashboard -c conda-forge seamm-installer
+  conda create -n seamm-dashboard -c conda-forge seamm-dashboard
 
 
 Running the Dashboard
