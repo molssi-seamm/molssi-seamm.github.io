@@ -127,7 +127,7 @@ Then run the dashboard::
   dashboard:INFO:datastore           default         ~/SEAMM/Jobs
   ... lots more output ...
 
-You can access the Dashboard using your browser at this address `http://localhost:5000`_
+You can access the Dashboard using your browser at this address `http://127.0.0.1:5000`_
 
 The Dashboard will be accessible until you close the window running it. If you want
 it to remain running, use `nohup`::
@@ -142,6 +142,11 @@ it to remain running, use `nohup`::
 Since this is the only job running it is job #1 -- that is what `[1]`
 indicates. To kill it, you would type `kill %1`, replacing the `1`
 with the appropriate job number.
+
+.. note::
+   A `video of installing the Dashboard <https://www.youtube.com/watch?v=gqWzTvgPM1I>`_
+   is available in the `MolSSI SEAMM channel
+   <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
 
 Running the JobServer
 ~~~~~~~~~~~~~~~~~~~~~
@@ -190,4 +195,4 @@ recomended to always redirect the output as above.
 .. _MOPAC: http://openmopac.net	      
 .. _molssi-seamm/misc: https://github.com/molssi-seamm/misc/
 .. _misc/flowcharts: https://github.com/molssi-seamm/misc/flowcharts/
-.. _http://localhost:5000: http://localhost:5000
+.. _http://127.0.0.1:5000: http://127.0.0.1:5000
