@@ -18,6 +18,11 @@ use. Anaconda_ comes with many packages preinstalled and also a
 graphical interface, so if you plan to use it for your own work it
 might be more useful. But Anaconda_ is more than is needed for SEAMM.
 
+.. note::
+   A `video of installing conda <https://www.youtube.com/watch?v=FGDpdAiBPrA>`_ is
+   available in the `MolSSI SEAMM channel
+   <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
+
 Installing the SEAMM environment and GUI
 ----------------------------------------
 
@@ -35,11 +40,16 @@ following commands.
    more difficult and we are still working to see how to get all the functionality
    working.
 
+.. note::
+   A `video of installing SEAMM <https://www.youtube.com/watch?v=gqWzTvgPM1I>`_ is
+   available in the `MolSSI SEAMM channel
+   <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
+
 The graphical part of SEAMM should be installed in the **seamm** conda
 environment as follows::
 
   conda create -n seamm -c conda-forge seamm seamm-installer
-
+   
 Once the environment is installed, activate it with::
 
   conda activate seamm
@@ -50,11 +60,11 @@ available plug-ins::
 
   seamm-installer install
 
-This will take perhaps 10-15, though maybe as many as 30 minutes, because not only is it
+This will take perhaps 25 minutes or even a bit more because not only is it
 installing SEAMM and the plug-ins, but it is also installing codes such as LAMMPS, Psi4,
 Packmol, and DFTB+ so that they can be used in the SEAMM environment. Some of these
 codes are quite large, so particularly if your Internet connection is a bit slow, it may
-take longer. Be patient!
+take longer. Psi4 in particular takes 10 or more minutes to install. Be patient!
 
 You can check on the environments created as follows::
 
@@ -70,7 +80,7 @@ which will produce an output like this::
   seamm-lammps             /Users/tester/opt/miniconda3/envs/seamm-lammps
   seamm-packmol            /Users/tester/opt/miniconda3/envs/seamm-packmol
   seamm-psi4               /Users/tester/opt/miniconda3/envs/seamm-psi4
-
+   
 SEAMM uses individual environments for each simulation engine because they often require
 many other tools. Sometimes two different codes require different versions of the same
 tool which causes problems unless each installation is kept separate from the others.
