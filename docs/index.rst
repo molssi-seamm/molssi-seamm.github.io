@@ -108,6 +108,7 @@ Documentation Versions
     users/index
     developers/index
     plug-ins/index
+    SEAMM YouTube Channel <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>
     https://github.com/molssi-seamm
     statistics/index
     glossary
