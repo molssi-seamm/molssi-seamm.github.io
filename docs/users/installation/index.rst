@@ -148,6 +148,10 @@ with the appropriate job number.
    is available in the `MolSSI SEAMM channel
    <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
 
+.. attention::
+   After initially installing the Dashboard you should secure it by changing the
+   passwords on your account and the admin account. See the Initial Setup section of
+   :ref:`Managing the Dashboard<dashboard management>`
 
 Running the JobServer
 ~~~~~~~~~~~~~~~~~~~~~
