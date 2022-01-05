@@ -13,6 +13,11 @@ sharing results between group members.
 
 Initial Setup
 -------------
+.. note::
+   A `video of setting the initial passwords
+   <https://www.youtube.com/watch?v=LjnHJg_DMC8>`_ is available in the `MolSSI SEAMM
+   channel <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
+
 When the Dashboard is installed two user accounts are made automatically: an **admin**
 acount and one for you, based on your username on the machine. Both have administrative
 privileges so you can user either for the initial setup, but since you may not know the
