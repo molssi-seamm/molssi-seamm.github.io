@@ -10,6 +10,7 @@ User Documentation
 
     seamm_overview
     installation/index
+    dashboard/management
     system
     forcefields/overview
     tutorials/index
