@@ -1,8 +1,8 @@
 .. _tutorial_3:
 
-******************************************
-Tutorial 4: Running from the Commmand-Line
-******************************************
+*****************************************
+Tutorial 4: Running from the Command-Line
+*****************************************
 
 So far you've seen how to create a flowchart in the SEAMM graphical interface, submit it
 to the Dashboard, and examine the results. In this lesson you will learn about running a
