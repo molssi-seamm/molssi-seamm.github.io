@@ -1,15 +1,20 @@
-.. _tutorial_3:
+.. _tutorial_4:
 
 *****************************************
 Tutorial 4: Running from the Command-Line
 *****************************************
+
+.. note::
+   A `video of this tutorial <https://www.youtube.com/watch?v=Wf9GtKu5rGg>`_ is
+   available in the `MolSSI SEAMM channel
+   <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
 
 So far you've seen how to create a flowchart in the SEAMM graphical interface, submit it
 to the Dashboard, and examine the results. In this lesson you will learn about running a
 flowchart from the command-line, i.e. in a terminal window. Rather than create a
 flowchart from scratch, we'll get one from Zenodo and see how to edit it.
 
-.. note::
+.. attention::
    In this tutorial you will
      #. Open a flowchart directly from Zenodo.
      #. Move steps and edit the flowchart.
