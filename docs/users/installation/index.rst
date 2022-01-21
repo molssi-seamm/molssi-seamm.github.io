@@ -45,10 +45,11 @@ following commands.
    available in the `MolSSI SEAMM channel
    <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
 
-The graphical part of SEAMM should be installed in the **seamm** conda
-environment as follows::
+   This video is slightly out of date. Please note small changes in the next step.
 
-  conda create -n seamm -c conda-forge seamm seamm-installer
+The SEAMM should be installed in the **seamm** conda environment as follows::
+
+  conda create -n seamm -c conda-forge seamm seamm-dashboard seamm-installer
    
 Once the environment is installed, activate it with::
 
@@ -89,6 +90,25 @@ You can start the flowchart editor by typing::
 
   seamm
 
+On either a Mac or Linux machine there will be a user-app named **SEAMM** (or whatever
+you named the environment) that you can use to run SEAMM. You can pin this to the Dock
+or Task Bar (Launcher).
+
+If you are on a Mac or Linux machine, the installer has also installed user services for
+the Dashboard and JobServer. On Linux they should already be running. On a Mac you need
+to either log out and log back in to get them started, or follow the instructions that
+the installer printed (which requires administrator access to the machine).
+
+You can see that they are running as follows::
+
+  (seamm-dev) psaxe@h80adf301 ~ % ps -eaf | grep seamm
+   ps -eaf | grep seamm
+     501 16317     1   0  8:58AM ??         0:01.36 /Users/psaxe/opt/miniconda3/envs/seamm/bin/python3.9 /Users/psaxe/opt/miniconda3/envs/seamm/bin/jobserver
+     501 16325     1   0  8:58AM ??         0:14.96 /Users/psaxe/opt/miniconda3/envs/seamm/bin/python3.9 /Users/psaxe/opt/miniconda3/envs/seamm/bin/seamm-dashboard
+     501 17050 16626   0  9:55AM ttys002    0:00.01 grep seamm
+
+You should see two lines similar to thos above; however paths and versions of Python
+might be different.
 
 Installing MOPAC
 ~~~~~~~~~~~~~~~~
@@ -97,103 +117,6 @@ fully open-source code. This will make the installation automatic, like it is fo
 codes, but in the meantime, head to the MOPAC_ homepage and click on one of the download
 links in the section on MOPAC2016 and follow the instructions included with the download
 for installing MOPAC and activating MOPAC.
-
-Installing the Dashboard
---------------------------------------
-The Dashboard is installed in its own conda environment to keep its
-dependencies separate from those of SEAMM::
-
-  conda create -n seamm-dashboard -c conda-forge seamm-dashboard
-
-
-Running the Dashboard
-~~~~~~~~~~~~~~~~~~~~~
-To run the Dashboard you need to make sure that you are running in the
-correct conda environment. Also, to get started we will run the
-dashboard in a window, which it will tie up. So open a new window and
-activate the `seamm-dashboard` conda environment::
-
-  conda activate seamm-dashboard
-
-Then run the dashboard::
-
-  (seamm-dashboard) tester@paul ~ % seamm-dashboard
-  dashboard:INFO:Logging to the console at level INFO.
-  dashboard:INFO:Logging to /Users/tester/SEAMM/logs/dashboard.log at level WARNING.
-  dashboard:INFO:
-  dashboard:INFO:Where options are set:
-  dashboard:INFO:------------------------------------------------------------
-  dashboard:INFO:root                default         ~/SEAMM
-  dashboard:INFO:datastore           default         ~/SEAMM/Jobs
-  ... lots more output ...
-
-You can access the Dashboard using your browser at this address `http://127.0.0.1:5000`_
-
-The Dashboard will be accessible until you close the window running it. If you want
-it to remain running, use `nohup`::
-
-  (seamm-dashboard) tester@paul ~ % nohup seamm-dashboard &
-  [1] 10102
-  (seamm-dashboard) tester@paul ~ % appending output to nohup.out
-
-  (seamm-dashboard) tester@paul ~ % jobs
-  [1]  + running    nohup seamm-dashboard
-
-Since this is the only job running it is job #1 -- that is what `[1]`
-indicates. To kill it, you would type `kill %1`, replacing the `1`
-with the appropriate job number.
-
-.. note::
-   A `video of installing the Dashboard <https://www.youtube.com/watch?v=gqWzTvgPM1I>`_
-   is available in the `MolSSI SEAMM channel
-   <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
-
-.. attention::
-   After initially installing the Dashboard you should secure it by changing the
-   passwords on your account and the admin account. See the Initial Setup section of
-   :ref:`Managing the Dashboard<dashboard management>`
-
-Running the JobServer
-~~~~~~~~~~~~~~~~~~~~~
-
-The JobServer is part of the main release and was installed when you
-created the `seamm` environment. To run the JobServer, activate
-the SEAMM environment and run the command `jobserver`::
-
-  (base) tester@paul ~ % conda activate seamm
-  (seamm) tester@paul ~ % jobserver
-  The JobServer is starting in /Users/tester
-             version = 2021.6.4
-           datastore = /Users/tester/SEAMM/Jobs/seamm.db
-      check interval = 5
-            log file = ~/SEAMM/logs/jobserver.log
-  The following .ini files were used:
-      /Users/tester/SEAMM/seamm.ini
-    
-As the JobServer runs jobs it will print information for each one it
-runs, so expect to see output slowly accumulate.
-
-As with the Dashboard, you can leave the JobServer running using
-`nohup`::
-
-  (seamm) tester@paul ~ % nohup jobserver 2>&1 >jobserver.out &
-  [1] 10366
-
-The magic incantation at the end sends any error messages (`2>&1`) and
-output (`>jobserver.out`) to the file `jobserver.out`. The final '`&`'
-causes it to run in the background so it doesn't tie up the
-terminal. If we didn't redirect the output, it would be automatically
-appended to `nohup.out`. There are two problems with this. First, it
-is appended, so the file gets bigger every time we run and it is hard
-to find the current information; and secondly, if we ran e.g. the
-Dashboard and the JobServer in the same directory their output would
-be intermingled in `nohup.out`, which is very confusing. So it is
-recomended to always redirect the output as above.
-
-.. attention::
-   It is straightforward to create daemons or services to run the DashBoard and
-   JobServer automatically when your machine is running or when you are logged in. Check
-   back soon for how to setup this up!
 
 .. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
 .. _Anaconda: https://www.anaconda.com/distribution
