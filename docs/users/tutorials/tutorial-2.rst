@@ -7,7 +7,7 @@ Tutorial 2: The Dashboard
 Before getting to this tutorial, you need to have finished :ref:`tutorial_1` so that
 there is at least one job to look at.
 
-You access the Dashboard in your web browser, by default at http://localhost:5000 (you
+You access the Dashboard in your web browser, by default at http://127.0.0.1:5000 (you
 might want to open the link in a new tab or window!):
 
 .. figure:: /images/tutorial_2/initial_dashboard.png
