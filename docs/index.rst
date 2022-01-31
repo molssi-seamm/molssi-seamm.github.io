@@ -3,36 +3,38 @@ SEAMM: the Simulation Environment for Atomistic and Molecular Modeling
 **********************************************************************
 
 .. attention::
-   SEAMM is ready to be used; however, it is still early days so you will probably find
-   a few problems and definitely find things missing that you would really like. Please
-   help us make SEAMM better! Let us know about problems so that we can fix them. If the
-   documentation is not clear or is lacking, let us know. If there is functionality
-   missing, let us know!
+   We are delighted to announce that SEAMM is ready for deployment to the public domain
+   and beta testing by the members of the computational molecular sciences community. 
+   Although we have made every efforts to make SEAMM a user-friendly environment for 
+   scientific discovery, similar to any open-source software project it its early days,
+   it is prone to bugs and glitches inadvertently made by its developers. A such, we 
+   have to rely on user support to become aware of these problems.
+   
+   We also plan to provide a forum for reporting problems, promoting constructive 
+   discussions and sharing ideas and experiences. In the meantime, feel free to email
+   us at seamm@molssi.org or join the Slack channel |slack|.
 
-   We will shortly have a forum where you can report problems and help others, too. In
-   the meantime feel free to email us at seamm@molssi.org or join the Slack channel
-   |slack|.
+   Similar to any other open-source project, you can also contribute to its growth by
+   opening issues, forking the repository and submitting pull requests in order to make
+   changes in the code or documentation.
 
-   This is a fully open-source project so you can also help directly by making changes
-   in the code or documentation and submitting pull requests. The documentation for
-   developers is still minimal, but we are working on that too.
+   SEAMM is a large-scale and ambitious project with many moving parts. Thus, it will 
+   take some time to become truly stable! We appreciate your patience and assistance!
 
-   SEAMM is a large project, with many moving parts. It will take us a while to get to
-   everything! We appreciate your patience and help!
-
-SEAMM is an easy-to-use environment for simulations of organic molecules, biological
-molecules, fluids, synthetic polymers, and materials -- oxides, ceramics, semiconductors,
-metals, and alloys -- described at the atomic level. Why should you use SEAMM? Because
-if you are doing these types of simulations, or want to get started with them, SEAMM
-let's you focus on your science or engineering, not on how to run code X, and get more
-done. Faster. SEAMM helps you from beginning to end:
+SEAMM is a user-friendly software package for the atomistic simulations of organic 
+molecules, biological systems, fluids, synthetic polymers, and materials such as metals
+and metal oxides, semiconductors, ceramics and alloys. If you are performing any of 
+these types of simulations, SEAMM can provides an ideal environment for discovery allowing
+you to focus on the science itself insead of getting bugged down on irrelevant 
+technicalities of the software.
 
 :ref:`Installation`
-   SEAMM is easy to install on your Linux or Mac system, and we are working on
-   Windows. It installs everything that you need, not only SEAMM itself, but the
-   simulation codes such as LAMMPS, DFTB+, Psi4, and Packmol.
+   SEAMM offers convenient ways for its installation on Linux or Mac systems. We are
+   doing our best to provide support for Windows. In addition to SEAMM itself, the 
+   installer allows other simulation engines such as LAMMPS, DFTB+, Psi4, and Packmol
+   to be installed effortlessly.
 
-:ref:`Ease-of-Use<ease-of-use>`
+:ref:`User Experience<ease-of-use>`
    Have you ever looked at a code that you wanted to use, but when you read the
    documentation said to yourself "Wow, this is complicated ... a zillion keywords and
    they don't make sense. This is too much!"? SEAMM has graphical user interfaces (GUIs)
@@ -101,7 +103,6 @@ Documentation Versions
     :titlesonly:
     :hidden:
 
-    status/index
     users/installation/index
     users/ease-of-use
     users/reproducibility
@@ -110,9 +111,10 @@ Documentation Versions
     plug-ins/index
     SEAMM YouTube Channel <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>
     https://github.com/molssi-seamm
+    status/index
     statistics/index
-    glossary
     acknowledgements
+    glossary
 
 .. _Shareable and reproducible flowcharts: html/users/seamm_description/flowchart.html
 .. _MolSSI SEAMM project: https://github.com/molssi-seamm
