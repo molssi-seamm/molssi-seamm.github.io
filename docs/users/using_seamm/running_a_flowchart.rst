@@ -98,14 +98,14 @@ optional arguments:
 
 The default for the datastore is *./*, i.e. the current directory, and
 the default projects is *default*. *--job-id-file* defaults to the
-file *job.id* in the toplevel datastore directory. You can also set
+file *job.id* in the top-level datastore directory. You can also set
 any of these parameters in the file *~/.seamm/seamm.ini*::
 
   # Configuration options for SEAMM.
   #
   # Options in this file override those in all other
   # configuration files, but may in turn be overridden
-  # by environment variables or commandline options.
+  # by environment variables or command-line options.
 
   # datastore = ~/SEAMM
   # project = MyProject

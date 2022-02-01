@@ -1,8 +1,8 @@
-.. _ease-of-use:
+.. _user-experience:
 
-***********
-Ease-of-Use
-***********
+***************
+User Experience
+***************
 
 Currently, using the molecular and materials simulation codes is not easy! This is
 widely recognized as a problem and there are some efforts underway to tackle the

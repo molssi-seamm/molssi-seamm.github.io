@@ -1,8 +1,8 @@
 .. _reproducibility:
 
-*********************************
-Reproducibility and Replicability
-*********************************
+***************
+Reproducibility
+***************
 
 The Productivity_ section mentioned that the
 :term:`flowcharts<flowchart>` are reusable and shareable. Let's look
