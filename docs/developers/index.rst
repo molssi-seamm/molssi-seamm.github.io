@@ -1,4 +1,4 @@
-.. _developers_docs:
+.. _developers-docs:
 
 ************************
 Developers Documentation

@@ -6,8 +6,8 @@ Glossary
    :sorted:
       
    flowchart
-      A graphical representation of a multistep simulation
-      protocol. See :ref:`Flowchart`
+      A graphical representation of a multi-step simulation
+      protocol. See :ref:`flowchart`
 
    step
       A step in the simulation protocol, typically representing a

@@ -4,27 +4,27 @@
 Installing SEAMM
 ****************
 
-There are two parts to SEAMM that you can install:
+The installation process in SEAMM involves two main parts:
 
-  * The SEAMM environment and the graphical application for building flowcharts, running
-    jobs, etc.
-  * The web-based Dashboard, used for exploring the results of jobs.
+  * SEAMM core environment consisting of the GUI for building flowcharts,
+    submitting jobs, publishing results etc.
 
-Both of these rely on having conda installed.  If you do not have
-conda (or anaconda) installed, head over to Miniconda_ or Anaconda_
-and grab the installer, following their directions. Miniconda_ is a
-small, stripped down version, which is perfectly fine for our
-use. Anaconda_ comes with many packages preinstalled and also a
-graphical interface, so if you plan to use it for your own work it
-might be more useful. But Anaconda_ is more than is needed for SEAMM.
+  * The web-based dashboard used for monitoring the jobs, and management and
+    analysis of the results.
+
+Both parts rely on having *conda* installed on the host system. Installers 
+for `Miniconda`_ or `Anaconda`_ can be found in their hosting websites. 
+`Miniconda`_ can be considered as a reduced-size version of `Anaconda`_ 
+which comes with many packages pre-installed. For the minimalists, however, 
+`Miniconda`_ will be sufficient for the sole purpose of working with SEAMM.
 
 .. note::
    A `video of installing conda <https://www.youtube.com/watch?v=FGDpdAiBPrA>`_ is
-   available in the `MolSSI SEAMM channel
+   available on the `MolSSI SEAMM channel
    <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
 
-Installing the SEAMM environment and GUI
-----------------------------------------
+Installing the SEAMM core environment
+-------------------------------------
 
 This following steps require use the command-line. If you are running
 under Linux, you already know how to do this. On a Mac start the
@@ -81,7 +81,7 @@ which will produce an output like this::
   seamm-lammps             /Users/tester/opt/miniconda3/envs/seamm-lammps
   seamm-packmol            /Users/tester/opt/miniconda3/envs/seamm-packmol
   seamm-psi4               /Users/tester/opt/miniconda3/envs/seamm-psi4
-   
+
 SEAMM uses individual environments for each simulation engine because they often require
 many other tools. Sometimes two different codes require different versions of the same
 tool which causes problems unless each installation is kept separate from the others.
@@ -114,13 +114,12 @@ Installing MOPAC
 ~~~~~~~~~~~~~~~~
 The MolSSI is in the process of taking MOPAC over, and will shortly release it as a
 fully open-source code. This will make the installation automatic, like it is for other
-codes, but in the meantime, head to the MOPAC_ homepage and click on one of the download
-links in the section on MOPAC2016 and follow the instructions included with the download
-for installing MOPAC and activating MOPAC.
+codes, but in the meantime, head to the `MOPAC homepage <http://openmopac.net>`_ 
+and click on one of the download links in the section on *MOPAC2016* and follow the 
+instructions included with the download for installing MOPAC and activating MOPAC.
 
 .. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
 .. _Anaconda: https://www.anaconda.com/distribution
-.. _MOPAC: http://openmopac.net	      
 .. _molssi-seamm/misc: https://github.com/molssi-seamm/misc/
 .. _misc/flowcharts: https://github.com/molssi-seamm/misc/flowcharts/
 .. _http://127.0.0.1:5000: http://127.0.0.1:5000

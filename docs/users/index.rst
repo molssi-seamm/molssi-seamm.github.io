@@ -1,16 +1,13 @@
-.. _users_docs:
+.. _users-docs:
 
 ******************
 User Documentation
 ******************
   
 .. toctree::
-    :maxdepth: 5
+    :maxdepth: 2
     :titlesonly:
 
-    seamm_overview
-    installation/index
     dashboard/management
     system
     forcefields/overview
-    tutorials/index

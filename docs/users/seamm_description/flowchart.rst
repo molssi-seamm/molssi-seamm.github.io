@@ -1,4 +1,4 @@
-.. _Flowchart:
+.. _flowchart:
 
 *********
 Flowchart
@@ -28,11 +28,10 @@ method to clean up the initial structure, and then run the DFT
 optimization again.
 
 The flowcharts in SEAMM can be converted to plain
-text -- a process known as serialization_ in computer science. This is
-important because it lets you and SEAMM do many useful things. It
-allows SEAMM to store the flowchart in the :term:`Job Datastore` and
+text -- a process known as `serialization 
+<https://en.wikipedia.org/wiki/Serialization>`_ in computer science.
+This is important because it lets you and SEAMM do many useful things.
+It allows SEAMM to store the flowchart in the :term:`Job Datastore` and
 ship it to other machines when you want to run a :term:`job`. For you
 it means that you can save a flowchart to a file, edit it later, email
 it to a colleague so they can use it, etc.
-
-.. _serialization: https://en.wikipedia.org/wiki/Serialization

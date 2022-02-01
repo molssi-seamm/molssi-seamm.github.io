@@ -1,5 +1,3 @@
-.. _seamm_overview:
-
 *****************
 Overview of SEAMM
 *****************
@@ -29,7 +27,7 @@ Getting Oriented
 SEAMM comprises six components:
 
 1. A :ref:`graphical user interface` (GUI) for creating and editing flowcharts.
-#. A serializable implementation of a :ref:`flowchart<Flowchart>` that
+#. A serializable implementation of a :ref:`flowchart` that
    contains all of the information needed to run the workflow and to
    reproduce it at a later time.
 #. A :ref:`Flowchart Interpreter` that executes the flowchart.
@@ -56,7 +54,8 @@ Next steps
     :maxdepth: 5
     :titlesonly:
     :hidden:
-
+    
+    user_experience
     productivity
     reproducibility
     seamm_description/gui

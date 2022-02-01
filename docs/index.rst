@@ -85,9 +85,9 @@ Manage your citations
    for the current task and stores it in a database. We are developing tools to allow
    merging multiple citations for a single computational campaign.
 
-For further details about SEAMM, refer to the :ref:`installation` and the :ref:`users_docs`.
+For further details about SEAMM, refer to the :ref:`installation` and the :ref:`users-docs`.
 Developers interested in incorporating their tools and plugins in SEAMM are welcome to read
-the :ref:`developers_docs`.
+the :ref:`developers-docs`.
 
 Users can also join our Slack channel by clicking on this badge |slack|
 
@@ -106,12 +106,12 @@ Documentation Versions
     :titlesonly:
     :hidden:
 
+    users/seamm_overview
     users/installation/index
-    users/user_experience
-    users/reproducibility
+    users/tutorials/index
     users/index
-    developers/index
     plug-ins/index
+    developers/index
     SEAMM YouTube Channel <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>
     https://github.com/molssi-seamm
     status/index
@@ -119,8 +119,6 @@ Documentation Versions
     acknowledgements
     glossary
 
-.. _Shareable and reproducible flowcharts: html/users/seamm_description/flowchart.html
-.. _MolSSI SEAMM project: https://github.com/molssi-seamm
 .. |slack| image:: https://img.shields.io/badge/chat-on_slack-808493.svg?longCache=true&style=flat&logo=slack)
    :target: https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA
    :alt: SEAMM Slack Channel

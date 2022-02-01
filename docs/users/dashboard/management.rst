@@ -1,4 +1,4 @@
-.. _dashboard management:
+.. _dashboard-management:
 
 **********************
 Managing the Dashboard
