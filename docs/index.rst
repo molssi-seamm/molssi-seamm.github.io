@@ -94,6 +94,8 @@ Users can also join our Slack channel by clicking on this badge |slack|
 Documentation Versions
 ======================
 
+.. Generate links to various versions of the documentation
+   via iframe
 .. raw:: html
 
    <iframe
@@ -101,6 +103,7 @@ Documentation Versions
    title="Documentation Versions"  style="border:none;">
    </iframe>
 
+.. Table of contents
 .. toctree::
     :maxdepth: 5
     :titlesonly:
@@ -119,6 +122,7 @@ Documentation Versions
     acknowledgements
     glossary
 
+.. Badge(s)
 .. |slack| image:: https://img.shields.io/badge/chat-on_slack-808493.svg?longCache=true&style=flat&logo=slack)
    :target: https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA
    :alt: SEAMM Slack Channel
