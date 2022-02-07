@@ -1,57 +1,32 @@
-*****************
-Overview of SEAMM
-*****************
+.. _ecosystem:
 
-What is SEAMM?
---------------
-SEAMM is a user-friendly environment for computational molecular and
-materials science, using :term:`plug-ins<plug-in>` to provide a wide
-range of building, simulation and analysis tools. SEAMM handles the
-entire range of atomic, molecular, crystalline, amorphous, and fluid
-systems that are described at the level of atoms and electrons.  SEAMM
-provides three important capabilities:
+******************
+Software Ecosystem
+******************
 
-* :ref:`productivity`: The computational tools are wrapped with plug-ins that
-  adapt them to SEAMM and provide graphical interfaces (GUIs) that help
-  you set up calculations without editing complex input files and
-  structures by hand.
-* :ref:`reproducibility`: Computational protocols are
-  captured as shareable graphical :term:`flowcharts<flowchart>`. You
-  can create your own, or start with ones created by experts in a
-  particular domain, tweaking them to fit your problem.
+SEAMM is comprised of six components:
 
+1. A :ref:`graphical user interface` (GUI) which offers a user-friendly environment for the
+   creation and design of flowcharts,
+#. A :ref:`Dashboard` which allows a high-level management and monitoring the executed
+   jobs in the datastore,
+#. A :ref:`flowchart` which contains all information pertinent to the workflows for
+   reproducibility,
+#. A :ref:`Flowchart Interpreter` responsible for executing the flowchart,
+#. A :ref:`Job Manager` for managing :term:`jobs<job>` and executing :term:`tasks<task>`
+   via a queueing system, and
+#. A :ref:`Job Datastore` storing jobs, flowcharts, inputs, outputs and other intermediate
+   software-dependent files.
 
-Getting Oriented
-----------------
-
-SEAMM comprises six components:
-
-1. A :ref:`graphical user interface` (GUI) for creating and editing flowcharts.
-#. A serializable implementation of a :ref:`flowchart` that
-   contains all of the information needed to run the workflow and to
-   reproduce it at a later time.
-#. A :ref:`Flowchart Interpreter` that executes the flowchart.
-#. A :ref:`Job Manager` to manage :term:`jobs<job>` and run
-   :term:`tasks<task>` via a queueing system (in design).
-#. A :ref:`Job Datastore` to hold the jobs -- the flowchart, inputs
-   and outputs.
-#. A :ref:`Dashboard` for managing and viewing the jobs in the
-   datastore.
-
-These components are shown in this diagram, which also shows the flow of data between
-the components.
+The following diagram illustrates the flow of data among the aforementioned components in 
+the SEAMM software ecosystem.
 
 .. image:: /images/SEAMM\ Components.png
 	    :align: center
-	    :alt: Overview of SEAMM
-  
-Next steps
-----------
-* :ref:`installation`
-* :ref:`using seamm`  
+	    :alt: Software ecosystem
 
 .. toctree::
-    :maxdepth: 5
+    :maxdepth: 2
     :titlesonly:
     :hidden:
     
@@ -59,9 +34,9 @@ Next steps
     productivity
     reproducibility
     seamm_description/gui
+    seamm_description/dashboard
     seamm_description/flowchart
     seamm_description/flowchart_interpreter
     seamm_description/job_manager
     seamm_description/job_datastore
-    seamm_description/dashboard
     using_seamm/index
