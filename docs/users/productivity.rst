@@ -4,44 +4,69 @@
 Productivity
 ************
 
-SEAMM helps you get your work done faster and more easily. First, it helps you set up
-your calculations. The large simulation codes are wrapped in :term:`plug-ins<plug-in>`
-which provide intuitive graphical user interfaces (GUIs) so you don't have to start with
-an empty input file in a text editor and remember all the keywords and commands for each
-code. While you maybe very comfortable with one or two codes, you probably can use other
-codes in your research, but don't know their input as well. SEAMM supports a wide range
-of codes, such as
+If you are preparing a high-throughput and complex workflow including hundreds and 
+thousands of atomistic simulations, SEAMM is here to help. SEAMM wraps large simulation 
+engines in :term:`plug-ins<plug-in>` and hides them behind intuitive graphical user interfaces
+(GUIs). As explained in the :ref:`user-experience` section, users do not need to deal with 
+complexities of the input files and software specific syntaxes and keywords to setup the
+calculations. In addition to offering GUIs, SEAMM also supports a wide range of simulation 
+engines and software packages in the computational molecular sciences such as
 
-* MOPAC for semiempirical quantum chemistry
-* GAMESS, NWChem and Psi4 for quantum cehmistry
-* VASP, Quantum Espresso, FHI-aims and NWChem for periodic DFT
-* GROMACS, NAMD, etc. for biomolecular molecular dynamics (MD)
-* LAMMPS for molecular dynamics (MD) for materials
-* Cassandra and Towhee for Monte Carlo simulations of fluids
+* `MOPAC`_ for semiempirical quantum chemistry,
+* `DFTB+`_ for density functional-based tight binding,
+* `GAMESS`_, `NWChem`_ and `Psi4`_ for quantum chemistry,
+* `VASP`_, `Quantum Espresso`_, `FHI-aims`_ and `NWChem`_ for periodic density
+  functional theory (DFT),
+* `GROMACS`_, `NAMD`_, etc. for biomolecular molecular dynamics (MD),
+* `LAMMPS`_ for molecular dynamics (MD) for materials, and
+* `Cassandra`_ and `Towhee`_ for Monte Carlo simulations of fluids.
 
-Other plug-ins provide functionality for building structures, e.g. Packmol, for
-converting file formats using Open Babel, and cheminformatics functionality with
-RDKit. The 'helpers' do the little tasks that you need to wrangle structures into the
-simulation codes and analyze results.
+Other plug-ins provide extra functionalities for:
 
-Between the GUI's and the convenient 'helper' plug-ins, setting up your workflow will
-indeed be faster and less error prone. Two other aspects of SEAMM will help you do even
-more. First, SEAMM has loops and other control structures, so when you want to run over
-several molecules, or do a parameter sweep, you can easily automate the workflow. The
-results can be captured in tables and output for e.g. analysis in a spreadsheet program.
+* building structures, e.g. `Packmol`_,
+* converting file formats using `Open Babel`_, and
+* cheminformatics with `RDKit`_.
 
-The last aspect is that the :term:`flowcharts<flowchart>` that you, and others, develop
-in SEAMM can be saved, rerun and shared. You probably already do this with scripts that
-you write, but creating flowcharts in SEAMM is easier than writing scripts -- and they
-will run in any other copy of SEAMM. So you can build up a library of flowcharts for
-common tasks and share them in your group. Or email them to a colleague. This means that
-if you need some calculations that you are not completely expert at, you can get a
-flowchart written by an expert to use as-is or you can tweak it to do precisely what you
-need.
+By employing both GUIs and `helper` plug-ins, the complicated and time-consuming task of
+setting up complex workflows will become more convenient, efficient and less error-prone.
 
-These features help you get more done more quickly. You will also make fewer
-mistakes and waste less time tracking them down. But now that you can do more, SEAMM
-helps you in other ways. The integrated :term:`Job Manager` helps you control the jobs
-that you are running, and the :term:`Job Datastore` captures every job that you
-run. When it comes time to write the paper or project report, everything is there at
-your fingertips.
+The final key feature in SEAMM is the :term:`flowchart<flowchart>`. All details pertinent
+to every step of any specific workflow can be stored, rerun, shared or published using
+the flowcharts. As such, flowcharts do replace the common practice of writing scripts 
+for managing a specific sequence of tasks because it is much easier to create flowcharts
+within SEAMM. Furthermore, flowcharts are also executable which will be to run on any machine
+with a copy of SEAMM installed. So, one can build up a library of flowcharts for common tasks
+and share them within their group, collaborators or the community. This method can also be
+useful when the user is not an expert on a specific topic or task. Then, the user can receive
+or import a flowchart designed by an expert and use it as-is or tweak it towards the task at 
+hand. Flowcharts in SEAMM provide two additional functionalities that are helpful for improving
+productivity: (i) loops, and (ii) control flow structures. These two tools are extremely useful
+in building automatic and complex workflows such as running a specific step in flowcharts 
+over several molecules or performing a parameter scan over a finite range of values.
+The generated results from these workflows can be captured and stored in tables and 
+exported for further analysis by e.g. spreadsheet programs.
+
+The aforementioned features help the users to minimize the required steps for designing
+high-throughput and complex workflows and reducing the chance of making mistakes that 
+are difficult to track down the line. The integrated :term:`Job Manager` in SEAMM also 
+helps the users to control the executed jobs and the :term:`Job Datastore` captures 
+every job that is run. SEAMM provides every data and functionality required for 
+your research with convenience at your fingertips.
+
+.. Links to software
+.. _MOPAC: http://openmopac.net
+.. _DFTB+: https://dftbplus.org
+.. _GAMESS: https://www.msg.chem.iastate.edu/gamess
+.. _NWChem: https://www.nwchem-sw.org
+.. _Psi4: https://psicode.org
+.. _VASP: https://www.vasp.at
+.. _Quantum Espresso: https://www.quantum-espresso.org
+.. _FHI-aims: https://fhi-aims.org
+.. _GROMACS: https://www.gromacs.org
+.. _NAMD: https://www.ks.uiuc.edu/Research/namd
+.. _LAMMPS: https://www.lammps.org
+.. _Cassandra: https://cassandra.nd.edu
+.. _Towhee: http://towhee.sourceforge.net
+.. _Packmol: http://leandro.iqm.unicamp.br/m3g/packmol/home.shtml
+.. _Open Babel: https://openbabel.org/wiki/Main_Page
+.. _RDKit: https://www.rdkit.org
