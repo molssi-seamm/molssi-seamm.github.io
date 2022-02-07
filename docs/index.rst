@@ -109,7 +109,7 @@ Documentation Versions
     :titlesonly:
     :hidden:
 
-    users/seamm_overview
+    users/software_ecosystem
     users/installation/index
     users/tutorials/index
     users/index

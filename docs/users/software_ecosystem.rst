@@ -1,4 +1,4 @@
-.. _ecosystem:
+.. _software-ecosystem:
 
 ******************
 Software Ecosystem

@@ -4,15 +4,16 @@
 User Experience
 ***************
 
-Currently, using the molecular and materials simulation codes is not easy! This is
-widely recognized as a problem and there are some efforts underway to tackle the
-problem. The heart of the problem is that telling these codes what to do is complicated
-to begin with, and each code has developed a text-based language so that users can tell
-the code what to do. Unfortunately, there is no standardization, with each code using
-its own keywords and approach to setting up the calculation.
+One of the main barriers towards using the molecular and materials simulation codes 
+is its demanding learning curve and required expertise in working with the interfaces.
+The main reason behind the aforementioned problem stems from the intricate nature of the
+software engines and how to control their performance on processing the input data.
+What makes this situation worse in the lack of global standardizations and software-specific
+syntaxes and keywords for setting up various simulation parameters.
 
-For example, this is the control input for GROMACS for a 1 ns constant temperature -
-constant pressure (NPT) molecular dynamics calculations::
+The following script is an input file for the `GROMACS` program package which sets up the 
+necessary parameters for a 1 ns constant temperature-constant pressure (NPT) molecular 
+dynamics simulation::
 
   integrator               = md
   dt                       = 0.002
@@ -45,7 +46,7 @@ constant pressure (NPT) molecular dynamics calculations::
   compressibility          = 4.5e-5
   ref-p                    = 1.0
 
-This is a similar input for LAMMPS::
+A similar input file for `LAMMPS` will look like the following::
 
   units               real
   boundary            p p p
@@ -67,11 +68,18 @@ This is a similar input for LAMMPS::
                             file trajectory_npt_3_2.seamm_trj 
   run                 500000
 
-The two inputs are quite different from each other, and in either case it would take
-considerable time with to manual to understand precisely the details of the
-calculation.
+Although the two inputs shown above are quite different from each other, it would
+take a considerable amount of time for a non-expert user to precisely understand
+the details of each calculation and to be able to control the parameters in order
+to achieve the best possible results.
 
-Here is the GUI for the LAMMPS NPT calculation in SEAMM.
+SEAMM, on the other hand, adopts a different strategy to expose all control parameters
+to the users through its user-friendly GUI. As such, the end-users can conveniently
+access or modify all software-specific variables in a flexible and interactive 
+way with the default values already set to reasonable values. 
+
+Let us take a glance at the SEAMM GUI dialog for setting up a NPT calculation in 
+LAMMPS package
 
 .. figure:: /images/lammps_npt_dialog.png
    :width: 800px
@@ -80,14 +88,12 @@ Here is the GUI for the LAMMPS NPT calculation in SEAMM.
 
    *The LAMMPS NPT dialog*
 
-As the saying goes, a picture is worth a thousand words! The dialog is much easier to
-understand -- and change -- than the text input of the underlying codes. Furthermore,
-the GUI for GROMACS could present the parameters for NPT dynamics in a similar
-fashion. While there might be some differences due to details of the implementation,
-most of the dialog would look the same.
-
-Let's look a little deeper into the GUI. If we click on the Thermostat field, it
-presents a number of choices:
+The dialog provides a much easier to understand medium compared with the manual
+modification of the input script files for each particular software. In a sense, the
+GUI removes the need for learning various software-specific syntaxes and keywords
+and replaces them with a user-friendly dialogue in a unified representation.
+Let us consider the following LAMMPS dialogue and click on the ``Thermostat`` field:
+The GUI then presents a list of possible choices:
 
 .. figure:: /images/lammps_temperature_choices.png
    :width: 400px
@@ -96,8 +102,8 @@ presents a number of choices:
 
    *Choices for controlling the temperature in LAMMPS*
 
-If we choose Berendsen's method for controlling the temperature, the dialog reconfigures
-to show only the relevant options:
+If we choose ``Berendsen's method`` for controlling the temperature, the dialog
+automatically reconfigures to only show the pertinent options:
 
 .. figure:: /images/berendsen_parameters.png
    :width: 400px
@@ -106,10 +112,15 @@ to show only the relevant options:
 
    *The control parameters for Berendsen's method*
 
-This is very nice! You can see the possible choices, and when you select one, you see
-only the appropriate parameters for that choice.
+As such, while the GUI compiles and appropriate list of possible choices for the users,
+it pre-initializes each variable to a reasonable default value.
 
-In summary, a GUI is much easier to use than a text input, particularly when you are
-starting with a code and learning. Furthermore, the GUI's in SEAMM hide the complicated
-inputs for and differences between codes, and present the choices and parameters in a
-way that is closer to the underlying physics.
+Similar to the LAMMPS dialogue demonstrated above, the GUI for GROMACS and other molecular
+dynamics packages can also be treated in the same user-friendly fashion within the GUI.
+While there might be some differences due to details of the software package implementation
+on the backend, most of the dialog would look the same.
+
+The GUI is one of the most powerful tools that SEAMM offers to its users. While it is designed
+to remove the need for dealing with different software-specific syntaxes and keywords in the
+input scripts, it also exposes all functionalities of the simulation engine to the users in
+a unified, flexible, interactive and user-friendly interface.
