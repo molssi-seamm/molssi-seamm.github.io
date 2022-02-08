@@ -32,7 +32,7 @@ the SEAMM software ecosystem.
     
     user_experience
     productivity
-    reproducibility
+    practical_aspects
     seamm_description/gui
     seamm_description/dashboard
     seamm_description/flowchart
