@@ -45,7 +45,7 @@ technicalities of the software.
    learn more about the details of each model and the corresponding tools, you can further
    customize your calculations for more accurate outcomes.
 
-:ref:`reproducibility <practical-aspects>`
+:ref:`workflow-features`
    Flowcharts are a foundational concept in SEAMM offering a high-level and intuitive 
    delineation of the entire workflow. Flowcharts remove the need for shell or python scripting
    while making the entire process reproducible. In other words, one can run all steps involved
@@ -109,6 +109,7 @@ Documentation Versions
     :titlesonly:
     :hidden:
 
+    why_seamm/index
     users/software_ecosystem
     users/installation/index
     users/tutorials/index

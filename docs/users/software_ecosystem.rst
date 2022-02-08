@@ -30,9 +30,6 @@ the SEAMM software ecosystem.
     :titlesonly:
     :hidden:
     
-    user_experience
-    productivity
-    practical_aspects
     seamm_description/gui
     seamm_description/dashboard
     seamm_description/flowchart

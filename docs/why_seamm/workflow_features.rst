@@ -1,7 +1,7 @@
-.. _practical-aspects:
+.. _workflow-features:
 
 *****************
-Practical Aspects
+Workflow Features
 *****************
 
 In the previous section, we pointed out that :term:`flowcharts<flowchart>`
