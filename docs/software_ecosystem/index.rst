@@ -26,14 +26,13 @@ the SEAMM software ecosystem.
 	    :alt: Software ecosystem
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :titlesonly:
     :hidden:
     
-    seamm_description/gui
-    seamm_description/dashboard
-    seamm_description/flowchart
-    seamm_description/flowchart_interpreter
-    seamm_description/job_manager
-    seamm_description/job_datastore
-    using_seamm/index
+    gui
+    dashboard
+    flowchart
+    flowchart_interpreter
+    job_manager
+    job_datastore

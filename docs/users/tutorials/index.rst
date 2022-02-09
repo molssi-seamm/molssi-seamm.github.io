@@ -5,9 +5,9 @@ Tutorials
 *********
   
 .. toctree::
-    :maxdepth: 5
+    :maxdepth: 1
     :titlesonly:
     :glob:
        
     tutorial-*
-    
+    running_a_flowchart

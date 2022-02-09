@@ -110,7 +110,7 @@ Documentation Versions
     :hidden:
 
     why_seamm/index
-    users/software_ecosystem
+    software_ecosystem/index
     users/installation/index
     users/tutorials/index
     users/index
