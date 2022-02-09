@@ -1,10 +1,10 @@
-.. _tutorial_2:
+.. _tutorial-2:
 
-*************************
-Tutorial 2: The Dashboard
-*************************
+**************************
+Working with the Dashboard
+**************************
 
-Before getting to this tutorial, you need to have finished :ref:`tutorial_1` so that
+Before getting to this tutorial, you need to have finished :ref:`tutorial-1` so that
 there is at least one job to look at.
 
 You access the Dashboard in your web browser, by default at http://127.0.0.1:5000 (you

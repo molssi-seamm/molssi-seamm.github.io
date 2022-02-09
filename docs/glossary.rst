@@ -34,7 +34,7 @@ Glossary
       simulation engine such as LAMMPS, GAMESS, Quantum Espresso,
       etc.
 
-   Job Datastore
+   job datastore
       Is the central place where information about and results of jobs
       are stored -- the flowchart, inputs, and outputs of jobs -- so
       they can be viewed and retrieved later.
@@ -45,15 +45,15 @@ Glossary
       very popular because it is simple to use and provides a good
       compromise between cost and accuracy.
     
-   Dashboard
+   dashboard
       The web interface to the Job Datastore and to the jobs that are
       running or have run in the past.
 
-   Job Manager
+   job manager
       The part of SEAMM that handles running jobs, hiding the messy
       details.
 
-   forcefield
+   force-field
       An approximate, parameterized description of the potential energy surface (PES)
       for a system composed of atoms or atom-like entities. A forcefield provides a
       mathematical description of the PES as a function of the coordinates of the atoms,

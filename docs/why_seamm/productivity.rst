@@ -48,8 +48,8 @@ exported for further analysis by e.g. spreadsheet programs.
 
 The aforementioned features help the users to minimize the required steps for designing
 high-throughput and complex workflows while reducing the chance of making mistakes that
-are difficult to track down the line. The integrated :term:`Job Manager` in SEAMM also
-helps the users to control the executed jobs and the :term:`Job Datastore` captures
+are difficult to track down the line. The integrated :term:`job manager` in SEAMM also
+helps the users to control the executed jobs and the :term:`job datastore` captures
 every job that is run. SEAMM provides every data and functionality required for
 your research with convenience at your fingertips.
 

@@ -1,11 +1,11 @@
-.. _tutorial_3:
+.. _tutorial-3:
 
-****************************
-Tutorial 3: Tables and Loops
-****************************
+****************
+Tables and Loops
+****************
 
 By now you should be able to set up a flowchart, run a job, and look at the results in
-the Dashboard. If not, please go back to :ref:`tutorial_1` and :ref:`tutorial_1` because
+the Dashboard. If not, please go back to :ref:`tutorial-1` and :ref:`tutorial-1` because
 from now on these tutorial assume that you have mastered the basics, so much less detail
 will be given.
 

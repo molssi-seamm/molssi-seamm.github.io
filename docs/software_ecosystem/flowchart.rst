@@ -31,7 +31,7 @@ The flowcharts in SEAMM can be converted to plain
 text -- a process known as `serialization 
 <https://en.wikipedia.org/wiki/Serialization>`_ in computer science.
 This is important because it lets you and SEAMM do many useful things.
-It allows SEAMM to store the flowchart in the :term:`Job Datastore` and
+It allows SEAMM to store the flowchart in the :term:`job datastore` and
 ship it to other machines when you want to run a :term:`job`. For you
 it means that you can save a flowchart to a file, edit it later, email
 it to a colleague so they can use it, etc.

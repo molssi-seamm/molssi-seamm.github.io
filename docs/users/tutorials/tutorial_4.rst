@@ -1,8 +1,8 @@
 .. _tutorial_4:
 
-*****************************************
-Tutorial 4: Running from the Command-Line
-*****************************************
+*****************************
+Running from the Command-Line
+*****************************
 
 .. note::
    A `video of this tutorial <https://www.youtube.com/watch?v=Wf9GtKu5rGg>`_ is
