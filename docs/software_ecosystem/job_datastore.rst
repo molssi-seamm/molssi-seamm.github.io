@@ -4,22 +4,19 @@
 Job Datastore
 *************
 
-The Job Datastore is where SEAMM stores all the input and output from
-:term:`jobs<job>`. The :term:`dashboard` is the primary way that you
-look at the jobs, though it is possible to look at the files directly
-if you need to, and it may be possible for a job to scan files from
-others jobs. This is useful if you want to gather and reanalyze
-results from many jobs after they have been run.
+The Job Datastore is where SEAMM stores all input and output files
+produced from each :term:`job`. The :term:`dashboard` is the primary
+way to inspect the job results. However, it is also possible to inspect
+each file directly.
 
-You may also use several Job Datastores. There can be more than one on
-a machine, so different users or groups might have different
-datastores. However datastores gather results in projects, and allow
-control over who can access projects or even individual jobs, so a
-single datastore can be shared my different people and groups if they
-wish.
+The users can also employ several Job Datastores on a single machine
+so that different user-groups can access them. While the datastores
+gather the results of each project, they allow users to control the access
+permission(s) to the projects including the individual jobs. Thus, a
+single datastore can be shared among different user-groups if they wish
+to do so.
 
-You might also use datastores on other machines, either because you
-are collaborating with another group and want to use their datastore,
-or because it is more practical to have a datastore "close" to where
-the jobs are run so that the outputs don't have to be copied over
-e.g. a slow network.
+In collaborative efforts, the users might wish to use the datastores residing
+on a remote machine. It would also be more practical to have a datastore "closer"
+to where the jobs are executed so that the outputs do not have to be
+copied over a slow network route.

@@ -12,7 +12,7 @@ SEAMM is comprised of six components:
    jobs in the datastore,
 #. A :ref:`flowchart` which contains all information pertinent to the workflows for
    reproducibility,
-#. A :ref:`Flowchart Interpreter` responsible for executing the flowchart,
+#. A :ref:`flowchart-interpreter` responsible for executing the flowchart,
 #. A :ref:`job-manager` for managing :term:`jobs<job>` and executing :term:`tasks<task>`
    via a queueing system, and
 #. A :ref:`job-datastore` storing jobs, flowcharts, inputs, outputs and other intermediate
