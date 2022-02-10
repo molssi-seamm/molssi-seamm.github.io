@@ -111,8 +111,8 @@ Documentation Versions
 
     why_seamm/index
     software_ecosystem/index
-    users/installation/index
-    users/tutorials/index
+    installation/index
+    tutorials/index
     users/index
     plug-ins/index
     developers/index
