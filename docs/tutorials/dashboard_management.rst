@@ -21,7 +21,8 @@ Initial Setup
 
 When the Dashboard is installed, two user accounts will be created automatically:
 an **admin** account and one **user** account with the default account name duplicated
-from the username on the host machine. The initial password is also set to **admin**.
+from the username on the host machine. By default, the initial passwords for the
+**admin** and **user** accounts are set to **admin** and **default**, respectively.
 Since both accounts have administrative privileges, one can use either for the initial
 setup. However, since the users may not know the username chosen for their account by
 the administrator, it might be more convenient to start with the **admin** account.

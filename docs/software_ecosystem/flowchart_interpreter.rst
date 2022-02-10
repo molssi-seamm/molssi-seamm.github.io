@@ -1,4 +1,4 @@
-.. _`flowchart-interpreter`:
+.. _flowchart-interpreter:
 
 *********************
 Flowchart Interpreter

@@ -1,4 +1,4 @@
-.. _`gui`:
+.. _gui:
 
 ************************
 Graphical User Interface

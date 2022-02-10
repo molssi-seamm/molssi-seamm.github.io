@@ -3,91 +3,99 @@
 **************************
 Working with the Dashboard
 **************************
+.. note::
+    The present tutorial assumes you have read and followed the instructions
+    laid out in :ref:`tutorial-1` so that there is at least one job to work with.
 
-Before getting to this tutorial, you need to have finished :ref:`tutorial-1` so that
-there is at least one job to look at.
-
-You access the Dashboard in your web browser, by default at http://127.0.0.1:5000 (you
-might want to open the link in a new tab or window!):
+By default, users can access the Dashboard in their web browsers at http://127.0.0.1:5000:
 
 .. figure:: /images/tutorial_2/initial_dashboard.png
    :align: center
-   :alt: The Dashboard in a browser window.
+   :alt: The Dashboard in a browser window
 
-   *The Dashboard when you first access it.*
+   *The Dashboard when you first access it*
 
-The left pane is a menu of sections in the Dashboard. The left arrow at the bottom right
-of the pane collapses the menu to icons, freeing up more space for the right pane, which
-may be useful when looking at e.g. outputs from the simulation codes. The right pane of
-this initial view shows a summary of the jobs, flowcharts and projects visible to the
-current user. When you first access the Dashboard webpage, it shows everything available
-to anyone without logging in.
+The left pane is a menu of various sections available in the Dashboard. The left arrow at
+the bottom-right part of this pane collapses the menu into icons adding more space for
+the right pane which may be useful in various situations e.g., when looking at the simulation
+outputs. The right pane presents a summary of the executed jobs, flowcharts and projects
+that the current user has the permission to view. On the first access to the Dashboard web-page,
+it shows everything with the public permission to anyone without logging in.
 
-Now let's log in and see what happens. Click the **Public** **User** menu at the upper
-right and select **Login**. Use you username and password. The initial password is
-*default*. Once you are logged in the front page of the Dashboard should change
-slightly: 
+Let us begin by clicking on the ``ublic User`` menu drop-down button at the upper-right
+corner of the section and select ``Login``.
+
+.. note::
+    When entering the username and password, remember that by default, the initial
+    passwords for the **admin** and **user** accounts are set to **admin** and 
+    **default**, respectively.
+
+Once you are logged in, the front page of the Dashboard should change slightly and look like
+the following: 
 
 .. figure:: /images/tutorial_2/logged_in.png
    :align: center
-   :alt: The Dashboard after logging in.
+   :alt: The Dashboard after logging in
 
-   *The Dashboard after logging in.*
+   *The Dashboard after logging in*
 
-Notice that now there are a couple jobs, one flowchart, and one project. You can use
-either the menu at the top of each panel or the items in the menu in the left pane to
-see the job, flowcharts, and projects that you have access to. Feel free to look around,
-but eventually click on **Jobs List** in the menus to the left:
+Note the summary of information regarding the executed jobs in the main colored card
+sections: two jobs, one flowchart, and one project. One can use either the menu at the
+top of each panel or the items from the left-pane menu in order to inspect each job,
+flowchart, or project. Next, click on the ``Jobs List`` item on from the left-pane menu:
 
 .. figure:: /images/tutorial_2/job_list.png
    :align: center
-   :alt: The Dashboard showing the Jobs List.
+   :alt: The Dashboard showing the Jobs List
 
-   *The list of jobs in the Dashboard.*
+   *The list of jobs in the Dashboard*
 
-If you are just starting, you hopefully have just one job in the list. I ran it twice
-while testing so have two copies. Notice the title that you gave to the job is
-listed. It is important to use good but short titles! There isn't much space, so try to
-keep your titles down to 50-80 characters.
+After starting the Dashboard, one can find the previously executed job(s) in the list.
+For the illustration presented above, we ran this job twice while testing. So, there
+are two copies in this figure. Note that the title that the user chooses for each job
+is also listed. It is important to use relevant meaningful but brief titles.
 
-If you click on the number of the job, it will open the results from the job:
+.. Tip::
+    It is a good practice to keep the title lengths down to 50-80 characters.
+
+Click on the job ID to expand its results:
 
 .. figure:: /images/tutorial_2/job_page.png
    :align: center
-   :alt: The Dashboard showing the main page for a job.
+   :alt: The Dashboard showing the main page for a job
 
-   *The main page of a job.*
+   *The main page of a job*
 
-The title appears again at the top of the left pane of the window, followed by
-information about the job. Below this is a listing of the files from the job. The job's
-description is at the top of the right pane, below which is a large empty space that
-will be used to display the files from the job when you click on them in the directory
-to the left. Note that I collapsed the main menus at the very left to gain space.
+Once again, the job title appears at the top of the left-pane on the screen followed by
+further details about the job. Below, we demonstrate a listing of the files from our job.
+The job description can be found at the top of the right-pane, below which there is a large
+empty space that will be used to display the file details pertinent to each job when one clicks
+on them in the left-side directory section. Note that we collapsed the main menu at the very 
+left to create more space. 
 
-Now click on the **final_structure.mmcif** file in the driectory section:
+Now, click on the ``final_structure.mmcif`` file in the directory section, we get:
 
 .. figure:: /images/tutorial_2/structure_display.png
    :align: center
-   :alt: The Dashboard displaying a structure from a job.
+   :alt: The Dashboard displaying a structure from a job
 
-   *Displaying the final structure.*
+   *Displaying the final structure*
 
-You can rotate the molecule using your mouse, change the representation using the menu at
-the top of the page, and export the current view as a picture.
+One can rotate the molecule using the mouse, change its representation through the menu at
+the top of the screen, or export a screenshot of the current view of the molecule.
 
-Move on to **job.out**, clicking on it:
+Navigate to the ``job.out`` file by clicking on it:
 
 .. figure:: /images/tutorial_2/job_out.png
    :align: center
-   :alt: The main job output in a browser window.
+   :alt: The main job output in a browser window
 
-   *The main output of the job.*
+   *The main output of the job*
 
-This is the main output for the job, which gives a summary of the job, the results, and
-a list of citations at the end. Let's spend some time understanding the information
-being presented.
-
-The first section is always a summary of the job::
+This is the main output for our executed job which summarizes its results accompanied by
+a list of citations at the end. Let us spend some time understanding the information
+being presented. The first section is always a summary of the job workflow and the
+steps involved::
 
   Description of the flowchart
   ----------------------------
@@ -106,14 +114,15 @@ The first section is always a summary of the job::
          (gDIIS) method with a convergence criterion of 0.0 hartree/bohr. A maximum
          of 200 will be used.
 
-This summary is printed before the job starts actually running so even if the job takes
-a long time you can review what it is going to do. If you see a mistake you can kill the
-job and fix the problem. The summary tries to proved the key parameters for the
-calculations, giving enough information that someone else could replicate the
-calculation given just the summary. Also note that the version of each plug-in is given,
-in case there is a bug in particular version.
+This summary is printed before the job actually starts. So, even if the job takes
+a long time you can review what steps are going to be/being executed. This is a useful
+feature because it allows the users to correct their mistakes as soon as they find them
+by killing the process and re-running it after fixing the problem. The summary provides
+the key parameters pertinent to the calculations. It is important to note that the version
+of each adopted plug-in for executing the flowchart is also given to ensure reproducibility
+and security in cases where non-trivial bugs and glitches are found in a particular version.
 
-The second section is a summary of the results from running the flowcharts::
+The second section of the output summarizes the results from the executed flowchart::
 
   Running the flowchart
   ---------------------
@@ -146,13 +155,13 @@ The second section is a summary of the results from running the flowcharts::
 
   Wrote the final structure to 'final_structure.mmcif' for viewing.
     
-In this case the results are similar to the initial summary. Note, however, that the
-FromSMILES step reports how many atoms are in the created structure and the DFTB+
-Optimization reports the total energy and number of steps taken. Other types of
-calculations and other plug-ins might have more results to report.
+Note the similarity of this section to the first part of the output. However, a closer
+look elicits more details about each step such as those pertinent to `FromSMILES` step
+which in our case, reports the number of atoms in the chemical structure being studied
+and the ``DFTB+ Optimization``, the total electronic energy and number of iterations.
 
-The last section of the main job output provides references that should be cited for the
-calculations done::
+The final section of the output provides references that must be cited regarding the
+calculations performed::
 
   Primary references:
     
@@ -190,32 +199,35 @@ calculations done::
   Process time: 0:00:01.408026 (1.408 s)
   Elapsed time: 0:00:02.932646 (2.933 s)
 
-The references are sometimes divided by a sense of how important they are. For more
-complicated flowcharts the number of references can be very large, so SEAMM tries to
-help you decide which are the most important references.
+The references are often divided based on their importance and usage frequency in the
+code. For more complicated flowcharts, the number of references can be very large. Thus,
+SEAMM tries to help users decide which ones are the most important references for their
+research.
 
-The references are also stored in a small database file, *references.db*. Future
-versions of SEAMM will provide tools to merge the references from all of the jobs you
-used in a particular project. This will help you properly cite the tools that you used.
+The references are also stored in a small database file, ``references.db``. Future
+versions of SEAMM will provide tools to merge the references from every executed jobs
+in a particular project. This will assist users to properly cite the tools that they have
+employed to carry out their study.
 
-If you now click on the folder labeled **2**, which corresponds to the second step of
-the flowchart, which was the DFTB+ geometry optimization:
+By clicking on the folder corresponding to the second step of the flowchart (labeled **2**),
+during which SEAMM performed a DFTB+ geometry optimization, we get:
 
 .. figure:: /images/tutorial_2/dftbplus_files.png
    :align: center
    :alt: The files for the DFTB+ step
 
-   *The files for the DFTB+ step.*
+   *The files for the DFTB+ step*
 
-The main output for DFTB+ is **stdout.txt** which has been selected in the picture
-above, and is displayed in the right pane. The left panel is the directory of the files
-in this step, which are the input and output from DFTB+. You can use these to see in
-detail the input generated by the plug-in, as well as the outputs.
+The main output for DFTB+ is stored in the ``stdout.txt`` file which has been selected
+for generating the picture shown above. The left panel is the directory section with all
+files pertinent to this step, including the input and output files from DFTB+. One can inspect
+these files to check the input file(s) generated by the plug-in, as well as the outputs.
 
-If you look at **dftb_in.hsd** you will see the raw input for DFTB+. It was certainly
-easier to use the GUI than hand-edit the input file directly.
+Look at ``dftb_in.hsd``, one can see the raw input for the DFTB+ package. It should be
+clear now how convenient it was to use the GUI to create an input file instead of manual
+scripting.
 
-This concludes the second tutorial, covering using the Dashboard and examining the
-output from you calculations. The Dashboard will display files in different ways
-depending on their content. Text files are display as text; molecules as 3-D structures;
-tabular data as sortable tables; and graphs as graphs.
+Before wrapping up this tutorial, note that the Dashboard will display files in different
+ways depending on their content and origin. Text files are displayed as text, molecules 
+are represented as three-dimensional structures, tabular data are stored as sortable tables
+and graphs are demonstrated as graphs.
