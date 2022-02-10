@@ -22,7 +22,7 @@ outputs. The right pane presents a summary of the executed jobs, flowcharts and 
 that the current user has the permission to view. On the first access to the Dashboard web-page,
 it shows everything with the public permission to anyone without logging in.
 
-Let us begin by clicking on the ``ublic User`` menu drop-down button at the upper-right
+Let us begin by clicking on the ``Public User`` menu drop-down button at the upper-right
 corner of the section and select ``Login``.
 
 .. note::
@@ -156,7 +156,7 @@ The second section of the output summarizes the results from the executed flowch
   Wrote the final structure to 'final_structure.mmcif' for viewing.
     
 Note the similarity of this section to the first part of the output. However, a closer
-look elicits more details about each step such as those pertinent to `FromSMILES` step
+look elicits more details about each step such as those pertinent to ``FromSMILES`` step
 which in our case, reports the number of atoms in the chemical structure being studied
 and the ``DFTB+ Optimization``, the total electronic energy and number of iterations.
 
