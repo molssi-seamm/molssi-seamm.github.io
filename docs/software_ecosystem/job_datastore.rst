@@ -1,4 +1,4 @@
-.. _`job-datastore`:
+.. _job-datastore:
 
 *************
 Job Datastore

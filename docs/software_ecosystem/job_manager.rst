@@ -1,4 +1,4 @@
-.. _`job-manager`:
+.. _job-manager:
 
 ***********
 Job Manager

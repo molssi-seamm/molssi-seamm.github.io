@@ -196,5 +196,5 @@ If the ``Project`` field is empty or not set, type `default` in it and then, add
 the ``Title`` field. Briefly describe your goal and the details of your simulation workflow within
 the large text area at the bottom of the dialog. Finally, click ``OK`` to execute the calculation.
 
-In the next two tutorials, we will demonstrate how to set up and work with Dashboard in order to
+In the next two tutorials, we will demonstrate how to setup and work with Dashboard in order to
 monitor and manage the executed jobs.
