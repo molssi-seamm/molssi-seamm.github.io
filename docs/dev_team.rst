@@ -27,7 +27,7 @@ Lead Maintainers
    :height: 16
    :alt: GitHub account of paulsaxe
 
-.. |0000-0002-8641-9448| image:: _static/images/orcid.svg
+.. |0000-0002-8641-9448| image:: images/orcid.svg
    :target: https://orcid.org/0000-0002-8641-9448
    :width: 16
    :height: 16
@@ -46,7 +46,7 @@ Lead Maintainers
    :height: 16
    :alt: GitHub account of janash
 
-.. |0000-0003-1967-5094| image:: _static/images/orcid.svg
+.. |0000-0003-1967-5094| image:: images/orcid.svg
    :target: https://orcid.org/0000-0003-1967-5094
    :width: 16
    :height: 16
@@ -65,7 +65,7 @@ Lead Maintainers
    :height: 16
    :alt: GitHub account of SinaMostafanejad
 
-.. |0000-0001-9762-7616| image:: _static/images/orcid.svg
+.. |0000-0001-9762-7616| image:: images/orcid.svg
    :target: https://orcid.org/0000-0001-9762-7616
    :width: 16
    :height: 16
@@ -87,7 +87,7 @@ Former Developers
    :height: 16
    :alt: GitHub account of emarinri
 
-.. |0000-0003-1721-4366| image:: _static/images/orcid.svg
+.. |0000-0003-1721-4366| image:: images/orcid.svg
    :target: https://orcid.org/0000-0003-1721-4366
    :width: 16
    :height: 16
