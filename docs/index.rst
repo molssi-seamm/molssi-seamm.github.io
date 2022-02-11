@@ -116,6 +116,7 @@ Documentation Versions
     users/index
     plug-ins/index
     developers/index
+    dev_team
     SEAMM YouTube Channel <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>
     https://github.com/molssi-seamm
     status/index
