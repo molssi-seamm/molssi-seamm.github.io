@@ -6,97 +6,100 @@ Running from the Command-Line
 
 .. note::
    A `video of this tutorial <https://www.youtube.com/watch?v=Wf9GtKu5rGg>`_ is
-   available in the `MolSSI SEAMM channel
-   <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_
-
-So far you've seen how to create a flowchart in the SEAMM graphical interface, submit it
-to the Dashboard, and examine the results. In this lesson you will learn about running a
-flowchart from the command-line, i.e. in a terminal window. Rather than create a
-flowchart from scratch, we'll get one from Zenodo and see how to edit it.
+   available on the `SEAMM YouTube channel
+   <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>`_.
 
 .. attention::
-   In this tutorial you will
-     #. Open a flowchart directly from Zenodo.
-     #. Move steps and edit the flowchart.
-     #. Learn how to create and use command-line parameters for a flowchart.
-     #. Learn how to run from the command-line.
+   So far, we have demonstrated how to create and submit a flowchart in the SEAMM graphical
+   user interface (GUI), and examine the results using the Dashboard. In this tutorial
+   you will
 
-Start the SEAMM GUI either by using the app or running `seamm` in a terminal window in
-the conda enviroment `seamm`. Once the GUI appears, use the File / Open menu (or the
-short cut key `ctrl-o`) to open a flowchart:
+        #. open a flowchart directly from Zenodo instead of building it from scratch,
+        #. edit the flowchart by modifying its steps,
+        #. learn how to create and use command-line parameters and adopt them in a flowchart,
+           and
+        #. learn how to execute a flowchart from the command-line interface (CLI).
+
+Start the SEAMM GUI either by using the app or running SEAMM in a terminal window in
+the conda enviroment `seamm`. Once the GUI opens, use the ``File/Open`` menu (or the
+short cut key ``ctrl-o``) to open a flowchart:
 
 .. figure:: images4/4_open_file_menu.png
    :width: 500px
    :align: center
    :alt: The file menu
 
-   The file menu.
+   The file menu
 
-The dialog will look like this:
+The opened dialog will look like the following:
 
 .. figure:: images4/4_open_dialog.png
    :width: 500px
    :align: center
    :alt: The Open dialog
 
-   The Open dialog.
+   The Open dialog
 
-You probably won't have many flowcharts yet, but we aren't going to open one from the
-local machine. Instead, we are going to get one stored at Zenodo. You can see it in your
-web browser in the `SEAMM Flowcharts community`_ if you wish, but
-you can easily get it from SEAMM itself. In the first line of the dialog change it from
-`Open flowchart from local files` to `Open flowchart from Zenodo`. The dialog will
-change a bit. Click on the `+` button to add a filter in the criterion and type
-"Tutorial" into the last field in the line that appears. Click `Search`. If you click on
-the first entry, `SEAMM Tutorial 1` the dialog will look like this:
+.. Tip::
+    Instead of storing the flowcharts on our local machines and open them here, we are going
+    to get one from Zenodo servers. One can find the pre-made flowcharts at the 
+    `SEAMM Flowcharts community <https://zenodo.org/communities/seamm-flowcharts/?page=1&size=20>`_
+    or easily import them to your project via SEAMM GUI. 
+
+In the first line of the opened dialog, let us change the ``Open flowchart from local files``
+field to ``Open flowchart from Zenodo``. Following this change, the dialog will accordingly update.
+Clicking on the ``+`` button allows us to add a filter in the criterion and type `Tutorial` into
+the last field in the line that appears. Then, we click on ``Search``. After clicking on the first
+entry (``SEAMM Tutorial 1``), our dialog will look like the following:
 
 .. figure:: images4/4_open_zenodo.png
    :width: 500px
    :align: center
    :alt: Open from Zenodo
 
-   Opening a flowchart from Zenodo.
+   Opening a flowchart from Zenodo
 
-Before clicking `OK` to open the flowchart, notice that there is a small arrow next to
-`SEAMM Tutorial 1` in the list of tutorials. If you click on it it will reveal the
-available versions of the tutorial:
+Before pressing the ``OK`` button in order to open the flowchart, note that there is a small
+drop-down arrow button next to ``SEAMM Tutorial 1`` in the list of tutorials. By clicking on
+this arrow button, all available versions of the tutorial will be listed in the expanded
+subsection under the tutorial's title:
 
 .. figure:: images4/4_zenodo_versions.png
    :width: 500px
    :align: center
    :alt: Versions of a flowchart
 
-   Selecting a specific version of a flowchart.
+   Selecting a specific version of a flowchart
 
-You can select any version to open, so you can access the entire history of a flowchart,
-and run older versions if you need to. Usually, however, you want the latest version --
-you do here -- so select the most recent version and click `Open`:
+As such, the SEAMM GUI allows the users to access the entire history of a flowchart and
+select the desired version. Here, we select the most recent version and click ``Open``:
 
 .. figure:: images4/4_initial_flowchart.png
    :width: 500px
    :align: center
    :alt: The initial flowchart
 
-   *The flowchart for Tutorial 1, read from Zenodo*
+   The flowchart for Tutorial 1, read from Zenodo
 
-At this point you could run the flowchart as you did in the first tutorial and get
-exactly the same results for the ethane thiol molecule. This is nice from the point of
-view of reproducibility, but not very useful for doing your science. In the next steps
-you'll edit the flowchart to accept an input string for the SMILES and then run ethanol
-from the command-line.
+At this point, if we re-run our previous flowchart as we did in the :ref:`first tutorial
+<tutorial-1>`, we get exactly the same results for the ethanethiol molecule. This
+is nice from the point of view of reproducibility, but not very useful for pushing
+the science for new discoveries. 
 
-Make some room for another step immediately after the `Start` step by clicking on the
-**from SMILES** step and dragging it to the right:
+In the next step, we will edit our flowchart to accept SMILES strings as the input and
+execute our flowchart for ethanol from the CLI. Before getting started, let us make some room
+for another step box immediately after the ``Start`` step by clicking on the ``from SMILES``
+step and dragging it to the right:
 
 .. figure:: images4/4_edit_1.png
    :width: 500px
    :align: center
    :alt: Moving a step of the flowchart
 
-   Moving a step by dragging it.
+   Moving a step by dragging it
 
-Now right-click on the arrow connecting the `Start` step and the `from Smiles` step that
-you just moved, and select `Delete`:
+Next, we right-click on the connecting arrow between the ``Start`` step and the ``from Smiles`` step boxes
+and select ``Delete``:
 
 .. figure:: images4/4_edit_2.png
    :width: 500px
@@ -105,94 +108,101 @@ you just moved, and select `Delete`:
 
    Deleting the connection between two steps.
 
-Open the `Control` section of the left menubar and add a **Parameters** step:
+Then, we open the ``Control`` section of the left menu and add a ``Parameters`` step:
 
 .. figure:: images4/4_edit_3.png
    :width: 500px
    :align: center
-   :alt: Adding the **Parameters** step
+   :alt: Adding the ``Parameters`` step
 
-   Adding the **Parameters** step.
+   Adding the ``Parameters`` step
 
-Now you need to connect the flowchart back together, with the new **Parameters** step as
-the first step. Place the cursor over the **Parameters** step. Red dots will appear round
-the edge. Move the cursor over the center bottom dot and it will become larger,
-indicating that the mouse is over it. Click and drag the arrow that appears to the
-center top dot of the `from Smiles` step, and when that dot becomes large, release the
+In the next part, we need to connect the flowchart back together with the new ``Parameters``
+step as the first step. Placing the cursor over the ``Parameters`` step box activates its
+connection points (red dots) around its edges. By moving the cursor over the center-bottom
+connection point, it becomes larger (active) verifying that the mouse is indeed over it.
+Let us click and drag the arrow that appears on the center-top connection point of the
+``from Smiles`` step. When the aforementioned connection point becomes active, release the
 mouse button:
 
 .. figure:: images4/4_edit_4.png
    :width: 500px
    :align: center
-   :alt: Connecting two steps,
+   :alt: Connecting two steps
 
-   Connecting the **Parameters** step to the **from Smiles** step.
+   Connecting the ``Parameters`` and ``from Smiles`` steps
 
-Your flowchart should now look like this:
+Our current flowchart should look like this:
 
 .. figure:: images4/4_edit_5.png
    :width: 500px
    :align: center
    :alt: Edited flowchart
 
-   The edited flowchart.
+   The edited flowchart
 
-It will work, but it doesn't look very nice. You could clean it up by dragging the steps
-around, but SEAMM will do it automatically. Under the `Edit` menu select the `Clean
-layout` command, or use the shortcut `ctrl-L` to snap the steps into place:
+Although our flowchart is properly working, it is not organized nicely. We could clean
+it up by dragging the steps around, but SEAMM can do it automatically. By selecting the
+``Clean layout`` command from the ``Edit`` menu, or using the shortcut key ``ctrl-L``,
+all steps can snapped into order at once:
 
 .. figure:: images4/4_edit_6.png
    :width: 500px
    :align: center
-   :alt: Clean flowchart
+   :alt: Cleaning the flowchart
 
-   Clean flowchart.
+   Cleaning the flowchart
 
-Almost done! You need to set the **Parameters** step. Edit it by double-clicking or using
-right-click and `Edit`. Click on the `+` button to add another parameter and set it up
-as shown:
+At this point, we need to setup the ``Parameters`` step by double-clicking on it or using
+right-click and selecting ``Edit``. By clicking on the ``+`` button, one can add another
+parameter and set it up as shown:
 
 .. figure:: images4/4_edit_7.png
    :width: 500px
    :align: center
-   :alt: Setting the **Parameters** step
+   :alt: Setting the ``Parameters`` step
 
-   Setup of the **Parameters** step.
+   Setting the ``Parameters`` step
 
-The name of the variable will be `SMILES`, and it expects a single string value. It is
-required -- not optional -- meaning that it must be supplied on the command-line, e.g.::
+The name of the variable will be set to ``SMILES`` and expects a single string value.
+By default, it is a required (not optional) variable, meaning that its value must be
+initialized in the GUI (e.g. using files, manually etc.) or supplied via CLI, e.g.::
 
   flowchart.flow CCO
 
-where `CCO` is the SMILES representation of the molecule. If you left it as an optional
-character it would need to be prefixed by `--SMILES`::
+where ``CCO`` is the SMILES representation of the ethanol molecule. If you left the SMILES
+variable as optional, the supplied SMILES argument in the CLI value must be prefixed by
+``--SMILES`` flag as shown below::
 
   flowchart.flow --SMILES CCO
 
-and would not be required. This is fine for optional parameters that have reasonable
-defaults, but not appropriate for the molecule we want to run, since there is no
-default.
+This method works fine for the optional parameters that have reasonable defaults but 
+would not be appropriate in our case because there is no default value for the SMILES
+variable.
 
-Next you need to make a small modification in the **from SMILES** step. Close out the
-**Parameters** step by clicking `OK` twice, then edit the **from SMILES** step:
+In the next stage, we need to modify the ``from SMILES`` step. After closing the
+``Parameters`` step dialog by clicking ``OK``, we start editing the ``from SMILES``
+step:
 
 .. figure:: images4/4_edit_8.png
    :width: 500px
    :align: center
-   :alt: Editing the **from SMILES** step
+   :alt: Editing the ``from SMILES`` step
 
-   Editing the **from SMILES** step.
+   Editing the ``from SMILES`` step
 
-Rather than typing the SMILES for the molecule directly into the entry filed, as you did
-in the first tutorial, change it to `$SMILES`. Remember that you called the variable
-`SMILES` in the **Parameters** step. The dollar sign (`$`) in front lets SEAMM know that
-this is a variable, and to use its value. Close the dialog by clicking `OK`.
+Rather than typing the SMILES for the molecule directly into the entry field, as we did
+in the :ref:`first tutorial <tutorial-1>`, this time we type ``$SMILES`` in it. Note
+that we are calling the variable ``SMILES`` in the ``Parameters`` step. The dollar 
+sign (``$``) in front of the variable name allows SEAMM to know that this is a 
+variable and it should access and use its value. We then click ``OK`` to close the
+dialog.
 
-Save the flowchart (`File` menu, `Save` or `ctrl-S`) to a folder that you can
-rememeber. I put my copy in `~/SEAMM/flowcharts`, which you will see in the next
-steps. But anywhere is fine.
+Let us save the flowchart (from the ``File`` menu, select ``Save`` or use the shortcut
+keys ``ctrl-S``) and store it in a folder that we can easily find. We store our copy 
+in ``~/SEAMM/flowcharts`` which we will refer back to in the next few steps.
 
-Now switch to a terminal window and type the following::
+Now, we switch to a terminal window and type the following::
 
   (base) psaxe@paul run2 % conda activate seamm
   conda activate seamm
@@ -221,16 +231,17 @@ Now switch to a terminal window and type the following::
                           The datastore (directory) for this run, default: ${root}/Jobs
   ...
 
-You need to make sure that you are running in the `SEAMM` conda environment. I wasn't --
-notice the `(base)` flag in the prompt -- so I activated the environment. Then run the
-flowchart with the `--help` flag. Your path may be different than mine!
+Here, we needed to ensure that the ``seamm`` conda environment is running. Then, we
+executed the flowchart with the ``--help`` flag. The output is a bit longer than what
+is shown above but is self-explanatory. The first line gives a summary of the command
+and all possible options. 
 
-The output is quite a bit longer than shown, but is self-explanatory. The first line
-gives a summary of the command and all options. Note that the `SMILES` parameter is not
-optional, and that the help for it is whatever you typed in the **Parameters**
-dialog. This is how you can help others use your flowchart.
+.. Note::
+    The ``SMILES`` parameter, as shown in the output above, is not optional and its 
+    help message in the output comes from whatever that was typed in its ``Parameters``
+    dialog. This is how we can guide other researchers and users to use our flowcharts.
 
-Next run the flowchart::
+In the next stage, we execute the flowchart::
 
   (seamm) psaxe@paul run2 % ~/SEAMM/flowcharts/tutorial-4.flow --standalone CCO
   ~/SEAMM/flowcharts/tutorial-4.flow --standalone CCO
@@ -355,13 +366,12 @@ Next run the flowchart::
   Elapsed time: 0:00:01.867495 (1.867 s)
   (seamm) psaxe@paul run2 %
 
-The `--standalone` flag tells SEAMM to run the flowchart in the current directory
-and not add it to the datastore. I tend to do this when trying new flowcharts and
-calculations so that I don't fill the datastore with junk. My calculations tend not to
-work the first time or two!
+The ``--standalone`` flag tells SEAMM to run the flowchart in the current directory
+while not adding it to the datastore. This flag is useful for testing the new flowcharts
+and avoid filling the datastore with junk.
 
-You should be familiar with the output by now, but notice two parts. In the first part,
-where it tells you what it is going to do::
+although by now, we are familiar with the output, let us focus on two of its sections.
+In the first part, where SEAMM tries to tell us what it is going to do,::
 
     Step 1: Parameters  2021.10.13
 	The following variables will be set from command-line arguments, or if
@@ -378,11 +388,13 @@ where it tells you what it is going to do::
 	the current configuration. The name of the system will be the canonical
 	SMILES of the structure. The name of the configuration will be initial.
 
-it describes the parameters, in this case just the single `SMILES` variable you
-added. And in the **from SMILES** step it notes that it will build the structure using
-whatever the value of the `SMILES` variable is.
+it describes each parameter, which in this case is just a single ``SMILES`` variable
+we added. In the ``from SMILES`` step in the first part, SEAMM notifies us
+about building the molecular structure using the value stored in the ``SMILES``
+variable.
 
-Later in the output, when it is running the job, the output is more explicit::
+In the next part of the output when SEAMM is actually executing the workflow,
+the output becomes more explicit::
 
     Step 1: Parameters  2021.10.13
 	The following variables have been set from command-line arguments,
@@ -404,11 +416,11 @@ Later in the output, when it is running the job, the output is more explicit::
 	       System name = CCO
 	Configuration name = initial
 
-It gives the value of the `SMILES` variable and where it was set -- command-line in this
-case. Some optional parameters can be set in the `seamm.ini` configuration file if you
-want to use them all of the time. And in the **from SMILES** step it now prints the
-actual SMILES being used to construct the molecule.
+In the output shown above, the ``from SMILES`` step now prints out the
+actual values of the ``SMILES`` being used to construct the molecule.
 
-This is the end of this tutorial.
-
-.. _seamm flowcharts community: https://zenodo.org/communities/seamm-flowcharts/?page=1&size=20
+.. Note::
+    For more clarity, SEAMM prints out the value of the ``SMILES`` variable and the interface,
+    within which the variable was set -- in this case, the CLI. Some of the optional parameters
+    in SEAMM can be set from the ``seamm.ini`` configuration file should users plan to use them
+    frequently.

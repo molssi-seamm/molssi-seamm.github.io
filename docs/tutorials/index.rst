@@ -17,4 +17,3 @@ journey with SEAMM and explore its capabilities.
     tutorial_2    
     tutorial_3 
     tutorial_4
-    running_a_flowchart

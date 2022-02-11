@@ -1,7 +1,7 @@
 .. _dev-team:
 
 ****************
-Development Team
+SEAMM Developers
 ****************
 
 SEAMM is a free open-source software that is mainly developed by a team of
