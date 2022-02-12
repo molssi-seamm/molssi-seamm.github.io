@@ -129,12 +129,12 @@ Documentation Versions
     tutorials/index
     developers/index
     whitepapers/index
-    dev_team
+    glossary
     plug-ins/index
     status/index
     statistics/index
+    dev_team
     acknowledgements
-    glossary
 
 .. Badge(s)
 .. |YouTube| image:: https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg

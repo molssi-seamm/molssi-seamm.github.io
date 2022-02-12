@@ -32,12 +32,12 @@ focusing on three major aspects of the atomistic simulation software development
 #. :ref:`productivity`
 #. :ref:`workflow-features`
 
-SEAMM developers believe the users of the atomistic simulation software packages
-should be able to spend their time in scientific research and discovery instead
-of wasting it in learning different program-specific keywords and syntaxes or
-resolving software-related issues. If you user who has dealt with these issues,
-we invite you to :ref:`install <installation>` our software and give it a try!
-It is easy and convenient and we have prepared/are preparing many
+:ref:`SEAMM developers <dev-team>` believe the users of the atomistic simulation
+software packages should be able to spend their time in scientific research and
+discovery instead of wasting it in learning different program-specific keywords
+and syntaxes or resolving software-related issues. If you user who has dealt with
+these issues, we invite you to :ref:`install <installation>` our software and give
+it a try! It is easy and convenient and we have prepared/are preparing many
 :ref:`tutorials <tutorials>` to help you find your path in this journey. Let us
 know what you think about SEAMM. We look forward to hearing from you about your
 experience and feedback.
