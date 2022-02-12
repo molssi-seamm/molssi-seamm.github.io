@@ -67,7 +67,7 @@ Glossary
       two depending on the context. Usually it is clear from the context which use is
       intended, but sometimes it can be a bit tricky, so be careful.
 
-      See :doc:`users/forcefields/overview` for a more complete discussion.
+      See :doc:`whitepapers/forcefields/overview` for a more complete discussion.
 
    combining rules
       A rule for how to combine the Lennard-Jones-type parameters for single atoms

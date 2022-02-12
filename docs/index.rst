@@ -14,7 +14,8 @@ SEAMM: the Simulation Environment for Atomistic and Molecular Modeling
    
    We also plan to provide a forum for reporting problems, promoting constructive
    discussions and sharing ideas and experiences. In the meantime, feel free to email
-   us at seamm@molssi.org or join the Slack channel |slack|.
+   us at seamm@molssi.org or join the `Slack channel
+   <https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA>`_.
 
    SEAMM is fully open-source allowing anyone to contribute to its growth by
    opening issues, forking the repository and submitting pull requests in order to make
@@ -85,11 +86,27 @@ Manage your citations
    for the current task and stores it in a database. We are developing tools to allow
    merging multiple citations for a single computational campaign.
 
-For further details about SEAMM, refer to the :ref:`installation` and the :ref:`users-docs`.
+For further details about SEAMM, refer to the :ref:`installation` and the :ref:`whitepapers`.
 Developers interested in incorporating their tools and plugins in SEAMM are welcome to read
 the :ref:`developers-docs`.
 
-Users can also join our Slack channel by clicking on this badge |slack|
+Users can visit our YouTube channel for tutorials and videos, check our Github repository
+for the latest software updates and join our Slack channel for sharing software issues and
+seeking support by clicking on the following badges. 
+
+.. list-table:: **Stay in Touch**
+   :widths: 20 15 22
+   :header-rows: 1
+   :align: center
+
+   * - YouTube
+     - GitHub
+     - Slack
+   * - |YouTube|
+     - |GitHub|
+     - |slack|
+
+
 
 Documentation Versions
 ======================
@@ -110,21 +127,30 @@ Documentation Versions
     :hidden:
 
     why_seamm/index
-    software_ecosystem/index
     installation/index
     tutorials/index
-    users/index
-    plug-ins/index
     developers/index
+    whitepapers/index
     dev_team
-    SEAMM YouTube Channel <https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ>
-    https://github.com/molssi-seamm
+    plug-ins/index
     status/index
     statistics/index
     acknowledgements
     glossary
 
 .. Badge(s)
-.. |slack| image:: https://img.shields.io/badge/chat-on_slack-808493.svg?longCache=true&style=flat&logo=slack)
+
+.. |YouTube| image:: https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg
+   :target: https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ
+   :alt: SEAMM YouTube Channel
+   :width: 150
+
+.. |GitHub| image:: https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg
+   :target: https://github.com/molssi-seamm
+   :alt: SEAMM GitHub Repository
+   :width: 100
+
+.. |slack| image:: https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg
    :target: https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA
    :alt: SEAMM Slack Channel
+   :width: 170

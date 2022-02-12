@@ -8,7 +8,7 @@ This section provides guidance for implementing a new forcefield or interatomic
 potential in SEAMM as well as for implementing a forcefield-based code.  If you need a
 refressher about forcefields, or need to understand the terms used in this documentation
 to refer apects of forcefields, please see this section in the user manual
-:doc:`../../../users/forcefields/overview` for an introduction. As noted there, forcefields and
+:ref:`overview` for an introduction. As noted there, forcefields and
 interatomic potentials are essentially the same thing, so we will tend to use the term
 'forcefield' throughout.
 
