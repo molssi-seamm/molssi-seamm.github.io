@@ -106,8 +106,6 @@ seeking support by clicking on the following badges.
      - |GitHub|
      - |slack|
 
-
-
 Documentation Versions
 ======================
 
@@ -139,7 +137,6 @@ Documentation Versions
     glossary
 
 .. Badge(s)
-
 .. |YouTube| image:: https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg
    :target: https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ
    :alt: SEAMM YouTube Channel
