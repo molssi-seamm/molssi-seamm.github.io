@@ -92,19 +92,26 @@ the :ref:`developers-docs`.
 
 Users can visit our YouTube channel for tutorials and videos, check our Github repository
 for the latest software updates and join our Slack channel for sharing software issues and
-seeking support by clicking on the following badges. 
+seeking support by clicking on the following badges. Do not forget to check out our MolSSI
+Guidelines and Best Practices for Data Science, Machine Learning and High-Performance Computing.
+Be sure to also take a look at our SEAMM flowchart, dataset and model collections in our 
+MolSSI Community platform on Zenodo. 
 
 .. list-table:: **Stay in Touch**
-   :widths: 20 15 22
+   :widths: 18 12 20 20 18
    :header-rows: 1
    :align: center
 
    * - YouTube
      - GitHub
      - Slack
+     - Zenodo Community
+     - MolSSI Guidelines
    * - |YouTube|
      - |GitHub|
      - |slack|
+     - |Zenodo|
+     - |MolSSI|
 
 Documentation Versions
 ======================
@@ -145,9 +152,19 @@ Documentation Versions
 .. |GitHub| image:: https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg
    :target: https://github.com/molssi-seamm
    :alt: SEAMM GitHub Repository
-   :width: 100
+   :width: 90
 
 .. |slack| image:: https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg
    :target: https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA
    :alt: SEAMM Slack Channel
    :width: 170
+
+.. |Zenodo| image:: https://about.zenodo.org/static/img/logos/zenodo-gradient-square.svg
+   :target: https://zenodo.org/communities/molssi/
+   :alt: MolSSI Zenodo Community
+   :width: 170
+
+.. |MolSSI| image:: https://raw.githubusercontent.com/MolSSI/molssi-branding-guidelines/master/logos/main_logo/molssi_main.svg
+   :target: https://molssi.github.io/molssi-guidelines/
+   :alt: MolSSI Guidelines and Best Practices
+   :width: 150
