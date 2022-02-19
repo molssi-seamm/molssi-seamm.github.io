@@ -1,28 +1,26 @@
-.. _developers_docs:
+.. _developers-docs:
 
 ************************
 Developers Documentation
 ************************
-This subsection of the website is primarily about developing both
-SEAMM and :term:`plug-ins<plug-in>` for SEAMM. However, some sections
-such as the design of SEAMM might be of interest even if you don't
-plan to pull out an editor and get to coding.
+The present section is primarily focused on the software engineering
+aspects of the SEAMM program package that might be of interest to the
+developers that are not affiliated to the MolSSI.
 
-:ref:`home_for_tools`:
+:ref:`home_for_tools`
 ----------------------
-SEAMM makes it straightforward for developers and other experts to
-publish their existing and new codes and scripts as plug-ins and
-:term:`flowcharts<flowchart>`, making them immediately available to
-the entire community.
-
-* :ref:`design`
+SEAMM makes it straightforward for both software engineers and program
+developers to publish their applications, modules or packages using plug-ins
+and :term:`flowcharts<flowchart>`, making them immediately accessible to and
+usable by the entire community.
 
 .. toctree::
-    :maxdepth: 5
+    :maxdepth: 3
     :titlesonly:
     :hidden:
 
-    status
     home_for_tools
-    design/index
+    software_ecosystem/index
+    plug-ins
+    forcefields/index
     tips-and-tricks/index
