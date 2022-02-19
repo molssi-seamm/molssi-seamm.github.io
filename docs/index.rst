@@ -5,23 +5,23 @@ SEAMM: the Simulation Environment for Atomistic and Molecular Modeling
 **********************************************************************
 
 .. attention::
-   Currently, SEAMM is in the early stages of its deployment to the public domain
-   and beta testing by the members of the computational molecular sciences community.
-   Although we have made every efforts to minimize errors and glitches in the SEAMM
-   software infrastructure, similar to any open-source software project it its early days,
-   it is prone to undetected bugs. A such, we have to rely on user support to become
-   aware of these problems.
+   Currently, SEAMM is in the early stages of its deployment and beta testing by the
+   members of the computational molecular sciences community.  Although we have made
+   every efforts to minimize errors and glitches in the SEAMM software infrastructure,
+   similar to any open-source software project it its early days, there may be bugs and
+   issues we haven't seen. If you find something or have a suggestion, please let us
+   know!
    
-   We also plan to provide a forum for reporting problems, promoting constructive
+   We are working on a forum for reporting problems, promoting constructive
    discussions and sharing ideas and experiences. In the meantime, feel free to email
    us at seamm@molssi.org or join the `Slack channel
    <https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA>`_.
 
-   SEAMM is fully open-source allowing anyone to contribute to its growth by
-   opening issues, forking the repository and submitting pull requests in order to make
-   changes in the code or documentation. SEAMM is also a large-scale and ambitious project
-   with many moving parts. Thus, it will take some time to become truly stable! We
-   appreciate your patience and assistance throughout the development process!
+   SEAMM is fully open-source allowing anyone to contribute to its growth by opening
+   issues, forking the repository and submitting pull requests in order to make changes
+   in the code or documentation. SEAMM is also a large-scale and ambitious project with
+   many moving parts. Thus, it will take some time to become truly stable! We appreciate
+   your patience and assistance throughout the development process!
 
 SEAMM is a user-friendly software package for the atomistic simulations of organic
 molecules, biological systems, fluids, synthetic polymers, and materials such as metals

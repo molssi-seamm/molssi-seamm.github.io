@@ -4,7 +4,7 @@
 SEAMM Developers
 ****************
 
-SEAMM is a free open-source software that is mainly developed by a team of
+SEAMM is a free open-source software that is mainly developed by the team of
 Software Scientists at the Molecular Sciences Software Institute (MolSSI).
 As it is built for boosting productivity and scientific discovery in all
 domains of computational molecular sciences (CMS), we welcome any feedback
@@ -17,7 +17,7 @@ Lead Maintainers
 .. Paul Saxe
 
 | **Paul Saxe** |GH-paulsaxe| |0000-0002-8641-9448|
-| Lead Developer and Founder of *SEAMM*
+| Lead Developer of *SEAMM*
 | Lead MolSSI Software Scientist
 | Molecular Sciences Software Institute, Blacksburg, VA 24060
 
@@ -55,8 +55,8 @@ Lead Maintainers
 .. Mohammad Mostafanejad
 
 | **Mohammad Mostafanejad** |GH-SinaMostafanejad| |0000-0001-9762-7616|
-| Machine Learning Lead Developer in *SEAMM*
-| MolSSI Lead Software Scientists in HPC Education, ML and AI
+| Lead Developer of Machine Learning in *SEAMM*
+| MolSSI Lead Software Scientist in HPC Education, ML and AI
 | Molecular Sciences Software Institute, Blacksburg, VA 24060
 
 .. |GH-SinaMostafanejad| image:: https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/mark-github.svg
@@ -77,8 +77,7 @@ Former Developers
 .. Eliseo Marin-Rimoldi
 
 | **Eliseo Marin-Rimoldi** |GH-emarinri| |0000-0003-1721-4366|
-| *SEAMM* Developer
-| Former MolSSI Software Scientists
+| Previously a MolSSI Software Scientist, now at
 | Department of Biomolecular Engineering, Notre Dame, IN 46556
 
 .. |GH-emarinri| image:: https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/mark-github.svg
