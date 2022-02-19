@@ -108,16 +108,6 @@ The GUI and the main program can be fired up by running::
   You should see two lines similar to those presented above; however, the paths and the versions of 
   your python might be different.
 
-Installing MOPAC
-~~~~~~~~~~~~~~~~
-Recently, MolSSI has taken the ownership of the MOPAC and became responsible for its
-development and maintenance within an open-source public repository. The MOPAC installation
-will be automatic similar to other interoperable software packages such as LAMMPS and DFTB+.
-The users can check the `MOPAC homepage <http://openmopac.net>`_ for further details.
-Currently, *MOPAC2016* can be downloaded, installed and activated on a local machine 
-following the instructions provided in the `Downloads page 
-<http://openmopac.net/Downloads/Downloads.html>`_.
-
 .. Link shortcuts and cross-referencing labels
 .. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
 .. _Anaconda: https://www.anaconda.com/distribution
