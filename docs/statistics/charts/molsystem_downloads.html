@@ -1,0 +1,324 @@
+
+<div id="chart" style="width:100%;height:80%;"></div>
+<script>
+  var data = [
+      {
+	  x: ['2021-11', '2021-12', '2022-01'],
+	  y: [73, 787, 564],
+          name: 'Conda Forge',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-03', '2021-04', '2021-05', '2021-06', '2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12', '2022-01'],
+	  y: [1419, 784, 734, 782, 769, 384, 270, 125, 363, 107, 141, 130],
+          name: 'United States',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-03', '2021-04', '2021-05', '2021-06', '2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12', '2022-01'],
+	  y: [48, 2, 1, 18, 22, 10, 20, 10, 37, 12, 6, 11],
+          name: 'Hong Kong',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-03', '2021-04', '2021-05', '2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12', '2022-01'],
+	  y: [4, 1, 15, 2, 11, 4, 10, 12, 25, 42],
+          name: 'China',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-03', '2021-04', '2021-05', '2021-06', '2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12', '2022-01'],
+	  y: [1, 2, 4, 7, 5, 4, 5, 2, 8, 3, 8, 5],
+          name: 'unknown',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-03', '2021-06', '2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12', '2022-01'],
+	  y: [1, 1, 2, 2, 1, 4, 3, 3, 4],
+          name: 'Egypt',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-07', '2021-08', '2021-11'],
+	  y: [1, 6, 8, 1],
+          name: 'Germany',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-03', '2021-05', '2021-06', '2021-07', '2021-08', '2021-09', '2022-01'],
+	  y: [2, 3, 1, 1, 2, 2, 1],
+          name: 'India',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-05', '2021-07', '2021-08', '2021-11'],
+	  y: [1, 2, 1, 1, 2],
+          name: 'Korea, Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-05', '2021-06', '2021-07', '2022-01'],
+	  y: [1, 1, 1, 1],
+          name: 'United Kingdom',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-04', '2021-10'],
+	  y: [2, 3, 3],
+          name: 'Japan',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-05', '2021-06', '2021-11', '2022-01'],
+	  y: [1, 1, 1, 1, 1],
+          name: 'Russian Federation',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-03', '2021-07', '2022-01'],
+	  y: [1, 1, 1, 1],
+          name: 'Indonesia',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11', '2021-12'],
+	  y: [3, 1],
+          name: 'Israel',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-04', '2021-11', '2021-12'],
+	  y: [1, 1, 1],
+          name: 'Spain',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-04', '2021-10'],
+	  y: [1, 2],
+          name: 'Thailand',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-08'],
+	  y: [2],
+          name: 'Singapore',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-03', '2021-09', '2021-11'],
+	  y: [1, 1, 1],
+          name: 'Poland',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-07', '2021-12'],
+	  y: [1, 1],
+          name: 'Iran, Islamic Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-09', '2021-12'],
+	  y: [1, 1],
+          name: 'Pakistan',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-09', '2022-01'],
+	  y: [1, 1],
+          name: 'Brazil',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-06'],
+	  y: [1, 1],
+          name: 'France',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-06', '2022-01'],
+	  y: [1, 1],
+          name: 'Canada',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-04', '2022-01'],
+	  y: [1, 1],
+          name: 'Taiwan',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2022-01'],
+	  y: [1, 1],
+          name: 'Turkey',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-08', '2021-10'],
+	  y: [1, 1],
+          name: 'Morocco',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-07', '2021-10'],
+	  y: [1, 1],
+          name: 'Armenia',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-04', '2021-05'],
+	  y: [1, 1],
+          name: 'Hungary',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-07'],
+	  y: [1],
+          name: 'Greece',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Sweden',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-03'],
+	  y: [1],
+          name: 'Italy',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12'],
+	  y: [1],
+          name: 'Netherlands',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2022-01'],
+	  y: [1],
+          name: 'Ecuador',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-09'],
+	  y: [1],
+          name: 'Bangladesh',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-09'],
+	  y: [1],
+          name: 'Tanzania, United Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-06'],
+	  y: [1],
+          name: 'Yemen',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-10'],
+	  y: [1],
+          name: 'Moldova, Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-07'],
+	  y: [1],
+          name: 'Argentina',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-04'],
+	  y: [1],
+          name: 'Algeria',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-05'],
+	  y: [1],
+          name: 'Cabo Verde',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02'],
+	  y: [1],
+          name: 'Switzerland',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-08'],
+	  y: [1],
+          name: 'Australia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Peru',
+	  type: 'bar'
+      },
+  ];
+  var layout = {
+      title: 'Downloads of molsystem by Country',
+      barmode: 'stack',
+      xaxis: {
+          categoryorder: 'category ascending',
+	  title: 'Month',
+          tickangle: 35,
+          showticklabels: true,
+          type: 'category'
+      },
+      yaxis: {
+	  title: '# of Downloads'
+      }
+  };
+  var config = {
+      responsive: true
+  }
+  Plotly.newPlot('chart', data, layout, config);
+</script>

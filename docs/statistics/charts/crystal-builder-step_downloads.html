@@ -1,0 +1,324 @@
+
+<div id="chart" style="width:100%;height:80%;"></div>
+<script>
+  var data = [
+      {
+	  x: [''],
+	  y: [],
+          name: 'Conda Forge',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-03', '2021-05', '2021-06', '2021-07', '2021-10', '2021-12', '2022-01'],
+	  y: [4, 2, 5, 15, 7, 2, 2, 1],
+          name: 'United States',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-10'],
+	  y: [6, 4],
+          name: 'Hong Kong',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-03', '2021-04', '2021-05', '2021-09', '2021-10', '2021-11', '2022-01'],
+	  y: [2, 1, 1, 1, 3, 1, 1],
+          name: 'China',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-02', '2021-05', '2021-06', '2021-08', '2021-09', '2021-10', '2021-12', '2022-01'],
+	  y: [3, 1, 2, 1, 1, 7, 1, 2],
+          name: 'unknown',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12', '2022-01'],
+	  y: [3, 4],
+          name: 'Egypt',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Germany',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'India',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-11'],
+	  y: [1],
+          name: 'Korea, Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-07'],
+	  y: [1],
+          name: 'United Kingdom',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Japan',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Russian Federation',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Indonesia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Israel',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Spain',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Thailand',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-08'],
+	  y: [2],
+          name: 'Singapore',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Poland',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Iran, Islamic Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Pakistan',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Brazil',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'France',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Canada',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Taiwan',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Turkey',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Morocco',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Armenia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Hungary',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-12'],
+	  y: [1],
+          name: 'Greece',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Sweden',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Italy',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Netherlands',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Ecuador',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Bangladesh',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Tanzania, United Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Yemen',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Moldova, Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Argentina',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Algeria',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Cabo Verde',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Switzerland',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Australia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Peru',
+	  type: 'bar'
+      },
+  ];
+  var layout = {
+      title: 'Downloads of crystal-builder-step by Country',
+      barmode: 'stack',
+      xaxis: {
+          categoryorder: 'category ascending',
+	  title: 'Month',
+          tickangle: 35,
+          showticklabels: true,
+          type: 'category'
+      },
+      yaxis: {
+	  title: '# of Downloads'
+      }
+  };
+  var config = {
+      responsive: true
+  }
+  Plotly.newPlot('chart', data, layout, config);
+</script>
