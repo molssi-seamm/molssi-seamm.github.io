@@ -47,7 +47,7 @@ and only one start step in a flowchart because this is where execution starts. U
 cannot delete or add a ``Start`` step.
 
 Let us create a simple flowchart and add a molecule to it using SMILES. SMILES is a specific
-representation of a chemical structurs in the string format. Then, we add a new step, in which
+representation of a chemical structures in the string format. Then, we add a new step, in which
 we optimize the geometry of the molecule, imported in the previous step, with a semi-empirical
 quantum chemistry method.
 
@@ -72,7 +72,7 @@ did not want, just right-click on the unwanted step and select ``delete`` from t
 
 In the next stage, we need to set the SMILES string variable for the added molecule. Almost every
 step has a dialog window that allows the users to set parameters and control the details of the task
-in each step of the workflow. In order to access thedialog, one can either right-click on the step box
+in each step of the workflow. In order to access the dialog, one can either right-click on the step box
 and select ``Edit...`` from the menu or just double-click on the step box to open it:
 
 .. figure:: /images/tutorial_1/SEAMMWindow_FromSMILESDialog.png
@@ -108,9 +108,10 @@ Then, open the dialog for the DFTB+ step:
 
 Note that this dialog looks like the main SEAMM window. Some steps, like the ``FromSMILES``
 step, perform one task and thus, can be handled by a single dialog. However, many
-simulation codes such as DFTB+, are capable of performing multiple tasks and often have 
-their own syntax. Open the ``Setup`` and ``Simulation`` sections on the left panel and
-add a ``ChooseParameters`` step followed by ``Optimization``:
+simulation codes such as DFTB+ are capable of performing multiple tasks and often have 
+their own syntax. Open the ``Setup`` and then the ``Simulation`` sections on the left 
+panel in order and add the ``ChooseParameters`` and the ``Optimization`` steps in the
+same order:
 
 .. figure:: /images/tutorial_1/SEAMMWindow_DFTBplusFlowchart.png
    :align: center
@@ -132,7 +133,7 @@ similar to a periodic table!
 A short description of how DFTB+ works is in order. DFTB+ is a semiempirical quantum 
 chemistry code. It uses parameterized `Slater-Koster` functions for each atom. However,
 several parameterizations are available to choose from. These datasets are listed in the
-pull-down button near the bottom fo the dialog window that is currently opened. Some of the
+pull-down button near the bottom for the dialog window that is currently opened. Some of the
 datasets have additional add-on datasets that either add more elements to the existing sets
 or are tuned for different systems and properties. More information about the parameter sets
 can be found in the `DFTB website <https://dftb.org/parameters/download>`_.
@@ -160,7 +161,7 @@ for the selected set of elements:
 For our selected set of elements mentioned above, only ``3ob`` and ``mio`` provide global support.
 Let us keep the default dataset, ``3ob``, because it is the newest and one of the most general datasets.
 
-Let us take a look at the ``Optimization`` dialog:
+Now, we are going to take a look at the ``Optimization`` dialog:
 
 .. figure:: /images/tutorial_1/SEAMMWindow_Optimization.png
    :align: center
