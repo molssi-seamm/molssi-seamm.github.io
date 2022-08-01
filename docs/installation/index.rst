@@ -13,10 +13,12 @@ The installation process in SEAMM involves two main parts:
     job directories and analyzing the results.
 
 Both parts rely on having *conda* installed on the host system. Installers 
-for `Miniconda`_ or `Anaconda`_ can be found in their hosting websites. 
-For the minimalists, `Miniconda`_, which can be considered as a reduced-size
-version of `Anaconda`_, will be sufficient for the sole purpose of working 
-with SEAMM.
+for `Miniconda`_ or `Anaconda`_ can be found in their hosting websites. The difference
+between them is that `Anaconda`_ has not only the core packages of *conda* but a large
+number of tools for data science built in. `Miniconda`_ is just the core of *conda*, and
+hence is smaller an quicker to install. `Miniconda`_ provides everything needed for
+SEAMM, so unless you intend to use *conda* for other data science tasks, just install
+`Miniconda`_.
 
 .. note::
    A `video of installing conda <https://www.youtube.com/watch?v=FGDpdAiBPrA>`_ is
@@ -26,13 +28,14 @@ SEAMM Core Installation
 -----------------------
 
 .. attention::
-   Although in principle, SEAMM would be natively installable on Windows, its key 
-   third-party dependencies could not supported by this operating system. However,
+   Although in principle, SEAMM can be installed on Windows, several key 
+   third-party dependencies are not supported under Windows. However,
    the *Windows Subsystem for Linux (WSL)* supports SEAMM and its dependencies. 
-   The corresponding instructions for setting up a WSL environment for SEAMM
-   installation is under preparation. While *Windows 11* provides full support 
-   for the SEAMM requirements, handling *Windows 10* appears to be more complicated
-   and we are currently working on addressing this case.
+   The installation is identical to that on any Linux system. *Windows 11* provides full
+   support for the SEAMM including the graphical user interface.Unfortunately, *Windows
+   10* and WSL do not support graphical programs so you cannot currently fully install
+   and use SEAMM on *Windows 10*. We are working to support *Windows 10*, but if you can
+   upgrade to *Windows 11* SEAMM will work immediately.
 
 .. note::
    A `video of installing SEAMM <https://www.youtube.com/watch?v=gqWzTvgPM1I>`_ is
@@ -43,7 +46,7 @@ SEAMM Core Installation
 The SEAMM should be installed in the **seamm** conda environment. Open a terminal 
 and run the following commands::
 
-  conda create -n seamm -c conda-forge seamm seamm-dashboard seamm-installer
+  conda create -n seamm -c conda-forge seamm seamm-installer
 
 Once the environment is in place, you can activate it as prompted::
 
@@ -55,7 +58,19 @@ the ``<name>`` argument in the ``-n <name>`` option with your preferred title.
 Now run the *seamm_installer* to install both the SEAMM environment and the available
 plug-ins::
 
-  seamm-installer install
+  seamm-installer
+
+This will bring up the graphical installer. If you can't use graphics on the machine
+that you are using -- for instance on a remote machine at a computer center -- please
+see the instructions for installing from the command line.
+
+Otherwise, you will see a window like this:
+
+.. figure:: images/initial.png
+   :align: center
+   :alt: The initial Installer window
+   
+   The initial window of the Installer
 
 Depending on your internet connection and processing power, the execution will probably 
 take a while (~10-20 min) to finish. The reason is that the aforementioned command not 
