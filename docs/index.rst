@@ -12,9 +12,11 @@ SEAMM: the Simulation Environment for Atomistic and Molecular Modeling
    issues we haven't seen. If you find something or have a suggestion, please let us
    know!
    
-   We are working on a forum for reporting problems, promoting constructive
-   discussions and sharing ideas and experiences. In the meantime, feel free to email
-   us at seamm@molssi.org or join the `Slack channel
+   There is a `forum <https://matsci.org/c/seamm/61>`_ for reporting problems and sharing
+   ideas and experiences. Thanks to the wonderful people at
+   `matsci.org <https://matsci.org>`_ for providing the infrastructure and management for
+   so many useful forums! You can also email us at seamm@molssi.org or join the `Slack
+   channel
    <https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA>`_.
 
    SEAMM is fully open-source allowing anyone to contribute to its growth by opening
@@ -98,18 +100,20 @@ Be sure to also take a look at our SEAMM flowchart, dataset and model collection
 MolSSI Community platform on Zenodo. 
 
 .. list-table:: **Stay in Touch**
-   :widths: 18 12 20 20 18
+   :widths: 18 20 18 12 20 18
    :header-rows: 1
    :align: center
 
-   * - YouTube
-     - GitHub
+   * - Forum
      - Slack
+     - YouTube
+     - GitHub
      - Zenodo Community
      - MolSSI Guidelines
-   * - |YouTube|
-     - |GitHub|
+   * - |Forum|
      - |slack|
+     - |YouTube|
+     - |GitHub|
      - |Zenodo|
      - |MolSSI|
 
@@ -144,6 +148,11 @@ Documentation Versions
     acknowledgements
 
 .. Badge(s)
+.. |Forum| image:: https://matsci.org/uploads/default/original/1X/7461bcad42374e62777648f1fafecbdabcd948f9.svg
+   :target:  https://matsci.org/c/seamm/61
+   :alt: SEAMM Forum
+   :width: 150
+
 .. |YouTube| image:: https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg
    :target: https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ
    :alt: SEAMM YouTube Channel
