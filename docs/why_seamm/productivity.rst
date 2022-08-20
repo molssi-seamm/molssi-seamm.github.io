@@ -14,18 +14,23 @@ engines and software packages in the computational molecular sciences such as
 
 * `MOPAC`_ for semiempirical quantum chemistry,
 * `DFTB+`_ for density functional-based tight binding,
-* `GAMESS`_, `NWChem`_ and `Psi4`_ for quantum chemistry,
-* `VASP`_, `Quantum Espresso`_, `FHI-aims`_ and `NWChem`_ for periodic density
-  functional theory (DFT),
-* `GROMACS`_, `NAMD`_, etc. for biomolecular molecular dynamics (MD),
-* `LAMMPS`_ for molecular dynamics (MD) for materials, and
-* `Cassandra`_ and `Towhee`_ for Monte Carlo simulations of fluids.
+* `Psi4`_ for quantum chemistry,
+* `LAMMPS`_ for molecular dynamics (MD) for materials.
 
 Other plug-ins provide extra functionalities for:
 
 * building structures, e.g. `Packmol`_,
 * converting file formats using `Open Babel`_, and
 * cheminformatics with `RDKit`_.
+
+We'd like to add plug-ins for other codes such as:
+
+* `PySCF`, `GAMESS`_, and `NWChem`_ for quantum chemistry,
+* `VASP`_, `Quantum Espresso`_, `FHI-aims`_ and `NWChem`_ for periodic density
+  functional theory (DFT),
+* `GROMACS`_, `NAMD`_, etc. for biomolecular molecular dynamics (MD),
+
+If you have suggestions, or know people who would like to help, let us know!
 
 By employing both GUIs and `helper` plug-ins, the complicated and time-consuming task of
 setting up complex workflows will become more convenient, efficient and less error-prone.
