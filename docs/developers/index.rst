@@ -24,3 +24,5 @@ usable by the entire community.
     plug-ins
     forcefields/index
     tips-and-tricks/index
+    tutorials/index
+    
