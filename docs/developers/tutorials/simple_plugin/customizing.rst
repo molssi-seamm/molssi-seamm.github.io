@@ -2,6 +2,9 @@
 Customizing the plug-in to run PySCF
 ************************************
 
+.. note::
+   You may download the directory tree for the completed plug-in :download:`here. <../../../_static/seamm/simple_plugin/pyscf_step.tgz>`
+
 Let's make a very simple interface, with a choice of a few basis sets and whether to
 optimize the structure or not. in `pyscf_parameters.py` replace the parameters section
 with this::
@@ -41,8 +44,7 @@ The only other thing that we need to change is `pyscf.py` to actually run PySCF 
 called. Since we are going to run PySCF directly in the plugin, you need to install
 PySCF and the optimizer itself in the **seamm-dev** environment::
 
-  pip install 'pyscf[geometry]'
-  pip install -U pyberny
+  pip install 'pyscf[geomopt]'
 
 installs what we need.
 

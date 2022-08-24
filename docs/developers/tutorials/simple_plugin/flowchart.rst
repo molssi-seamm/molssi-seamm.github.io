@@ -12,6 +12,9 @@ Now we are ready to test the new plug-in. All we need is a structure, so start w
    
    The flowchart for testing the **PySCF** step
 
+.. note::
+   You may download the flowchart :download:`here. <../../../_static/seamm/simple_plugin/pyscf.flow>`
+
 Open the **From SMILES** step and put in the SMILES for water, which is just "O":
 
 .. figure:: images/smiles.png
