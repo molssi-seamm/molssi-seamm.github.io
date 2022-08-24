@@ -7,7 +7,7 @@ Working with the Dashboard
     The present tutorial assumes you have read and followed the instructions
     laid out in :ref:`tutorial-1` so that there is at least one job to work with.
 
-By default, users can access the Dashboard in their web browsers at http://127.0.0.1:5000:
+By default, users can access the Dashboard in their web browsers at http://127.0.0.1:55055:
 
 .. figure:: /images/tutorial_2/initial_dashboard.png
    :align: center
