@@ -13,7 +13,7 @@ Graphical Installation
 SEAMM should be installed in the **seamm** conda environment. Open a terminal 
 and run the following commands::
 
-  conda create -n seamm -c conda-forge seamm seamm-installer
+  conda create -n seamm -c conda-forge seamm seamm-installer python=3.9
 
 Once the environment is in place, you can activate it as prompted::
 
