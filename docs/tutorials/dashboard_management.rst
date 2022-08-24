@@ -118,5 +118,5 @@ user account:
 .. Shortcut link
 .. |dashboard_link| raw:: html
 
-   <a href="http://127.0.0.1:5000" target="_blank">127.0.0.1:5000</a>
+   <a href="http://127.0.0.1:55055" target="_blank">127.0.0.1:55055</a>
 

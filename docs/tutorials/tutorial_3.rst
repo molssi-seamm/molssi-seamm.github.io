@@ -206,7 +206,7 @@ flowchart layout to a standard form:
 
 At this point, all that is left is to run the flowchart. Select ``Run`` from the ``File``
 menu, fill out the form with an appropriate title and description, and click on the ``OK``
-button. Next, navigate back to the browser and open the DashBoard at http://localhost:5000.
+button. Next, navigate back to the browser and open the DashBoard at http://localhost:55055.
 After logging in, check the list of the executed jobs within the workflow and explore 
 the results of the current job. Pay attention to the table of results printed in the 
 ``job.out`` file:
