@@ -3,44 +3,51 @@
 <script>
   var data = [
       {
-	  x: ['2021-12', '2022-01', '2022-02', '2022-03', '2022-04', '2022-05', '2022-06'],
-	  y: [92, 292, 523, 836, 482, 220, 353],
+	  x: ['2021-12', '2022-01', '2022-02', '2022-03', '2022-04', '2022-05', '2022-06', '2022-07', '2022-08', '2022-09'],
+	  y: [118, 335, 721, 844, 479, 219, 349, 900, 138, 565],
           name: 'Conda Forge',
 	  type: 'bar'
       },
 
       {
-	  x: ['2021-07', '2021-08', '2021-09', '2021-10', '2021-11', '2021-12', '2022-01', '2022-02', '2022-03', '2022-04', '2022-05'],
-	  y: [8, 10, 10, 52, 38, 35, 12, 16, 10, 1, 2],
+	  x: ['2021-10', '2021-11', '2021-12', '2022-01', '2022-02', '2022-03', '2022-04', '2022-05', '2022-07', '2022-09'],
+	  y: [52, 38, 35, 12, 16, 10, 1, 2, 1, 2],
           name: 'United States',
 	  type: 'bar'
       },
 
       {
-	  x: ['2021-07', '2021-09', '2021-11', '2021-12', '2022-01', '2022-02', '2022-03', '2022-04', '2022-05', '2022-06'],
-	  y: [2, 1, 1, 1, 1, 5, 3, 2, 1, 10],
+	  x: ['2021-11', '2021-12', '2022-01', '2022-02', '2022-03', '2022-04', '2022-05', '2022-06', '2022-07', '2022-08', '2022-09'],
+	  y: [1, 1, 1, 5, 3, 2, 1, 10, 2, 4, 12],
           name: 'China',
 	  type: 'bar'
       },
 
       {
-	  x: ['2021-07', '2021-10', '2022-02', '2022-05'],
-	  y: [2, 4, 3, 4],
+	  x: ['2021-10', '2022-02', '2022-05'],
+	  y: [4, 3, 4],
           name: 'Hong Kong',
 	  type: 'bar'
       },
 
       {
-	  x: ['2021-09', '2021-10', '2021-11', '2021-12', '2022-02'],
-	  y: [1, 2, 1, 2, 3],
+	  x: ['2021-11', '2022-03', '2022-05', '2022-09'],
+	  y: [1, 1, 1, 26],
+          name: 'Germany',
+	  type: 'bar'
+      },
+
+      {
+	  x: ['2021-10', '2021-11', '2021-12', '2022-02'],
+	  y: [2, 1, 2, 3],
           name: 'unknown',
 	  type: 'bar'
       },
 
       {
-	  x: ['2021-09', '2021-11', '2022-03', '2022-05'],
-	  y: [3, 1, 1, 1],
-          name: 'Germany',
+	  x: ['2022-05', '2022-09'],
+	  y: [1, 1],
+          name: 'United Kingdom',
 	  type: 'bar'
       },
 
@@ -48,13 +55,6 @@
 	  x: [''],
 	  y: [],
           name: 'Egypt',
-	  type: 'bar'
-      },
-
-      {
-	  x: ['2022-05'],
-	  y: [1],
-          name: 'United Kingdom',
 	  type: 'bar'
       },
 
@@ -73,9 +73,9 @@
       },
 
       {
-	  x: ['2021-07', '2021-08'],
-	  y: [1, 1],
-          name: 'India',
+	  x: [''],
+	  y: [],
+          name: 'Japan',
 	  type: 'bar'
       },
 
@@ -89,7 +89,7 @@
       {
 	  x: [''],
 	  y: [],
-          name: 'Japan',
+          name: 'India',
 	  type: 'bar'
       },
 
@@ -101,6 +101,13 @@
       },
 
       {
+	  x: ['2022-02', '2022-08'],
+	  y: [2, 1],
+          name: 'Israel',
+	  type: 'bar'
+      },
+
+      {
 	  x: [''],
 	  y: [],
           name: 'Ireland',
@@ -108,15 +115,15 @@
       },
 
       {
-	  x: ['2022-02'],
-	  y: [2],
-          name: 'Israel',
+	  x: ['2022-07'],
+	  y: [1],
+          name: 'Italy',
 	  type: 'bar'
       },
 
       {
-	  x: ['2021-07', '2021-12'],
-	  y: [1, 1],
+	  x: ['2021-12'],
+	  y: [1],
           name: 'Iran, Islamic Republic of',
 	  type: 'bar'
       },
@@ -129,16 +136,16 @@
       },
 
       {
-	  x: ['2021-08'],
-	  y: [1],
-          name: 'Singapore',
+	  x: ['2021-11', '2021-12'],
+	  y: [1, 1],
+          name: 'Spain',
 	  type: 'bar'
       },
 
       {
-	  x: ['2021-11', '2021-12'],
-	  y: [1, 1],
-          name: 'Spain',
+	  x: [''],
+	  y: [],
+          name: 'Croatia',
 	  type: 'bar'
       },
 
@@ -152,63 +159,7 @@
       {
 	  x: [''],
 	  y: [],
-          name: 'Austria',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Indonesia',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Armenia',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'South Africa',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Poland',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Italy',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Turkey',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Pakistan',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Bangladesh',
+          name: 'Philippines',
 	  type: 'bar'
       },
 
@@ -222,7 +173,49 @@
       {
 	  x: [''],
 	  y: [],
-          name: 'Philippines',
+          name: 'Austria',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Poland',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'South Africa',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Sweden',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Turkey',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Indonesia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Denmark',
 	  type: 'bar'
       },
 
@@ -243,6 +236,20 @@
       {
 	  x: [''],
 	  y: [],
+          name: 'Colombia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Armenia',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
           name: 'Yemen',
 	  type: 'bar'
       },
@@ -250,35 +257,14 @@
       {
 	  x: [''],
 	  y: [],
-          name: 'Argentina',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Morocco',
-	  type: 'bar'
-      },
-
-      {
-	  x: ['2021-07'],
-	  y: [1],
-          name: 'Greece',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Sweden',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
           name: 'Palestine, State of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Brunei Darussalam',
 	  type: 'bar'
       },
 
@@ -292,7 +278,14 @@
       {
 	  x: [''],
 	  y: [],
-          name: 'Ecuador',
+          name: 'Venezuela, Bolivarian Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Bangladesh',
 	  type: 'bar'
       },
 
@@ -300,20 +293,6 @@
 	  x: [''],
 	  y: [],
           name: 'Viet Nam',
-	  type: 'bar'
-      },
-
-      {
-	  x: ['2021-09'],
-	  y: [1],
-          name: 'Tanzania, United Republic of',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Portugal',
 	  type: 'bar'
       },
 
@@ -327,42 +306,7 @@
       {
 	  x: [''],
 	  y: [],
-          name: 'Brunei Darussalam',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Chile',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Denmark',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Algeria',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Croatia',
-	  type: 'bar'
-      },
-
-      {
-	  x: [''],
-	  y: [],
-          name: 'Moldova, Republic of',
+          name: 'Portugal',
 	  type: 'bar'
       },
 
@@ -376,7 +320,105 @@
       {
 	  x: [''],
 	  y: [],
+          name: 'Congo, The Democratic Republic of the',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Pakistan',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Switzerland',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Chile',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Kuwait',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Algeria',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Ecuador',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Argentina',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Singapore',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Moldova, Republic of',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Morocco',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Greece',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Mexico',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
           name: 'Peru',
+	  type: 'bar'
+      },
+
+      {
+	  x: [''],
+	  y: [],
+          name: 'Nigeria',
 	  type: 'bar'
       },
 
