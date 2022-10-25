@@ -174,6 +174,6 @@ Documentation Versions
    :width: 170
 
 .. |MolSSI| image:: https://raw.githubusercontent.com/MolSSI/molssi-branding-guidelines/master/logos/main_logo/molssi_main.svg
-   :target: https://molssi.github.io/molssi-guidelines/
+   :target: https://molssi-ai.github.io/molssi-ai-guidelines/index.html
    :alt: MolSSI Guidelines and Best Practices
    :width: 150
