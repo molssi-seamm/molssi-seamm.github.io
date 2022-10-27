@@ -23,6 +23,7 @@ usable by the entire community.
     software_ecosystem/index
     plug-ins
     forcefields/index
+    new-plug-in/index
     tips-and-tricks/index
     tutorials/index
-    
+    core_modules
