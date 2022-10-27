@@ -89,7 +89,7 @@ Manage your citations
    merging multiple citations for a single computational campaign.
 
 For further details about SEAMM, refer to the :ref:`installation` and the :ref:`whitepapers`.
-Developers interested in incorporating their tools and plugins in SEAMM are welcome to read
+Developers interested in incorporating their tools and plug-ins in SEAMM are welcome to read
 the :ref:`developers-docs`.
 
 Users can visit our YouTube channel for tutorials and videos, check our Github repository
