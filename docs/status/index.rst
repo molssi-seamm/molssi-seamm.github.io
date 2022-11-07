@@ -8,15 +8,39 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :header-rows: 1
 
    "Core Module",      "Test Coverage", "------ Code Quality ------",   "Documentation", "------ Version ------", "Downloads"
+   seamm_installer_,   |si2|,           |si3|,      	   		|si4|,         	 |si6|,     |si7|
    seamm_,             |seamm2|,        |seamm3|,   	   		|seamm4|,      	 |seamm6|,  |seamm7|
+   seamm_dashboard_,   |sd2|,           |sd3|,      	   		N/A,         	 |sd6|,     |sd7|
    seamm_util_,        |su2|,           |su3|,      	   		|su4|,         	 |su6|,     |su7|
    seamm_widgets_,     |sw2|,           |sw3|,      	   		|sw4|,         	 |sw6|,     |sw7|
    seamm_jobserver_,   |sj2|,           |sj3|,      	   		|sj4|,         	 |sj6|,     |sj7|
    seamm_ff_util_,     |sf2|,           |sf3|,      	   		|sf4|,         	 |sf6|,     |sf7|
    molsystem_,         |sy2|,           |sy3|,      	   		|sy4|,         	 |sy6|,     |sy7|
    reference_handler_, |rh2|,           |rh3|,      	   		|rh4|,         	 |rh6|,     |rh7|
-   seamm_installer_,   |si2|,           |si3|,      	   		|si4|,         	 |si6|,     |si7|
 
+.. seamm_installer badges
+
+.. _seamm_installer: https://molssi-seamm.github.io/seamm_installer/index.html
+
+.. |si2| image:: https://codecov.io/gh/molssi-seamm/seamm_installer/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_installer
+   :alt: Code Coverage
+
+.. |si3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/seamm_installer.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/seamm_installer/context:python
+   :alt: Code Quality
+
+.. |si4| image:: https://github.com/molssi-seamm/seamm_installer/workflows/Documentation/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_installer/index.html
+   :alt: Documentation Status
+
+.. |si6| image:: https://anaconda.org/conda-forge/seamm-installer/badges/version.svg
+   :target: https://anaconda.org/conda-forge/seamm-installer
+   :alt: CondaForge VERSION
+
+.. |si7| image:: https://anaconda.org/conda-forge/seamm-installer/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/seamm-installer
+   :alt: CondaForge - Downloads
 
 .. seamm badges
 
@@ -31,16 +55,40 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :alt: Code Quality
 
 .. |seamm4| image:: https://github.com/molssi-seamm/seamm/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/seamm/actions/workflows/Docs.yaml
+   :target: https://molssi-seamm.github.io/seamm/index.html
    :alt: Documentation Status
 
-.. |seamm6| image:: https://img.shields.io/pypi/v/seamm.svg?cacheSeconds=36000
-   :target: https://pypi.python.org/pypi/seamm
-   :alt: PyPi VERSION
+.. |seamm6| image:: https://anaconda.org/conda-forge/seamm/badges/version.svg
+   :target: https://anaconda.org/conda-forge/seamm
+   :alt: CondaForge VERSION
 
-.. |seamm7| image:: https://img.shields.io/pypi/dm/seamm?cacheSeconds=36000
-   :target: https://pypistats.org/packages/seamm
-   :alt: PyPI - Downloads
+.. |seamm7| image:: https://anaconda.org/conda-forge/seamm/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/seamm
+   :alt: CondaForge - Downloads
+
+.. seamm_dashboard badges
+
+.. _seamm_dashboard: https://molssi-seamm.github.io/seamm_dashboard/index.html
+
+.. |sd2| image:: https://codecov.io/gh/molssi-seamm/seamm_dashboard/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_dashboard
+   :alt: Code Coverage
+
+.. |sd3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/seamm_dashboard.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/seamm_dashboard/context:python
+   :alt: Code Quality
+
+.. |sd4| image:: https://github.com/molssi-seamm/seamm_dashboard/workflows/Documentation/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_dashboard/index.html
+   :alt: Documentation Status
+
+.. |sd6| image:: https://anaconda.org/conda-forge/seamm-dashboard/badges/version.svg
+   :target: https://anaconda.org/conda-forge/seamm-dashboard
+   :alt: CondaForge VERSION
+
+.. |sd7| image:: https://anaconda.org/conda-forge/seamm-dashboard/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/seamm-dashboard
+   :alt: CondaForge - Downloads
 
 .. seamm_util badges
 
@@ -55,16 +103,16 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :alt: Code Quality
 
 .. |su4| image:: https://github.com/molssi-seamm/seamm_util/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_util/actions/workflows/Docs.yaml
+   :target: https://molssi-seamm.github.io/seamm_util/index.html
    :alt: Documentation Status
 
-.. |su6| image:: https://img.shields.io/pypi/v/seamm_util.svg?cacheSeconds=36000
-   :target: https://pypi.python.org/pypi/seamm_util
-   :alt: PyPi VERSION
+.. |su6| image:: https://anaconda.org/conda-forge/seamm-util/badges/version.svg
+   :target: https://anaconda.org/conda-forge/seamm-util
+   :alt: CondaForge VERSION
 
-.. |su7| image:: https://img.shields.io/pypi/dm/seamm_util?cacheSeconds=36000
-   :target: https://pypistats.org/packages/seamm_util
-   :alt: PyPI - Downloads
+.. |su7| image:: https://anaconda.org/conda-forge/seamm-util/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/seamm-util
+   :alt: CondaForge - Downloads
 
 .. seamm_widgets badges
 
@@ -79,16 +127,16 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :alt: Code Quality
 
 .. |sw4| image:: https://github.com/molssi-seamm/seamm_widgets/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_widgets/actions/workflows/Docs.yaml
+   :target: https://molssi-seamm.github.io/seamm_widgets/index.html
    :alt: Documentation Status
 
-.. |sw6| image:: https://img.shields.io/pypi/v/seamm_widgets.svg?cacheSeconds=36000
-   :target: https://pypi.python.org/pypi/seamm_widgets
-   :alt: PyPi VERSION
+.. |sw6| image:: https://anaconda.org/conda-forge/seamm-widgets/badges/version.svg
+   :target: https://anaconda.org/conda-forge/seamm-widgets
+   :alt: CondaForge VERSION
 
-.. |sw7| image:: https://img.shields.io/pypi/dm/seamm_widgets?cacheSeconds=36000
-   :target: https://pypistats.org/packages/seamm_widgets
-   :alt: PyPI - Downloads
+.. |sw7| image:: https://anaconda.org/conda-forge/seamm-widgets/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/seamm-widgets
+   :alt: CondaForge - Downloads
 
 .. seamm_jobserver badges
 
@@ -103,7 +151,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :alt: Code Quality
 
 .. |sj4| image:: https://github.com/molssi-seamm/seamm_jobserver/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_jobserver/actions/workflows/Docs.yaml
+   :target: https://molssi-seamm.github.io/seamm_jobserver/index.html
    :alt: Documentation Status
 
 .. |sj6| image:: https://img.shields.io/pypi/v/seamm_jobserver.svg?cacheSeconds=36000
@@ -127,16 +175,16 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :alt: Code Quality
 
 .. |sf4| image:: https://github.com/molssi-seamm/seamm_ff_util/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_ff_util/actions/workflows/Docs.yaml
+   :target: https://molssi-seamm.github.io/seamm_ff_util/index.html
    :alt: Documentation Status
 
-.. |sf6| image:: https://img.shields.io/pypi/v/seamm_ff_util.svg?cacheSeconds=36000
-   :target: https://pypi.python.org/pypi/seamm_ff_util
-   :alt: PyPi VERSION
+.. |sf6| image:: https://anaconda.org/conda-forge/seamm-ff-util/badges/version.svg
+   :target: https://anaconda.org/conda-forge/seamm-ff-util
+   :alt: CondaForge VERSION
 
-.. |sf7| image:: https://img.shields.io/pypi/dm/seamm_ff_util?cacheSeconds=36000
-   :target: https://pypistats.org/packages/seamm_ff_util
-   :alt: PyPI - Downloads
+.. |sf7| image:: https://anaconda.org/conda-forge/seamm-ff-util/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/seamm-ff-util
+   :alt: CondaForge - Downloads
 
 .. molsystem badges
 
@@ -151,16 +199,16 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    :alt: Code Quality
 
 .. |sy4| image:: https://github.com/molssi-seamm/molsystem/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/molsystem/actions/workflows/Docs.yaml
+   :target: https://molssi-seamm.github.io/molsystem/index.html
    :alt: Documentation Status
 
-.. |sy6| image:: https://img.shields.io/pypi/v/molsystem.svg?cacheSeconds=36000
-   :target: https://pypi.python.org/pypi/molsystem
-   :alt: PyPi VERSION
+.. |sy6| image:: https://anaconda.org/conda-forge/molsystem/badges/version.svg
+   :target: https://anaconda.org/conda-forge/molsystem
+   :alt: CondaForge VERSION
 
-.. |sy7| image:: https://img.shields.io/pypi/dm/molsystem?cacheSeconds=36000
-   :target: https://pypistats.org/packages/molsystem
-   :alt: PyPI - Downloads
+.. |sy7| image:: https://anaconda.org/conda-forge/molsystem/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/molsystem
+   :alt: CondaForge - Downloads
 
 .. reference_handler badges
 
@@ -184,30 +232,6 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 .. |rh7| image:: https://img.shields.io/pypi/dm/reference_handler?cacheSeconds=36000
    :target: https://pypistats.org/packages/reference_handler
-   :alt: PyPI - Downloads
-
-.. seamm_installer badges
-
-.. _seamm_installer: https://molssi-seamm.github.io/seamm_installer/index.html
-
-.. |si2| image:: https://codecov.io/gh/molssi-seamm/seamm_installer/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/molssi-seamm/seamm_installer
-   :alt: Code Coverage
-
-.. |si3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/seamm_installer.svg?logo=lgtm&logoWidth=18
-   :target: https://lgtm.com/projects/g/molssi-seamm/seamm_installer/context:python
-   :alt: Code Quality
-
-.. |si4| image:: https://github.com/molssi-seamm/seamm_installer/workflows/Documentation/badge.svg
-   :target: https://github.com/molssi-seamm/seamm_installer/actions/workflows/Docs.yaml
-   :alt: Documentation Status
-
-.. |si6| image:: https://img.shields.io/pypi/v/seamm_installer.svg?cacheSeconds=36000
-   :target: https://pypi.python.org/pypi/seamm_installer
-   :alt: PyPi VERSION
-
-.. |si7| image:: https://img.shields.io/pypi/dm/seamm_installer?cacheSeconds=36000
-   :target: https://pypistats.org/packages/seamm_installer
    :alt: PyPI - Downloads
 
 Plug-ins provide the functionality in SEAMM. Here are links to their
