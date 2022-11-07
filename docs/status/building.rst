@@ -13,6 +13,7 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
    packmol_step_,         |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol6|,	|packmol7|
    pyxtal_step_,          |pyxtal2|,       |pyxtal3|, 	     	       	 |pyxtal4|,       |pyxtal6|,	|pyxtal7|
    set_cell_step_,        |set_cell2|,     |set_cell3|,     	       	 |set_cell4|,     |set_cell6|,	|set_cell7|
+   strain_step_,          |strain2|,       |strain3|,	        	 |strain4|,       |strain6|,	|strain7|
    supercell_step_,       |supercell2|,    |supercell3|,		 |supercell4|,    |supercell6|,	|supercell7|
 
 
@@ -163,6 +164,30 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
 
 .. |solvate7| image:: https://img.shields.io/pypi/dm/solvate_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/solvate_step
+   :alt: PyPI - Downloads
+
+.. Strain step badges
+
+.. _strain_step: https://molssi-seamm.github.io/strain_step/index.html
+
+.. |strain2| image:: https://codecov.io/gh/molssi-seamm/strain_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/strain_step
+   :alt: Code Coverage
+
+.. |strain3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/strain_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/strain_step/context:python
+   :alt: Code Quality
+
+.. |strain4| image:: https://github.com/molssi-seamm/strain_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/strain_step/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |strain6| image:: https://img.shields.io/pypi/v/strain_step.svg?cacheSeconds=36000
+   :target: https://pypi.python.org/pypi/strain_step
+   :alt: PyPi VERSION
+
+.. |strain7| image:: https://img.shields.io/pypi/dm/strain_step?cacheSeconds=36000
+   :target: https://pypistats.org/packages/strain_step
    :alt: PyPI - Downloads
 
 .. Supercell step badges
