@@ -20,9 +20,9 @@ that difficult but it is a bit confusing and tedious. The steps are as follows:
    #. Releasing the plug-in.
 
 .. toctree::
-    :maxdepth: 1
-    :titlesonly:
-    :hidden:
+   :maxdepth: 1
+   :titlesonly:
+   :hidden:
 
-    properties
-    
+   properties
+   creating
