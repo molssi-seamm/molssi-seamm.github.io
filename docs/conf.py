@@ -38,8 +38,12 @@ sys.path.insert(0, project_root)
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
+    'sphinx.ext.autodoc',
     'sphinx.ext.githubpages',
-    'recommonmark',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'sphinx_design',
+    'sphinx_copybutton',
     'sphinx.ext.todo',
 ]
 
@@ -60,7 +64,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SEAMM'
-copyright = u"2019-2022, the Molecular Sciences Software Institute"
+copyright = u"2019-2023, the Molecular Sciences Software Institute"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -101,7 +105,7 @@ exclude_patterns = ['_build']
 # show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'default'
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
@@ -115,21 +119,30 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# html_theme = 'alabaster'
-html_theme = 'sphinx_rtd_theme'
-# html_theme_path = ["_themes",]
+html_theme = "pydata_sphinx_theme"
 
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    # 'analytics_id': 'GTM-PQXXTJ2',
-    # Toc options
-    'collapse_navigation': False,
-    'sticky_navigation': True,
-    'navigation_depth': 4,
-    'includehidden': True,
-    'titles_only': True}
+    "github_url": "https://github.com/molssi-seamm/geometry_analysis_step",
+    "twitter_url": "https://twitter.com/MolSSI_NSF",
+
+    "logo": {
+        "image_light": "SEAMM logo.png",
+        "image_dark": "molssi_main_logo_inverted_white.png",
+    },
+
+    "footer_items": ["footer"],
+    
+    "show_toc_level": 2,
+    "header_links_before_dropdown": 4,
+    "external_links": [
+        {"name": "SEAMM Documentation", "url": "https://molssi-seamm.github.io"},
+        {"name": "MolSSI", "url": "https://molssi.org"}
+    ],
+    "secondary_sidebar_items": ["page-toc", "sourcelink"],
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
