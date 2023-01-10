@@ -1,4 +1,4 @@
-pygments
-pystemmer
-recommonmark
-sphinx-rtd-theme
+pydata-sphinx-theme
+sphinx-design
+sphinx-copybutton
+
