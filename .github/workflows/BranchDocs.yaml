@@ -1,14 +1,15 @@
-name: Docs
+name: BranchDocs
 
 on:
   push:
-    branches:
+    branches-ignore:
       - "main"
 
 jobs:
   docs:
     name: Lint ubuntu-latest Py3.9
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.9
@@ -23,10 +24,4 @@ jobs:
       shell: bash -l {0}
       run: |
         make html
-    - name: Deploy documentation
-      uses: peaceiris/actions-gh-pages@v3
-      # if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_build/html
         
