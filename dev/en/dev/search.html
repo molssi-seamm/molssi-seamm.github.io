@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search &mdash; SEAMM 2022.10.15-9-gea81080 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="#" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQXXTJ2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ 
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SEAMM
+          </a>
+              <div class="version">
+                2022.10.15-9-gea81080
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="why_seamm/index.html">Why SEAMM?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="why_seamm/user_experience.html">User Experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why_seamm/productivity.html">Productivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why_seamm/workflow_features.html">Workflow Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installing SEAMM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/graphical.html">Graphical Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/command-line.html">Command Line Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial_1.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/dashboard_management.html">Managing the Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial_2.html">Working with the Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial_3.html">Tables and Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial_4.html">Running from the Command-Line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developers/index.html">Developers Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developers/home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developers/software_ecosystem/index.html">Software Ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developers/software_ecosystem/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/software_ecosystem/dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/software_ecosystem/flowchart.html">Flowchart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/software_ecosystem/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/software_ecosystem/job_manager.html">Job Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/software_ecosystem/job_datastore.html">Job Datastore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developers/plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developers/forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developers/forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developers/new-plug-in/index.html">Creating a New Plug-in</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developers/new-plug-in/properties.html">Saving Properties in the Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developers/tips-and-tricks/index.html">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developers/tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developers/tutorials/index.html">Tutorials for Developers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developers/tutorials/development_environment.html">Installing the Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developers/tutorials/simple_plugin/index.html">A simple plug-in: PySCF</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developers/tutorials/simple_plugin/cookiecutter.html">Creating the plug-in with the seamm-cookiecutter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developers/tutorials/simple_plugin/compiling.html">“Compiling” the plug-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developers/tutorials/simple_plugin/code_overview.html">An overview of the code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developers/tutorials/simple_plugin/customizing.html">Customizing the plug-in to run PySCF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developers/tutorials/simple_plugin/flowchart.html">Create a test flowchart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developers/core_modules.html">Core Modules</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/seamm/index.html"> seamm</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/molsystem/index.html"> molsystem</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/seamm_util/index.html"> seamm-util</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/seamm_installer/index.html"> seamm-installer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whitepapers/index.html">Whitepapers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whitepapers/system.html">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whitepapers/forcefields/overview.html">Overview of Forcefields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whitepapers/forcefields/functional_form.html">Functional Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whitepapers/forcefields/parameters.html">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whitepapers/forcefields/atom_types.html">Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whitepapers/forcefields/types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plug-ins/index.html">Plug-ins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plug-ins/building.html">Building</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/crystal_builder_step/index.html">Crystal Builder</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/from_smiles_step/index.html">From SMILES</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/packmol_step/index.html">PACKMOL</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/set_cell_step/index.html">Set Cell</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/strain_step/index.html">Strain</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/supercell_step/index.html">Supercell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plug-ins/control.html">Control</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/control_parameters_step/index.html">Control Parameters</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/loop_step/index.html">Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plug-ins/data.html">Data</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/read_structure_step/index.html">Read Structure</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/table_step/index.html">Table</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/system_step/index.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plug-ins/simulations.html">Simulations</a><ul>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/dftbplus_step/index.html">DFTB+</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/lammps_step/index.html">LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/mopac_step/index.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/psi4_step/index.html">Psi4</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://molssi-seamm.github.io/quickmin_step/index.html">QuickMin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="status/index.html">Status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="status/building.html">Building plug-ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status/control.html">Control plug-ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status/custom.html">Custom plug-ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status/data.html">Data plug-ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status/simulations.html">Simulation plug-ins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics/index.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics/control-parameters-step.html">control-parameters-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/crystal-builder-step.html">crystal-builder-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/custom-step.html">custom-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/dftbplus-step.html">dftbplus-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/forcefield-step.html">forcefield-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/from-smiles-step.html">from-smiles-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/lammps-step.html">lammps-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/loop-step.html">loop-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/molsystem.html">molsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/mopac-step.html">mopac-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/packmol-step.html">packmol-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/psi4-step.html">psi4-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/pyxtal-step.html">pyxtal-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/rdkit-step.html">rdkit-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/read-structure-step.html">read-structure-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/reference-handler.html">reference-handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm.html">seamm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm-dashboard.html">seamm-dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm-datastore.html">seamm-datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm-ff-util.html">seamm-ff-util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm-installer.html">seamm-installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm-jobserver.html">seamm-jobserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm-util.html">seamm-util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/seamm-widgets.html">seamm-widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/set-cell-step.html">set-cell-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/supercell-step.html">supercell-step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics/table-step.html">table-step</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_team.html">SEAMM Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SEAMM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Search</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  
+
+<p>
+<div class="row">
+  <div class="column_left">
+    <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+      <img src="/_images/MolSSI.jpg" alt="The MolSSI" style="border:0;">
+    </a>
+  </div>
+  <div class="column">
+    &copy; Copyright 2019-2022, the Molecular Sciences Software Institute,
+    which receives funding from the National Science Foundation under awards OAC-1547580
+    and CHE-2136142.
+  </div>
+  <div class="column_right">
+    <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+      <img src="/_images/NSF_4-Color_bitmap_Logo.png" alt="The NSF" style="border:0;">
+    </a>
+  </div>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <script>
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script id="searchindexloader"></script>
+   
+
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+.. _seamm-main:
+
+**********************************************************************
+SEAMM: the Simulation Environment for Atomistic and Molecular Modeling
+**********************************************************************
+
+.. attention::
+   Currently, SEAMM is in the early stages of its deployment and beta testing by the
+   members of the computational molecular sciences community.  Although we have made
+   every efforts to minimize errors and glitches in the SEAMM software infrastructure,
+   similar to any open-source software project it its early days, there may be bugs and
+   issues we haven't seen. If you find something or have a suggestion, please let us
+   know!
+   
+   There is a `forum <https://matsci.org/c/seamm/61>`_ for reporting problems and sharing
+   ideas and experiences. Thanks to the wonderful people at
+   `matsci.org <https://matsci.org>`_ for providing the infrastructure and management for
+   so many useful forums! You can also email us at seamm@molssi.org or join the `Slack
+   channel
+   <https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA>`_.
+
+   SEAMM is fully open-source allowing anyone to contribute to its growth by opening
+   issues, forking the repository and submitting pull requests in order to make changes
+   in the code or documentation. SEAMM is also a large-scale and ambitious project with
+   many moving parts. Thus, it will take some time to become truly stable! We appreciate
+   your patience and assistance throughout the development process!
+
+SEAMM is a user-friendly software package for the atomistic simulations of organic
+molecules, biological systems, fluids, synthetic polymers, and materials such as metals
+and metal oxides, semiconductors, ceramics and alloys. If you are performing any of
+these types of simulations, SEAMM can provides an ideal environment for discovery allowing
+you to focus on the science itself instead of getting bugged down on irrelevant
+technicalities of the software.
+
+:ref:`installation`
+   SEAMM and other simulation engines such as LAMMPS, DFTB+, Psi4, and Packmol can be
+   conveniently installed on Linux or Mac systems. We are doing our best to provide
+   support for the Windows platform.
+
+:ref:`user-experience`
+   In addition to its robust command-line interface (CLI), SEAMM provides a graphical 
+   user interface (GUI) that exposes its full power and functionality to the users
+   in a user-friendly environment. As such, the GUI is focused on minimizing the need 
+   to learn verbose or complicated keywords and languages. Furthermore, the GUI puts 
+   chooses reasonable defaults for most parameters used in the available simulation tools.
+   In this way, even if you don't know much about programming, SEAMM will have you back to
+   quickly get started with your simulation while expecting reasonable results. As you 
+   learn more about the details of each model and the corresponding tools, you can further
+   customize your calculations for more accurate outcomes.
+
+:ref:`workflow-features`
+   Flowcharts are a foundational concept in SEAMM offering a high-level and intuitive 
+   delineation of the entire workflow. Flowcharts remove the need for shell or python scripting
+   while making the entire process reproducible. In other words, one can run all steps involved
+   in a complex workflow exactly the same as it was originally intended and perform the exact 
+   same calculations all over again. While flowcharts are critical for enforcing reproducibility,
+   they are flexible objects allowing users to perform necessary tweaks and changes to the workflow.
+   For example, the same set of calculations within a flowchart can be performed on a variety of 
+   molecules and materials without any further changes. In a different scenario, changing parameters
+   can be easily accommodated within an already existing flowchart such as fine-tuning the pressure 
+   or temperature variables in a simulation. Flowcharts make all these changes convenient and 
+   reproducible.
+
+Share your work
+   Because flowcharts are simple text files, the can be easily shared with coworkers and 
+   collaborators. This means that you can get flowcharts from experts in the areas that
+   are outside your area of expertise and use them as a starting point for your studies.
+   SEAMM makes workflows publishable and therefore, readily accessible and searchable 
+   on Zenono based on unique DOIs. As a cherry on top of the cake, SEAMM allows searching 
+   for flowcharts on Zenodo with convenient ways to find and import them within your workflows.
+
+Track your work
+   SEAMM provides a datastore as well as a web-based dashboard for storing, monitoring,
+   and managing the calculation results. The datastore organizes each project in its isolated
+   directory on disk and provides a well structured tree that can be monitored and managed effortlessly
+   using the dashboard.
+
+Manage your data
+   Most granting agencies require a data management plan for the dissemination of scientific
+   data. With SEAMM, the users will be able to publish their computational campaigns via
+   dashboard for a project or manuscript. We are also working on reducing the task of
+   publishing the results on Zenodo and generating a unique DOI down to pressing a few
+   buttons in the GUI.
+
+Manage your citations
+   SEAMM helps you gather the right citations for the codes and parameter sets you used
+   in your computational campaign. Each job creates a list of the appropriate citations
+   for the current task and stores it in a database. We are developing tools to allow
+   merging multiple citations for a single computational campaign.
+
+For further details about SEAMM, refer to the :ref:`installation` and the :ref:`whitepapers`.
+Developers interested in incorporating their tools and plugins in SEAMM are welcome to read
+the :ref:`developers-docs`.
+
+Users can visit our YouTube channel for tutorials and videos, check our Github repository
+for the latest software updates and join our Slack channel for sharing software issues and
+seeking support by clicking on the following badges. Do not forget to check out our MolSSI
+Guidelines and Best Practices for Data Science, Machine Learning and High-Performance Computing.
+Be sure to also take a look at our SEAMM flowchart, dataset and model collections in our 
+MolSSI Community platform on Zenodo. 
+
+.. list-table:: **Stay in Touch**
+   :widths: 18 20 18 12 20 18
+   :header-rows: 1
+   :align: center
+
+   * - Forum
+     - Slack
+     - YouTube
+     - GitHub
+     - Zenodo Community
+     - MolSSI Guidelines
+   * - |Forum|
+     - |slack|
+     - |YouTube|
+     - |GitHub|
+     - |Zenodo|
+     - |MolSSI|
+
+Documentation Versions
+======================
+
+.. Generate links to various versions of the documentation
+   via iframe
+.. raw:: html
+
+   <iframe
+   src="https://molssi-seamm.github.io/dev/versions.html"
+   title="Documentation Versions"  style="border:none;">
+   </iframe>
+
+.. Table of contents
+.. toctree::
+    :maxdepth: 5
+    :titlesonly:
+    :hidden:
+
+    why_seamm/index
+    installation/index
+    tutorials/index
+    developers/index
+    whitepapers/index
+    glossary
+    plug-ins/index
+    status/index
+    statistics/index
+    dev_team
+    acknowledgements
+
+.. Badge(s)
+.. |Forum| image:: https://matsci.org/uploads/default/original/1X/7461bcad42374e62777648f1fafecbdabcd948f9.svg
+   :target:  https://matsci.org/c/seamm/61
+   :alt: SEAMM Forum
+   :width: 150
+
+.. |YouTube| image:: https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg
+   :target: https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ
+   :alt: SEAMM YouTube Channel
+   :width: 150
+
+.. |GitHub| image:: https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg
+   :target: https://github.com/molssi-seamm
+   :alt: SEAMM GitHub Repository
+   :width: 90
+
+.. |slack| image:: https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg
+   :target: https://join.slack.com/t/seamm/shared_invite/zt-gd85l7k4-~r9xCoRSCfFHrAHnG7duFA
+   :alt: SEAMM Slack Channel
+   :width: 170
+
+.. |Zenodo| image:: https://about.zenodo.org/static/img/logos/zenodo-gradient-square.svg
+   :target: https://zenodo.org/communities/molssi/
+   :alt: MolSSI Zenodo Community
+   :width: 170
+
+.. |MolSSI| image:: https://raw.githubusercontent.com/MolSSI/molssi-branding-guidelines/master/logos/main_logo/molssi_main.svg
+   :target: https://molssi.github.io/molssi-guidelines/
+   :alt: MolSSI Guidelines and Best Practices
+   :width: 150
