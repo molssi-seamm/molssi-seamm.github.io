@@ -1,0 +1,811 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Getting Started &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/tutorials/tutorial_1';</script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Managing the Dashboard" href="dashboard_management.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../background/index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../background/index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html">Working with the Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html">Tables and Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html">Running from the Command-Line</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="getting-started">
+<span id="tutorial-1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
+<p>This tutorial demonstrates how to create a very simple flowchart and execute its workflow.
+In <a class="reference internal" href="dashboard_management.html#dashboard-management"><span class="std std-ref">Managing the Dashboard</span></a> and <a class="reference internal" href="tutorial_2.html#tutorial-2"><span class="std std-ref">Working with the Dashboard</span></a>, we will provide guidance
+on how to set up the Dashboard and use it to monitor and inspect the job results. These
+tutorials are carefully designed to guide the first-time users of the SEAMM through the
+preliminary steps of preparation while delineating its fundamental functionalities in details.
+As such, subsequent tutorials will assume that the users have mastered the skills required to
+build flowcharts, execute jobs and check the outputs.</p>
+<p>First, make sure the Dashboard and Job Server are running. Refer to the <a class="reference internal" href="../installation/index.html#installation"><span class="std std-ref">Installing SEAMM</span></a>
+section if you do not know or remember how to get them up and running. Open a terminal
+and activate the <cite>seamm</cite> conda environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+</pre></div>
+</div>
+<p>and start the SEAMM GUI by calling its name in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span>
+</pre></div>
+</div>
+<p>This will bring up a window like the one shown below:</p>
+<figure class="align-center" id="id1">
+<img alt="An empty SEAMM window" src="../../_images/EmptySEAMMWindow.png" />
+<figcaption>
+<p><span class="caption-text">SEAMM initial window</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The window consists of two panes separated by a sash – the grey line. If you hover over
+the sash the cursor will change to a horizontal double-pointed arrow enabling the adjustment
+of the pane sizes. The left pane contains the list of available plug-in categories. Clicking
+on each category expands its content and represents it as a list of available plug-ins.
+Clicking on the same point on the screen will hide the expanded list:</p>
+<figure class="align-center" id="id2">
+<img alt="Building category of plug-ins expanded" src="../../_images/SEAMMWindow_BuildingExpanded.png" />
+<figcaption>
+<p><span class="caption-text">The SEAMM window with the Building category of plug-ins expanded</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The right-hand pane contains the initial step of a flowchart, <code class="docutils literal notranslate"><span class="pre">Start</span></code>. There must be one
+and only one start step in a flowchart because this is where execution starts. Users
+cannot delete or add a <code class="docutils literal notranslate"><span class="pre">Start</span></code> step.</p>
+<p>Let us create a simple flowchart and add a molecule to it using SMILES. SMILES is a specific
+representation of a chemical structures in the string format. Then, we add a new step, in which
+we optimize the geometry of the molecule, imported in the previous step, with a semi-empirical
+quantum chemistry method.</p>
+<p>By clicking on the <code class="docutils literal notranslate"><span class="pre">FromSmilesStep</span></code> from the <code class="docutils literal notranslate"><span class="pre">Building</span></code> section, a rectangular box
+for the new step labeled as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> appears in the right pane. This box is also connected
+to the <code class="docutils literal notranslate"><span class="pre">Start</span></code> step:</p>
+<figure class="align-center" id="id3">
+<img alt="FLowchart with FromSMILESStep" src="../../_images/SEAMMWindow_FromSMILES.png" />
+<figcaption>
+<p><span class="caption-text">The flowchart after adding the FromSMILESStep</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you have accidentally clicked twice on the <code class="docutils literal notranslate"><span class="pre">FromSmilesStep</span></code> or any other menu item that you
+did not want, just right-click on the unwanted step and select <code class="docutils literal notranslate"><span class="pre">delete</span></code> from the poped-up menu:</p>
+<figure class="align-center" id="id4">
+<img alt="Deleting a step" src="../../_images/SEAMMWindow_DeleteStep.png" />
+<figcaption>
+<p><span class="caption-text">Deleting a step from a flowchart</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the next stage, we need to set the SMILES string variable for the added molecule. Almost every
+step has a dialog window that allows the users to set parameters and control the details of the task
+in each step of the workflow. In order to access the dialog, one can either right-click on the step box
+and select <code class="docutils literal notranslate"><span class="pre">Edit...</span></code> from the menu or just double-click on the step box to open it:</p>
+<figure class="align-center" id="id5">
+<img alt="The dialog for the FromSMILES step" src="../../_images/SEAMMWindow_FromSMILESDialog.png" />
+<figcaption>
+<p><span class="caption-text">The dialog for the FromSMILES step</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Click in the field labeled <code class="docutils literal notranslate"><span class="pre">SMILES</span></code> and type <cite>CCS</cite>, which is the SMILES representation
+for ethanethiol. Leave everything else as is and click on the <code class="docutils literal notranslate"><span class="pre">OK</span></code> button:</p>
+<figure class="align-center" id="id6">
+<img alt="The dialog for the FromSMILES step" src="../../_images/SEAMMWindow_FromSMILESDialog2.png" />
+<figcaption>
+<p><span class="caption-text">The completed dialog for the FromSMILES step</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now, open the <code class="docutils literal notranslate"><span class="pre">Simulations</span></code> section in the left panel and add a <code class="docutils literal notranslate"><span class="pre">DFTB+</span></code> step:</p>
+<figure class="align-center" id="id7">
+<img alt="The flowchart with the DFTB+ step added" src="../../_images/SEAMMWindow_DFTBplus.png" />
+<figcaption>
+<p><span class="caption-text">The flowchart with the DFTB+ step added</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Then, open the dialog for the DFTB+ step:</p>
+<figure class="align-center" id="id8">
+<img alt="The dialog for the DFTB+ step" src="../../_images/SEAMMWindow_DFTBplusDialog.png" />
+<figcaption>
+<p><span class="caption-text">The dialog for the DFTB+ step</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that this dialog looks like the main SEAMM window. Some steps, like the <code class="docutils literal notranslate"><span class="pre">FromSMILES</span></code>
+step, perform one task and thus, can be handled by a single dialog. However, many
+simulation codes such as DFTB+ are capable of performing multiple tasks and often have
+their own syntax. Open the <code class="docutils literal notranslate"><span class="pre">Setup</span></code> and then the <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> sections on the left
+panel in order and add the <code class="docutils literal notranslate"><span class="pre">ChooseParameters</span></code> and the <code class="docutils literal notranslate"><span class="pre">Optimization</span></code> steps in the
+same order:</p>
+<figure class="align-center" id="id9">
+<img alt="The flowchart for DFTB+" src="../../_images/SEAMMWindow_DFTBplusFlowchart.png" />
+<figcaption>
+<p><span class="caption-text">The flowchart for DFTB+</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Open the dialog for the <code class="docutils literal notranslate"><span class="pre">ChooseParameters</span></code> step by double-clicking on it:</p>
+<figure class="align-center" id="id10">
+<img alt="The DFTB+ ChooseParameters dialog" src="../../_images/SEAMMWindow_DFTBplusChooseParameters.png" />
+<figcaption>
+<p><span class="caption-text">The dialog for the DFTB+ ChooseParameters step</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">ChooseParameters</span></code> dialog is quite a large and complex but at least, it is organized
+similar to a periodic table!</p>
+<p>A short description of how DFTB+ works is in order. DFTB+ is a semiempirical quantum
+chemistry code. It uses parameterized <cite>Slater-Koster</cite> functions for each atom. However,
+several parameterizations are available to choose from. These datasets are listed in the
+pull-down button near the bottom for the dialog window that is currently opened. Some of the
+datasets have additional add-on datasets that either add more elements to the existing sets
+or are tuned for different systems and properties. More information about the parameter sets
+can be found in the <a class="reference external" href="https://dftb.org/parameters/download">DFTB website</a>.</p>
+<p>Unfortunately, the aforementioned datasets do not cover all elements. As such, one needs
+to find an appropriate dataset that can handle all elements of interest. The
+<code class="docutils literal notranslate"><span class="pre">ChooseParameters</span></code> dialog offers two ways to find the appropriate parameters set.
+In the first approach, when a dataset and perhaps an auxiliary dataset is selected from the
+two pull-down buttons at the bottom of the dialog, the supported elements within the periodic
+table are automatically highlighted in red. The default dataset, <code class="docutils literal notranslate"><span class="pre">ob3</span></code>, can handle a list of
+elements including H, C, N, O, F, Na, Mg, P, S, Cl, Zn, Br, I, and Ca, which would be suitable
+for our ethanethiol example as well as a wide range of organic molecules that are made of the
+aforementioned elements.</p>
+<p>In the second approach, one can select the desired set of elements, say, H, C, N, O, S, and Zn.
+Then, check the drop-down button at the bottom of the dialog to see what choices are available
+for the selected set of elements:</p>
+<figure class="align-center" id="id11">
+<img alt="The ChooseParameters dialog with elements selected" src="../../_images/SEAMMWindow_ChooseParametersSelected.png" />
+<figcaption>
+<p><span class="caption-text">The ChooseParameters dialog with elements selected</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For our selected set of elements mentioned above, only <code class="docutils literal notranslate"><span class="pre">3ob</span></code> and <code class="docutils literal notranslate"><span class="pre">mio</span></code> provide global support.
+Let us keep the default dataset, <code class="docutils literal notranslate"><span class="pre">3ob</span></code>, because it is the newest and one of the most general datasets.</p>
+<p>Now, we are going to take a look at the <code class="docutils literal notranslate"><span class="pre">Optimization</span></code> dialog:</p>
+<figure class="align-center" id="id12">
+<img alt="The DFTB+ Optimization dialog" src="../../_images/SEAMMWindow_Optimization.png" />
+<figcaption>
+<p><span class="caption-text">The DFTB+ Optimization dialog</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are certainly a lot of choices available. On the left side of the dialog, there are
+options for controlling the Hamiltonian and the physical approximations being made. The
+right-hand side of the dialog consists of parameters for controlling the geometry optimzation
+procedure. The pre-defined default values are often reasonable. Thus, let us leave them
+untouched by clicking <code class="docutils literal notranslate"><span class="pre">Cancel</span></code> and leaving all control parameters unchanged.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you do not intend to make any changes in a dialog, it is a good idea to close it with
+the <code class="docutils literal notranslate"><span class="pre">Cancel</span></code> button. It is a common habit to click <code class="docutils literal notranslate"><span class="pre">OK</span></code>, but pressing the latter button
+saves any changes that are made unintentionally and remained overlooked. Such accidental
+mistakes might result in calculations with unusual behavior and surprising outcomes far
+from your expectations. Therefore, we recommend using the <code class="docutils literal notranslate"><span class="pre">Cancel</span></code> button unless you
+actually want to make and save changes in the dialog.</p>
+</div>
+<p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to close the DFTB+ dialog to save your changes. In order to execute the
+calculation, click on the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu and select <code class="docutils literal notranslate"><span class="pre">Run</span></code> or use the accelerator
+(⌘R on a Mac, ^R on Windows or Linux) to get the following dialog:</p>
+<figure class="align-center" id="id13">
+<img alt="The Run Dialog" src="../../_images/SEAMMWindow_RunDialog.png" />
+<figcaption>
+<p><span class="caption-text">The Run dialog in SEAMM</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If the <code class="docutils literal notranslate"><span class="pre">Project</span></code> field is empty or not set, type <cite>default</cite> in it and then, add a useful title in
+the <code class="docutils literal notranslate"><span class="pre">Title</span></code> field. Briefly describe your goal and the details of your simulation workflow within
+the large text area at the bottom of the dialog. Finally, click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to execute the calculation.</p>
+<p>In the next two tutorials, we will demonstrate how to setup and work with Dashboard in order to
+monitor and manage the executed jobs.</p>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Tutorials</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="dashboard_management.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Managing the Dashboard</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../_sources/getting_started/tutorials/tutorial_1.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div>
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

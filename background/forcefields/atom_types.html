@@ -1,0 +1,1027 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Atom Types &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'background/forcefields/atom_types';</script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Types of Forcefields" href="types_of_forcefields.html" />
+    <link rel="prev" title="Parameters" href="parameters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../getting_started/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../getting_started/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../why_seamm/index.html">Why SEAMM?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../why_seamm/user_experience.html">User Experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../why_seamm/productivity.html">Productivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../why_seamm/workflow_features.html">Workflow Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../system.html">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview.html">Overview of Forcefields</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="functional_form.html">Functional Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html">Parameters</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Atom Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="atom-types">
+<h1>Atom Types<a class="headerlink" href="#atom-types" title="Permalink to this heading">#</a></h1>
+<p>One area not mentioned in our example <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ja00334a030">OPLS paper</a> is how to get the right parameters in
+each of the terms in the functional form. We glossed over this in the description of
+the section on the <a class="reference internal" href="functional_form.html"><span class="doc">Functional Form</span></a>, noting that we had various sets of parameters
+for the Lennard-Jones potential and for the torsions but not going deeper. If you read
+the paper you will notice that they use specific molecules and functional groups in the
+description of the parameters. In Table III the Lennard-Jones are described by the type
+of carbon atom and an example:</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/OPLS-6.png"><img alt="Intermolecular Lennard-Jones Parameters" src="../../_images/OPLS-6.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 1: The Intermolecular Lennard-Jones Parameters</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The torsion parameters just use an example:</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/OPLS-8.png"><img alt="Torsion parameters" src="../../_images/OPLS-8.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 2: The parameters for the torsions.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Presumably when this paper was written and computers were much smaller, the simulations
+were smaller and simpler so it was not an issue to set them up by hand, matching the
+atoms in the molecules to the descriptions in the paper. However as the systems became
+larger and more complicated, many of the forcefields for organic and biomolecules
+migrated to a more formal concept of “atom types”. The concept is simple: every atom has
+a local environment, which to a first approximation is defined by the nearby atoms and
+the bonding. If the atoms have identical environments, then they are the same “type”. If
+the environments are different but quite similar then the forcefield developer may lump
+them together in a single type, though what is similar is a matter of opinion, so
+different forcefields and even different versions of a forcefield may group atoms
+together in different way.</p>
+<p>Working through an example using OPLS might help make this more clear.</p>
+<section id="isopentane">
+<h2>isopentane<a class="headerlink" href="#isopentane" title="Permalink to this heading">#</a></h2>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/isopentane.png"><img alt="isopentane" src="../../_images/isopentane.png" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 3: isopentane with the atoms numbered.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The structure for isopentane has four different atom environments. Atoms 1 &amp; 2 are
+topologically identical. The other methyl group, atom 5, is quite similar but not quite
+the same. The remaining two atoms, 3 and 4, are a &gt;CH- and -CH2- group repectively.</p>
+<p>Now the task is to decide which Lennard-Jones and torsional parameters are appropriate
+for this molecule. Starting with the Lennard-Jones parameters first, let’s examine the
+three methyl groups. OPLS has parameters for 12 different types of carbon groups:</p>
+<ol class="arabic simple">
+<li><p>CH4 as in methane</p></li>
+<li><p>CH3 (C1) as in ethane</p></li>
+<li><p>CH3 (C2) as in n-butane</p></li>
+<li><p>CH3 (C3) as in isobutane</p></li>
+<li><p>CH3 (C4) as in neopentane</p></li>
+<li><p>CH2 (sp3) as in n-butane</p></li>
+<li><p>CH2 (sp2) as in 1-butene</p></li>
+<li><p>CH (sp3) as in isobutane</p></li>
+<li><p>CH (sp2) as in 2-butene</p></li>
+<li><p>CH (arom) as in benzene</p></li>
+<li><p>C (sp3) as in neopentane</p></li>
+<li><p>C (sp2) as in isobutene</p></li>
+</ol>
+<p>The two identical methyl groups, 1 &amp; 2, are similar to the methyl groups in isobutane in
+that they are bonded to a tertiary carbon, so 4: CH3 (C3) is a reasonable choice for them. The
+other methyl group, 5, is probably closer to those in n-butane since it is bonded to
+a -CH2- group. Thus 3: CH3 - (C2) is probably the best choice.</p>
+<p>Moving on to atom 4, the -CH2- group, there is only one possibility, 6: CH2 (sp3) as in
+n-butane. It seems to be a reasonable choice.</p>
+<p>Finally, atom 3, the &gt;CH- group, again has only one possibility, 8: CH (sp3) as in
+isobutane, and again this seems like a reasonable choice.</p>
+<p>We can sum this up with the following picture, showing isopentane labeled by the atom
+types 1-12:</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/isopentane_atom_types.png"><img alt="isopentane atom types" src="../../_images/isopentane_atom_types.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 4: isopentane showing the atom types</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now for the torsion types. There is only one “rotatable” bond in neopentane, that
+between atoms 3 and 4 in Figure 1, meaning that the angle between the planes defined by
+atom 2-3-4 and 3-4-5 changes the structure in a meaninful way. Not coincidentally of the
+three specific sets of torsional parameters in Table II above, one is noted as for
+neopentane so is clearly the one to use. Looking at the atom types in Figure 2, we could
+write this torsion as having the following atom types:</p>
+<blockquote>
+<div><p>CH3(C3) - CH(sp3) - CH2(sp3) - CH3(C2)</p>
+</div></blockquote>
+</section>
+<section id="expressing-torsions-in-terms-of-atom-types">
+<h2>Expressing Torsions in Terms of Atom Types<a class="headerlink" href="#expressing-torsions-in-terms-of-atom-types" title="Permalink to this heading">#</a></h2>
+<p>Let’s express the structures for the different torsions in Table II as atom types an see
+what it looks like.</p>
+<section id="butene">
+<h3>1-butene<a class="headerlink" href="#butene" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/1-butene_atom_types.png"><img alt="1-butene atom types" src="../../_images/1-butene_atom_types.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 5: 1-butene showing the atom types</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The atom types labeling the atoms are reasonable given the information in Table 3. The
+torsion is labeled as follows:</p>
+<blockquote>
+<div><p>CH2(sp2) - CH(sp2) - CH2(sp3) - CH3(C2)</p>
+</div></blockquote>
+</section>
+<section id="n-butane">
+<h3>n-butane<a class="headerlink" href="#n-butane" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/n-butane_atom_types.png"><img alt="n-butane atom types" src="../../_images/n-butane_atom_types.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 6: n-butane showing the atom types</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The torsion is labeled as follows:</p>
+<blockquote>
+<div><p>CH3(C2) - CH2(sp3) - CH2(sp3) - CH3(C2)</p>
+</div></blockquote>
+</section>
+<section id="n-pentane">
+<h3>n-pentane<a class="headerlink" href="#n-pentane" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/n-pentane_atom_types.png"><img alt="n-pentane atom types" src="../../_images/n-pentane_atom_types.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 7: n-pentane showing the atom types</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The torsion is labeled as follows:</p>
+<blockquote>
+<div><p>CH3(C2) - CH2(sp3) - CH2(sp3) - CH2(sp3)</p>
+</div></blockquote>
+<p>There is a second torsion in this molecule, starting one atom into the chain:</p>
+<blockquote>
+<div><p>CH2(sp3) - CH2(sp3) - CH2(sp3) - CH3(c2)</p>
+</div></blockquote>
+<p>Note however that this is the same as the first torsion except with the atoms ordered in
+the reverse direction. Which direction you look down the rotating bond makes no
+difference, so these two are identical.</p>
+<p>For longer normal alkanes this torsion would appear at both ends. In the middle of the
+chains, all four atoms involved in the torsion would be -CH2- groups:</p>
+<blockquote>
+<div><p>CH2(sp3) - CH2(sp3) - CH2(sp3) - CH2(sp3)</p>
+</div></blockquote>
+<p>In Table II the last torsion is labeled as for all other n-alkanes, so in OPLS both of
+these torsions, which are just slightly different, are treated identically.</p>
+</section>
+</section>
+<section id="putting-it-all-together">
+<h2>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this heading">#</a></h2>
+<p>We have seen how atoms in similar environments can be grouped into atom types. This
+allows us to recast the OPLS forcefield in terms of atom types, and associate the
+parameters in terms of atom types.</p>
+<p>The following table expands their Table III giving a picture defining the atom type. Red
+indicates the atom whose type is described, with the picture giving a substructure,
+meaning that terminal atoms may be part of a longer chain or have other substituents
+unle a full valence is indicated explicitly.</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 18%" />
+<col style="width: 26%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Atom Type</p></th>
+<th class="head"><p>Picture</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(sigma\)</span> (Å)</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(epsilon\)</span> (kcal/mol)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CH4</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH4.png"><img alt="CH4" src="../../_images/atom_type_CH4.png" style="width: 40px;" /></a></p></td>
+<td><p>3.730</p></td>
+<td><p>0.294</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH3(C1)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH3_C1.png"><img alt="CH3(C1)" src="../../_images/atom_type_CH3_C1.png" style="width: 80px;" /></a></p></td>
+<td><p>3.775</p></td>
+<td><p>0.207</p></td>
+</tr>
+<tr class="row-even"><td><p>CH3(C2)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH3_C2.png"><img alt="CH3(C2)" src="../../_images/atom_type_CH3_C2.png" style="width: 80px;" /></a></p></td>
+<td><p>3.905</p></td>
+<td><p>0.175</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH3(C3)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH3_C3.png"><img alt="CH3(C3)" src="../../_images/atom_type_CH3_C3.png" style="width: 80px;" /></a></p></td>
+<td><p>3.910</p></td>
+<td><p>0.160</p></td>
+</tr>
+<tr class="row-even"><td><p>CH3(C4)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH3_C4.png"><img alt="CH3(C4)" src="../../_images/atom_type_CH3_C4.png" style="width: 80px;" /></a></p></td>
+<td><p>3.960</p></td>
+<td><p>0.145</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH2(sp3)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH2_sp3.png"><img alt="CH2(sp3)" src="../../_images/atom_type_CH2_sp3.png" style="width: 80px;" /></a></p></td>
+<td><p>3.905</p></td>
+<td><p>0.118</p></td>
+</tr>
+<tr class="row-even"><td><p>CH2(sp2)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH2_sp2.png"><img alt="CH2(sp2)" src="../../_images/atom_type_CH2_sp2.png" style="width: 80px;" /></a></p></td>
+<td><p>3.850</p></td>
+<td><p>0.140</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH(sp3)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH_sp3.png"><img alt="CH(sp3)" src="../../_images/atom_type_CH_sp3.png" style="width: 80px;" /></a></p></td>
+<td><p>3.850</p></td>
+<td><p>0.080</p></td>
+</tr>
+<tr class="row-even"><td><p>CH(sp2)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH_sp2.png"><img alt="CH(sp2)" src="../../_images/atom_type_CH_sp2.png" style="width: 80px;" /></a></p></td>
+<td><p>3.800</p></td>
+<td><p>0.115</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH(arom)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_CH_arom.png"><img alt="CH(arom)" src="../../_images/atom_type_CH_arom.png" style="width: 80px;" /></a></p></td>
+<td><p>3.750</p></td>
+<td><p>0.110</p></td>
+</tr>
+<tr class="row-even"><td><p>C(sp3)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_C_sp3.png"><img alt="C(sp3)" src="../../_images/atom_type_C_sp3.png" style="width: 80px;" /></a></p></td>
+<td><p>3.800</p></td>
+<td><p>0.050</p></td>
+</tr>
+<tr class="row-odd"><td><p>C(sp2)</p></td>
+<td><p><a class="reference internal" href="../../_images/atom_type_C_sp2.png"><img alt="C(sp2)" src="../../_images/atom_type_C_sp2.png" style="width: 80px;" /></a></p></td>
+<td><p>3.750</p></td>
+<td><p>0.105</p></td>
+</tr>
+</tbody>
+</table>
+<p>And the torsions from Table II, using the atom types as labels:</p>
+<table class="table">
+<colgroup>
+<col style="width: 59%" />
+<col style="width: 11%" />
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Torsion</p></th>
+<th class="head"><p>V0</p></th>
+<th class="head"><p>V1</p></th>
+<th class="head"><p>V2</p></th>
+<th class="head"><p>V3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><ul class="simple">
+<li><p>CH3(C2) - CH2(sp3) - CH2(sp3) - CH3(C2)</p></li>
+</ul>
+</td>
+<td><p>1.363</p></td>
+<td><p>0.343</p></td>
+<td><p>-0.436</p></td>
+<td><p>-1.121</p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>CH3(C3) - CH(sp3) - CH2(sp3) - CH3(C2)</p></li>
+</ul>
+</td>
+<td><p>2.713</p></td>
+<td><p>1.526</p></td>
+<td><p>0.533</p></td>
+<td><p>-3.453</p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>CH3(C2) - CH2(sp3) - CH2(sp3) - CH3(C2)</p></li>
+</ul>
+</td>
+<td><p>0.0</p></td>
+<td><p>1.522</p></td>
+<td><p>-0.315</p></td>
+<td><p>3.207</p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>CH2(sp3) - CH2(sp3) - CH2(sp3) - CH3(c2)</p></li>
+<li><p>or</p></li>
+<li><p>CH2(sp3) - CH2(sp3) - CH2(sp3) - CH2(sp3)</p></li>
+</ul>
+</td>
+<td><p>0.0</p></td>
+<td><p>1.411</p></td>
+<td><p>-0.271</p></td>
+<td><p>3.145</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="automatic-assignment">
+<h2>Automatic Assignment<a class="headerlink" href="#automatic-assignment" title="Permalink to this heading">#</a></h2>
+<p>As computers have gotten more and more powerful the complexity of simulations has grown
+by leaps and bounds. It is no longer viable to assign the atom types to the structure by
+hand, nor would that lead to reproducible simulations since there is often a choice of
+similar parameters, so different people will choose different options.</p>
+<p>There are two approaches in general use for automatically assigning the atom types and
+hence the parameters for a simulation. Perhaps the initial approach was to use template
+or residue libraries, relying on the regular structure and naming of proteins. A later
+paper of the extension of <a class="reference external" href="https://pubs.acs.org/doi/pdf/10.1021/ja00214a001">OPLS for proteins</a> illustrates the approach:</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../../_images/OPLS-9.png"><img alt="Atom type assignment for proteins" src="../../_images/OPLS-9.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 8: Atom type assignment for proteins in OPLS.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This table gives the residue, standard atom name, and atom type for the standard amino
+acids. OPLS has migrated to using numbers for the atom types, compared to the more
+descriptive text used in the original paper. CH3(C2) has become atom type 10 and
+CH2(sp3), 9. The nonbond parameters remain unchanged from the original paper, just the
+name has changed.</p>
+<p>The template approach is certainly simple, and has been and still is widely used for
+biomolecules – peptides, proteins, DNA and lipids – where there are strong naming
+conventions for the atomms.</p>
+<p>However, for more general organic chemistry templates are not useful since there is no
+standard naming conventions for the atom. This gave rise to the second approach, some
+form of chemical perception. With some thought and effort, it is possible to translate
+the pictures above into e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/SMILES_arbitrary_target_specification">SMARTS</a> for substructure
+searches for the atom type assignment. This approach was certainly implemented for the
+CVFF and CFF series of forcefields at Biosym in the early 1990’s, and with the
+widespread adoption of SMARTS and similar tools for substructure matching is becoming
+more feasible and widespread.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>Atom types provide an approach for collecting atoms in simlar local environments into
+groups, and specifying which parameters to use for the terms in a forcefield. Typical
+valence forcefields have terms relying on one, two, three and four atoms – the nonbonded
+terms, bonds, angles, and torsions and out-of-plane terms, respectively. For a given
+molecule or system the atom types are assigned, either by hand, using template
+libraries, or by chemical perception. Once the atom types are assigned to the structure
+finding the correct parameters for each term is reduced to a lookup in tables indexed by
+the atom types.</p>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="parameters.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Parameters</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="types_of_forcefields.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Types of Forcefields</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isopentane">
+   isopentane
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expressing-torsions-in-terms-of-atom-types">
+   Expressing Torsions in Terms of Atom Types
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#butene">
+     1-butene
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#n-butane">
+     n-butane
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#n-pentane">
+     n-pentane
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#putting-it-all-together">
+   Putting it all together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatic-assignment">
+   Automatic Assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../_sources/background/forcefields/atom_types.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div>
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
