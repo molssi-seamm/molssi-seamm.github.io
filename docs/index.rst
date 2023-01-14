@@ -58,6 +58,17 @@ help you focus on the science rather than technicalities of using the software.
 
 	 To the User Guide
 
+   .. grid-item-card:: Developer Guide
+      :margin: 0 3 0 0
+
+      Guide for developers interested in working with SEAMM
+
+      .. button-link:: ./developer_guide/index.html
+	 :color: primary
+	 :expand:
+
+	 To the Developer Guide
+
 
 You can visit our YouTube channel for tutorials and videos, check our Github repository
 for the latest software updates and join our Slack channel for sharing software issues and
@@ -84,47 +95,30 @@ MolSSI Community platform on Zenodo.
      - |Zenodo|
      - |MolSSI|
 
-Documentation Versions
-======================
-
-.. Generate links to various versions of the documentation
-   via iframe
-.. raw:: html
-
-   <iframe
-   src="https://molssi-seamm.github.io/dev/versions.html"
-   title="Documentation Versions"  style="border:none;">
-   </iframe>
-
-..   
-   .. Table of contents
-      .. toctree::
-	 :maxdepth: 5
-		    :titlesonly:
-		       :hidden:
-
-			  why_seamm/index
-			  installation/index
-			  tutorials/index
-			  developers/index
-			  whitepapers/index
-			  glossary
-			  plug-ins/index
-			  status/index
-			  statistics/index
-			  dev_team
-			  acknowledgements
-.. Table of contents
 .. toctree::
-    :maxdepth: 5
-    :titlesonly:
-    :hidden:
+   :maxdepth: 5
+   :titlesonly:
+   :hidden:
 
-    getting_started/index
-    how_tos/index
-    background/index
-    user_guide/index
+   getting_started/index
+   how_tos/index
+   background/index
+   user_guide/index
+   developer_guide/index
 
+More Information
+================
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   glossary
+   plug-ins/index
+   status/index
+   statistics/index
+   dev_team
+   acknowledgements
+    
 .. Badge(s)
 .. |Forum| image:: https://matsci.org/uploads/default/original/1X/7461bcad42374e62777648f1fafecbdabcd948f9.svg
    :target:  https://matsci.org/c/seamm/61

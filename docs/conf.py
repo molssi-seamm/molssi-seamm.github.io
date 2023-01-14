@@ -127,14 +127,12 @@ html_theme = "pydata_sphinx_theme"
 html_theme_options = {
     "github_url": "https://github.com/molssi-seamm/geometry_analysis_step",
     "twitter_url": "https://twitter.com/MolSSI_NSF",
-
     "logo": {
         "image_light": "SEAMM logo.png",
-        "image_dark": "molssi_main_logo_inverted_white.png",
+        "image_dark": "SEAMM Inverted 288x181.png",
+        "molssi_light": "molssi_main_logo.png",
+        "molssi_dark": "molssi_main_logo_inverted_white.png",
     },
-
-    "footer_items": ["footer"],
-    
     "show_toc_level": 2,
     "header_links_before_dropdown": 4,
     "external_links": [
@@ -142,6 +140,7 @@ html_theme_options = {
         {"name": "MolSSI", "url": "https://molssi.org"}
     ],
     "secondary_sidebar_items": ["page-toc", "sourcelink"],
+    "footer_items": [ "molssi_footer" ],
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
