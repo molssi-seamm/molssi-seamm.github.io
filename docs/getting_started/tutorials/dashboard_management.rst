@@ -31,7 +31,7 @@ After logging in with the admin user, make sure that the Dashboard is up and run
 open the main page of the Dashboard in your browser (open |dashboard_link| link in
 a separate tab on your browser):
 
-.. figure:: ../images/dashboard/login.png
+.. figure:: dashboard_images/login.png
    :align: center
    :width: 80%
    :alt: The Public User pull-down button in the Dashboard
@@ -42,7 +42,7 @@ Click on ``Log in`` and put the username **admin** and write down **admin**
 in the password field. This should take you to a slightly different Dashboard page
 as shown below:
 
-.. figure:: ../images/dashboard/admin_login.png
+.. figure:: dashboard_images/admin_login.png
    :align: center
    :width: 80%
    :alt: The **admin** User pull-down button in the Dashboard
@@ -51,7 +51,7 @@ as shown below:
 
 Click on the ``Manage Users`` menu item to get to the page for managing users:
 
-.. figure:: ../images/dashboard/manage_users.png
+.. figure:: dashboard_images/manage_users.png
    :align: center
    :width: 80%
    :alt: The Manage Users page
@@ -61,7 +61,7 @@ Click on the ``Manage Users`` menu item to get to the page for managing users:
 User #1 is always **admin** and user #2 should be you. Click on the ``Manage User``
 button for the **admin** user:
 
-.. figure:: ../images/dashboard/change_password.png
+.. figure:: dashboard_images/change_password.png
    :align: center
    :width: 80%
    :alt: The change password section of manage user
@@ -71,7 +71,7 @@ button for the **admin** user:
 Click on the lock symbol at the top-right corner of the section to allow changes. Then, enter
 the new password and confirm it one more time:
 
-.. figure:: ../images/dashboard/change_password_2.png
+.. figure:: dashboard_images/change_password_2.png
    :align: center
    :width: 80%
    :alt: Changing the password
@@ -82,7 +82,7 @@ The Dashboard does not allow the admin to leave the user's contact information b
 Thus, scroll down to the bottom of the page, click on the lock button to be able to make
 changes and enter a name and an email address for the **admin** account:
 
-.. figure:: ../images/dashboard/contact_information.png
+.. figure:: dashboard_images/contact_information.png
    :align: center
    :width: 80%
    :alt: The contact information for a user
@@ -98,7 +98,7 @@ Adding and Removing Users
 In order to add a new user, start by clicking on the ``Create New User`` button
 at the top-right corner of the **Manage Dashboard Users** page:
 
-.. figure:: ../images/dashboard/add_user_button.png
+.. figure:: dashboard_images/add_user_button.png
    :align: center
    :width: 80%
    :alt: Button for adding users
@@ -108,7 +108,7 @@ at the top-right corner of the **Manage Dashboard Users** page:
 In order to delete a user account, start from the ``Remove User`` tab to manage the
 user account:
 
-.. figure:: ../images/dashboard/remove_user_button.png
+.. figure:: dashboard_images/remove_user_button.png
    :align: center
    :width: 80%
    :alt: Button for removing a user

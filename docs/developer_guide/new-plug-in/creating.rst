@@ -97,8 +97,8 @@ Like this::
    create mode 100644 tests/test_quick_conformer_search_step.py
    create mode 100644 versioneer.py
 
-
 Like this::
+
   (seamm-dev) psaxe@PaulsPersonal % cd quick_conformer_search_step/
 
   (seamm-dev) psaxe@PaulsPersonal % git remote add origin git@github.com:molssi-seamm/quick_conformer_search_step.git

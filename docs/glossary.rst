@@ -67,7 +67,7 @@ Glossary
       functional form, to a specific set of parameters or to the combination of the
       two depending on the context.
 
-      See :doc:`whitepapers/forcefields/overview` for a more complete discussion.
+      See :doc:`background/forcefields/overview` for a more complete discussion.
 
    combining rules
       A rule for how to combine the Lennard-Jones-type parameters for single atoms
