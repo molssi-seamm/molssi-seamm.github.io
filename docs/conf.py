@@ -125,7 +125,7 @@ html_theme = "pydata_sphinx_theme"
 # theme further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "github_url": "https://github.com/molssi-seamm/geometry_analysis_step",
+    "github_url": "https://github.com/molssi-seamm/molssi-seamm.github.io",
     "twitter_url": "https://twitter.com/MolSSI_NSF",
     "logo": {
         "image_light": "SEAMM logo.png",
