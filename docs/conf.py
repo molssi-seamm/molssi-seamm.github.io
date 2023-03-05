@@ -141,6 +141,7 @@ html_theme_options = {
     ],
     "secondary_sidebar_items": ["page-toc", "sourcelink"],
     "footer_items": [ "molssi_footer" ],
+    "icon_links":[],
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
