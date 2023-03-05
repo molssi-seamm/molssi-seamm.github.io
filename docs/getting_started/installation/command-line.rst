@@ -21,7 +21,7 @@ the ``<name>`` argument in the ``-n <name>`` option with your preferred title.
 
 To start, let's find what is already installed and which plug-ins are available::
 
-  % seamm-installer --nw show
+  % seamm-installer show
 
   Finding all the packages that make up SEAMM. This may take several minutes.
   ..................................................................................................................................................
@@ -124,30 +124,41 @@ All of the core modules of SEAMM other than the Dashboard and JobServer were ins
 when you created the environment, and are up-to-date. None of the plug-ins have been
 installed yet.
 
+.. warning::
+  Try running::
+
+     seamm-installer refresh-cache
+
+  if you have recently added or updated a package or you are getting an error for 
+  a missing package.
+
 .. note::
    You can always get help on the command line by using the ``--help`` (or ``-h``)
    option::
 
-     % seamm-installer --nw --help
+     % seamm-installer --help
 
-     usage: seamm-installer [-h] [--log-level {NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--development] [-n] [--root ROOT]
-			    {refresh-cache,datastore,install,show,uninstall,update,apps,services} ...
-
+     usage: seamm-installer [-h] [--version] 
+     [--log-level {NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--development] 
+     [--root ROOT] {refresh-cache,datastore,install,show,uninstall,update,apps,services} ...
+     
      positional arguments:
        {refresh-cache,datastore,install,show,uninstall,update,apps,services}
-
-     optional arguments:
+     
+     options:
        -h, --help            show this help message and exit
+       --version             show program's version number and exit
        --log-level {NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}
-			     The level of informational output, defaults to 'WARNING'
+                             The level of informational output, defaults to 'WARNING'
        --development         Work with the development environment, not the production one.
-       -n, --nw              No GUI, just commandline.
        --root ROOT
-
+     
+     If no positional argument is given, the GUI will appear.
+     
    If you want help on e.g. installation, put the ``--help`` after the ``install``
    keyword::
 
-       seamm-installer --nw install --help
+       seamm-installer install --help
     
 Installing SEAMM and Plug-ins
 -----------------------------
@@ -155,12 +166,12 @@ Installing SEAMM and Plug-ins
 Now run the SEAMM Installer to install both the SEAMM environment and the available
 plug-ins::
 
-  seamm-installer --nw install --all
+  seamm-installer install --all
 
 This will install all of SEAMM plus all the plug-ins created by the MolSSI. If you wish
 to install all 3rd party plug-ins as well, add the ``--third-party`` flag::
 
-  seamm-installer --nw install --all --third-party
+  seamm-installer install --all --third-party
 
 If you need more control, you can also list the names of the plug-ins to install on the
 command line. For example::
@@ -170,7 +181,12 @@ command line. For example::
 Depending on your internet connection, computer, and the plug-ins selected, the
 installation can take up to 10 or 20 minutes.  This is because many of the plug-ins also
 install additional software such as LAMMPS, Psi4, Packmol, and DFTB+, and some of these
-packages are quite large and take time to install.
+packages are quite large and take time to install. 
+
+.. note ::
+  You can also install only the packages that are necessary for the GUI::
+
+    seamm-installer install --gui-only
 
 After the Installer finishes, you can check on the created environments using the
 following command::
@@ -191,7 +207,7 @@ which generates output like this::
 The extra software needed by individual plug-ins is installed in separate conda
 environments to avoid conflicts between packages.
 
-You can start the SEAMM GIUI from the command line by typing::
+You can start the SEAMM GUI from the command line by typing::
 
   seamm
 
@@ -203,11 +219,11 @@ Installing Shortcuts
 Even though you are installing from the command line, you can create shortcuts to
 make it easier to start SEAMM if you are using a windowing system::
 
-  seamm-installer --nw apps create
+  seamm-installer apps create
 
 will create the shortcuts and::
 
-  % seamm-installer --nw apps show
+  % seamm-installer apps show
 
   ╒═════════════════╤════════════════════════════════════╕
   │ App             │ Path                               │
@@ -215,7 +231,7 @@ will create the shortcuts and::
   │ SEAMM           │ ~/Applications/SEAMM.app           │
   ├─────────────────┼────────────────────────────────────┤
   │ SEAMM-Installer │ ~/Applications/SEAMM-Installer.app │
-
+  ╘═════════════════╧════════════════════════════════════╛
 
 will show you where the created shortcuts are. Depending on your windowing system,
 you can drag the shortcuts to the desktop, launcher, or dock so that you can easily
@@ -228,14 +244,14 @@ If you plan to run jobs on the machine, you should install the services for the
 Dashboard and JobServer, so that they remain running even when you are not logged in. To
 do so use the following command::
 
-  % seamm-installer --nw services create
+  % seamm-installer services create
 
   Created and started the service dashboard
   Created and started the service jobserver
 
 To check on the status of the services::
 
-  % seamm-installer --nw services status
+  % seamm-installer services status
   
   ╒═══════════╤══════════╤═════════╤════════╕
   │ Service   │ Status   │ Root    │ Port   │
