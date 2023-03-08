@@ -583,7 +583,12 @@ document.write(`
 <span id="id1"></span><h1>Command Line Installation<a class="headerlink" href="#command-line-installation" title="Permalink to this heading">#</a></h1>
 <p>SEAMM should be installed in the <strong>seamm</strong> conda environment. Open a terminal
 and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">seamm</span><span class="o">-</span><span class="n">dashboard</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
+</pre></div>
+</div>
+<p>If you do not intend to run the SEAMM Dashboard in this installation, you can leave it
+off the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
 </pre></div>
 </div>
 <p>Once the environment is in place, you can activate it as prompted:</p>
