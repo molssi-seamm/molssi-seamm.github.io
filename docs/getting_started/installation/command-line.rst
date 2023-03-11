@@ -181,7 +181,7 @@ to install all 3rd party plug-ins as well, add the ``--third-party`` flag::
 If you need more control, you can also list the names of the plug-ins to install on the
 command line. For example::
 
-  seamm-installer --nw install from-smiles-step mopac-step
+  seamm-installer install from-smiles-step mopac-step
 
 Depending on your internet connection, computer, and the plug-ins selected, the
 installation can take up to 10 or 20 minutes.  This is because many of the plug-ins also
