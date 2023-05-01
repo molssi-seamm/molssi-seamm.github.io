@@ -10,3 +10,4 @@ This section gives axamples of how to do realistic simulations with SEAMM.
    :maxdepth: 2
    :titlesonly:
 
+   manual_queues/index
