@@ -1,0 +1,224 @@
+#!/usr/bin/env run_flowchart
+!MolSSI flowchart 2.0
+#metadata
+{
+    "title": "",
+    "description": "",
+    "keywords": [],
+    "creators": [],
+    "sha256": "eaf2e7401590c164f159c0a496927937e8d89c9e5e046531fb654f86de4ba241",
+    "sha256_strict": "4895f8983c1ae1a71476ac159a9f596b9c436dafd2d10641af4d3cea8239ea99"
+}
+#flowchart
+{
+    "item": "object",
+    "module": "seamm.flowchart",
+    "class": "Flowchart",
+    "extension": null,
+    "nodes": [
+        {
+            "item": "object",
+            "module": "seamm.start_node",
+            "class": "StartNode",
+            "version": "2023.4.24",
+            "extension": null,
+            "attributes": {
+                "_tables": [],
+                "_title": "Start",
+                "_uuid": 1,
+                "extension": null,
+                "citation_level": 2,
+                "_method": null,
+                "parameters": null,
+                "x": 150.0,
+                "y": 35.0,
+                "w": 200,
+                "h": 50
+            }
+        },
+        {
+            "item": "object",
+            "module": "control_parameters_step.control_parameters",
+            "class": "ControlParameters",
+            "version": "2023.1.23",
+            "extension": "Parameters",
+            "attributes": {
+                "_tables": [],
+                "_title": "Parameters",
+                "_uuid": 92928924889759144689981293673842213726,
+                "extension": "Parameters",
+                "citation_level": 2,
+                "_method": null,
+                "parameters": {
+                    "__class__": "ControlParametersParameters",
+                    "__module__": "control_parameters_step.control_parameters_parameters",
+                    "variables": {
+                        "value": {
+                            "SMILES": {
+                                "optional": "No",
+                                "type": "str",
+                                "nargs": "a single value",
+                                "overwrite": "No",
+                                "default": "",
+                                "choices": "[]",
+                                "help": "The SMILES for the molecules"
+                            }
+                        },
+                        "units": null
+                    }
+                },
+                "x": 150.0,
+                "y": 105.0,
+                "w": 200,
+                "h": 50
+            }
+        },
+        {
+            "item": "object",
+            "module": "from_smiles_step.from_smiles",
+            "class": "FromSMILES",
+            "version": "2021.10.13",
+            "extension": "FromSMILESStep",
+            "attributes": {
+                "_tables": [],
+                "_title": "from SMILES",
+                "_uuid": 190529310315268025146900410049819264964,
+                "extension": "FromSMILESStep",
+                "citation_level": 2,
+                "_method": null,
+                "parameters": {
+                    "__class__": "FromSMILESParameters",
+                    "__module__": "from_smiles_step.from_smiles_parameters",
+                    "smiles string": {
+                        "value": "$SMILES",
+                        "units": null
+                    },
+                    "structure handling": {
+                        "value": "Overwrite the current configuration",
+                        "units": null
+                    },
+                    "subsequent structure handling": {
+                        "value": "Create a new system and configuration",
+                        "units": null
+                    },
+                    "system name": {
+                        "value": "use Canonical SMILES string",
+                        "units": null
+                    },
+                    "configuration name": {
+                        "value": "initial",
+                        "units": null
+                    }
+                },
+                "x": 150.0,
+                "y": 175.0,
+                "w": 200,
+                "h": 50
+            }
+        },
+        {
+            "item": "object",
+            "module": "quickmin_step.quickmin",
+            "class": "QuickMin",
+            "version": "2023.1.14",
+            "extension": "QuickMin",
+            "attributes": {
+                "_tables": [],
+                "_title": "QuickMin",
+                "_uuid": 191517534893060045014704288126831450347,
+                "extension": "QuickMin",
+                "citation_level": 2,
+                "_method": null,
+                "parameters": {
+                    "__class__": "QuickMinParameters",
+                    "__module__": "quickmin_step.quickmin_parameters",
+                    "forcefield": {
+                        "value": "best available",
+                        "units": null
+                    },
+                    "n_steps": {
+                        "value": "1000",
+                        "units": null
+                    },
+                    "structure handling": {
+                        "value": "Create a new configuration",
+                        "units": null
+                    },
+                    "configuration name": {
+                        "value": "optimized with <Forcefield>",
+                        "units": null
+                    },
+                    "results": {
+                        "value": {
+                            "total energy": {
+                                "property": "total energy#QuickMin#{model}"
+                            }
+                        },
+                        "units": null
+                    }
+                },
+                "x": 150.0,
+                "y": 245.0,
+                "w": 200,
+                "h": 50
+            }
+        }
+    ],
+    "edges": [
+        {
+            "item": "edge",
+            "node1": 1,
+            "node2": 92928924889759144689981293673842213726,
+            "edge_type": "execution",
+            "edge_subtype": "next",
+            "attributes": {
+                "anchor1": "s",
+                "anchor2": "n",
+                "coords": [
+                    150,
+                    60,
+                    150,
+                    80
+                ],
+                "arrow_id": 69
+            }
+        },
+        {
+            "item": "edge",
+            "node1": 92928924889759144689981293673842213726,
+            "node2": 190529310315268025146900410049819264964,
+            "edge_type": "execution",
+            "edge_subtype": "next",
+            "attributes": {
+                "anchor1": "s",
+                "anchor2": "n",
+                "coords": [
+                    150,
+                    130,
+                    150,
+                    150
+                ],
+                "arrow_id": 103
+            }
+        },
+        {
+            "item": "edge",
+            "node1": 190529310315268025146900410049819264964,
+            "node2": 191517534893060045014704288126831450347,
+            "edge_type": "execution",
+            "edge_subtype": "next",
+            "attributes": {
+                "anchor1": "s",
+                "anchor2": "n",
+                "coords": [
+                    150,
+                    200,
+                    150,
+                    220
+                ],
+                "arrow_id": 154
+            }
+        }
+    ]
+}
+#end
