@@ -220,6 +220,15 @@ Fill out the name and a decription of the new project. I used ``testing`` for th
    
    Adding a project
 
+You will also need your credentials for the Dashboard stored in the file
+``~/.seammrc``. It is simple, just name and password. Mine looks like this::
+
+  [Dashboard: localhost]
+  user = psaxe
+  password = default
+
+You'll need to change the name and password.
+
 Finally! Now you are ready to run the test job. Download the batch file for a
 dashboard job :download:`dashboard.job <./dashboard.job>`. You will need to edit it as
 you did the previous one. Note this line::
