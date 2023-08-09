@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>How-To Guide &#8212; SEAMM 1.0 documentation</title>
+    <title>How-To Move the Jobs Directory &#8212; SEAMM 1.0 documentation</title>
   
   
   
@@ -56,12 +56,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'how_tos/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'how_tos/move_job_dir';</script>
 
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How-To Use a Queueing System Manually" href="manual_queues/index.html" />
-    <link rel="prev" title="Running from the Command-Line" href="../getting_started/tutorials/tutorial_4.html" />
+    <link rel="next" title="Background Information" href="../background/index.html" />
+    <link rel="prev" title="How-To Use a Queueing System Manually" href="manual_queues/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,7 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 
 
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                      <a class="nav-link nav-internal" href="index.html">
                         How-To Guide
                       </a>
                     </li>
@@ -360,7 +360,7 @@ document.write(`
                 
 
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                      <a class="nav-link nav-internal" href="index.html">
                         How-To Guide
                       </a>
                     </li>
@@ -506,9 +506,9 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="manual_queues/index.html">How-To Use a Queueing System Manually</a></li>
-<li class="toctree-l1"><a class="reference internal" href="move_job_dir.html">How-To Move the Jobs Directory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How-To Move the Jobs Directory</a></li>
 </ul>
 </div>
 </nav></div>
@@ -546,7 +546,10 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">How-To Guide</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">How-To Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">How-To Move the Jobs Directory</li>
   </ul>
 </nav>
 </div>
@@ -563,15 +566,106 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="how-to-guide">
-<span id="how-tos"></span><h1>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h1>
-<p>This section gives examples of how to do realistic simulations with SEAMM.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="manual_queues/index.html">How-To Use a Queueing System Manually</a></li>
-<li class="toctree-l1"><a class="reference internal" href="move_job_dir.html">How-To Move the Jobs Directory</a></li>
-</ul>
+  <section id="how-to-move-the-jobs-directory">
+<span id="move-jobs-directory"></span><h1>How-To Move the Jobs Directory<a class="headerlink" href="#how-to-move-the-jobs-directory" title="Permalink to this heading">#</a></h1>
+<p>By default the datastore holds jobs in a directory tree rooted at <code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>. This
+is often perfectly fine, but if you find that you need to move the files to another
+directory, follow this guide. There are a couple reasons that you might want to move the
+jobs</p>
+<ol class="arabic simple">
+<li><p>The Jobs/ directory can become quite large. All the files for the jobs that you run
+end up under this top-level directory, so over time it grows and depending on what
+you run it can be quite large.</p></li>
+<li><p>Often computer centers either limit the size of your home directory, or access to it
+from the nodes is slow due to the way that it is mounted. In this case, there is
+usually a large, fast disk volume that you should use, so you need to move the Jobs/
+directory there.</p></li>
+</ol>
+<p>The obvious solution of moving <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code> somewhere else and making a link to it in
+your home directory does not work because of security issues. You can, however, move the
+<code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code> directory and tell SEAMM where it is, and if you do that you can also
+move <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code> if you want. First let’s see how to move the jobs directory.</p>
+<section id="moving-the-jobs-directory">
+<h2>Moving the Jobs Directory<a class="headerlink" href="#moving-the-jobs-directory" title="Permalink to this heading">#</a></h2>
+<p>Moving the Jobs directory to another location is straightforward. Just follow these
+steps</p>
+<ol class="arabic">
+<li><p>Activate the <code class="docutils literal notranslate"><span class="pre">seamm</span></code> Conda environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+</pre></div>
 </div>
+</li>
+<li><p>Make sure that you have no jobs running, and stop the DashBoard and JobServer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">services</span> <span class="n">stop</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make any parent directories that you need and copy or move the ~/SEAMM/Jobs directory
+to the new location:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">Jobs</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span>
+</pre></div>
+</div>
+</li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">~/SEAMM/seamm.ini</span></code> and change the following lines in the <code class="docutils literal notranslate"><span class="pre">[SEAMM]</span></code> section:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The location of the datastore</span>
+<span class="n">datastore</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span><span class="n">Jobs</span>
+</pre></div>
+</div>
+</li>
+<li><p>Remove the database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span><span class="n">Jobs</span><span class="o">/</span><span class="n">seamm</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</li>
+<li><p>Test that the Dashboard runs properly from the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">dashboard</span>
+</pre></div>
+</div>
+<p>You should see quite lot of text scroll by. The end should look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Rule</span> <span class="s1">&#39;/admin/manage_user/&lt;user_id&gt;/delete&#39;</span> <span class="p">(</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">admin</span><span class="o">.</span><span class="n">delete_user</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="o">&lt;</span><span class="n">Rule</span> <span class="s1">&#39;/admin/manage_group/&lt;group_id&gt;/delete&#39;</span> <span class="p">(</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">admin</span><span class="o">.</span><span class="n">delete_group</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="o">&lt;</span><span class="n">Rule</span> <span class="s1">&#39;/static/bootstrap/&lt;filename&gt;&#39;</span> <span class="p">(</span><span class="n">GET</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">bootstrap</span><span class="o">.</span><span class="n">static</span><span class="o">&gt;</span><span class="p">])</span>
+<span class="n">waitress</span><span class="p">:</span><span class="n">INFO</span><span class="p">:</span><span class="n">Serving</span> <span class="n">on</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">55055</span>
+</pre></div>
+</div>
+<p>Once you see the <code class="docutils literal notranslate"><span class="pre">waitress</span></code> line, try accessing the Dashboard through your
+browser. If you are on the same machine, it is at <a class="reference external" href="http://localhost:55055">http://localhost:55055</a>.</p>
+</li>
+<li><p>If everything looks OK, kill the Dashboard <code class="docutils literal notranslate"><span class="pre">(&lt;ctrl-C&gt;)</span></code> and then restart the
+services:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">services</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>Check that you can access the Dashboard in your browser.</p>
+</li>
+</ol>
+<p>That is it!</p>
+</section>
+<section id="moving-the-entire-seamm-directory">
+<h2>Moving the entire ~/SEAMM directory<a class="headerlink" href="#moving-the-entire-seamm-directory" title="Permalink to this heading">#</a></h2>
+<p>Above we said that it was not wise to move the ~/SEAMM directory. However, if you need
+to, there is a trick that works: use a soft-link <em>AND</em> redirect the Dashboard just as in
+the last section.</p>
+<ol class="arabic">
+<li><p>Move <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code> to the new location, and then make a link to it. (Stop the services
+first!!!):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">~/</span><span class="n">SEAMM</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span><span class="n">SEAMM</span> <span class="o">~/</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now follow the steps 4 on above. Wherever it says <code class="docutils literal notranslate"><span class="pre">&lt;newpath&gt;</span></code> use
+<code class="docutils literal notranslate"><span class="pre">&lt;newpath&gt;/SEAMM</span></code>.</p></li>
+</ol>
+<p>Why do you also have to tell SEAMM where the datastore is, even if it still appears to
+be in <code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>? Because the Web server in the Dashboard will not access files
+outside the <code class="docutils literal notranslate"><span class="pre">Jobs/projects</span></code> directory because of security issues. If you don’t tell it
+where to look for the datastore it will look in <code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>, which it will find,
+but it will think the directory is <code class="docutils literal notranslate"><span class="pre">&lt;newpath&gt;/SEAMM/Jobs</span></code>. It will think it is outside
+the allowed path and prevent you from deleting jobs, submitting jobs, or do anything
+else that changes files. Not what you want! So you have to tell it the true path to the
+<code class="docutils literal notranslate"><span class="pre">Jobs/</span></code> directory. Then it will be happy!</p>
+</section>
 </section>
 
 
@@ -586,20 +680,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../getting_started/tutorials/tutorial_4.html"
+       href="manual_queues/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Running from the Command-Line</p>
+        <p class="prev-next-title">How-To Use a Queueing System Manually</p>
       </div>
     </a>
     <a class="right-next"
-       href="manual_queues/index.html"
+       href="../background/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">How-To Use a Queueing System Manually</p>
+        <p class="prev-next-title">Background Information</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -616,8 +710,19 @@ document.write(`
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-jobs-directory">Moving the Jobs Directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-entire-seamm-directory">Moving the entire ~/SEAMM directory</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../_sources/how_tos/index.rst.txt">
+    <a href="../_sources/how_tos/move_job_dir.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
