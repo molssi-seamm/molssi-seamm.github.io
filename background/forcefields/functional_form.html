@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -29,10 +28,10 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,12 +49,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'background/forcefields/functional_form';</script>
 
@@ -583,14 +582,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="functional-form">
-<h1>Functional Form<a class="headerlink" href="#functional-form" title="Permalink to this heading">#</a></h1>
+<h1>Functional Form<a class="headerlink" href="#functional-form" title="Link to this heading">#</a></h1>
 <p>What is the form of the mathematical equations that describe the OPLS forcefield? Let’s
 wade through the <cite>paper &lt;https://pubs.acs.org/doi/10.1021/ja00334a030&gt;</cite> and see!  The
 first relevant part of the description of the forcefield is this:</p>
 <figure class="align-center" id="id1">
 <img alt="van der Waals interactions in OPLS" src="../../_images/OPLS-1.png" />
 <figcaption>
-<p><span class="caption-text">Figure 1: The van der Waals interactions in OPLS</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 1: The van der Waals interactions in OPLS</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This section is defining the nonbonded interactions between atoms of different molecules,
@@ -619,7 +618,7 @@ which, inexplicably, are not mentioned in the Wikipedia article referenced.</p>
 <figure class="align-center" id="id2">
 <img alt="United atom description in OPLS" src="../../_images/OPLS-2.png" />
 <figcaption>
-<p><span class="caption-text">Figure 2: More detail about the van der Waals interactions</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 2: More detail about the van der Waals interactions</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we learn three things:</p>
@@ -636,12 +635,12 @@ approximation, but they argue a reasonable one.</p></li>
 </ol>
 <p>Putting all of this together, we can rewrite their Equation 1 as</p>
 <div class="math notranslate nohighlight" id="equation-epsab">
-<span class="eqno">(1)<a class="headerlink" href="#equation-epsab" title="Permalink to this equation">#</a></span>\[\epsilon_{ab} = \sum_{i}^{on\,a} \sum_{j}^{on\,b} \frac{A_{ij}}{r_{ij}^{12}} - \frac{B_{ij}}{r_{ij}^{6}}\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-epsab" title="Link to this equation">#</a></span>\[\epsilon_{ab} = \sum_{i}^{on\,a} \sum_{j}^{on\,b} \frac{A_{ij}}{r_{ij}^{12}} - \frac{B_{ij}}{r_{ij}^{6}}\]</div>
 <p>On to the torsion terms:</p>
 <figure class="align-center" id="id3">
 <img alt="Torsion (dihedral) description in OPLS" src="../../_images/OPLS-3.png" />
 <figcaption>
-<p><span class="caption-text">Figure 3: The torsions in OPLS</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 3: The torsions in OPLS</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This snippet refers to the “internal rotations” of the molecule, though elsewhere they
@@ -655,7 +654,7 @@ extended form of the equation:</p>
 <figure class="align-center" id="id4">
 <img alt="Torsion description in OPLS for n-pentane and n-hexane" src="../../_images/OPLS-4.png" />
 <figcaption>
-<p><span class="caption-text">Figure 4: The torsions in OPLS for n-pentane and n-hexane</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 4: The torsions in OPLS for n-pentane and n-hexane</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Their Equation 3 is written in a perhaps confusing way. It is a combination of their Equation 2,
@@ -672,7 +671,7 @@ the summation in their Equation 3 will have no terms, and hence for those molecu
 their Equation 3 is equivalent to Equation <a class="reference internal" href="#equation-etorsion">(2)</a>. Thus the equation for the torsional
 energy is</p>
 <div class="math notranslate nohighlight" id="equation-etorsion">
-<span class="eqno">(2)<a class="headerlink" href="#equation-etorsion" title="Permalink to this equation">#</a></span>\[V(\phi) = V_0 + \frac{1}{2}V_1(1+\cos\phi) + \frac{1}{2}V_2(1-\cos2\phi) + \frac{1}{2}V_3(1+\cos3\phi)\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-etorsion" title="Link to this equation">#</a></span>\[V(\phi) = V_0 + \frac{1}{2}V_1(1+\cos\phi) + \frac{1}{2}V_2(1-\cos2\phi) + \frac{1}{2}V_3(1+\cos3\phi)\]</div>
 <p>This completes the description of the functional form of the OPLS forcefield as
 described in this paper. The functional form is as follows:</p>
 <ol class="arabic simple">
@@ -687,7 +686,7 @@ equation.</p></li>
 <p>Putting all of this together we can write the total energy of the system as a function
 of the coordinates of the atoms <span class="math notranslate nohighlight">\(\vec{r_i}\)</span> as</p>
 <div class="math notranslate nohighlight" id="equation-e">
-<span class="eqno">(3)<a class="headerlink" href="#equation-e" title="Permalink to this equation">#</a></span>\[\begin{split}E &amp;= F(\vec{r_i})\\
+<span class="eqno">(3)<a class="headerlink" href="#equation-e" title="Link to this equation">#</a></span>\[\begin{split}E &amp;= F(\vec{r_i})\\
 &amp;= \sum_{i} \sum_{j}^{j&gt;i\,and\,&gt;1,4} \frac{A_{ij}}{r_{ij}^{12}} -
 \frac{B_{ij}}{r_{ij}^{6}} + \sum_{t}^{torsions} V_{t,0} +
 \frac{1}{2}V_{t,1}(1+\cos\phi_t) + \frac{1}{2}V_{t,2}(1-\cos2\phi_t) +

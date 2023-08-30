@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -29,10 +28,10 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,12 +49,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/tips-and-tricks/update-with-cookiecutter';</script>
 
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -618,7 +617,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="updating-with-cookiecutter">
-<h1>Updating with Cookiecutter<a class="headerlink" href="#updating-with-cookiecutter" title="Permalink to this heading">#</a></h1>
+<h1>Updating with Cookiecutter<a class="headerlink" href="#updating-with-cookiecutter" title="Link to this heading">#</a></h1>
 <p>If you are managing several – or more! – plug-ins or other projects
 that have been created using a <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a>, and you need to change
 them all in a similar way, Cookiecutter may be the way to do it
@@ -639,7 +638,7 @@ created with the <a class="reference external" href="https://github.com/molssi-s
 be?</p>
 <p>It’s pretty easy! Here’s how:</p>
 <section id="create-the-template">
-<h2>Create the Template<a class="headerlink" href="#create-the-template" title="Permalink to this heading">#</a></h2>
+<h2>Create the Template<a class="headerlink" href="#create-the-template" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Create a directory and populate it as needed. The main directory
 can have any name, but for this example we will use
@@ -724,7 +723,7 @@ directory.</p>
 </ol>
 </section>
 <section id="test-carefully">
-<h2>Test Carefully!!!<a class="headerlink" href="#test-carefully" title="Permalink to this heading">#</a></h2>
+<h2>Test Carefully!!!<a class="headerlink" href="#test-carefully" title="Link to this heading">#</a></h2>
 <p>Once you have everything set, test. And then test again! I made a
 <code class="docutils literal notranslate"><span class="pre">tmp/</span></code> directory and made a copy of the target directory in it. I
 then ran the Cookiecutter:</p>
@@ -739,14 +738,14 @@ they weren’t, so I fixed the problems, made anothe clean copy of the
 target, and ran again. Until it worked. Then:</p>
 </section>
 <section id="update-your-targets">
-<h2>Update your targets<a class="headerlink" href="#update-your-targets" title="Permalink to this heading">#</a></h2>
+<h2>Update your targets<a class="headerlink" href="#update-your-targets" title="Link to this heading">#</a></h2>
 <p>This is the easy step, once the updater works properly. Get a clean
 copy of the targets, create a new branch in each, run the
 updater. After checking the resulting code, check it into to Git and
 make a pull request.</p>
 </section>
 <section id="relax">
-<h2>Relax!<a class="headerlink" href="#relax" title="Permalink to this heading">#</a></h2>
+<h2>Relax!<a class="headerlink" href="#relax" title="Link to this heading">#</a></h2>
 <p>That wasn’t too bad, was it? Of course it is not worth the effort if
 you only have one or two target directories. But if you have 4 or 5,
 or 24 it can save a lot of time. Not to mention many errrors and

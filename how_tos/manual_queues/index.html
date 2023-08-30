@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -29,10 +28,10 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,12 +49,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how_tos/manual_queues/index';</script>
 
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -567,7 +566,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="how-to-use-a-queueing-system-manually">
-<span id="use-a-queueing-system-manually"></span><h1>How-To Use a Queueing System Manually<a class="headerlink" href="#how-to-use-a-queueing-system-manually" title="Permalink to this heading">#</a></h1>
+<span id="use-a-queueing-system-manually"></span><h1>How-To Use a Queueing System Manually<a class="headerlink" href="#how-to-use-a-queueing-system-manually" title="Link to this heading">#</a></h1>
 <p>There are two scenarios where you might want to run SEAMM jobs in a queueing system
 manually</p>
 <ol class="arabic simple">
@@ -581,7 +580,7 @@ using the queueing system. You can either run them standalone, or have them conn
 Dashboard and Datastore on the machine – probably a front end node – so you can access
 the results via your browser as normal.</p>
 <section id="installing-seamm">
-<h2>Installing SEAMM<a class="headerlink" href="#installing-seamm" title="Permalink to this heading">#</a></h2>
+<h2>Installing SEAMM<a class="headerlink" href="#installing-seamm" title="Link to this heading">#</a></h2>
 <p>There is nothing special about installing machine on a remote machine or computing
 cluster. If it is a single machine, the installation is just like it was on your desktop
 or laptop. For a larger supercomputer of cluster there is typically one or more head
@@ -591,7 +590,7 @@ otherwise the installation is just like normal. Just follow the <a class="refere
 documentation.</p>
 </section>
 <section id="testing-the-installation">
-<h2>Testing the Installation<a class="headerlink" href="#testing-the-installation" title="Permalink to this heading">#</a></h2>
+<h2>Testing the Installation<a class="headerlink" href="#testing-the-installation" title="Link to this heading">#</a></h2>
 <p>Once you have SEAMM installed on the machine, the simplest way to test that everything
 is working is to run a quick flowchart <a class="reference download internal" download="" href="../../_downloads/14ce71c4edd1845f045b4bbc80408f5c/quickmin.flow"><code class="xref download docutils literal notranslate"><span class="pre">quickmin.flowt</span></code></a>
 directly for the commandline. Computer centers frown on you running on the front end
@@ -611,7 +610,7 @@ went wrong. If it isn’t obvious you can post a message in the <a class="refere
 to your note.</p>
 </section>
 <section id="submitting-to-a-batch-queue-standalone">
-<h2>Submitting to a Batch Queue Standalone<a class="headerlink" href="#submitting-to-a-batch-queue-standalone" title="Permalink to this heading">#</a></h2>
+<h2>Submitting to a Batch Queue Standalone<a class="headerlink" href="#submitting-to-a-batch-queue-standalone" title="Link to this heading">#</a></h2>
 <p>First, let’s run the same small test standalone as a batch job using the queueing
 system. Standalone means that we will run it like an executable, not using the Dashboard or
 any other part of SEAMM.</p>
@@ -682,7 +681,7 @@ local machine and import them into the Dashboard for viewing locally. How to do 
 will be covered in another How-To.</p>
 </section>
 <section id="running-and-adding-the-job-to-the-dashboard">
-<h2>Running and Adding the Job to the Dashboard<a class="headerlink" href="#running-and-adding-the-job-to-the-dashboard" title="Permalink to this heading">#</a></h2>
+<h2>Running and Adding the Job to the Dashboard<a class="headerlink" href="#running-and-adding-the-job-to-the-dashboard" title="Link to this heading">#</a></h2>
 <p>If you can run the Dashboard on the remote machine and access its web-server, you can
 run the jobs in the queue and ask them to automatically insert themselves into the
 Datastore, where they can be viewd using a browser and the Dashboard.</p>
@@ -746,21 +745,21 @@ on the actual words <code class="docutils literal notranslate"><span class="pre"
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../_images/dashboard.png"><img alt="The Dashboard" src="../../_images/dashboard.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">The main Dashboard page</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The main Dashboard page</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Now click on the green button <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Project</span></code></p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/projects.png"><img alt="The projects" src="../../_images/projects.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">The projects page</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The projects page</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Fill out the name and a decription of the new project. I used <code class="docutils literal notranslate"><span class="pre">testing</span></code> for the name</p>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/add_project.png"><img alt="Adding a project dialog" src="../../_images/add_project.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Adding a project</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Adding a project</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You will also need your credentials for the Dashboard stored in the file
@@ -787,7 +786,7 @@ link. Once you job starts running you should see it</p>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/test_job.png"><img alt="Project show the test job" src="../../_images/test_job.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">List of jobs in the project</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">List of jobs in the project</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>As normal, clicking on the job number will take you to the detail page where you can see
@@ -795,7 +794,7 @@ the sructure and other outputs.</p>
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/test_structure.png"><img alt="Image of the test structure" src="../../_images/test_structure.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">The test job</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The test job</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Hopefully everything worked. If not, the <a class="reference external" href="https://matsci.org/c/seamm/61">SEAMM forum</a>

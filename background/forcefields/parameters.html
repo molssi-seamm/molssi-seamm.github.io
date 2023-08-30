@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -29,10 +28,10 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,12 +49,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'background/forcefields/parameters';</script>
 
@@ -583,12 +582,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="parameters">
-<h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h1>
+<h1>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h1>
 <p>Continuing with the example of OPLS from the previous section (<a class="reference internal" href="functional_form.html"><span class="doc">Functional Form</span></a>)
 let’s recap the equation representing the energy as a function of the atomic
 coordinates:</p>
 <div class="math notranslate nohighlight" id="equation-e-parameters">
-<span class="eqno">(1)<a class="headerlink" href="#equation-e-parameters" title="Permalink to this equation">#</a></span>\[E = \sum_{i} \sum_{j}^{j&gt;i\,and\,&gt;1,4} \frac{A_{ij}}{r_{ij}^{12}} -
+<span class="eqno">(1)<a class="headerlink" href="#equation-e-parameters" title="Link to this equation">#</a></span>\[E = \sum_{i} \sum_{j}^{j&gt;i\,and\,&gt;1,4} \frac{A_{ij}}{r_{ij}^{12}} -
 \frac{B_{ij}}{r_{ij}^{6}} + \sum_{t}^{torsions} V_{t,0} +
 \frac{1}{2}V_{t,1}(1+\cos\phi_t) + \frac{1}{2}V_{t,2}(1-\cos2\phi_t) +
 \frac{1}{2}V_{t,3}(1+\cos3\phi_t)\]</div>
@@ -602,19 +601,19 @@ seeing how OPLS defines these parameters.</p>
 <a class="reference internal" href="#equation-e-parameters">(1)</a> above. This is different than the order that they present them in the
 paper.</p>
 <section id="intermolecular-lennard-jones-parameters">
-<h2>Intermolecular Lennard-Jones Parameters<a class="headerlink" href="#intermolecular-lennard-jones-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Intermolecular Lennard-Jones Parameters<a class="headerlink" href="#intermolecular-lennard-jones-parameters" title="Link to this heading">#</a></h2>
 <p>The Lennard-Jones parameters for the intermolecular interactions are given in Table III:</p>
 <figure class="align-center" id="id2">
 <img alt="Intermolecular Lennard-Jones Parameters" src="../../_images/OPLS-6.png" />
 <figcaption>
-<p><span class="caption-text">Figure 1: The Intermolecular Lennard-Jones Parameters</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 1: The Intermolecular Lennard-Jones Parameters</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>It is a bit confusing that they use the parameters <span class="math notranslate nohighlight">\(A_{ij}\)</span> and <span class="math notranslate nohighlight">\(B_{ij}\)</span> in
 Equation <a class="reference internal" href="#equation-e-parameters">(1)</a> but then present the values for a different form of the
 equation for the Lennard-Jones potential:</p>
 <div class="math notranslate nohighlight" id="equation-e-lj">
-<span class="eqno">(2)<a class="headerlink" href="#equation-e-lj" title="Permalink to this equation">#</a></span>\[\begin{split}E_{LJ} &amp;= \sum_{i} \sum_{j}^{j&gt;i\,and\,&gt;1,4} \frac{A_{ij}}{r_{ij}^{12}} -
+<span class="eqno">(2)<a class="headerlink" href="#equation-e-lj" title="Link to this equation">#</a></span>\[\begin{split}E_{LJ} &amp;= \sum_{i} \sum_{j}^{j&gt;i\,and\,&gt;1,4} \frac{A_{ij}}{r_{ij}^{12}} -
         \frac{B_{ij}}{r_{ij}^{6}} \\
      &amp;= \sum_{i} \sum_{j}^{j&gt;i\,and\,&gt;1,4} 4 \epsilon_{ij}
         \left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12} -
@@ -627,7 +626,7 @@ atom, i.e. they have a single index <span class="math notranslate nohighlight">\
 and is where the <a class="reference internal" href="../../glossary.html#term-combining-rules"><span class="xref std std-term">combining rules</span></a> come into play, as was mentioned in the
 <a class="reference internal" href="functional_form.html"><span class="doc">Functional Form</span></a> section. OPLS uses the geometric combining rules:</p>
 <div class="math notranslate nohighlight" id="equation-geometric-combining-rules">
-<span class="eqno">(3)<a class="headerlink" href="#equation-geometric-combining-rules" title="Permalink to this equation">#</a></span>\[\begin{split}\epsilon_{ij} &amp;= \sqrt{\epsilon_i \epsilon_j} \\
+<span class="eqno">(3)<a class="headerlink" href="#equation-geometric-combining-rules" title="Link to this equation">#</a></span>\[\begin{split}\epsilon_{ij} &amp;= \sqrt{\epsilon_i \epsilon_j} \\
 \sigma_{ij} &amp;= \sqrt{\sigma_i \sigma_j}\end{split}\]</div>
 <p>or equivalently</p>
 <div class="math notranslate nohighlight">
@@ -635,30 +634,30 @@ and is where the <a class="reference internal" href="../../glossary.html#term-co
 B_{ij} &amp;= \sqrt{B_i B_j}\end{split}\]</div>
 </section>
 <section id="intramolecular-lennard-jones-parameters">
-<h2>Intramolecular Lennard-Jones Parameters<a class="headerlink" href="#intramolecular-lennard-jones-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Intramolecular Lennard-Jones Parameters<a class="headerlink" href="#intramolecular-lennard-jones-parameters" title="Link to this heading">#</a></h2>
 <p>Now that we have understood the intermolecular LJ parameters, let’s move on to the
 intramolecular ones, which turn out to be much simpler:</p>
 <figure class="align-center" id="id3">
 <img alt="Intramolecular Lennard-Jones Parameters" src="../../_images/OPLS-7.png" />
 <figcaption>
-<p><span class="caption-text">Figure 2: Intermolecular Lennard-Jones parameters.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 2: Intermolecular Lennard-Jones parameters.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>OPLS uses a single set of parameters for the intramolecular Lennard-Jones terms:</p>
 <div class="math notranslate nohighlight" id="equation-intermolecular-lj-parameters">
-<span class="eqno">(4)<a class="headerlink" href="#equation-intermolecular-lj-parameters" title="Permalink to this equation">#</a></span>\[\begin{split}     \sigma &amp;= 4 \text{ Å} \\
+<span class="eqno">(4)<a class="headerlink" href="#equation-intermolecular-lj-parameters" title="Link to this equation">#</a></span>\[\begin{split}     \sigma &amp;= 4 \text{ Å} \\
      \epsilon &amp;= 0.0074 \text{ kcal/mol}\end{split}\]</div>
 <p>These can be used as-is in Equation <a class="reference internal" href="#equation-e-lj">(2)</a>.</p>
 <p>This coompletes the Lennard-Jones parameters for OPLS.</p>
 </section>
 <section id="torsion-parameters">
-<h2>Torsion Parameters<a class="headerlink" href="#torsion-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Torsion Parameters<a class="headerlink" href="#torsion-parameters" title="Link to this heading">#</a></h2>
 <p>There are four parameters for each type of torsion in the truncated Fourier expansion in
 Equation <a class="reference internal" href="#equation-e-parameters">(1)</a> which are given in Table II:</p>
 <figure class="align-center" id="id4">
 <img alt="Torsion parameters" src="../../_images/OPLS-8.png" />
 <figcaption>
-<p><span class="caption-text">Figure 3: The parameters for the torsions.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 3: The parameters for the torsions.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The torsion parameters are straightforward: after determining the type of the torsion –
@@ -666,19 +665,19 @@ whether it is the single torsion in 1-butene, isopentane, or n-butane, or it is 
 other n-alkane – the values are entered as-is into the equation.</p>
 </section>
 <section id="standard-bond-lengths-and-angles">
-<h2>Standard Bond Lengths and Angles<a class="headerlink" href="#standard-bond-lengths-and-angles" title="Permalink to this heading">#</a></h2>
+<h2>Standard Bond Lengths and Angles<a class="headerlink" href="#standard-bond-lengths-and-angles" title="Link to this heading">#</a></h2>
 <p>Equation <a class="reference internal" href="#equation-e-parameters">(1)</a> does not explicitly mention the bond lengths and angles
 because they do not affect the energy; however, the bond lengths and angles need to be
 constrained to the values given in Table I:</p>
 <figure class="align-center" id="id5">
 <img alt="Fixed bond lengths and angles" src="../../_images/OPLS-5.png" />
 <figcaption>
-<p><span class="caption-text">Figure 4: The standard bond lengths and angles.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 4: The standard bond lengths and angles.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>We have now found and understood all of the parameters included in the original <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ja00334a030">OPLS
 paper</a>. The paper is a bit confusing in
 three main parts:</p>

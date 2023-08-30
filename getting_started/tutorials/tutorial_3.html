@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -29,10 +28,10 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,12 +49,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/tutorials/tutorial_3';</script>
 
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -581,7 +580,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="tables-and-loops">
-<span id="tutorial-3"></span><h1>Tables and Loops<a class="headerlink" href="#tables-and-loops" title="Permalink to this heading">#</a></h1>
+<span id="tutorial-3"></span><h1>Tables and Loops<a class="headerlink" href="#tables-and-loops" title="Link to this heading">#</a></h1>
 <p>In the previous tutorials, we have demonstrated how to set up a flowchart, execute a job,
 and inspect the results using the Dashboard. While it is nice to be able to run a
 complicated simulations on a single chemical structure, it is often much more useful
@@ -627,7 +626,7 @@ for further details). Then, activate the <cite>seamm</cite> conda environment an
 <figure class="align-center" id="id1">
 <img alt="A partial flowchart for looping over a table" src="../../_images/partial_flowchart.png" />
 <figcaption>
-<p><span class="caption-text"><em>The initial skeleton of the flowchart</em></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>The initial skeleton of the flowchart</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Open the dialog for the first Table step either by right-clicking and selecting
@@ -637,7 +636,7 @@ box. Change the <code class="docutils literal notranslate"><span class="pre">Ope
 <figure class="align-center" id="id2">
 <img alt="The dialog for a Table step" src="../../_images/table_1.png" />
 <figcaption>
-<p><span class="caption-text"><em>The dialog for the first Table step</em></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>The dialog for the first Table step</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Then, edit the <code class="docutils literal notranslate"><span class="pre">Loop</span></code> step and change the first item from <code class="docutils literal notranslate"><span class="pre">For</span></code> to <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">rows</span> <span class="pre">in</span> <span class="pre">table</span></code>
@@ -646,7 +645,7 @@ by clicking on the arrow on the right and selecting the aforementioned option fr
 <figure class="align-center" id="id3">
 <img alt="The dialog for a FromSMILES step" src="../../_images/from_smiles.png" />
 <figcaption>
-<p><span class="caption-text"><em>The dialog for the FromSMILES step</em></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>The dialog for the FromSMILES step</em></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The loop automatically initializes some variables, the names of which start with an
@@ -665,14 +664,14 @@ Add a single <cite>Optimization</cite> task to its flowchart and open it for fur
 <figure class="align-center" id="id4">
 <img alt="The dialog for a MOPAC Optimization step" src="../../_images/mopac_optimization.png" />
 <figcaption>
-<p><span class="caption-text"><em>The dialog for the MOPAC Optimization step</em></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>The dialog for the MOPAC Optimization step</em></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Then, click on the <code class="docutils literal notranslate"><span class="pre">Results</span></code> tab at the top of the page:</p>
 <figure class="align-center" id="id5">
 <img alt="The results tab for MOPAC Optimization" src="../../_images/mopac_results.png" />
 <figcaption>
-<p><span class="caption-text"><em>Saving the results from a MOPAC optimization calculation</em></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>Saving the results from a MOPAC optimization calculation</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>There are five columns in the table of results:</p>
@@ -698,7 +697,7 @@ named <strong>table1</strong>. Type in <strong>table1</strong> in the <code clas
 <figure class="align-center" id="id6">
 <img alt="The dialog showing MOPAC Optimization results" src="../../_images/mopac_results_2.png" />
 <figcaption>
-<p><span class="caption-text"><em>Saving results from Optimization in MOPAC</em></span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>Saving results from Optimization in MOPAC</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Note that we changed the column name for the ionization potential to <code class="docutils literal notranslate"><span class="pre">IP</span></code> for brevity.
@@ -724,7 +723,7 @@ active and ready to make a connection:</p>
 <figure class="align-center" id="id7">
 <img alt="The flowchart with an active connection" src="../../_images/closing_1.png" />
 <figcaption>
-<p><span class="caption-text"><em>Active connection dot on last Table step</em></span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>Active connection dot on last Table step</em></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Click on an active connection point (red dots around the step boxes) and drag a connecting
@@ -742,7 +741,7 @@ arrow will disappear. This issue will be resolved in the upcoming releases.</p>
 <figure class="align-center" id="id8">
 <img alt="Dropping the connection on the Join step" src="../../_images/closing_2.png" />
 <figcaption>
-<p><span class="caption-text"><em>Dropping the connection on the Join step</em></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>Dropping the connection on the Join step</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Upon making a connection between the last <code class="docutils literal notranslate"><span class="pre">Table</span></code> step and the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step, the
@@ -750,7 +749,7 @@ flowchart will look like the following:</p>
 <figure class="align-center" id="id9">
 <img alt="Initial connection closing a loop" src="../../_images/closing_3.png" />
 <figcaption>
-<p><span class="caption-text"><em>The connection closing the loop</em></span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>The connection closing the loop</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The flowchart shown above does not look well-organized. Under the Edit
@@ -759,7 +758,7 @@ flowchart layout to a standard form:</p>
 <figure class="align-center" id="id10">
 <img alt="Final flowchart" src="../../_images/closing_4.png" />
 <figcaption>
-<p><span class="caption-text"><em>Completed flowchart</em></span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>Completed flowchart</em></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>At this point, all that is left is to run the flowchart. Select <code class="docutils literal notranslate"><span class="pre">Run</span></code> from the <code class="docutils literal notranslate"><span class="pre">File</span></code>
@@ -771,7 +770,7 @@ the results of the current job. Pay attention to the table of results printed in
 <figure class="align-center" id="id11">
 <img alt="Job.out showing the table of results" src="../../_images/table.png" />
 <figcaption>
-<p><span class="caption-text"><em>The printed table of results</em></span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>The printed table of results</em></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>By double-clicking on the <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">3</span></code> folder within the directory section on the left pane,
@@ -782,7 +781,7 @@ which is an output summary much like the <code class="docutils literal notransla
 <figure class="align-center" id="id12">
 <img alt="Dashboard showing iterations of a loop" src="../../_images/iterations.png" />
 <figcaption>
-<p><span class="caption-text"><em>DashBoard show an iteration of the loop</em></span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><em>DashBoard show an iteration of the loop</em></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Finally, by looking at the CSV file that is created, one can inspect the updated properties

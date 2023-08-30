@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -29,10 +28,10 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,12 +49,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'background/forcefields/atom_types';</script>
 
@@ -583,7 +582,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="atom-types">
-<h1>Atom Types<a class="headerlink" href="#atom-types" title="Permalink to this heading">#</a></h1>
+<h1>Atom Types<a class="headerlink" href="#atom-types" title="Link to this heading">#</a></h1>
 <p>One area not mentioned in our example <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ja00334a030">OPLS paper</a> is how to get the right parameters in
 each of the terms in the functional form. We glossed over this in the description of
 the section on the <a class="reference internal" href="functional_form.html"><span class="doc">Functional Form</span></a>, noting that we had various sets of parameters
@@ -594,14 +593,14 @@ of carbon atom and an example:</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../_images/OPLS-6.png"><img alt="Intermolecular Lennard-Jones Parameters" src="../../_images/OPLS-6.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 1: The Intermolecular Lennard-Jones Parameters</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 1: The Intermolecular Lennard-Jones Parameters</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The torsion parameters just use an example:</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../_images/OPLS-8.png"><img alt="Torsion parameters" src="../../_images/OPLS-8.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 2: The parameters for the torsions.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 2: The parameters for the torsions.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Presumably when this paper was written and computers were much smaller, the simulations
@@ -617,11 +616,11 @@ different forcefields and even different versions of a forcefield may group atom
 together in different way.</p>
 <p>Working through an example using OPLS might help make this more clear.</p>
 <section id="isopentane">
-<h2>isopentane<a class="headerlink" href="#isopentane" title="Permalink to this heading">#</a></h2>
+<h2>isopentane<a class="headerlink" href="#isopentane" title="Link to this heading">#</a></h2>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/isopentane.png"><img alt="isopentane" src="../../_images/isopentane.png" style="width: 200px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 3: isopentane with the atoms numbered.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 3: isopentane with the atoms numbered.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The structure for isopentane has four different atom environments. Atoms 1 &amp; 2 are
@@ -657,7 +656,7 @@ types 1-12:</p>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/isopentane_atom_types.png"><img alt="isopentane atom types" src="../../_images/isopentane_atom_types.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 4: isopentane showing the atom types</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 4: isopentane showing the atom types</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Now for the torsion types. There is only one “rotatable” bond in neopentane, that
@@ -671,15 +670,15 @@ write this torsion as having the following atom types:</p>
 </div></blockquote>
 </section>
 <section id="expressing-torsions-in-terms-of-atom-types">
-<h2>Expressing Torsions in Terms of Atom Types<a class="headerlink" href="#expressing-torsions-in-terms-of-atom-types" title="Permalink to this heading">#</a></h2>
+<h2>Expressing Torsions in Terms of Atom Types<a class="headerlink" href="#expressing-torsions-in-terms-of-atom-types" title="Link to this heading">#</a></h2>
 <p>Let’s express the structures for the different torsions in Table II as atom types an see
 what it looks like.</p>
 <section id="butene">
-<h3>1-butene<a class="headerlink" href="#butene" title="Permalink to this heading">#</a></h3>
+<h3>1-butene<a class="headerlink" href="#butene" title="Link to this heading">#</a></h3>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/1-butene_atom_types.png"><img alt="1-butene atom types" src="../../_images/1-butene_atom_types.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 5: 1-butene showing the atom types</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 5: 1-butene showing the atom types</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The atom types labeling the atoms are reasonable given the information in Table 3. The
@@ -689,11 +688,11 @@ torsion is labeled as follows:</p>
 </div></blockquote>
 </section>
 <section id="n-butane">
-<h3>n-butane<a class="headerlink" href="#n-butane" title="Permalink to this heading">#</a></h3>
+<h3>n-butane<a class="headerlink" href="#n-butane" title="Link to this heading">#</a></h3>
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/n-butane_atom_types.png"><img alt="n-butane atom types" src="../../_images/n-butane_atom_types.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 6: n-butane showing the atom types</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 6: n-butane showing the atom types</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The torsion is labeled as follows:</p>
@@ -702,11 +701,11 @@ torsion is labeled as follows:</p>
 </div></blockquote>
 </section>
 <section id="n-pentane">
-<h3>n-pentane<a class="headerlink" href="#n-pentane" title="Permalink to this heading">#</a></h3>
+<h3>n-pentane<a class="headerlink" href="#n-pentane" title="Link to this heading">#</a></h3>
 <figure class="align-center" id="id7">
 <a class="reference internal image-reference" href="../../_images/n-pentane_atom_types.png"><img alt="n-pentane atom types" src="../../_images/n-pentane_atom_types.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 7: n-pentane showing the atom types</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 7: n-pentane showing the atom types</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The torsion is labeled as follows:</p>
@@ -730,7 +729,7 @@ these torsions, which are just slightly different, are treated identically.</p>
 </section>
 </section>
 <section id="putting-it-all-together">
-<h2>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this heading">#</a></h2>
+<h2>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h2>
 <p>We have seen how atoms in similar environments can be grouped into atom types. This
 allows us to recast the OPLS forcefield in terms of atom types, and associate the
 parameters in terms of atom types.</p>
@@ -862,7 +861,7 @@ unle a full valence is indicated explicitly.</p>
 </table>
 </section>
 <section id="automatic-assignment">
-<h2>Automatic Assignment<a class="headerlink" href="#automatic-assignment" title="Permalink to this heading">#</a></h2>
+<h2>Automatic Assignment<a class="headerlink" href="#automatic-assignment" title="Link to this heading">#</a></h2>
 <p>As computers have gotten more and more powerful the complexity of simulations has grown
 by leaps and bounds. It is no longer viable to assign the atom types to the structure by
 hand, nor would that lead to reproducible simulations since there is often a choice of
@@ -874,7 +873,7 @@ paper of the extension of <a class="reference external" href="https://pubs.acs.o
 <figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="../../_images/OPLS-9.png"><img alt="Atom type assignment for proteins" src="../../_images/OPLS-9.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 8: Atom type assignment for proteins in OPLS.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figure 8: Atom type assignment for proteins in OPLS.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This table gives the residue, standard atom name, and atom type for the standard amino
@@ -895,7 +894,7 @@ widespread adoption of SMARTS and similar tools for substructure matching is bec
 more feasible and widespread.</p>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Atom types provide an approach for collecting atoms in simlar local environments into
 groups, and specifying which parameters to use for the terms in a forcefield. Typical
 valence forcefields have terms relying on one, two, three and four atoms – the nonbonded
