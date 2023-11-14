@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Working with the Dashboard &#8212; SEAMM 1.0 documentation</title>
+    <title>2: Looking at the Results &#8212; SEAMM 1.0 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -34,8 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -49,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,8 +60,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tables and Loops" href="tutorial_3.html" />
-    <link rel="prev" title="Managing the Dashboard" href="dashboard_management.html" />
+    <link rel="next" title="3: Variables in Flowcharts" href="tutorial_3.html" />
+    <link rel="prev" title="1: A First Calculation" href="tutorial_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -71,6 +72,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,7 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -121,19 +132,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   
   
+  
     
     
       
     
     
-    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="SEAMM 1.0 documentation - Home"/>`);</script>
   
   
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -175,76 +186,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
                         Developers Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../glossary.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
                         Glossary
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
                         Plug-ins
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../status/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
                         Status
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
                         Statistics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
                         SEAMM Developers
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
                         Acknowledgements
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
                     SEAMM Documentation
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
                     MolSSI
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -256,23 +267,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -288,8 +301,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -300,8 +313,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -311,18 +324,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -378,76 +393,76 @@ document.write(`
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
                         Developers Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../glossary.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
                         Glossary
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
                         Plug-ins
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../status/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
                         Status
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
                         Statistics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
                         SEAMM Developers
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
                         Acknowledgements
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
                     SEAMM Documentation
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
                     MolSSI
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -461,10 +476,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -480,8 +495,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -492,8 +507,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -509,14 +524,16 @@ document.write(`
 <li class="toctree-l1 has-children"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/dashboard_management.html">Managing the Dashboard</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Working with the Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html">Tables and Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html">Running from the Command-Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">1: A First Calculation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2: Looking at the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html">3: Variables in Flowcharts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html">4: Resubmitting a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html">5: Looping Over Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html">6: Running from the Command-Line</a></li>
 </ul>
 </li>
 </ul>
@@ -548,8 +565,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../index.html" class="nav-link" aria-label="Home">
@@ -562,7 +579,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Working with the Dashboard</li>
+    <li class="breadcrumb-item active" aria-current="page">2: Looking...</li>
   </ul>
 </nav>
 </div>
@@ -579,14 +596,27 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="working-with-the-dashboard">
-<span id="tutorial-2"></span><h1>Working with the Dashboard<a class="headerlink" href="#working-with-the-dashboard" title="Link to this heading">#</a></h1>
+  <section id="looking-at-the-results">
+<span id="tutorial-2"></span><h1>2: Looking at the Results<a class="headerlink" href="#looking-at-the-results" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A run, <a href="http://molssi10.molssi.org:55055/#/jobs/311" target="_blank">Job 311</a>, is available on MolSSI’s public server.</p>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This tutorial will cover using the Dashboard, which you view in a Web browser, to
+examine the results of a job. It will show you how to see the text output from the job,
+look at the molecular structures, and also see the orbitals and charge densities.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The present tutorial assumes you have read and followed the instructions
-laid out in <a class="reference internal" href="tutorial_1.html#tutorial-1"><span class="std std-ref">Getting Started</span></a> so that there is at least one job to work with.</p>
+laid out in <a class="reference internal" href="tutorial_1.html#tutorial-1"><span class="std std-ref">1: A First Calculation</span></a> so that there is at least one job to work with.</p>
 </div>
-<p>By default, users can access the Dashboard in their web browsers at <a class="reference external" href="http://127.0.0.1:55055">http://127.0.0.1:55055</a>:</p>
+</section>
+<section id="accessing-the-dashboard">
+<h2>Accessing the Dashboard<a class="headerlink" href="#accessing-the-dashboard" title="Link to this heading">#</a></h2>
+<p>By default, you can access the Dashboard at <a href="http://localhost:55055" target="_blank">http://localhost:55055</a> (will open in
+a new tab):</p>
 <figure class="align-center" id="id1">
 <img alt="The Dashboard in a browser window" src="../../_images/initial_dashboard.png" />
 <figcaption>
@@ -600,12 +630,14 @@ outputs. The right pane presents a summary of the executed jobs, flowcharts and 
 that the current user has the permission to view. On the first access to the Dashboard web-page,
 it shows everything with the public permission to anyone without logging in.</p>
 <p>Let us begin by clicking on the <code class="docutils literal notranslate"><span class="pre">Public</span> <span class="pre">User</span></code> menu drop-down button at the upper-right
-corner of the section and select <code class="docutils literal notranslate"><span class="pre">Login</span></code>.</p>
+corner of the section and select <code class="docutils literal notranslate"><span class="pre">Login</span></code> or clicking on <code class="docutils literal notranslate"><span class="pre">Log</span> <span class="pre">in</span></code> in the blue
+notification bar.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When entering the username and password, remember that by default, the initial
 passwords for the <strong>admin</strong> and <strong>user</strong> accounts are set to <strong>admin</strong> and
-<strong>default</strong>, respectively.</p>
+<strong>default</strong>, respectively. Hopefully, however, you went through the first tutorial
+and set up good passwords.</p>
 </div>
 <p>Once you are logged in, the front page of the Dashboard should change slightly and look like
 the following:</p>
@@ -616,22 +648,29 @@ the following:</p>
 </figcaption>
 </figure>
 <p>Note the summary of information regarding the executed jobs in the main colored card
-sections: two jobs, one flowchart, and one project. One can use either the menu at the
-top of each panel or the items from the left-pane menu in order to inspect each job,
-flowchart, or project. Next, click on the <code class="docutils literal notranslate"><span class="pre">Jobs</span> <span class="pre">List</span></code> item on from the left-pane menu:</p>
+sections: one job, one flowchart, and one project. You can use either the menu at the
+top of each panel or the items in the left-pane menu in order to inspect jobs,
+flowcharts, or projects.N he bottom part of the main pane gives a short list of the most
+recent jobs. We have only one, which you can access by clicking on the job number. More
+generally, however, click on <code class="docutils literal notranslate"><span class="pre">Jobs</span> <span class="pre">List</span></code> in the left-pane menu to get a complete list
+of jobs:</p>
 <figure class="align-center" id="id3">
 <img alt="The Dashboard showing the Jobs List" src="../../_images/job_list.png" />
 <figcaption>
 <p><span class="caption-text"><em>The list of jobs in the Dashboard</em></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>After starting the Dashboard, one can find the previously executed job(s) in the list.
-For the illustration presented above, we ran this job twice while testing. So, there
-are two copies in this figure. Note that the title that the user chooses for each job
-is also listed. It is important to use relevant meaningful but brief titles.</p>
+</section>
+<section id="examining-a-job">
+<h2>Examining a Job<a class="headerlink" href="#examining-a-job" title="Link to this heading">#</a></h2>
+<p>If you just went through the tutorial for the first job, there is probably just one job
+in the list, as is shown.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>It is a good practice to keep the title lengths down to 50-80 characters.</p>
+<p>The title that you give each job is important. You see the titles in the list of
+jobs, and can search on them, so it is a good idea to make them short but
+meaningful. They can only be 100 characters long, so a systematic approach with
+abbreviations works best.</p>
 </div>
 <p>Click on the job ID to expand its results:</p>
 <figure class="align-center" id="id4">
@@ -640,20 +679,17 @@ is also listed. It is important to use relevant meaningful but brief titles.</p>
 <p><span class="caption-text"><em>The main page of a job</em></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Once again, the job title appears at the top of the left-pane on the screen followed by
-further details about the job. Below, we demonstrate a listing of the files from our job.
-The job description can be found at the top of the right-pane, below which there is a large
-empty space that will be used to display the file details pertinent to each job when one clicks
-on them in the left-side directory section. Note that we collapsed the main menu at the very
-left to create more space.</p>
-<p>Now, click on the <code class="docutils literal notranslate"><span class="pre">final_structure.mmcif</span></code> file in the directory section, we get:</p>
+<p>The job title appears at the top of the left-pane on the screen followed by
+further details about the job. The longer job description is in top of the
+right-pane. There is plenty of space, so feel free to write good descriptions.</p>
+<p>Now, click on the <code class="docutils literal notranslate"><span class="pre">final_structure.mmcif</span></code> file in the directory section:</p>
 <figure class="align-center" id="id5">
 <img alt="The Dashboard displaying a structure from a job" src="../../_images/structure_display.png" />
 <figcaption>
 <p><span class="caption-text"><em>Displaying the final structure</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>One can rotate the molecule using the mouse, change its representation through the menu at
+<p>You can rotate the molecule using the mouse, change its representation through the menu at
 the top of the screen, or export a screenshot of the current view of the molecule.</p>
 <p>Navigate to the <code class="docutils literal notranslate"><span class="pre">job.out</span></code> file by clicking on it:</p>
 <figure class="align-center" id="id6">
@@ -668,76 +704,128 @@ being presented. The first section is always a summary of the job workflow and t
 steps involved:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">flowchart</span>
 <span class="o">----------------------------</span>
-<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2021.6.2</span>
+  <span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2023.10.30.1</span>
+  <span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2023.7.18</span>
+      <span class="n">Perceive</span> <span class="n">the</span> <span class="n">line</span> <span class="n">notation</span> <span class="p">(</span><span class="n">SMILES</span><span class="p">,</span> <span class="n">InChI</span><span class="p">,</span><span class="o">...</span><span class="p">)</span> <span class="ow">and</span> <span class="n">create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span>
+      <span class="nn">the</span> <span class="n">string</span> <span class="s1">&#39;CCS&#39;</span><span class="p">,</span> <span class="n">overwriting</span> <span class="n">the</span> <span class="n">current</span> <span class="n">configuration</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span>
+      <span class="n">system</span> <span class="n">will</span> <span class="n">be</span> <span class="n">keep</span> <span class="n">current</span> <span class="n">name</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span>
+      <span class="n">canonical</span> <span class="n">SMILES</span> <span class="n">of</span> <span class="n">the</span> <span class="n">structure</span><span class="o">.</span>
 
-<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.6.3</span>
-    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="s1">&#39;CCS&#39;</span>
+  <span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="n">DFTB</span><span class="o">+</span>  <span class="mf">2023.3.5</span>
 
-<span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="n">DFTB</span><span class="o">+</span>  <span class="mf">2021.6.5</span>
+     <span class="n">Step</span> <span class="mf">2.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
+         <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
 
-   <span class="n">Step</span> <span class="mf">2.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
-       <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
+     <span class="n">Step</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">Optimization</span>
+         <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Rational</span> <span class="n">Function</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span>
+         <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0</span> <span class="n">hartree</span><span class="o">/</span><span class="n">bohr</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span> <span class="mi">200</span> <span class="n">steps</span> <span class="n">will</span> <span class="n">be</span>
+         <span class="n">used</span><span class="o">.</span>
 
-   <span class="n">Step</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">Optimization</span>
-       <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Direct</span> <span class="n">inversion</span> <span class="n">of</span> <span class="n">iterative</span> <span class="n">subspace</span>
-       <span class="p">(</span><span class="n">gDIIS</span><span class="p">)</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0</span> <span class="n">hartree</span><span class="o">/</span><span class="n">bohr</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span>
-       <span class="n">of</span> <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+         <span class="n">Doing</span> <span class="n">a</span> <span class="bp">self</span><span class="o">-</span><span class="n">consistent</span> <span class="n">charge</span> <span class="n">calculation</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span>
+         <span class="mf">1e-05</span> <span class="n">charge</span> <span class="n">units</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">limit</span> <span class="n">of</span> <span class="mi">100</span> <span class="n">iterations</span><span class="o">.</span> <span class="n">Whether</span> <span class="n">to</span> <span class="n">do</span> <span class="n">a</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">order</span>
+         <span class="n">calculation</span> <span class="ow">and</span> <span class="k">if</span> <span class="n">so</span><span class="p">,</span> <span class="n">what</span> <span class="nb">type</span><span class="p">,</span> <span class="n">will</span> <span class="n">be</span> <span class="n">determined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">parameter</span> <span class="nb">set</span>
+         <span class="n">used</span><span class="o">.</span> <span class="n">Whether</span> <span class="ow">and</span> <span class="n">how</span> <span class="n">to</span> <span class="n">correct</span> <span class="n">interactions</span> <span class="k">with</span> <span class="n">hydrogen</span> <span class="n">atoms</span> <span class="n">will</span> <span class="n">be</span>
+         <span class="n">determined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">parameter</span> <span class="nb">set</span> <span class="n">used</span><span class="o">.</span> <span class="n">Any</span> <span class="n">spins</span> <span class="n">will</span> <span class="n">be</span> <span class="n">optimized</span><span class="o">.</span> <span class="n">For</span>
+         <span class="n">periodic</span> <span class="n">system</span> <span class="n">a</span> <span class="n">Monkhorst</span><span class="o">-</span><span class="n">Pack</span> <span class="n">grid</span> <span class="k">with</span> <span class="n">a</span> <span class="n">spacing</span> <span class="n">of</span> <span class="mf">0.2</span> <span class="mi">1</span><span class="o">/</span><span class="n">Å</span> <span class="n">will</span> <span class="n">be</span>
+         <span class="n">used</span><span class="o">.</span> <span class="n">The</span> <span class="n">total</span> <span class="n">density</span><span class="p">,</span> <span class="n">difference</span> <span class="n">density</span><span class="p">,</span> <span class="n">spin</span> <span class="n">density</span> <span class="ow">and</span> <span class="n">orbitals</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+         <span class="n">HOMO</span><span class="p">,</span> <span class="n">LUMO</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span> <span class="n">will</span> <span class="n">be</span> <span class="n">plotted</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>This summary is printed before the job actually starts. So, even if the job takes
-a long time you can review what steps are going to be/being executed. This is a useful
-feature because it allows the users to correct their mistakes as soon as they find them
-by killing the process and re-running it after fixing the problem. The summary provides
-the key parameters pertinent to the calculations. It is important to note that the version
-of each adopted plug-in for executing the flowchart is also given to ensure reproducibility
-and security in cases where non-trivial bugs and glitches are found in a particular version.</p>
+<p>This summary is printed before the job actually starts. This is so you can review all
+the steps that are going to be executed and check that the job is doing what you
+intended. If there is a mistake, you can kill the job, fix the problems, and submit the
+job again. You kill the job by checking it in the list of jobs and clicking the
+<code class="docutils literal notranslate"><span class="pre">Delete</span></code> button.</p>
+<p>The summary provides the key parameters controlling the calculations. Note that each
+step also has the version of the code or plug-in used, which is important for
+reproducing results, or, if a problem is found with a particulalr version, checking
+whether the results are ok or not.</p>
 <p>The second section of the output summarizes the results from the executed flowchart:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">the</span> <span class="n">flowchart</span>
 <span class="o">---------------------</span>
-<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2021.6.8</span>
+<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2023.10.30.1</span>
 
-<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.6.3</span>
-    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="s1">&#39;CCS&#39;</span>
+<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2023.7.18</span>
+    <span class="n">Perceive</span> <span class="n">the</span> <span class="n">line</span> <span class="n">notation</span> <span class="p">(</span><span class="n">SMILES</span><span class="p">,</span> <span class="n">InChI</span><span class="p">,</span><span class="o">...</span><span class="p">)</span> <span class="ow">and</span> <span class="n">create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span>
+    <span class="nn">the</span> <span class="n">string</span> <span class="s1">&#39;CCS&#39;</span><span class="p">,</span> <span class="n">overwriting</span> <span class="n">the</span> <span class="n">current</span> <span class="n">configuration</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span>
+    <span class="n">system</span> <span class="n">will</span> <span class="n">be</span> <span class="n">keep</span> <span class="n">current</span> <span class="n">name</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span>
+    <span class="n">canonical</span> <span class="n">SMILES</span> <span class="n">of</span> <span class="n">the</span> <span class="n">structure</span><span class="o">.</span>
+
     <span class="n">Created</span> <span class="n">a</span> <span class="n">molecular</span> <span class="n">structure</span> <span class="k">with</span> <span class="mi">9</span> <span class="n">atoms</span><span class="o">.</span>
+           <span class="n">System</span> <span class="n">name</span> <span class="o">=</span>
+    <span class="n">Configuration</span> <span class="n">name</span> <span class="o">=</span> <span class="n">CCS</span>
 
-    <span class="n">Step</span> <span class="mf">2.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
-        <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
-
-    <span class="n">Step</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">Optimization</span>
-        <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Direct</span> <span class="n">inversion</span> <span class="n">of</span> <span class="n">iterative</span> <span class="n">subspace</span>
-        <span class="p">(</span><span class="n">gDIIS</span><span class="p">)</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0001</span> <span class="n">E_h</span><span class="o">/</span><span class="n">a_0</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span>
-        <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+<span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="n">DFTB</span><span class="o">+</span>  <span class="mf">2023.3.5</span>
 
     <span class="n">Step</span> <span class="mf">2.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
         <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
 
 
     <span class="n">Step</span> <span class="mf">2.2</span><span class="p">:</span> <span class="n">Optimization</span>
-        <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Direct</span> <span class="n">inversion</span> <span class="n">of</span> <span class="n">iterative</span> <span class="n">subspace</span>
-        <span class="p">(</span><span class="n">gDIIS</span><span class="p">)</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0001</span> <span class="n">E_h</span><span class="o">/</span><span class="n">a_0</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span>
-        <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+        <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Rational</span> <span class="n">Function</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span>
+        <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0001</span> <span class="n">E_h</span><span class="o">/</span><span class="n">a_0</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span> <span class="mi">200</span> <span class="n">steps</span> <span class="n">will</span> <span class="n">be</span>
+        <span class="n">used</span><span class="o">.</span>
+
+        <span class="n">Doing</span> <span class="n">a</span> <span class="bp">self</span><span class="o">-</span><span class="n">consistent</span> <span class="n">charge</span> <span class="n">calculation</span> <span class="k">with</span> <span class="n">a</span> <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span>
+        <span class="mf">1e-05</span> <span class="n">charge</span> <span class="n">units</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">limit</span> <span class="n">of</span> <span class="mi">100</span> <span class="n">iterations</span><span class="o">.</span> <span class="n">Whether</span> <span class="n">to</span> <span class="n">do</span> <span class="n">a</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">order</span>
+        <span class="n">calculation</span> <span class="ow">and</span> <span class="k">if</span> <span class="n">so</span><span class="p">,</span> <span class="n">what</span> <span class="nb">type</span><span class="p">,</span> <span class="n">will</span> <span class="n">be</span> <span class="n">determined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">parameter</span> <span class="nb">set</span>
+        <span class="n">used</span><span class="o">.</span> <span class="n">Whether</span> <span class="ow">and</span> <span class="n">how</span> <span class="n">to</span> <span class="n">correct</span> <span class="n">interactions</span> <span class="k">with</span> <span class="n">hydrogen</span> <span class="n">atoms</span> <span class="n">will</span> <span class="n">be</span>
+        <span class="n">determined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">parameter</span> <span class="nb">set</span> <span class="n">used</span><span class="o">.</span> <span class="n">Any</span> <span class="n">spins</span> <span class="n">will</span> <span class="n">be</span> <span class="n">optimized</span><span class="o">.</span> <span class="n">For</span>
+        <span class="n">periodic</span> <span class="n">system</span> <span class="n">a</span> <span class="n">Monkhorst</span><span class="o">-</span><span class="n">Pack</span> <span class="n">grid</span> <span class="k">with</span> <span class="n">a</span> <span class="n">spacing</span> <span class="n">of</span> <span class="mf">0.2</span> <span class="mi">1</span><span class="o">/</span><span class="n">Å</span> <span class="n">will</span> <span class="n">be</span>
+        <span class="n">used</span><span class="o">.</span> <span class="n">The</span> <span class="n">total</span> <span class="n">density</span><span class="p">,</span> <span class="n">difference</span> <span class="n">density</span><span class="p">,</span> <span class="n">spin</span> <span class="n">density</span> <span class="ow">and</span> <span class="n">orbitals</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">HOMO</span><span class="p">,</span> <span class="n">LUMO</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span> <span class="n">will</span> <span class="n">be</span> <span class="n">plotted</span><span class="o">.</span>
+
+        <span class="n">DFTB</span><span class="o">+</span> <span class="n">using</span> <span class="mi">1</span> <span class="n">OpenMP</span> <span class="n">threads</span> <span class="k">for</span> <span class="mi">9</span> <span class="n">atoms</span><span class="o">.</span>
+
+        <span class="n">The</span> <span class="n">geometry</span> <span class="n">optimization</span> <span class="n">converged</span> <span class="ow">in</span> <span class="mi">46</span> <span class="n">steps</span><span class="o">.</span> <span class="n">The</span> <span class="n">last</span> <span class="n">change</span> <span class="ow">in</span>
+        <span class="n">energy</span> <span class="n">was</span> <span class="o">-</span><span class="mf">1.23222e-10</span> <span class="n">Eh</span><span class="o">.</span>
 
 
-        <span class="n">The</span> <span class="n">geometry</span> <span class="n">optimization</span> <span class="n">converged</span> <span class="ow">in</span> <span class="mi">25</span> <span class="n">steps</span> <span class="n">to</span> <span class="n">a</span> <span class="n">total</span> <span class="n">energy</span> <span class="n">of</span>
-        <span class="o">-</span><span class="mf">8.115704</span> <span class="n">Ha</span><span class="o">.</span>
+        <span class="n">The</span> <span class="n">total</span> <span class="n">energy</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">8.115706</span> <span class="n">E_h</span><span class="o">.</span> <span class="n">The</span> <span class="n">charges</span> <span class="n">converged</span> <span class="n">to</span> <span class="mf">0.000002</span><span class="o">.</span>
+        <span class="n">The</span> <span class="n">calculated</span> <span class="n">formation</span> <span class="n">energy</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">76.6</span> <span class="n">kJ</span><span class="o">/</span><span class="n">mol</span> <span class="k">for</span> <span class="n">formula</span> <span class="n">C2</span> <span class="n">H6</span> <span class="n">S</span><span class="o">.</span>
+
+        <span class="n">Successfully</span> <span class="n">handled</span> <span class="mi">6</span> <span class="n">density</span> <span class="ow">and</span> <span class="n">orbital</span> <span class="n">cube</span> <span class="n">files</span><span class="o">.</span>
+
+                   <span class="n">Atomic</span> <span class="n">charges</span>
+           <span class="o">+--------+-----------+----------+</span>
+           <span class="o">|</span>  <span class="n">Atom</span>  <span class="o">|</span>  <span class="n">Element</span>  <span class="o">|</span>   <span class="n">Charge</span> <span class="o">|</span>
+           <span class="o">|--------+-----------+----------|</span>
+           <span class="o">|</span>   <span class="mi">1</span>    <span class="o">|</span>     <span class="n">C</span>     <span class="o">|</span>    <span class="o">-</span><span class="mf">0.26</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">2</span>    <span class="o">|</span>     <span class="n">C</span>     <span class="o">|</span>    <span class="o">-</span><span class="mf">0.04</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">3</span>    <span class="o">|</span>     <span class="n">S</span>     <span class="o">|</span>    <span class="o">-</span><span class="mf">0.26</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">4</span>    <span class="o">|</span>     <span class="n">H</span>     <span class="o">|</span>     <span class="mf">0.09</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">5</span>    <span class="o">|</span>     <span class="n">H</span>     <span class="o">|</span>     <span class="mf">0.08</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">6</span>    <span class="o">|</span>     <span class="n">H</span>     <span class="o">|</span>     <span class="mf">0.08</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">7</span>    <span class="o">|</span>     <span class="n">H</span>     <span class="o">|</span>     <span class="mf">0.08</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">8</span>    <span class="o">|</span>     <span class="n">H</span>     <span class="o">|</span>     <span class="mf">0.07</span> <span class="o">|</span>
+           <span class="o">|</span>   <span class="mi">9</span>    <span class="o">|</span>     <span class="n">H</span>     <span class="o">|</span>     <span class="mf">0.15</span> <span class="o">|</span>
+           <span class="o">+--------+-----------+----------+</span>
+
 
 <span class="n">Wrote</span> <span class="n">the</span> <span class="n">final</span> <span class="n">structure</span> <span class="n">to</span> <span class="s1">&#39;final_structure.mmcif&#39;</span> <span class="k">for</span> <span class="n">viewing</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>Note the similarity of this section to the first part of the output. However, a closer
-look elicits more details about each step such as those pertinent to <code class="docutils literal notranslate"><span class="pre">FromSMILES</span></code> step
-which in our case, reports the number of atoms in the chemical structure being studied
-and the <code class="docutils literal notranslate"><span class="pre">DFTB+</span> <span class="pre">Optimization</span></code>, the total electronic energy and number of iterations.</p>
-<p>The final section of the output provides references that must be cited regarding the
+<p>This section is identical to the initial summary, but appears more slowly as the job is
+running, and also contains a summary of what the step actually did, and key results.
+In this example, the <code class="docutils literal notranslate"><span class="pre">FromSMILES</span></code> step reports the number of atoms in structure and
+where it was put. The <code class="docutils literal notranslate"><span class="pre">DFTB+</span> <span class="pre">Optimization</span></code> provides the total electronic energy,
+number of steps for the geometry optimization, and charges on the atoms.</p>
+<p>The final section of the output provides references that should be cited regarding the
 calculations performed:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Primary</span> <span class="n">references</span><span class="p">:</span>
 
-<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Jessica</span> <span class="n">Nash</span><span class="p">,</span> <span class="n">Eliseo</span> <span class="n">Marin</span><span class="o">-</span><span class="n">Rimoldi</span><span class="p">,</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">SEAMM</span><span class="p">:</span> <span class="n">Simulation</span> <span class="n">Environment</span>
-    <span class="k">for</span> <span class="n">Atomistic</span> <span class="ow">and</span> <span class="n">Molecular</span> <span class="n">Modeling</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2021.6.8</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span>
-    <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span>
-    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">seamm</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Jessica</span> <span class="n">Nash</span> <span class="ow">and</span> <span class="n">Eliseo</span> <span class="n">Marin</span><span class="o">-</span><span class="n">Rimoldi</span> <span class="ow">and</span> <span class="n">Mohammad</span> <span class="n">Mostafanejad</span> <span class="ow">and</span> <span class="n">Paul</span>
+    <span class="n">Saxe</span><span class="o">.</span> <span class="n">SEAMM</span><span class="p">:</span> <span class="n">Simulation</span> <span class="n">Environment</span> <span class="k">for</span> <span class="n">Atomistic</span> <span class="ow">and</span> <span class="n">Molecular</span> <span class="n">Modeling</span><span class="p">,</span>
+    <span class="n">version</span> <span class="mf">2023.10.30.1</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span> <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span>
+    <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5153984</span><span class="p">,</span>
+    <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5153984</span>
 
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">Hourahine</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Aradi</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Blum</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="p">;</span> <span class="n">Bonafé</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">;</span> <span class="n">Buccheri</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Camacho</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">O</span><span class="s1">&#39;Boyle, Noel M. and Banck, Michael and James, Craig A. and Morley, Chris</span>
+    <span class="ow">and</span> <span class="n">Vandermeersch</span><span class="p">,</span> <span class="n">Tim</span> <span class="ow">and</span> <span class="n">Hutchison</span><span class="p">,</span> <span class="n">Geoffrey</span> <span class="n">R</span><span class="o">.</span> <span class="n">Open</span> <span class="n">Babel</span><span class="p">:</span> <span class="n">An</span> <span class="nb">open</span>
+    <span class="n">chemical</span> <span class="n">toolbox</span><span class="o">.</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Cheminformatics</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">33.</span> <span class="n">DOI</span><span class="p">:</span>
+    <span class="mf">10.1186</span><span class="o">/</span><span class="mi">1758</span><span class="o">-</span><span class="mi">2946</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">33</span>
+
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">Hourahine</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Aradi</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Blum</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="p">;</span> <span class="n">Bonafé</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">;</span> <span class="n">Buccheri</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Camacho</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span>
     <span class="n">Cevallos</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Deshaye</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span> <span class="n">Y</span><span class="o">.</span><span class="p">;</span> <span class="n">Dumitrică</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Dominguez</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Ehlert</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span>
     <span class="n">Elstner</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">;</span> <span class="n">van</span> <span class="n">der</span> <span class="n">Heide</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Hermann</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Irle</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span> <span class="n">Kranz</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Köhler</span><span class="p">,</span>
     <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Kowalczyk</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Kubař</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Lee</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span> <span class="n">Lutsker</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="p">;</span> <span class="n">Maurer</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Min</span><span class="p">,</span>
@@ -748,35 +836,48 @@ calculations performed:</p>
     <span class="n">functional</span> <span class="n">theory</span> <span class="n">based</span> <span class="n">atomistic</span> <span class="n">simulations</span><span class="o">.</span> <span class="n">The</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span>
     <span class="n">Physics</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mf">124101.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1063</span><span class="o">/</span><span class="mf">1.5143190</span>
 
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">Gaus</span><span class="p">,</span> <span class="n">Michael</span><span class="p">;</span> <span class="n">Lu</span><span class="p">,</span> <span class="n">Xiya</span><span class="p">;</span> <span class="n">Elstner</span><span class="p">,</span> <span class="n">Marcus</span><span class="p">;</span> <span class="n">Cui</span><span class="p">,</span> <span class="n">Qiang</span><span class="o">.</span> <span class="n">Parameterization</span> <span class="n">of</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">Gaus</span><span class="p">,</span> <span class="n">Michael</span><span class="p">;</span> <span class="n">Lu</span><span class="p">,</span> <span class="n">Xiya</span><span class="p">;</span> <span class="n">Elstner</span><span class="p">,</span> <span class="n">Marcus</span><span class="p">;</span> <span class="n">Cui</span><span class="p">,</span> <span class="n">Qiang</span><span class="o">.</span> <span class="n">Parameterization</span> <span class="n">of</span>
     <span class="n">DFTB3</span><span class="o">/</span><span class="mi">3</span><span class="n">OB</span> <span class="k">for</span> <span class="n">Sulfur</span> <span class="ow">and</span> <span class="n">Phosphorus</span> <span class="k">for</span> <span class="n">Chemical</span> <span class="ow">and</span> <span class="n">Biological</span>
     <span class="n">Applications</span><span class="o">.</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span> <span class="n">Theory</span> <span class="ow">and</span> <span class="n">Computation</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>
     <span class="mi">1518</span><span class="o">-</span><span class="mf">1537.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1021</span><span class="o">/</span><span class="n">ct401002w</span>
 
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">Gaus</span><span class="p">,</span> <span class="n">Michael</span><span class="p">;</span> <span class="n">Goez</span><span class="p">,</span> <span class="n">Albrecht</span><span class="p">;</span> <span class="n">Elstner</span><span class="p">,</span> <span class="n">Marcus</span><span class="o">.</span> <span class="n">Parametrization</span> <span class="ow">and</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">Gaus</span><span class="p">,</span> <span class="n">Michael</span><span class="p">;</span> <span class="n">Goez</span><span class="p">,</span> <span class="n">Albrecht</span><span class="p">;</span> <span class="n">Elstner</span><span class="p">,</span> <span class="n">Marcus</span><span class="o">.</span> <span class="n">Parametrization</span> <span class="ow">and</span>
     <span class="n">Benchmark</span> <span class="n">of</span> <span class="n">DFTB3</span> <span class="k">for</span> <span class="n">Organic</span> <span class="n">Molecules</span><span class="o">.</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span> <span class="n">Theory</span> <span class="ow">and</span>
     <span class="n">Computation</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">338</span><span class="o">-</span><span class="mf">354.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1021</span><span class="o">/</span><span class="n">ct300849w</span>
 
 <span class="n">Secondary</span> <span class="n">references</span><span class="p">:</span>
 
-<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">DFTB</span><span class="o">+</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2021.6.5</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span> <span class="n">Sciences</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">From</span> <span class="n">Smiles</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span> <span class="k">for</span> <span class="n">creating</span> <span class="n">structures</span> <span class="kn">from</span>
+    <span class="nn">SMILES</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2023.7.18</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span> <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span>
+    <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span>
+    <span class="n">seamm</span><span class="o">/</span><span class="n">from_smiles_step</span><span class="p">,</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5159800</span>
+
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">DFTB</span><span class="o">+</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2023.3.5</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span> <span class="n">Sciences</span>
     <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span>
     <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">dftbplus_step</span>
 
-<span class="n">Process</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">01.408026</span> <span class="p">(</span><span class="mf">1.408</span> <span class="n">s</span><span class="p">)</span>
-<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">02.932646</span> <span class="p">(</span><span class="mf">2.933</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Process</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">02.155739</span> <span class="p">(</span><span class="mf">2.156</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">03.721042</span> <span class="p">(</span><span class="mf">3.721</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Tuesday</span> <span class="mf">2023.11.07</span> <span class="mi">13</span><span class="p">:</span><span class="mi">19</span><span class="p">:</span><span class="mi">29</span>
 </pre></div>
 </div>
-<p>The references are often divided based on their importance and usage frequency in the
-code. For more complicated flowcharts, the number of references can be very large. Thus,
-SEAMM tries to help users decide which ones are the most important references for their
-research.</p>
+<p>The references are divided based on their importance and number of times they are used
+in the job. For more complicated flowcharts, the number of references can be very
+large, so this information is useful for preparing the citations in a publication or
+report.</p>
 <p>The references are also stored in a small database file, <code class="docutils literal notranslate"><span class="pre">references.db</span></code>. Future
 versions of SEAMM will provide tools to merge the references from every executed jobs
 in a particular project. This will assist users to properly cite the tools that they have
 employed to carry out their study.</p>
-<p>By clicking on the folder corresponding to the second step of the flowchart (labeled <strong>2</strong>),
-during which SEAMM performed a DFTB+ geometry optimization, we get:</p>
+</section>
+<section id="examining-details">
+<h2>Examining Details<a class="headerlink" href="#examining-details" title="Link to this heading">#</a></h2>
+<p>The bottom part of the left panel of the results is the directory structure of the job,
+which mirrors the step numbers in the both the initial summary and detailed results in
+<strong>job.out</strong>. In our example, the DFTB+ calculation was the second step in the flowchart
+and itself had two substeps. If you open the folder for the second step of the flowchart
+(labeled <strong>2</strong>), which is the DFTB+ step, and then the folder <strong>2</strong> inside it, you will
+see the inputs and outputs from the optimization step:</p>
 <figure class="align-center" id="id7">
 <img alt="The files for the DFTB+ step" src="../../_images/dftbplus_files.png" />
 <figcaption>
@@ -784,16 +885,37 @@ during which SEAMM performed a DFTB+ geometry optimization, we get:</p>
 </figcaption>
 </figure>
 <p>The main output for DFTB+ is stored in the <code class="docutils literal notranslate"><span class="pre">stdout.txt</span></code> file which has been selected
-for generating the picture shown above. The left panel is the directory section with all
-files pertinent to this step, including the input and output files from DFTB+. One can inspect
-these files to check the input file(s) generated by the plug-in, as well as the outputs.</p>
-<p>Look at <code class="docutils literal notranslate"><span class="pre">dftb_in.hsd</span></code>, one can see the raw input for the DFTB+ package. It should be
-clear now how convenient it was to use the GUI to create an input file instead of manual
-scripting.</p>
-<p>Before wrapping up this tutorial, note that the Dashboard will display files in different
-ways depending on their content and origin. Text files are displayed as text, molecules
-are represented as three-dimensional structures, tabular data are stored as sortable tables
-and graphs are demonstrated as graphs.</p>
+in the picture above, so the contents are shown on the right. The input for DFTB+ is
+<code class="docutils literal notranslate"><span class="pre">dftb_in.hsd</span></code>. This is the file that SEAMM created based on the molecule and the
+parameters that you set in the DFTB+ GUI. As you can see, it is reasonably complicated,
+so SEAMM saved you both work and having to know quite a bit of detail about the
+calculation.</p>
+<p>Before wrapping up this tutorial, note that the Dashboard will display files in
+different ways depending on their content and origin. The file list uses difference
+icons to indicate the type of file. Text files are displayed as text, molecules are
+represented as three-dimensional structures, volumetric data such as the density and
+orbitals are shown as 3-D contours, tabular data as sortable tables, and graphs display
+as such.</p>
+<p>For example, if you click on one of the <strong>cube</strong> files, you will see the corresponding
+orbital or density. For example, the HOMO:</p>
+<figure class="align-center" id="id8">
+<img alt="The HOMO plot" src="../../_images/homo.png" />
+<figcaption>
+<p><span class="caption-text"><em>The highest occupied molecular orbital (HOMO)</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="topics-covered">
+<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Accessing the Dashboard</p></li>
+<li><p>Listing the jobs</p></li>
+<li><p>Viewing the details of a single job</p></li>
+<li><p>The parts of <code class="docutils literal notranslate"><span class="pre">job.out</span></code>, the main output file</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">job.out</span></code> as a guide to the directory structure of the job</p></li>
+<li><p>Displaying various types of files</p></li>
+</ol>
+</section>
 </section>
 
 
@@ -801,19 +923,18 @@ and graphs are demonstrated as graphs.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dashboard_management.html"
+       href="tutorial_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Managing the Dashboard</p>
+        <p class="prev-next-title">1: A First Calculation</p>
       </div>
     </a>
     <a class="right-next"
@@ -821,14 +942,11 @@ and graphs are demonstrated as graphs.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tables and Loops</p>
+        <p class="prev-next-title">3: Variables in Flowcharts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -836,6 +954,20 @@ and graphs are demonstrated as graphs.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-dashboard">Accessing the Dashboard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-a-job">Examining a Job</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-details">Examining Details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-covered">Topics Covered</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
@@ -858,8 +990,8 @@ and graphs are demonstrated as graphs.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -906,10 +1038,11 @@ and graphs are demonstrated as graphs.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

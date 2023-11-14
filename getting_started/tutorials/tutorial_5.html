@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>5: Looping Over Structures &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/tutorials/tutorial_5';</script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6: Running from the Command-Line" href="tutorial_6.html" />
+    <link rel="prev" title="4: Resubmitting a Job" href="tutorial_4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="SEAMM 1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../background/index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../background/index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/dashboard_management.html">Managing the Dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">1: A First Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html">2: Looking at the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html">3: Variables in Flowcharts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html">4: Resubmitting a Job</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5: Looping Over Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html">6: Running from the Command-Line</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Getting Started</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">5: Looping...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="looping-over-structures">
+<span id="tutorial-5"></span><h1>5: Looping Over Structures<a class="headerlink" href="#looping-over-structures" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The flowchart for this tutorial is available at <a href="https://zenodo.org/doi/10.5281/zenodo.5888991" target="_blank">Zenodo</a> and also can be
+directly loaded into SEAMM by opening from Zenodo. The job for this tutorial is
+available on MolSSI’s public server, <a href="http://molssi10.molssi.org:55055/#/jobs/314" target="_blank">Job 314</a>.</p>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In the previous tutorials we have slowly built up easier and easier ways to run a
+calculation on a molecule that we define using SMILES. We’ve used DFTB+ to run the
+calculations because it is available and fast; however, we could replace it with any code
+that can optimize structures – at the moment LAMMPS, MOPAC, Psi4, Gaussian, and
+FHI-aims are available in SEAMM, and any of them would work.</p>
+</section>
+<section id="creating-the-flowchart">
+<h2>Creating the Flowchart<a class="headerlink" href="#creating-the-flowchart" title="Link to this heading">#</a></h2>
+<p>The flowchart we want looks like this:</p>
+<figure class="align-center" id="id1">
+<img alt="Flowchart" src="../../_images/final_flowchart.png" />
+<figcaption>
+<p><span class="caption-text"><em>The final flowchart</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>By now you find it fairly straightforward to make the (empty) flowchart, but there are a
+couple steps that are worth mentioning. We’ll go into more detail about how to edit the
+steps.</p>
+<p>You can see on the left of the picture where the steps come from. <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> is
+under <strong>Control</strong> as are <code class="docutils literal notranslate"><span class="pre">Join</span></code>, which is the circle, and <code class="docutils literal notranslate"><span class="pre">Loop</span></code>. <code class="docutils literal notranslate"><span class="pre">Table</span></code> is under
+<strong>Data</strong>, and <code class="docutils literal notranslate"><span class="pre">fromSMILES</span></code> and <code class="docutils literal notranslate"><span class="pre">DFTB+</span></code> you already know. When you add the next step
+after the <code class="docutils literal notranslate"><span class="pre">Loop</span></code> step it will go to the right. So just clieck on the steps on the left
+until you get to the second <code class="docutils literal notranslate"><span class="pre">Table</span></code> step at the end of the loop:</p>
+<figure class="align-center" id="id2">
+<img alt="Job page" src="../../_images/partial_flowchart.png" />
+<figcaption>
+<p><span class="caption-text"><em>Partly Built Flowchart</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>At this point you have to manually connect the last <code class="docutils literal notranslate"><span class="pre">Table</span></code> step back to the <code class="docutils literal notranslate"><span class="pre">Join</span></code>
+step. Place the cursor over the last <code class="docutils literal notranslate"><span class="pre">Table</span></code> step. Small dots will appear around
+it. Move the cursor over the center bottom dot, which will be larger:</p>
+<figure class="align-center" id="id3">
+<img alt="Selecting the connection point" src="../../_images/connect-1.png" />
+<figcaption>
+<p><span class="caption-text"><em>Selecting the Starting Point for the Connection</em></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Click on the mouse-button and drag to the circular <code class="docutils literal notranslate"><span class="pre">Join</span></code> step, and find the
+connection point on the right side:</p>
+<figure class="align-center" id="id4">
+<img alt="Dragging the connection" src="../../_images/connect-2.png" />
+<figcaption>
+<p><span class="caption-text"><em>Dragging to the End Point for the Connection</em></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When the red dot on the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step becaomes large, let go of the mouse to drop the
+connection onto the step. If the arrow disappears it means that you missed the
+connection point. Try again. It should look like this:</p>
+<figure class="align-center" id="id5">
+<img alt="Successful connection" src="../../_images/connect-3.png" />
+<figcaption>
+<p><span class="caption-text"><em>Successful Connection</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Almost there! It is a bit ugly with the diagonal connection, so clean it up with the
+<strong>Edit</strong> menu and select <strong>Clean Layout</strong> or use the accelerator (⌘L on a Mac, ^L on
+Windows or Linux):</p>
+<figure class="align-center" id="id6">
+<img alt="Clean Flowchart" src="../../_images/connect-4.png" />
+<figcaption>
+<p><span class="caption-text"><em>Flowchart after Cleaning Up</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To finish, add the final <code class="docutils literal notranslate"><span class="pre">Table</span></code> and <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Structure</span></code> steps after the
+loop. Cleaning the layout one more time will move them below the loop, if you wish.</p>
+</section>
+<section id="editing-the-steps">
+<h2>Editing the Steps<a class="headerlink" href="#editing-the-steps" title="Link to this heading">#</a></h2>
+<p>Next we need to edit each of the steps to have it do what we need. This is simple, but a
+bit tedious, so the next section will just be a few words and lots of pictures. Fill out
+the dialogs as the pictures show.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> step at the beginning needs to have a mandatory parameters names
+<strong>structures</strong> that is a string with one or more values:</p>
+<figure class="align-center" id="id7">
+<img alt="Parameters dialog" src="../../_images/parameters.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the Parameters step</em></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>For the first <code class="docutils literal notranslate"><span class="pre">Table</span></code> step we create a table and add a string column named <strong>Structure</strong>:</p>
+<figure class="align-center" id="id8">
+<img alt="Table dialog" src="../../_images/table_1.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the first Table step</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>There is nothing to do for the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step so on to the <code class="docutils literal notranslate"><span class="pre">Loop</span></code> step. Here we want
+a <strong>Foreach</strong> loop for <strong>structure</strong> in <strong>$structures</strong>:</p>
+<figure class="align-center" id="id9">
+<img alt="Loop dialog" src="../../_images/loop.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the Loop step</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step is similar to what we did in the third tutorial. Set the
+<strong>Input:</strong> field to <strong>$structure</strong>. This time, however, pay attention to the last
+three items, which tell the code where to put the new structure and what to call
+it. Choose <strong>Create a new system and configuration</strong>, with the system name
+<strong>use IUPAC name</strong> and configuration name <strong>initial</strong>.</p>
+<figure class="align-center" id="id10">
+<img alt="Table dialog" src="../../_images/smiles1.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the from SMILES step</em></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>For the first <code class="docutils literal notranslate"><span class="pre">Table</span></code> step in the loop we want to append a row to the table and put
+the name of the structure (<strong>$_system_db.system.name</strong>) in the <strong>Structure</strong> column
+that we made in the first <code class="docutils literal notranslate"><span class="pre">Table</span></code> step:</p>
+<figure class="align-center" id="id11">
+<img alt="Table dialog" src="../../_images/table_2.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the first Table step in the loop</em></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The rather odd string that you used needs a bit of explaining. SEAMM has a few global
+variables that it uses internally that can also be used in the
+flowcharts. <strong>_system_db</strong> is the internal database that sotres all the structures,
+etc. The global variables start with an underscore to keep them separate from your
+variables, so don’t create variables starting with an underscore! As before, the
+initial dollar sign (<strong>$</strong>) indicates that this is a reference to a varibale, not a
+simple string. SEAMM is object-oriented, so <strong>$_system_db.system</strong> is always the
+current system, and <strong>$_system_db.system.name</strong> is the name of the system, which we
+just set in the previous step to the IUPAC name of the molecule. So the table will
+have the IUPAC names of the molecules in the structure column.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DFTB+</span></code> is again much like it was in the other tutorials. We need a <code class="docutils literal notranslate"><span class="pre">Choose</span>
+<span class="pre">Parameters</span></code> step. The defaults are fine, so there is no need to edit it. For the
+<code class="docutils literal notranslate"><span class="pre">Optimization</span></code> step the setting on the <strong>Parameters</strong> tab are fine. Note that the
+structure will be put in a new configuration. Click on the third tab, <strong>Results</strong>,
+and set it up like this:</p>
+<figure class="align-center" id="id12">
+<img alt="Optimization dialog" src="../../_images/optimization.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the Optimization step, Results tab</em></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The results tab list all the results from the DFTB+ calculation, and allows you to
+save them in various places. You can save them in the database. Or as variables by
+checking the box just to the left of the variable name (which you can edit). We want
+to save the total energy and energy of formation in our table, which is named
+<strong>table1</strong>, so type that into the two entries in the <strong>Save in table</strong> column. The
+last column is used to pick the units, but the defaults of E_h for the total energy
+and kJ/mol for the energy of formation are fine, so there is no need to change them</p>
+</li>
+<li><p>The second <code class="docutils literal notranslate"><span class="pre">Table</span></code> step, at the end of the loop. We want to save the table each
+pass through the loop so that we can see the results, and also so that we have them
+if the machine crashes or something else happens. It is not very important for the
+calculations with DFTB+ because they are so fast, but with other, slower methods it
+is a good idea to save often:</p>
+<figure class="align-center" id="id13">
+<img alt="Table dialog" src="../../_images/table_3.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the last Table step in the loop</em></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>That finishes the loop. Now for the <code class="docutils literal notranslate"><span class="pre">Table</span></code> step after the loop. All we want to do
+here is print the final table in the output:</p>
+<figure class="align-center" id="id14">
+<img alt="Table dialog" src="../../_images/table_4.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the last Table step</em></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>And the <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Structure</span></code> step at the end of the flowchart. We want to write all
+the structures to the file <strong>structures.sdf</strong>:</p>
+<figure class="align-center" id="id15">
+<img alt="Table dialog" src="../../_images/write_structure.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the Write Structure step</em></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that both <strong>File</strong> and <strong>Structures to write</strong> need to be changed.</p>
+</li>
+</ol>
+</section>
+<section id="running-a-job">
+<h2>Running a Job<a class="headerlink" href="#running-a-job" title="Link to this heading">#</a></h2>
+<p>Now to run a job! (File / Run or ⌘R on a Mac, ^R on Windows or Linux):</p>
+<figure class="align-center" id="id16">
+<img alt="Run dialog" src="../../_images/run1.png" />
+<figcaption>
+<p><span class="caption-text"><em>Submitting the job</em></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As always, you need to put in a title and description of the job. In the <strong>structures</strong>
+field, put in a list of structures separated by white space. I used the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CO</span> <span class="n">CCO</span> <span class="n">CCCO</span> <span class="n">CC</span><span class="p">(</span><span class="n">O</span><span class="p">)</span><span class="n">C</span> <span class="n">CS</span> <span class="n">CCS</span> <span class="n">CCCS</span> <span class="n">CC</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="n">C</span>
+</pre></div>
+</div>
+<p>If you don’t know SMILES, don’t worry! These are quite simple: methanol, ethanol,
+1-propanol, and 2-propanol, followed by their sulfur analogs.</p>
+</section>
+<section id="viewing-the-results">
+<h2>Viewing the Results<a class="headerlink" href="#viewing-the-results" title="Link to this heading">#</a></h2>
+<p>Bring up the Dashboard in your browser and find the job, checking that it has
+finished. In the files section of the left panel, click on <strong>table1.csv</strong>:</p>
+<figure class="align-center" id="id17">
+<img alt="Run dialog" src="../../_images/table.png" />
+<figcaption>
+<p><span class="caption-text"><em>Submitting the job</em></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You can see the table in the right-hand panel, with the IUPAC names, the total energy in
+Hartrees and the energy of formation in kJ/mol. You can right-click on the file in the
+left pane and download it to your machine, where it can be opened in Excel or other
+spreadsheet program, or read using Python. A CSV file is a common file format tha many
+codes can read.</p>
+<p>We also printed the table in job.out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Step</span> <span class="mi">5</span><span class="p">:</span> <span class="n">Table</span>  <span class="mf">2023.10.30</span>
+      <span class="n">Print</span> <span class="n">table</span> <span class="s1">&#39;table1&#39;</span>
+
+            <span class="n">Structure</span>  <span class="n">total</span> <span class="n">energy</span> <span class="p">(</span><span class="n">E_h</span><span class="p">)</span>  <span class="n">energy</span> <span class="n">of</span> <span class="n">formation</span> <span class="p">(</span><span class="n">kJ</span><span class="o">/</span><span class="n">mol</span><span class="p">)</span>
+             <span class="n">methanol</span>           <span class="o">-</span><span class="mf">6.523397</span>                   <span class="o">-</span><span class="mf">242.734519</span>
+              <span class="n">ethanol</span>           <span class="o">-</span><span class="mf">8.997975</span>                   <span class="o">-</span><span class="mf">274.559845</span>
+          <span class="n">propan</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">ol</span>          <span class="o">-</span><span class="mf">11.468303</span>                   <span class="o">-</span><span class="mf">295.223184</span>
+          <span class="n">propan</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ol</span>          <span class="o">-</span><span class="mf">11.471641</span>                   <span class="o">-</span><span class="mf">303.988952</span>
+         <span class="n">methanethiol</span>           <span class="o">-</span><span class="mf">5.643340</span>                    <span class="o">-</span><span class="mf">50.538614</span>
+          <span class="n">ethanethiol</span>           <span class="o">-</span><span class="mf">8.115706</span>                    <span class="o">-</span><span class="mf">76.553701</span>
+      <span class="n">propane</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">thiol</span>          <span class="o">-</span><span class="mf">10.585702</span>                    <span class="o">-</span><span class="mf">96.347049</span>
+      <span class="n">propane</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">thiol</span>          <span class="o">-</span><span class="mf">10.587082</span>                    <span class="o">-</span><span class="mf">99.971550</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most quantum codes calculate a total energy that is the energy of the nuclei
+and electrons, i.e. the energy it would take to separate the nuclei and electron
+infinitely far from each other. The details may differ due to core potentials,
+parameterizations, etc. but that is the gist. It is a large energy,
+which is hidden by using Hartrees, since 1 Hartree = 2625.5 kJ/mol.</p>
+<p>The DFTB+ plug-in has a database of the calculated energy of the elements in their
+standard state – H2, O2, graphite, … – with some of the parameter sets. It uses
+these to calculate the “energy of formation”, which is very much like the more normal
+“enthalpy of formation” except that it does not have the translation, rotational, and
+vibrational terms that are in the enthalpy. It is the electronic energy of
+formation. We can calculate the enthalpy, but it is more work; however, the energy of
+formation is a start and easier to understand than the large electronic energies the
+code calculates.</p>
+<p>For comparison, the enthalpies of formation from the NIST Webbook are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">Structure</span>    <span class="n">enthalpy</span> <span class="n">of</span> <span class="n">formation</span> <span class="p">(</span><span class="n">kJ</span><span class="o">/</span><span class="n">mol</span><span class="p">)</span>
+       <span class="n">methanol</span>                      <span class="o">-</span><span class="mf">205.</span>
+        <span class="n">ethanol</span>                      <span class="o">-</span><span class="mf">234.</span>
+    <span class="n">propan</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">ol</span>                      <span class="o">-</span><span class="mf">256.</span>
+    <span class="n">propan</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ol</span>                      <span class="o">-</span><span class="mf">272.3</span>
+   <span class="n">methanethiol</span>                       <span class="o">-</span><span class="mf">22.8</span>
+    <span class="n">ethanethiol</span>                       <span class="o">-</span><span class="mf">46.15</span>
+<span class="n">propane</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">thiol</span>                       <span class="o">-</span><span class="mf">68.58</span>
+<span class="n">propane</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">thiol</span>                       <span class="o">-</span><span class="mf">76.94</span>
+</pre></div>
+</div>
+<p>Remembering that we are comparing energies to enthalpies, and that <a class="reference internal" href="../../glossary.html#term-DFTB"><span class="xref std std-term">DFTB</span></a> is a
+fast, approximate method, the results look quite reasonable. The trends are correct
+and energy differences are quite good.</p>
+</div>
+</section>
+<section id="viewing-the-final-structures">
+<h2>Viewing the Final Structures<a class="headerlink" href="#viewing-the-final-structures" title="Link to this heading">#</a></h2>
+<p>The last step of the flowchart wrote all of the structures to the file
+<strong>structures.sdf</strong>. You can easily view them in the Dashboard. Click on
+<strong>structures.sdf</strong> in the list of files:</p>
+<figure class="align-center" id="id18">
+<img alt="Structures" src="../../_images/structures.png" />
+<figcaption>
+<p><span class="caption-text"><em>Viewing the Final Structures in the Dashboard</em></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Some file formats, such as the <a class="reference internal" href="../../glossary.html#term-SDF-file"><span class="xref std std-term">SDF file</span></a> we used, support multiple structures in a
+file. If there is more than one structure, the Dashboard adds a comment at the top of
+the window with the number of structures, plus an entry for selecting them. You can
+either type in a structure number (between 1 and 16 in this example) or use the up and
+down arrows to move through them. We have 16 structures even though we only ran 8
+compounds becasue we stored the initial structure from SMILES as well as the optimized
+structure from DFTB+ in separate configurations. If you click through them with the up
+arrow you will see pairs of structures, with small changes between the first initial
+structure and the second optimized structure in each pair.</p>
+<p>If you want to know a bit more, download the structure file and examine the contents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SEAMM=methanol/initial
+ OpenBabel11102306473D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+    0.9340   -0.0572   -0.0486 C   0  0  0  0  0  4  0  0  0  0  0  0
+    0.4606   -0.3516   -1.3546 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5773   -0.7986    0.6356 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5773    0.9059    0.2513 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0040   -0.0572   -0.0486 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.7940    0.3412   -1.9940 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  3  1  0  0  0  0
+  1  4  1  0  0  0  0
+  1  5  1  0  0  0  0
+  2  6  1  0  0  0  0
+M  RAD  1   1   1
+M  END
+$$$$
+SEAMM=methanol/optimized with DFTB/3ob
+ OpenBabel11102306473D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+    0.9319   -0.0533   -0.0713 C   0  0  0  0  0  4  0  0  0  0  0  0
+    0.4617   -0.3478   -1.3615 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5613   -0.8170    0.6180 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5780    0.9347    0.2742 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0360   -0.0497   -0.0324 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.7783    0.3156   -1.9864 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  3  1  0  0  0  0
+  1  4  1  0  0  0  0
+  1  5  1  0  0  0  0
+  2  6  1  0  0  0  0
+M  RAD  1   1   1
+M  END
+&gt;  &lt;Fermi level#DFTB+#DFTB/3ob&gt;
+1.3645835502723223
+
+&gt;  &lt;energy of formation#DFTB+#DFTB/3ob&gt;
+-2.515766177726602
+
+&gt;  &lt;total energy per formula unit#DFTB+#DFTB/3ob&gt;
+-177.5106672880487
+
+&gt;  &lt;total energy#DFTB+#DFTB/3ob&gt;
+-177.5106672880487
+
+$$$$
+SEAMM=ethanol/initial
+...
+</pre></div>
+</div>
+<p>The first line for each structure is the name. SEAMM uses the system and configuration
+names: <code class="docutils literal notranslate"><span class="pre">SEAMM=methanol/initial</span></code> and <code class="docutils literal notranslate"><span class="pre">SEAMM=methanol/optimized</span> <span class="pre">with</span> <span class="pre">DFTB/3ob</span></code> above.
+This is followed by the coordinates and bonds. A nice feature of <a class="reference internal" href="../../glossary.html#term-SDF-file"><span class="xref std std-term">SDF files</span></a> is that they can contain property data. SEAMM uses this to add the properties
+that were requested in the DFTB+ optimization step to the file, labeling them by the
+property name, code (DFTB+), and computational model (DFTB/3ob), separated by <strong>#</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="n">total</span> <span class="n">energy</span><span class="c1">#DFTB+#DFTB/3ob&gt;</span>
+<span class="o">-</span><span class="mf">177.5106672880487</span>
+</pre></div>
+</div>
+<p>These energies are in eV, which is the natural unit for DFTB+.</p>
+</section>
+<section id="topics-covered">
+<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Looping over input data.</p></li>
+<li><p>Capturing key results in tables.</p></li>
+<li><p>A start to understanding the energies produced by DFTB+ and other quantum chemistry
+codes.</p></li>
+<li><p>Viewing a set of structures in an <a class="reference internal" href="../../glossary.html#term-SDF-file"><span class="xref std std-term">SDF file</span></a>.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial_4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4: Resubmitting a Job</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tutorial_6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6: Running from the Command-Line</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-flowchart">Creating the Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-steps">Editing the Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-job">Running a Job</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-results">Viewing the Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-final-structures">Viewing the Final Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-covered">Topics Covered</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/getting_started/tutorials/tutorial_5.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

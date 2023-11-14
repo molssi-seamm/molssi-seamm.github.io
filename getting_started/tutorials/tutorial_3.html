@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tables and Loops &#8212; SEAMM 1.0 documentation</title>
+    <title>3: Variables in Flowcharts &#8212; SEAMM 1.0 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -34,8 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -49,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,8 +60,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Running from the Command-Line" href="tutorial_4.html" />
-    <link rel="prev" title="Working with the Dashboard" href="tutorial_2.html" />
+    <link rel="next" title="4: Resubmitting a Job" href="tutorial_4.html" />
+    <link rel="prev" title="2: Looking at the Results" href="tutorial_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -71,6 +72,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,7 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -121,19 +132,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   
   
+  
     
     
       
     
     
-    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="SEAMM 1.0 documentation - Home"/>`);</script>
   
   
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -175,76 +186,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
                         Developers Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../glossary.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
                         Glossary
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
                         Plug-ins
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../status/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
                         Status
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
                         Statistics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
                         SEAMM Developers
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
                         Acknowledgements
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
                     SEAMM Documentation
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
                     MolSSI
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -256,23 +267,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -288,8 +301,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -300,8 +313,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -311,18 +324,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -378,76 +393,76 @@ document.write(`
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
                         Developers Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../glossary.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
                         Glossary
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
                         Plug-ins
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../status/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
                         Status
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
                         Statistics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
                         SEAMM Developers
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
                         Acknowledgements
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
                     SEAMM Documentation
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
                     MolSSI
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -461,10 +476,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -480,8 +495,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -492,8 +507,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -509,14 +524,16 @@ document.write(`
 <li class="toctree-l1 has-children"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/dashboard_management.html">Managing the Dashboard</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html">Working with the Dashboard</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tables and Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html">Running from the Command-Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">1: A First Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html">2: Looking at the Results</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3: Variables in Flowcharts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html">4: Resubmitting a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html">5: Looping Over Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html">6: Running from the Command-Line</a></li>
 </ul>
 </li>
 </ul>
@@ -548,8 +565,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../index.html" class="nav-link" aria-label="Home">
@@ -562,7 +579,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Tables and Loops</li>
+    <li class="breadcrumb-item active" aria-current="page">3:...</li>
   </ul>
 </nav>
 </div>
@@ -579,225 +596,135 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="tables-and-loops">
-<span id="tutorial-3"></span><h1>Tables and Loops<a class="headerlink" href="#tables-and-loops" title="Link to this heading">#</a></h1>
-<p>In the previous tutorials, we have demonstrated how to set up a flowchart, execute a job,
-and inspect the results using the Dashboard. While it is nice to be able to run a
-complicated simulations on a single chemical structure, it is often much more useful
-to run the same protocol on a number of compounds to look for trends in the desired
-physical or chemical properties. In this tutorial we will explore how perform complex
-operations in SEAMM.</p>
-<p>Let us begin with creating a set of molecules from their SMILES representation by
-storing a list of SMILES strings in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file. In the next step, we loop over
-each line in the file which correspond to each chemical structure and calculate
-a group of properties, this time using <cite>MOPAC</cite> semi-empirical quantum chemistry
-program package.</p>
-<p>On your local machine, create a new empty file store the SMILES strings in it as shown below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SMILES</span>
-<span class="n">C</span>
-<span class="n">CC</span>
-<span class="n">CCO</span>
-<span class="n">CCS</span>
-<span class="n">OCCO</span>
-<span class="n">c1ccccc1</span>
-<span class="n">c1ccccc1O</span>
-</pre></div>
-</div>
-<p>Then save the file with the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> (comma-separated values) extension. For the purpose of
-this tutorial, we have made a subdirectory of <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code> called <code class="docutils literal notranslate"><span class="pre">data</span></code> and named the
-aforementioned file <code class="docutils literal notranslate"><span class="pre">smiles.csv</span></code>.</p>
-<p>Next, make sure the the Dashboard and Job Server are running (see the <a class="reference internal" href="../installation/index.html#installation"><span class="std std-ref">Installing SEAMM</span></a> section
-for further details). Then, activate the <cite>seamm</cite> conda environment and start the SEAMM:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
-<span class="n">seamm</span>
-</pre></div>
-</div>
-<p>Now, create a flowchart with the following steps:</p>
-<ol class="arabic simple">
-<li><p>Table – this is where we will read the table that you made</p></li>
-<li><p>Join</p></li>
-<li><p>Loop – this will be set to loop over the molecules in the table</p></li>
-<li><p>FromSMILES – will create each structure in turn</p></li>
-<li><p>MOPAC – will optimize the geometry and calculate properties</p></li>
-<li><p>Table – will print the table so we can see the progress</p></li>
-<li><p>Table – will save the table</p></li>
-</ol>
-<p>which should look like the following:</p>
-<figure class="align-center" id="id1">
-<img alt="A partial flowchart for looping over a table" src="../../_images/partial_flowchart.png" />
-<figcaption>
-<p><span class="caption-text"><em>The initial skeleton of the flowchart</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Open the dialog for the first Table step either by right-clicking and selecting
-<code class="docutils literal notranslate"><span class="pre">Edit...</span></code> from the pop-up menu or simply double-clicking on the step rectangular
-box. Change the <code class="docutils literal notranslate"><span class="pre">Operation</span></code> to <code class="docutils literal notranslate"><span class="pre">read</span></code> and type the path to your file in the
-<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">file</span></code> entry field:</p>
-<figure class="align-center" id="id2">
-<img alt="The dialog for a Table step" src="../../_images/table_1.png" />
-<figcaption>
-<p><span class="caption-text"><em>The dialog for the first Table step</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Then, edit the <code class="docutils literal notranslate"><span class="pre">Loop</span></code> step and change the first item from <code class="docutils literal notranslate"><span class="pre">For</span></code> to <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">rows</span> <span class="pre">in</span> <span class="pre">table</span></code>
-by clicking on the arrow on the right and selecting the aforementioned option from the menu.</p>
-<p>The next part to edit is the <code class="docutils literal notranslate"><span class="pre">FromSMILES</span></code> step. Set the SMILES entry to <code class="docutils literal notranslate"><span class="pre">$_row[&quot;SMILES&quot;]</span></code>:</p>
-<figure class="align-center" id="id3">
-<img alt="The dialog for a FromSMILES step" src="../../_images/from_smiles.png" />
-<figcaption>
-<p><span class="caption-text"><em>The dialog for the FromSMILES step</em></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>The loop automatically initializes some variables, the names of which start with an
-underscore <code class="docutils literal notranslate"><span class="pre">_&lt;name&gt;</span></code> to prevent conflicts with the user-defined variables.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Do not create variable names starting with an underscore!</p>
-</div>
-<p>When looping over the table row entries, the dictionary variable <cite>_row</cite> gets labeled
-by the column headers and stores the entry values for each data instance.
-Hence, <code class="docutils literal notranslate"><span class="pre">$_row[&quot;SMILES&quot;]</span></code> refers the value of an individual entry within the SMILES string
-label (column). If our table had more columns, we could access each value using the name of
-the column by using <code class="docutils literal notranslate"><span class="pre">$_row[&quot;&lt;column-name&gt;&quot;]</span></code>.</p>
-<p>In the next stage, let us edit the MOPAC step. Similar to DFTB+, MOPAC includes a sub-flowchart.
-Add a single <cite>Optimization</cite> task to its flowchart and open it for further modifications:</p>
-<figure class="align-center" id="id4">
-<img alt="The dialog for a MOPAC Optimization step" src="../../_images/mopac_optimization.png" />
-<figcaption>
-<p><span class="caption-text"><em>The dialog for the MOPAC Optimization step</em></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Then, click on the <code class="docutils literal notranslate"><span class="pre">Results</span></code> tab at the top of the page:</p>
-<figure class="align-center" id="id5">
-<img alt="The results tab for MOPAC Optimization" src="../../_images/mopac_results.png" />
-<figcaption>
-<p><span class="caption-text"><em>Saving the results from a MOPAC optimization calculation</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>There are five columns in the table of results:</p>
-<dl class="simple">
-<dt><strong>Result</strong></dt><dd><p>The property or other computed result</p>
-</dd>
-<dt><strong>Save</strong></dt><dd><p>Used to store a specific value in a variable</p>
-</dd>
-<dt><strong>Variable name</strong></dt><dd><p>The name of a variable which is editable</p>
-</dd>
-<dt><strong>In table</strong></dt><dd><p>The table for storing the results</p>
-</dd>
-<dt><strong>Column name</strong></dt><dd><p>The name of the column in the table</p>
-</dd>
-</dl>
-<p>Only the scalar values can be stored in tables. Let us save the <code class="docutils literal notranslate"><span class="pre">area</span></code>, <code class="docutils literal notranslate"><span class="pre">dipole</span></code>,
-<code class="docutils literal notranslate"><span class="pre">heat</span> <span class="pre">of</span> <span class="pre">formation</span></code>, <code class="docutils literal notranslate"><span class="pre">ionization</span> <span class="pre">potential</span></code> and <code class="docutils literal notranslate"><span class="pre">volume</span></code> in our table
-named <strong>table1</strong>. Type in <strong>table1</strong> in the <code class="docutils literal notranslate"><span class="pre">Table</span></code> column for each of the above properties.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>You can copy and paste the values by using ⌘C or ^C and ⌘V or ^V shortcut keys, respectively.</p>
-</div>
-<figure class="align-center" id="id6">
-<img alt="The dialog showing MOPAC Optimization results" src="../../_images/mopac_results_2.png" />
-<figcaption>
-<p><span class="caption-text"><em>Saving results from Optimization in MOPAC</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Note that we changed the column name for the ionization potential to <code class="docutils literal notranslate"><span class="pre">IP</span></code> for brevity.
-Click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to save the changes to the <code class="docutils literal notranslate"><span class="pre">Results</span></code>, and click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to save the
-sub-flowchart for MOPAC.</p>
-<p>Next, in the second <code class="docutils literal notranslate"><span class="pre">Table</span></code> step, change the <code class="docutils literal notranslate"><span class="pre">Operation</span></code> to <code class="docutils literal notranslate"><span class="pre">save</span></code> and in
-the third <code class="docutils literal notranslate"><span class="pre">Table</span></code> step, change the same <code class="docutils literal notranslate"><span class="pre">Operation</span></code> to <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">current</span> <span class="pre">row</span></code>.
-We save the table after working on every molecule entry and thus, we do not lose
-any information if e.g., the job crashes. Simultaneously, by printing each row,
-we will be able to see our progress. In our present case, the aforementioned features
-might not seem significant because MOPAC is very fast and our calculation involves
-only a handful of molecules. However, if we execute our flowcharts on thousands of
-molecular structures using a more accurate but slower quantum chemistry method, saving
-incremental progress becomes crucial.</p>
-<p>At this point, we have set up all required steps. Now, we are almost ready to execute
-the flowchart. Before doing so, we need to close the loop in our flowchart. To do this,
-we are going to drag an arrow from the last <code class="docutils literal notranslate"><span class="pre">Table</span></code> step up to the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step,
-just before the <code class="docutils literal notranslate"><span class="pre">Loop</span></code> box. Note that when the mouse is over a step box, the red
-dots will appear around its edges. These red dots are in fact connection points allowing
-the users to connect different steps together. When the mouse pointer is hovered over
-one of the connection points, the red dot becomes larger indicating that it has become
-active and ready to make a connection:</p>
-<figure class="align-center" id="id7">
-<img alt="The flowchart with an active connection" src="../../_images/closing_1.png" />
-<figcaption>
-<p><span class="caption-text"><em>Active connection dot on last Table step</em></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Click on an active connection point (red dots around the step boxes) and drag a connecting
-arrow to the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step. As you get closer to the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step box, its connection dots
-will appear around it. Hover the mouse pointer over the connection point on the right
-side of the <code class="docutils literal notranslate"><span class="pre">Join</span></code> box until it becomes active. Now, release the mouse button to create
-the connection.</p>
+  <section id="variables-in-flowcharts">
+<span id="tutorial-3"></span><h1>3: Variables in Flowcharts<a class="headerlink" href="#variables-in-flowcharts" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>At the moment, the position of the mouse pointer on the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step is quite sensitive. So,
-care must be taken when hovering the mouse over the connection points. If one releases the
-mouse button before the mouse pointer is exactly on the active connection point, the connection
-arrow will disappear. This issue will be resolved in the upcoming releases.</p>
+<p>The flowchart for this tutorial is available at <a href="https://zenodo.org/doi/10.5281/zenodo.5615808" target="_blank">Zenodo</a> and also can be
+directly loaded into SEAMM by opening from Zenodo. The job for this tutorial is
+available on MolSSI’s public server, <a href="http://molssi10.molssi.org:55055/#/jobs/312" target="_blank">Job 312</a>.</p>
 </div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In the previous tutorials, you learned how to set up a flowchart, execute a job, and
+inspect the results using the Dashboard. That is a good start, but if you want to run
+calculations on several molecules it is tedious to have to edit the flowchart and change
+e.g. the <a class="reference internal" href="../../glossary.html#term-SMILES"><span class="xref std std-term">SMILES</span></a> string for each molecule. In this tutorial you’ll learn how to
+use variables to make the first flowchart more general, able to run different molecules
+easily.</p>
+<p>We want to make a flowchart like this:</p>
+<figure class="align-center" id="id1">
+<img alt="The flowchart" src="../../_images/step_4.png" />
+<figcaption>
+<p><span class="caption-text"><em>The flowchart</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is the flowchart from the tutorial <a class="reference internal" href="tutorial_1.html#tutorial-1"><span class="std std-ref">1: A First Calculation</span></a> with two changes: the addition
+of the control parameters step, and changing the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step to use a
+vaoriable.</p>
+</section>
+<section id="editing-the-flowchart">
+<h2>Editing the Flowchart<a class="headerlink" href="#editing-the-flowchart" title="Link to this heading">#</a></h2>
+<p>Let’s start with the original flowchart and edit it to get the new one. (If you don’t
+still have the flowchart, jump back to <a class="reference internal" href="tutorial_1.html#tutorial-1"><span class="std std-ref">1: A First Calculation</span></a> and create it again. It will be
+quick this second time.) First we want to add the control parameters step. Drag the
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step to the right to get it out of the way. Click the left mouse button
+on the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step. Its outline will turn red. With the mouse button held down,
+drag it a bit to the right. Next, delete the connection from Start to it by
+right-clicking on the arrow:</p>
+<figure class="align-center" id="id2">
+<img alt="The disconnecting the ``from SMILES`` step" src="../../_images/step_1.png" />
+<figcaption>
+<p><span class="caption-text"><em>Disconnecting the ``from SMILES`` step</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Next add a control parameters step from the left pane, which is <strong>Parameters</strong> in the
+<strong>Control</strong> section:</p>
+<figure class="align-center" id="id3">
+<img alt="Adding the control parameters step" src="../../_images/step_2.png" />
+<figcaption>
+<p><span class="caption-text"><em>Adding the control parameters step</em></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we need to connect it to the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step. When you put the mouse on the
+<code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step, small red dots appear on its frame. Move the mouse over the central dot
+on the bottom of the rectangle. The dot will become much larger. Click the mouse and
+drag to the top of the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step. As you go over the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step dots will
+appear on its frame. Move the mouse and the arrow it is dragging over the center top dot,
+which will become larger. When it does, release the mouse button. If the arrow
+disappears you missed the dot. Try again! It should look like this:</p>
+<figure class="align-center" id="id4">
+<img alt="Dragging the arrow" src="../../_images/step_3.png" />
+<figcaption>
+<p><span class="caption-text"><em>Connecting the Parameters and ``from SMILES`` steps</em></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Almost done! The flowchart will work as it is, but it is a bit ugly. You can drag the
+steps around to make it look nicer but there is an easier way. Go to the <strong>Edit</strong> menu
+and select <strong>Clean Layout</strong> or use the accelerator (⌘L on a Mac, ^L on Windows or
+Linux). That will snap the steps into place:</p>
+<figure class="align-center" id="id5">
+<img alt="Snapping steps into place" src="../../_images/step_4.png" />
+<figcaption>
+<p><span class="caption-text"><em>Flowchart after cleaning the layout</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>That looks right! Now we need to set up and use the variable. Edit the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code>
+step – either double-click or right-click and select <strong>Edit…</strong>:</p>
+<figure class="align-center" id="id6">
+<img alt="Editing the parameters" src="../../_images/step_5.png" />
+<figcaption>
+<p><span class="caption-text"><em>Editing the parameters</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Click the <strong>+</strong> sign to add another parameter, give it a name (“SMILES”), change the
+type to <strong>str</strong>, make it not optional, and give it some reasonable Help text:</p>
+<figure class="align-center" id="id7">
+<img alt="Dragging the arrow" src="../../_images/step_6.png" />
+<figcaption>
+<p><span class="caption-text">Creating a <strong>SMILES</strong> parameter</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Click on <strong>OK</strong> to close the dialog and add the parameter, and click OK again to close
+the dialog for the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step.</p>
+<p>You have created a required parameter named <strong>SMILES</strong>. All that remains is to use it in
+the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step, so edit that step:</p>
 <figure class="align-center" id="id8">
-<img alt="Dropping the connection on the Join step" src="../../_images/closing_2.png" />
+<img alt="Editing the ``from SMILES`` step" src="../../_images/step_7.png" />
 <figcaption>
-<p><span class="caption-text"><em>Dropping the connection on the Join step</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Using the new parameter in the ``from SMILES`` step</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Upon making a connection between the last <code class="docutils literal notranslate"><span class="pre">Table</span></code> step and the <code class="docutils literal notranslate"><span class="pre">Join</span></code> step, the
-flowchart will look like the following:</p>
+<p>Replace <strong>CCS</strong> in the <strong>Input:</strong> field with <strong>$SMILES</strong>. Note the dollar sign <strong>$</strong>, which
+indicates that this is a variable, not a string.</p>
+<p>That’s it! The flowchart is ready.</p>
+</section>
+<section id="running-the-job">
+<h2>Running the Job<a class="headerlink" href="#running-the-job" title="Link to this heading">#</a></h2>
+<p>Now run another job (File / Run or ⌘R on a Mac, ^R on Windows or Linux):</p>
 <figure class="align-center" id="id9">
-<img alt="Initial connection closing a loop" src="../../_images/closing_3.png" />
+<img alt="Run dialog" src="../../_images/run.png" />
 <figcaption>
-<p><span class="caption-text"><em>The connection closing the loop</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Setting parameters when submitting a job</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The flowchart shown above does not look well-organized. Under the Edit
-menu click on <code class="docutils literal notranslate"><span class="pre">Clean</span> <span class="pre">layout</span></code> item. This will automatically clean the
-flowchart layout to a standard form:</p>
-<figure class="align-center" id="id10">
-<img alt="Final flowchart" src="../../_images/closing_4.png" />
-<figcaption>
-<p><span class="caption-text"><em>Completed flowchart</em></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>At this point, all that is left is to run the flowchart. Select <code class="docutils literal notranslate"><span class="pre">Run</span></code> from the <code class="docutils literal notranslate"><span class="pre">File</span></code>
-menu, fill out the form with an appropriate title and description, and click on the <code class="docutils literal notranslate"><span class="pre">OK</span></code>
-button. Next, navigate back to the browser and open the DashBoard at <a class="reference external" href="http://localhost:55055">http://localhost:55055</a>.
-After logging in, check the list of the executed jobs within the workflow and explore
-the results of the current job. Pay attention to the table of results printed in the
-<code class="docutils literal notranslate"><span class="pre">job.out</span></code> file:</p>
-<figure class="align-center" id="id11">
-<img alt="Job.out showing the table of results" src="../../_images/table.png" />
-<figcaption>
-<p><span class="caption-text"><em>The printed table of results</em></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>By double-clicking on the <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">3</span></code> folder within the directory section on the left pane,
-all subdirectories corresponding to the <code class="docutils literal notranslate"><span class="pre">Loop</span></code> step iterations over all molecular SMILES will
-appear in the expanded section. Opening one of the iteration subdirectories shows all pertinent input,
-output, or intermediate files for that iteration including the structure and <code class="docutils literal notranslate"><span class="pre">iteration.out</span></code>
-which is an output summary much like the <code class="docutils literal notranslate"><span class="pre">job.out</span></code> file but specifically for one iteration:</p>
-<figure class="align-center" id="id12">
-<img alt="Dashboard showing iterations of a loop" src="../../_images/iterations.png" />
-<figcaption>
-<p><span class="caption-text"><em>DashBoard show an iteration of the loop</em></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Finally, by looking at the CSV file that is created, one can inspect the updated properties
-resulting from MOPAC:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">,</span><span class="n">SMILES</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">dipole</span><span class="p">,</span><span class="n">heat_of_formation</span><span class="p">,</span><span class="n">IP</span><span class="p">,</span><span class="n">volume</span>
-<span class="mi">0</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="mf">54.8143</span><span class="p">,</span><span class="mf">0.00181763</span><span class="p">,</span><span class="o">-</span><span class="mf">14.4037</span><span class="p">,</span><span class="mf">13.7252</span><span class="p">,</span><span class="mf">37.0557</span>
-<span class="mi">1</span><span class="p">,</span><span class="n">CC</span><span class="p">,</span><span class="mf">75.9592</span><span class="p">,</span><span class="mf">0.00060312</span><span class="p">,</span><span class="o">-</span><span class="mf">18.1965</span><span class="p">,</span><span class="mf">11.9601</span><span class="p">,</span><span class="mf">57.5002</span>
-<span class="mi">2</span><span class="p">,</span><span class="n">CCO</span><span class="p">,</span><span class="mf">86.8539</span><span class="p">,</span><span class="mf">2.05345</span><span class="p">,</span><span class="o">-</span><span class="mf">57.8213</span><span class="p">,</span><span class="mf">10.6488</span><span class="p">,</span><span class="mf">68.9072</span>
-<span class="mi">3</span><span class="p">,</span><span class="n">CCS</span><span class="p">,</span><span class="mf">102.311</span><span class="p">,</span><span class="mf">2.12867</span><span class="p">,</span><span class="o">-</span><span class="mf">11.5302</span><span class="p">,</span><span class="mf">8.86456</span><span class="p">,</span><span class="mf">87.7266</span>
-<span class="mi">4</span><span class="p">,</span><span class="n">OCCO</span><span class="p">,</span><span class="mf">96.9126</span><span class="p">,</span><span class="mf">0.507571</span><span class="p">,</span><span class="o">-</span><span class="mf">95.5368</span><span class="p">,</span><span class="mf">10.4813</span><span class="p">,</span><span class="mf">80.4314</span>
-<span class="mi">5</span><span class="p">,</span><span class="n">c1ccccc1</span><span class="p">,</span><span class="mf">119.695</span><span class="p">,</span><span class="mf">6.72145e-05</span><span class="p">,</span><span class="mf">22.9566</span><span class="p">,</span><span class="mf">9.82405</span><span class="p">,</span><span class="mf">108.368</span>
-<span class="mi">6</span><span class="p">,</span><span class="n">c1ccccc1O</span><span class="p">,</span><span class="mf">129.604</span><span class="p">,</span><span class="mf">1.30752</span><span class="p">,</span><span class="o">-</span><span class="mf">22.1564</span><span class="p">,</span><span class="mf">9.2356</span><span class="p">,</span><span class="mf">119.327</span>
-</pre></div>
-</div>
-<p>In this tutorial, we have demonstrated how to use loops to iterate over the entry rows
-of a table and how to use tables to store the results of our calculations.</p>
+<p>Note at the bottom of the dialog there is an entry field for putting in a value for the
+<strong>SMILES</strong> variable, with the helpful description that you gave. This time let’s
+run ethanol, so put <strong>CCO</strong> in the entry area, and adjust the title and description to
+reflect that you are running ethanol this time. Then click OK to run the job.</p>
+<p>Head over to the Dashboard in your web browser and check that the job ran, and look at
+the results.</p>
+</section>
+<section id="topics-covered">
+<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Dragging steps in a flowchart.</p></li>
+<li><p>Removing and adding connections.</p></li>
+<li><p>Defining parameters in the <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> step.</p></li>
+<li><p>Using a variable.</p></li>
+<li><p>Defining variables when submitting a job.</p></li>
+</ol>
+</section>
 </section>
 
 
@@ -805,11 +732,10 @@ of a table and how to use tables to store the results of our calculations.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tutorial_2.html"
@@ -817,7 +743,7 @@ of a table and how to use tables to store the results of our calculations.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Working with the Dashboard</p>
+        <p class="prev-next-title">2: Looking at the Results</p>
       </div>
     </a>
     <a class="right-next"
@@ -825,14 +751,11 @@ of a table and how to use tables to store the results of our calculations.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Running from the Command-Line</p>
+        <p class="prev-next-title">4: Resubmitting a Job</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -840,6 +763,19 @@ of a table and how to use tables to store the results of our calculations.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-flowchart">Editing the Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-job">Running the Job</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-covered">Topics Covered</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
@@ -862,8 +798,8 @@ of a table and how to use tables to store the results of our calculations.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -910,10 +846,11 @@ of a table and how to use tables to store the results of our calculations.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

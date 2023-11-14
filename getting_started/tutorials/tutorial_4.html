@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Running from the Command-Line &#8212; SEAMM 1.0 documentation</title>
+    <title>4: Resubmitting a Job &#8212; SEAMM 1.0 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -34,8 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -49,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -59,8 +60,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="How-To Guide" href="../../how_tos/index.html" />
-    <link rel="prev" title="Tables and Loops" href="tutorial_3.html" />
+    <link rel="next" title="5: Looping Over Structures" href="tutorial_5.html" />
+    <link rel="prev" title="3: Variables in Flowcharts" href="tutorial_3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -71,6 +72,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,7 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -121,19 +132,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   
   
+  
     
     
       
     
     
-    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="SEAMM 1.0 documentation - Home"/>`);</script>
   
   
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -175,76 +186,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
                         Developers Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../glossary.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
                         Glossary
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
                         Plug-ins
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../status/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
                         Status
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
                         Statistics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
                         SEAMM Developers
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
                         Acknowledgements
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
                     SEAMM Documentation
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
                     MolSSI
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -256,23 +267,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -288,8 +301,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -300,8 +313,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -311,18 +324,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -378,76 +393,76 @@ document.write(`
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
                         Developers Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../glossary.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
                         Glossary
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../plug-ins/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
                         Plug-ins
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../status/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
                         Status
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../statistics/index.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
                         Statistics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../dev_team.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
                         SEAMM Developers
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../acknowledgements.html">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
                         Acknowledgements
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
                     SEAMM Documentation
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://molssi.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
                     MolSSI
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -461,10 +476,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -480,8 +495,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -492,8 +507,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -509,14 +524,16 @@ document.write(`
 <li class="toctree-l1 has-children"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/dashboard_management.html">Managing the Dashboard</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html">Working with the Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html">Tables and Loops</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Running from the Command-Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">1: A First Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html">2: Looking at the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html">3: Variables in Flowcharts</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4: Resubmitting a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html">5: Looping Over Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_6.html">6: Running from the Command-Line</a></li>
 </ul>
 </li>
 </ul>
@@ -548,8 +565,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../index.html" class="nav-link" aria-label="Home">
@@ -562,7 +579,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Running from the Command-Line</li>
+    <li class="breadcrumb-item active" aria-current="page">4:...</li>
   </ul>
 </nav>
 </div>
@@ -579,401 +596,94 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="running-from-the-command-line">
-<span id="tutorial-4"></span><h1>Running from the Command-Line<a class="headerlink" href="#running-from-the-command-line" title="Link to this heading">#</a></h1>
+  <section id="resubmitting-a-job">
+<span id="tutorial-4"></span><h1>4: Resubmitting a Job<a class="headerlink" href="#resubmitting-a-job" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A <a class="reference external" href="https://www.youtube.com/watch?v=Wf9GtKu5rGg">video of this tutorial</a> is
-available on the <a class="reference external" href="https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ">SEAMM YouTube channel</a>.</p>
+<p>The job for this tutorial is available on MolSSI’s public server, <a href="http://molssi10.molssi.org:55055/#/jobs/313" target="_blank">Job 313</a>.</p>
 </div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>So far, we have demonstrated how to create and submit a flowchart in the SEAMM graphical
-user interface (GUI), and examine the results using the Dashboard. In this tutorial
-you will</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>open a flowchart directly from Zenodo instead of building it from scratch,</p></li>
-<li><p>edit the flowchart by modifying its steps,</p></li>
-<li><p>learn how to create and use command-line parameters and adopt them in a flowchart,
-and</p></li>
-<li><p>learn how to execute a flowchart from the command-line interface (CLI).</p></li>
-</ol>
-</div></blockquote>
-</div>
-<p>Start the SEAMM GUI either by using the app or running SEAMM in a terminal window in
-the conda enviroment <cite>seamm</cite>. Once the GUI opens, use the <code class="docutils literal notranslate"><span class="pre">File/Open</span></code> menu (or the
-short cut key <code class="docutils literal notranslate"><span class="pre">ctrl-o</span></code>) to open a flowchart:</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../../_images/4_open_file_menu.png"><img alt="The file menu" src="../../_images/4_open_file_menu.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">The file menu</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>The opened dialog will look like the following:</p>
+<p>So far you have learned how to create a flowchart in SEAMM, submit jobs, look at the
+results, and use variables and the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step to set them as you submit a
+job. It is pretty easy to run lots of similar molecules this way, but let’s make it even
+easier. In this tutorial you will learn how to resubmit a job from the Dashboard,
+changing the parameters as you do so. In the next tutorial you’ll learn how to loop over
+a number of structures and capture key results in a spreadsheet. Both make it easier to
+run multiple structures, and of course you can combine both techniques. SEAMM is all
+about make life easier and getting results with less effort, i.e. productivity.</p>
+</section>
+<section id="id1">
+<h2>Resubmitting a Job<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>You need to go to the Dashboard in your browser (<a href="http://localhost:55055" target="_blank">http://localhost:55055</a>, will open in
+a new tab) and open the job that you ran in the last tutorial, <a class="reference internal" href="#tutorial-4"><span class="std std-ref">4: Resubmitting a Job</span></a>. The
+web page should look like this:</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../../_images/4_open_dialog.png"><img alt="The Open dialog" src="../../_images/4_open_dialog.png" style="width: 500px;" /></a>
+<img alt="Job page" src="../../_images/job.png" />
 <figcaption>
-<p><span class="caption-text">The Open dialog</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Job Page in the Dashboard</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Instead of storing the flowcharts on our local machines and open them here, we are going
-to get one from Zenodo servers. One can find the pre-made flowcharts at the
-<a class="reference external" href="https://zenodo.org/communities/seamm-flowcharts/?page=1&amp;size=20">SEAMM Flowcharts community</a>
-or easily import them to your project via SEAMM GUI.</p>
-</div>
-<p>In the first line of the opened dialog, let us change the <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">flowchart</span> <span class="pre">from</span> <span class="pre">local</span> <span class="pre">files</span></code>
-field to <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">flowchart</span> <span class="pre">from</span> <span class="pre">Zenodo</span></code>. Following this change, the dialog will accordingly update.
-Clicking on the <code class="docutils literal notranslate"><span class="pre">+</span></code> button allows us to add a filter in the criterion and type <cite>Tutorial</cite> into
-the last field in the line that appears. Then, we click on <code class="docutils literal notranslate"><span class="pre">Search</span></code>. After clicking on the first
-entry (<code class="docutils literal notranslate"><span class="pre">SEAMM</span> <span class="pre">Tutorial</span> <span class="pre">1</span></code>), our dialog will look like the following:</p>
+<p>In the left panel of the job, between the title and the files for the job, are the
+<strong>Actions:</strong>. If you hover the mouse over them, a short description pops up. The right
+one, the arrow, is described as <strong>Submit This Job with New Parameters</strong>. Click on it and
+the page will change to this:</p>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../../_images/4_open_zenodo.png"><img alt="Open from Zenodo" src="../../_images/4_open_zenodo.png" style="width: 500px;" /></a>
+<img alt="Submit page" src="../../_images/submit.png" />
 <figcaption>
-<p><span class="caption-text">Opening a flowchart from Zenodo</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Resubmit Page in the Dashboard</em></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Before pressing the <code class="docutils literal notranslate"><span class="pre">OK</span></code> button in order to open the flowchart, note that there is a small
-drop-down arrow button next to <code class="docutils literal notranslate"><span class="pre">SEAMM</span> <span class="pre">Tutorial</span> <span class="pre">1</span></code> in the list of tutorials. By clicking on
-this arrow button, all available versions of the tutorial will be listed in the expanded
-subsection under the tutorial’s title:</p>
+<p>The SMILES, title, and description are exactly how you submitted the job. You probably
+only have one Project, <strong>default</strong>, which is selected. If you had other projects, you
+would choose the one for the new job here. Running the same molecule is not very
+interesting, so let’s change the molecule to 1-propanol – <strong>CCCO</strong> is the SMILES – and
+adjust the title and description:</p>
 <figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="../../_images/4_zenodo_versions.png"><img alt="Versions of a flowchart" src="../../_images/4_zenodo_versions.png" style="width: 500px;" /></a>
+<img alt="Submit page" src="../../_images/submit_2.png" />
 <figcaption>
-<p><span class="caption-text">Selecting a specific version of a flowchart</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Edited Resubmit Page in the Dashboard</em></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>As such, the SEAMM GUI allows the users to access the entire history of a flowchart and
-select the desired version. Here, we select the most recent version and click <code class="docutils literal notranslate"><span class="pre">Open</span></code>:</p>
+<p>There are two buttons at the bottom of the page to submit the job. The only difference
+is what page you end up on after submitting the job. <strong>Submit Just This Job</strong> submits
+the job and takes you to its page. <strong>Submit More Jobs…</strong> also submits the job, but
+returns you to this page, ready to edit and submit another job. Let’s just run one job,
+so click on the first button, <strong>Submit Just This Job</strong>:</p>
 <figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../../_images/4_initial_flowchart.png"><img alt="The initial flowchart" src="../../_images/4_initial_flowchart.png" style="width: 500px;" /></a>
+<img alt="Job page" src="../../_images/job_2.png" />
 <figcaption>
-<p><span class="caption-text">The flowchart for Tutorial 1, read from Zenodo</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Job Page for the Submitted Job</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>At this point, if we re-run our previous flowchart as we did in the <a class="reference internal" href="tutorial_1.html#tutorial-1"><span class="std std-ref">first tutorial</span></a>, we get exactly the same results for the ethanethiol molecule. This
-is nice from the point of view of reproducibility, but not very useful for pushing
-the science for new discoveries.</p>
-<p>In the next step, we will edit our flowchart to accept SMILES strings as the input and
-execute our flowchart for ethanol from the CLI. Before getting started, let us make some room
-for another step box immediately after the <code class="docutils literal notranslate"><span class="pre">Start</span></code> step by clicking on the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code>
-step and dragging it to the right:</p>
+<p>Your job number maybe different than in the example, but the title and description
+should be what you just typed in. The job is still running, because the job page was
+updated immediately after starting the job. Click on the refresh button just to the right
+of the job number to update the page. Because of the way the Dashboard works, refreshing
+the entire page in the Web browser usually doesn’t do what you want, so get used to the
+refresh button! In just a couple seconds the job will be finished and you can look at
+the results:</p>
 <figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="../../_images/4_edit_1.png"><img alt="Moving a step of the flowchart" src="../../_images/4_edit_1.png" style="width: 500px;" /></a>
+<img alt="Job page" src="../../_images/job_3.png" />
 <figcaption>
-<p><span class="caption-text">Moving a step by dragging it</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Job Page When Finished</em></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Next, we right-click on the connecting arrow between the <code class="docutils literal notranslate"><span class="pre">Start</span></code> step and the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">Smiles</span></code> step boxes
-and select <code class="docutils literal notranslate"><span class="pre">Delete</span></code>:</p>
-<figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../../_images/4_edit_2.png"><img alt="Deleting a connection" src="../../_images/4_edit_2.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">Deleting the connection between two steps.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Then, we open the <code class="docutils literal notranslate"><span class="pre">Control</span></code> section of the left menu and add a <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step:</p>
-<figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="../../_images/4_edit_3.png"><img alt="Adding the ``Parameters`` step" src="../../_images/4_edit_3.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">Adding the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>In the next part, we need to connect the flowchart back together with the new <code class="docutils literal notranslate"><span class="pre">Parameters</span></code>
-step as the first step. Placing the cursor over the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step box activates its
-connection points (red dots) around its edges. By moving the cursor over the center-bottom
-connection point, it becomes larger (active) verifying that the mouse is indeed over it.
-Let us click and drag the arrow that appears on the center-top connection point of the
-<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">Smiles</span></code> step. When the aforementioned connection point becomes active, release the
-mouse button:</p>
-<figure class="align-center" id="id9">
-<a class="reference internal image-reference" href="../../_images/4_edit_4.png"><img alt="Connecting two steps" src="../../_images/4_edit_4.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">Connecting the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">Smiles</span></code> steps</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Our current flowchart should look like this:</p>
-<figure class="align-center" id="id10">
-<a class="reference internal image-reference" href="../../_images/4_edit_5.png"><img alt="Edited flowchart" src="../../_images/4_edit_5.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">The edited flowchart</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Although our flowchart is properly working, it is not organized nicely. We could clean
-it up by dragging the steps around, but SEAMM can do it automatically. By selecting the
-<code class="docutils literal notranslate"><span class="pre">Clean</span> <span class="pre">layout</span></code> command from the <code class="docutils literal notranslate"><span class="pre">Edit</span></code> menu, or using the shortcut key <code class="docutils literal notranslate"><span class="pre">ctrl-L</span></code>,
-all steps can snapped into order at once:</p>
-<figure class="align-center" id="id11">
-<a class="reference internal image-reference" href="../../_images/4_edit_6.png"><img alt="Cleaning the flowchart" src="../../_images/4_edit_6.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">Cleaning the flowchart</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>At this point, we need to setup the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step by double-clicking on it or using
-right-click and selecting <code class="docutils literal notranslate"><span class="pre">Edit</span></code>. By clicking on the <code class="docutils literal notranslate"><span class="pre">+</span></code> button, one can add another
-parameter and set it up as shown:</p>
-<figure class="align-center" id="id12">
-<a class="reference internal image-reference" href="../../_images/4_edit_7.png"><img alt="Setting the ``Parameters`` step" src="../../_images/4_edit_7.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">Setting the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>The name of the variable will be set to <code class="docutils literal notranslate"><span class="pre">SMILES</span></code> and expects a single string value.
-By default, it is a required (not optional) variable, meaning that its value must be
-initialized in the GUI (e.g. using files, manually etc.) or supplied via CLI, e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span> <span class="n">CCO</span>
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">CCO</span></code> is the SMILES representation of the ethanol molecule. If you left the SMILES
-variable as optional, the supplied SMILES argument in the CLI value must be prefixed by
-<code class="docutils literal notranslate"><span class="pre">--SMILES</span></code> flag as shown below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span> <span class="o">--</span><span class="n">SMILES</span> <span class="n">CCO</span>
-</pre></div>
-</div>
-<p>This method works fine for the optional parameters that have reasonable defaults but
-would not be appropriate in our case because there is no default value for the SMILES
-variable.</p>
-<p>In the next stage, we need to modify the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step. After closing the
-<code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step dialog by clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, we start editing the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code>
-step:</p>
-<figure class="align-center" id="id13">
-<a class="reference internal image-reference" href="../../_images/4_edit_8.png"><img alt="Editing the ``from SMILES`` step" src="../../_images/4_edit_8.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">Editing the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Rather than typing the SMILES for the molecule directly into the entry field, as we did
-in the <a class="reference internal" href="tutorial_1.html#tutorial-1"><span class="std std-ref">first tutorial</span></a>, this time we type <code class="docutils literal notranslate"><span class="pre">$SMILES</span></code> in it. Note
-that we are calling the variable <code class="docutils literal notranslate"><span class="pre">SMILES</span></code> in the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> step. The dollar
-sign (<code class="docutils literal notranslate"><span class="pre">$</span></code>) in front of the variable name allows SEAMM to know that this is a
-variable and it should access and use its value. We then click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to close the
-dialog.</p>
-<p>Let us save the flowchart (from the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu, select <code class="docutils literal notranslate"><span class="pre">Save</span></code> or use the shortcut
-keys <code class="docutils literal notranslate"><span class="pre">ctrl-S</span></code>) and store it in a folder that we can easily find. We store our copy
-in <code class="docutils literal notranslate"><span class="pre">~/SEAMM/flowcharts</span></code> which we will refer back to in the next few steps.</p>
-<p>Now, we switch to a terminal window and type the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) psaxe@paul run2 % conda activate seamm
-conda activate seamm
-(seamm) psaxe@paul run2 % ~/SEAMM/flowcharts/tutorial-4.flow --help
-~/SEAMM/flowcharts/tutorial-4.flow --help
-usage: /Users/psaxe/SEAMM/flowcharts/tutorial-4.flow [-h] [--root ROOT] [--datastore DATASTORE] [--job-id-file JOB_ID_FILE]
-                                                     [--dashboards DASHBOARDS]
-                                                     [--log-level {NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}]
-                                                     [--database DATABASE] [--read-only] [--standalone] [--project PROJECTS]
-                                                     [--title TITLE] [--force] [--parallelism {none,mpi,openmp,any}]
-                                                     [--ncores NCORES] [--memory MEMORY]
-                                                     SMILES start-node-step control-parameters-step from-smiles-step
-                                                     dftbplus-step
-
-positional arguments:
-  SMILES                The SMILES for the molecule
-
-optional arguments:
-  -h, --help            show this help message and exit
-
-main options:
-  The main options for SEAMM
-
-  --root ROOT           The root directory for SEAMM data, default: ~/SEAMM
-  --datastore DATASTORE
-                        The datastore (directory) for this run, default: ${root}/Jobs
-...
-</pre></div>
-</div>
-<p>Here, we needed to ensure that the <code class="docutils literal notranslate"><span class="pre">seamm</span></code> conda environment is running. Then, we
-executed the flowchart with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag. The output is a bit longer than what
-is shown above but is self-explanatory. The first line gives a summary of the command
-and all possible options.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">SMILES</span></code> parameter, as shown in the output above, is not optional and its
-help message in the output comes from whatever that was typed in its <code class="docutils literal notranslate"><span class="pre">Parameters</span></code>
-dialog. This is how we can guide other researchers and users to use our flowcharts.</p>
-</div>
-<p>In the next stage, we execute the flowchart:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">seamm</span><span class="p">)</span> <span class="n">psaxe</span><span class="nd">@paul</span> <span class="n">run2</span> <span class="o">%</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">flowcharts</span><span class="o">/</span><span class="n">tutorial</span><span class="o">-</span><span class="mf">4.</span><span class="n">flow</span> <span class="o">--</span><span class="n">standalone</span> <span class="n">CCO</span>
-<span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">flowcharts</span><span class="o">/</span><span class="n">tutorial</span><span class="o">-</span><span class="mf">4.</span><span class="n">flow</span> <span class="o">--</span><span class="n">standalone</span> <span class="n">CCO</span>
-<span class="n">Running</span> <span class="ow">in</span> <span class="n">standalone</span> <span class="n">mode</span><span class="o">.</span>
-<span class="n">Running</span> <span class="ow">in</span> <span class="n">directory</span> <span class="s1">&#39;/Users/psaxe/tmp/run2&#39;</span>
-
-<span class="n">Description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">flowchart</span>
-<span class="o">----------------------------</span>
-<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2022.1.17</span>
-
-<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Parameters</span>  <span class="mf">2021.10.13</span>
-    <span class="n">The</span> <span class="n">following</span> <span class="n">variables</span> <span class="n">will</span> <span class="n">be</span> <span class="nb">set</span> <span class="kn">from</span> <span class="nn">command</span><span class="o">-</span><span class="n">line</span> <span class="n">arguments</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span>
-    <span class="ow">not</span> <span class="n">present</span><span class="p">,</span> <span class="n">to</span> <span class="n">the</span> <span class="n">default</span> <span class="n">value</span><span class="o">.</span>
-
-    <span class="o">+------------+--------+-----------+-----------------------------+</span>
-    <span class="o">|</span> <span class="n">Variable</span>   <span class="o">|</span> <span class="n">Type</span>   <span class="o">|</span> <span class="n">Default</span>   <span class="o">|</span> <span class="n">Description</span>                 <span class="o">|</span>
-    <span class="o">+============+========+===========+=============================+</span>
-    <span class="o">|</span> <span class="n">SMILES</span>     <span class="o">|</span> <span class="nb">str</span>    <span class="o">|</span>           <span class="o">|</span> <span class="n">The</span> <span class="n">SMILES</span> <span class="k">for</span> <span class="n">the</span> <span class="n">molecule</span> <span class="o">|</span>
-    <span class="o">+------------+--------+-----------+-----------------------------+</span>
-
-<span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.10.13</span>
-    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">variable</span> <span class="s1">&#39;$SMILES&#39;</span><span class="p">,</span> <span class="n">overwriting</span>
-    <span class="n">the</span> <span class="n">current</span> <span class="n">configuration</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">system</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">canonical</span>
-    <span class="n">SMILES</span> <span class="n">of</span> <span class="n">the</span> <span class="n">structure</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">will</span> <span class="n">be</span> <span class="n">initial</span><span class="o">.</span>
-
-<span class="n">Step</span> <span class="mi">3</span><span class="p">:</span> <span class="n">DFTB</span><span class="o">+</span>  <span class="mf">2022.1.18</span>
-
-   <span class="n">Step</span> <span class="mf">3.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
-       <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
-
-   <span class="n">Step</span> <span class="mf">3.2</span><span class="p">:</span> <span class="n">Optimization</span>
-       <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Rational</span> <span class="n">Function</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span>
-       <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0</span> <span class="n">hartree</span><span class="o">/</span><span class="n">bohr</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span> <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
-
-
-
-<span class="n">Running</span> <span class="n">the</span> <span class="n">flowchart</span>
-<span class="o">---------------------</span>
-<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2022.1.17</span>
-
-<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Parameters</span>  <span class="mf">2021.10.13</span>
-    <span class="n">The</span> <span class="n">following</span> <span class="n">variables</span> <span class="n">have</span> <span class="n">been</span> <span class="nb">set</span> <span class="kn">from</span> <span class="nn">command</span><span class="o">-</span><span class="n">line</span> <span class="n">arguments</span><span class="p">,</span>
-    <span class="n">environment</span> <span class="n">variables</span><span class="p">,</span> <span class="n">a</span> <span class="n">configuration</span> <span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="o">.</span><span class="n">ini</span><span class="p">),</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">default</span> <span class="n">value</span><span class="p">,</span> <span class="ow">in</span>
-    <span class="n">that</span> <span class="n">order</span><span class="o">.</span>
-
-    <span class="o">+------------+---------+-------------+-----------------------------+</span>
-    <span class="o">|</span> <span class="n">Variable</span>   <span class="o">|</span> <span class="n">Value</span>   <span class="o">|</span> <span class="n">Set</span> <span class="n">From</span>    <span class="o">|</span> <span class="n">Description</span>                 <span class="o">|</span>
-    <span class="o">+============+=========+=============+=============================+</span>
-    <span class="o">|</span> <span class="n">SMILES</span>     <span class="o">|</span> <span class="n">CCO</span>     <span class="o">|</span> <span class="n">commandline</span> <span class="o">|</span> <span class="n">The</span> <span class="n">SMILES</span> <span class="k">for</span> <span class="n">the</span> <span class="n">molecule</span> <span class="o">|</span>
-    <span class="o">+------------+---------+-------------+-----------------------------+</span>
-
-<span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.10.13</span>
-    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="s1">&#39;CCO&#39;</span><span class="p">,</span> <span class="n">overwriting</span> <span class="n">the</span> <span class="n">current</span>
-    <span class="n">configuration</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">system</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">canonical</span> <span class="n">SMILES</span> <span class="n">of</span> <span class="n">the</span>
-    <span class="n">structure</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">will</span> <span class="n">be</span> <span class="n">initial</span><span class="o">.</span>
-
-    <span class="n">Created</span> <span class="n">a</span> <span class="n">molecular</span> <span class="n">structure</span> <span class="k">with</span> <span class="mi">9</span> <span class="n">atoms</span><span class="o">.</span>
-           <span class="n">System</span> <span class="n">name</span> <span class="o">=</span> <span class="n">CCO</span>
-    <span class="n">Configuration</span> <span class="n">name</span> <span class="o">=</span> <span class="n">initial</span>
-
-<span class="n">Step</span> <span class="mi">3</span><span class="p">:</span> <span class="n">DFTB</span><span class="o">+</span>  <span class="mf">2022.1.18</span>
-
-    <span class="n">Step</span> <span class="mf">3.1</span><span class="p">:</span> <span class="n">Choose</span> <span class="n">Parameters</span>
-        <span class="n">Using</span> <span class="n">the</span> <span class="s1">&#39;3ob&#39;</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameters</span><span class="o">.</span>
-
-
-    <span class="n">Step</span> <span class="mf">3.2</span><span class="p">:</span> <span class="n">Optimization</span>
-        <span class="n">Structural</span> <span class="n">optimization</span> <span class="n">using</span> <span class="n">the</span> <span class="n">Rational</span> <span class="n">Function</span> <span class="n">method</span> <span class="k">with</span> <span class="n">a</span>
-        <span class="n">convergence</span> <span class="n">criterion</span> <span class="n">of</span> <span class="mf">0.0001</span> <span class="n">E_h</span><span class="o">/</span><span class="n">a_0</span><span class="o">.</span> <span class="n">A</span> <span class="n">maximum</span> <span class="n">of</span> <span class="mi">200</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
-
-
-        <span class="n">The</span> <span class="n">geometry</span> <span class="n">optimization</span> <span class="n">converged</span> <span class="ow">in</span> <span class="mi">25</span> <span class="n">steps</span> <span class="n">to</span> <span class="n">a</span> <span class="n">total</span> <span class="n">energy</span> <span class="n">of</span>
-        <span class="o">-</span><span class="mf">8.997975</span> <span class="n">Ha</span><span class="o">.</span> <span class="n">The</span> <span class="n">calculated</span> <span class="n">formation</span> <span class="n">energy</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">274.56</span> <span class="n">kJ</span><span class="o">/</span><span class="n">mol</span><span class="o">.</span>
-
-<span class="n">Wrote</span> <span class="n">the</span> <span class="n">final</span> <span class="n">structure</span> <span class="n">to</span> <span class="s1">&#39;final_structure.mmcif&#39;</span> <span class="k">for</span> <span class="n">viewing</span><span class="o">.</span>
-
-<span class="n">Primary</span> <span class="n">references</span><span class="p">:</span>
-
-<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Jessica</span> <span class="n">Nash</span> <span class="ow">and</span> <span class="n">Eliseo</span> <span class="n">Marin</span><span class="o">-</span><span class="n">Rimoldi</span> <span class="ow">and</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">SEAMM</span><span class="p">:</span> <span class="n">Simulation</span>
-    <span class="n">Environment</span> <span class="k">for</span> <span class="n">Atomistic</span> <span class="ow">and</span> <span class="n">Molecular</span> <span class="n">Modeling</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2022.1.17</span><span class="p">;</span> <span class="n">The</span>
-    <span class="n">Molecular</span> <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span>
-    <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5153984</span><span class="p">,</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5153984</span>
-
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">O</span><span class="s1">&#39;Boyle, Noel M. and Banck, Michael and James, Craig A. and Morley, Chris</span>
-    <span class="ow">and</span> <span class="n">Vandermeersch</span><span class="p">,</span> <span class="n">Tim</span> <span class="ow">and</span> <span class="n">Hutchison</span><span class="p">,</span> <span class="n">Geoffrey</span> <span class="n">R</span><span class="o">.</span> <span class="n">Open</span> <span class="n">Babel</span><span class="p">:</span> <span class="n">An</span> <span class="nb">open</span>
-    <span class="n">chemical</span> <span class="n">toolbox</span><span class="o">.</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Cheminformatics</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">33.</span> <span class="n">DOI</span><span class="p">:</span>
-    <span class="mf">10.1186</span><span class="o">/</span><span class="mi">1758</span><span class="o">-</span><span class="mi">2946</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">33</span>
-
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="n">The</span> <span class="n">Open</span> <span class="n">Babel</span> <span class="n">Package</span><span class="p">,</span> <span class="n">version</span> <span class="mf">3.1.0</span><span class="p">;</span> <span class="n">Open</span> <span class="n">Babel</span><span class="p">,</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">openbabel</span><span class="o">.</span><span class="n">org</span>
-
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">Hourahine</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Aradi</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="p">;</span> <span class="n">Blum</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="p">;</span> <span class="n">Bonafé</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">;</span> <span class="n">Buccheri</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Camacho</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span>
-    <span class="n">Cevallos</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Deshaye</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span> <span class="n">Y</span><span class="o">.</span><span class="p">;</span> <span class="n">Dumitrică</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Dominguez</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Ehlert</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span>
-    <span class="n">Elstner</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">;</span> <span class="n">van</span> <span class="n">der</span> <span class="n">Heide</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Hermann</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Irle</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span> <span class="n">Kranz</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Köhler</span><span class="p">,</span>
-    <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Kowalczyk</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Kubař</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span> <span class="n">Lee</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span> <span class="n">S</span><span class="o">.</span><span class="p">;</span> <span class="n">Lutsker</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="p">;</span> <span class="n">Maurer</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Min</span><span class="p">,</span>
-    <span class="n">S</span><span class="o">.</span> <span class="n">K</span><span class="o">.</span><span class="p">;</span> <span class="n">Mitchell</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="p">;</span> <span class="n">Negre</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="p">;</span> <span class="n">Niehaus</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Niklasson</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span> <span class="n">M</span><span class="o">.</span> <span class="n">N</span><span class="o">.</span><span class="p">;</span> <span class="n">Page</span><span class="p">,</span>
-    <span class="n">A</span><span class="o">.</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Pecchia</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Penazzi</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="p">;</span> <span class="n">Persson</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span> <span class="n">P</span><span class="o">.</span><span class="p">;</span> <span class="n">Řezáč</span><span class="p">,</span> <span class="n">J</span><span class="o">.</span><span class="p">;</span> <span class="n">Sánchez</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span> <span class="n">G</span><span class="o">.</span><span class="p">;</span>
-    <span class="n">Sternberg</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">;</span> <span class="n">Stöhr</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="p">;</span> <span class="n">Stuckenberg</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">;</span> <span class="n">Tkatchenko</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="p">;</span> <span class="n">Yu</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span> <span class="n">W</span><span class="o">.-</span><span class="n">z</span><span class="o">.</span><span class="p">;</span>
-    <span class="n">Frauenheim</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="n">DFTB</span><span class="o">+</span><span class="p">,</span> <span class="n">a</span> <span class="n">software</span> <span class="n">package</span> <span class="k">for</span> <span class="n">efficient</span> <span class="n">approximate</span> <span class="n">density</span>
-    <span class="n">functional</span> <span class="n">theory</span> <span class="n">based</span> <span class="n">atomistic</span> <span class="n">simulations</span><span class="o">.</span> <span class="n">The</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span>
-    <span class="n">Physics</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mf">124101.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1063</span><span class="o">/</span><span class="mf">1.5143190</span>
-
-<span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">Gaus</span><span class="p">,</span> <span class="n">Michael</span><span class="p">;</span> <span class="n">Goez</span><span class="p">,</span> <span class="n">Albrecht</span><span class="p">;</span> <span class="n">Elstner</span><span class="p">,</span> <span class="n">Marcus</span><span class="o">.</span> <span class="n">Parametrization</span> <span class="ow">and</span>
-    <span class="n">Benchmark</span> <span class="n">of</span> <span class="n">DFTB3</span> <span class="k">for</span> <span class="n">Organic</span> <span class="n">Molecules</span><span class="o">.</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Chemical</span> <span class="n">Theory</span> <span class="ow">and</span>
-    <span class="n">Computation</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">338</span><span class="o">-</span><span class="mf">354.</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.1021</span><span class="o">/</span><span class="n">ct300849w</span>
-
-<span class="n">Secondary</span> <span class="n">references</span><span class="p">:</span>
-
-<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">Control</span> <span class="n">Parameters</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2021.10.13</span><span class="p">;</span> <span class="n">The</span>
-    <span class="n">Molecular</span> <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span>
-    <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">control_parameters_step</span>
-
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">From</span> <span class="n">Smiles</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span> <span class="k">for</span> <span class="n">creating</span> <span class="n">structures</span> <span class="kn">from</span>
-    <span class="nn">SMILES</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2021.10.13</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span> <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span>
-    <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span>
-    <span class="n">seamm</span><span class="o">/</span><span class="n">from_smiles_step</span><span class="p">,</span> <span class="n">DOI</span><span class="p">:</span> <span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5159800</span>
-
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">DFTB</span><span class="o">+</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2022.1.18</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span>
-    <span class="n">Sciences</span> <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span>
-    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">dftbplus_step</span>
-
-<span class="n">Process</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.843663</span> <span class="p">(</span><span class="mf">0.844</span> <span class="n">s</span><span class="p">)</span>
-<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">01.867495</span> <span class="p">(</span><span class="mf">1.867</span> <span class="n">s</span><span class="p">)</span>
-<span class="p">(</span><span class="n">seamm</span><span class="p">)</span> <span class="n">psaxe</span><span class="nd">@paul</span> <span class="n">run2</span> <span class="o">%</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">--standalone</span></code> flag tells SEAMM to run the flowchart in the current directory
-while not adding it to the datastore. This flag is useful for testing the new flowcharts
-and avoid filling the datastore with junk.</p>
-<p>although by now, we are familiar with the output, let us focus on two of its sections.
-In the first part, where SEAMM tries to tell us what it is going to do,:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Parameters</span>  <span class="mf">2021.10.13</span>
-    <span class="n">The</span> <span class="n">following</span> <span class="n">variables</span> <span class="n">will</span> <span class="n">be</span> <span class="nb">set</span> <span class="kn">from</span> <span class="nn">command</span><span class="o">-</span><span class="n">line</span> <span class="n">arguments</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span>
-    <span class="ow">not</span> <span class="n">present</span><span class="p">,</span> <span class="n">to</span> <span class="n">the</span> <span class="n">default</span> <span class="n">value</span><span class="o">.</span>
-
-    <span class="o">+------------+--------+-----------+-----------------------------+</span>
-    <span class="o">|</span> <span class="n">Variable</span>   <span class="o">|</span> <span class="n">Type</span>   <span class="o">|</span> <span class="n">Default</span>   <span class="o">|</span> <span class="n">Description</span>                 <span class="o">|</span>
-    <span class="o">+============+========+===========+=============================+</span>
-    <span class="o">|</span> <span class="n">SMILES</span>     <span class="o">|</span> <span class="nb">str</span>    <span class="o">|</span>           <span class="o">|</span> <span class="n">The</span> <span class="n">SMILES</span> <span class="k">for</span> <span class="n">the</span> <span class="n">molecule</span> <span class="o">|</span>
-    <span class="o">+------------+--------+-----------+-----------------------------+</span>
-
-<span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.10.13</span>
-    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">variable</span> <span class="s1">&#39;$SMILES&#39;</span><span class="p">,</span> <span class="n">overwriting</span>
-    <span class="n">the</span> <span class="n">current</span> <span class="n">configuration</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">system</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">canonical</span>
-    <span class="n">SMILES</span> <span class="n">of</span> <span class="n">the</span> <span class="n">structure</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">will</span> <span class="n">be</span> <span class="n">initial</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>it describes each parameter, which in this case is just a single <code class="docutils literal notranslate"><span class="pre">SMILES</span></code> variable
-we added. In the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step in the first part, SEAMM notifies us
-about building the molecular structure using the value stored in the <code class="docutils literal notranslate"><span class="pre">SMILES</span></code>
-variable.</p>
-<p>In the next part of the output when SEAMM is actually executing the workflow,
-the output becomes more explicit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Parameters</span>  <span class="mf">2021.10.13</span>
-    <span class="n">The</span> <span class="n">following</span> <span class="n">variables</span> <span class="n">have</span> <span class="n">been</span> <span class="nb">set</span> <span class="kn">from</span> <span class="nn">command</span><span class="o">-</span><span class="n">line</span> <span class="n">arguments</span><span class="p">,</span>
-    <span class="n">environment</span> <span class="n">variables</span><span class="p">,</span> <span class="n">a</span> <span class="n">configuration</span> <span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="o">.</span><span class="n">ini</span><span class="p">),</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">default</span> <span class="n">value</span><span class="p">,</span> <span class="ow">in</span>
-    <span class="n">that</span> <span class="n">order</span><span class="o">.</span>
-
-    <span class="o">+------------+---------+-------------+-----------------------------+</span>
-    <span class="o">|</span> <span class="n">Variable</span>   <span class="o">|</span> <span class="n">Value</span>   <span class="o">|</span> <span class="n">Set</span> <span class="n">From</span>    <span class="o">|</span> <span class="n">Description</span>                 <span class="o">|</span>
-    <span class="o">+============+=========+=============+=============================+</span>
-    <span class="o">|</span> <span class="n">SMILES</span>     <span class="o">|</span> <span class="n">CCO</span>     <span class="o">|</span> <span class="n">commandline</span> <span class="o">|</span> <span class="n">The</span> <span class="n">SMILES</span> <span class="k">for</span> <span class="n">the</span> <span class="n">molecule</span> <span class="o">|</span>
-    <span class="o">+------------+---------+-------------+-----------------------------+</span>
-
-<span class="n">Step</span> <span class="mi">2</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">SMILES</span>  <span class="mf">2021.10.13</span>
-    <span class="n">Create</span> <span class="n">the</span> <span class="n">structure</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SMILES</span> <span class="s1">&#39;CCO&#39;</span><span class="p">,</span> <span class="n">overwriting</span> <span class="n">the</span> <span class="n">current</span>
-    <span class="n">configuration</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">system</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">canonical</span> <span class="n">SMILES</span> <span class="n">of</span> <span class="n">the</span>
-    <span class="n">structure</span><span class="o">.</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">will</span> <span class="n">be</span> <span class="n">initial</span><span class="o">.</span>
-
-    <span class="n">Created</span> <span class="n">a</span> <span class="n">molecular</span> <span class="n">structure</span> <span class="k">with</span> <span class="mi">9</span> <span class="n">atoms</span><span class="o">.</span>
-           <span class="n">System</span> <span class="n">name</span> <span class="o">=</span> <span class="n">CCO</span>
-    <span class="n">Configuration</span> <span class="n">name</span> <span class="o">=</span> <span class="n">initial</span>
-</pre></div>
-</div>
-<p>In the output shown above, the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> step now prints out the
-actual values of the <code class="docutils literal notranslate"><span class="pre">SMILES</span></code> being used to construct the molecule.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For more clarity, SEAMM prints out the value of the <code class="docutils literal notranslate"><span class="pre">SMILES</span></code> variable and the interface,
-within which the variable was set – in this case, the CLI. Some of the optional parameters
-in SEAMM can be set from the <code class="docutils literal notranslate"><span class="pre">seamm.ini</span></code> configuration file should users plan to use them
-frequently.</p>
-</div>
+<p>That’s it! You can submit another job by clicking on the run button of any of these
+jobs. The definition of the calculation will be identical except for any parameters that
+you choose to change. In this example, we can only change the molecule, but we could add
+parameters to control the parameters set used to make a more general flowchart.</p>
+</section>
+<section id="topics-covered">
+<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Using the run button to resubmit a job.</p></li>
+<li><p>Changing the control parameters.</p></li>
+<li><p>Refreshing a job page while the job is running.</p></li>
+</ol>
+<p>The next tutorial, <a class="reference internal" href="tutorial_5.html#tutorial-5"><span class="std std-ref">5: Looping Over Structures</span></a>, will take a different approach to running multiple
+structures.</p>
+</section>
 </section>
 
 
@@ -981,11 +691,10 @@ frequently.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tutorial_3.html"
@@ -993,22 +702,19 @@ frequently.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tables and Loops</p>
+        <p class="prev-next-title">3: Variables in Flowcharts</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../how_tos/index.html"
+       href="tutorial_5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">How-To Guide</p>
+        <p class="prev-next-title">5: Looping Over Structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1016,6 +722,18 @@ frequently.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Resubmitting a Job</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-covered">Topics Covered</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
@@ -1038,8 +756,8 @@ frequently.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1086,10 +804,11 @@ frequently.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

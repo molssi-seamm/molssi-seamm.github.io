@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>6: Running from the Command-Line &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/tutorials/tutorial_6';</script>
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How-To Guide" href="../../how_tos/index.html" />
+    <link rel="prev" title="5: Looping Over Structures" href="tutorial_5.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="SEAMM 1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../background/index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how_tos/index.html">
+                        How-To Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../background/index.html">
+                        Background Information
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../developer_guide/index.html">
+                        Developers Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../glossary.html">
+                        Glossary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../plug-ins/index.html">
+                        Plug-ins
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../status/index.html">
+                        Status
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../statistics/index.html">
+                        Statistics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../dev_team.html">
+                        SEAMM Developers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../acknowledgements.html">
+                        Acknowledgements
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+                    SEAMM Documentation
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+                    MolSSI
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/dashboard_management.html">Managing the Dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_1.html">1: A First Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_2.html">2: Looking at the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_3.html">3: Variables in Flowcharts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_4.html">4: Resubmitting a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_5.html">5: Looping Over Structures</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6: Running from the Command-Line</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Getting Started</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">6: Running...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="running-from-the-command-line">
+<span id="tutorial-6"></span><h1>6: Running from the Command-Line<a class="headerlink" href="#running-from-the-command-line" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The job for this tutorial is available on MolSSI’s public server, <a href="http://molssi10.molssi.org:55055/#/jobs/316" target="_blank">Job 316</a>.</p>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>So far, we have run the calculations through SEAMM, either by submitting the job from
+the SEAMM GUI or by resubmitting a job from the Dashboard with potantially different
+parameters. However, you can directly run a flowchart in a terminal as long as you have
+SEAMM installed on the machine. In this tutorial we are going to see how to do that.</p>
+<p>We are going to use the flowchart from tutorial 5, <a class="reference internal" href="tutorial_5.html#tutorial-5"><span class="std std-ref">5: Looping Over Structures</span></a> and run a similar
+calculation. Running the alcohols and thiols is getting a bit boring, so let’s look at a
+bit more interesting set of systems, the isomers of C4H8. There are at least six
+experimentally known isomers:</p>
+<table class="table" id="id1">
+<caption><span class="caption-text">C4H8 isomers and SMILES</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/2-methylpropene.png"><img alt="Picture of molecule" class="align-middle" src="../../_images/2-methylpropene.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/trans-2-butene.png"><img alt="Picture of molecule" class="align-middle" src="../../_images/trans-2-butene.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/cis-2-butene.png"><img alt="Picture of molecule" class="align-middle" src="../../_images/cis-2-butene.png" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li><p>2-methylprop-1-ene (C=C(C)C)</p></li>
+</ol>
+</td>
+<td><ol class="arabic simple" start="2">
+<li><p>(E)-but-2-ene (C/C=C/C)</p></li>
+</ol>
+</td>
+<td><ol class="arabic simple" start="3">
+<li><p>(Z)-but-2-ene (C/C=C\C)</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/1-butene.png"><img alt="Picture of molecule" class="align-middle" src="../../_images/1-butene.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/methylcyclopropane.png"><img alt="Picture of molecule" class="align-middle" src="../../_images/methylcyclopropane.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/cyclobutane.png"><img alt="Picture of molecule" class="align-middle" src="../../_images/cyclobutane.png" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="4">
+<li><p>but-1-ene (C=CCC)</p></li>
+</ol>
+</td>
+<td><ol class="arabic simple" start="5">
+<li><p>methylcyclopropane (C1CC1C)</p></li>
+</ol>
+</td>
+<td><ol class="arabic simple" start="6">
+<li><p>cyclobutane (C1CCC1)</p></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The enthalpy of formation for these isomers are known so they give us a nice opportunity
+to compare various methods against experiment. The cyclic structures are highly strained
+and a bit unusual, so are a nice test of methods, as are the more subtle differences in
+the placement of the methyl group between 2-methylprop-1-ene and but-1-ene, and the
+cis-trans isomerization of (Z)-but-2-ene and (E)-but-2-ene.</p>
+<p>Tutorials for other methods will use these systems too, so if you use other codes in
+SEAMM you will find out how they handle these systems.</p>
+</section>
+<section id="getting-the-flowchart">
+<h2>Getting the Flowchart<a class="headerlink" href="#getting-the-flowchart" title="Link to this heading">#</a></h2>
+<p>You need to get the flowchart and save it to your local machine. Make a temporary
+directory or folder to run in, something like <strong>~/tmp</strong>. There are three ways to get the
+flowchart into this directory:</p>
+<ol class="arabic simple">
+<li><p>If you still have the flowchart in the SEAMM GUI, or read it from the Dashboard or
+Zenodo, you can save it to disk using the <strong>File</strong> menu and <strong>Save as…</strong>.</p></li>
+<li><p>You can download it from the example <a href="http://molssi10.molssi.org:55055/#/jobs/314" target="_blank">Job 314</a>  on the public MolSSI server by
+right-clicking on <strong>flowchart.flow</strong> in the list of files in the left pane and
+selecting <strong>Download as…</strong> or the similar phrase in your browser.</p></li>
+<li><p>You can download it from <a href="https://zenodo.org/doi/10.5281/zenodo.5888991" target="_blank">Zenodo</a> (the link will open in a new tab) by clicking on
+the <code class="docutils literal notranslate"><span class="pre">Download</span></code> button and then moving the file to your temporary directory.</p></li>
+</ol>
+</section>
+<section id="running-the-flowchart">
+<h2>Running the Flowchart<a class="headerlink" href="#running-the-flowchart" title="Link to this heading">#</a></h2>
+<p>Now open a terminal or command window and go to the temporary directory that you
+made. Activate the <strong>seamm</strong> conda environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+</pre></div>
+</div>
+<p>Now execute the flowchart:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">run_flowchart</span> <span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span> <span class="s2">&quot;C=C(C)C&quot;</span> <span class="s2">&quot;C/C=C/C&quot;</span> <span class="s2">&quot;C/C=C</span><span class="se">\\</span><span class="s2">C&quot;</span> <span class="n">C</span><span class="o">=</span><span class="n">CCC</span> <span class="n">C1CC1C</span> <span class="n">C1CCC1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The arguments are the SMILES for the structures from the table above. A couple of
+comments: it may be necessay to quote some of the strings (it is safe to quote them
+all) and, on Linux, the backslash (<strong>\</strong>) is special and needs to doubled to show up
+as a single backslash.</p>
+</div>
+<p>You should see output appear in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="ow">in</span> <span class="n">standalone</span> <span class="n">mode</span><span class="o">.</span>
+<span class="n">Monday</span> <span class="mf">2023.11.13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">33</span>
+<span class="n">Running</span> <span class="ow">in</span> <span class="n">directory</span> <span class="s1">&#39;/Users/psaxe/tmp3&#39;</span>
+
+<span class="n">Description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">flowchart</span>
+<span class="o">----------------------------</span>
+<span class="n">Step</span> <span class="mi">0</span><span class="p">:</span> <span class="n">Start</span>  <span class="mf">2023.11.7</span><span class="o">+</span><span class="mf">6.</span><span class="n">g13a9542</span><span class="o">.</span><span class="n">dirty</span>
+<span class="n">Step</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Parameters</span>  <span class="mf">2023.11.6</span>
+      <span class="n">The</span> <span class="n">following</span> <span class="n">variables</span> <span class="n">will</span> <span class="n">be</span> <span class="nb">set</span> <span class="kn">from</span> <span class="nn">command</span><span class="o">-</span><span class="n">line</span> <span class="n">arguments</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span>
+      <span class="ow">not</span> <span class="n">present</span><span class="p">,</span> <span class="n">to</span> <span class="n">the</span> <span class="n">default</span> <span class="n">value</span><span class="o">.</span>
+
+      <span class="o">+------------+--------+-----------+-------------------------------------+</span>
+      <span class="o">|</span> <span class="n">Variable</span>   <span class="o">|</span> <span class="n">Type</span>   <span class="o">|</span> <span class="n">Default</span>   <span class="o">|</span> <span class="n">Description</span>                         <span class="o">|</span>
+      <span class="o">+============+========+===========+=====================================+</span>
+      <span class="o">|</span> <span class="n">structures</span> <span class="o">|</span> <span class="nb">str</span>    <span class="o">|</span>           <span class="o">|</span> <span class="n">The</span> <span class="n">structures</span> <span class="k">as</span> <span class="n">SMILES</span><span class="p">,</span> <span class="n">InChI</span><span class="p">,</span> <span class="ow">or</span> <span class="o">|</span>
+      <span class="o">|</span>            <span class="o">|</span>        <span class="o">|</span>           <span class="o">|</span> <span class="n">InChIKeys</span>                           <span class="o">|</span>
+      <span class="o">+------------+--------+-----------+-------------------------------------+</span>
+<span class="o">...</span>
+             <span class="n">Structure</span>  <span class="n">total</span> <span class="n">energy</span> <span class="p">(</span><span class="n">E_h</span><span class="p">)</span>  <span class="n">energy</span> <span class="n">of</span> <span class="n">formation</span> <span class="p">(</span><span class="n">kJ</span><span class="o">/</span><span class="n">mol</span><span class="p">)</span>
+    <span class="mi">2</span><span class="o">-</span><span class="n">methylprop</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">ene</span>           <span class="o">-</span><span class="mf">9.852264</span>                     <span class="o">-</span><span class="mf">6.396972</span>
+         <span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">-</span><span class="n">but</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ene</span>           <span class="o">-</span><span class="mf">9.853112</span>                     <span class="o">-</span><span class="mf">8.621124</span>
+         <span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">-</span><span class="n">but</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ene</span>           <span class="o">-</span><span class="mf">9.851636</span>                     <span class="o">-</span><span class="mf">4.746395</span>
+             <span class="n">but</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">ene</span>           <span class="o">-</span><span class="mf">9.847232</span>                      <span class="mf">6.816176</span>
+    <span class="n">methylcyclopropane</span>           <span class="o">-</span><span class="mf">9.839414</span>                     <span class="mf">27.342422</span>
+           <span class="n">cyclobutane</span>           <span class="o">-</span><span class="mf">9.847296</span>                      <span class="mf">6.646899</span>
+<span class="o">...</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">Eliseo</span> <span class="n">Marin</span><span class="o">-</span><span class="n">Rimoldi</span><span class="p">;</span> <span class="n">Paul</span> <span class="n">Saxe</span><span class="o">.</span> <span class="n">Read</span> <span class="n">Structure</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span> <span class="k">for</span> <span class="n">SEAMM</span> <span class="k">for</span>
+    <span class="n">reading</span> <span class="n">chemical</span> <span class="n">structure</span> <span class="n">files</span><span class="p">,</span> <span class="n">version</span> <span class="mf">2023.11.5</span><span class="p">;</span> <span class="n">The</span> <span class="n">Molecular</span> <span class="n">Sciences</span>
+    <span class="n">Software</span> <span class="n">Institute</span> <span class="p">(</span><span class="n">MolSSI</span><span class="p">):</span> <span class="n">Virginia</span> <span class="n">Tech</span><span class="p">,</span> <span class="n">Blacksburg</span><span class="p">,</span> <span class="n">VA</span><span class="p">,</span> <span class="n">USA</span><span class="p">,</span>
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">from_smiles_step</span>
+
+<span class="n">Process</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">12.194969</span> <span class="p">(</span><span class="mf">12.195</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">22.703322</span> <span class="p">(</span><span class="mf">22.703</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Monday</span> <span class="mf">2023.11.13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">58</span>
+</pre></div>
+</div>
+<p>And if you list the files in the directory you will see the same set of files as in the
+Dashboard when you ran previously:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+<span class="n">total</span> <span class="mi">1024</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">2</span> <span class="n">psaxe</span>  <span class="n">staff</span>      <span class="mi">64</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="mi">0</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">psaxe</span>  <span class="n">staff</span>      <span class="mi">96</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="mi">1</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">psaxe</span>  <span class="n">staff</span>      <span class="mi">96</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="mi">2</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">2</span> <span class="n">psaxe</span>  <span class="n">staff</span>      <span class="mi">64</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="mi">3</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">8</span> <span class="n">psaxe</span>  <span class="n">staff</span>     <span class="mi">256</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="mi">4</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">psaxe</span>  <span class="n">staff</span>      <span class="mi">96</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="mi">5</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">psaxe</span>  <span class="n">staff</span>      <span class="mi">96</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="mi">6</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>    <span class="mi">1488</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="n">final_structure</span><span class="o">.</span><span class="n">mmcif</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>   <span class="mi">44854</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">16</span> <span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>   <span class="mi">10492</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="n">job</span><span class="o">.</span><span class="n">out</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>    <span class="mi">3819</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="n">job_data</span><span class="o">.</span><span class="n">json</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>   <span class="mi">90112</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="n">references</span><span class="o">.</span><span class="n">db</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>  <span class="mi">307200</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="n">seamm</span><span class="o">.</span><span class="n">db</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>   <span class="mi">16122</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="n">structures</span><span class="o">.</span><span class="n">sdf</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">psaxe</span>  <span class="n">staff</span>     <span class="mi">366</span> <span class="n">Nov</span> <span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span> <span class="n">table1</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>Indeed, everything is just like it was in Dashboard, so hopefully is familiar by now.</p>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
+<p>As mentioned in the introduction, the experimental enthalpies of formation are available
+for these structures, so let’s see how our calculations using DFTB+ did. Remember that
+DFTB+ is calculating electronic energies of formation, which is the main term in the
+enthalpy of formation, but there are other terms missing, so we are comparing somewhat
+different things. Also, DFTB is a fast, semiempirical method so we don’t expect it to be
+very accurate.</p>
+</section>
+<section id="arguments-to-the-flowchart">
+<h2>Arguments to the Flowchart<a class="headerlink" href="#arguments-to-the-flowchart" title="Link to this heading">#</a></h2>
+<p>If you run the flowchart and add <strong>–help</strong> at the end of the command, it will print
+help text and stop without actually running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(seamm-dev) psaxe@PaulsPersonal tmp3 % run_flowchart flowchart.flow --help
+run_flowchart flowchart.flow --help
+usage: flowchart.flow [-h] [--root ROOT] [--datastore DATASTORE] [--job-id-file JOB_ID_FILE] [--dashboards DASHBOARDS]
+                      [--log-level {NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--database DATABASE] [--read-only] [--standalone] [--project PROJECTS]
+                      [--title TITLE] [--description DESCRIPTION] [--force] [--parallelism {none,mpi,openmp,any}] [--ncores NCORES] [--memory MEMORY]
+                      structures [structures ...] start-node-step control-parameters-step table-step join-node-step loop-step from-smiles-step
+                      dftbplus-step read-structure-step
+
+positional arguments:
+  structures            The structures as SMILES, InChI, or InChIKeys
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+main options:
+  The main options for SEAMM
+
+  --root ROOT           The root directory for SEAMM data, default: ~/SEAMM
+  --datastore DATASTORE
+                        The datastore (directory) for this run, default: ${root}/Jobs
+  --job-id-file JOB_ID_FILE
+                        The job_id file to use.
+  --dashboards DASHBOARDS
+                        The configuration file for accessible dashboards: ${root}/dashboards.ini
+
+debugging options:
+  Options for turning on debugging output and tools
+
+  --log-level {NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        The level of informational output, default: &#39;WARNING&#39;
+
+job options:
+  Options for jobs
+
+  --database DATABASE   The database for this job.
+  --read-only           Whether to open the database as read-only.
+  --standalone          Run this workflow as-is without using the job, etc.
+  --project PROJECTS    The project(s) for this job.
+  --title TITLE         The title for this run.
+  --description DESCRIPTION
+                        The longer description for this run.
+  --force               Overwrite the job output if it exists.
+
+hardware options:
+  Options about memory limits, parallelism and other details connected with hardware.
+
+  --parallelism {none,mpi,openmp,any}
+                        Whether to limit parallel usage to certain types.
+  --ncores NCORES       The maximum number of cores/threads to use in any step. Default: all available cores.
+  --memory MEMORY       The maximum amount of memory to use in any step, which can be &#39;all&#39; or &#39;available&#39;, or a number, which may use k, Ki, M, Mi, etc.
+                        suffixes. Default: available.
+
+plug-ins:
+  The plug-ins in this flowchart, which have their own options.
+
+  start-node-step
+  control-parameters-step
+  table-step
+  join-node-step
+  loop-step
+  from-smiles-step
+  dftbplus-step
+  read-structure-step
+</pre></div>
+</div>
+<p>There a lot of options! However you can ignore most of them because they are for special
+circumstances. Note that there are a number of options controlling parallelsim, which
+might be of interest as you get further into SEAMM.</p>
+<p>The interesting options are the positional and optional options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="n">structures</span>            <span class="n">The</span> <span class="n">structures</span> <span class="k">as</span> <span class="n">SMILES</span><span class="p">,</span> <span class="n">InChI</span><span class="p">,</span> <span class="ow">or</span> <span class="n">InChIKeys</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+</pre></div>
+</div>
+<p>Apart from <strong>–help</strong> these are the options defined in the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> steps in the
+flowcharts, i.e. the ones that you should think about when running the flowchart. We had
+only had one option, <strong>structures</strong>. Notice that the description that we put into the
+flowchart is printed here, too, to help the user.</p>
+<p>A final comment. At the end of the help text it lists all the steps in flowcharts. Each
+of these have their own parameters, which focus on detailed control of the executables,
+etc., on debugging and on parallelism. You can access this help by putting the name of
+the step followed by <strong>–help</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">seamm</span><span class="o">-</span><span class="n">dev</span><span class="p">)</span> <span class="n">psaxe</span><span class="nd">@PaulsPersonal</span> <span class="n">tmp3</span> <span class="o">%</span> <span class="n">run_flowchart</span> <span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span> <span class="n">dftbplus</span><span class="o">-</span><span class="n">step</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">level</span> <span class="p">{</span><span class="n">NOTSET</span><span class="p">,</span><span class="n">DEBUG</span><span class="p">,</span><span class="n">INFO</span><span class="p">,</span><span class="n">WARNING</span><span class="p">,</span><span class="n">ERROR</span><span class="p">,</span><span class="n">CRITICAL</span><span class="p">}]</span> <span class="p">[</span><span class="o">--</span><span class="n">dftbplus</span><span class="o">-</span><span class="n">path</span> <span class="n">DFTBPLUS_PATH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">slako</span><span class="o">-</span><span class="nb">dir</span> <span class="n">SLAKO_DIR</span><span class="p">]</span>
+                      <span class="p">[</span><span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">mpi</span> <span class="n">USE_MPI</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">openmp</span> <span class="n">USE_OPENMP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">natoms</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">core</span> <span class="n">NATOMS_PER_CORE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">atoms</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="nb">print</span> <span class="n">MAX_ATOMS_TO_PRINT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">html</span><span class="p">]</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">dftbplus</span><span class="o">-</span><span class="n">path</span> <span class="n">DFTBPLUS_PATH</span>
+                        <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">DFTB</span><span class="o">+</span> <span class="n">executable</span>
+  <span class="o">--</span><span class="n">slako</span><span class="o">-</span><span class="nb">dir</span> <span class="n">SLAKO_DIR</span>
+                        <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Slater</span><span class="o">-</span><span class="n">Koster</span> <span class="n">parameter</span> <span class="n">files</span>
+  <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">mpi</span> <span class="n">USE_MPI</span>     <span class="n">Whether</span> <span class="n">to</span> <span class="n">use</span> <span class="n">mpi</span>
+  <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">openmp</span> <span class="n">USE_OPENMP</span>
+                        <span class="n">Whether</span> <span class="n">to</span> <span class="n">use</span> <span class="n">openmp</span> <span class="n">threads</span>
+  <span class="o">--</span><span class="n">natoms</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">core</span> <span class="n">NATOMS_PER_CORE</span>
+                        <span class="n">How</span> <span class="n">many</span> <span class="n">atoms</span> <span class="n">to</span> <span class="n">have</span> <span class="n">per</span> <span class="n">core</span> <span class="ow">or</span> <span class="n">thread</span>
+  <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">atoms</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="nb">print</span> <span class="n">MAX_ATOMS_TO_PRINT</span>
+                        <span class="n">Maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">atoms</span> <span class="n">to</span> <span class="nb">print</span> <span class="n">charges</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">html</span>                <span class="n">whether</span> <span class="n">to</span> <span class="n">write</span> <span class="n">out</span> <span class="n">html</span> <span class="n">files</span> <span class="k">for</span> <span class="n">graphs</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+
+<span class="n">debugging</span> <span class="n">options</span><span class="p">:</span>
+  <span class="n">Options</span> <span class="k">for</span> <span class="n">turning</span> <span class="n">on</span> <span class="n">debugging</span> <span class="n">output</span> <span class="ow">and</span> <span class="n">tools</span>
+
+  <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">level</span> <span class="p">{</span><span class="n">NOTSET</span><span class="p">,</span><span class="n">DEBUG</span><span class="p">,</span><span class="n">INFO</span><span class="p">,</span><span class="n">WARNING</span><span class="p">,</span><span class="n">ERROR</span><span class="p">,</span><span class="n">CRITICAL</span><span class="p">}</span>
+                        <span class="n">The</span> <span class="n">level</span> <span class="n">of</span> <span class="n">informational</span> <span class="n">output</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="s1">&#39;WARNING&#39;</span>
+</pre></div>
+</div>
+<p>You’ll probably never need this level of control, but it is nice to know that it is
+there. And if you are a developer, you can see that you can override the path to the
+executable and other specific information for the code as you develop.</p>
+</section>
+<section id="adding-to-the-dashboard">
+<h2>Adding to the Dashboard<a class="headerlink" href="#adding-to-the-dashboard" title="Link to this heading">#</a></h2>
+<p>One final thing. There are three options that you can use to run the job in the
+Dashboard, rather than just locally. These options are:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">--projects</span></kbd></dt>
+<dd><p>A list of one or more projects for the job. If this is present the job is run in the
+Dashboard.</p>
+</dd>
+<dt><kbd><span class="option">--title</span></kbd></dt>
+<dd><p>The title for the job. No more than 100 characters. You’ll need to quote this is it
+contains blanks, etc.</p>
+</dd>
+<dt><kbd><span class="option">--description</span></kbd></dt>
+<dd><p>A longer description for the job. You’ll almost certainly need to quote this!</p>
+</dd>
+</dl>
+<p>Let’s give this a go! Delete all the files except the flowchart in your temporary job
+and run again, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(seamm) psaxe@molssi10:~/tmp$ ./flowchart.flow --project default --title &quot;C4H8 isomers DFTB/3ob&quot; \
+&gt;              --description &quot;Running the C4H8 isomers with DFTB+ from the commandline&quot; \
+&gt;              &quot;C=C(C)C&quot; &quot;C/C=C/C&quot; &quot;C/C=C\\C&quot; C=CCC C1CC1C C1CCC1
+Monday 2023.11.13 17:36:30
+Running in directory &#39;/home/psaxe/SEAMM/Jobs/projects/default/Job_000315&#39;
+
+Description of the flowchart
+----------------------------
+Step 0: Start  2023.11.11
+...
+</pre></div>
+</div>
+<p>The command line is quite long, so I typed it on several lines for clarity. You can just
+put it in one lone line, or use the backslash character (on Linux and Mac) to continue
+the line, like I did.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The example above does not use <code class="docutils literal notranslate"><span class="pre">run_flowchart</span></code>. If the flowchart is executable, you
+can execute it directly. When you save from SEAMM, the flowcharts are executable.</p>
+</div>
+<p>You will see the normal output scroll past on the screen; however, note that the job is
+actually running in a different directory,
+<strong>/home/psaxe/SEAMM/Jobs/projects/default/Job_000315</strong> in the example above. There will
+be no files in the driectory that you are running from – they are all in the Dashboard
+instead. You can look at the job in the Dashboard, just as if you had submitted the job
+to the Dashboard.</p>
+<p>Why would you want to do this? One reason is it let’s you control the jobs on the
+machine. For instance, if you install SEAMM on a cluster or other large machine, you can
+submit jobs to the queueing system but have them added to the Dashboard. The Dashboard
+doesn’t have to be running for this. Often you can’t leave the Dashboard running at
+large computer centers, but you can run this way, and later log on to the machine, run
+the Dashboard manually, and look at the results like normal. Look for more information
+of how to do this in the <a class="reference internal" href="../../how_tos/index.html#how-tos"><span class="std std-ref">How-To Guide</span></a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial_5.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5: Looping Over Structures</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../how_tos/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How-To Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-flowchart">Getting the Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-flowchart">Running the Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-to-the-flowchart">Arguments to the Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-the-dashboard">Adding to the Dashboard</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/getting_started/tutorials/tutorial_6.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
