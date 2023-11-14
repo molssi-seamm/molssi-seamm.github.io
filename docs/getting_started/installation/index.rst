@@ -37,6 +37,9 @@ SEAMM, so unless you intend to use *conda* for other data science tasks, just in
 After installing *conda* you can install the rest of SEAMM using either the
 :ref:`graphical installation` or :ref:`command line installation`.
 
+If you installed the Dashboard, you need to set the initial passwords on the default
+accounts. :ref:`dashboard-management` will walk you through this.
+
 .. Table of contents
 .. toctree::
     :maxdepth: 5
@@ -45,6 +48,7 @@ After installing *conda* you can install the rest of SEAMM using either the
 
     graphical.rst
     command-line.rst
+    dashboard_management
     
 .. Link shortcuts and cross-referencing labels
 .. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
