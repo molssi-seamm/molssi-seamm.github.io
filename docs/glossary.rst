@@ -46,6 +46,13 @@ Glossary
       wave functions. DFT has become very popular during the past few decades
       because it is simple to use and provides a good compromise between the
       computational cost and accuracy.
+
+   DFTB
+      Density Functional based Tight Binding method (DFTB) is a fast, parameterized DFT
+      method. :term:`xTB` is a similar, but slightly different method. Both are similar
+      to the semiempirical approaches in MOPAC, which are based on Harterr-Fock theory
+      rather than DFT.  See `the DFTB website <https://dftb.org>`_ for more information
+      and references.
     
    dashboard
       The web interface to the Job Datastore responsible for monitoring
@@ -75,3 +82,25 @@ Glossary
       ``geometric``, ``arithmetic`` or ``Lorentz-Bertholet``, ``sixth-power`` or 
       ``Waldman-Hagler``. Wikipedia has a useful page describing `combining rules
       <https://en.wikipedia.org/wiki/Combining_rules>`_.
+
+   SDF file
+      A structured data file, which is used to store molecular structures and associated
+      data. SDF files can handle multiple separate structures. Wikipedia has a useful page
+      describing SDF and the related MOL file: `Chemical table file
+      <https://en.wikipedia.org/wiki/Chemical_table_file>`_.
+
+   SMILES
+      Simplified molecular-input line-entry system (SMILES) is a line notation for
+      describing chemical species as a reasonably intuitive string of text. See the
+      Wikipedia entry `Simplified molecular-input line-entry system 
+      <https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system>`_ and
+      references therein for more information.
+
+   xTB
+      The Extended tight-binding (xTB) model is a semiempirical DFT-based model that is
+      similar to :term:`DFTB`. See `Extended tight-binding quantum chemistry methods
+      <https://wires.onlinelibrary.wiley.com/doi/full/10.1002/wcms.1493>`_ for details
+      of the method. More references are available at the from the `xtb website
+      <https://xtb-docs.readthedocs.io/en/latest/xtbrelatedrefs.html>`_. The xTB and
+      DFTB methods are related to the semiempirical methods in MOPAC, which are based on
+      Hartree-Fock theory rather than DFT.

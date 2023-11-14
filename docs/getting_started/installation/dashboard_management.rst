@@ -28,8 +28,7 @@ setup. However, since the users may not know the username chosen for their accou
 the administrator, it might be more convenient to start with the **admin** account.
 After logging in with the admin user, make sure that the Dashboard is up and running
 (see the :ref:`installation` section for details on how to run the Dashboard). Then,
-open the main page of the Dashboard in your browser (open |dashboard_link| link in
-a separate tab on your browser):
+open the main page of the Dashboard |dashboard_link| (will open in a new tab):
 
 .. figure:: dashboard_images/login.png
    :align: center
@@ -38,7 +37,7 @@ a separate tab on your browser):
 
    The **Public** user pull-down button at top-right of the Dashboard
 
-Click on ``Log in`` and put the username **admin** and write down **admin**
+Click on ``Log in`` and put the username **admin** and  **admin** again
 in the password field. This should take you to a slightly different Dashboard page
 as shown below:
 
@@ -93,6 +92,15 @@ Finally, click ``Update User Information`` to accept the changes.
 Users should change their account password after their first
 access to it.
 
+Now repeat the process for your user.
+
+.. note::
+   If your machine is connected to the outside world in any way, it is very important to
+   change the passwords of the accounts and to use good, strong passwords. If you don't
+   use a password manager that can generate and save inscrutable passwords for you, try
+   using a phrase of 3 or so words that you can rememeber and try to use some numbers
+   and special characters. 
+
 Adding and Removing Users
 -------------------------
 In order to add a new user, start by clicking on the ``Create New User`` button
@@ -118,5 +126,4 @@ user account:
 .. Shortcut link
 .. |dashboard_link| raw:: html
 
-   <a href="http://127.0.0.1:55055" target="_blank">127.0.0.1:55055</a>
-
+   <a href="http://localhost:55055" target="_blank">http://localhost:55055</a>

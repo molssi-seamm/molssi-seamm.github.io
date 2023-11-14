@@ -24,6 +24,9 @@ all:
 	@make html
 	$(BROWSER) docs/_build/html/index.html
 
+check:
+	cd docs/ && ~/bin/lychee --exclude https://twitter.com --exclude 'https://pypistats.org' --exclude-loopback --no-progress .
+
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
