@@ -4,41 +4,48 @@
 Installing SEAMM
 ****************
 
-.. attention::
-   Although in principle, SEAMM can be installed on Windows, several key 
-   third-party dependencies are not supported under Windows. However,
-   the *Windows Subsystem for Linux (WSL)* supports SEAMM and its dependencies. 
-   The installation is identical to that on any Linux system. *Windows 11* provides full
-   support for the SEAMM including the graphical user interface.Unfortunately, *Windows
-   10* and WSL do not support graphical programs so you cannot currently fully install
-   and use SEAMM on *Windows 10*. We are working to support *Windows 10*, but if you can
-   upgrade to *Windows 11* SEAMM will work immediately.
+SEAMM has three parts:
 
-The installation process in SEAMM involves two main parts:
+  * The SEAMM core environment along with any plug-ins needed;
 
-  * SEAMM core environment consisting of the GUI for creating flowcharts,
-    submitting jobs, publishing results etc., and
+  * The SEAMM GUI for creating flowcharts, submitting jobs, publishing results etc., and
 
-  * Web-based dashboard responsible for monitoring jobs, managing the
-    job directories and analyzing the results.
+  * The Web-based Dashboard responsible for monitoring jobs, managing the
+    job directories and presenting the results.
 
-Both parts rely on having *conda* installed on the host system. Installers 
-for `Miniconda`_ or `Anaconda`_ can be found in their hosting websites. The difference
-between them is that `Anaconda`_ has not only the core packages of *conda* but a large
-number of tools for data science built in. `Miniconda`_ is just the core of *conda*, and
-hence is smaller an quicker to install. `Miniconda`_ provides everything needed for
-SEAMM, so unless you intend to use *conda* for other data science tasks, just install
-`Miniconda`_.
+The SEAMM GUI and the Dashboard both require the SEAMM core environment. You can
+install everything on one machine, in which case you can do everything with SEAMM on
+that machine. Alternatively you can install the SEAMM GUI on one machine -- probably
+your personal machine -- and the Dashboard on a server, where your jobs will run. This
+is the recommended setup for a group of users, as it allows everyone to submit jobs to
+the same server, and to monitor the progress of all jobs. The easiest way to get started
+is to install eveything on your personal machine so that you can test and run small jobs
+locally. Later, you can install the Dashboard on any servers you have available and use
+the GUI on your personal computer to submit production jobs to the servers.
 
-.. note::
-   A `video of installing conda <https://www.youtube.com/watch?v=FGDpdAiBPrA>`_ is
-   available on the `SEAMM YouTube channel`_.
+SEAMM can be installed and run using either the *Conda* package manager or
+*Docker*. Conda provides separate environments for Python, which SEAMM uses to keep
+different components separate so they don't conflict with each other. If you are already
+using Python, using Conda may fit well with your currrent setup. SEAMM has an installer
+that can run either with a GUI or from the command line. This installer makes it
+straightforward to install and maintain SEAMM using Conda. 
 
-After installing *conda* you can install the rest of SEAMM using either the
-:ref:`graphical installation` or :ref:`command line installation`.
+The *Docker* installation is even simpler. Once you have installed *Docker Desktop*, a
+couple simple commands will download and run the containers for SEAMM. Each container is
+quite literally self-contained, with an operating system and all the software needed
+already installed. This means you can run SEAMM on any machine that has *Docker*, and also
+gives complete reproducibility since older containers are kept and can be run at any
+time. The *Docker* installation is recommended for users who are not already using Python. 
 
-If you installed the Dashboard, you need to set the initial passwords on the default
-accounts. :ref:`dashboard-management` will walk you through this.
+The following sections will walk you through either installation. Note that you can
+install parts or all of SEAMM on different machines in different ways. For example, you
+can install the GUI on your personal machine using *Docker* and the dashboard on a
+server using *Conda*. The choice is yours.
+
+.. Note:
+   When you install the Dashboard, you need to set the initial passwords on the default
+   accounts. :ref:`dashboard-management` will walk you through this.
+   
 
 .. Table of contents
 .. toctree::
@@ -46,11 +53,7 @@ accounts. :ref:`dashboard-management` will walk you through this.
     :titlesonly:
     :hidden:
 
-    graphical.rst
-    command-line.rst
+    docker
+    conda
     dashboard_management
-    
-.. Link shortcuts and cross-referencing labels
-.. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
-.. _Anaconda: https://www.anaconda.com/distribution
-.. _SEAMM YouTube channel: https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ
+
