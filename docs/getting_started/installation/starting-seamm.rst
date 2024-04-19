@@ -40,7 +40,7 @@ Linux
 You can make an alias in your shell to start the SEAMM GUI. Add the following line to
 your `~/.bashrc` file::
 
-  alias SEAMM='docker run --pull always --rm --name SEAMM  -e "DISPLAY=host.docker.internal:0" -v ~/SEAMM:/root/SEAMM ghcr.io/molssi-seamm/seamm:latest &'
+  alias SEAMM='docker run --pull always --rm --name SEAMM --env "DISPLAY=host.docker.internal:0" --network seamm-network -v ~/SEAMM:/root/SEAMM -v ~/.seamm:/root/.seamm ghcr.io/molssi-seamm/seamm:latest &'
 
 You can then start the SEAMM GUI by typing *SEAMM* in a terminal window.
 
@@ -49,7 +49,7 @@ Windows
 You can make a shortcut to start the SEAMM GUI. Right-click on the desktop and select
 "New" and then "Shortcut". In the dialog box that appears, enter the following command::
 
-  C:\Windows\System32\wsl.exe -d docker-desktop -u root -- docker run --pull always --rm --name SEAMM  -e "DISPLAY=host.docker.internal:0" -v ~/SEAMM:/root/SEAMM ghcr.io/molssi-seamm/seamm:latest &
+  C:\Windows\System32\wsl.exe -d docker-desktop -u root -- docker run --pull always --rm --name SEAMM --env "DISPLAY=host.docker.internal:0" --network seamm-network -v ~/SEAMM:/root/SEAMM -v ~/.seamm:/root/.seamm ghcr.io/molssi-seamm/seamm:latest &
 
 You can then double-click on the shortcut to start the SEAMM GUI.
 
@@ -62,7 +62,12 @@ General
 Once you have *Docker* installed, you can start the SEAMM GUI by running the following
 command in a terminal window::
 
-  docker run --pull always --rm --name SEAMM  -e "DISPLAY=host.docker.internal:0" -v ~/SEAMM:/root/SEAMM ghcr.io/molssi-seamm/seamm:latest &
+  docker run --pull always --rm --name SEAMM \
+		      --env "DISPLAY=host.docker.internal:0" \
+		      --network seamm-network \
+		      -v ~/SEAMM:/root/SEAMM \
+		      -v ~/.seamm:/root/.seamm \
+		      ghcr.io/molssi-seamm/seamm:latest &
 
 
 .. _XQuartz: https://www.xquartz.org
