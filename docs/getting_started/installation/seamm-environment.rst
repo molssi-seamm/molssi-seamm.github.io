@@ -73,14 +73,18 @@ where the file `seamm-environment.yaml` is like this::
 	  source: ~/SEAMM
 	  target: /root/SEAMM
 
-      # flask requires SIGINT to stop gracefully                                                                                                                    # (default stop signal from Compose is SIGTERM)                                                                                                               stop_signal: SIGINT
+      # flask requires SIGINT to stop gracefully
+      # (default stop signal from Compose is SIGTERM)
+      stop_signal: SIGINT
 
     jobserver:
       container_name: JobServer
       image: ghcr.io/molssi-seamm/jobserver:latest
       command: JobServer --no-windows
       restart: unless-stopped
-      # environment:                                                                                                                                                #   - DISPLAY=host.docker.internal:0                                                                                                                          volumes:
+      # environment:
+      #   - DISPLAY=host.docker.internal:0
+      volumes:
 	- type: bind
 	  source: ~/SEAMM
 	  target: /root/SEAMM
