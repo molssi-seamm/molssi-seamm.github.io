@@ -680,14 +680,18 @@ following command in the terminal:</p>
         <span class="n">source</span><span class="p">:</span> <span class="o">~/</span><span class="n">SEAMM</span>
         <span class="n">target</span><span class="p">:</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">SEAMM</span>
 
-    <span class="c1"># flask requires SIGINT to stop gracefully                                                                                                                    # (default stop signal from Compose is SIGTERM)                                                                                                               stop_signal: SIGINT</span>
+    <span class="c1"># flask requires SIGINT to stop gracefully</span>
+    <span class="c1"># (default stop signal from Compose is SIGTERM)</span>
+    <span class="n">stop_signal</span><span class="p">:</span> <span class="n">SIGINT</span>
 
   <span class="n">jobserver</span><span class="p">:</span>
     <span class="n">container_name</span><span class="p">:</span> <span class="n">JobServer</span>
     <span class="n">image</span><span class="p">:</span> <span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">jobserver</span><span class="p">:</span><span class="n">latest</span>
     <span class="n">command</span><span class="p">:</span> <span class="n">JobServer</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">windows</span>
     <span class="n">restart</span><span class="p">:</span> <span class="n">unless</span><span class="o">-</span><span class="n">stopped</span>
-    <span class="c1"># environment:                                                                                                                                                #   - DISPLAY=host.docker.internal:0                                                                                                                          volumes:</span>
+    <span class="c1"># environment:</span>
+    <span class="c1">#   - DISPLAY=host.docker.internal:0</span>
+    <span class="n">volumes</span><span class="p">:</span>
       <span class="o">-</span> <span class="nb">type</span><span class="p">:</span> <span class="n">bind</span>
         <span class="n">source</span><span class="p">:</span> <span class="o">~/</span><span class="n">SEAMM</span>
         <span class="n">target</span><span class="p">:</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">SEAMM</span>
