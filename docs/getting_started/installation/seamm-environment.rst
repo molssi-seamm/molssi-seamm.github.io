@@ -2,6 +2,13 @@
 
 Starting the SEAMM environment & Dashboard
 ==========================================
+
+.. Attention::
+   The docker images are large (~ 1 GB), and may take some time to download. The first
+   time you run a part of SEAMM, it will take some time to start up, as the image is
+   downloaded and unpacked. Subsequent starts will be faster both because the images are
+   cached on disk and because the various images for SEAMM share a common base image.
+
 MacOS
 -----
 If you are using MacOS you can install an application to create and start the Dashboard
@@ -33,13 +40,13 @@ You can make a shortcut to start the Dashboard and JobServer. Right-click on the
 
 You can then double-click on the shortcut to start the Dashboard and Jobserver.
 
-.. Note:
+.. Warning::
    We have not yet installed on SEAMM on Windows using Docker. We are working on this!
    Hopefully the above instruction will work, but we have not tested it yet.
 
 General
 -------
-.. Note:
+.. Important::
    The directory ~/SEAMM needs to exist! If it doesn't, please create it!
 
 Once you have *Docker* installer, you can start the SEAMM environment by running the
