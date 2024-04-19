@@ -50,8 +50,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script src="../../_static/jquery.js?v=5d32c60e"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -606,11 +604,33 @@ document.write(`
                   
   <section id="installing-seamm-using-docker">
 <span id="docker"></span><h1>Installing SEAMM using Docker<a class="headerlink" href="#installing-seamm-using-docker" title="Link to this heading">#</a></h1>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The way that <em>Docker</em> runs on your machine has security implications. Containers
+effectively run with administrative privileges on your machine. This means that a
+malicious user could potentially use a container to access your files or other
+resources on your machine.</p>
+<p>If you are using e.g. personal laptop, this is not a big deal if you are the only
+person to use the machine, or at least trust others using it. Your machine should be
+locked down from outside access, so no one can get to <em>Docker</em> on it … or if they
+can they have already hacked your machine. However, if you are using a shared
+machine, or a machine that is accessible from the internet, you should be more
+careful. If your computer is owned by a company or your University, you should check
+with your IT department to see if they have any policies about running <em>Docker</em> on
+your machine.</p>
+</div>
 <p>If <em>Docker</em> is not already installed on your system, you can download and install it
 from the <a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> website. The website should recognize the type of computer
 you are using and provide the appropriate download link; however, you can also select a
 different platform if you wish. Please follow the <a class="reference external" href="https://docs.docker.com/get-docker/">Docker installation</a> instructions
 for your platform.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Docker</em> is available for free for most users. However, if you are using it in a
+commercial setting and are at a larger company, you may need to purchase a
+license. Please check the <em>Docker</em> website for details and also check with your IT
+department.</p>
+</div>
 <p>The next steps show you how to start the SEAMM GUI using <em>Docker</em>, and how to install
 and start the Dashboard and Jobserver.</p>
 <div class="toctree-wrapper compound">

@@ -2,10 +2,11 @@
 
 Starting the SEAMM GUI
 ======================
-Once you have *Docker* installed, you can start the SEAMM GUI by running the following
-command in a terminal window::
-
-  docker run --pull always --rm --name SEAMM  -e "DISPLAY=host.docker.internal:0" -v ~/SEAMM:/root/SEAMM ghcr.io/molssi-seamm/seamm:latest &
+.. Attention::
+   The docker images are large (~ 1 GB), and may take some time to download. The first
+   time you run a part of SEAMM, it will take some time to start up, as the image is
+   downloaded and unpacked. Subsequent starts will be faster both because the images are
+   cached on disk and because the various images for SEAMM share a common base image.
 
 MacOS
 -----
@@ -17,7 +18,7 @@ double-click on SEAMM.zip to expand it, creating SEAMM.app. You can then double-
 SEAMM.app to start the SEAMM GUI. You can also drag the SEAMM.app to your dock to make
 it easier to start in the future.
 
-.. Note:
+.. Note::
    If you are using MacOS, you will need to install the `XQuartz`_ X server. You can
    download and install it from the `XQuartz`_ website. Once you have installed *XQuartz*,
    you will need to log out and log back in to your computer. You will also need to start
@@ -52,8 +53,16 @@ You can make a shortcut to start the SEAMM GUI. Right-click on the desktop and s
 
 You can then double-click on the shortcut to start the SEAMM GUI.
 
-.. Note:
+.. Warning::
    We have not yet installed on SEAMM on Windows using Docker. We are working on this!
    Hopefully the above instruction will work, but we have not tested it yet.
+
+General
+-------
+Once you have *Docker* installed, you can start the SEAMM GUI by running the following
+command in a terminal window::
+
+  docker run --pull always --rm --name SEAMM  -e "DISPLAY=host.docker.internal:0" -v ~/SEAMM:/root/SEAMM ghcr.io/molssi-seamm/seamm:latest &
+
 
 .. _XQuartz: https://www.xquartz.org

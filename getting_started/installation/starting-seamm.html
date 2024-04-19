@@ -50,8 +50,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script src="../../_static/jquery.js?v=5d32c60e"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -611,10 +609,12 @@ document.write(`
                   
   <section id="starting-the-seamm-gui">
 <span id="starting-seamm"></span><h1>Starting the SEAMM GUI<a class="headerlink" href="#starting-the-seamm-gui" title="Link to this heading">#</a></h1>
-<p>Once you have <em>Docker</em> installed, you can start the SEAMM GUI by running the following
-command in a terminal window:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">pull</span> <span class="n">always</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">name</span> <span class="n">SEAMM</span>  <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;DISPLAY=host.docker.internal:0&quot;</span> <span class="o">-</span><span class="n">v</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="p">:</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">SEAMM</span> <span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">seamm</span><span class="p">:</span><span class="n">latest</span> <span class="o">&amp;</span>
-</pre></div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The docker images are large (~ 1 GB), and may take some time to download. The first
+time you run a part of SEAMM, it will take some time to start up, as the image is
+downloaded and unpacked. Subsequent starts will be faster both because the images are
+cached on disk and because the various images for SEAMM share a common base image.</p>
 </div>
 <section id="macos">
 <h2>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h2>
@@ -625,6 +625,23 @@ dragging the file to the Applications directory under your home folder. Then
 double-click on SEAMM.zip to expand it, creating SEAMM.app. You can then double-click on
 SEAMM.app to start the SEAMM GUI. You can also drag the SEAMM.app to your dock to make
 it easier to start in the future.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using MacOS, you will need to install the <a class="reference external" href="https://www.xquartz.org">XQuartz</a> X server. You can
+download and install it from the <a class="reference external" href="https://www.xquartz.org">XQuartz</a> website. Once you have installed <em>XQuartz</em>,
+you will need to log out and log back in to your computer. You will also need to start
+<em>XQuartz</em> and go to the preferences. In the preferences, go to the “Security” tab and
+check the box that says “Allow connections from network clients”. You will need to
+restart <em>XQuartz</em> after making this change.</p>
+<p>You will also need to allow applications to connect to the X server. You can do this
+by running the following command in an xterm window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xhost</span> <span class="o">+</span> <span class="mf">127.0.0.1</span>
+</pre></div>
+</div>
+<p>You will need to do this each time you start <em>XQuartz</em>. If you want it to run
+automatically, add a line with <em>xhost + 127.0.0.1</em> to the file
+<cite>~/.xinitrc.d/50-xhost.sh</cite>. You may need to create the directory and file.</p>
+</div>
 </section>
 <section id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h2>
@@ -643,6 +660,19 @@ your <cite>~/.bashrc</cite> file:</p>
 </pre></div>
 </div>
 <p>You can then double-click on the shortcut to start the SEAMM GUI.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We have not yet installed on SEAMM on Windows using Docker. We are working on this!
+Hopefully the above instruction will work, but we have not tested it yet.</p>
+</div>
+</section>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
+<p>Once you have <em>Docker</em> installed, you can start the SEAMM GUI by running the following
+command in a terminal window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">pull</span> <span class="n">always</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">name</span> <span class="n">SEAMM</span>  <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;DISPLAY=host.docker.internal:0&quot;</span> <span class="o">-</span><span class="n">v</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="p">:</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">SEAMM</span> <span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">seamm</span><span class="p">:</span><span class="n">latest</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -695,6 +725,7 @@ your <cite>~/.bashrc</cite> file:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a></li>
 </ul>
   </nav></div>
 

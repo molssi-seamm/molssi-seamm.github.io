@@ -50,8 +50,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 
-    <script src="../../_static/jquery.js?v=5d32c60e"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -611,6 +609,13 @@ document.write(`
                   
   <section id="starting-the-seamm-environment-dashboard">
 <span id="seamm-environment"></span><h1>Starting the SEAMM environment &amp; Dashboard<a class="headerlink" href="#starting-the-seamm-environment-dashboard" title="Link to this heading">#</a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The docker images are large (~ 1 GB), and may take some time to download. The first
+time you run a part of SEAMM, it will take some time to start up, as the image is
+downloaded and unpacked. Subsequent starts will be faster both because the images are
+cached on disk and because the various images for SEAMM share a common base image.</p>
+</div>
 <section id="macos">
 <h2>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h2>
 <p>If you are using MacOS you can install an application to create and start the Dashboard
@@ -640,9 +645,18 @@ your <cite>~/.bashrc</cite> file:</p>
 </pre></div>
 </div>
 <p>You can then double-click on the shortcut to start the Dashboard and Jobserver.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We have not yet installed on SEAMM on Windows using Docker. We are working on this!
+Hopefully the above instruction will work, but we have not tested it yet.</p>
+</div>
 </section>
 <section id="general">
 <h2>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The directory ~/SEAMM needs to exist! If it doesn’t, please create it!</p>
+</div>
 <p>Once you have <em>Docker</em> installer, you can start the SEAMM environment by running the
 following command in the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="o">--</span><span class="n">file</span> <span class="n">seamm</span><span class="o">-</span><span class="n">environment</span><span class="o">.</span><span class="n">yaml</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
