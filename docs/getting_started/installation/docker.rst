@@ -4,7 +4,7 @@
 Installing SEAMM using Docker
 *****************************
 
-.. Note:
+.. Caution::
    The way that *Docker* runs on your machine has security implications. Containers
    effectively run with administrative privileges on your machine. This means that a
    malicious user could potentially use a container to access your files or other
@@ -25,7 +25,7 @@ you are using and provide the appropriate download link; however, you can also s
 different platform if you wish. Please follow the `Docker installation`_ instructions
 for your platform.
 
-.. Note:
+.. Note::
    *Docker* is available for free for most users. However, if you are using it in a
    commercial setting and are at a larger company, you may need to purchase a
    license. Please check the *Docker* website for details and also check with your IT

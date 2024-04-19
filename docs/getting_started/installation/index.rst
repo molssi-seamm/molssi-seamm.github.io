@@ -42,7 +42,7 @@ install parts or all of SEAMM on different machines in different ways. For examp
 can install the GUI on your personal machine using *Docker* and the dashboard on a
 server using *Conda*. The choice is yours.
 
-.. Note:
+.. Note::
    When you install the Dashboard, you need to set the initial passwords on the default
    accounts. :ref:`dashboard-management` will walk you through this.
    
