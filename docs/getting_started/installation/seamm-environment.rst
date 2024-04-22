@@ -88,6 +88,9 @@ where the file `seamm-environment.yaml` is like this::
 	- type: bind
 	  source: ~/SEAMM
 	  target: /root/SEAMM
+      - type: bind
+        source: ~/.seamm.d
+        target: /root/.seamm.d
 	- type: bind
 	  source: /var/run/docker.sock
 	  target: /var/run/docker.sock
