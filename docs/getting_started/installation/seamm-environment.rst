@@ -22,34 +22,22 @@ it easier to start in the future.
 Running this multiple times will do nothing if the Dashboard and JobServer are already
 running. If the are stopped, it will start them.
 
-Linux
------
-You can make an alias in your shell to start the SEAMM GUI. Add the following line to
-your `~/.bashrc` file::
+.. Note::
+   The Dashboard and JobServer are running in Docker, and you can see their status in the
+   Docker Desktop window.
 
-  alias Dashboard='docker compose --file seamm-environment.yaml up -d'
+.. image:: images/docker-desktop.png
+   :alt: Docker Desktop
 
-You can then start the Dashboard and Jobserver by typing *Dashboard* in a terminal window.
-
-Windows
--------
-You can make a shortcut to start the Dashboard and JobServer. Right-click on the desktop and select
-"New" and then "Shortcut". In the dialog box that appears, enter the following command::
-
-  C:\Windows\System32\wsl.exe -d docker-desktop -u root -- docker compose --file seamm-environment.yaml up -d
-
-You can then double-click on the shortcut to start the Dashboard and Jobserver.
-
-.. Warning::
-   We have not yet installed on SEAMM on Windows using Docker. We are working on this!
-   Hopefully the above instruction will work, but we have not tested it yet.
+.. Note::
+   This completes the installation on MacOS.
 
 General
 -------
 .. Important::
    The directory ~/SEAMM needs to exist! If it doesn't, please create it!
 
-Once you have *Docker* installer, you can start the SEAMM environment by running the
+Once you have *Docker* installed, you can start the SEAMM environment by running the
 following command in the terminal::
 
   docker compose --file seamm-environment.yaml up -d
@@ -112,6 +100,32 @@ You should see output like this::
   
 The Dashboard and JobServer should now be running. You can check the Dashboard at
 http://localhost:55055, and also can use the Docker Desktop window to see their status:
+
+Linux
+-----
+.. Warning::
+   We have not yet installed on SEAMM on Linux using Docker. We are working on this!
+   Hopefully these instructions will work, but we have not tested it yet.
+   
+You can make an alias in your shell to start the SEAMM GUI. Add the following line to
+your `~/.bashrc` file::
+
+  alias Dashboard='docker compose --file seamm-environment.yaml up -d'
+
+You can then start the Dashboard and Jobserver by typing *Dashboard* in a terminal window.
+
+Windows
+-------
+.. Warning::
+   We have not yet installed on SEAMM on Windows using Docker. We are working on this!
+   Hopefully these instructions will work, but we have not tested it yet.
+
+You can make a shortcut to start the Dashboard and JobServer. Right-click on the desktop and select
+"New" and then "Shortcut". In the dialog box that appears, enter the following command::
+
+  C:\Windows\System32\wsl.exe -d docker-desktop -u root -- docker compose --file seamm-environment.yaml up -d
+
+You can then double-click on the shortcut to start the Dashboard and Jobserver.
 
 .. image:: images/docker-desktop.png
    :alt: Docker Desktop
