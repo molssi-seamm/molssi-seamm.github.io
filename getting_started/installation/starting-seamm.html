@@ -620,7 +620,7 @@ cached on disk and because the various images for SEAMM share a common base imag
 <h2>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h2>
 <p>If you are using MacOS you can install an application for the SEAMM
 GUI. Download <a class="reference download internal" download="" href="../../_downloads/6772a0cbc0d3c203e733d1b2c4df886d/SEAMM.zip"><code class="xref download docutils literal notranslate"><span class="pre">SEAMM.zip</span></code></a> and unzip it in your personal
-Applications folder – the one insde your home directory. You can do this in Finder by
+Applications folder – the one inside your home directory. You can do this in Finder by
 dragging the file to the Applications directory under your home folder. Then
 double-click on SEAMM.zip to expand it, creating SEAMM.app. You can then double-click on
 SEAMM.app to start the SEAMM GUI. You can also drag the SEAMM.app to your dock to make
@@ -640,17 +640,21 @@ by running the following command in an xterm window:</p>
 </div>
 <p>You will need to do this each time you start <em>XQuartz</em>. If you want it to run
 automatically, add a line with <em>xhost + 127.0.0.1</em> to the file
-<cite>~/.xinitrc.d/50-xhost.sh</cite>. You may need to create the directory and file.</p>
+<cite>~/.xinitrc.d/50-xhost.sh</cite>. You may need to create both the directory and file.</p>
 </div>
 </section>
 <section id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h2>
-<p>You can make an alias in your shell to start the SEAMM GUI. Add the following line to
+<p>You can make these aliases in your shell to start the SEAMM GUI. Add the following line to
 your <cite>~/.bashrc</cite> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">SEAMM</span><span class="o">=</span><span class="s1">&#39;docker run --pull always --rm --name SEAMM --env &quot;DISPLAY=host.docker.internal:0&quot; --network seamm-network -v ~/SEAMM:/root/SEAMM -v ~/.seamm.d:/root/.seamm.d ghcr.io/molssi-seamm/seamm:latest &amp;&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">seamm</span><span class="o">-</span><span class="n">standalone</span><span class="o">=</span><span class="s1">&#39;docker run --pull always -v /tmp/.X11-unix/:/root/.X11-unix/ --net=host --rm --name SEAMM --env &quot;DISPLAY&quot; -v ~/SEAMM:/root/SEAMM -v ~/.seamm.d:/root/.seamm.d ghcr.io/molssi-seamm/seamm:latest &amp;&#39;</span>
+<span class="n">alias</span> <span class="n">seamm</span><span class="o">=</span><span class="s1">&#39;docker run --pull always -v /tmp/.X11-unix/:/root/.X11-unix/ --net=host --network seamm-netowrk --rm --name SEAMM --env &quot;DISPLAY&quot; -v ~/SEAMM:/root/SEAMM -v ~/.seamm.d:/root/.seamm.d ghcr.io/molssi-seamm/seamm:latest &amp;&#39;</span>
 </pre></div>
 </div>
-<p>You can then start the SEAMM GUI by typing <em>SEAMM</em> in a terminal window.</p>
+<p>You can then start the SEAMM GUI by typing <em>seamm-standalone</em> or <em>seamm</em> in a terminal
+window. The standalone version can only connect to Dashboards on other machines. If you
+are running the SEAMM Dashboard locally, using Docker, and want to access it, you will
+need the second version, <em>seamm</em>.</p>
 </section>
 <section id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h2>
@@ -665,19 +669,6 @@ your <cite>~/.bashrc</cite> file:</p>
 <p class="admonition-title">Warning</p>
 <p>We have not yet installed on SEAMM on Windows using Docker. We are working on this!
 Hopefully the above instruction will work, but we have not tested it yet.</p>
-</div>
-</section>
-<section id="general">
-<h2>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
-<p>Once you have <em>Docker</em> installed, you can start the SEAMM GUI by running the following
-command in a terminal window:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">pull</span> <span class="n">always</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">name</span> <span class="n">SEAMM</span> \
-                    <span class="o">--</span><span class="n">env</span> <span class="s2">&quot;DISPLAY=host.docker.internal:0&quot;</span> \
-                    <span class="o">--</span><span class="n">network</span> <span class="n">seamm</span><span class="o">-</span><span class="n">network</span> \
-                    <span class="o">-</span><span class="n">v</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="p">:</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">SEAMM</span> \
-                    <span class="o">-</span><span class="n">v</span> <span class="o">~/.</span><span class="n">seamm</span><span class="o">.</span><span class="n">d</span><span class="p">:</span><span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">seamm</span><span class="o">.</span><span class="n">d</span> \
-                    <span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">seamm</span><span class="p">:</span><span class="n">latest</span> <span class="o">&amp;</span>
-</pre></div>
 </div>
 </section>
 </section>
@@ -731,7 +722,6 @@ command in a terminal window:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a></li>
 </ul>
   </nav></div>
 

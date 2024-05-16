@@ -627,28 +627,15 @@ Dashboard.app to start the SEAMM environment. You can also drag Dashboard.app to
 it easier to start in the future.</p>
 <p>Running this multiple times will do nothing if the Dashboard and JobServer are already
 running. If the are stopped, it will start them.</p>
-</section>
-<section id="linux">
-<h2>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h2>
-<p>You can make an alias in your shell to start the SEAMM GUI. Add the following line to
-your <cite>~/.bashrc</cite> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">Dashboard</span><span class="o">=</span><span class="s1">&#39;docker compose --file seamm-environment.yaml up -d&#39;</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Dashboard and JobServer are running in Docker, and you can see their status in the
+Docker Desktop window.</p>
 </div>
-<p>You can then start the Dashboard and Jobserver by typing <em>Dashboard</em> in a terminal window.</p>
-</section>
-<section id="windows">
-<h2>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h2>
-<p>You can make a shortcut to start the Dashboard and JobServer. Right-click on the desktop and select
-“New” and then “Shortcut”. In the dialog box that appears, enter the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Windows</span>\<span class="n">System32</span>\<span class="n">wsl</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">d</span> <span class="n">docker</span><span class="o">-</span><span class="n">desktop</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">--</span> <span class="n">docker</span> <span class="n">compose</span> <span class="o">--</span><span class="n">file</span> <span class="n">seamm</span><span class="o">-</span><span class="n">environment</span><span class="o">.</span><span class="n">yaml</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
-</pre></div>
-</div>
-<p>You can then double-click on the shortcut to start the Dashboard and Jobserver.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>We have not yet installed on SEAMM on Windows using Docker. We are working on this!
-Hopefully the above instruction will work, but we have not tested it yet.</p>
+<img alt="Docker Desktop" src="../../_images/docker-desktop.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This completes the installation on MacOS.</p>
 </div>
 </section>
 <section id="general">
@@ -657,7 +644,7 @@ Hopefully the above instruction will work, but we have not tested it yet.</p>
 <p class="admonition-title">Important</p>
 <p>The directory ~/SEAMM needs to exist! If it doesn’t, please create it!</p>
 </div>
-<p>Once you have <em>Docker</em> installer, you can start the SEAMM environment by running the
+<p>Once you have <em>Docker</em> installed, you can start the SEAMM environment by running the
 following command in the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="o">--</span><span class="n">file</span> <span class="n">seamm</span><span class="o">-</span><span class="n">environment</span><span class="o">.</span><span class="n">yaml</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
 </pre></div>
@@ -720,6 +707,34 @@ psaxe@h80adf301 tmp %
 </div>
 <p>The Dashboard and JobServer should now be running. You can check the Dashboard at
 <a class="reference external" href="http://localhost:55055">http://localhost:55055</a>, and also can use the Docker Desktop window to see their status:</p>
+</section>
+<section id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We have not yet installed on SEAMM on Linux using Docker. We are working on this!
+Hopefully these instructions will work, but we have not tested it yet.</p>
+</div>
+<p>You can make an alias in your shell to start the SEAMM GUI. Add the following line to
+your <cite>~/.bashrc</cite> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">Dashboard</span><span class="o">=</span><span class="s1">&#39;docker compose --file seamm-environment.yaml up -d&#39;</span>
+</pre></div>
+</div>
+<p>You can then start the Dashboard and Jobserver by typing <em>Dashboard</em> in a terminal window.</p>
+</section>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We have not yet installed on SEAMM on Windows using Docker. We are working on this!
+Hopefully these instructions will work, but we have not tested it yet.</p>
+</div>
+<p>You can make a shortcut to start the Dashboard and JobServer. Right-click on the desktop and select
+“New” and then “Shortcut”. In the dialog box that appears, enter the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Windows</span>\<span class="n">System32</span>\<span class="n">wsl</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">d</span> <span class="n">docker</span><span class="o">-</span><span class="n">desktop</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">--</span> <span class="n">docker</span> <span class="n">compose</span> <span class="o">--</span><span class="n">file</span> <span class="n">seamm</span><span class="o">-</span><span class="n">environment</span><span class="o">.</span><span class="n">yaml</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>You can then double-click on the shortcut to start the Dashboard and Jobserver.</p>
 <img alt="Docker Desktop" src="../../_images/docker-desktop.png" />
 </section>
 </section>
@@ -771,9 +786,9 @@ psaxe@h80adf301 tmp %
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a></li>
 </ul>
   </nav></div>
 
