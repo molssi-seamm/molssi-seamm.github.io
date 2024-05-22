@@ -10,102 +10,111 @@ Graphical Installation
    out of date and there might be small differences between what you read here and 
    watch there.
 
-SEAMM should be installed in the **seamm** conda environment. Open a terminal 
-and run the following commands::
+SEAMM should be installed in the **seamm** conda environment. The steps are:
 
-  conda create -n seamm -c conda-forge seamm seamm-installer seamm-dashboard python=3.9
+#. Download :download:`seamm.yml <./seamm.yml>` and save it in a known location.
+#. Open a terminal and run the following commands::
 
-If you do not intend to run the SEAMM Dashboard in this installation, you can leave it
-off the command line::
+     conda env create --file <path to seamm.yml>
 
-  conda create -n seamm -c conda-forge seamm seamm-installer python=3.9
+#. Once the environment is in place, activate it::
 
-Once the environment is in place, you can activate it as prompted::
+     conda activate seamm
 
-  conda activate seamm
+#. Now run the SEAMM Installer to install both the SEAMM environment and the available
+   plug-ins::
 
-You can choose a different name for your SEAMM environment by replacing
-the ``<name>`` argument in the ``-n <name>`` option with your preferred title.
+     seamm-installer
 
-Now run the SEAMM Installer to install both the SEAMM environment and the available
-plug-ins::
+   You will see a window like this:
 
-  seamm-installer
-
-You will see a window like this:
-
-.. figure:: images/initial.png
-   :align: center
-   :alt: The initial Installer window
+   .. figure:: images/initial.png
+      :align: center
+      :alt: The initial Installer window
    
-   The initial window of the Installer
+      The initial window of the Installer
 
-Click on the second tab **Components**. The Installer needs to examine the installation
-and sometimes -- like this first time you use it -- needs to search the Internet to find
-the plug-ins for SEAMM. This can take a few minutes, so be patient! A small dialog will
-come up in front of the Installer to let you know about progress. When the Installer has
-examined everthing it will fill out the window, like this:
+#. Click on the second tab **Components**. The Installer needs to examine the
+   installation. This can take a few minutes, so be patient! A small dialog will
+   come up in front of the Installer to let you know about progress. When the Installer has
+   examined everthing it will fill out the window, like this:
 
-.. figure:: images/components.png
-   :align: center
-   :alt: The initial Components tab.
+   .. figure:: images/components.png
+      :align: center
+      :alt: The initial Components tab.
    
-   The initial Components tab.
+      The initial Components tab.
 
-The lines in green show components or plug-ins that are installed and up-to-date. Black
-indicates that the item is not installed, and red indicates items that are installed but
-out-of-date. The first time that you run the Installer most of the core packages will be
-installed and up-to-date because you just installed them as you created the Conda
-environment.
+   The lines in green show components or plug-ins that are installed and
+   up-to-date. Black indicates that the item is not installed, and red indicates
+   items that are installed but out-of-date. The first time that you run the
+   Installer most of the core packages will be installed and up-to-date because you
+   just installed them as you created the Conda environment.
 
-You can select the plug-ins that you want, or select everything using the ``Select all``
-button. Once you are happy with your selection, click the ``Install selected``
-button. Don't worry if you have selected some of the packages that are already
-installed: they will be ignored.  Depending on your internet connection, computer, and
-the plug-ins selected, the installation can take up to 10 or 20 minutes.  This is
-because many of the plug-ins also install additional software such as LAMMPS, Psi4,
-Packmol, and DFTB+, and some of these packages are quite large and take time to install.
+   You can select the plug-ins that you want, or select everything using the ``Select
+   all`` button. Once you are happy with your selection, click the ``Install
+   selected`` button. Don't worry if you have selected some of the packages that are
+   already installed: they will be ignored.  Depending on your internet connection,
+   computer, and the plug-ins selected, the installation can take up to 10 or 20
+   minutes.  This is because many of the plug-ins also install additional software
+   such as LAMMPS, Psi4, Packmol, and DFTB+, and some of these packages are quite
+   large and take time to install.
 
-When the installation is done, the window will update with the current status. If you
-wish you can select more packages to install and repeat the process.
+   When the installation is done, the window will update with the current status. If
+   you wish you can select more packages to install and repeat the process.
 
-.. note::
-   If you plan to only use the GUI on this machine, and submit jobs to other machines,
-   you can select the **GUI only** checkbox. This will install only the components for
-   the GUI of SEAMM. Neither the Dashboard or JobServer will be installed, nor will any
-   of the background software, like LAMMPS, be installed. This is both faster and keeps
-   the installation smaller.
+   .. note::
+      If you plan to only use the GUI on this machine, and submit jobs to other machines,
+      you can select the **GUI only** checkbox. This will install only the components for
+      the GUI of SEAMM. None of the background software, like LAMMPS, be installed. This is
+      both faster and keeps the installation smaller.
 
-Once you are happy with the installation, go to the next tab, **Shortcuts** to install
-shortcuts for starting SEAMM and the Installer. It looks like this:
+#. Once you are happy with the installation, go to the next tab, **Shortcuts** to install
+   shortcuts for starting SEAMM and the Installer. It looks like this:
 
-.. figure:: images/shortcuts.png
-   :align: center
-   :alt: The initial Shortcuts tab.
+   .. figure:: images/shortcuts.png
+      :align: center
+      :alt: The initial Shortcuts tab.
    
-   The initial Shortcuts tab.
+      The initial Shortcuts tab.
 
-Select the applications that you want, and click ``Create selected apps`` to create the
-shortcuts. On a Mac, the shortcuts will be in ``~/Applications``, i.e. the Applications folder
-under your home directory, not the main ``/Applications`` folder. On Linux, they will be
-in ``~/.local/share/Applications``. You can usually drag the shortcuts to the desktop,
-dock, launcher or similar place for easy access; however, the details depend on the your
-OS and desktop so check the documentation if need be.
+   Select the applications that you want, and click ``Create selected apps`` to create the
+   shortcuts. On a Mac, the shortcuts will be in ``~/Applications``, i.e. the Applications folder
+   under your home directory, not the main ``/Applications`` folder. On Linux, they will be
+   in ``~/.local/share/Applications``. You can usually drag the shortcuts to the desktop,
+   dock, launcher or similar place for easy access; however, the details depend on the your
+   OS and desktop so check the documentation if need be.
 
-Finally, go to the last tab, **Services**, to install the Dashboard and JobServer as
-services so that they are always available. This tab looks like this:
+#. If you want to run jobs locally, go to the last tab, **Services**, to install the
+   Dashboard and JobServer as services so that they are always available. This tab looks
+   like this:
 
-.. figure:: images/services.png
-   :align: center
-   :alt: The initial Services tab.
-   
-   The initial Services tab.
+   .. figure:: images/services.png
+      :align: center
+      :alt: The initial Services tab.
 
-If you want to run jobs locally, select both the Dashboard and JobServer and click on
-``Create selected services``. This will install the services and start them. Note the
-other two buttons, which let you stop and start the services if you need.
+      The initial Services tab.
 
+   Select both the Dashboard and JobServer and click on ``Create selected
+   services``. A small dialog will pop up allowing you to set the name of the Dashboard
+   and the port. The default port is 55055, but you can change it to any port > 1024
+   that does not conflict with another service on your machine. Large numbers, like
+   55055, are generally safe:
 
+   .. figure:: images/name_port.png
+      :align: center
+      :alt: The Dashboard Parameters
+
+      The dialog for setting the name and port of the Dashboard
+
+   Click ``OK``. This will install the services and start them.
+
+   .. note:
+      Note the other two buttons, which let you stop and start the services if you need.
+
+Congratulations! SEAMM is fully installed and ready to go. The
+:doc:`../tutorials/index` is a good place to start.
+      
 .. Link shortcuts and cross-referencing labels
 .. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
 .. _Anaconda: https://www.anaconda.com/distribution

@@ -605,112 +605,125 @@ document.write(`
                   
   <section id="command-line-installation">
 <span id="id1"></span><h1>Command Line Installation<a class="headerlink" href="#command-line-installation" title="Link to this heading">#</a></h1>
-<p>SEAMM should be installed in the <strong>seamm</strong> conda environment. Open a terminal
-and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">seamm</span><span class="o">-</span><span class="n">dashboard</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
+<p>SEAMM should be installed in the <strong>seamm</strong> conda environment. Download
+<a class="reference download internal" download="" href="../../_downloads/46d5f6d9e492a9025e93d448a3e6fe1f/seamm.yml"><code class="xref download docutils literal notranslate"><span class="pre">seamm.yml</span></code></a> and save it in a known location. Then open a
+terminal window and run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">seamm</span><span class="o">.</span><span class="n">yml</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>If you do not intend to run the SEAMM Dashboard in this installation, you can leave it
-off the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
-</pre></div>
-</div>
-<p>Once the environment is in place, you can activate it as prompted:</p>
+<p>Once the environment is in place, activate it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
 </pre></div>
 </div>
-<p>You can choose a different name for your SEAMM environment by replacing
-the <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">&lt;name&gt;</span></code> option with your preferred title.</p>
 <p>To start, let’s find what is already installed and which plug-ins are available:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% seamm-installer show
 
-Finding all the packages that make up SEAMM. This may take several minutes.
-..................................................................................................................................................
-Wrote the package database to /Users/psaxe/Library/Application Support/seamm-installer/downloads.json.
-
 Showing the modules in SEAMM:
-...........................
+......................................
 Core modules of SEAMM
 ╒══════════╤═══════════════════╤═════════════╤═════════════╤═════════════════════════════════════════════════╕
 │   Number │ Component         │ Installed   │ Available   │ Description                                     │
 ╞══════════╪═══════════════════╪═════════════╪═════════════╪═════════════════════════════════════════════════╡
-│        1 │ *seamm-dashboard  │ --          │ 2022.3.30   │ The Web Dashboard for SEAMM (Simulation         │
-│          │                   │             │             │ Environment for Atomistic and Molecular         │
-│          │                   │             │             │ Simulations).                                   │
+│        1 │ molsystem         │ 2024.5.8    │ 2024.5.8    │ molsystem                                       │
 ├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        2 │ *seamm-jobserver  │ --          │ 2022.6.9    │ seamm_jobserver                                 │
+│        2 │ reference-handler │ 0.9.1       │ 0.9.1       │ no description given                            │
 ├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        3 │ molsystem         │ 2022.7.24   │ 2022.7.24   │ molsystem                                       │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        4 │ reference-handler │ 0.9.1       │ 0.9.1       │ no description given                            │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        5 │ seamm             │ 2022.7.25   │ 2022.7.25   │ The core of the SEAMM environment and graphical │
+│        3 │ seamm             │ 2024.5.3.1  │ 2024.5.3.1  │ The core of the SEAMM environment and graphical │
 │          │                   │             │             │ interface.                                      │
 ├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        6 │ seamm-datastore   │ 2022.6.28   │ 2022.6.28   │ seamm_datastore                                 │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        7 │ seamm-ff-util     │ 2022.5.29   │ 2022.5.29   │ seamm_ff_util                                   │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        8 │ seamm-installer   │ 2022.7.29.1 │ 2022.7.29.1 │ The installer/updater for SEAMM (Simulation     │
+│        4 │ seamm-dashboard   │ 2024.3.27   │ 2024.3.27   │ The Web Dashboard for SEAMM (Simulation         │
 │          │                   │             │             │ Environment for Atomistic and Molecular         │
 │          │                   │             │             │ Simulations).                                   │
 ├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        9 │ seamm-util        │ 2022.7.24   │ 2022.7.24   │ seamm_util                                      │
+│        5 │ seamm-datastore   │ 2024.3.13   │ 2024.3.13   │ seamm_datastore                                 │
 ├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│       10 │ seamm-widgets     │ 2022.7.29   │ 2022.7.29   │ seamm_widgets                                   │
+│        6 │ seamm-exec        │ 2024.4.25.3 │ 2024.4.25.3 │ Classes to execute background codes for SEAMM   │
+├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
+│        7 │ seamm-ff-util     │ 2023.8.27   │ 2023.8.27   │ seamm_ff_util                                   │
+├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
+│        8 │ seamm-installer   │ 2024.4.22   │ 2024.4.22   │ The installer/updater for SEAMM (Simulation     │
+│          │                   │             │             │ Environment for Atomistic and Molecular         │
+│          │                   │             │             │ Simulations).                                   │
+├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
+│        9 │ seamm-jobserver   │ 2024.3.12   │ 2024.3.12   │ The JobServer for the SEAMM environment.        │
+├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
+│       10 │ seamm-util        │ 2024.4.30   │ 2024.4.30   │ seamm_util                                      │
+├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
+│       11 │ seamm-widgets     │ 2024.5.1    │ 2024.5.1    │ seamm_widgets                                   │
 ╘══════════╧═══════════════════╧═════════════╧═════════════╧═════════════════════════════════════════════════╛
 
 MolSSI plug-ins
-╒══════════╤══════════════════════════╤═════════════╤═════════════╤════════════════════════════════════════════════════╕
-│   Number │ Plug-in                  │ Installed   │ Available   │ Description                                        │
-╞══════════╪══════════════════════════╪═════════════╪═════════════╪════════════════════════════════════════════════════╡
-│        1 │ *control-parameters-step │ --          │ 2022.6.6    │ A SEAMM plug-in for defining command-line          │
-│          │                          │             │             │ parameters for a flowchart.                        │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        2 │ *crystal-builder-step    │ --          │ 2022.7.31   │ A SEAMM plug-in for creating crystals from         │
-│          │                          │             │             │ prototypes, including Strukturbericht              │
-│          │                          │             │             │ designations.                                      │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        3 │ *custom-step             │ --          │ 2021.11.27  │ A SEAMM plug-in for custom Python scripts in a     │
-│          │                          │             │             │ flowchart.                                         │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        4 │ *dftbplus-step           │ --          │ 2022.7.24   │ A SEAMM plug-in for DFTB+, a fast quantum          │
-│          │                          │             │             │ mechanical simulation code.                        │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        5 │ *forcefield-step         │ --          │ 2022.5.29   │ A SEAMM plug-in for setting up a forcefield or EAM │
-│          │                          │             │             │ potentials for subsequent simulations.             │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        6 │ *from-smiles-step        │ --          │ 2021.10.13  │ A SEAMM plug-in for creating structures from a     │
-│          │                          │             │             │ SMILES string.                                     │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        7 │ *lammps-step             │ --          │ 2022.5.31   │ A SEAMM plug-in for LAMMPS, a forcefield-based     │
-│          │                          │             │             │ molecular dynamics code.                           │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        8 │ *loop-step               │ --          │ 2022.1.16   │ A SEAMM plug-in which provides loops in            │
-│          │                          │             │             │ flowcharts.                                        │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        9 │ *mopac-step              │ --          │ 2022.5.23   │ A SEAMM plug-in to setup, run and analyze          │
-│          │                          │             │             │ semiempirical calculations with MOPAC              │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       10 │ *packmol-step            │ --          │ 2022.5.31   │ A SEAMM plug-in for building periodic boxes of     │
-│          │                          │             │             │ fluid using Packmol                                │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       11 │ *psi4-step               │ --          │ 2021.10.13  │ A SEAMM plug-in to setup, run and analyze quantum  │
-│          │                          │             │             │ chemistry calculations using Psi4                  │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       12 │ *rdkit-step              │ --          │ 2022.1.11.1 │ A SEAMM plugin for A SEAMM plug-in for RDKit       │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       13 │ *read-structure-step     │ --          │ 2022.7.20   │ A SEAMM plug-in to read common formats in          │
-│          │                          │             │             │ computational chemistry                            │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       14 │ *set-cell-step           │ --          │ 2021.10.14  │ A SEAMM plug-in for setting the periodic (unit)    │
-│          │                          │             │             │ cell.                                              │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       15 │ *supercell-step          │ --          │ 2021.10.14  │ A SEAMM plug-in for building supercells of         │
-│          │                          │             │             │ periodic systems.                                  │
-├──────────┼──────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       16 │ *table-step              │ --          │ 2021.12.22  │ A SEAMM plug-in for data tables in a flowchart.    │
-╘══════════╧══════════════════════════╧═════════════╧═════════════╧════════════════════════════════════════════════════╛
+╒══════════╤════════════════════════════╤═════════════╤═════════════╤════════════════════════════════════════════════════╕
+│   Number │ Plug-in                    │ Installed   │ Available   │ Description                                        │
+╞══════════╪════════════════════════════╪═════════════╪═════════════╪════════════════════════════════════════════════════╡
+│        1 │ *control-parameters-step   │ --          │ 2023.11.15  │ A SEAMM plug-in for defining command-line          │
+│          │                            │             │             │ parameters for a flowchart.                        │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        2 │ *crystal-builder-step      │ --          │ 2022.7.31   │ A SEAMM plug-in for creating crystals from         │
+│          │                            │             │             │ prototypes, including Strukturbericht              │
+│          │                            │             │             │ designations.                                      │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        3 │ *custom-step               │ --          │ 2023.12.12  │ A SEAMM plug-in for custom Python scripts in a     │
+│          │                            │             │             │ flowchart.                                         │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        4 │ *dftbplus-step             │ --          │ 2024.4.24   │ A SEAMM plug-in for DFTB+, a fast quantum          │
+│          │                            │             │             │ mechanical simulation code.                        │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        5 │ *diffusivity-step          │ --          │ 2023.9.4    │ A SEAMM plug-in for Diffusivity                    │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        6 │ *fhi-aims-step             │ --          │ 2024.1.19   │ A SEAMM plug-in for FHI-aims                       │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        7 │ *forcefield-step           │ --          │ 2024.1.10   │ A SEAMM plug-in for setting up a forcefield or EAM │
+│          │                            │             │             │ potentials for subsequent simulations.             │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        8 │ *from-smiles-step          │ --          │ 2023.11.10  │ A SEAMM plug-in for creating structures from a     │
+│          │                            │             │             │ SMILES string.                                     │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│        9 │ *gaussian-step             │ --          │ 2024.5.8    │ A SEAMM plugin for A SEAMM plug-in for Gaussian    │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       10 │ *geometry-analysis-step    │ --          │ 2023.1.14   │ A SEAMM plug-in for analysis of the geometry of    │
+│          │                            │             │             │ particularly small molecules                       │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       11 │ *lammps-step               │ --          │ 2024.3.22   │ A SEAMM plug-in for LAMMPS, a forcefield-based     │
+│          │                            │             │             │ molecular dynamics code.                           │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       12 │ *loop-step                 │ --          │ 2023.11.9   │ A SEAMM plug-in which provides loops in            │
+│          │                            │             │             │ flowcharts.                                        │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       13 │ *mopac-step                │ --          │ 2024.5.14.2 │ A SEAMM plug-in to setup, run and analyze          │
+│          │                            │             │             │ semiempirical calculations with MOPAC              │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       14 │ *packmol-step              │ --          │ 2024.3.20.2 │ A SEAMM plug-in for building periodic boxes of     │
+│          │                            │             │             │ fluid using Packmol                                │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       15 │ *properties-step           │ --          │ 2023.7.31   │ A SEAMM plug-in for Properties                     │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       16 │ *psi4-step                 │ --          │ 2024.3.17   │ A SEAMM plug-in to setup, run and analyze quantum  │
+│          │                            │             │             │ chemistry calculations using Psi4                  │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       17 │ *qcarchive-step            │ --          │ 2023.3.30   │ A SEAMM plug-in for QCArchive                      │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       18 │ *quickmin-step             │ --          │ 2024.5.7    │ A SEAMM plug-in for simple, quick minimization     │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       19 │ *rdkit-step                │ --          │ 2023.2.22   │ A SEAMM plugin for A SEAMM plug-in for RDKit       │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       20 │ *read-structure-step       │ --          │ 2023.11.16  │ A SEAMM plug-in to read common formats in          │
+│          │                            │             │             │ computational chemistry                            │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       21 │ *set-cell-step             │ --          │ 2021.10.14  │ A SEAMM plug-in for setting the periodic (unit)    │
+│          │                            │             │             │ cell.                                              │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       22 │ *strain-step               │ --          │ 2022.11.7   │ A SEAMM plug-in for straining periodic systems     │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       23 │ *supercell-step            │ --          │ 2023.11.5   │ A SEAMM plug-in for building supercells of         │
+│          │                            │             │             │ periodic systems.                                  │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       24 │ *table-step                │ --          │ 2023.11.10  │ A SEAMM plug-in for data tables in a flowchart.    │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       25 │ *thermal-conductivity-step │ --          │ 2024.3.22   │ A SEAMM plug-in for Thermal Conductivity           │
+├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
+│       26 │ *torchani-step             │ --          │ 2024.5.12.1 │ A SEAMM plug-in for TorchANI                       │
+╘══════════╧════════════════════════════╧═════════════╧═════════════╧════════════════════════════════════════════════════╛
 
 3rd-party plug-ins
 ╒══════════╤══════════════╤═════════════╤═════════════╤═══════════════════════════════════════════════════╕
@@ -722,18 +735,34 @@ MolSSI plug-ins
 * indicates the component is not up-to-date.
 </pre></div>
 </div>
-<p>All of the core modules of SEAMM other than the Dashboard and JobServer were installed
-when you created the environment, and are up-to-date. None of the plug-ins have been
-installed yet.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Try running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">refresh</span><span class="o">-</span><span class="n">cache</span>
+<p>All of the core modules of SEAMM were installed when you created the environment, and
+are up-to-date. None of the plug-ins have been installed yet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The plug-ins and versions in the list you get may be different (newer!) than those
+shown above because the documentation is not updated for every change in SEAMM.</p>
+</div>
+<section id="installing-seamm-and-plug-ins">
+<h2>Installing SEAMM and Plug-ins<a class="headerlink" href="#installing-seamm-and-plug-ins" title="Link to this heading">#</a></h2>
+<p>Now run the SEAMM Installer to install both the SEAMM environment and the available
+plug-ins:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
-<p>if you have recently added or updated a package or you are getting an error for
-a missing package.</p>
+<p>This will install all of SEAMM plus all the plug-ins created by the MolSSI. If you wish
+to install all 3rd party plug-ins as well, add the <code class="docutils literal notranslate"><span class="pre">--third-party</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">third</span><span class="o">-</span><span class="n">party</span>
+</pre></div>
 </div>
+<p>If you need more control, you can also list the names of the plug-ins to install on the
+command line. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="n">from</span><span class="o">-</span><span class="n">smiles</span><span class="o">-</span><span class="n">step</span> <span class="n">mopac</span><span class="o">-</span><span class="n">step</span>
+</pre></div>
+</div>
+<p>Depending on your internet connection, computer, and the plug-ins selected, the
+installation can take up to 10 or 20 minutes.  This is because many of the plug-ins also
+install additional software such as LAMMPS, Psi4, Packmol, and DFTB+, and some of these
+packages are quite large and take time to install.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can always get help on the command line by using the <code class="docutils literal notranslate"><span class="pre">--help</span></code> (or <code class="docutils literal notranslate"><span class="pre">-h</span></code>)
@@ -764,31 +793,12 @@ keyword:</p>
 </pre></div>
 </div>
 </div>
-<section id="installing-seamm-and-plug-ins">
-<h2>Installing SEAMM and Plug-ins<a class="headerlink" href="#installing-seamm-and-plug-ins" title="Link to this heading">#</a></h2>
-<p>Now run the SEAMM Installer to install both the SEAMM environment and the available
-plug-ins:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span>
-</pre></div>
-</div>
-<p>This will install all of SEAMM plus all the plug-ins created by the MolSSI. If you wish
-to install all 3rd party plug-ins as well, add the <code class="docutils literal notranslate"><span class="pre">--third-party</span></code> flag:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">third</span><span class="o">-</span><span class="n">party</span>
-</pre></div>
-</div>
-<p>If you need more control, you can also list the names of the plug-ins to install on the
-command line. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="n">from</span><span class="o">-</span><span class="n">smiles</span><span class="o">-</span><span class="n">step</span> <span class="n">mopac</span><span class="o">-</span><span class="n">step</span>
-</pre></div>
-</div>
-<p>Depending on your internet connection, computer, and the plug-ins selected, the
-installation can take up to 10 or 20 minutes.  This is because many of the plug-ins also
-install additional software such as LAMMPS, Psi4, Packmol, and DFTB+, and some of these
-packages are quite large and take time to install.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can also install only the packages that are necessary for the GUI:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="n">gui</span><span class="o">-</span><span class="n">only</span>
+<p>You can also install only the packages that are necessary for the GUI if you do not
+intend to run calculations on this machine, but just create flowcharts and submit jobs
+to remote Dashboards:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="n">gui</span><span class="o">-</span><span class="n">only</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
 </div>
@@ -800,12 +810,15 @@ following command:</p>
 <p>which generates output like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># conda environments:</span>
 <span class="c1">#</span>
-<span class="n">base</span>                     <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">tester</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span>
-<span class="n">seamm</span>                 <span class="o">*</span>  <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">tester</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">dftbplus</span>           <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">tester</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">dftbplus</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span>             <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">tester</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">packmol</span>            <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">tester</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">packmol</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">psi4</span>               <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">tester</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">psi4</span>
+<span class="n">base</span>                     <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span>
+<span class="n">seamm</span>                    <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">dev</span>                <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">dftbplus</span>           <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">dftbplus</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span>             <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">mopac</span>              <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">mopac</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">packmol</span>            <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">packmol</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">psi4</span>               <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">psi4</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">torchani</span>           <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">torchani</span>
 </pre></div>
 </div>
 <p>The extra software needed by individual plug-ins is installed in separate conda
@@ -865,6 +878,8 @@ do so use the following command:</p>
 </div>
 <p>This shows that both services are running and that you can access the Dashboard at port
 55055 (the default).</p>
+<p>Congratulations! SEAMM is fully installed and ready to go. The
+<a class="reference internal" href="../tutorials/index.html"><span class="doc">Tutorials</span></a> is a good place to start.</p>
 </section>
 </section>
 

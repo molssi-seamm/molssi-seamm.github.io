@@ -616,23 +616,20 @@ available in the <a class="reference external" href="https://www.youtube.com/cha
 out of date and there might be small differences between what you read here and
 watch there.</p>
 </div>
-<p>SEAMM should be installed in the <strong>seamm</strong> conda environment. Open a terminal
-and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">seamm</span><span class="o">-</span><span class="n">dashboard</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
+<p>SEAMM should be installed in the <strong>seamm</strong> conda environment. The steps are:</p>
+<ol class="arabic">
+<li><p>Download <a class="reference download internal" download="" href="../../_downloads/46d5f6d9e492a9025e93d448a3e6fe1f/seamm.yml"><code class="xref download docutils literal notranslate"><span class="pre">seamm.yml</span></code></a> and save it in a known location.</p></li>
+<li><p>Open a terminal and run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">seamm</span><span class="o">.</span><span class="n">yml</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>If you do not intend to run the SEAMM Dashboard in this installation, you can leave it
-off the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
-</pre></div>
-</div>
-<p>Once the environment is in place, you can activate it as prompted:</p>
+</li>
+<li><p>Once the environment is in place, activate it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
 </pre></div>
 </div>
-<p>You can choose a different name for your SEAMM environment by replacing
-the <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">&lt;name&gt;</span></code> option with your preferred title.</p>
-<p>Now run the SEAMM Installer to install both the SEAMM environment and the available
+</li>
+<li><p>Now run the SEAMM Installer to install both the SEAMM environment and the available
 plug-ins:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span>
 </pre></div>
@@ -644,9 +641,9 @@ plug-ins:</p>
 <p><span class="caption-text">The initial window of the Installer</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Click on the second tab <strong>Components</strong>. The Installer needs to examine the installation
-and sometimes – like this first time you use it – needs to search the Internet to find
-the plug-ins for SEAMM. This can take a few minutes, so be patient! A small dialog will
+</li>
+<li><p>Click on the second tab <strong>Components</strong>. The Installer needs to examine the
+installation. This can take a few minutes, so be patient! A small dialog will
 come up in front of the Installer to let you know about progress. When the Installer has
 examined everthing it will fill out the window, like this:</p>
 <figure class="align-center" id="id3">
@@ -655,29 +652,30 @@ examined everthing it will fill out the window, like this:</p>
 <p><span class="caption-text">The initial Components tab.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The lines in green show components or plug-ins that are installed and up-to-date. Black
-indicates that the item is not installed, and red indicates items that are installed but
-out-of-date. The first time that you run the Installer most of the core packages will be
-installed and up-to-date because you just installed them as you created the Conda
-environment.</p>
-<p>You can select the plug-ins that you want, or select everything using the <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">all</span></code>
-button. Once you are happy with your selection, click the <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">selected</span></code>
-button. Don’t worry if you have selected some of the packages that are already
-installed: they will be ignored.  Depending on your internet connection, computer, and
-the plug-ins selected, the installation can take up to 10 or 20 minutes.  This is
-because many of the plug-ins also install additional software such as LAMMPS, Psi4,
-Packmol, and DFTB+, and some of these packages are quite large and take time to install.</p>
-<p>When the installation is done, the window will update with the current status. If you
-wish you can select more packages to install and repeat the process.</p>
+<p>The lines in green show components or plug-ins that are installed and
+up-to-date. Black indicates that the item is not installed, and red indicates
+items that are installed but out-of-date. The first time that you run the
+Installer most of the core packages will be installed and up-to-date because you
+just installed them as you created the Conda environment.</p>
+<p>You can select the plug-ins that you want, or select everything using the <code class="docutils literal notranslate"><span class="pre">Select</span>
+<span class="pre">all</span></code> button. Once you are happy with your selection, click the <code class="docutils literal notranslate"><span class="pre">Install</span>
+<span class="pre">selected</span></code> button. Don’t worry if you have selected some of the packages that are
+already installed: they will be ignored.  Depending on your internet connection,
+computer, and the plug-ins selected, the installation can take up to 10 or 20
+minutes.  This is because many of the plug-ins also install additional software
+such as LAMMPS, Psi4, Packmol, and DFTB+, and some of these packages are quite
+large and take time to install.</p>
+<p>When the installation is done, the window will update with the current status. If
+you wish you can select more packages to install and repeat the process.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you plan to only use the GUI on this machine, and submit jobs to other machines,
 you can select the <strong>GUI only</strong> checkbox. This will install only the components for
-the GUI of SEAMM. Neither the Dashboard or JobServer will be installed, nor will any
-of the background software, like LAMMPS, be installed. This is both faster and keeps
-the installation smaller.</p>
+the GUI of SEAMM. None of the background software, like LAMMPS, be installed. This is
+both faster and keeps the installation smaller.</p>
 </div>
-<p>Once you are happy with the installation, go to the next tab, <strong>Shortcuts</strong> to install
+</li>
+<li><p>Once you are happy with the installation, go to the next tab, <strong>Shortcuts</strong> to install
 shortcuts for starting SEAMM and the Installer. It looks like this:</p>
 <figure class="align-center" id="id4">
 <img alt="The initial Shortcuts tab." src="../../_images/shortcuts.png" />
@@ -691,17 +689,32 @@ under your home directory, not the main <code class="docutils literal notranslat
 in <code class="docutils literal notranslate"><span class="pre">~/.local/share/Applications</span></code>. You can usually drag the shortcuts to the desktop,
 dock, launcher or similar place for easy access; however, the details depend on the your
 OS and desktop so check the documentation if need be.</p>
-<p>Finally, go to the last tab, <strong>Services</strong>, to install the Dashboard and JobServer as
-services so that they are always available. This tab looks like this:</p>
+</li>
+<li><p>If you want to run jobs locally, go to the last tab, <strong>Services</strong>, to install the
+Dashboard and JobServer as services so that they are always available. This tab looks
+like this:</p>
 <figure class="align-center" id="id5">
 <img alt="The initial Services tab." src="../../_images/services.png" />
 <figcaption>
 <p><span class="caption-text">The initial Services tab.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>If you want to run jobs locally, select both the Dashboard and JobServer and click on
-<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">selected</span> <span class="pre">services</span></code>. This will install the services and start them. Note the
-other two buttons, which let you stop and start the services if you need.</p>
+<p>Select both the Dashboard and JobServer and click on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">selected</span>
+<span class="pre">services</span></code>. A small dialog will pop up allowing you to set the name of the Dashboard
+and the port. The default port is 55055, but you can change it to any port &gt; 1024
+that does not conflict with another service on your machine. Large numbers, like
+55055, are generally safe:</p>
+<figure class="align-center" id="id6">
+<img alt="The Dashboard Parameters" src="../../_images/name_port.png" />
+<figcaption>
+<p><span class="caption-text">The dialog for setting the name and port of the Dashboard</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code>. This will install the services and start them.</p>
+</li>
+</ol>
+<p>Congratulations! SEAMM is fully installed and ready to go. The
+<a class="reference internal" href="../tutorials/index.html"><span class="doc">Tutorials</span></a> is a good place to start.</p>
 </section>
 
 

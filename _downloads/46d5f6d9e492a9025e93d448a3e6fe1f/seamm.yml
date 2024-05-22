@@ -1,0 +1,35 @@
+name: seamm
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pip
+  - python
+
+    # From conda-forge because pip can't install
+  - psutil
+    # The Dashboard fails with newer versions, so until fixed.
+  - connexion<3.0
+
+    # Core packages
+
+  - molsystem
+  - reference-handler
+  - seamm
+  - seamm-dashboard
+  - seamm-datastore
+  - seamm-ff-util
+  - seamm-installer
+  - seamm-util
+  - seamm-widgets
+
+    # MolSSI plug-ins
+
+    # 3rd-party plug-ins
+
+    # PyPi packages
+  - pip:
+    # Core packages
+    - pmw==2.1.1
+    - seamm-exec
+    - seamm-jobserver
