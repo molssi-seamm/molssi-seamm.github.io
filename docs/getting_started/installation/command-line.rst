@@ -7,17 +7,17 @@ Command Line Installation
 *************************
 
 
-SEAMM should be installed in the **seamm** conda environment. Download
-:download:`seamm.yml <./seamm.yml>` and save it in a known location. Then open a
-terminal window and run the following commands::
+SEAMM should be installed in the **seamm** conda environment.
+Open a terminal window and run the following commands::
 
-  conda env create --file <path to seamm.yml>
+  conda create -n seamm -c conda-forge seamm-installer
 
 Once the environment is in place, activate it::
 
   conda activate seamm
 
-To start, let's find what is already installed and which plug-ins are available::
+To start, let's find what is already installed and which plug-ins are available (your
+output will be different!)::
 
   % seamm-installer show
 
