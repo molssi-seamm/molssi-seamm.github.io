@@ -7,9 +7,6 @@
 Introduction
 ------------
 
-.. Note::
-   The job for this tutorial is available on MolSSI's public server, |job_link|.
-
 So far you have learned how to create a flowchart in SEAMM, submit jobs, look at the
 results, and use variables and the ``Parameters`` step to set them as you submit a
 job. It is pretty easy to run lots of similar molecules this way, but let's make it even

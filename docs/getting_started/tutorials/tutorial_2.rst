@@ -4,9 +4,6 @@
 2: Looking at the Results
 *************************
 
-.. Note::
-   A run, |job_link|, is available on MolSSI's public server.
-
 Introduction
 ------------
 This tutorial will cover using the Dashboard, which you view in a Web browser, to
@@ -57,7 +54,7 @@ the following:
 Note the summary of information regarding the executed jobs in the main colored card
 sections: one job, one flowchart, and one project. You can use either the menu at the
 top of each panel or the items in the left-pane menu in order to inspect jobs,
-flowcharts, or projects.N he bottom part of the main pane gives a short list of the most
+flowcharts, or projects. The bottom part of the main pane gives a short list of the most
 recent jobs. We have only one, which you can access by clicking on the job number. More
 generally, however, click on ``Jobs List`` in the left-pane menu to get a complete list
 of jobs:

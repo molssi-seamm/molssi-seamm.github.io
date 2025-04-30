@@ -3,6 +3,13 @@
 *****************************
 Installing SEAMM using Docker
 *****************************
+.. Warning::
+   There have been substantial changes to the tools used to build the Docker containers
+   for SEAMM as well as significant changes in some of the dependencies SEAMM relies
+   on. Using Docker to install and run SEAMM has not been thoroughly tested, so you may
+   find some errors and problems using Docker. The Conda installation is better tested
+   at the moment, so you might prefer it for the time being. If you do work with Docker
+   and find issues, please report them so we can update the installation!
 
 .. Caution::
    The way that *Docker* runs on your machine has security implications. Containers
