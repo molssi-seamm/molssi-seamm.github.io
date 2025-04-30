@@ -6,8 +6,7 @@
 
 .. Note::
    The flowchart for this tutorial is available at |flowchart_link| and also can be
-   directly loaded into SEAMM by opening from Zenodo. The job for this tutorial is
-   available on MolSSI's public server, |job_link|.
+   directly loaded into SEAMM by opening from Zenodo.
 
 Introduction
 ------------

@@ -12,10 +12,9 @@ Graphical Installation
 
 SEAMM should be installed in the **seamm** conda environment. The steps are:
 
-#. Download :download:`seamm.yml <./seamm.yml>` and save it in a known location.
 #. Open a terminal and run the following commands::
 
-     conda env create --file <path to seamm.yml>
+     conda create -n seamm -c conda-forge seamm-installer
 
 #. Once the environment is in place, activate it::
 
@@ -48,7 +47,7 @@ SEAMM should be installed in the **seamm** conda environment. The steps are:
    The lines in green show components or plug-ins that are installed and
    up-to-date. Black indicates that the item is not installed, and red indicates
    items that are installed but out-of-date. The first time that you run the
-   Installer most of the core packages will be installed and up-to-date because you
+   Installer some of the core packages will be installed and up-to-date because you
    just installed them as you created the Conda environment.
 
    You can select the plug-ins that you want, or select everything using the ``Select
