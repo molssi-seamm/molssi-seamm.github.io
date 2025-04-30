@@ -4,9 +4,6 @@
 6: Running from the Command-Line
 ********************************
 
-.. Note::
-   The job for this tutorial is available on MolSSI's public server, |job_link2|.
-
 Introduction
 ------------
 So far, we have run the calculations through SEAMM, either by submitting the job from
