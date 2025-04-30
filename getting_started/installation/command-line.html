@@ -583,17 +583,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   
   <section id="command-line-installation">
 <span id="id1"></span><h1>Command Line Installation<a class="headerlink" href="#command-line-installation" title="Link to this heading">#</a></h1>
-<p>SEAMM should be installed in the <strong>seamm</strong> conda environment. Download
-<a class="reference download internal" download="" href="../../_downloads/46d5f6d9e492a9025e93d448a3e6fe1f/seamm.yml"><code class="xref download docutils literal notranslate"><span class="pre">seamm.yml</span></code></a> and save it in a known location. Then open a
-terminal window and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">seamm</span><span class="o">.</span><span class="n">yml</span><span class="o">&gt;</span>
+<p>SEAMM should be installed in the <strong>seamm</strong> conda environment.
+Open a terminal window and run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span>
 </pre></div>
 </div>
 <p>Once the environment is in place, activate it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
 </pre></div>
 </div>
-<p>To start, let’s find what is already installed and which plug-ins are available:</p>
+<p>To start, let’s find what is already installed and which plug-ins are available (your
+output will be different!):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% seamm-installer show
 
 Showing the modules in SEAMM:
