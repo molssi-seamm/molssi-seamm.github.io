@@ -16,6 +16,6 @@ SEAMM:
    Psi4 <https://molssi-seamm.github.io/psi4_step/index.html>
    QuickMin <https://molssi-seamm.github.io/quickmin_step/index.html>
    TorchANI <https://molssi-seamm.github.io/torchani_step/index.html>
-   VASP <https://molssi-seamm.github.io/vasp_step/index.html>
-   xTB <https://molssi-seamm.github.io/xtb_step/index.html>
+   VASP <https://molssi-seamm.github.io/vasp-step/index.html>
+   xTB <https://molssi-seamm.github.io/xtb-step/index.html>
    
