@@ -10,4 +10,5 @@ the flowchart:
 
    Control Parameters <https://molssi-seamm.github.io/control_parameters_step/index.html>
    Loop <https://molssi-seamm.github.io/loop_step/index.html>
+   Subflowchart <https://molssi-seamm.github.io/subflowchart_step/index.html>
    
