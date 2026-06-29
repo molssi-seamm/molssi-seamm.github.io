@@ -13,4 +13,5 @@ as well as some of the general concepts behind various types of simulations.
 
    why_seamm/index
    system
+   model_chemistry_naming
    forcefields/overview

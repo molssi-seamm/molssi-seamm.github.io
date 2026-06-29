@@ -11,3 +11,5 @@ be a reference when you need to look something up, not a place to learn how to u
    :maxdepth: 2
    :titlesonly:
 
+   qm_md_with_mdi
+
