@@ -1,0 +1,1194 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plan: Long-Range Electrostatics for Short-Range MLFFs &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/campaigns/2026-06-26/PLAN_long_range_electrostatics_mlff';</script>
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Notes: Atomic Charge Methods and MLFF Long-Range Prior Art" href="NOTES_atomic_charge_methods.html" />
+    <link rel="prev" title="2026-06-26 Long-Range Electrostatics for Short-Range MLFFs" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../software_ecosystem/index.html">Software Ecosystem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_datastore.html">Job Datastore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qm_md_over_mdi.html">QM-MD over MDI (the LAMMPS driver)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../new-plug-in/index.html">Creating a New Plug-in</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/properties.html">Saving Properties in the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/creating.html">Creating the Initial Code and Uploading to GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tips-and-tricks/index.html">Tips and Tricks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/index.html">Tutorials for Developers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/development_environment.html">Installing the Development Environment</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/simple_plugin/index.html">A simple plug-in: PySCF</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/cookiecutter.html">Creating the plug-in with the seamm-cookiecutter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/compiling.html">“Compiling” the plug-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/code_overview.html">An overview of the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/customizing.html">Customizing the plug-in to run PySCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/flowchart.html">Create a test flowchart</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../core_modules.html">Core Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm/index.html"> seamm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/molsystem/index.html"> molsystem</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_util/index.html"> seamm-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_installer/index.html"> seamm-installer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Campaigns</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-19/index.html">2026-06-19 MDI engines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/PLAN_mopac_mdi.html">Development Plan: QM/MD via MDI in SEAMM — MOPAC First</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_future_investigations.html">Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_mopac_mdi_validation.html">Validation Notes: MOPAC Native MDI Engine for LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_qm_mdi_engines_validation.html">Validation Notes: tblite MDI Engine and MOPAC Python-Wrapper MDI Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_semiempirical_density_comparison.html">Scientific Finding: Semiempirical Method Accuracy for Liquid Methanol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-22/index.html">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PLAN_model_chemistry_step.html">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_A.html">Phase A – MOPAC-side MDI engine launch contract and port strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_B.html">Phase B – Model Chemistry Step (selection + storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_C.html">Phase C – LAMMPS consumption of the model chemistry (MDI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_D.html">Phase D (sketch) – Forcefield handling folded into Model Chemistry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PROJECT_HANDOFF.html">Project handoff – LAMMPS + MOPAC QM-MD coupling via MDI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Plan: Long-Range Electrostatics for Short-Range MLFFs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_atomic_charge_methods.html">Notes: Atomic Charge Methods and MLFF Long-Range Prior Art</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developers Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Campaigns</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Plan: Long-Range Electrostatics for Short-Range MLFFs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="plan-long-range-electrostatics-for-short-range-mlffs">
+<span id="plan-long-range-electrostatics-mlff"></span><h1>Plan: Long-Range Electrostatics for Short-Range MLFFs<a class="headerlink" href="#plan-long-range-electrostatics-for-short-range-mlffs" title="Link to this heading">#</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2026-06-26</p>
+</dd>
+<dt class="field-even">Status<span class="colon">:</span></dt>
+<dd class="field-even"><p>Architecture proposed. Subcampaign 1 (atomic charges) in progress.
+2026-06-27: the <strong>molecular DDEC6 path is working end-to-end</strong> – a Gaussian
+<code class="docutils literal notranslate"><span class="pre">.wfx</span></code> -&gt; Chargemol -&gt; parse -&gt; <code class="docutils literal notranslate"><span class="pre">charges_DDEC6</span></code> column, validated on
+water (O -0.798, H +0.399, net 0.000). <code class="docutils literal notranslate"><span class="pre">gaussian_step</span></code> gained a “save wfx”
+option that writes <code class="docutils literal notranslate"><span class="pre">&lt;job&gt;/&lt;step_no&gt;.wfx</span></code>; <code class="docutils literal notranslate"><span class="pre">atomic_charges_step</span></code> locates,
+runs, parses, and stores. Chargemol was built from source as a native arm64
+binary (not on conda-forge) with the <code class="docutils literal notranslate"><span class="pre">atomic_densities</span></code> data installed under
+<code class="docutils literal notranslate"><span class="pre">~/SEAMM/atomic_charges</span></code>. <strong>The full flowchart now runs through the real
+SEAMM executor</strong> (<code class="docutils literal notranslate"><span class="pre">from_smiles</span> <span class="pre">-&gt;</span> <span class="pre">Gaussian(save</span> <span class="pre">wfx)</span> <span class="pre">-&gt;</span> <span class="pre">Atomic</span> <span class="pre">Charges</span></code>):
+<code class="docutils literal notranslate"><span class="pre">charges_DDEC6</span> <span class="pre">=</span> <span class="pre">[-0.792,</span> <span class="pre">0.398,</span> <span class="pre">0.394]</span></code> was computed and persisted on the
+water configuration. Two incidental fixes were needed: <code class="docutils literal notranslate"><span class="pre">gaussian_step</span></code> now
+falls back to cclib’s explicit Gaussian parser when <code class="docutils literal notranslate"><span class="pre">ccread</span></code> auto-detection
+returns <code class="docutils literal notranslate"><span class="pre">None</span></code> (the local Apple-Silicon G16 RevC.02 output is not recognized
+– this blocked <em>all</em> Gaussian use in SEAMM on this machine), and the
+density-handoff location was corrected (the wfx lands in the Gaussian step’s
+own directory, so the charge step searches the previous node’s directory).
+(The Gaussian fix was then simplified to call cclib’s Gaussian parser
+directly rather than <code class="docutils literal notranslate"><span class="pre">ccread</span></code>, dropping auto-detection entirely – the
+program is always Gaussian, so detection only adds a failure mode.)
+Remaining in subcampaign 1: the Bader backend and the VASP CHGCAR/AECCAR
+handoff (deferred – needs a Linux/VASP machine).
+Subcampaigns 2-6 not started. The MDI-engine electrostatics design
+(subcampaign 5) supersedes an earlier LAMMPS-pair-style sketch – see
+“Design decision” below.</p>
+</dd>
+</dl>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#design-decision-electrostatics-live-in-the-mdi-engine-not-in-lammps" id="id2">Design decision: electrostatics live in the MDI engine, not in LAMMPS</a></p></li>
+<li><p><a class="reference internal" href="#the-subcampaigns" id="id3">The subcampaigns</a></p>
+<ul>
+<li><p><a class="reference internal" href="#subcampaign-1-reference-atomic-charges-ddec6-bader" id="id4">Subcampaign 1 – Reference atomic charges (DDEC6 / Bader)</a></p></li>
+<li><p><a class="reference internal" href="#subcampaign-2-charge-prediction-model" id="id5">Subcampaign 2 – Charge prediction model</a></p></li>
+<li><p><a class="reference internal" href="#subcampaign-3-electrostatic-baseline-training-data-correction" id="id6">Subcampaign 3 – Electrostatic baseline + training-data correction</a></p></li>
+<li><p><a class="reference internal" href="#subcampaign-4-fit-mace-to-the-short-range-remainder" id="id7">Subcampaign 4 – Fit MACE to the short-range remainder</a></p></li>
+<li><p><a class="reference internal" href="#subcampaign-5-electrostatics-in-the-mdi-engine-inference" id="id8">Subcampaign 5 – Electrostatics in the MDI engine (inference)</a></p></li>
+<li><p><a class="reference internal" href="#subcampaign-6-end-to-end-validation-and-a-worked-example" id="id9">Subcampaign 6 – End-to-end validation and a worked example</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#seamm-pipeline-how-the-subcampaigns-compose" id="id10">SEAMM pipeline (how the subcampaigns compose)</a></p></li>
+<li><p><a class="reference internal" href="#open-questions-carried-into-this-plan" id="id11">Open questions carried into this plan</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id12">References</a></p>
+<ul>
+<li><p><a class="reference internal" href="#internal-seamm" id="id13">Internal / SEAMM</a></p></li>
+<li><p><a class="reference internal" href="#external-tools" id="id14">External tools</a></p></li>
+<li><p><a class="reference internal" href="#literature" id="id15">Literature</a></p></li>
+<li><p><a class="reference internal" href="#recent-work-post-dates-this-plan-not-yet-vetted-in-depth" id="id16">Recent work (post-dates this plan; not yet vetted in depth)</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>Short-range MLFFs such as MACE are accurate within their cutoff (~5-6 Å) but carry
+no explicit long-range electrostatics. The goal of this campaign is to add a
+physically correct electrostatic tail by <strong>range separation / delta learning</strong>:</p>
+<ol class="arabic simple">
+<li><p>Generate reliable reference atomic charges for the training-set frames
+(DDEC6 primarily; Bader as the rigorous topological companion users expect).</p></li>
+<li><p>Train an ML model to predict those charges from structure.</p></li>
+<li><p>Using the <em>predicted</em> charges, compute the long-range Coulomb energy and forces
+for each training frame and <strong>subtract</strong> them from the DFT energies/forces.</p></li>
+<li><p>Fit the MLFF to this short-range remainder.</p></li>
+<li><p>At inference, <strong>add the identical long-range term back</strong>, computed the same way
+from the same charge model.</p></li>
+</ol>
+<p>The scheme is well-precedented: it is essentially <strong>DPLR</strong> (Deep Potential Long
+Range) and is closely related to <strong>4G-HDNNP</strong> (charge equilibration) and to
+<strong>Latent Ewald Summation / CACE-LR</strong> (the latter already coupled to MACE).</p>
+<p>The single most important correctness constraint is <strong>consistency</strong>: the long-range
+term subtracted during training must be <em>identical</em> to the one added at inference –
+same charge model, same Ewald routine, same range-separation parameter. Everything
+below is organized to make that constraint structural rather than something to be
+maintained by hand.</p>
+</section>
+<section id="design-decision-electrostatics-live-in-the-mdi-engine-not-in-lammps">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Design decision: electrostatics live in the MDI engine, not in LAMMPS</a><a class="headerlink" href="#design-decision-electrostatics-live-in-the-mdi-engine-not-in-lammps" title="Link to this heading">#</a></h2>
+<p>Production MD does <strong>not</strong> use a MACE <code class="docutils literal notranslate"><span class="pre">pair_style</span></code> in LAMMPS. Per the 2026-06-19 /
+2026-06-22 MDI work, LAMMPS is the <strong>MDI driver</strong> (integrator) and
+<code class="docutils literal notranslate"><span class="pre">lammps_step/data/mace_mdi.py</span></code> is an <strong>MDI engine</strong> that returns energy/forces/
+stress each step. All the physics already lives in that Python engine, so the
+electrostatics belong there too – not in <code class="docutils literal notranslate"><span class="pre">coul/long</span></code> + <code class="docutils literal notranslate"><span class="pre">kspace</span></code> on the LAMMPS
+side.</p>
+<p>This choice dissolves what would otherwise be the hardest problem in the whole
+campaign, the <strong>charge-response force term</strong>. Because charges depend on geometry,
+<span class="math notranslate nohighlight">\(q_i(\mathbf{R})\)</span>, the true electrostatic force contains a
+<span class="math notranslate nohighlight">\(\partial E/\partial q \cdot \partial q/\partial \mathbf{R}\)</span> contribution. In
+the engine, positions already carry <code class="docutils literal notranslate"><span class="pre">requires_grad</span></code>; if charges and the long-range
+energy are computed in the same torch graph, autograd differentiates through
+<span class="math notranslate nohighlight">\(q(\mathbf{R})\)</span> and that term comes for free:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q</span>     <span class="o">=</span> <span class="n">charge_model</span><span class="p">(</span><span class="n">positions_t</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>        <span class="c1"># q_i(R), differentiable</span>
+<span class="n">E_lr</span>  <span class="o">=</span> <span class="n">ewald</span><span class="p">(</span><span class="n">positions_t</span><span class="p">,</span> <span class="n">cell_t</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>         <span class="c1"># long-range Coulomb, torch</span>
+<span class="n">E_tot</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">E_lr</span>
+<span class="n">F_tot</span> <span class="o">=</span> <span class="o">-</span><span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">E_tot</span><span class="p">,</span> <span class="n">positions_t</span><span class="p">)</span>    <span class="c1"># includes dq/dR automatically</span>
+</pre></div>
+</div>
+<p>A LAMMPS-side scheme with static per-step charges would silently drop that term and
+require compensation; the MDI/torch design makes it automatic. The same applies to
+the stress (differentiate w.r.t. strain/cell). Force/stress contributions are
+additive, so the long-range part can also be computed separately and summed onto
+MACE’s outputs.</p>
+<p>Consequence: LAMMPS stays exactly as it is – no pair style, no <code class="docutils literal notranslate"><span class="pre">kspace</span></code>, no
+per-step charge handoff over MDI.</p>
+</section>
+<section id="the-subcampaigns">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">The subcampaigns</a><a class="headerlink" href="#the-subcampaigns" title="Link to this heading">#</a></h2>
+<p>Each subcampaign is a discrete, separately landable and separately validatable piece.
+They are listed in dependency order; the intent is to take them one at a time.</p>
+<section id="subcampaign-1-reference-atomic-charges-ddec6-bader">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Subcampaign 1 – Reference atomic charges (DDEC6 / Bader)</a><a class="headerlink" href="#subcampaign-1-reference-atomic-charges-ddec6-bader" title="Link to this heading">#</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">Depends on<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nothing (start here)</p>
+</dd>
+<dt class="field-even">Delivers<span class="colon">:</span></dt>
+<dd class="field-even"><p>an <code class="docutils literal notranslate"><span class="pre">atomic_charges_step</span></code> package + density export from QM steps</p>
+</dd>
+</dl>
+<p>A new standalone post-processing step that runs <strong>after</strong> any QM step, reads the
+electron density that step produced, and writes per-atom charges back into the
+configuration. Both target methods are real-space density-grid partitioning, hence
+code- and periodicity-agnostic:</p>
+<ul class="simple">
+<li><p><strong>DDEC6</strong> (via the <strong>Chargemol</strong> program) – the recommended general/force-field
+charge: reproduces the electrostatic potential <em>and</em> gives transferable chemical
+charges, works molecular and periodic including metals/MOFs. This is the charge
+the rest of the campaign trains against.</p></li>
+<li><p><strong>Bader / QTAIM</strong> (via the Henkelman <code class="docutils literal notranslate"><span class="pre">bader</span></code> code) – rigorous topological
+partition, basis-independent, the charge solid-state users expect. Charges run
+large/ionic and are not ESP-faithful, so it is a companion, not the training
+target.</p></li>
+</ul>
+<p>Storage uses the existing labeled-charge-column pattern (cf.
+<code class="docutils literal notranslate"><span class="pre">seamm_ff_util/forcefield.py</span></code>, <code class="docutils literal notranslate"><span class="pre">charges_{label}</span></code>): write <code class="docutils literal notranslate"><span class="pre">charges_DDEC6</span></code>,
+<code class="docutils literal notranslate"><span class="pre">charges_Bader</span></code>, etc., as configuration-dependent float attributes. No molsystem
+schema change is required. Tag with model-chemistry provenance where practical,
+consistent with the <code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code> contract from the 2026-06-22 campaign.</p>
+<p>Two pieces of glue, the second being the only genuinely per-code work:</p>
+<ul class="simple">
+<li><p>External programs (Chargemol, <code class="docutils literal notranslate"><span class="pre">bader</span></code>, optionally Multiwfn for Hirshfeld-I /
+MBIS / CM5) wrapped via <code class="docutils literal notranslate"><span class="pre">seamm_exec</span></code> and installed via the step’s
+<code class="docutils literal notranslate"><span class="pre">installer.py</span></code> + <code class="docutils literal notranslate"><span class="pre">data/configuration.txt</span></code> seamm.ini section.</p></li>
+<li><p><strong>Density export from the QM steps.</strong> Each QM plugin needs an option to emit its
+density into the job in a known format and advertise the path. VASP first, since
+it benefits most: <code class="docutils literal notranslate"><span class="pre">CHGCAR</span></code> <strong>plus</strong> <code class="docutils literal notranslate"><span class="pre">AECCAR0</span></code>/<code class="docutils literal notranslate"><span class="pre">AECCAR2</span></code> (<code class="docutils literal notranslate"><span class="pre">LAECHG=.TRUE.</span></code>)
+– Chargemol and Bader both need the all-electron/core density, not just valence.
+Molecular codes export <code class="docutils literal notranslate"><span class="pre">.wfx</span></code> / cube / molden.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Validation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>charges for known systems (e.g. water O ~ -0.6 to -0.8 DDEC6 vs the more
+ionic Bader value); sum of charges equals net charge.</p>
+</dd>
+</dl>
+</section>
+<section id="subcampaign-2-charge-prediction-model">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Subcampaign 2 – Charge prediction model</a><a class="headerlink" href="#subcampaign-2-charge-prediction-model" title="Link to this heading">#</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">Depends on<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Subcampaign 1 (DDEC6 reference charges)</p>
+</dd>
+<dt class="field-even">Delivers<span class="colon">:</span></dt>
+<dd class="field-even"><p>a frozen, differentiable charge predictor</p>
+</dd>
+</dl>
+<p>Train an ML model to predict the DDEC6 charges from structure. Two architectures,
+not mutually exclusive:</p>
+<ul class="simple">
+<li><p>A <strong>standalone torch charge model</strong> (simpler, modular; loaded in the engine via a
+<code class="docutils literal notranslate"><span class="pre">SEAMM_CHARGE_MODEL</span></code> env var). Good for the two-stage flow.</p></li>
+<li><p>A <strong>second output head on the MACE model</strong> itself – one forward pass yields both
+short-range energy and charges from shared equivariant features. Cleaner and the
+natural long-term design; deferred to Subcampaign 4 since it couples to MACE
+training.</p></li>
+</ul>
+<p>Hard requirements: the model must be <strong>differentiable</strong> (so the engine gets
+charge-response forces) and must <strong>conserve total charge</strong> (subtract mean excess so
+<span class="math notranslate nohighlight">\(\sum_i q_i\)</span> equals the net charge), or periodic Ewald is ill-defined. DDEC6
+is <em>only</em> the training target – it never appears in the baseline subtraction itself
+(see Subcampaign 3).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>predicted-vs-DDEC6 parity on held-out frames; total-charge conservation.</p>
+</dd>
+</dl>
+</section>
+<section id="subcampaign-3-electrostatic-baseline-training-data-correction">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Subcampaign 3 – Electrostatic baseline + training-data correction</a><a class="headerlink" href="#subcampaign-3-electrostatic-baseline-training-data-correction" title="Link to this heading">#</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">Depends on<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Subcampaigns 1, 2</p>
+</dd>
+<dt class="field-even">Delivers<span class="colon">:</span></dt>
+<dd class="field-even"><p>a differentiable torch Ewald routine + corrected (E, F) training targets</p>
+</dd>
+</dl>
+<p>Implement the long-range Coulomb energy/force routine <strong>once</strong>, in torch, and reuse
+it for both subtraction (here) and addition (Subcampaign 5) – this is what makes the
+consistency constraint structural.</p>
+<ul class="simple">
+<li><p>Recommend <strong>torch-pme</strong> (differentiable PME/Ewald, pairs with <code class="docutils literal notranslate"><span class="pre">vesin</span></code> which the
+engine already uses for neighbor lists) rather than hand-rolling Ewald. It gives
+periodic PME with autograd forces and stress and the real/reciprocal split.</p></li>
+<li><p><strong>Range separation (the pitfall to get right):</strong> subtract a <em>smooth</em> long-range
+term, not bare singular 1/r. Either subtract the full Gaussian-<em>smeared</em>-charge
+Coulomb (DPLR-style, recommended) or only the erf long-range part; in both cases
+let MACE absorb the short-range (erfc) electrostatics. The Gaussian smearing width
+is the knob – tie it to the MACE cutoff <code class="docutils literal notranslate"><span class="pre">r_max</span></code> so the short-range part has
+decayed by the cutoff.</p></li>
+<li><p>Build the baseline with the <strong>frozen charge model from Subcampaign 2</strong>, then form
+the corrected targets <span class="math notranslate nohighlight">\(E_{\text{DFT}} - E_{lr}\)</span>,
+<span class="math notranslate nohighlight">\(F_{\text{DFT}} - F_{lr}\)</span>. Store as derived properties (datastore /
+<code class="docutils literal notranslate"><span class="pre">table_step</span></code>).</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Validation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>baseline forces match an independent Ewald implementation on a few
+frames; corrected targets are smoother / shorter-ranged than the raw DFT targets.</p>
+</dd>
+</dl>
+</section>
+<section id="subcampaign-4-fit-mace-to-the-short-range-remainder">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Subcampaign 4 – Fit MACE to the short-range remainder</a><a class="headerlink" href="#subcampaign-4-fit-mace-to-the-short-range-remainder" title="Link to this heading">#</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">Depends on<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Subcampaign 3</p>
+</dd>
+<dt class="field-even">Delivers<span class="colon">:</span></dt>
+<dd class="field-even"><p>a MACE model trained on the corrected data (optionally with a charge head)</p>
+</dd>
+</dl>
+<p>Train MACE on the corrected <span class="math notranslate nohighlight">\((E, F)\)</span>. If pursuing the single-model design,
+this is where the charge head from Subcampaign 2 is folded in and the charge target
+(DDEC6) and energy target (corrected DFT) are trained jointly. Otherwise the charge
+model stays a frozen sidecar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>short-range MACE error on corrected data; ensure no electrostatic
+double-counting (the remainder must not still contain the long-range tail).</p>
+</dd>
+</dl>
+</section>
+<section id="subcampaign-5-electrostatics-in-the-mdi-engine-inference">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Subcampaign 5 – Electrostatics in the MDI engine (inference)</a><a class="headerlink" href="#subcampaign-5-electrostatics-in-the-mdi-engine-inference" title="Link to this heading">#</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">Depends on<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Subcampaigns 2, 3, 4</p>
+</dd>
+<dt class="field-even">Delivers<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">mace_mdi.py</span></code> extended to return the combined short-range + long-range potential</p>
+</dd>
+</dl>
+<p>Extend <code class="docutils literal notranslate"><span class="pre">calculate()</span></code> in <code class="docutils literal notranslate"><span class="pre">lammps_step/data/mace_mdi.py</span></code>:</p>
+<ol class="arabic simple">
+<li><p><strong>Charges</strong> – from the MACE charge head (preferred) or the sidecar model.</p></li>
+<li><p><strong>Neutralize</strong> – enforce total charge.</p></li>
+<li><p><strong>Long-range energy</strong> – call the <em>same</em> torch-pme routine from Subcampaign 3
+(full smeared-charge Coulomb periodic; direct Coulomb sum non-periodic).</p></li>
+<li><p><strong>Combine</strong> – add <code class="docutils literal notranslate"><span class="pre">E_lr</span></code>/<code class="docutils literal notranslate"><span class="pre">F_lr</span></code>/<code class="docutils literal notranslate"><span class="pre">stress_lr</span></code> to MACE’s outputs (in eV /
+eV·Å, then the engine’s existing Hartree/Bohr conversions) and send the single
+combined potential over MDI.</p></li>
+</ol>
+<p>Because the routine and charge model are identical to Subcampaign 3, the
+train-subtract == inference-add constraint holds by construction. LAMMPS is unchanged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a static frame scored by the engine reproduces (corrected MACE) +
+(baseline) = full energy; energy conservation in NVE MD; momentum conservation.</p>
+</dd>
+</dl>
+</section>
+<section id="subcampaign-6-end-to-end-validation-and-a-worked-example">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Subcampaign 6 – End-to-end validation and a worked example</a><a class="headerlink" href="#subcampaign-6-end-to-end-validation-and-a-worked-example" title="Link to this heading">#</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">Depends on<span class="colon">:</span></dt>
+<dd class="field-odd"><p>all of the above</p>
+</dd>
+<dt class="field-even">Delivers<span class="colon">:</span></dt>
+<dd class="field-even"><p>a validated workflow + a SEAMM flowchart example</p>
+</dd>
+</dl>
+<p>Physical-property validation against DFT/experiment for a system where long-range
+electrostatics matter (e.g. an aqueous electrolyte or an ionic interface): dielectric
+behavior, ion pairing / RDFs, surface potentials. Compare against the baseline
+short-range-only MACE to demonstrate the electrostatics actually buy something.
+Package as a documented example flowchart.</p>
+</section>
+</section>
+<section id="seamm-pipeline-how-the-subcampaigns-compose">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">SEAMM pipeline (how the subcampaigns compose)</a><a class="headerlink" href="#seamm-pipeline-how-the-subcampaigns-compose" title="Link to this heading">#</a></h2>
+<p>As a flowchart, the campaign is roughly:</p>
+<ol class="arabic simple">
+<li><p>Loop training frames -&gt; QM density (VASP <code class="docutils literal notranslate"><span class="pre">LAECHG=.TRUE.</span></code>) -&gt;
+<code class="docutils literal notranslate"><span class="pre">atomic_charges_step</span></code> (DDEC6) -&gt; <code class="docutils literal notranslate"><span class="pre">charges_DDEC6</span></code> column.   <em>(Subcampaign 1)</em></p></li>
+<li><p>Train + freeze the charge model.                               <em>(Subcampaign 2)</em></p></li>
+<li><p>Loop frames -&gt; predicted charges -&gt; torch-pme long-range <span class="math notranslate nohighlight">\((E, F)\)</span> -&gt;
+subtract from DFT -&gt; corrected targets.                        <em>(Subcampaign 3)</em></p></li>
+<li><p>Train MACE on corrected targets.                               <em>(Subcampaign 4)</em></p></li>
+<li><p>Production MD: LAMMPS driver + <code class="docutils literal notranslate"><span class="pre">mace_mdi.py</span></code> engine returning short-range +
+long-range.                                                    <em>(Subcampaign 5)</em></p></li>
+</ol>
+</section>
+<section id="open-questions-carried-into-this-plan">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Open questions carried into this plan</a><a class="headerlink" href="#open-questions-carried-into-this-plan" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Charge model architecture</strong> – standalone sidecar vs a second MACE head. The head
+is cleaner long-term but couples charge and energy training; start with whichever
+unblocks Subcampaign 3 soonest (likely a sidecar trained against DDEC6).</p></li>
+<li><p><strong>Range-separation form</strong> – full smeared-charge Coulomb (DPLR-style) vs erf-only
+long-range. Recommend the former; confirm empirically that the remainder is
+learnable within <code class="docutils literal notranslate"><span class="pre">r_max</span></code>.</p></li>
+<li><p><strong>torch-pme</strong> – confirm it is the right dependency (autograd forces + stress,
+periodic, vesin-compatible) before committing; it is the recommended path but not
+yet trialed in the engine.</p></li>
+<li><p><strong>Charged / non-neutral systems and slabs</strong> – background-charge and slab
+corrections for Ewald are out of scope for the first pass; note where they would
+enter.</p></li>
+<li><p><strong>Provenance of charge sets</strong> – how much model-chemistry tagging to bake into the
+<code class="docutils literal notranslate"><span class="pre">charges_{label}</span></code> column name vs store alongside; ties to the <code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code>
+contract from 2026-06-22.</p></li>
+<li><p><strong>Reuse of the torch electrostatics routine</strong> – it is deliberately written once and
+shared between the offline baseline (Subcampaign 3) and the engine (Subcampaign 5);
+decide where it physically lives (a small shared module importable by both).</p></li>
+</ul>
+</section>
+<section id="references">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">References</a><a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<section id="internal-seamm">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Internal / SEAMM</a><a class="headerlink" href="#internal-seamm" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../2026-06-22/PLAN_model_chemistry_step.html#plan-model-chemistry-step"><span class="std std-ref">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</span></a> (the <code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code> contract; MDI engine
+consumption by <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code>)</p></li>
+<li><p>2026-06-19 campaign – MDI engine validation (MACE/MOPAC/xTB engines, LAMMPS as driver)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lammps_step/data/mace_mdi.py</span></code> – the existing MACE MDI engine extended in Subcampaign 5</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seamm_ff_util/forcefield.py</span></code> – the <code class="docutils literal notranslate"><span class="pre">charges_{label}</span></code> labeled-column pattern</p></li>
+</ul>
+</section>
+<section id="external-tools">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">External tools</a><a class="headerlink" href="#external-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>DDEC6 / Chargemol</strong>; Henkelman <code class="docutils literal notranslate"><span class="pre">bader</span></code> – reference atomic charges (Subcampaign 1)</p></li>
+<li><p><strong>torch-pme</strong> – differentiable PME/Ewald, pairs with <code class="docutils literal notranslate"><span class="pre">vesin</span></code> (Subcampaign 3)</p></li>
+</ul>
+</section>
+<section id="literature">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Literature</a><a class="headerlink" href="#literature" title="Link to this heading">#</a></h3>
+<p>Verified citations for the methods this campaign builds on.</p>
+<ul class="simple">
+<li><p><strong>MACE</strong> (the base short-range potential) – I. Batatia, D. P. Kovács,
+G. N. C. Simm, C. Ortner, G. Csányi, “MACE: Higher Order Equivariant Message
+Passing Neural Networks for Fast and Accurate Force Fields,” <em>Adv. Neural Inf.
+Process. Syst.</em> <strong>35</strong> (2022). arXiv:2206.07697.</p></li>
+<li><p><strong>Latent Ewald Summation (LES) / CACE-LR</strong> – B. Cheng, “Latent Ewald
+summation for machine learning of long-range interactions,” <em>npj Comput.
+Mater.</em> <strong>11</strong> (2025). doi:10.1038/s41524-025-01577-7; arXiv:2408.15165.
+Range-separated long-range model demonstrated coupled to MACE – the closest
+prior art to this campaign’s approach.</p></li>
+<li><p><strong>4G-HDNNP</strong> (charge equilibration with non-local charge transfer) –
+T. W. Ko, J. A. Finkler, S. Goedecker, J. Behler, “A fourth-generation
+high-dimensional neural network potential with accurate electrostatics
+including non-local charge transfer,” <em>Nat. Commun.</em> <strong>12</strong>, 398 (2021).
+doi:10.1038/s41467-020-20427-2; arXiv:2009.06484.</p></li>
+<li><p><strong>DPLR (Deep Potential Long Range)</strong> (spherical Gaussian charges + Ewald) –
+L. Zhang, H. Wang, M. C. Muniz, A. Z. Panagiotopoulos, R. Car, W. E, “A deep
+potential model with long-range electrostatic interactions,” <em>J. Chem. Phys.</em>
+<strong>156</strong>, 124107 (2022). doi:10.1063/5.0083669; arXiv:2112.13327.</p></li>
+<li><p><strong>LODE</strong> (long-distance equivariant descriptors) – A. Grisafi, M. Ceriotti,
+“Incorporating long-range physics in atomic-scale machine learning,”
+<em>J. Chem. Phys.</em> <strong>151</strong>, 204105 (2019). doi:10.1063/1.5128375;
+arXiv:1909.04512.</p></li>
+</ul>
+</section>
+<section id="recent-work-post-dates-this-plan-not-yet-vetted-in-depth">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Recent work (post-dates this plan; not yet vetted in depth)</a><a class="headerlink" href="#recent-work-post-dates-this-plan-not-yet-vetted-in-depth" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>MACE-POLAR-1: A Polarisable Electrostatic Foundation Model for Molecular
+Chemistry – arXiv:2602.19411.</p></li>
+<li><p>A foundation machine learning potential with polarizable long-range
+interactions for materials modelling – arXiv:2410.13820.</p></li>
+<li><p>Learning Long-Range Representations with Equivariant Messages – arXiv:2507.19382.</p></li>
+<li><p>Long-range electrostatics in atomistic machine learning: a physical
+perspective – arXiv:2602.11071; and “Long-range electrostatics for machine
+learning interatomic potentials is easier than we thought” – arXiv:2512.18029.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="NOTES_atomic_charge_methods.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notes: Atomic Charge Methods and MLFF Long-Range Prior Art</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-decision-electrostatics-live-in-the-mdi-engine-not-in-lammps">Design decision: electrostatics live in the MDI engine, not in LAMMPS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-subcampaigns">The subcampaigns</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subcampaign-1-reference-atomic-charges-ddec6-bader">Subcampaign 1 – Reference atomic charges (DDEC6 / Bader)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subcampaign-2-charge-prediction-model">Subcampaign 2 – Charge prediction model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subcampaign-3-electrostatic-baseline-training-data-correction">Subcampaign 3 – Electrostatic baseline + training-data correction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subcampaign-4-fit-mace-to-the-short-range-remainder">Subcampaign 4 – Fit MACE to the short-range remainder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subcampaign-5-electrostatics-in-the-mdi-engine-inference">Subcampaign 5 – Electrostatics in the MDI engine (inference)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subcampaign-6-end-to-end-validation-and-a-worked-example">Subcampaign 6 – End-to-end validation and a worked example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seamm-pipeline-how-the-subcampaigns-compose">SEAMM pipeline (how the subcampaigns compose)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions-carried-into-this-plan">Open questions carried into this plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-seamm">Internal / SEAMM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-tools">External tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literature">Literature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-work-post-dates-this-plan-not-yet-vetted-in-depth">Recent work (post-dates this plan; not yet vetted in depth)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/developer_guide/campaigns/2026-06-26/PLAN_long_range_electrostatics_mlff.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1425 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Development Plan: QM/MD via MDI in SEAMM — MOPAC First &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/campaigns/2026-06-19/PLAN_mopac_mdi';</script>
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI" href="NOTES_future_investigations.html" />
+    <link rel="prev" title="2026-06-19 MDI engines" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../software_ecosystem/index.html">Software Ecosystem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_datastore.html">Job Datastore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qm_md_over_mdi.html">QM-MD over MDI (the LAMMPS driver)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../new-plug-in/index.html">Creating a New Plug-in</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/properties.html">Saving Properties in the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/creating.html">Creating the Initial Code and Uploading to GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tips-and-tricks/index.html">Tips and Tricks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/index.html">Tutorials for Developers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/development_environment.html">Installing the Development Environment</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/simple_plugin/index.html">A simple plug-in: PySCF</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/cookiecutter.html">Creating the plug-in with the seamm-cookiecutter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/compiling.html">“Compiling” the plug-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/code_overview.html">An overview of the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/customizing.html">Customizing the plug-in to run PySCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/flowchart.html">Create a test flowchart</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../core_modules.html">Core Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm/index.html"> seamm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/molsystem/index.html"> molsystem</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_util/index.html"> seamm-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_installer/index.html"> seamm-installer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Campaigns</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2026-06-19 MDI engines</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Development Plan: QM/MD via MDI in SEAMM — MOPAC First</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_future_investigations.html">Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_mopac_mdi_validation.html">Validation Notes: MOPAC Native MDI Engine for LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_qm_mdi_engines_validation.html">Validation Notes: tblite MDI Engine and MOPAC Python-Wrapper MDI Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_semiempirical_density_comparison.html">Scientific Finding: Semiempirical Method Accuracy for Liquid Methanol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-22/index.html">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PLAN_model_chemistry_step.html">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_A.html">Phase A – MOPAC-side MDI engine launch contract and port strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_B.html">Phase B – Model Chemistry Step (selection + storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_C.html">Phase C – LAMMPS consumption of the model chemistry (MDI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_D.html">Phase D (sketch) – Forcefield handling folded into Model Chemistry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PROJECT_HANDOFF.html">Project handoff – LAMMPS + MOPAC QM-MD coupling via MDI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-26/index.html">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/PLAN_long_range_electrostatics_mlff.html">Plan: Long-Range Electrostatics for Short-Range MLFFs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/NOTES_atomic_charge_methods.html">Notes: Atomic Charge Methods and MLFF Long-Range Prior Art</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developers Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Campaigns</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2026-06-19 MDI engines</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Development Plan: QM/MD via MDI in SEAMM — MOPAC First</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="development-plan-qm-md-via-mdi-in-seamm-mopac-first">
+<span id="plan-qm-mdi-lammps"></span><h1>Development Plan: QM/MD via MDI in SEAMM — MOPAC First<a class="headerlink" href="#development-plan-qm-md-via-mdi-in-seamm-mopac-first" title="Link to this heading">#</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Paul Saxe (plan drafted with Claude)</p>
+</dd>
+<dt class="field-even">Date<span class="colon">:</span></dt>
+<dd class="field-even"><p>2026-06-11</p>
+</dd>
+<dt class="field-odd">Status<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Proposed</p>
+</dd>
+</dl>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#architecture" id="id2">Architecture</a></p>
+<ul>
+<li><p><a class="reference internal" href="#runtime-picture" id="id3">Runtime picture</a></p></li>
+<li><p><a class="reference internal" href="#launch-command" id="id4">Launch command</a></p></li>
+<li><p><a class="reference internal" href="#mopac-mdi-command-support-from-the-mdi-mechanic-test-report" id="id5">MOPAC MDI command support (from the MDI Mechanic test report)</a></p></li>
+<li><p><a class="reference internal" href="#build-requirement" id="id6">Build requirement</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#seamm-integration-design" id="id7">SEAMM integration design</a></p>
+<ul>
+<li><p><a class="reference internal" href="#design-goals" id="id8">Design goals</a></p></li>
+<li><p><a class="reference internal" href="#new-component-qm-engine-substep-in-the-lammps-subflowchart" id="id9">New component: <code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep in the LAMMPS subflowchart</a></p>
+<ul>
+<li><p><a class="reference internal" href="#qm-engine-substep-responsibilities" id="id10">QM Engine substep responsibilities</a></p></li>
+<li><p><a class="reference internal" href="#mdienginespec-the-engine-abstraction" id="id11"><code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> — the engine abstraction</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mopac-step-changes" id="id12">MOPAC step changes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#new-method-get-mdi-engine-spec" id="id13">New method <code class="docutils literal notranslate"><span class="pre">get_mdi_engine_spec</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#lammps-step-changes" id="id14">LAMMPS step changes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#detection-of-qm-engine-substep" id="id15">Detection of QM Engine substep</a></p></li>
+<li><p><a class="reference internal" href="#lammps-ini-and-the-code-key" id="id16"><code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code> and the <code class="docutils literal notranslate"><span class="pre">code</span></code> key</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mopac-mop-file-for-mdi-mode" id="id17">MOPAC <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file for MDI mode</a></p>
+<ul>
+<li><p><a class="reference internal" href="#minimum-viable-input-file" id="id18">Minimum viable input file</a></p>
+<ul>
+<li><p><a class="reference internal" href="#periodic-systems" id="id19">Periodic systems</a></p></li>
+<li><p><a class="reference internal" href="#additional-mopac-keywords-exposed-in-the-gui" id="id20">Additional MOPAC keywords exposed in the GUI</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#phased-development-plan" id="id21">Phased development plan</a></p>
+<ul>
+<li><p><a class="reference internal" href="#phase-a-proof-of-concept-mopac-nvt-on-a-molecule" id="id22">Phase A — Proof of concept: MOPAC NVT on a molecule</a></p></li>
+<li><p><a class="reference internal" href="#phase-b-seamm-integration-skeleton" id="id23">Phase B — SEAMM integration skeleton</a></p></li>
+<li><p><a class="reference internal" href="#phase-c-periodic-nvt-stress" id="id24">Phase C — Periodic NVT (stress)</a></p></li>
+<li><p><a class="reference internal" href="#phase-d-periodic-npt" id="id25">Phase D — Periodic NPT</a></p></li>
+<li><p><a class="reference internal" href="#phase-e-xtb-support" id="id26">Phase E — xTB support</a></p></li>
+<li><p><a class="reference internal" href="#phase-f-packaging-and-deployment" id="id27">Phase F — Packaging and deployment</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#known-issues-and-open-questions" id="id28">Known issues and open questions</a></p></li>
+<li><p><a class="reference internal" href="#comparison-with-mace-mdi-for-reference" id="id29">Comparison with MACE MDI (for reference)</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id30">References</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This document describes a plan to enable QM-driven molecular dynamics in
+SEAMM, using LAMMPS as the MD driver and a quantum-chemistry code
+(initially MOPAC, later xTB and others) as the energy/force engine via the
+MolSSI Driver Interface (MDI).</p>
+<p><strong>Key insight from the MOPAC source tree</strong>: MOPAC already contains a
+<strong>native MDI engine implementation</strong>, built when MOPAC is compiled with
+the CMake option <code class="docutils literal notranslate"><span class="pre">-DMDI=ON</span></code> (see
+<a class="reference external" href="https://openmopac.net/about/software/#mdi">https://openmopac.net/about/software/#mdi</a>).  This means <strong>no Python wrapper
+is needed</strong> for MOPAC — the MOPAC executable itself acts as the MDI engine
+once it is started with the appropriate <code class="docutils literal notranslate"><span class="pre">-mdi</span></code> flag. This is fundamentally
+different from the MACE case, where a Python engine script was required
+because <code class="docutils literal notranslate"><span class="pre">mace-torch</span></code> has no built-in MDI support.</p>
+</section>
+<section id="architecture">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
+<section id="runtime-picture">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Runtime picture</a><a class="headerlink" href="#runtime-picture" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>LAMMPS (driver)   &lt;──MPI/MDI──&gt;   MOPAC (engine)
+   fix mdi/qm                       native MDI loop
+   No pair_style                    PM7 / PM6-ORG / AM1 / …
+   Verlet / Nosé-Hoover             reads .mop for Hamiltonian settings
+   NVT, NPT                         receives coords+cell, returns E, F, σ
+</pre></div>
+</div>
+<p>Both processes share one <code class="docutils literal notranslate"><span class="pre">MPI_COMM_WORLD</span></code> via the <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> colon syntax.
+MDI_Init splits it into sub-communicators.</p>
+</section>
+<section id="launch-command">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Launch command</a><a class="headerlink" href="#launch-command" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>--mca<span class="w"> </span>mpi_yield_when_idle<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>mopac<span class="w"> </span>mopac.mop<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>-mdi<span class="w"> </span><span class="s2">&quot;-role ENGINE -name MOPAC -method MPI&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>:<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>lmp<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>-mdi<span class="w"> </span><span class="s2">&quot;-role DRIVER -name LAMMPS -method MPI&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>-in<span class="w"> </span>input.dat
+</pre></div>
+</div>
+<p>MOPAC reads <code class="docutils literal notranslate"><span class="pre">mopac.mop</span></code> for its Hamiltonian and keyword settings, then
+enters its MDI event loop.  LAMMPS drives the MD, sending <code class="docutils literal notranslate"><span class="pre">&gt;COORDS</span></code> (and
+<code class="docutils literal notranslate"><span class="pre">&gt;CELL</span></code> for periodic systems) each step and requesting <code class="docutils literal notranslate"><span class="pre">&lt;ENERGY</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;FORCES</span></code>, and (when <code class="docutils literal notranslate"><span class="pre">virial</span> <span class="pre">yes</span></code>) <code class="docutils literal notranslate"><span class="pre">&lt;STRESS</span></code>.</p>
+</section>
+<section id="mopac-mdi-command-support-from-the-mdi-mechanic-test-report">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">MOPAC MDI command support (from the MDI Mechanic test report)</a><a class="headerlink" href="#mopac-mdi-command-support-from-the-mdi-mechanic-test-report" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">openmopac/MDI_MOPAC_test</span></code> repository reports MOPAC’s MDI command
+support at the <code class="docutils literal notranslate"><span class="pre">&#64;DEFAULT</span></code> node:</p>
+<p><strong>Supported (green)</strong>:
+<code class="docutils literal notranslate"><span class="pre">&lt;ENERGY</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;FORCES</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;STRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;COORDS</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;CELL</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;CHARGES</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;COORDS</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;CELL</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;DIMENSIONS</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;CELL_DISPL</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;ELEC_MULT</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ELEMENTS</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;MASSES</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;NATOMS</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;TOTCHARGE</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&#64;</span></code></p>
+<p><strong>Not yet supported (gray)</strong>:
+<code class="docutils literal notranslate"><span class="pre">EXIT</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;TOTCHARGE</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;ELEC_MULT</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;CELL_DISPL</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;CHARGES</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&gt;MASSES</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;STRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;FORCES</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;ENERGY</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;KE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;PE</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;VELOCITIES</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;INIT_MD</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;INIT_MC</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;INIT_OPTG</span></code></p>
+<p>All commands required by <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code> (<code class="docutils literal notranslate"><span class="pre">&lt;ENERGY</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;FORCES</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;STRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;COORDS</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;CELL</span></code>) are supported.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">EXIT</span></code> is listed as gray (not registered by MOPAC).  In practice MOPAC
+likely detects the MPI communicator closure or an EOF condition when LAMMPS
+exits and terminates cleanly.  This must be verified empirically in
+Phase A.  If LAMMPS fails to terminate MOPAC, a wrapper or a <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code>
+mechanism may be needed.</p>
+</div>
+</section>
+<section id="build-requirement">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Build requirement</a><a class="headerlink" href="#build-requirement" title="Link to this heading">#</a></h3>
+<p><strong>Standard MOPAC distributions do not include MDI support.</strong>  The conda-forge
+<code class="docutils literal notranslate"><span class="pre">mopac</span></code> package does not currently ship MDI-enabled builds.  To use MOPAC
+as an MDI engine you must build from source:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cmake -DMDI=ON …
+make install
+</pre></div>
+</div>
+<p>This is a deployment concern that affects SEAMM packaging.  Options:</p>
+<ol class="arabic simple">
+<li><p>Maintain a separate <code class="docutils literal notranslate"><span class="pre">mopac-mdi</span></code> conda package (or a feature variant).</p></li>
+<li><p>Require users to build MOPAC from source and point SEAMM to that binary.</p></li>
+<li><p>Petition the MOPAC conda-forge maintainers to enable MDI in the package.</p></li>
+</ol>
+<p><strong>Recommendation</strong>: start with option 2 for development, pursue option 1 or
+3 for production.</p>
+</section>
+</section>
+<section id="seamm-integration-design">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">SEAMM integration design</a><a class="headerlink" href="#seamm-integration-design" title="Link to this heading">#</a></h2>
+<section id="design-goals">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Design goals</a><a class="headerlink" href="#design-goals" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>The user configures the QM engine using the <strong>normal SEAMM GUI</strong> for that
+code (MOPAC parameters, Hamiltonian selector, convergence options, etc.).</p></li>
+<li><p>The LAMMPS step generates all required inputs automatically: the <code class="docutils literal notranslate"><span class="pre">.mop</span></code>
+file, the LAMMPS input, and the <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> launch command.</p></li>
+<li><p>The design is <strong>code-agnostic</strong> so that xTB, ORCA, or any future
+MDI-capable code can be dropped in with minimal changes.</p></li>
+</ol>
+</section>
+<section id="new-component-qm-engine-substep-in-the-lammps-subflowchart">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">New component: <code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep in the LAMMPS subflowchart</a><a class="headerlink" href="#new-component-qm-engine-substep-in-the-lammps-subflowchart" title="Link to this heading">#</a></h3>
+<p>The LAMMPS step’s existing subflowchart (which currently holds
+Initialization, Velocities, NVT/NPT substeps) gains a new first slot:
+the <strong>QM Engine substep</strong>.  When this substep is present, the LAMMPS step
+switches to MDI mode.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>LAMMPS step subflowchart (MDI QM/MD mode)
+──────────────────────────────────────────
+[QM Engine] ──► [Initialization] ──► [Velocities] ──► [NVT/NPT]
+
+QM Engine substep (mini-flowchart)
+───────────────────────────────────
+[MOPAC step]    ← configured with normal MOPAC GUI
+</pre></div>
+</div>
+<p>The <strong>QM Engine substep</strong> is a new plug-in step — call it <code class="docutils literal notranslate"><span class="pre">qm_engine_step</span></code>
+(package <code class="docutils literal notranslate"><span class="pre">qm_engine_step</span></code>, or embedded in <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> to avoid a new
+package for now).  It holds a one-step mini-flowchart that can contain any
+MDI-capable QM step.  Its role is purely configurational: it is <em>never
+executed directly</em> — instead it is interrogated by the LAMMPS step to extract
+the information needed to build the MDI launch.</p>
+<section id="qm-engine-substep-responsibilities">
+<h4><a class="toc-backref" href="#id10" role="doc-backlink">QM Engine substep responsibilities</a><a class="headerlink" href="#qm-engine-substep-responsibilities" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Hold the mini-flowchart (contains a MOPAC step, xTB step, etc.).</p></li>
+<li><p>Expose a method <code class="docutils literal notranslate"><span class="pre">get_mdi_engine(configuration)</span></code> that returns an
+<code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> object (see below).</p></li>
+</ol>
+</section>
+<section id="mdienginespec-the-engine-abstraction">
+<h4><a class="toc-backref" href="#id11" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> — the engine abstraction</a><a class="headerlink" href="#mdienginespec-the-engine-abstraction" title="Link to this heading">#</a></h4>
+<p>A lightweight dataclass (not a full SEAMM plug-in) that captures everything
+the LAMMPS step needs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclasses</span><span class="o">.</span><span class="n">dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MDIEngineSpec</span><span class="p">:</span>
+    <span class="n">engine_name</span><span class="p">:</span> <span class="nb">str</span>          <span class="c1"># e.g. &quot;MOPAC&quot; (the MDI engine name)</span>
+    <span class="n">executable</span><span class="p">:</span> <span class="nb">str</span>           <span class="c1"># e.g. &quot;/path/to/mopac&quot;</span>
+    <span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span>           <span class="c1"># e.g. &quot;mopac.mop&quot;</span>
+    <span class="n">input_content</span><span class="p">:</span> <span class="nb">str</span>        <span class="c1"># full content of the input file</span>
+    <span class="n">extra_args</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>     <span class="c1"># any extra CLI args before -mdi flag</span>
+    <span class="n">elements</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>       <span class="c1"># ordered element list for fix mdi/qm</span>
+    <span class="n">needs_virial</span><span class="p">:</span> <span class="nb">bool</span>        <span class="c1"># True if NPT (stress required)</span>
+</pre></div>
+</div>
+<p>Each QM step (MOPAC, xTB, …) implements a new method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_mdi_engine_spec</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">configuration</span><span class="p">,</span>
+    <span class="n">needs_virial</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MDIEngineSpec</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>This is the <strong>only interface</strong> the LAMMPS step needs.  Adding xTB or any
+other code requires only implementing this method in that step’s class.</p>
+</section>
+</section>
+<section id="mopac-step-changes">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">MOPAC step changes</a><a class="headerlink" href="#mopac-step-changes" title="Link to this heading">#</a></h3>
+<section id="new-method-get-mdi-engine-spec">
+<h4><a class="toc-backref" href="#id13" role="doc-backlink">New method <code class="docutils literal notranslate"><span class="pre">get_mdi_engine_spec</span></code></a><a class="headerlink" href="#new-method-get-mdi-engine-spec" title="Link to this heading">#</a></h4>
+<p>The MOPAC step adds <code class="docutils literal notranslate"><span class="pre">get_mdi_engine_spec()</span></code> that:</p>
+<ol class="arabic simple">
+<li><p>Reads the current parameter values (Hamiltonian, convergence, MOZYME
+flag, etc.) exactly as <code class="docutils literal notranslate"><span class="pre">get_input()</span></code> does today.</p></li>
+<li><p>Constructs the <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file content for MDI mode:</p>
+<ul class="simple">
+<li><p>Uses the chosen Hamiltonian (<code class="docutils literal notranslate"><span class="pre">PM7</span></code>, <code class="docutils literal notranslate"><span class="pre">PM6-ORG</span></code>, <code class="docutils literal notranslate"><span class="pre">AM1</span></code>, etc.).</p></li>
+<li><p>Adds <code class="docutils literal notranslate"><span class="pre">MDI</span></code> keyword to activate the MDI engine loop.</p></li>
+<li><p>Does <strong>not</strong> add <code class="docutils literal notranslate"><span class="pre">1SCF</span></code>, <code class="docutils literal notranslate"><span class="pre">FORCE</span></code>, <code class="docutils literal notranslate"><span class="pre">AUX</span></code>, <code class="docutils literal notranslate"><span class="pre">NOREOR</span></code>—the MDI
+engine loop handles execution differently from a batch run.</p></li>
+<li><p>Adds <code class="docutils literal notranslate"><span class="pre">LET</span></code> (suppress convergence-failure fatal error).</p></li>
+<li><p>For periodic systems (periodicity == 3): adds <code class="docutils literal notranslate"><span class="pre">STRESS</span></code>.</p></li>
+<li><p>Includes a placeholder single-atom geometry (required by MOPAC’s
+input parser even in MDI mode; the real geometry arrives via MDI).</p></li>
+</ul>
+</li>
+<li><p>Returns the <code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code>.</p></li>
+</ol>
+<p>The MOPAC step is <strong>not executed</strong> in MDI mode.  Its <code class="docutils literal notranslate"><span class="pre">run()</span></code> method is
+bypassed; only <code class="docutils literal notranslate"><span class="pre">get_mdi_engine_spec()</span></code> is called by the LAMMPS step.</p>
+</section>
+</section>
+<section id="lammps-step-changes">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">LAMMPS step changes</a><a class="headerlink" href="#lammps-step-changes" title="Link to this heading">#</a></h3>
+<p>The LAMMPS step needs the following additions:</p>
+<section id="detection-of-qm-engine-substep">
+<h4><a class="toc-backref" href="#id15" role="doc-backlink">Detection of QM Engine substep</a><a class="headerlink" href="#detection-of-qm-engine-substep" title="Link to this heading">#</a></h4>
+<p>When building the LAMMPS input, the step iterates its subflowchart.  If it
+finds a <code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep, it:</p>
+<ol class="arabic simple">
+<li><p>Extracts the <code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> from the contained QM step.</p></li>
+<li><p>Writes the <code class="docutils literal notranslate"><span class="pre">.mop</span></code> (or other QM input) file.</p></li>
+<li><p>Omits <code class="docutils literal notranslate"><span class="pre">pair_style</span></code> and <code class="docutils literal notranslate"><span class="pre">pair_coeff</span></code> from the LAMMPS input.</p></li>
+<li><p>Emits <code class="docutils literal notranslate"><span class="pre">comm_modify</span> <span class="pre">cutoff</span> <span class="pre">2.0</span></code> near the top of the input (mandatory;
+no pair_style means zero default pairwise cutoff).</p></li>
+<li><p>Derives the ordered <code class="docutils literal notranslate"><span class="pre">elements</span></code> list from the configuration atom types.</p></li>
+<li><p>Emits <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi_fix</span> <span class="pre">all</span> <span class="pre">mdi/qm</span> <span class="pre">[virial</span> <span class="pre">yes]</span> <span class="pre">elements</span> <span class="pre">…</span></code>.</p></li>
+<li><p>Constructs the full <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> launch command.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atom_style</span>      <span class="n">full</span>
+<span class="n">comm_modify</span>     <span class="n">cutoff</span> <span class="mf">2.0</span>      <span class="c1"># mandatory: no pair_style → no cutoff</span>
+
+<span class="n">fix</span>  <span class="n">prop</span> <span class="nb">all</span> <span class="nb">property</span><span class="o">/</span><span class="n">atom</span> <span class="n">mol</span> <span class="n">charge</span> <span class="o">...</span>
+<span class="n">read_data</span>  <span class="n">structure</span><span class="o">.</span><span class="n">dat</span>
+
+<span class="c1"># NVT (no barostat):</span>
+<span class="n">fix</span>  <span class="n">mdi_fix</span> <span class="nb">all</span> <span class="n">mdi</span><span class="o">/</span><span class="n">qm</span> <span class="n">elements</span> <span class="n">H</span> <span class="n">C</span> <span class="n">O</span> <span class="n">N</span> <span class="o">...</span>
+
+<span class="c1"># NPT (barostat needs virial):</span>
+<span class="n">fix</span>  <span class="n">mdi_fix</span> <span class="nb">all</span> <span class="n">mdi</span><span class="o">/</span><span class="n">qm</span> <span class="n">virial</span> <span class="n">yes</span> <span class="n">elements</span> <span class="n">H</span> <span class="n">C</span> <span class="n">O</span> <span class="n">N</span> <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="lammps-ini-and-the-code-key">
+<h4><a class="toc-backref" href="#id16" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code> and the <code class="docutils literal notranslate"><span class="pre">code</span></code> key</a><a class="headerlink" href="#lammps-ini-and-the-code-key" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> already substitutes the <code class="docutils literal notranslate"><span class="pre">code</span></code> key from <code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code>
+when launching.  For QM/MD, the MDI launch command takes the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="o">--</span><span class="n">mca</span> <span class="n">mpi_yield_when_idle</span> <span class="mi">1</span> \
+    <span class="o">-</span><span class="n">np</span> <span class="mi">1</span> <span class="p">{</span><span class="n">QM_EXE</span><span class="p">}</span> <span class="p">{</span><span class="n">QM_INPUT</span><span class="p">}</span> \
+           <span class="o">-</span><span class="n">mdi</span> <span class="s2">&quot;-role ENGINE -name </span><span class="si">{ENGINE_NAME}</span><span class="s2"> -method MPI&quot;</span> \
+    <span class="p">:</span> <span class="o">-</span><span class="n">np</span> <span class="mi">1</span> <span class="n">lmp</span> \
+           <span class="o">-</span><span class="n">mdi</span> <span class="s2">&quot;-role DRIVER -name LAMMPS -method MPI&quot;</span>
+</pre></div>
+</div>
+<p>The QM-specific parts (<code class="docutils literal notranslate"><span class="pre">{QM_EXE}</span></code>, <code class="docutils literal notranslate"><span class="pre">{QM_INPUT}</span></code>, <code class="docutils literal notranslate"><span class="pre">{ENGINE_NAME}</span></code>) are
+provided by the <code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> and substituted at runtime.  The <code class="docutils literal notranslate"><span class="pre">-in</span>
+<span class="pre">input.dat</span></code> suffix is appended automatically by SEAMM as usual.</p>
+<p>A new <code class="docutils literal notranslate"><span class="pre">mdi-code</span></code> key in <code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code> could store the template with
+placeholders.  Alternatively, the code is constructed entirely in Python
+from the <code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> data, and <code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code> is not modified.  The
+latter is cleaner and is preferred.</p>
+</section>
+</section>
+</section>
+<section id="mopac-mop-file-for-mdi-mode">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">MOPAC <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file for MDI mode</a><a class="headerlink" href="#mopac-mop-file-for-mdi-mode" title="Link to this heading">#</a></h2>
+<section id="minimum-viable-input-file">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Minimum viable input file</a><a class="headerlink" href="#minimum-viable-input-file" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>PM7 MDI LET
+MOPAC MDI engine — generated by SEAMM lammps_step
+(geometry replaced each step by MDI driver)
+C   0.0 1   0.0 1   0.0 1
+
+0
+</pre></div>
+</div>
+<p>The critical points:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">MDI</span></code></dt><dd><p>Activates MOPAC’s internal MDI engine loop.  Without this keyword,
+MOPAC runs as a normal batch calculation and never connects to LAMMPS.</p>
+</dd>
+<dt>Hamiltonian keyword (<code class="docutils literal notranslate"><span class="pre">PM7</span></code>, <code class="docutils literal notranslate"><span class="pre">PM6-ORG</span></code>, <code class="docutils literal notranslate"><span class="pre">GFN2</span></code>, etc.)</dt><dd><p>Selected by the user in the MOPAC step GUI, exactly as today.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">LET</span></code></dt><dd><p>Prevents SCF convergence failures from killing the MD run.</p>
+</dd>
+<dt>Placeholder geometry</dt><dd><p>MOPAC requires at least one atom in the input, even in MDI mode.  A
+single carbon at the origin is sufficient; it is immediately overwritten
+by the <code class="docutils literal notranslate"><span class="pre">&gt;COORDS</span></code> command from LAMMPS.</p>
+</dd>
+</dl>
+<section id="periodic-systems">
+<h4><a class="toc-backref" href="#id19" role="doc-backlink">Periodic systems</a><a class="headerlink" href="#periodic-systems" title="Link to this heading">#</a></h4>
+<p>For systems with PBC (periodicity == 3), add <code class="docutils literal notranslate"><span class="pre">STRESS</span></code> to request the
+stress tensor, and include three <code class="docutils literal notranslate"><span class="pre">Tv</span></code> lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PM7 MDI LET STRESS
+MOPAC MDI engine — periodic system
+(geometry replaced each step by MDI driver)
+C   0.0 1   0.0 1   0.0 1
+Tv  10.0 0   0.0 0   0.0 0
+Tv   0.0 0  10.0 0   0.0 0
+Tv   0.0 0   0.0 0  10.0 0
+
+0
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is currently unclear whether MOPAC’s MDI loop reads the <code class="docutils literal notranslate"><span class="pre">Tv</span></code> lines
+from the <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file or relies entirely on the <code class="docutils literal notranslate"><span class="pre">&gt;CELL</span></code> MDI command.
+This must be tested empirically.  If <code class="docutils literal notranslate"><span class="pre">&gt;CELL</span></code> is sufficient, the <code class="docutils literal notranslate"><span class="pre">Tv</span></code>
+lines can be omitted from the template.</p>
+</div>
+</section>
+<section id="additional-mopac-keywords-exposed-in-the-gui">
+<h4><a class="toc-backref" href="#id20" role="doc-backlink">Additional MOPAC keywords exposed in the GUI</a><a class="headerlink" href="#additional-mopac-keywords-exposed-in-the-gui" title="Link to this heading">#</a></h4>
+<p>The following MOPAC step parameters map naturally to MDI/MD use:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">CHARGE=n</span></code></dt><dd><p>Total charge of the system.  Sourced from the configuration object,
+not from the GUI (consistent with SEAMM convention).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">MULT=n</span></code></dt><dd><p>Spin multiplicity.  Also sourced from the configuration object.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">MOZYME</span></code></dt><dd><p>Linear-scaling SCF.  Highly recommended for systems &gt; ~200 atoms.
+The MOPAC step GUI already exposes this.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">CHARGE_MODEL</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">CM5</span></code>, <code class="docutils literal notranslate"><span class="pre">MULL</span></code>, etc.  Exposed but not critical for MD forces.</p>
+</dd>
+<dt>Convergence keyword</dt><dd><p>MOPAC’s default convergence is adequate for most MD applications.
+Expose <code class="docutils literal notranslate"><span class="pre">PRECISE</span></code> and <code class="docutils literal notranslate"><span class="pre">RELSCF=n</span></code> in the GUI.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+<section id="phased-development-plan">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Phased development plan</a><a class="headerlink" href="#phased-development-plan" title="Link to this heading">#</a></h2>
+<section id="phase-a-proof-of-concept-mopac-nvt-on-a-molecule">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Phase A — Proof of concept: MOPAC NVT on a molecule</a><a class="headerlink" href="#phase-a-proof-of-concept-mopac-nvt-on-a-molecule" title="Link to this heading">#</a></h3>
+<p><strong>Goal</strong>: confirm that a MOPAC-MDI build can be driven by LAMMPS
+<code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code> for a non-periodic NVT simulation.</p>
+<p><strong>Deliverables</strong></p>
+<ol class="arabic simple">
+<li><p>Build MOPAC from source with <code class="docutils literal notranslate"><span class="pre">-DMDI=ON</span></code>.  Confirm the <code class="docutils literal notranslate"><span class="pre">MDI</span></code> keyword
+is accepted.</p></li>
+<li><p>Manually craft a <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file and LAMMPS input for formic acid (HCOOH)
+NVT, PM7 Hamiltonian.</p></li>
+<li><p>Verify:</p>
+<ul class="simple">
+<li><p>Forces agree with finite-difference numerical gradient at the starting
+geometry.</p></li>
+<li><p>NVT simulation runs without crashes for ≥ 1000 steps.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXIT</span></code> command behaviour: does MOPAC terminate cleanly when LAMMPS
+finishes?</p></li>
+</ul>
+</li>
+<li><p>Document the exact <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file format, required keywords, and launch
+command.</p></li>
+<li><p>Note any discrepancies with the MDI Mechanic test report.</p></li>
+</ol>
+<p><strong>Risks</strong></p>
+<ul class="simple">
+<li><p>MOPAC <code class="docutils literal notranslate"><span class="pre">EXIT</span></code> not registered (gray badge) may prevent clean shutdown.
+Workaround: run LAMMPS with <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code> and rely on MPI teardown.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DMDI=ON</span></code> may not be available in conda.  Manual build required.</p></li>
+</ul>
+</section>
+<section id="phase-b-seamm-integration-skeleton">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Phase B — SEAMM integration skeleton</a><a class="headerlink" href="#phase-b-seamm-integration-skeleton" title="Link to this heading">#</a></h3>
+<p><strong>Goal</strong>: add the minimum code to <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> and <code class="docutils literal notranslate"><span class="pre">mopac_step</span></code> to
+run the Phase A case from a SEAMM flowchart.</p>
+<p><strong>Deliverables</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> dataclass in a new <code class="docutils literal notranslate"><span class="pre">lammps_step/mdi.py</span></code> module.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MopacStep.get_mdi_engine_spec()</span></code> method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep skeleton (can be a simple wrapper with one-step
+mini-flowchart, embedded in <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> initially).</p></li>
+<li><p>LAMMPS step changes:</p>
+<ul class="simple">
+<li><p>Detect <code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep presence.</p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">get_mdi_engine_spec()</span></code>.</p></li>
+<li><p>Write <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file.</p></li>
+<li><p>Omit <code class="docutils literal notranslate"><span class="pre">pair_style</span></code>.</p></li>
+<li><p>Emit <code class="docutils literal notranslate"><span class="pre">comm_modify</span> <span class="pre">cutoff</span> <span class="pre">2.0</span></code> and <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code>.</p></li>
+<li><p>Build and execute the <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> launch command.</p></li>
+</ul>
+</li>
+<li><p>End-to-end test: formic acid NVT from a SEAMM flowchart.</p></li>
+</ol>
+</section>
+<section id="phase-c-periodic-nvt-stress">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Phase C — Periodic NVT (stress)</a><a class="headerlink" href="#phase-c-periodic-nvt-stress" title="Link to this heading">#</a></h3>
+<p><strong>Goal</strong>: extend to periodic systems with stress tensor.</p>
+<p><strong>Deliverables</strong></p>
+<ol class="arabic simple">
+<li><p>Extend <code class="docutils literal notranslate"><span class="pre">get_mdi_engine_spec()</span></code> to emit <code class="docutils literal notranslate"><span class="pre">STRESS</span></code> keyword and <code class="docutils literal notranslate"><span class="pre">Tv</span></code>
+lines (or confirm they are not needed).</p></li>
+<li><p>Verify that MOPAC <code class="docutils literal notranslate"><span class="pre">&lt;STRESS</span></code> returns the correct sign convention
+(tensile positive) and that SEAMM passes it directly to LAMMPS (which
+expects the same via <code class="docutils literal notranslate"><span class="pre">fix_mdi_qm</span></code>).</p></li>
+<li><p>Test: periodic water box (64 molecules), PM7, NVT.</p></li>
+<li><p>Verify stress appears in LAMMPS thermo output (non-zero virial).</p></li>
+</ol>
+</section>
+<section id="phase-d-periodic-npt">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Phase D — Periodic NPT</a><a class="headerlink" href="#phase-d-periodic-npt" title="Link to this heading">#</a></h3>
+<p><strong>Goal</strong>: NPT simulation with MOPAC as the QM engine.</p>
+<p><strong>Deliverables</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">virial</span> <span class="pre">yes</span></code> emitted when the subflowchart contains a barostat step.</p></li>
+<li><p>Test: water box NPT, verify pressure converges to target.</p></li>
+<li><p>Performance benchmark: step time vs. number of atoms (100–500 atoms).</p></li>
+<li><p>Document <code class="docutils literal notranslate"><span class="pre">comm_modify</span></code> and <code class="docutils literal notranslate"><span class="pre">virial</span> <span class="pre">yes</span></code> as mandatory for NPT.</p></li>
+</ol>
+</section>
+<section id="phase-e-xtb-support">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Phase E — xTB support</a><a class="headerlink" href="#phase-e-xtb-support" title="Link to this heading">#</a></h3>
+<p><strong>Goal</strong>: support Grimme’s <code class="docutils literal notranslate"><span class="pre">xtb</span></code> as an alternative QM engine.</p>
+<p>xTB has a native MDI implementation in recent versions (check the xTB
+documentation at <a class="reference external" href="https://xtb-docs.readthedocs.io">https://xtb-docs.readthedocs.io</a> for <code class="docutils literal notranslate"><span class="pre">--mdi</span></code> flag
+support).  If native MDI is available, the pattern is identical to MOPAC:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>--mca<span class="w"> </span>mpi_yield_when_idle<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>xtb<span class="w"> </span>xtb.inp<span class="w"> </span>--mdi<span class="w"> </span><span class="s2">&quot;-role ENGINE -name XTB -method MPI&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>:<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>lmp<span class="w"> </span>-mdi<span class="w"> </span><span class="s2">&quot;-role DRIVER -name LAMMPS -method MPI&quot;</span><span class="w"> </span>-in<span class="w"> </span>input.dat
+</pre></div>
+</div>
+<p><strong>Deliverables</strong></p>
+<ol class="arabic simple">
+<li><p>Verify xTB MDI support status (native vs. subprocess-wrapper needed).</p></li>
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">XtbStep.get_mdi_engine_spec()</span></code>.</p></li>
+<li><p>Test: water box NVT, GFN2-xTB.</p></li>
+<li><p>Confirm the <code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep GUI accepts xTB step with no changes.</p></li>
+</ol>
+</section>
+<section id="phase-f-packaging-and-deployment">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Phase F — Packaging and deployment</a><a class="headerlink" href="#phase-f-packaging-and-deployment" title="Link to this heading">#</a></h3>
+<p><strong>Goal</strong>: make MOPAC MDI builds available through SEAMM.</p>
+<p><strong>Deliverables</strong></p>
+<ol class="arabic simple">
+<li><p>Conda recipe for <code class="docutils literal notranslate"><span class="pre">mopac-mdi</span></code> (MOPAC built with <code class="docutils literal notranslate"><span class="pre">-DMDI=ON</span></code>).</p></li>
+<li><p>SEAMM installer integration: detect whether installed MOPAC has MDI
+support; warn if not.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code> documentation: add MDI section with example launch
+commands.</p></li>
+<li><p>User-facing documentation (RST).</p></li>
+</ol>
+</section>
+</section>
+<section id="known-issues-and-open-questions">
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">Known issues and open questions</a><a class="headerlink" href="#known-issues-and-open-questions" title="Link to this heading">#</a></h2>
+<dl>
+<dt><strong>EXIT command (MOPAC)</strong></dt><dd><p>MOPAC does not register the <code class="docutils literal notranslate"><span class="pre">EXIT</span></code> MDI command.  LAMMPS sends it at
+the end of the run.  Need to verify empirically whether MOPAC handles
+it gracefully, ignores it, or crashes.  Possible mitigations:</p>
+<ul class="simple">
+<li><p>Rely on MPI communicator teardown (LAMMPS exits → MPI_Finalize →
+MOPAC detects broken communicator and exits).</p></li>
+<li><p>Patch MOPAC to register and handle EXIT.  The openmopac/MDI_MOPAC_test
+repo has an open pull request from MolSSI-MDI; check its status.</p></li>
+</ul>
+</dd>
+<dt><strong>Energy quantity: HOF vs. total energy</strong></dt><dd><p>MOPAC reports Heat of Formation (kcal/mol), not a total electronic
+energy.  For MD only energy differences and gradients matter, so HOF is
+correct for forces.  The absolute energy in LAMMPS thermo will be an
+HOF in Hartree — this is unusual and must be clearly documented.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TOTAL_ENERGY</span></code> (eV, available in the AUX file) is a better quantity
+for absolute comparisons, but it is unclear whether MOPAC’s MDI engine
+returns <code class="docutils literal notranslate"><span class="pre">TOTAL_ENERGY</span></code> or <code class="docutils literal notranslate"><span class="pre">HEAT_OF_FORMATION</span></code> via <code class="docutils literal notranslate"><span class="pre">&lt;ENERGY</span></code>.  This
+must be confirmed by inspection or from the MOPAC source.</p>
+</dd>
+<dt><strong>MOPAC NOREOR in MDI mode</strong></dt><dd><p>In batch mode, MOPAC can reorient molecules into a standard orientation
+(NOREOR suppresses this).  Whether the MDI engine loop applies any
+reorientation is unknown.  If it does, forces will be returned in the
+wrong frame.  Verify empirically; if necessary, add <code class="docutils literal notranslate"><span class="pre">NOREOR</span></code> to the
+generated <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file.</p>
+</dd>
+<dt><strong>Charge and multiplicity</strong></dt><dd><p>These should come from the configuration object (SEAMM convention), not
+from the GUI.  The MOPAC <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file should include <code class="docutils literal notranslate"><span class="pre">CHARGE=n</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MULT=n</span></code> only when they differ from the defaults (0 and 1).  The MDI
+<code class="docutils literal notranslate"><span class="pre">&lt;TOTCHARGE</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;ELEC_MULT</span></code> commands (supported by MOPAC) allow
+the driver to query these values, but not to set them.</p>
+</dd>
+<dt><strong>MOZYME for large systems</strong></dt><dd><p>MOPAC’s MOZYME (localized MO) method enables near-linear scaling and is
+important for systems &gt; 200 atoms.  It may have compatibility
+constraints with the MDI loop.  Verify in Phase A/B.</p>
+</dd>
+<dt><strong>QM Engine substep package location</strong></dt><dd><p>For Phase B, embed the <code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep inside <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> to
+avoid creating a new package.  Evaluate whether it merits a separate
+<code class="docutils literal notranslate"><span class="pre">qm_engine_step</span></code> package as adoption grows.</p>
+</dd>
+<dt><strong>Parallel MOPAC</strong></dt><dd><p>MOPAC supports OpenMP parallelism.  The MDI launch can run MOPAC on
+multiple threads by setting <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> before the <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>
+invocation.  Expose as <code class="docutils literal notranslate"><span class="pre">mopac-threads</span></code> option in the QM Engine substep.</p>
+</dd>
+</dl>
+</section>
+<section id="comparison-with-mace-mdi-for-reference">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink">Comparison with MACE MDI (for reference)</a><a class="headerlink" href="#comparison-with-mace-mdi-for-reference" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>MACE (lammps-mdi)</p></th>
+<th class="head"><p>MOPAC (this plan)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Engine implementation</p></td>
+<td><p>Python wrapper script</p></td>
+<td><p>Native in MOPAC binary</p></td>
+</tr>
+<tr class="row-odd"><td><p>MDI support required?</p></td>
+<td><p>Custom (mace_mdi.py)</p></td>
+<td><p>Build with <code class="docutils literal notranslate"><span class="pre">-DMDI=ON</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Per-step overhead</p></td>
+<td><p>~0 (in-process GPU)</p></td>
+<td><p>~0 (in-process, CPU)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Subprocess needed?</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>Stress sign convention</p></td>
+<td><p>Negate (MACE tensile+)</p></td>
+<td><p>Verify (MOPAC ?)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEAMM integration</p></td>
+<td><p>lammps.ini code= key</p></td>
+<td><p>QM Engine substep +
+auto-generated .mop</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">virial</span> <span class="pre">yes</span></code> trap</p></td>
+<td><p>Yes — same</p></td>
+<td><p>Yes — same</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">comm_modify</span> <span class="pre">cutoff</span></code> trap</p></td>
+<td><p>Yes — same</p></td>
+<td><p>Yes — same</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy quantity</p></td>
+<td><p>eV (DFT total energy)</p></td>
+<td><p>kcal/mol (HOF) — verify</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="references">
+<h2><a class="toc-backref" href="#id30" role="doc-backlink">References</a><a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MOPAC MDI documentation: <a class="reference external" href="https://openmopac.net/about/software/#mdi">https://openmopac.net/about/software/#mdi</a></p></li>
+<li><p>MOPAC MDI test repository: <a class="github reference external" href="https://github.com/openmopac/MDI_MOPAC_test">openmopac/MDI_MOPAC_test</a></p></li>
+<li><p>MDI specification: <a class="reference external" href="https://molssi-mdi.github.io/MDI_Library/">https://molssi-mdi.github.io/MDI_Library/</a></p></li>
+<li><p>LAMMPS <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code>: <a class="reference external" href="https://docs.lammps.org/fix_mdi_qm.html">https://docs.lammps.org/fix_mdi_qm.html</a></p></li>
+<li><p>LAMMPS MDI HOWTO: <a class="reference external" href="https://docs.lammps.org/Howto_mdi.html">https://docs.lammps.org/Howto_mdi.html</a></p></li>
+<li><p>MACE MDI development summary: <code class="docutils literal notranslate"><span class="pre">mace_mdi_development_summary.md</span></code>
+(project knowledge)</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2026-06-19 MDI engines</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="NOTES_future_investigations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runtime-picture">Runtime picture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-command">Launch command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mopac-mdi-command-support-from-the-mdi-mechanic-test-report">MOPAC MDI command support (from the MDI Mechanic test report)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-requirement">Build requirement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seamm-integration-design">SEAMM integration design</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-goals">Design goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-component-qm-engine-substep-in-the-lammps-subflowchart">New component: <code class="docutils literal notranslate"><span class="pre">QM</span> <span class="pre">Engine</span></code> substep in the LAMMPS subflowchart</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-engine-substep-responsibilities">QM Engine substep responsibilities</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mdienginespec-the-engine-abstraction"><code class="docutils literal notranslate"><span class="pre">MDIEngineSpec</span></code> — the engine abstraction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mopac-step-changes">MOPAC step changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#new-method-get-mdi-engine-spec">New method <code class="docutils literal notranslate"><span class="pre">get_mdi_engine_spec</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lammps-step-changes">LAMMPS step changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-of-qm-engine-substep">Detection of QM Engine substep</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lammps-ini-and-the-code-key"><code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code> and the <code class="docutils literal notranslate"><span class="pre">code</span></code> key</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mopac-mop-file-for-mdi-mode">MOPAC <code class="docutils literal notranslate"><span class="pre">.mop</span></code> file for MDI mode</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-viable-input-file">Minimum viable input file</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#periodic-systems">Periodic systems</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-mopac-keywords-exposed-in-the-gui">Additional MOPAC keywords exposed in the GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phased-development-plan">Phased development plan</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-a-proof-of-concept-mopac-nvt-on-a-molecule">Phase A — Proof of concept: MOPAC NVT on a molecule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-b-seamm-integration-skeleton">Phase B — SEAMM integration skeleton</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-c-periodic-nvt-stress">Phase C — Periodic NVT (stress)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-d-periodic-npt">Phase D — Periodic NPT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-e-xtb-support">Phase E — xTB support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-f-packaging-and-deployment">Phase F — Packaging and deployment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-issues-and-open-questions">Known issues and open questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-mace-mdi-for-reference">Comparison with MACE MDI (for reference)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/developer_guide/campaigns/2026-06-19/PLAN_mopac_mdi.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

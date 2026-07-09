@@ -1,0 +1,1200 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/campaigns/2026-06-22/PLAN_model_chemistry_step';</script>
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Phase A – MOPAC-side MDI engine launch contract and port strategy" href="NOTES_A.html" />
+    <link rel="prev" title="2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../software_ecosystem/index.html">Software Ecosystem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_datastore.html">Job Datastore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qm_md_over_mdi.html">QM-MD over MDI (the LAMMPS driver)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../new-plug-in/index.html">Creating a New Plug-in</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/properties.html">Saving Properties in the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/creating.html">Creating the Initial Code and Uploading to GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tips-and-tricks/index.html">Tips and Tricks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/index.html">Tutorials for Developers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/development_environment.html">Installing the Development Environment</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/simple_plugin/index.html">A simple plug-in: PySCF</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/cookiecutter.html">Creating the plug-in with the seamm-cookiecutter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/compiling.html">“Compiling” the plug-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/code_overview.html">An overview of the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/customizing.html">Customizing the plug-in to run PySCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/flowchart.html">Create a test flowchart</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../core_modules.html">Core Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm/index.html"> seamm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/molsystem/index.html"> molsystem</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_util/index.html"> seamm-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_installer/index.html"> seamm-installer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Campaigns</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-19/index.html">2026-06-19 MDI engines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/PLAN_mopac_mdi.html">Development Plan: QM/MD via MDI in SEAMM — MOPAC First</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_future_investigations.html">Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_mopac_mdi_validation.html">Validation Notes: MOPAC Native MDI Engine for LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_qm_mdi_engines_validation.html">Validation Notes: tblite MDI Engine and MOPAC Python-Wrapper MDI Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_semiempirical_density_comparison.html">Scientific Finding: Semiempirical Method Accuracy for Liquid Methanol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_A.html">Phase A – MOPAC-side MDI engine launch contract and port strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_B.html">Phase B – Model Chemistry Step (selection + storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_C.html">Phase C – LAMMPS consumption of the model chemistry (MDI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NOTES_D.html">Phase D (sketch) – Forcefield handling folded into Model Chemistry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PROJECT_HANDOFF.html">Project handoff – LAMMPS + MOPAC QM-MD coupling via MDI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-26/index.html">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/PLAN_long_range_electrostatics_mlff.html">Plan: Long-Range Electrostatics for Short-Range MLFFs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/NOTES_atomic_charge_methods.html">Notes: Atomic Charge Methods and MLFF Long-Range Prior Art</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developers Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Campaigns</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="plan-model-chemistry-step-metadata-protocol-and-mopac-xtb-via-mdi">
+<span id="plan-model-chemistry-step"></span><h1>Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI<a class="headerlink" href="#plan-model-chemistry-step-metadata-protocol-and-mopac-xtb-via-mdi" title="Link to this heading">#</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2026-06-20</p>
+</dd>
+<dt class="field-even">Status<span class="colon">:</span></dt>
+<dd class="field-even"><p>Architecture proposed; metadata classmethod implemented (sketch)
+for MOPAC against its real existing metadata; xTB metadata sketched
+pending a new step package; lammps_step consumption logic sketched,
+not yet implemented.</p>
+</dd>
+</dl>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#the-model-chemistry-dictionary" id="id2">The <code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code> dictionary</a></p></li>
+<li><p><a class="reference internal" href="#the-metadata-protocol" id="id3">The metadata protocol</a></p></li>
+<li><p><a class="reference internal" href="#worked-implementation-mopac" id="id4">Worked implementation: MOPAC</a></p></li>
+<li><p><a class="reference internal" href="#worked-implementation-xtb" id="id5">Worked implementation: xTB</a></p></li>
+<li><p><a class="reference internal" href="#how-lammps-step-consumes-this" id="id6">How <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> consumes this</a></p></li>
+<li><p><a class="reference internal" href="#phased-plan" id="id7">Phased plan</a></p></li>
+<li><p><a class="reference internal" href="#open-questions-carried-into-this-plan" id="id8">Open questions carried into this plan</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id9">References</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>Replaces the ad hoc <code class="docutils literal notranslate"><span class="pre">_forcefield</span></code> / <code class="docutils literal notranslate"><span class="pre">_OpenKIM_Potential</span></code> /
+<code class="docutils literal notranslate"><span class="pre">_pytorch_model</span></code> global-variable scheme with a single new
+<strong>Model Chemistry Step</strong>, storing one dictionary (e.g. as the global
+variable <code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code>) that uniformly describes a classical
+forcefield, an MLFF, or a model-chemistry string (<code class="docutils literal notranslate"><span class="pre">Program:Type&#64;Method</span>
+<span class="pre">[/Basis[&#64;Cutoff]]</span></code>) – including, for model chemistries, enough
+information for a consuming driver step (<code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> first, others
+later) to launch the right MDI engine.</p>
+<p>This plan covers: the dict shape, the metadata protocol every
+program-step package implements to describe what it offers, a worked
+implementation of that protocol against <code class="docutils literal notranslate"><span class="pre">mopac_step</span></code>’s real existing
+metadata, a sketch of the same for xTB (which has no existing SEAMM
+step package at all), and how <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> would consume all of
+this to decide between a classical <code class="docutils literal notranslate"><span class="pre">pair_style</span></code> and an MDI
+connection.</p>
+</section>
+<section id="the-model-chemistry-dictionary">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">The <code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code> dictionary</a><a class="headerlink" href="#the-model-chemistry-dictionary" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Classical forcefield (existing behavior, reshaped)</span>
+<span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;forcefield&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OPLS-AA&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># MLFF</span>
+<span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;mlff&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MACE-MP-0&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Model chemistry -- MOPAC via MDI</span>
+<span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;model_chemistry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;MOPAC:SQM@PM6-ORG&quot;</span><span class="p">,</span>   <span class="c1"># the citable string</span>
+    <span class="s2">&quot;program&quot;</span><span class="p">:</span> <span class="s2">&quot;MOPAC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method_type&quot;</span><span class="p">:</span> <span class="s2">&quot;SQM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;PM6-ORG&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;basis&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;convergence&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>             <span class="c1"># mopactools relative-tolerance scale</span>
+    <span class="s2">&quot;max_iterations&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="p">}</span>
+
+<span class="c1"># Model chemistry -- DFT with RI basis and explicit cutoff (VASP-style)</span>
+<span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;model_chemistry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;VASP:DFT@PBE/PAW@500eV&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;program&quot;</span><span class="p">:</span> <span class="s2">&quot;VASP&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method_type&quot;</span><span class="p">:</span> <span class="s2">&quot;DFT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;PBE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;basis&quot;</span><span class="p">:</span> <span class="s2">&quot;PAW&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cutoff&quot;</span><span class="p">:</span> <span class="s2">&quot;500eV&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;convergence&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Charge and multiplicity are deliberately <strong>not</strong> fields here – per
+existing SEAMM convention (and the SEAMM paper’s own statement that
+these are properties of the configuration, not of the calculation
+method), they are read from the configuration by whatever step
+launches the actual calculation, exactly as <code class="docutils literal notranslate"><span class="pre">mopac_step</span></code>/
+<code class="docutils literal notranslate"><span class="pre">gaussian_step</span></code> already do.</p>
+</section>
+<section id="the-metadata-protocol">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">The metadata protocol</a><a class="headerlink" href="#the-metadata-protocol" title="Link to this heading">#</a></h2>
+<p>Every program-step package that wants to participate in the Model
+Chemistry Step (as a source of options in its dialog, and/or as an
+MDI-launchable engine for driver steps like <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code>)
+implements one classmethod:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_model_chemistry_options</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">periodic_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mdi_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the model chemistries this step&#39;s program can provide.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    periodic_only : bool</span>
+<span class="sd">        Only return options valid for a periodic system (relevant</span>
+<span class="sd">        for any driver running periodic MD, e.g. via MDI/LAMMPS).</span>
+<span class="sd">    mdi_only : bool</span>
+<span class="sd">        Only return options actually launchable as an MDI engine,</span>
+<span class="sd">        as opposed to only available via this step&#39;s traditional</span>
+<span class="sd">        batch/file-based path.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Keyed by the bare method name (e.g. &quot;PM6-ORG&quot;). Each value</span>
+<span class="sd">        is a dict with at least:</span>
+<span class="sd">            &quot;model_chemistry&quot; : str   -- full &quot;Program:Type@Method&quot; string</span>
+<span class="sd">            &quot;type&quot; : str              -- &quot;SQM&quot;, &quot;DFT&quot;, &quot;QC&quot;, &quot;FF&quot;, &quot;MLFF&quot;</span>
+<span class="sd">            &quot;description&quot; : str</span>
+<span class="sd">            &quot;periodic&quot; : bool</span>
+<span class="sd">            &quot;mdi_capable&quot; : bool</span>
+<span class="sd">            &quot;mdi_script&quot; : str | None</span>
+<span class="sd">            &quot;mdi_method_arg&quot; : str | None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>This is deliberately a thin classmethod, not a full instance method –
+the Model Chemistry Step’s dialog (and <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code>, when deciding
+how to set up a calculation) need this information <em>before</em> any
+flowchart node for that program necessarily exists, so it has to be
+queryable from the class itself via whatever Stevedore already uses
+to discover the package, without requiring instantiation.</p>
+</section>
+<section id="worked-implementation-mopac">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Worked implementation: MOPAC</a><a class="headerlink" href="#worked-implementation-mopac" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mopac_step</span></code> already has essentially everything needed in its
+<code class="docutils literal notranslate"><span class="pre">metadata[&quot;computational</span> <span class="pre">models&quot;]</span></code> structure – this just exposes it
+through the protocol above rather than inventing a new shape:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proposed addition to mopac_step (exact module/file location to be</span>
+<span class="c1"># confirmed against the real package -- this is a clean-room sketch</span>
+<span class="c1"># against the metadata structure retrieved from project knowledge,</span>
+<span class="c1"># not a verified patch against the actual current file).</span>
+
+<span class="c1"># mopactools&#39; model_dict currently supports exactly these six --</span>
+<span class="c1"># see mopac_mdi.py&#39;s --method choices, sourced from</span>
+<span class="c1"># mopactools.api.MopacSystem.model_dict.</span>
+<span class="n">_MDI_CAPABLE_METHODS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;PM7&quot;</span><span class="p">,</span> <span class="s2">&quot;PM6-D3H4&quot;</span><span class="p">,</span> <span class="s2">&quot;PM6-ORG&quot;</span><span class="p">,</span> <span class="s2">&quot;PM6&quot;</span><span class="p">,</span> <span class="s2">&quot;AM1&quot;</span><span class="p">,</span> <span class="s2">&quot;RM1&quot;</span><span class="p">}</span>
+
+<span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_model_chemistry_options</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">periodic_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mdi_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">theory_class</span><span class="p">,</span> <span class="n">class_data</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;computational models&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">family</span><span class="p">,</span> <span class="n">family_data</span> <span class="ow">in</span> <span class="n">class_data</span><span class="p">[</span><span class="s2">&quot;models&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">family_data</span><span class="p">[</span><span class="s2">&quot;parameterizations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">is_periodic</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;periodic&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">periodic_only</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_periodic</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">mdi_capable</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_MDI_CAPABLE_METHODS</span>
+                <span class="k">if</span> <span class="n">mdi_only</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">mdi_capable</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="c1"># PM6-D3H4&#39;s periodic=False here is a confirmed real</span>
+                <span class="c1"># limitation (MOPAC&#39;s docs explicitly say D3H4 does</span>
+                <span class="c1"># not work under PBC) -- this filter correctly</span>
+                <span class="c1"># excludes it from periodic_only results, not an</span>
+                <span class="c1"># over-cautious guess. The same is NOT yet confirmed</span>
+                <span class="c1"># one way or the other for PM6-DH2/DH2X/D3H4X --</span>
+                <span class="c1"># treat those as unconfirmed for periodic+MDI use</span>
+                <span class="c1"># until someone actually runs one and checks, per</span>
+                <span class="c1"># the governing principle in the xTB section below.</span>
+
+                <span class="n">options</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_chemistry&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;MOPAC:SQM@</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SQM&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;periodic&quot;</span><span class="p">:</span> <span class="n">is_periodic</span><span class="p">,</span>
+                    <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;elements&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;mdi_capable&quot;</span><span class="p">:</span> <span class="n">mdi_capable</span><span class="p">,</span>
+                    <span class="s2">&quot;mdi_script&quot;</span><span class="p">:</span> <span class="s2">&quot;mopac_mdi.py&quot;</span> <span class="k">if</span> <span class="n">mdi_capable</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">&quot;mdi_method_arg&quot;</span><span class="p">:</span> <span class="n">name</span> <span class="k">if</span> <span class="n">mdi_capable</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="p">}</span>
+    <span class="k">return</span> <span class="n">options</span>
+</pre></div>
+</div>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">get_model_chemistry_options(periodic_only=True,</span> <span class="pre">mdi_only=True)</span></code>
+against the real metadata retrieved this week would currently exclude
+PM6-D3H4 and everything outside the six <code class="docutils literal notranslate"><span class="pre">mopactools</span></code>-supported names,
+leaving PM7, PM6-ORG, PM6 as confirmed periodic+MDI options.</p>
+<p><strong>PM6-D3H4’s exclusion is now confirmed correct, not just cautious.</strong>
+Per Paul, MOPAC’s documentation explicitly states D3H4 does not work
+under periodic boundary conditions – this is a real, documented
+method limitation, not an oversight in <code class="docutils literal notranslate"><span class="pre">mopac_step</span></code>’s metadata. The
+filter above is doing exactly the right thing.</p>
+<p><strong>The same caution now extends to the other correction variants</strong>
+(PM6-DH2, PM6-DH2X, PM6-D3H4X, etc.) – whether <em>they</em> also have
+undocumented or differently-documented periodic limitations is not
+yet known and, per Paul, “cannot be solved now” without actually
+running them. Per the governing principle stated in the xTB section
+below, none of these should be treated as periodic+MDI-capable until
+someone actually runs one periodic via MDI and confirms it works –
+regardless of what any existing metadata flag says one way or the
+other. AM1 and RM1’s periodic flags were similarly not visible in the
+metadata excerpt available while drafting this plan and fall under the
+same default-to-unconfirmed treatment.</p>
+</section>
+<section id="worked-implementation-xtb">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Worked implementation: xTB</a><a class="headerlink" href="#worked-implementation-xtb" title="Link to this heading">#</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">xtb_step</span></code> package now exists (added to project knowledge after
+this plan’s first draft) – this supersedes the earlier speculative
+sketch. Its real <code class="docutils literal notranslate"><span class="pre">metadata[&quot;computational</span> <span class="pre">models&quot;]</span></code> wraps Grimme’s
+<code class="docutils literal notranslate"><span class="pre">xtb</span></code> <em>binary</em> via subprocess/file I/O (writes <code class="docutils literal notranslate"><span class="pre">coord.xyz</span></code>, parses
+<code class="docutils literal notranslate"><span class="pre">xtbout.json</span></code>) – a genuinely different code path from
+<code class="docutils literal notranslate"><span class="pre">tblite_mdi.py</span></code>, which calls <code class="docutils literal notranslate"><span class="pre">tblite</span></code>’s Python <code class="docutils literal notranslate"><span class="pre">Calculator</span></code>
+directly. Two important consequences fall out of this distinction
+rather than being assumed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">xtb_step</span></code>’s own metadata flags every method <code class="docutils literal notranslate"><span class="pre">&quot;periodic&quot;:</span> <span class="pre">False</span></code>,
+with an explicit comment that this is because the v1 subprocess
+wrapper “refuses periodic input.” This is correct for that specific
+path and does <strong>not</strong> describe a limitation of the methods
+themselves – periodic GFN2-xTB was independently validated this
+week via <code class="docutils literal notranslate"><span class="pre">tblite</span></code>’s library API directly. The metadata protocol
+therefore needs <strong>two separate periodicity flags</strong>, not one:
+<code class="docutils literal notranslate"><span class="pre">periodic_native</span></code> (this package’s subprocess path) and
+<code class="docutils literal notranslate"><span class="pre">periodic_mdi</span></code> (validated only for the specific methods actually
+run periodic via MDI).</p></li>
+<li><p>The method sets only partially overlap. <code class="docutils literal notranslate"><span class="pre">xtb_step</span></code> exposes
+GFN2-xTB, GFN1-xTB, GFN0-xTB, GFN-FF (via the <code class="docutils literal notranslate"><span class="pre">xtb</span></code> binary).
+<code class="docutils literal notranslate"><span class="pre">tblite.interface.Calculator</span></code> (what <code class="docutils literal notranslate"><span class="pre">tblite_mdi.py</span></code> wraps) only
+covers GFN1-xTB, GFN2-xTB, IPEA1-xTB. The overlap is GFN1/GFN2 only
+– GFN0-xTB and GFN-FF are not reachable via MDI at all through this
+path; IPEA1-xTB is MDI-reachable but isn’t in <code class="docutils literal notranslate"><span class="pre">xtb_step</span></code>’s native
+list.</p></li>
+</ul>
+<p><strong>Governing principle, stated explicitly</strong>: a (program, method)
+combination is only marked periodic-and-MDI-capable if it was actually
+run periodic via MDI and observed to work – not because some metadata
+flag says “periodic: True” and not by structural inference from “the
+underlying library probably supports it.” This week that means
+<strong>GFN2-xTB only</strong> – GFN1-xTB and IPEA1-xTB use the identical
+<code class="docutils literal notranslate"><span class="pre">tblite.interface.Calculator</span></code> path and are plausibly fine, but were
+never actually tested periodic, so they default to unconfirmed rather
+than assumed-working.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proposed addition to xtb_step/metadata.py, alongside the existing</span>
+<span class="c1"># metadata[&quot;computational models&quot;] dict (real, from project knowledge).</span>
+
+<span class="c1"># tblite.interface.Calculator&#39;s scope -- see tblite_mdi.py --method choices.</span>
+<span class="n">_MDI_CAPABLE_METHODS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GFN1-xTB&quot;</span><span class="p">,</span> <span class="s2">&quot;GFN2-xTB&quot;</span><span class="p">,</span> <span class="s2">&quot;IPEA1-xTB&quot;</span><span class="p">}</span>
+
+<span class="c1"># Only methods actually run periodic via MDI this week. Everything</span>
+<span class="c1"># else defaults to unconfirmed regardless of what any other flag says.</span>
+<span class="n">_MDI_PERIODIC_VALIDATED</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GFN2-xTB&quot;</span><span class="p">}</span>
+
+<span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_model_chemistry_options</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">periodic_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mdi_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">theory_class</span><span class="p">,</span> <span class="n">class_data</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;computational models&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">family</span><span class="p">,</span> <span class="n">family_data</span> <span class="ow">in</span> <span class="n">class_data</span><span class="p">[</span><span class="s2">&quot;models&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">family_data</span><span class="p">[</span><span class="s2">&quot;parameterizations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="c1"># GFN-FF is a force field, not SQM -- Paul&#39;s own example</span>
+                <span class="c1"># of why the method-type tag matters.</span>
+                <span class="n">method_type</span> <span class="o">=</span> <span class="s2">&quot;FF&quot;</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;GFN-FF&quot;</span> <span class="k">else</span> <span class="s2">&quot;SQM&quot;</span>
+
+                <span class="n">mdi_capable</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_MDI_CAPABLE_METHODS</span>
+                <span class="n">periodic_mdi</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_MDI_PERIODIC_VALIDATED</span>
+
+                <span class="k">if</span> <span class="n">periodic_only</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">periodic_mdi</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">mdi_only</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">mdi_capable</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">options</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_chemistry&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;xTB:</span><span class="si">{</span><span class="n">method_type</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">method_type</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="c1"># pull from param/docs as available</span>
+                    <span class="s2">&quot;periodic_native&quot;</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;periodic&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+                    <span class="s2">&quot;periodic_mdi&quot;</span><span class="p">:</span> <span class="n">periodic_mdi</span><span class="p">,</span>
+                    <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;elements&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;mdi_capable&quot;</span><span class="p">:</span> <span class="n">mdi_capable</span><span class="p">,</span>
+                    <span class="s2">&quot;mdi_script&quot;</span><span class="p">:</span> <span class="s2">&quot;tblite_mdi.py&quot;</span> <span class="k">if</span> <span class="n">mdi_capable</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">&quot;mdi_method_arg&quot;</span><span class="p">:</span> <span class="n">name</span> <span class="k">if</span> <span class="n">mdi_capable</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="p">}</span>
+    <span class="k">return</span> <span class="n">options</span>
+</pre></div>
+</div>
+<p><strong>Program tag: settled as</strong> <code class="docutils literal notranslate"><span class="pre">xTB:</span></code> <strong>, not</strong> <code class="docutils literal notranslate"><span class="pre">tblite:</span></code>. Per Paul:
+xTB and DFTB+ both use <code class="docutils literal notranslate"><span class="pre">tblite</span></code> under the hood for GFN-xTB methods,
+but users recognize the program names, not the underlying library –
+matching how the rest of this nomenclature already prioritizes
+user-recognizable program names. (This does mean the same
+implementation-precision question raised for B3LYP/Gaussian-vs-Psi4
+technically applies here too – <code class="docutils literal notranslate"><span class="pre">xtb_step</span></code>’s binary path and
+<code class="docutils literal notranslate"><span class="pre">tblite_mdi.py</span></code>’s library path could in principle disagree slightly
+even though both report “GFN2-xTB” – but the decision is made
+deliberately, not by oversight.)</p>
+<p><strong>Related, not solved here</strong>: <code class="docutils literal notranslate"><span class="pre">dftbplus_step</span></code> already exists and,
+per Paul, also uses <code class="docutils literal notranslate"><span class="pre">tblite</span></code> for GFN-xTB internally alongside its
+own native DFTB parameterizations. It will eventually want the same
+two-path (native vs. MDI) treatment in its own metadata. Not pursued
+in this plan.</p>
+<p><strong>Open question, raised but not decided</strong>: should <code class="docutils literal notranslate"><span class="pre">tblite_mdi.py</span></code>
+(and <code class="docutils literal notranslate"><span class="pre">mopac_mdi.py</span></code>) actually move <em>into</em> their respective step
+packages (e.g. <code class="docutils literal notranslate"><span class="pre">xtb_step/mdi_engine.py</span></code>, <code class="docutils literal notranslate"><span class="pre">mopac_step/mdi_engine.py</span></code>)
+now that <code class="docutils literal notranslate"><span class="pre">get_model_chemistry_options()</span></code> is proposed as a classmethod
+on the step class? That would put the metadata and the thing it
+describes in the same package, rather than a standalone script
+elsewhere referencing the package only by string (<code class="docutils literal notranslate"><span class="pre">&quot;mopac_mdi.py&quot;</span></code>)
+with no actual import-time connection between them.</p>
+</section>
+<section id="how-lammps-step-consumes-this">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">How <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> consumes this</a><a class="headerlink" href="#how-lammps-step-consumes-this" title="Link to this heading">#</a></h2>
+<p>Sketch of the decision logic, not yet implemented:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Read the global _model_chemistry dict (or a local override, if
+   lammps_step&#39;s own GUI is later given a &quot;use global&quot; switch).
+
+2. If type == &quot;forcefield&quot;: existing behavior, unchanged.
+
+3. If type == &quot;model_chemistry&quot;:
+     a. Parse &quot;program&quot; from the dict (already split out, no need
+        to re-parse the string).
+     b. Look up that program&#39;s step-package metadata classmethod
+        via whatever Stevedore-based registry already locates
+        plug-ins, calling get_model_chemistry_options(
+            periodic_only=(configuration.periodicity == 3),
+            mdi_only=True,
+        ) to confirm the requested method is actually valid for
+        this configuration and reachable via MDI.
+     c. Pull charge/multiplicity from the configuration (existing
+        convention) and pass them as CLI args when launching the
+        engine subprocess.
+     d. Build the &quot;elements&quot; list from the configuration&#39;s atom
+        types, in LAMMPS type order.
+     e. Emit &quot;comm_modify cutoff 2.0&quot; and &quot;fix mdi/qm [virial yes]
+        elements ...&quot; instead of pair_style/pair_coeff.
+     f. Launch &quot;{mdi_script} -mdi &#39;...&#39; --method {mdi_method_arg}
+        --charge {q} --multiplicity {mult}&quot; as the engine process
+        (TCP, given this week&#39;s validated approach), then launch
+        LAMMPS as the driver.
+</pre></div>
+</div>
+<p>This split deliberately keeps step (3.b) – “resolve a model chemistry
+to an engine launch spec” – as something any future driver step could
+call into identically, while steps (3.d)-(3.f) are LAMMPS-specific
+input-generation logic that stays inside <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code>. Whether
+(3.b) should be a shared utility function (in <code class="docutils literal notranslate"><span class="pre">seamm_util</span></code> or a new
+small package) or just duplicated logic in each driver step that needs
+it is an open implementation decision, not resolved here – with only
+one driver (LAMMPS) existing today, it’s reasonable to write it inside
+<code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> first and extract it if/when a second driver actually
+needs it, rather than build the abstraction speculatively.</p>
+</section>
+<section id="phased-plan">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Phased plan</a><a class="headerlink" href="#phased-plan" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Phase 1</strong> (this document): protocol defined; MOPAC metadata
+classmethod sketched against real existing metadata.</p></li>
+<li><p><strong>Phase 2</strong>: confirm the AM1/RM1 periodic flags and the PM6-D3H4
+periodic/MDI conflict directly against <code class="docutils literal notranslate"><span class="pre">mopac_step</span></code> source;
+land the classmethod for real.</p></li>
+<li><p><strong>Phase 3</strong>: new minimal <code class="docutils literal notranslate"><span class="pre">xtb_step</span></code> package (cookiecutter),
+hosting the metadata classmethod above plus whatever minimal
+standalone capability is wanted.</p></li>
+<li><p><strong>Phase 4</strong>: the Model Chemistry Step package itself – dialog,
+<code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code> variable, dynamic field exposure driven by
+the metadata protocol.</p></li>
+<li><p><strong>Phase 5</strong>: <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> consumption logic (decision tree
+above) – the actual MDI integration this whole effort is for.</p></li>
+<li><p><strong>Phase 6</strong> (later, optional): migrate <code class="docutils literal notranslate"><span class="pre">gaussian_step</span></code>/
+<code class="docutils literal notranslate"><span class="pre">mopac_step</span></code>/etc. to have a “use global model chemistry” GUI
+switch, per the earlier design discussion.</p></li>
+</ul>
+</section>
+<section id="open-questions-carried-into-this-plan">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Open questions carried into this plan</a><a class="headerlink" href="#open-questions-carried-into-this-plan" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>PM6-D3H4 periodic-via-mopactools: <strong>resolved</strong> – confirmed real
+limitation, correctly excluded.</p></li>
+<li><p>PM6-DH2/DH2X/D3H4X periodic reliability, and AM1/RM1’s periodic
+flags: still genuinely unconfirmed – per the governing principle,
+default to excluded from periodic+MDI use until actually tested.</p></li>
+<li><p>GFN1-xTB and IPEA1-xTB periodic reliability via MDI: structurally
+plausible (same <code class="docutils literal notranslate"><span class="pre">tblite.interface.Calculator</span></code> as the validated
+GFN2-xTB path) but not actually tested – same default-to-excluded
+treatment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xTB:</span></code> as the program tag: <strong>settled</strong> – matches user-recognizable
+program names over the underlying <code class="docutils literal notranslate"><span class="pre">tblite</span></code> library, consistent
+with how DFTB+ will eventually need the same treatment.</p></li>
+<li><p>Whether <code class="docutils literal notranslate"><span class="pre">tblite_mdi.py</span></code>/<code class="docutils literal notranslate"><span class="pre">mopac_mdi.py</span></code> should move into their
+respective step packages now that the metadata classmethod is
+proposed as living on the step class – raised, not decided.</p></li>
+<li><p>Whether (3.b) in the <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> consumption section becomes a
+shared utility now or only once a second driver step exists –
+deferred deliberately.</p></li>
+<li><p>Whether the Model Chemistry Step replaces or coexists indefinitely
+with the Forcefield Step’s existing variables during the transition
+(Paul’s stated intent is “leave Forcefield Step for compatibility
+for the time being” – the exact deprecation timeline is not fixed
+here).</p></li>
+</ul>
+</section>
+<section id="references">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">References</a><a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../2026-06-19/NOTES_qm_mdi_engines_validation.html#notes-qm-mdi-engines-validation"><span class="std std-ref">Validation Notes: tblite MDI Engine and MOPAC Python-Wrapper MDI Engine</span></a></p></li>
+<li><p><a class="reference internal" href="../2026-06-19/NOTES_mopac_mdi_validation.html#notes-mopac-mdi-validation"><span class="std std-ref">Validation Notes: MOPAC Native MDI Engine for LAMMPS</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mopac_step</span></code>’s <code class="docutils literal notranslate"><span class="pre">metadata[&quot;computational</span> <span class="pre">models&quot;]</span></code> (project
+knowledge)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mopac_mdi.py</span></code>, <code class="docutils literal notranslate"><span class="pre">tblite_mdi.py</span></code> (this week’s validated engines)</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="NOTES_A.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Phase A – MOPAC-side MDI engine launch contract and port strategy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-chemistry-dictionary">The <code class="docutils literal notranslate"><span class="pre">_model_chemistry</span></code> dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-metadata-protocol">The metadata protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-implementation-mopac">Worked implementation: MOPAC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-implementation-xtb">Worked implementation: xTB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-lammps-step-consumes-this">How <code class="docutils literal notranslate"><span class="pre">lammps_step</span></code> consumes this</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phased-plan">Phased plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions-carried-into-this-plan">Open questions carried into this plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/developer_guide/campaigns/2026-06-22/PLAN_model_chemistry_step.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

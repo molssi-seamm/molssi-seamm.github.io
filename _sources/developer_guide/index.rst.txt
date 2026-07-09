@@ -25,7 +25,9 @@ The following sections will help you get started.
     software_ecosystem/index
     plug-ins
     forcefields/index
+    qm_md_over_mdi
     new-plug-in/index
     tips-and-tricks/index
     tutorials/index
     core_modules
+    campaigns/index

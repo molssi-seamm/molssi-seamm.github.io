@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Model Chemistry Naming Standard &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'background/model_chemistry_naming';</script>
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview of Forcefields" href="forcefields/overview.html" />
+    <link rel="prev" title="Systems: Molecules, Crystal, Fluids and all that" href="system.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../developer_guide/index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../developer_guide/index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="why_seamm/index.html">Why SEAMM?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="why_seamm/user_experience.html">User Experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why_seamm/productivity.html">Productivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why_seamm/workflow_features.html">Workflow Features</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">Systems: Molecules, Crystal, Fluids and all that</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model Chemistry Naming Standard</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="forcefields/overview.html">Overview of Forcefields</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="forcefields/functional_form.html">Functional Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forcefields/parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forcefields/atom_types.html">Atom Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forcefields/types_of_forcefields.html">Types of Forcefields</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Background Information</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Model Chemistry Naming Standard</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="model-chemistry-naming-standard">
+<span id="model-chemistry-naming"></span><h1>Model Chemistry Naming Standard<a class="headerlink" href="#model-chemistry-naming-standard" title="Link to this heading">#</a></h1>
+<p>SEAMM labels every calculated result with a <em>model chemistry</em> string: a single,
+parseable identifier for <strong>what was done</strong> (the task), <strong>at what level of
+theory</strong> (the potential energy surface), and <strong>by which code(s)</strong> (provenance).</p>
+<p>The central design rule is that <strong>comparability lives in the task and level, not
+in the program</strong>. Two results with the same task and level of theory are
+comparable regardless of which code produced them. When two codes’ nominally
+identical method genuinely differ (the classic B3LYP case), that is a <em>method</em>
+difference and must be expressed by giving the methods distinct names – not by
+leaning on the program token, which the comparability key discards.</p>
+<section id="the-three-axes">
+<h2>The three axes<a class="headerlink" href="#the-three-axes" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>task</dt><dd><p>The operation performed: single point, optimization, dynamics, frequencies,
+… <strong>Always present and explicit</strong> – SEAMM does not use implicit-task
+conventions, because implicit fields cause problems.</p>
+</dd>
+<dt>level</dt><dd><p>The potential energy surface: <code class="docutils literal notranslate"><span class="pre">type&#64;method</span></code> plus, where applicable,
+<code class="docutils literal notranslate"><span class="pre">/basis</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;cutoff</span></code>. This is the “level of theory.”</p>
+</dd>
+<dt>program(s)</dt><dd><p>Provenance. The <strong>driver</strong> is the code performing the task. When the PES is
+delegated to another code over MDI, the <strong>owner</strong> is the code that evaluates
+the energy and forces. Programs are stripped to obtain the comparability key.</p>
+</dd>
+</dl>
+</section>
+<section id="grammar">
+<h2>Grammar<a class="headerlink" href="#grammar" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model_chemistry</span> <span class="o">=</span> <span class="n">unit</span> <span class="p">[</span> <span class="s2">&quot;//&quot;</span> <span class="n">unit</span> <span class="p">]</span>
+<span class="n">unit</span>            <span class="o">=</span> <span class="n">driver</span> <span class="s2">&quot;:&quot;</span> <span class="n">task</span> <span class="s2">&quot;|&quot;</span> <span class="n">level</span>
+<span class="n">level</span>           <span class="o">=</span> <span class="p">[</span> <span class="n">owner</span> <span class="s2">&quot;:&quot;</span> <span class="p">]</span> <span class="n">theory</span>
+<span class="n">theory</span>          <span class="o">=</span> <span class="nb">type</span> <span class="s2">&quot;@&quot;</span> <span class="n">method</span> <span class="p">[</span> <span class="s2">&quot;/&quot;</span> <span class="n">basis</span> <span class="p">[</span> <span class="s2">&quot;@&quot;</span> <span class="n">cutoff</span> <span class="p">]</span> <span class="p">]</span>
+<span class="n">driver</span>          <span class="o">=</span> <span class="n">program</span>          <span class="p">;</span> <span class="n">code</span> <span class="n">performing</span> <span class="n">the</span> <span class="n">task</span>
+<span class="n">owner</span>           <span class="o">=</span> <span class="n">program</span>          <span class="p">;</span> <span class="n">code</span> <span class="n">evaluating</span> <span class="n">the</span> <span class="n">PES</span> <span class="p">(</span><span class="n">only</span> <span class="k">if</span> <span class="o">!=</span> <span class="n">driver</span><span class="p">)</span>
+<span class="n">program</span>         <span class="o">=</span> <span class="n">token</span>            <span class="p">;</span> <span class="n">LAMMPS</span><span class="p">,</span> <span class="n">MOPAC</span><span class="p">,</span> <span class="n">xTB</span><span class="p">,</span> <span class="n">VASP</span><span class="p">,</span> <span class="n">Psi4</span><span class="p">,</span> <span class="o">...</span>
+<span class="n">task</span>            <span class="o">=</span> <span class="n">token</span>            <span class="p">;</span> <span class="n">SP</span> <span class="o">|</span> <span class="n">OPT</span> <span class="o">|</span> <span class="n">MD</span> <span class="o">|</span> <span class="n">FREQ</span> <span class="o">|</span> <span class="o">...</span>
+<span class="nb">type</span>            <span class="o">=</span> <span class="n">token</span>            <span class="p">;</span> <span class="n">SQM</span> <span class="o">|</span> <span class="n">DFT</span> <span class="o">|</span> <span class="n">QC</span> <span class="o">|</span> <span class="n">VFF</span> <span class="o">|</span> <span class="n">IP</span> <span class="o">|</span> <span class="n">rxnFF</span> <span class="o">|</span> <span class="n">ML</span> <span class="o">|</span> <span class="n">FF</span>
+<span class="n">method</span>          <span class="o">=</span> <span class="n">token</span>
+<span class="n">basis</span>           <span class="o">=</span> <span class="n">token</span>
+<span class="n">cutoff</span>          <span class="o">=</span> <span class="n">token</span>
+<span class="n">token</span>           <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">CHAR</span><span class="p">,</span> <span class="n">excluding</span> <span class="n">the</span> <span class="n">reserved</span> <span class="n">characters</span> <span class="p">:</span> <span class="o">@</span> <span class="o">/</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>Reserved characters are <code class="docutils literal notranslate"><span class="pre">:</span></code> <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> <code class="docutils literal notranslate"><span class="pre">/</span></code> <code class="docutils literal notranslate"><span class="pre">|</span></code> (and <code class="docutils literal notranslate"><span class="pre">//</span></code> for the compound).
+A <code class="docutils literal notranslate"><span class="pre">cutoff</span></code> requires a <code class="docutils literal notranslate"><span class="pre">basis</span></code>; an <code class="docutils literal notranslate"><span class="pre">owner</span></code> is written only when it differs
+from the <code class="docutils literal notranslate"><span class="pre">driver</span></code>.</p>
+<p>Read a unit as: the <em>driver</em> performs the <em>task</em>, producing results on the
+<em>level</em> PES; if an <em>owner</em> is given, the driver delegates the PES to it (via
+MDI).</p>
+</section>
+<section id="task-vocabulary">
+<h2>Task vocabulary<a class="headerlink" href="#task-vocabulary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 19.4%" />
+<col style="width: 80.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SP</span></code></p></td>
+<td><p>Single point – energy / forces at a fixed geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OPT</span></code></p></td>
+<td><p>Geometry optimization (energy minimization). Always <code class="docutils literal notranslate"><span class="pre">OPT</span></code>, never <code class="docutils literal notranslate"><span class="pre">MIN</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MD</span></code></p></td>
+<td><p>Molecular dynamics</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FREQ</span></code></p></td>
+<td><p>Vibrational frequencies / thermochemistry</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Further tasks (transition-state search, NEB, Monte Carlo) may be added as
+needed.</p>
+</section>
+<section id="level-the-type-vocabulary">
+<h2>Level: the type vocabulary<a class="headerlink" href="#level-the-type-vocabulary" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> names the method <em>family</em> and drives the GUI’s Type -&gt; Method
+cascade.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 14.7%" />
+<col style="width: 67.6%" />
+<col style="width: 17.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Meaning / examples</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SQM</span></code></p></td>
+<td><p>Semiempirical QM: PM6, PM7, AM1, RM1, GFN2-xTB</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DFT</span></code></p></td>
+<td><p>Kohn-Sham DFT: PBE, B3LYP, r2SCAN</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">QC</span></code></p></td>
+<td><p>Correlated / <em>ab initio</em> wavefunction: HF, MP2, CCSD(T)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VFF</span></code></p></td>
+<td><p>Additive / valence molecular force fields: OPLS-AA, AMBER, CHARMM, GAFF</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IP</span></code></p></td>
+<td><p>Interatomic potentials: EAM, MEAM, Tersoff (the OpenKIM world)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rxnFF</span></code></p></td>
+<td><p>Reactive force fields: ReaxFF, COMB</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ML</span></code></p></td>
+<td><p>Machine-learned potentials: MACE, ANI, NequIP</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FF</span></code></p></td>
+<td><p>Force fields not covered above</p></td>
+<td><p>catch-all fallback</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The force-field families are kept separate because their domains of
+applicability are disjoint – an EAM value is not comparable to an OPLS-AA value
+– and the split keeps the method cascade tractable. <code class="docutils literal notranslate"><span class="pre">FF</span></code> is only the
+fallback.</p>
+</section>
+<section id="programs-driver-and-owner">
+<h2>Programs: driver and owner<a class="headerlink" href="#programs-driver-and-owner" title="Link to this heading">#</a></h2>
+<p>The <strong>driver</strong> (immediately left of <code class="docutils literal notranslate"><span class="pre">:</span></code> <code class="docutils literal notranslate"><span class="pre">task</span></code>) is always present. The
+<strong>owner</strong> appears on the level side only when the driver delegates the PES to a
+different code over MDI:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|VFF&#64;OPLS-AA</span></code> – LAMMPS runs MD and evaluates OPLS-AA itself
+(driver == owner, so the owner is omitted).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|MOPAC:SQM&#64;PM6-ORG</span></code> – LAMMPS runs MD while MOPAC evaluates the
+PM6-ORG forces over MDI (driver LAMMPS, owner MOPAC).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MOPAC:OPT|SQM&#64;PM6-ORG</span></code> – MOPAC optimizes at PM6-ORG (driver == owner).</p></li>
+</ul>
+<p>This is why <code class="docutils literal notranslate"><span class="pre">LAMMPS:SQM&#64;PM6-ORG</span></code> is wrong: LAMMPS evaluates none of the
+semiempirical method, so it cannot be the owner – MOPAC must be named on the
+level side.</p>
+</section>
+<section id="comparability-key">
+<h2>Comparability key<a class="headerlink" href="#comparability-key" title="Link to this heading">#</a></h2>
+<p>Stripping <code class="docutils literal notranslate"><span class="pre">driver:</span></code> and <code class="docutils literal notranslate"><span class="pre">owner:</span></code> from every unit yields the <strong>program-free
+comparability key</strong>, <code class="docutils literal notranslate"><span class="pre">task|theory</span></code> (or <code class="docutils literal notranslate"><span class="pre">task|theory//task|theory</span></code> for a
+compound):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 52.6%" />
+<col style="width: 47.4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>full string</p></th>
+<th class="head"><p>comparability key</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MOPAC:OPT|SQM&#64;PM6-ORG</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OPT|SQM&#64;PM6-ORG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|MOPAC:SQM&#64;PM6-ORG</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MD|SQM&#64;PM6-ORG</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|VFF&#64;OPLS-AA</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MD|VFF&#64;OPLS-AA</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VASP:OPT|DFT&#64;PBE/PAW&#64;500eV</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OPT|DFT&#64;PBE/PAW&#64;500eV</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A properties database compares results by this key. <strong>The B3LYP lesson:</strong> if two
+codes’ “B3LYP” differ, encode the difference in the <em>method name</em> (e.g.
+<code class="docutils literal notranslate"><span class="pre">B3LYP</span></code> vs <code class="docutils literal notranslate"><span class="pre">B3LYP(VWN5)</span></code>) so the keys differ honestly. Never rely on the
+program token to distinguish them – the key discards it.</p>
+</section>
+<section id="compound-specifications">
+<h2>Compound specifications (<code class="docutils literal notranslate"><span class="pre">//</span></code>)<a class="headerlink" href="#compound-specifications" title="Link to this heading">#</a></h2>
+<p>Optionally, <code class="docutils literal notranslate"><span class="pre">//</span></code> joins an <strong>energy</strong> unit to the <strong>geometry</strong> unit it was
+evaluated at (the Pople convention), each side a full unit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Psi4</span><span class="p">:</span><span class="n">SP</span><span class="o">|</span><span class="n">QC</span><span class="nd">@CCSD</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">cc</span><span class="o">-</span><span class="n">pVTZ</span><span class="o">//</span><span class="n">Psi4</span><span class="p">:</span><span class="n">OPT</span><span class="o">|</span><span class="n">DFT</span><span class="nd">@B3LYP</span><span class="o">/</span><span class="n">def2</span><span class="o">-</span><span class="n">SVP</span>
+</pre></div>
+</div>
+<p>= a CCSD(T)/cc-pVTZ single point on a B3LYP/def2-SVP-optimized geometry. <code class="docutils literal notranslate"><span class="pre">//</span></code>
+has the lowest precedence, so split on it before the single <code class="docutils literal notranslate"><span class="pre">/</span></code> (basis).
+Within SEAMM the database also tracks geometry lineage through configuration
+linkage, so <code class="docutils literal notranslate"><span class="pre">//</span></code> is mainly for labeling composite single-point methods
+compactly.</p>
+</section>
+<section id="what-a-program-step-advertises-vs-what-a-consumer-composes">
+<h2>What a program step advertises vs. what a consumer composes<a class="headerlink" href="#what-a-program-step-advertises-vs-what-a-consumer-composes" title="Link to this heading">#</a></h2>
+<p>A program step (via <code class="docutils literal notranslate"><span class="pre">get_model_chemistry_options</span></code>) advertises <strong>level specs</strong>
+only – <code class="docutils literal notranslate"><span class="pre">[owner:]type&#64;method[/basis[&#64;cutoff]]</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">MOPAC:SQM&#64;PM6-ORG</span></code>) –
+because a program knows its levels of theory but not the task. The Model
+Chemistry step stores the selected level. The <strong>consuming</strong> step supplies the
+<code class="docutils literal notranslate"><span class="pre">driver</span></code> and <code class="docutils literal notranslate"><span class="pre">task</span></code> and composes the full string for the result label (e.g.
+the LAMMPS step composes <code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|MOPAC:SQM&#64;PM6-ORG</span></code>).</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 32.7%" />
+<col style="width: 11.2%" />
+<col style="width: 8.2%" />
+<col style="width: 10.2%" />
+<col style="width: 8.2%" />
+<col style="width: 16.3%" />
+<col style="width: 13.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>String</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Task</p></th>
+<th class="head"><p>Owner</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>Basis / cutoff</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MOPAC:OPT|SQM&#64;PM6-ORG</span></code></p></td>
+<td><p>MOPAC</p></td>
+<td><p>OPT</p></td>
+<td><p>MOPAC</p></td>
+<td><p>SQM</p></td>
+<td><p>PM6-ORG</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MOPAC:SP|SQM&#64;PM6-ORG</span></code></p></td>
+<td><p>MOPAC</p></td>
+<td><p>SP</p></td>
+<td><p>MOPAC</p></td>
+<td><p>SQM</p></td>
+<td><p>PM6-ORG</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|VFF&#64;OPLS-AA</span></code></p></td>
+<td><p>LAMMPS</p></td>
+<td><p>MD</p></td>
+<td><p>LAMMPS</p></td>
+<td><p>VFF</p></td>
+<td><p>OPLS-AA</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:OPT|VFF&#64;OPLS-AA</span></code></p></td>
+<td><p>LAMMPS</p></td>
+<td><p>OPT</p></td>
+<td><p>LAMMPS</p></td>
+<td><p>VFF</p></td>
+<td><p>OPLS-AA</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|MOPAC:SQM&#64;PM6-ORG</span></code></p></td>
+<td><p>LAMMPS</p></td>
+<td><p>MD</p></td>
+<td><p>MOPAC</p></td>
+<td><p>SQM</p></td>
+<td><p>PM6-ORG</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|IP&#64;EAM</span></code></p></td>
+<td><p>LAMMPS</p></td>
+<td><p>MD</p></td>
+<td><p>LAMMPS</p></td>
+<td><p>IP</p></td>
+<td><p>EAM</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|rxnFF&#64;ReaxFF</span></code></p></td>
+<td><p>LAMMPS</p></td>
+<td><p>MD</p></td>
+<td><p>LAMMPS</p></td>
+<td><p>rxnFF</p></td>
+<td><p>ReaxFF</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VASP:OPT|DFT&#64;PBE/PAW&#64;500eV</span></code></p></td>
+<td><p>VASP</p></td>
+<td><p>OPT</p></td>
+<td><p>VASP</p></td>
+<td><p>DFT</p></td>
+<td><p>PBE</p></td>
+<td><p>PAW &#64; 500eV</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="parsing">
+<h2>Parsing<a class="headerlink" href="#parsing" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Split on <code class="docutils literal notranslate"><span class="pre">//</span></code> -&gt; the energy unit and an optional geometry unit.</p></li>
+<li><p>For each unit, split on <code class="docutils literal notranslate"><span class="pre">|</span></code> -&gt; the task part (<code class="docutils literal notranslate"><span class="pre">driver:task</span></code>) and the
+level part. Split the task part on <code class="docutils literal notranslate"><span class="pre">:</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">driver</span></code> and <code class="docutils literal notranslate"><span class="pre">task</span></code>.</p></li>
+<li><p>In the level part an <code class="docutils literal notranslate"><span class="pre">owner</span></code> is present iff a <code class="docutils literal notranslate"><span class="pre">:</span></code> precedes the theory;
+split it off. Then parse the theory: split on <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">type</span></code> and the
+method cluster; split on <code class="docutils literal notranslate"><span class="pre">/</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">method</span></code> and the basis cluster; split on
+<code class="docutils literal notranslate"><span class="pre">&#64;</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">basis</span></code> and <code class="docutils literal notranslate"><span class="pre">cutoff</span></code>.</p></li>
+<li><p>The comparability key drops <code class="docutils literal notranslate"><span class="pre">driver</span></code> and <code class="docutils literal notranslate"><span class="pre">owner</span></code> from each unit.</p></li>
+</ol>
+<p>Reference implementation: <code class="docutils literal notranslate"><span class="pre">model_chemistry_step/grammar.py</span></code>
+(<code class="docutils literal notranslate"><span class="pre">parse_model_chemistry</span></code>, <code class="docutils literal notranslate"><span class="pre">parse_level</span></code>, <code class="docutils literal notranslate"><span class="pre">compose_model_chemistry</span></code>,
+<code class="docutils literal notranslate"><span class="pre">comparability_key</span></code>).</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="system.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Systems: Molecules, Crystal, Fluids and all that</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="forcefields/overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Overview of Forcefields</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-axes">The three axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammar">Grammar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-vocabulary">Task vocabulary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-the-type-vocabulary">Level: the type vocabulary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-driver-and-owner">Programs: driver and owner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparability-key">Comparability key</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-specifications">Compound specifications (<code class="docutils literal notranslate"><span class="pre">//</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-a-program-step-advertises-vs-what-a-consumer-composes">What a program step advertises vs. what a consumer composes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing">Parsing</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/background/model_chemistry_naming.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
