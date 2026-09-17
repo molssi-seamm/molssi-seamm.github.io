@@ -743,9 +743,9 @@ MDI_Init splits it into sub-communicators.</p>
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">Launch command</a><a class="headerlink" href="#launch-command" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>--mca<span class="w"> </span>mpi_yield_when_idle<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>mopac<span class="w"> </span>mopac.mop<span class="w"> </span><span class="se">\</span>
-<span class="w">         </span>-mdi<span class="w"> </span><span class="s2">&quot;-role ENGINE -name MOPAC -method MPI&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>-mdi<span class="w"> </span><span class="s2">"-role ENGINE -name MOPAC -method MPI"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>:<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>lmp<span class="w"> </span><span class="se">\</span>
-<span class="w">         </span>-mdi<span class="w"> </span><span class="s2">&quot;-role DRIVER -name LAMMPS -method MPI&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>-mdi<span class="w"> </span><span class="s2">"-role DRIVER -name LAMMPS -method MPI"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>-in<span class="w"> </span>input.dat
 </pre></div>
 </div>
@@ -845,9 +845,9 @@ the information needed to build the MDI launch.</p>
 the LAMMPS step needs:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclasses</span><span class="o">.</span><span class="n">dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">MDIEngineSpec</span><span class="p">:</span>
-    <span class="n">engine_name</span><span class="p">:</span> <span class="nb">str</span>          <span class="c1"># e.g. &quot;MOPAC&quot; (the MDI engine name)</span>
-    <span class="n">executable</span><span class="p">:</span> <span class="nb">str</span>           <span class="c1"># e.g. &quot;/path/to/mopac&quot;</span>
-    <span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span>           <span class="c1"># e.g. &quot;mopac.mop&quot;</span>
+    <span class="n">engine_name</span><span class="p">:</span> <span class="nb">str</span>          <span class="c1"># e.g. "MOPAC" (the MDI engine name)</span>
+    <span class="n">executable</span><span class="p">:</span> <span class="nb">str</span>           <span class="c1"># e.g. "/path/to/mopac"</span>
+    <span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span>           <span class="c1"># e.g. "mopac.mop"</span>
     <span class="n">input_content</span><span class="p">:</span> <span class="nb">str</span>        <span class="c1"># full content of the input file</span>
     <span class="n">extra_args</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>     <span class="c1"># any extra CLI args before -mdi flag</span>
     <span class="n">elements</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>       <span class="c1"># ordered element list for fix mdi/qm</span>
@@ -930,9 +930,9 @@ no pair_style means zero default pairwise cutoff).</p></li>
 when launching.  For QM/MD, the MDI launch command takes the form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="o">--</span><span class="n">mca</span> <span class="n">mpi_yield_when_idle</span> <span class="mi">1</span> \
     <span class="o">-</span><span class="n">np</span> <span class="mi">1</span> <span class="p">{</span><span class="n">QM_EXE</span><span class="p">}</span> <span class="p">{</span><span class="n">QM_INPUT</span><span class="p">}</span> \
-           <span class="o">-</span><span class="n">mdi</span> <span class="s2">&quot;-role ENGINE -name </span><span class="si">{ENGINE_NAME}</span><span class="s2"> -method MPI&quot;</span> \
+           <span class="o">-</span><span class="n">mdi</span> <span class="s2">"-role ENGINE -name </span><span class="si">{ENGINE_NAME}</span><span class="s2"> -method MPI"</span> \
     <span class="p">:</span> <span class="o">-</span><span class="n">np</span> <span class="mi">1</span> <span class="n">lmp</span> \
-           <span class="o">-</span><span class="n">mdi</span> <span class="s2">&quot;-role DRIVER -name LAMMPS -method MPI&quot;</span>
+           <span class="o">-</span><span class="n">mdi</span> <span class="s2">"-role DRIVER -name LAMMPS -method MPI"</span>
 </pre></div>
 </div>
 <p>The QM-specific parts (<code class="docutils literal notranslate"><span class="pre">{QM_EXE}</span></code>, <code class="docutils literal notranslate"><span class="pre">{QM_INPUT}</span></code>, <code class="docutils literal notranslate"><span class="pre">{ENGINE_NAME}</span></code>) are
@@ -1102,8 +1102,8 @@ expects the same via <code class="docutils literal notranslate"><span class="pre
 documentation at <a class="reference external" href="https://xtb-docs.readthedocs.io">https://xtb-docs.readthedocs.io</a> for <code class="docutils literal notranslate"><span class="pre">--mdi</span></code> flag
 support).  If native MDI is available, the pattern is identical to MOPAC:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>--mca<span class="w"> </span>mpi_yield_when_idle<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>xtb<span class="w"> </span>xtb.inp<span class="w"> </span>--mdi<span class="w"> </span><span class="s2">&quot;-role ENGINE -name XTB -method MPI&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>:<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>lmp<span class="w"> </span>-mdi<span class="w"> </span><span class="s2">&quot;-role DRIVER -name LAMMPS -method MPI&quot;</span><span class="w"> </span>-in<span class="w"> </span>input.dat
+<span class="w">  </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>xtb<span class="w"> </span>xtb.inp<span class="w"> </span>--mdi<span class="w"> </span><span class="s2">"-role ENGINE -name XTB -method MPI"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>:<span class="w"> </span>-np<span class="w"> </span><span class="m">1</span><span class="w"> </span>lmp<span class="w"> </span>-mdi<span class="w"> </span><span class="s2">"-role DRIVER -name LAMMPS -method MPI"</span><span class="w"> </span>-in<span class="w"> </span>input.dat
 </pre></div>
 </div>
 <p><strong>Deliverables</strong></p>

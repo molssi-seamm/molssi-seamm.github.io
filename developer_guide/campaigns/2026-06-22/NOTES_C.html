@@ -704,11 +704,11 @@ was built) – no standalone smoke test needed.</p></li>
 <p>From the <code class="docutils literal notranslate"><span class="pre">mopac_mdi.py</span></code> docstring (Paul ran this manually; it works):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># engine</span>
 <span class="n">python</span> <span class="n">mopac_mdi</span><span class="o">.</span><span class="n">py</span> \
-  <span class="o">-</span><span class="n">mdi</span> <span class="s2">&quot;-role ENGINE -name MOPAC -method TCP -port 8021 -hostname localhost&quot;</span> \
+  <span class="o">-</span><span class="n">mdi</span> <span class="s2">"-role ENGINE -name MOPAC -method TCP -port 8021 -hostname localhost"</span> \
   <span class="o">--</span><span class="n">method</span> <span class="n">PM6</span><span class="o">-</span><span class="n">ORG</span> <span class="o">--</span><span class="n">charge</span> <span class="mi">0</span> <span class="o">--</span><span class="n">multiplicity</span> <span class="mi">1</span>
 <span class="c1"># driver</span>
 <span class="n">mpirun</span> <span class="o">-</span><span class="n">np</span> <span class="mi">1</span> <span class="n">lmp</span> <span class="o">-</span><span class="ow">in</span> <span class="ow">in</span><span class="o">.</span><span class="n">mopac_nvt</span> \
-  <span class="o">-</span><span class="n">mdi</span> <span class="s2">&quot;-role DRIVER -name LAMMPS -method TCP -port 8021&quot;</span>
+  <span class="o">-</span><span class="n">mdi</span> <span class="s2">"-role DRIVER -name LAMMPS -method TCP -port 8021"</span>
 </pre></div>
 </div>
 <p>Explicit matching <code class="docutils literal notranslate"><span class="pre">-port</span></code> on both sides (no port-0 negotiation). Charge and
@@ -726,8 +726,8 @@ authoritative.</p>
 <code class="docutils literal notranslate"><span class="pre">mdi_method_arg</span></code>, …</p></li>
 <li><p>Phase A engine builder (verified in <code class="docutils literal notranslate"><span class="pre">mopac_step/mopac_step.py:222</span></code>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MOPACStep</span><span class="o">.</span><span class="n">get_mdi_engine_command</span><span class="p">(</span>
-    <span class="n">executor</span><span class="p">,</span> <span class="n">seamm_options</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-    <span class="n">charge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">engine_name</span><span class="o">=</span><span class="s2">&quot;MOPAC&quot;</span><span class="p">,</span> <span class="n">extra_args</span><span class="o">=</span><span class="kc">None</span>
+    <span class="n">executor</span><span class="p">,</span> <span class="n">seamm_options</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">hostname</span><span class="o">=</span><span class="s2">"localhost"</span><span class="p">,</span>
+    <span class="n">charge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">engine_name</span><span class="o">=</span><span class="s2">"MOPAC"</span><span class="p">,</span> <span class="n">extra_args</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argv</span>   <span class="c1"># render with shlex.join; conda-only (else NotImplementedError)</span>
 </pre></div>
 </div>
@@ -763,14 +763,14 @@ engine argv (mock the engine step); confirm classical-FF runs are unchanged.</p>
 set -e
 &lt;engine argv via shlex.join&gt; &amp;        # conda run -n seamm-mopac python mopac_mdi.py ...
 ENGINE_PID=$!
-mpirun -np 1 lmp -mdi &quot;-role DRIVER -name LAMMPS -method TCP -port &lt;PORT&gt;&quot; \
+mpirun -np 1 lmp -mdi "-role DRIVER -name LAMMPS -method TCP -port &lt;PORT&gt;" \
   -in input.dat &gt; stdout.txt 2&gt;&amp;1
 wait $ENGINE_PID
 </pre></div>
 </div>
 <p>Free-port helper:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">_free_tcp_port</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_free_tcp_port</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="s2">"localhost"</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">s</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="n">hostname</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">getsockname</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>

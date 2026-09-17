@@ -648,30 +648,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 optimize the structure or not. in <cite>pyscf_parameters.py</cite> replace the parameters section
 with this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;basis_set&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;321g&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-            <span class="s2">&quot;sto3g&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;321g&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;321g*&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;631g&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;631g*&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;631g**&quot;</span><span class="p">,</span>
+    <span class="s2">"basis_set"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"321g"</span><span class="p">,</span>
+        <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+        <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s2">"sto3g"</span><span class="p">,</span>
+            <span class="s2">"321g"</span><span class="p">,</span>
+            <span class="s2">"321g*"</span><span class="p">,</span>
+            <span class="s2">"631g"</span><span class="p">,</span>
+            <span class="s2">"631g*"</span><span class="p">,</span>
+            <span class="s2">"631g**"</span><span class="p">,</span>
         <span class="p">),</span>
-        <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Basis set:&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The basis set for the calculation.&quot;</span><span class="p">,</span>
+        <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Basis set:"</span><span class="p">,</span>
+        <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The basis set for the calculation."</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;optimize&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Optimize structure:&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to optimize the structure.&quot;</span><span class="p">,</span>
+    <span class="s2">"optimize"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"yes"</span><span class="p">,</span>
+        <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+        <span class="s2">"default_units"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+        <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Optimize structure:"</span><span class="p">,</span>
+        <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether to optimize the structure."</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
@@ -681,7 +681,7 @@ the parameters as a table. With two parameters that is fine.</p>
 <p>The only other thing that we need to change is <cite>pyscf.py</cite> to actually run PySCF when
 called. Since we are going to run PySCF directly in the plugin, you need to install
 PySCF and the optimizer itself in the <strong>seamm-dev</strong> environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s1">&#39;pyscf[geomopt]&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s1">'pyscf[geomopt]'</span>
 </pre></div>
 </div>
 <p>installs what we need.</p>
@@ -728,42 +728,42 @@ remove:</p>
         <span class="n">atoms</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">symbol</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)])</span>
 
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
-<span class="n">mol</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">directory</span> <span class="o">/</span> <span class="s2">&quot;PySCF.out&quot;</span><span class="p">)</span>
+<span class="n">mol</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">directory</span> <span class="o">/</span> <span class="s2">"PySCF.out"</span><span class="p">)</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="n">atoms</span>
-<span class="n">mol</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;basis_set&quot;</span><span class="p">]</span>
+<span class="n">mol</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">"basis_set"</span><span class="p">]</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">symmetry</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;The molecule has </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">topgroup</span><span class="si">}</span><span class="s2"> symmetry, the calculation will use &quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="si">}</span><span class="s2"> symmetry.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span>
+    <span class="sa">f</span><span class="s2">"The molecule has </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">topgroup</span><span class="si">}</span><span class="s2"> symmetry, the calculation will use "</span>
+    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="si">}</span><span class="s2"> symmetry.</span><span class="se">\n\n</span><span class="s2">"</span>
 <span class="p">)</span>
 
-<span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;optimize&quot;</span><span class="p">]:</span>
+<span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="s2">"optimize"</span><span class="p">]:</span>
     <span class="c1"># Create callback to run at every geometry opt. iteration</span>
     <span class="n">energies</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">cb</span><span class="p">(</span><span class="n">envs</span><span class="p">):</span>
-        <span class="n">mc</span> <span class="o">=</span> <span class="n">envs</span><span class="p">[</span><span class="s2">&quot;g_scanner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">base</span>
+        <span class="n">mc</span> <span class="o">=</span> <span class="n">envs</span><span class="p">[</span><span class="s2">"g_scanner"</span><span class="p">]</span><span class="o">.</span><span class="n">base</span>
         <span class="n">energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">e_tot</span><span class="p">)</span>
 
     <span class="n">opt</span> <span class="o">=</span> <span class="n">pyberny</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">cb</span><span class="p">)</span>
     <span class="n">E</span> <span class="o">=</span> <span class="n">energies</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;With the </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;basis_set&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> basis set, the optimization converged in &quot;</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span><span class="si">}</span><span class="s2"> steps to an energy of </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> E_h&quot;</span>
+        <span class="sa">f</span><span class="s2">"With the </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">'basis_set'</span><span class="p">]</span><span class="si">}</span><span class="s2"> basis set, the optimization converged in "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span><span class="si">}</span><span class="s2"> steps to an energy of </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> E_h"</span>
     <span class="p">)</span>
     <span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">set_coordinates</span><span class="p">(</span><span class="n">opt</span><span class="o">.</span><span class="n">atom_coords</span><span class="p">())</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
     <span class="n">E</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
     <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;The SCF energy of the structure using the </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;basis_set&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-        <span class="sa">f</span><span class="s2">&quot;basis set is </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> E_h&quot;</span>
+        <span class="sa">f</span><span class="s2">"The SCF energy of the structure using the </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">'basis_set'</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"basis set is </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> E_h"</span>
     <span class="p">)</span>
 
-<span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="s2">&quot; &quot;</span><span class="p">))</span>
+<span class="n">printer</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="s2">" "</span><span class="p">))</span>
 
 <span class="c1"># Analyze the results    &lt;&lt;&lt; this is in the file already</span>
 <span class="c1"># self.analyze()         &lt;&lt;&lt; this is in the file already, but comment it out</span>

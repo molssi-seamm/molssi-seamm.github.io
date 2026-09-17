@@ -670,8 +670,8 @@ it as a guide for both the JSON file and subdirectory.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cookiecutter.json</span></code> should look something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;step&quot;</span><span class="p">:</span> <span class="s2">&quot;Name of your code or step, e.g. MOPAC or Polymer Builder&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;repo_name&quot;</span><span class="p">:</span> <span class="s2">&quot;{{ cookiecutter.step.lower().replace(&#39; &#39;, &#39;_&#39;).replace(&#39;-&#39;, &#39;_&#39;) }}_step&quot;</span>
+    <span class="s2">"step"</span><span class="p">:</span> <span class="s2">"Name of your code or step, e.g. MOPAC or Polymer Builder"</span><span class="p">,</span>
+    <span class="s2">"repo_name"</span><span class="p">:</span> <span class="s2">"{{ cookiecutter.step.lower().replace(' ', '_').replace('-', '_') }}_step"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -689,7 +689,7 @@ will be replaced by the value of the variable.</p>
 and transformed as it goes. In our example, there is a file
 <code class="docutils literal notranslate"><span class="pre">docs/index.rst</span></code> that looks like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Welcome</span> <span class="n">to</span> <span class="n">the</span> <span class="n">documentation</span> <span class="k">for</span> <span class="n">the</span> <span class="p">{{</span> <span class="n">cookiecutter</span><span class="o">.</span><span class="n">step</span> <span class="p">}}</span> <span class="n">plug</span><span class="o">-</span><span class="ow">in</span>
-<span class="p">{{</span> <span class="p">(</span><span class="s1">&#39;Welcome to the documentation for the &#39;</span> <span class="o">+</span> <span class="n">cookiecutter</span><span class="o">.</span><span class="n">step</span> <span class="o">+</span> <span class="s1">&#39; plug-in&#39;</span><span class="p">)</span><span class="o">|</span><span class="n">length</span> <span class="o">*</span> <span class="s1">&#39;=&#39;</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="p">(</span><span class="s1">'Welcome to the documentation for the '</span> <span class="o">+</span> <span class="n">cookiecutter</span><span class="o">.</span><span class="n">step</span> <span class="o">+</span> <span class="s1">' plug-in'</span><span class="p">)</span><span class="o">|</span><span class="n">length</span> <span class="o">*</span> <span class="s1">'='</span> <span class="p">}}</span>
 
 <span class="n">Contents</span><span class="p">:</span>
 

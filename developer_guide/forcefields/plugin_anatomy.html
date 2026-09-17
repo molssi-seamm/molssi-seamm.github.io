@@ -643,8 +643,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 however, the namespace is different – <cite>org.molssi.seamm.forcefields</cite> – as in this
 example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-    <span class="s1">&#39;org.molssi.seamm.forcefields&#39;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s1">&#39;GAFF = seamm_antechamber:GAFFPlugin&#39;</span><span class="p">,</span>
+    <span class="s1">'org.molssi.seamm.forcefields'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'GAFF = seamm_antechamber:GAFFPlugin'</span><span class="p">,</span>
     <span class="p">],</span>
 <span class="p">}</span>
 </pre></div>
@@ -658,20 +658,20 @@ which by convention is the name of the forcefield followed by <code class="docut
 <p>This class is lightweight. It contains a <code class="docutils literal notranslate"><span class="pre">description</span></code> method to return metadata about
 the forcefield, and a factory method to create the object that handles the forcefield:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a description of the forcefield</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Return a description of the forcefield</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;GAFF&quot;</span><span class="p">,</span>
-        <span class="n">versions</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1.0&quot;</span><span class="p">],</span>
+        <span class="n">name</span><span class="p">:</span> <span class="s2">"GAFF"</span><span class="p">,</span>
+        <span class="n">versions</span><span class="p">:</span> <span class="p">[</span><span class="s2">"1.0"</span><span class="p">],</span>
         <span class="n">description</span><span class="p">:</span> <span class="p">(</span>
-            <span class="s2">&quot;GAFF is compatible with the AMBER force field and it has parameters &quot;</span>
-            <span class="s2">&quot;for almost all the organic molecules made of C, N, O, H, S, P, F, Cl, &quot;</span>
-            <span class="s2">&quot;Br and I. As a complete force field, GAFF is suitable for study of a &quot;</span>
-            <span class="s2">&quot;great number of molecules (such as database searching) in an &quot;</span>
-            <span class="s2">&quot;automatic fashion.&quot;</span>
+            <span class="s2">"GAFF is compatible with the AMBER force field and it has parameters "</span>
+            <span class="s2">"for almost all the organic molecules made of C, N, O, H, S, P, F, Cl, "</span>
+            <span class="s2">"Br and I. As a complete force field, GAFF is suitable for study of a "</span>
+            <span class="s2">"great number of molecules (such as database searching) in an "</span>
+            <span class="s2">"automatic fashion."</span>
         <span class="p">),</span>
-        <span class="n">elements</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;Cl&quot;</span><span class="p">,</span> <span class="s2">&quot;Br&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">],</span>
-        <span class="n">class</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;valence&quot;</span><span class="p">,</span> <span class="s2">&quot;all-atom&quot;</span><span class="p">]</span>
+        <span class="n">elements</span><span class="p">:</span> <span class="p">[</span><span class="s2">"H"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="s2">"N"</span><span class="p">,</span> <span class="s2">"P"</span><span class="p">,</span> <span class="s2">"S"</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">,</span> <span class="s2">"Cl"</span><span class="p">,</span> <span class="s2">"Br"</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">],</span>
+        <span class="n">class</span><span class="p">:</span> <span class="p">[</span><span class="s2">"valence"</span><span class="p">,</span> <span class="s2">"all-atom"</span><span class="p">]</span>
     <span class="p">}</span>
 </pre></div>
 </div>
@@ -682,7 +682,7 @@ in the functional form?</p>
 </div>
 <p>The factory method is equally simple:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_atomtyper</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create and return the new GAFF forcefield object.</span>
+<span class="w">    </span><span class="sd">"""Create and return the new GAFF forcefield object.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -696,7 +696,7 @@ in the functional form?</p>
 <span class="sd">    --------</span>
 <span class="sd">    Antechamber</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">seamm_ff_gaff</span><span class="o">.</span><span class="n">GAFF</span><span class="p">()</span>
 </pre></div>
 </div>

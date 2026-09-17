@@ -626,10 +626,10 @@ your test directory and make it executable, and also download this batch file
 <span class="n">export</span> <span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span>
 
 <span class="c1"># This activates Conda in the shell ... change the path, and perhaps the shell used.</span>
-<span class="nb">eval</span> <span class="s2">&quot;$(/projects/chemai/seamm/miniconda3/bin/conda shell.bash hook)&quot;</span>
+<span class="nb">eval</span> <span class="s2">"$(/projects/chemai/seamm/miniconda3/bin/conda shell.bash hook)"</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
 
-<span class="o">./</span><span class="n">quickmin</span><span class="o">.</span><span class="n">flow</span> <span class="o">--</span><span class="n">title</span> <span class="s2">&quot;Simple QuickMin test calculation&quot;</span> <span class="n">CCO</span>
+<span class="o">./</span><span class="n">quickmin</span><span class="o">.</span><span class="n">flow</span> <span class="o">--</span><span class="n">title</span> <span class="s2">"Simple QuickMin test calculation"</span> <span class="n">CCO</span>
 </pre></div>
 </div>
 <p>If you use SLURM, you’ll probably just need to change the account and partition
@@ -769,7 +769,7 @@ on the actual words <code class="docutils literal notranslate"><span class="pre"
 <p>Finally! Now you are ready to run the test job. Download the batch file for a
 dashboard job <a class="reference download internal" download="" href="../../_downloads/4bc6c36fd24dee13407890126b535271/dashboard.job"><code class="xref download docutils literal notranslate"><span class="pre">dashboard.job</span></code></a>. You will need to edit it as
 you did the previous one. Note this line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">quickmin</span><span class="o">.</span><span class="n">flow</span> <span class="o">--</span><span class="n">project</span> <span class="n">testing</span> <span class="o">--</span><span class="n">title</span> <span class="s2">&quot;Simple QuickMin test calculation&quot;</span> <span class="n">CCO</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">quickmin</span><span class="o">.</span><span class="n">flow</span> <span class="o">--</span><span class="n">project</span> <span class="n">testing</span> <span class="o">--</span><span class="n">title</span> <span class="s2">"Simple QuickMin test calculation"</span> <span class="n">CCO</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--project</span></code> options tells the Dashboard which project to use for the job. When you

@@ -9,6 +9,8 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
 
    Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "------ Version ------",    "Downloads"
    crystal_builder_step_, |crystal2|,      |crystal3|,       	         |crystal4|,      |crystal6|,   |crystal7|
+   dimer_builder_step_,   |dimer2|,        |dimer3|,                  |dimer4|,        |dimer6|,     |dimer7|
+   extract_clusters_step_, |extract2|,     |extract3|,                |extract4|,      |extract6|,   |extract7|
    from_smiles_step_,     |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles6|,	|smiles7|
    packmol_step_,         |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol6|,	|packmol7|
    pyxtal_step_,          |pyxtal2|,       |pyxtal3|, 	     	       	 |pyxtal4|,       |pyxtal6|,	|pyxtal7|
@@ -43,6 +45,54 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
 
 .. |crystal7| image:: https://img.shields.io/pypi/dm/crystal_builder_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/crystal_builder_step
+   :alt: PyPI - Downloads
+
+.. Dimer Builder step badges
+
+.. _dimer_builder_step: https://molssi-seamm.github.io/dimer_builder_step/index.html
+
+.. |dimer2| image:: https://codecov.io/gh/molssi-seamm/dimer_builder_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/dimer_builder_step
+   :alt: Code Coverage
+
+.. |dimer3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/dimer_builder_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/dimer_builder_step/context:python
+   :alt: Code Quality
+
+.. |dimer4| image:: https://github.com/molssi-seamm/dimer_builder_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/dimer_builder_step/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |dimer6| image:: https://img.shields.io/pypi/v/dimer_builder_step.svg?cacheSeconds=36000
+   :target: https://pypi.python.org/pypi/dimer_builder_step
+   :alt: PyPi VERSION
+
+.. |dimer7| image:: https://img.shields.io/pypi/dm/dimer_builder_step?cacheSeconds=36000
+   :target: https://pypistats.org/packages/dimer_builder_step
+   :alt: PyPI - Downloads
+
+.. Extract Clusters step badges
+
+.. _extract_clusters_step: https://molssi-seamm.github.io/extract_clusters_step/index.html
+
+.. |extract2| image:: https://codecov.io/gh/molssi-seamm/extract_clusters_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/extract_clusters_step
+   :alt: Code Coverage
+
+.. |extract3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/extract_clusters_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/extract_clusters_step/context:python
+   :alt: Code Quality
+
+.. |extract4| image:: https://github.com/molssi-seamm/extract_clusters_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/extract_clusters_step/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |extract6| image:: https://img.shields.io/pypi/v/extract_clusters_step.svg?cacheSeconds=36000
+   :target: https://pypi.python.org/pypi/extract_clusters_step
+   :alt: PyPi VERSION
+
+.. |extract7| image:: https://img.shields.io/pypi/dm/extract_clusters_step?cacheSeconds=36000
+   :target: https://pypistats.org/packages/extract_clusters_step
    :alt: PyPI - Downloads
 
 .. from SMILES step badges

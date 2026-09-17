@@ -628,16 +628,16 @@ following command in the terminal:</p>
 </pre></div>
 </div>
 <p>where the file <cite>seamm-environment.yaml</cite> is like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s2">&quot;3.8&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s2">"3.8"</span>
 <span class="n">name</span><span class="p">:</span> <span class="n">seamm</span><span class="o">-</span><span class="n">environment</span>
 <span class="n">services</span><span class="p">:</span>
   <span class="n">dashboard</span><span class="p">:</span>
     <span class="n">container_name</span><span class="p">:</span> <span class="n">Dashboard</span>
     <span class="n">image</span><span class="p">:</span> <span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">molssi</span><span class="o">-</span><span class="n">seamm</span><span class="o">/</span><span class="n">dashboard</span><span class="p">:</span><span class="n">latest</span>
-    <span class="n">command</span><span class="p">:</span> <span class="o">--</span><span class="n">dashboard</span><span class="o">-</span><span class="n">name</span> <span class="s2">&quot;SEAMM (Docker)&quot;</span>
+    <span class="n">command</span><span class="p">:</span> <span class="o">--</span><span class="n">dashboard</span><span class="o">-</span><span class="n">name</span> <span class="s2">"SEAMM (Docker)"</span>
     <span class="n">restart</span><span class="p">:</span> <span class="n">unless</span><span class="o">-</span><span class="n">stopped</span>
     <span class="n">ports</span><span class="p">:</span>
-      <span class="o">-</span> <span class="s1">&#39;55055:55055&#39;</span>
+      <span class="o">-</span> <span class="s1">'55055:55055'</span>
     <span class="n">networks</span><span class="p">:</span>
       <span class="o">-</span> <span class="n">seamm</span><span class="o">-</span><span class="n">network</span>
     <span class="n">volumes</span><span class="p">:</span>
@@ -695,7 +695,7 @@ Hopefully these instructions will work, but we have not tested it yet.</p>
 </div>
 <p>You can make an alias in your shell to start the SEAMM GUI. Add the following line to
 your <cite>~/.bashrc</cite> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">Dashboard</span><span class="o">=</span><span class="s1">&#39;docker compose --file seamm-environment.yaml up -d&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">Dashboard</span><span class="o">=</span><span class="s1">'docker compose --file seamm-environment.yaml up -d'</span>
 </pre></div>
 </div>
 <p>You can then start the Dashboard and Jobserver by typing <em>Dashboard</em> in a terminal window.</p>

@@ -665,7 +665,7 @@ made. Activate the <strong>seamm</strong> conda environment:</p>
 </pre></div>
 </div>
 <p>Now execute the flowchart:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">run_flowchart</span> <span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span> <span class="s2">&quot;C=C(C)C&quot;</span> <span class="s2">&quot;C/C=C/C&quot;</span> <span class="s2">&quot;C/C=C</span><span class="se">\\</span><span class="s2">C&quot;</span> <span class="n">C</span><span class="o">=</span><span class="n">CCC</span> <span class="n">C1CC1C</span> <span class="n">C1CCC1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">run_flowchart</span> <span class="n">flowchart</span><span class="o">.</span><span class="n">flow</span> <span class="s2">"C=C(C)C"</span> <span class="s2">"C/C=C/C"</span> <span class="s2">"C/C=C</span><span class="se">\\</span><span class="s2">C"</span> <span class="n">C</span><span class="o">=</span><span class="n">CCC</span> <span class="n">C1CC1C</span> <span class="n">C1CCC1</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -678,7 +678,7 @@ as a single backslash.</p>
 <p>You should see output appear in the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="ow">in</span> <span class="n">standalone</span> <span class="n">mode</span><span class="o">.</span>
 <span class="n">Monday</span> <span class="mf">2023.11.13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">33</span>
-<span class="n">Running</span> <span class="ow">in</span> <span class="n">directory</span> <span class="s1">&#39;/Users/psaxe/tmp3&#39;</span>
+<span class="n">Running</span> <span class="ow">in</span> <span class="n">directory</span> <span class="s1">'/Users/psaxe/tmp3'</span>
 
 <span class="n">Description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">flowchart</span>
 <span class="o">----------------------------</span>
@@ -777,7 +777,7 @@ debugging options:
   Options for turning on debugging output and tools
 
   --log-level {NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}
-                        The level of informational output, default: &#39;WARNING&#39;
+                        The level of informational output, default: 'WARNING'
 
 job options:
   Options for jobs
@@ -797,7 +797,7 @@ hardware options:
   --parallelism {none,mpi,openmp,any}
                         Whether to limit parallel usage to certain types.
   --ncores NCORES       The maximum number of cores/threads to use in any step. Default: all available cores.
-  --memory MEMORY       The maximum amount of memory to use in any step, which can be &#39;all&#39; or &#39;available&#39;, or a number, which may use k, Ki, M, Mi, etc.
+  --memory MEMORY       The maximum amount of memory to use in any step, which can be 'all' or 'available', or a number, which may use k, Ki, M, Mi, etc.
                         suffixes. Default: available.
 
 plug-ins:
@@ -855,7 +855,7 @@ the step followed by <strong>–help</strong>:</p>
   <span class="n">Options</span> <span class="k">for</span> <span class="n">turning</span> <span class="n">on</span> <span class="n">debugging</span> <span class="n">output</span> <span class="ow">and</span> <span class="n">tools</span>
 
   <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">level</span> <span class="p">{</span><span class="n">NOTSET</span><span class="p">,</span><span class="n">DEBUG</span><span class="p">,</span><span class="n">INFO</span><span class="p">,</span><span class="n">WARNING</span><span class="p">,</span><span class="n">ERROR</span><span class="p">,</span><span class="n">CRITICAL</span><span class="p">}</span>
-                        <span class="n">The</span> <span class="n">level</span> <span class="n">of</span> <span class="n">informational</span> <span class="n">output</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="s1">&#39;WARNING&#39;</span>
+                        <span class="n">The</span> <span class="n">level</span> <span class="n">of</span> <span class="n">informational</span> <span class="n">output</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="s1">'WARNING'</span>
 </pre></div>
 </div>
 <p>You’ll probably never need this level of control, but it is nice to know that it is
@@ -881,11 +881,11 @@ contains blanks, etc.</p>
 </dl>
 <p>Let’s give this a go! Delete all the files except the flowchart in your temporary job
 and run again, like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(seamm) psaxe@molssi10:~/tmp$ ./flowchart.flow --project default --title &quot;C4H8 isomers DFTB/3ob&quot; \
-&gt;              --description &quot;Running the C4H8 isomers with DFTB+ from the commandline&quot; \
-&gt;              &quot;C=C(C)C&quot; &quot;C/C=C/C&quot; &quot;C/C=C\\C&quot; C=CCC C1CC1C C1CCC1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(seamm) psaxe@molssi10:~/tmp$ ./flowchart.flow --project default --title "C4H8 isomers DFTB/3ob" \
+&gt;              --description "Running the C4H8 isomers with DFTB+ from the commandline" \
+&gt;              "C=C(C)C" "C/C=C/C" "C/C=C\\C" C=CCC C1CC1C C1CCC1
 Monday 2023.11.13 17:36:30
-Running in directory &#39;/home/psaxe/SEAMM/Jobs/projects/default/Job_000315&#39;
+Running in directory '/home/psaxe/SEAMM/Jobs/projects/default/Job_000315'
 
 Description of the flowchart
 ----------------------------
