@@ -27,10 +27,18 @@ all:
 check:
 	cd docs/ && ~/bin/lychee --exclude https://twitter.com --exclude 'https://pypistats.org' --exclude-loopback --no-progress .
 
+update:  ## post-release: sync the merged main into dev, rebuild the docs, push dev
+	git checkout main
+	git pull
+	git checkout dev
+	git merge --ff-only main
+	@make html
+	git push
+
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile update
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

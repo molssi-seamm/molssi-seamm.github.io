@@ -9,6 +9,8 @@ simulation system:
    :maxdepth: 2
 
    Crystal Builder <https://molssi-seamm.github.io/crystal_builder_step/index.html>
+   Dimer Builder <https://molssi-seamm.github.io/dimer_builder_step/index.html>
+   Extract Clusters <https://molssi-seamm.github.io/extract_clusters_step/index.html>
    From SMILES <https://molssi-seamm.github.io/from_smiles_step/index.html>
    PACKMOL <https://molssi-seamm.github.io/packmol_step/index.html>
    Set Cell <https://molssi-seamm.github.io/set_cell_step/index.html>   
