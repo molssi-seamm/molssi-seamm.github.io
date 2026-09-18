@@ -14,6 +14,7 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
    lammps_step_,          |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps6|,	|lammps7|
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac6|,	|mopac7|
    psi4_step_,            |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_6|,	|psi4_7|
+   xnn_step_,             |xnn2|,          |xnn3|,                    |xnn4|,          |xnn6|,	|xnn7|
 
 
 .. dftb+ step badges
