@@ -9,6 +9,7 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
 
    Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "------ Version ------",    "Downloads"
    dftbplus_step_,        |dftb2|,         |dftb3|,  	     	       	 |dftb4|,         |dftb6|,	|dftb7|
+   energy_step_,          |energy2|,       |energy3|,                 |energy4|,       |energy6|,	|energy7|
    forcefield_step_,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield6|,	|ffield7|
    lammps_step_,          |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps6|,	|lammps7|
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac6|,	|mopac7|
@@ -137,4 +138,52 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
 
 .. |psi4_7| image:: https://img.shields.io/pypi/dm/psi4_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/psi4_step
+   :alt: PyPI - Downloads
+
+.. energy_step badges
+
+.. _energy_step: https://molssi-seamm.github.io/energy_step/index.html
+
+.. |energy2| image:: https://codecov.io/gh/molssi-seamm/energy_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/energy_step
+   :alt: Code Coverage
+
+.. |energy3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/energy_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/energy_step/context:python
+   :alt: Code Quality
+
+.. |energy4| image:: https://github.com/molssi-seamm/energy_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/energy_step/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |energy6| image:: https://img.shields.io/pypi/v/energy_step.svg?cacheSeconds=36000
+   :target: https://pypi.python.org/pypi/energy_step
+   :alt: PyPi VERSION
+
+.. |energy7| image:: https://img.shields.io/pypi/dm/energy_step?cacheSeconds=36000
+   :target: https://pypistats.org/packages/energy_step
+   :alt: PyPI - Downloads
+
+.. xnn_step badges
+
+.. _xnn_step: https://molssi-seamm.github.io/xnn_step/index.html
+
+.. |xnn2| image:: https://codecov.io/gh/molssi-seamm/xnn_step/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/xnn_step
+   :alt: Code Coverage
+
+.. |xnn3| image:: https://img.shields.io/lgtm/grade/python/g/molssi-seamm/xnn_step.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/molssi-seamm/xnn_step/context:python
+   :alt: Code Quality
+
+.. |xnn4| image:: https://github.com/molssi-seamm/xnn_step/workflows/Documentation/badge.svg
+   :target: https://github.com/molssi-seamm/xnn_step/actions/workflows/Docs.yaml
+   :alt: Documentation Status
+
+.. |xnn6| image:: https://img.shields.io/pypi/v/xnn_step.svg?cacheSeconds=36000
+   :target: https://pypi.python.org/pypi/xnn_step
+   :alt: PyPi VERSION
+
+.. |xnn7| image:: https://img.shields.io/pypi/dm/xnn_step?cacheSeconds=36000
+   :target: https://pypistats.org/packages/xnn_step
    :alt: PyPI - Downloads
