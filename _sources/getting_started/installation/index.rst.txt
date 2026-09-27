@@ -30,10 +30,6 @@ conda to install SEAMM. The plug-ins for external codes such as MOPAC, Psi4, LAM
 DFTB+ install those codes with conda, so you only need conda if you want one of them on
 the machine. :ref:`seamm-manager-installation` walks you through it.
 
-SEAMM can also be run with *Docker*, which packages SEAMM and the codes into
-self-contained containers. The Docker images are less well tested than the SEAMM
-Manager installation at the moment; see :ref:`docker`.
-
 .. note::
    Earlier versions of SEAMM were installed into a conda environment with the *SEAMM
    Installer* (``seamm-installer``). Such installations keep working but no longer
@@ -52,7 +48,6 @@ Manager installation at the moment; see :ref:`docker`.
     :hidden:
 
     seamm-manager
-    docker
     dashboard_management
 
 .. _uv: https://docs.astral.sh/uv/
