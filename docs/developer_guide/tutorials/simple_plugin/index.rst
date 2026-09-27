@@ -18,7 +18,7 @@ ________
 This tutorial assumes that you have installed the `SEAMM development environment
 <development_environment>`_ and have activated it using::
 
-  conda activate seamm-dev
+  source ~/SEAMM_DEV/venv/bin/activate
 
 This tutorial appears quite long, but that is because there is a lot of detail included
 -- listing of files, the changes that you need to make, output as well as pictures of

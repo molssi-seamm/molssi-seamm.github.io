@@ -6,46 +6,44 @@ Installing SEAMM
 
 SEAMM has three parts:
 
-  * The SEAMM core environment along with any plug-ins needed;
+  * SEAMM itself, with the plug-ins you need, in a Python environment;
 
   * The SEAMM GUI for creating flowcharts, submitting jobs, publishing results etc., and
 
-  * The Web-based Dashboard responsible for monitoring jobs, managing the
-    job directories and presenting the results.
+  * The JobServer, which runs jobs in the background, and the web interface, where you
+    monitor jobs, browse the job directories and look at the results.
 
-The SEAMM GUI and the Dashboard both require the SEAMM core environment. You can
-install everything on one machine, in which case you can do everything with SEAMM on
-that machine. Alternatively you can install the SEAMM GUI on one machine -- probably
-your personal machine -- and the Dashboard on a server, where your jobs will run. This
-is the recommended setup for a group of users, as it allows everyone to submit jobs to
-the same server, and to monitor the progress of all jobs. The easiest way to get started
-is to install eveything on your personal machine so that you can test and run small jobs
-locally. Later, you can install the Dashboard on any servers you have available and use
-the GUI on your personal computer to submit production jobs to the servers.
+You can install everything on one machine, in which case you can do everything with
+SEAMM on that machine. Alternatively you can install the GUI on one machine -- probably
+your personal machine -- and the JobServer and web interface on a server, where your
+jobs will run. This is the recommended setup for a group of users, as it allows everyone
+to submit jobs to the same server and to follow the progress of all jobs. The easiest
+way to get started is to install everything on your personal machine so that you can
+test and run small jobs locally. Later, you can install SEAMM on any servers you have
+available and use the GUI on your personal computer to submit production jobs to them.
 
-SEAMM can be installed and run using either the *Conda* package manager or
-*Docker*. Conda provides separate environments for Python, which SEAMM uses to keep
-different components separate so they don't conflict with each other. If you are already
-using Python, using Conda may fit well with your currrent setup. SEAMM has an installer
-that can run either with a GUI or from the command line. This installer makes it
-straightforward to install and maintain SEAMM using Conda. 
+SEAMM is installed with the **SEAMM Manager**, a small tool that creates a Python
+environment for SEAMM, installs SEAMM and its plug-ins from PyPI, keeps them up to date,
+and sets up the desktop shortcuts and background services. It uses `uv`_, a fast
+Python package manager that also supplies Python itself, so you do not need Python or
+conda to install SEAMM. The plug-ins for external codes such as MOPAC, Psi4, LAMMPS and
+DFTB+ install those codes with conda, so you only need conda if you want one of them on
+the machine. :ref:`seamm-manager-installation` walks you through it.
 
-The *Docker* installation is even simpler. Once you have installed *Docker Desktop*, a
-couple simple commands will download and run the containers for SEAMM. Each container is
-quite literally self-contained, with an operating system and all the software needed
-already installed. This means you can run SEAMM on any machine that has *Docker*, and also
-gives complete reproducibility since older containers are kept and can be run at any
-time. The *Docker* installation is recommended for users who are not already using Python. 
+SEAMM can also be run with *Docker*, which packages SEAMM and the codes into
+self-contained containers. The Docker images are less well tested than the SEAMM
+Manager installation at the moment; see :ref:`docker`.
 
-The following sections will walk you through either installation. Note that you can
-install parts or all of SEAMM on different machines in different ways. For example, you
-can install the GUI on your personal machine using *Docker* and the dashboard on a
-server using *Conda*. The choice is yours.
+.. note::
+   Earlier versions of SEAMM were installed into a conda environment with the *SEAMM
+   Installer* (``seamm-installer``). Such installations keep working but no longer
+   receive updates. :ref:`migrating-from-seamm-installer` explains how to move to the
+   SEAMM Manager.
 
 .. Note::
-   When you install the Dashboard, you need to set the initial passwords on the default
-   accounts. :ref:`dashboard-management` will walk you through this.
-   
+   When you set up the web interface on a server, change the password of the ``admin``
+   account. :ref:`dashboard-management` will walk you through this.
+
 
 .. Table of contents
 .. toctree::
@@ -53,7 +51,8 @@ server using *Conda*. The choice is yours.
     :titlesonly:
     :hidden:
 
+    seamm-manager
     docker
-    conda
     dashboard_management
 
+.. _uv: https://docs.astral.sh/uv/

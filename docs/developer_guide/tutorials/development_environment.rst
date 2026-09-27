@@ -3,48 +3,58 @@ Installing the Development Environment
 **************************************
 
 SEAMM provides a lot of help for developing with the SEAMM environment, but expects a
-fairly specific set of tools. The SEAMM Installer automatically installs the development
-tools if the Conda environment contains "dev" -- typically we use the "seamm-dev"
-environment. Creating the environment is almost identical to installing the normal SEAMM
-environment except for the name of the environment::
+fairly specific set of tools. The SEAMM Manager keeps a separate *development*
+installation in ``~/SEAMM_DEV``, beside the production one in ``~/SEAMM``, and adds the
+development tools -- things like **black**, **flake8**, **pytest** and **sphinx** -- to
+it.
 
-  conda create -c conda-forge -n seamm-dev seamm seamm-installer python=3.9
+If you have not already, install ``uv`` and the SEAMM Manager as described in
+:ref:`seamm-manager-installation`. Then create the development installation with SEAMM,
+all the MolSSI plug-ins and the development tools::
+
+  seamm-manager --development install --all development
+
+``--development`` makes the manager work in ``~/SEAMM_DEV``, with its Python environment
+in ``~/SEAMM_DEV/venv``. You can name individual plug-ins instead of ``--all``; usually
+you want at least basic ones such as **Read Structure** and **From Smiles** to run and
+test your work. Running ``seamm-manager --development`` with no command opens the
+manager's window for the development installation, where the **Components** tab works
+as usual.
+
+To work on a package, install your checkout into the development environment. Activate
+the environment and use the package's ``Makefile``::
+
+  source ~/SEAMM_DEV/venv/bin/activate
+  cd my_step
+  make install
+
+``make install`` reinstalls the package from your source, which picks up entry points
+and data files that an editable install can miss. ``make test``, ``make lint`` and
+``make html`` then use the same environment.
+
+After the installation is complete you may wish to create the shortcuts for easy access
+to SEAMM and the SEAMM Manager, and the JobServer and web interface services::
+
+  seamm-manager --development apps create
+  seamm-manager --development services create jobserver
+
+See :ref:`command line installation` for the web interface.
 
 .. note::
-   When this was written, we are in the process of migrating to Python 3.10, but it is
-   possible that there may be some issues. So the above command insists on Python 3.9 to
-   be safe. Shortly we will remove this restriction.
+   The development installation is separate from the production one. You can safely
+   install both, including shortcuts and services. The development versions have
+   "(Development)" or "dev" in their names, e.g. the ``dev_jobserver`` service, and use
+   port 55155 rather than 55055 for the web interface. Jobs you run in the development
+   installation go to ``~/SEAMM_DEV/Jobs``, separate from your production jobs.
 
-Once the environment is created, activate it and run the Installer::
+   The conda environments for the plug-ins' codes, which hold the executables, are
+   shared, e.g. there is only one **seamm-lammps** environment, and both installations
+   use the LAMMPS in it by default.
 
-  conda activate seamm-dev
-  seamm-installer
+Update the development installation now and then::
 
-When the GUI appears switch to the **Components** tab and install the rest of the SEAMM
-core plus any other plug-ins that you will need to run and test your work. Usually this
-means installing basic packages such as **Read Structure** and **From Smiles**. Unless
-you are worried about disk space it is simplest to install everything you watn to use,
-though you can always rerun the Installer and add more plug-ins.
+  seamm-manager --development update --all
 
-After the installer installs the packages that you have requested it will automatically
-install the packages need for development -- things like **black**, **flake8**, and
-**sphinx**. This will take several minutes, so be patient!
-
-After the installation is complete you may wish to install the shortcuts for easy access
-to the Installer and SEAMM, as well as the DashBoard and JobServer services. See the
-normal installation `documentation <../../installation/graphical>`_ for instructions.
-
-.. note::
-   The development environmment is separate from the production SEAMM environment. You
-   can safely install both, including shortcuts and services. The development versions
-   will have "-dev" appended to the name, e.g. SEAMM-dev. The DashBoard will be
-   installed in ~/SEAMM_DEV rather than ~/SEAMM, so the jobs you run in the development
-   environment are separated from your production environment.
-
-   The environments for the plug-in specific codes, which are usually the executables,
-   are shared, e.g. there will only be one **seamm-lammps** environment, and both the
-   production environment and development environment will use the LAMMPS executables in
-   that environment, by default.
-
-You should rerun the Installer occasionally and update the environment. This will update
-both the packages that you select as well as the development environment itself.
+This updates the installed packages and the development tools. It does not touch the
+packages you installed from your own checkouts unless a newer release is available, so
+reinstall your checkout with ``make install`` afterwards if needed.

@@ -16,10 +16,12 @@ starting this tutorial. If you haven't done this yet, please go to :ref:`install
 and :ref:`dashboard-management` first. Make sure the Dashboard and Job Server are running.
 
 To get started, either double-click on the SEAMM app if you installed it, or open a
-terminal and activate the `seamm` conda environment and start SEAMM:: 
+terminal and start SEAMM from its environment::
 
-  conda activate seamm
-  seamm
+  ~/SEAMM/venv/bin/seamm
+
+(or just ``seamm`` if you have put ``~/SEAMM/venv/bin`` on your path; see
+:ref:`command line installation`).
 
 This will bring up a window like the one shown below:
 

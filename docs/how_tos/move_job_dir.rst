@@ -29,13 +29,13 @@ Moving the Jobs Directory
 Moving the Jobs directory to another location is straightforward. Just follow these
 steps
 
-#. Activate the ``seamm`` Conda environment::
+#. Activate the SEAMM environment::
 
-     conda activate seamm
-     
-#. Make sure that you have no jobs running, and stop the DashBoard and JobServer::
+     source ~/SEAMM/venv/bin/activate
 
-     seamm-installer services stop
+#. Make sure that you have no jobs running, and stop the services::
+
+     seamm-manager services stop
 
 #. Make any parent directories that you need and copy or move the ~/SEAMM/Jobs directory
    to the new location::
@@ -69,7 +69,7 @@ steps
 #. If everything looks OK, kill the Dashboard ``(<ctrl-C>)`` and then restart the
    services::
 
-     seamm-installer services start
+     seamm-manager services start
 
    Check that you can access the Dashboard in your browser.
 
