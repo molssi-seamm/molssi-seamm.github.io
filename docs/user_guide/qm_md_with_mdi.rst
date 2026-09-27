@@ -56,13 +56,13 @@ the QM engines (**MOPAC** or **xTB**):
 
 * **A QM engine** -- install at least one:
 
-  * **MOPAC** -- ``seamm-installer install mopac`` (creates the ``seamm-mopac``
+  * **MOPAC** -- ``seamm-manager install mopac-step`` (creates the ``seamm-mopac``
     environment).
-  * **xTB** -- ``seamm-installer install xtb`` (creates the ``seamm-xtb``
+  * **xTB** -- ``seamm-manager install xtb-step`` (creates the ``seamm-xtb``
     environment).
 
 * **LAMMPS built with MDI** -- the SEAMM LAMMPS install
-  (``seamm-installer install lammps``) includes the MDI package, which provides
+  (``seamm-manager install lammps-step``) includes the MDI package, which provides
   the ``fix mdi/qm`` that LAMMPS needs. You can confirm it with::
 
       conda run -n seamm-lammps lmp -h | grep -i mdi
@@ -170,11 +170,11 @@ Troubleshooting
        periodic for a molecular system.
    * - "model chemistry ... is not available"
      - The Model Chemistry step found no installed program offering it. Make
-       sure a QM engine is installed (``seamm-installer install mopac`` or
-       ``seamm-installer install xtb``).
+       sure a QM engine is installed (``seamm-manager install mopac-step`` or
+       ``seamm-manager install xtb-step``).
    * - ``fix mdi/qm`` unknown / LAMMPS error about MDI
      - Your LAMMPS was built without the MDI package. Reinstall the SEAMM LAMMPS
-       (``seamm-installer install lammps``).
+       (``seamm-manager install lammps-step``).
    * - The run hangs at the start, or "address already in use"
      - A networking hiccup connecting the two codes (a port collision). Re-run
        the job; this is rare for a single job on a machine.

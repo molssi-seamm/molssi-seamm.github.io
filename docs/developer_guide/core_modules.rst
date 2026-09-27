@@ -21,4 +21,4 @@ In addition, there are several other major codes in SEAMM:
    :maxdepth: 2
 
     seamm-jobserver <https://molssi-seamm.github.io/seamm_jobserver/index.html>
-    seamm-installer <https://molssi-seamm.github.io/seamm_installer/index.html>
+    seamm-manager <https://molssi-seamm.github.io/seamm_manager/index.html>
