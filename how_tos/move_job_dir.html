@@ -582,13 +582,13 @@ move <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span>
 <p>Moving the Jobs directory to another location is straightforward. Just follow these
 steps</p>
 <ol class="arabic">
-<li><p>Activate the <code class="docutils literal notranslate"><span class="pre">seamm</span></code> Conda environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+<li><p>Activate the SEAMM environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 </pre></div>
 </div>
 </li>
-<li><p>Make sure that you have no jobs running, and stop the DashBoard and JobServer:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">services</span> <span class="n">stop</span>
+<li><p>Make sure that you have no jobs running, and stop the services:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">stop</span>
 </pre></div>
 </div>
 </li>
@@ -625,7 +625,7 @@ browser. If you are on the same machine, it is at <a class="reference external" 
 </li>
 <li><p>If everything looks OK, kill the Dashboard <code class="docutils literal notranslate"><span class="pre">(&lt;ctrl-C&gt;)</span></code> and then restart the
 services:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">services</span> <span class="n">start</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">start</span>
 </pre></div>
 </div>
 <p>Check that you can access the Dashboard in your browser.</p>

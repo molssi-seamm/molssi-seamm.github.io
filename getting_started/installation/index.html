@@ -63,7 +63,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Installing SEAMM using Docker" href="docker.html" />
+    <link rel="next" title="Installing SEAMM with the Manager" href="seamm-manager.html" />
     <link rel="prev" title="Getting Started" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -497,14 +497,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Installing SEAMM</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="seamm-manager.html">Installing SEAMM with the Manager</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="graphical.html">Graphical Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command-line.html">Command Line Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating.html">Moving from the SEAMM Installer</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="docker.html">Installing SEAMM using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="starting-seamm.html">Starting the SEAMM GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="seamm-environment.html">Starting the SEAMM environment &amp; Dashboard</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="conda.html">Installing SEAMM using Conda</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="graphical.html">Graphical Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="command-line.html">Command Line Installation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
@@ -584,41 +585,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>SEAMM has three parts:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>The SEAMM core environment along with any plug-ins needed;</p></li>
+<li><p>SEAMM itself, with the plug-ins you need, in a Python environment;</p></li>
 <li><p>The SEAMM GUI for creating flowcharts, submitting jobs, publishing results etc., and</p></li>
-<li><p>The Web-based Dashboard responsible for monitoring jobs, managing the
-job directories and presenting the results.</p></li>
+<li><p>The JobServer, which runs jobs in the background, and the web interface, where you
+monitor jobs, browse the job directories and look at the results.</p></li>
 </ul>
 </div></blockquote>
-<p>The SEAMM GUI and the Dashboard both require the SEAMM core environment. You can
-install everything on one machine, in which case you can do everything with SEAMM on
-that machine. Alternatively you can install the SEAMM GUI on one machine – probably
-your personal machine – and the Dashboard on a server, where your jobs will run. This
-is the recommended setup for a group of users, as it allows everyone to submit jobs to
-the same server, and to monitor the progress of all jobs. The easiest way to get started
-is to install eveything on your personal machine so that you can test and run small jobs
-locally. Later, you can install the Dashboard on any servers you have available and use
-the GUI on your personal computer to submit production jobs to the servers.</p>
-<p>SEAMM can be installed and run using either the <em>Conda</em> package manager or
-<em>Docker</em>. Conda provides separate environments for Python, which SEAMM uses to keep
-different components separate so they don’t conflict with each other. If you are already
-using Python, using Conda may fit well with your currrent setup. SEAMM has an installer
-that can run either with a GUI or from the command line. This installer makes it
-straightforward to install and maintain SEAMM using Conda.</p>
-<p>The <em>Docker</em> installation is even simpler. Once you have installed <em>Docker Desktop</em>, a
-couple simple commands will download and run the containers for SEAMM. Each container is
-quite literally self-contained, with an operating system and all the software needed
-already installed. This means you can run SEAMM on any machine that has <em>Docker</em>, and also
-gives complete reproducibility since older containers are kept and can be run at any
-time. The <em>Docker</em> installation is recommended for users who are not already using Python.</p>
-<p>The following sections will walk you through either installation. Note that you can
-install parts or all of SEAMM on different machines in different ways. For example, you
-can install the GUI on your personal machine using <em>Docker</em> and the dashboard on a
-server using <em>Conda</em>. The choice is yours.</p>
+<p>You can install everything on one machine, in which case you can do everything with
+SEAMM on that machine. Alternatively you can install the GUI on one machine – probably
+your personal machine – and the JobServer and web interface on a server, where your
+jobs will run. This is the recommended setup for a group of users, as it allows everyone
+to submit jobs to the same server and to follow the progress of all jobs. The easiest
+way to get started is to install everything on your personal machine so that you can
+test and run small jobs locally. Later, you can install SEAMM on any servers you have
+available and use the GUI on your personal computer to submit production jobs to them.</p>
+<p>SEAMM is installed with the <strong>SEAMM Manager</strong>, a small tool that creates a Python
+environment for SEAMM, installs SEAMM and its plug-ins from PyPI, keeps them up to date,
+and sets up the desktop shortcuts and background services. It uses <a class="reference external" href="https://docs.astral.sh/uv/">uv</a>, a fast
+Python package manager that also supplies Python itself, so you do not need Python or
+conda to install SEAMM. The plug-ins for external codes such as MOPAC, Psi4, LAMMPS and
+DFTB+ install those codes with conda, so you only need conda if you want one of them on
+the machine. <a class="reference internal" href="seamm-manager.html#seamm-manager-installation"><span class="std std-ref">Installing SEAMM with the Manager</span></a> walks you through it.</p>
+<p>SEAMM can also be run with <em>Docker</em>, which packages SEAMM and the codes into
+self-contained containers. The Docker images are less well tested than the SEAMM
+Manager installation at the moment; see <a class="reference internal" href="docker.html#docker"><span class="std std-ref">Installing SEAMM using Docker</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When you install the Dashboard, you need to set the initial passwords on the default
-accounts. <a class="reference internal" href="dashboard_management.html#dashboard-management"><span class="std std-ref">Managing the Dashboard</span></a> will walk you through this.</p>
+<p>Earlier versions of SEAMM were installed into a conda environment with the <em>SEAMM
+Installer</em> (<code class="docutils literal notranslate"><span class="pre">seamm-installer</span></code>). Such installations keep working but no longer
+receive updates. <a class="reference internal" href="migrating.html#migrating-from-seamm-installer"><span class="std std-ref">Moving from the SEAMM Installer</span></a> explains how to move to the
+SEAMM Manager.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you set up the web interface on a server, change the password of the <code class="docutils literal notranslate"><span class="pre">admin</span></code>
+account. <a class="reference internal" href="dashboard_management.html#dashboard-management"><span class="std std-ref">Managing the Dashboard</span></a> will walk you through this.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -644,11 +645,11 @@ accounts. <a class="reference internal" href="dashboard_management.html#dashboar
       </div>
     </a>
     <a class="right-next"
-       href="docker.html"
+       href="seamm-manager.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installing SEAMM using Docker</p>
+        <p class="prev-next-title">Installing SEAMM with the Manager</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

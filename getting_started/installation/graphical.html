@@ -64,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Command Line Installation" href="command-line.html" />
-    <link rel="prev" title="Installing SEAMM using Conda" href="conda.html" />
+    <link rel="prev" title="Installing SEAMM with the Manager" href="seamm-manager.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="1.0" />
@@ -497,14 +497,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Installing SEAMM</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="seamm-manager.html">Installing SEAMM with the Manager</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Graphical Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command-line.html">Command Line Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating.html">Moving from the SEAMM Installer</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="docker.html">Installing SEAMM using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="starting-seamm.html">Starting the SEAMM GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="seamm-environment.html">Starting the SEAMM environment &amp; Dashboard</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="conda.html">Installing SEAMM using Conda</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Graphical Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="command-line.html">Command Line Installation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
@@ -566,7 +567,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Installing SEAMM</a></li>
     
     
-    <li class="breadcrumb-item"><a href="conda.html" class="nav-link">Installing SEAMM using Conda</a></li>
+    <li class="breadcrumb-item"><a href="seamm-manager.html" class="nav-link">Installing SEAMM with the Manager</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Graphical Installation</span></li>
   </ul>
@@ -587,111 +588,106 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   
   <section id="graphical-installation">
 <span id="id1"></span><h1>Graphical Installation<a class="headerlink" href="#graphical-installation" title="Link to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A <a class="reference external" href="https://www.youtube.com/watch?v=gqWzTvgPM1I">video of installing SEAMM</a> is
-available in the <a class="reference external" href="https://www.youtube.com/channel/UCF_5Kr_AN90CYb0fTgYQHzQ">SEAMM YouTube channel</a>. Please note that this video is slightly
-out of date and there might be small differences between what you read here and
-watch there.</p>
-</div>
-<p>SEAMM should be installed in the <strong>seamm</strong> conda environment. The steps are:</p>
+<p>The SEAMM Manager has a window for installing SEAMM, creating shortcuts and managing the
+background services. Once you have installed <code class="docutils literal notranslate"><span class="pre">uv</span></code> and the manager
+(<a class="reference internal" href="seamm-manager.html#seamm-manager-installation"><span class="std std-ref">Installing SEAMM with the Manager</span></a>), the steps are:</p>
 <ol class="arabic">
-<li><p>Open a terminal and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span>
-</pre></div>
-</div>
-</li>
-<li><p>Once the environment is in place, activate it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
-</pre></div>
-</div>
-</li>
-<li><p>Now run the SEAMM Installer to install both the SEAMM environment and the available
-plug-ins:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span>
+<li><p>Open a terminal and start the manager with no arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span>
 </pre></div>
 </div>
 <p>You will see a window like this:</p>
 <figure class="align-center" id="id2">
-<img alt="The initial Installer window" src="../../_images/initial.png" />
+<img alt="The initial window of the SEAMM Manager" src="../../_images/initial.png" />
 <figcaption>
-<p><span class="caption-text">The initial window of the Installer</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-text">The initial window of the SEAMM Manager</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The screenshots on this page were taken with the SEAMM Installer, which the SEAMM
+Manager replaces. The window is the same apart from its title.</p>
+</div>
 </li>
-<li><p>Click on the second tab <strong>Components</strong>. The Installer needs to examine the
-installation. This can take a few minutes, so be patient! A small dialog will
-come up in front of the Installer to let you know about progress. When the Installer has
-examined everthing it will fill out the window, like this:</p>
+<li><p>Click on the second tab <strong>Components</strong>. The manager fetches the list of SEAMM
+packages and plug-ins and examines the installation, which can take a little while.
+A small dialog in front of the window shows the progress. When it is done the window
+looks like this:</p>
 <figure class="align-center" id="id3">
 <img alt="The initial Components tab." src="../../_images/components.png" />
 <figcaption>
 <p><span class="caption-text">The initial Components tab.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The lines in green show components or plug-ins that are installed and
-up-to-date. Black indicates that the item is not installed, and red indicates
-items that are installed but out-of-date. The first time that you run the
-Installer some of the core packages will be installed and up-to-date because you
-just installed them as you created the Conda environment.</p>
-<p>You can select the plug-ins that you want, or select everything using the <code class="docutils literal notranslate"><span class="pre">Select</span>
-<span class="pre">all</span></code> button. Once you are happy with your selection, click the <code class="docutils literal notranslate"><span class="pre">Install</span>
-<span class="pre">selected</span></code> button. Don’t worry if you have selected some of the packages that are
-already installed: they will be ignored.  Depending on your internet connection,
-computer, and the plug-ins selected, the installation can take up to 10 or 20
-minutes.  This is because many of the plug-ins also install additional software
-such as LAMMPS, Psi4, Packmol, and DFTB+, and some of these packages are quite
-large and take time to install.</p>
-<p>When the installation is done, the window will update with the current status. If
-you wish you can select more packages to install and repeat the process.</p>
+<p>The lines in green show components or plug-ins that are installed and up-to-date.
+Black indicates that the item is not installed, and red indicates items that are
+installed but out-of-date.</p>
+<p>Select the plug-ins that you want, or select everything using the <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">all</span></code>
+button, then click <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">selected</span></code>. The first time, the manager creates the
+Python environment in <code class="docutils literal notranslate"><span class="pre">~/SEAMM/venv</span></code>, downloading Python if needed, and installs
+SEAMM and the plug-ins into it; this takes a minute or so. Plug-ins for external codes
+such as LAMMPS, Psi4, Packmol and DFTB+ then install their codes with conda, which
+can take 10 or 20 minutes depending on your internet connection and the codes
+selected. If conda is not installed, those plug-ins report it and are installed
+without their code; see <a class="reference internal" href="seamm-manager.html#seamm-manager-installation"><span class="std std-ref">Installing SEAMM with the Manager</span></a>.</p>
+<p>When the installation is done, the window updates with the current status. You can
+select more packages and repeat the process at any time.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you plan to only use the GUI on this machine, and submit jobs to other machines,
-you can select the <strong>GUI only</strong> checkbox. This will install only the components for
-the GUI of SEAMM. None of the background software, like LAMMPS, be installed. This is
-both faster and keeps the installation smaller.</p>
+select the <strong>GUI only</strong> checkbox. This installs only what the SEAMM GUI needs, and
+none of the codes such as LAMMPS. It is faster, keeps the installation small, and
+does not need conda.</p>
 </div>
 </li>
-<li><p>Once you are happy with the installation, go to the next tab, <strong>Shortcuts</strong> to install
-shortcuts for starting SEAMM and the Installer. It looks like this:</p>
+<li><p>Once you are happy with the installation, go to the next tab, <strong>Shortcuts</strong>, to
+create shortcuts for starting SEAMM and the SEAMM Manager. It looks like this:</p>
 <figure class="align-center" id="id4">
 <img alt="The initial Shortcuts tab." src="../../_images/shortcuts.png" />
 <figcaption>
 <p><span class="caption-text">The initial Shortcuts tab.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Select the applications that you want, and click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">selected</span> <span class="pre">apps</span></code> to create the
-shortcuts. On a Mac, the shortcuts will be in <code class="docutils literal notranslate"><span class="pre">~/Applications</span></code>, i.e. the Applications folder
-under your home directory, not the main <code class="docutils literal notranslate"><span class="pre">/Applications</span></code> folder. On Linux, they will be
-in <code class="docutils literal notranslate"><span class="pre">~/.local/share/Applications</span></code>. You can usually drag the shortcuts to the desktop,
-dock, launcher or similar place for easy access; however, the details depend on the your
-OS and desktop so check the documentation if need be.</p>
+<p>Select the applications that you want, and click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">selected</span> <span class="pre">apps</span></code>. On a Mac
+the shortcuts, <code class="docutils literal notranslate"><span class="pre">SEAMM.app</span></code> and <code class="docutils literal notranslate"><span class="pre">SEAMM-Manager.app</span></code>, are in <code class="docutils literal notranslate"><span class="pre">~/Applications</span></code>,
+i.e. the Applications folder under your home directory, not the main
+<code class="docutils literal notranslate"><span class="pre">/Applications</span></code> folder. On Linux, they are in <code class="docutils literal notranslate"><span class="pre">~/.local/share/applications</span></code>. You
+can usually drag the shortcuts to the desktop, dock, launcher or similar place for
+easy access; the details depend on your OS and desktop.</p>
 </li>
-<li><p>If you want to run jobs locally, go to the last tab, <strong>Services</strong>, to install the
-Dashboard and JobServer as services so that they are always available. This tab looks
-like this:</p>
+<li><p>If you want to run jobs on this machine, go to the last tab, <strong>Services</strong>, and create
+the JobServer service so that it is always running, even when you are logged out:</p>
 <figure class="align-center" id="id5">
 <img alt="The initial Services tab." src="../../_images/services.png" />
 <figcaption>
 <p><span class="caption-text">The initial Services tab.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Select both the Dashboard and JobServer and click on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">selected</span>
-<span class="pre">services</span></code>. A small dialog will pop up allowing you to set the name of the Dashboard
-and the port. The default port is 55055, but you can change it to any port &gt; 1024
-that does not conflict with another service on your machine. Large numbers, like
-55055, are generally safe:</p>
-<figure class="align-center" id="id6">
-<img alt="The Dashboard Parameters" src="../../_images/name_port.png" />
-<figcaption>
-<p><span class="caption-text">The dialog for setting the name and port of the Dashboard</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code>. This will install the services and start them.</p>
+<p>Select the JobServer and click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">selected</span> <span class="pre">services</span></code>. The buttons beside it
+let you stop and start the services later if you need to.</p>
+</li>
+<li><p>The web interface, where you follow jobs and look at their results, has its own
+environment and is set up from the terminal. For a personal machine, where only you
+use it, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">install</span> <span class="n">seamm</span><span class="o">-</span><span class="n">webui</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">create</span> <span class="n">webui</span> <span class="o">--</span><span class="n">webui</span><span class="o">-</span><span class="n">host</span> <span class="mf">127.0.0.1</span>
+</pre></div>
+</div>
+<p>and open <a class="reference external" href="http://localhost:55055">http://localhost:55055</a> in your browser. For a server that other people or
+machines reach, leave out <code class="docutils literal notranslate"><span class="pre">--webui-host</span> <span class="pre">127.0.0.1</span></code>; the web interface then listens
+on the network, uses HTTPS and asks each user to log in. See
+<a class="reference internal" href="command-line.html#command-line-installation"><span class="std std-ref">Command Line Installation</span></a> for details.</p>
 </li>
 </ol>
 <p>Congratulations! SEAMM is fully installed and ready to go. The
 <a class="reference internal" href="../tutorials/index.html"><span class="doc">Tutorials</span></a> is a good place to start.</p>
+<section id="keeping-seamm-up-to-date">
+<h2>Keeping SEAMM up to date<a class="headerlink" href="#keeping-seamm-up-to-date" title="Link to this heading">#</a></h2>
+<p>Run the SEAMM Manager every few weeks. On the <strong>Components</strong> tab, packages with updates
+are shown in red; select them and click <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">selected</span></code>. From the terminal,
+<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">update</span> <span class="pre">--all</span></code> does the same for everything; see
+<a class="reference internal" href="command-line.html#command-line-installation"><span class="std std-ref">Command Line Installation</span></a>.</p>
+</section>
 </section>
 
 
@@ -705,12 +701,12 @@ that does not conflict with another service on your machine. Large numbers, like
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="conda.html"
+       href="seamm-manager.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Installing SEAMM using Conda</p>
+        <p class="prev-next-title">Installing SEAMM with the Manager</p>
       </div>
     </a>
     <a class="right-next"
@@ -732,6 +728,18 @@ that does not conflict with another service on your machine. Large numbers, like
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-seamm-up-to-date">Keeping SEAMM up to date</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">

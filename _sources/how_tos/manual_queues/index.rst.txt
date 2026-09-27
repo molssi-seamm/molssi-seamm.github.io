@@ -77,24 +77,24 @@ The batch file is set up for SLURM::
 
   export OMP_NUM_THREADS=1
 
-  # This activates Conda in the shell ... change the path, and perhaps the shell used.
-  eval "$(/projects/chemai/seamm/miniconda3/bin/conda shell.bash hook)"
-  conda activate seamm
+  # This activates the SEAMM environment ... change the path if SEAMM is elsewhere.
+  source ~/SEAMM/venv/bin/activate
 
   ./quickmin.flow --title "Simple QuickMin test calculation" CCO
 
 If you use SLURM, you'll probably just need to change the account and partition
-information and the path for activating Conda. If your computer uses a different
+information and, if SEAMM is not in ``~/SEAMM``, the path to its environment. If your
+computer uses a different
 queueing system, you'll need to edit the script more. Just use an example job file that
 works to get the comment lines at the beginning correct. You shouldn't need to change
-anything else except the path for activating Conda. Now submit the job. For SLURM you
+anything else except the path to the SEAMM environment. Now submit the job. For SLURM you
 use ``sbatch``::
 
   sbatch standalone.job
   
 When the batch job finishes, the directory should have the output files for the run::
 
-  (seamm) ls -l
+  (venv) ls -l
   total 400
   drwxrwxr-x 2 psaxe psaxe      0 May  1 14:26 0
   drwxrwxr-x 2 psaxe psaxe    512 May  1 14:26 1
@@ -136,11 +136,11 @@ Datastore, where they can be viewd using a browser and the Dashboard.
 First, get the Dashboard running on the remote machine. It is possible that you can
 install it as a service using the SEAMM installer, but many computer centers are
 configured not to allow users to run services on the login nodes. If so, you have two
-options. The easiest approach is to log into the front-end node, activate the ``seamm``
-conda environment and run the dashboard interactively::
+options. The easiest approach is to log into the front-end node, activate the SEAMM
+environment and run the dashboard interactively::
 
-  (base) conda activate seamm
-  (seamm) seamm-dashboard
+  $ source ~/SEAMM/venv/bin/activate
+  (venv) seamm-dashboard
   dashboard:INFO:Logging to the console at level INFO.
   dashboard:INFO:Logging to /home/psaxe/SEAMM/logs/dashboard.log at level WARNING.
   dashboard:INFO:
@@ -152,9 +152,9 @@ conda environment and run the dashboard interactively::
 The disadvantage is that the Dashboard will stop running as soon as you close that
 window. You can get around this using ``nohup`` and putting it in the background::
 
-  (seamm) nohup seamm-dashboard >& dashboard.log &
+  (venv) nohup seamm-dashboard >& dashboard.log &
   [1] 175118
-  (seamm) 
+  (venv) 
 
 This redirected the output to the file ``dashboard.log``, and using ``nohup`` (which is
 short for "no hang-up" from the old days of using telephone modems) plus putting the job

@@ -544,7 +544,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
-<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_installer/index.html"> seamm-installer</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_manager/index.html"> seamm-manager</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../campaigns/index.html">Campaigns</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -638,49 +638,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="installing-the-development-environment">
 <h1>Installing the Development Environment<a class="headerlink" href="#installing-the-development-environment" title="Link to this heading">#</a></h1>
 <p>SEAMM provides a lot of help for developing with the SEAMM environment, but expects a
-fairly specific set of tools. The SEAMM Installer automatically installs the development
-tools if the Conda environment contains “dev” – typically we use the “seamm-dev”
-environment. Creating the environment is almost identical to installing the normal SEAMM
-environment except for the name of the environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span><span class="o">-</span><span class="n">dev</span> <span class="n">seamm</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
+fairly specific set of tools. The SEAMM Manager keeps a separate <em>development</em>
+installation in <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code>, beside the production one in <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code>, and adds the
+development tools – things like <strong>black</strong>, <strong>flake8</strong>, <strong>pytest</strong> and <strong>sphinx</strong> – to
+it.</p>
+<p>If you have not already, install <code class="docutils literal notranslate"><span class="pre">uv</span></code> and the SEAMM Manager as described in
+<a class="reference internal" href="../../getting_started/installation/seamm-manager.html#seamm-manager-installation"><span class="std std-ref">Installing SEAMM with the Manager</span></a>. Then create the development installation with SEAMM,
+all the MolSSI plug-ins and the development tools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span> <span class="n">development</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When this was written, we are in the process of migrating to Python 3.10, but it is
-possible that there may be some issues. So the above command insists on Python 3.9 to
-be safe. Shortly we will remove this restriction.</p>
-</div>
-<p>Once the environment is created, activate it and run the Installer:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span><span class="o">-</span><span class="n">dev</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">installer</span>
+<p><code class="docutils literal notranslate"><span class="pre">--development</span></code> makes the manager work in <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code>, with its Python environment
+in <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV/venv</span></code>. You can name individual plug-ins instead of <code class="docutils literal notranslate"><span class="pre">--all</span></code>; usually
+you want at least basic ones such as <strong>Read Structure</strong> and <strong>From Smiles</strong> to run and
+test your work. Running <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">--development</span></code> with no command opens the
+manager’s window for the development installation, where the <strong>Components</strong> tab works
+as usual.</p>
+<p>To work on a package, install your checkout into the development environment. Activate
+the environment and use the package’s <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/</span><span class="n">SEAMM_DEV</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">cd</span> <span class="n">my_step</span>
+<span class="n">make</span> <span class="n">install</span>
 </pre></div>
 </div>
-<p>When the GUI appears switch to the <strong>Components</strong> tab and install the rest of the SEAMM
-core plus any other plug-ins that you will need to run and test your work. Usually this
-means installing basic packages such as <strong>Read Structure</strong> and <strong>From Smiles</strong>. Unless
-you are worried about disk space it is simplest to install everything you watn to use,
-though you can always rerun the Installer and add more plug-ins.</p>
-<p>After the installer installs the packages that you have requested it will automatically
-install the packages need for development – things like <strong>black</strong>, <strong>flake8</strong>, and
-<strong>sphinx</strong>. This will take several minutes, so be patient!</p>
-<p>After the installation is complete you may wish to install the shortcuts for easy access
-to the Installer and SEAMM, as well as the DashBoard and JobServer services. See the
-normal installation <a class="reference external" href="../../installation/graphical">documentation</a> for instructions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> reinstalls the package from your source, which picks up entry points
+and data files that an editable install can miss. <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code>, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint</span></code> and
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> then use the same environment.</p>
+<p>After the installation is complete you may wish to create the shortcuts for easy access
+to SEAMM and the SEAMM Manager, and the JobServer and web interface services:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">apps</span> <span class="n">create</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">services</span> <span class="n">create</span> <span class="n">jobserver</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../../getting_started/installation/command-line.html#command-line-installation"><span class="std std-ref">Command Line Installation</span></a> for the web interface.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The development environmment is separate from the production SEAMM environment. You
-can safely install both, including shortcuts and services. The development versions
-will have “-dev” appended to the name, e.g. SEAMM-dev. The DashBoard will be
-installed in ~/SEAMM_DEV rather than ~/SEAMM, so the jobs you run in the development
-environment are separated from your production environment.</p>
-<p>The environments for the plug-in specific codes, which are usually the executables,
-are shared, e.g. there will only be one <strong>seamm-lammps</strong> environment, and both the
-production environment and development environment will use the LAMMPS executables in
-that environment, by default.</p>
+<p>The development installation is separate from the production one. You can safely
+install both, including shortcuts and services. The development versions have
+“(Development)” or “dev” in their names, e.g. the <code class="docutils literal notranslate"><span class="pre">dev_jobserver</span></code> service, and use
+port 55155 rather than 55055 for the web interface. Jobs you run in the development
+installation go to <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV/Jobs</span></code>, separate from your production jobs.</p>
+<p>The conda environments for the plug-ins’ codes, which hold the executables, are
+shared, e.g. there is only one <strong>seamm-lammps</strong> environment, and both installations
+use the LAMMPS in it by default.</p>
 </div>
-<p>You should rerun the Installer occasionally and update the environment. This will update
-both the packages that you select as well as the development environment itself.</p>
+<p>Update the development installation now and then:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">update</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+<p>This updates the installed packages and the development tools. It does not touch the
+packages you installed from your own checkouts unless a newer release is available, so
+reinstall your checkout with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> afterwards if needed.</p>
 </section>
 
 

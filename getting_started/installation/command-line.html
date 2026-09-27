@@ -63,7 +63,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Managing the Dashboard" href="dashboard_management.html" />
+    <link rel="next" title="Moving from the SEAMM Installer" href="migrating.html" />
     <link rel="prev" title="Graphical Installation" href="graphical.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -493,14 +493,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Installing SEAMM</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="seamm-manager.html">Installing SEAMM with the Manager</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="graphical.html">Graphical Installation</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Command Line Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating.html">Moving from the SEAMM Installer</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="docker.html">Installing SEAMM using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="starting-seamm.html">Starting the SEAMM GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="seamm-environment.html">Starting the SEAMM environment &amp; Dashboard</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="conda.html">Installing SEAMM using Conda</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="graphical.html">Graphical Installation</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Command Line Installation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
@@ -562,7 +563,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Installing SEAMM</a></li>
     
     
-    <li class="breadcrumb-item"><a href="conda.html" class="nav-link">Installing SEAMM using Conda</a></li>
+    <li class="breadcrumb-item"><a href="seamm-manager.html" class="nav-link">Installing SEAMM with the Manager</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Command Line Installation</span></li>
   </ul>
@@ -583,281 +584,154 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   
   <section id="command-line-installation">
 <span id="id1"></span><h1>Command Line Installation<a class="headerlink" href="#command-line-installation" title="Link to this heading">#</a></h1>
-<p>SEAMM should be installed in the <strong>seamm</strong> conda environment.
-Open a terminal window and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span>
+<p>Once you have installed <code class="docutils literal notranslate"><span class="pre">uv</span></code> and the SEAMM Manager (<a class="reference internal" href="seamm-manager.html#seamm-manager-installation"><span class="std std-ref">Installing SEAMM with the Manager</span></a>),
+install SEAMM with all the plug-ins created by MolSSI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
-<p>Once the environment is in place, activate it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+<p>This creates the SEAMM root <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code>, downloads Python 3.12 if needed, creates the
+Python environment <code class="docutils literal notranslate"><span class="pre">~/SEAMM/venv</span></code> and installs SEAMM and the plug-ins into it from
+PyPI, using the versions in the published lock file. That part takes a minute or so.
+The plug-ins for external codes such as LAMMPS, Psi4, Packmol and DFTB+ then install
+their codes into conda environments, which can take 10 or 20 minutes depending on your
+internet connection. The installation also creates the database of jobs under
+<code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>.</p>
+<p>To also install the plug-ins written by other groups, add <code class="docutils literal notranslate"><span class="pre">--third-party</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">third</span><span class="o">-</span><span class="n">party</span>
 </pre></div>
 </div>
-<p>To start, let’s find what is already installed and which plug-ins are available (your
-output will be different!):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% seamm-installer show
-
-Showing the modules in SEAMM:
-......................................
-Core modules of SEAMM
-╒══════════╤═══════════════════╤═════════════╤═════════════╤═════════════════════════════════════════════════╕
-│   Number │ Component         │ Installed   │ Available   │ Description                                     │
-╞══════════╪═══════════════════╪═════════════╪═════════════╪═════════════════════════════════════════════════╡
-│        1 │ molsystem         │ 2024.5.8    │ 2024.5.8    │ molsystem                                       │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        2 │ reference-handler │ 0.9.1       │ 0.9.1       │ no description given                            │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        3 │ seamm             │ 2024.5.3.1  │ 2024.5.3.1  │ The core of the SEAMM environment and graphical │
-│          │                   │             │             │ interface.                                      │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        4 │ seamm-dashboard   │ 2024.3.27   │ 2024.3.27   │ The Web Dashboard for SEAMM (Simulation         │
-│          │                   │             │             │ Environment for Atomistic and Molecular         │
-│          │                   │             │             │ Simulations).                                   │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        5 │ seamm-datastore   │ 2024.3.13   │ 2024.3.13   │ seamm_datastore                                 │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        6 │ seamm-exec        │ 2024.4.25.3 │ 2024.4.25.3 │ Classes to execute background codes for SEAMM   │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        7 │ seamm-ff-util     │ 2023.8.27   │ 2023.8.27   │ seamm_ff_util                                   │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        8 │ seamm-installer   │ 2024.4.22   │ 2024.4.22   │ The installer/updater for SEAMM (Simulation     │
-│          │                   │             │             │ Environment for Atomistic and Molecular         │
-│          │                   │             │             │ Simulations).                                   │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│        9 │ seamm-jobserver   │ 2024.3.12   │ 2024.3.12   │ The JobServer for the SEAMM environment.        │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│       10 │ seamm-util        │ 2024.4.30   │ 2024.4.30   │ seamm_util                                      │
-├──────────┼───────────────────┼─────────────┼─────────────┼─────────────────────────────────────────────────┤
-│       11 │ seamm-widgets     │ 2024.5.1    │ 2024.5.1    │ seamm_widgets                                   │
-╘══════════╧═══════════════════╧═════════════╧═════════════╧═════════════════════════════════════════════════╛
-
-MolSSI plug-ins
-╒══════════╤════════════════════════════╤═════════════╤═════════════╤════════════════════════════════════════════════════╕
-│   Number │ Plug-in                    │ Installed   │ Available   │ Description                                        │
-╞══════════╪════════════════════════════╪═════════════╪═════════════╪════════════════════════════════════════════════════╡
-│        1 │ *control-parameters-step   │ --          │ 2023.11.15  │ A SEAMM plug-in for defining command-line          │
-│          │                            │             │             │ parameters for a flowchart.                        │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        2 │ *crystal-builder-step      │ --          │ 2022.7.31   │ A SEAMM plug-in for creating crystals from         │
-│          │                            │             │             │ prototypes, including Strukturbericht              │
-│          │                            │             │             │ designations.                                      │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        3 │ *custom-step               │ --          │ 2023.12.12  │ A SEAMM plug-in for custom Python scripts in a     │
-│          │                            │             │             │ flowchart.                                         │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        4 │ *dftbplus-step             │ --          │ 2024.4.24   │ A SEAMM plug-in for DFTB+, a fast quantum          │
-│          │                            │             │             │ mechanical simulation code.                        │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        5 │ *diffusivity-step          │ --          │ 2023.9.4    │ A SEAMM plug-in for Diffusivity                    │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        6 │ *fhi-aims-step             │ --          │ 2024.1.19   │ A SEAMM plug-in for FHI-aims                       │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        7 │ *forcefield-step           │ --          │ 2024.1.10   │ A SEAMM plug-in for setting up a forcefield or EAM │
-│          │                            │             │             │ potentials for subsequent simulations.             │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        8 │ *from-smiles-step          │ --          │ 2023.11.10  │ A SEAMM plug-in for creating structures from a     │
-│          │                            │             │             │ SMILES string.                                     │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│        9 │ *gaussian-step             │ --          │ 2024.5.8    │ A SEAMM plugin for A SEAMM plug-in for Gaussian    │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       10 │ *geometry-analysis-step    │ --          │ 2023.1.14   │ A SEAMM plug-in for analysis of the geometry of    │
-│          │                            │             │             │ particularly small molecules                       │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       11 │ *lammps-step               │ --          │ 2024.3.22   │ A SEAMM plug-in for LAMMPS, a forcefield-based     │
-│          │                            │             │             │ molecular dynamics code.                           │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       12 │ *loop-step                 │ --          │ 2023.11.9   │ A SEAMM plug-in which provides loops in            │
-│          │                            │             │             │ flowcharts.                                        │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       13 │ *mopac-step                │ --          │ 2024.5.14.2 │ A SEAMM plug-in to setup, run and analyze          │
-│          │                            │             │             │ semiempirical calculations with MOPAC              │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       14 │ *packmol-step              │ --          │ 2024.3.20.2 │ A SEAMM plug-in for building periodic boxes of     │
-│          │                            │             │             │ fluid using Packmol                                │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       15 │ *properties-step           │ --          │ 2023.7.31   │ A SEAMM plug-in for Properties                     │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       16 │ *psi4-step                 │ --          │ 2024.3.17   │ A SEAMM plug-in to setup, run and analyze quantum  │
-│          │                            │             │             │ chemistry calculations using Psi4                  │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       17 │ *qcarchive-step            │ --          │ 2023.3.30   │ A SEAMM plug-in for QCArchive                      │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       18 │ *quickmin-step             │ --          │ 2024.5.7    │ A SEAMM plug-in for simple, quick minimization     │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       19 │ *rdkit-step                │ --          │ 2023.2.22   │ A SEAMM plugin for A SEAMM plug-in for RDKit       │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       20 │ *read-structure-step       │ --          │ 2023.11.16  │ A SEAMM plug-in to read common formats in          │
-│          │                            │             │             │ computational chemistry                            │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       21 │ *set-cell-step             │ --          │ 2021.10.14  │ A SEAMM plug-in for setting the periodic (unit)    │
-│          │                            │             │             │ cell.                                              │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       22 │ *strain-step               │ --          │ 2022.11.7   │ A SEAMM plug-in for straining periodic systems     │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       23 │ *supercell-step            │ --          │ 2023.11.5   │ A SEAMM plug-in for building supercells of         │
-│          │                            │             │             │ periodic systems.                                  │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       24 │ *table-step                │ --          │ 2023.11.10  │ A SEAMM plug-in for data tables in a flowchart.    │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       25 │ *thermal-conductivity-step │ --          │ 2024.3.22   │ A SEAMM plug-in for Thermal Conductivity           │
-├──────────┼────────────────────────────┼─────────────┼─────────────┼────────────────────────────────────────────────────┤
-│       26 │ *torchani-step             │ --          │ 2024.5.12.1 │ A SEAMM plug-in for TorchANI                       │
-╘══════════╧════════════════════════════╧═════════════╧═════════════╧════════════════════════════════════════════════════╛
-
-3rd-party plug-ins
-╒══════════╤══════════════╤═════════════╤═════════════╤═══════════════════════════════════════════════════╕
-│   Number │ Plug-in      │ Installed   │ Available   │ Description                                       │
-╞══════════╪══════════════╪═════════════╪═════════════╪═══════════════════════════════════════════════════╡
-│        1 │ *pyxtal-step │ --          │ 2021.7.29   │ A SEAMM plugin for PyXtal for building atomic and │
-│          │              │             │             │ molecular crystals.                               │
-╘══════════╧══════════════╧═════════════╧═════════════╧═══════════════════════════════════════════════════╛
-* indicates the component is not up-to-date.
+<p>If you need more control, list the plug-ins to install instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">install</span> <span class="n">from</span><span class="o">-</span><span class="n">smiles</span><span class="o">-</span><span class="n">step</span> <span class="n">mopac</span><span class="o">-</span><span class="n">step</span>
 </pre></div>
-</div>
-<p>All of the core modules of SEAMM were installed when you created the environment, and
-are up-to-date. None of the plug-ins have been installed yet.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The plug-ins and versions in the list you get may be different (newer!) than those
-shown above because the documentation is not updated for every change in SEAMM.</p>
-</div>
-<section id="installing-seamm-and-plug-ins">
-<h2>Installing SEAMM and Plug-ins<a class="headerlink" href="#installing-seamm-and-plug-ins" title="Link to this heading">#</a></h2>
-<p>Now run the SEAMM Installer to install both the SEAMM environment and the available
-plug-ins:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span>
-</pre></div>
-</div>
-<p>This will install all of SEAMM plus all the plug-ins created by the MolSSI. If you wish
-to install all 3rd party plug-ins as well, add the <code class="docutils literal notranslate"><span class="pre">--third-party</span></code> flag:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">third</span><span class="o">-</span><span class="n">party</span>
-</pre></div>
-</div>
-<p>If you need more control, you can also list the names of the plug-ins to install on the
-command line. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="n">from</span><span class="o">-</span><span class="n">smiles</span><span class="o">-</span><span class="n">step</span> <span class="n">mopac</span><span class="o">-</span><span class="n">step</span>
-</pre></div>
-</div>
-<p>Depending on your internet connection, computer, and the plug-ins selected, the
-installation can take up to 10 or 20 minutes.  This is because many of the plug-ins also
-install additional software such as LAMMPS, Psi4, Packmol, and DFTB+, and some of these
-packages are quite large and take time to install.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can always get help on the command line by using the <code class="docutils literal notranslate"><span class="pre">--help</span></code> (or <code class="docutils literal notranslate"><span class="pre">-h</span></code>)
-option:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="o">--</span><span class="n">help</span>
-
-<span class="n">usage</span><span class="p">:</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">version</span><span class="p">]</span>
-<span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">level</span> <span class="p">{</span><span class="n">NOTSET</span><span class="p">,</span><span class="n">DEBUG</span><span class="p">,</span><span class="n">INFO</span><span class="p">,</span><span class="n">WARNING</span><span class="p">,</span><span class="n">ERROR</span><span class="p">,</span><span class="n">CRITICAL</span><span class="p">}]</span> <span class="p">[</span><span class="o">--</span><span class="n">development</span><span class="p">]</span>
-<span class="p">[</span><span class="o">--</span><span class="n">root</span> <span class="n">ROOT</span><span class="p">]</span> <span class="p">{</span><span class="n">refresh</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span><span class="n">datastore</span><span class="p">,</span><span class="n">install</span><span class="p">,</span><span class="n">show</span><span class="p">,</span><span class="n">uninstall</span><span class="p">,</span><span class="n">update</span><span class="p">,</span><span class="n">apps</span><span class="p">,</span><span class="n">services</span><span class="p">}</span> <span class="o">...</span>
-
-<span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
-  <span class="p">{</span><span class="n">refresh</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span><span class="n">datastore</span><span class="p">,</span><span class="n">install</span><span class="p">,</span><span class="n">show</span><span class="p">,</span><span class="n">uninstall</span><span class="p">,</span><span class="n">update</span><span class="p">,</span><span class="n">apps</span><span class="p">,</span><span class="n">services</span><span class="p">}</span>
-
-<span class="n">options</span><span class="p">:</span>
-  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
-  <span class="o">--</span><span class="n">version</span>             <span class="n">show</span> <span class="n">program</span><span class="s1">'s version number and exit</span>
-  <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">level</span> <span class="p">{</span><span class="n">NOTSET</span><span class="p">,</span><span class="n">DEBUG</span><span class="p">,</span><span class="n">INFO</span><span class="p">,</span><span class="n">WARNING</span><span class="p">,</span><span class="n">ERROR</span><span class="p">,</span><span class="n">CRITICAL</span><span class="p">}</span>
-                        <span class="n">The</span> <span class="n">level</span> <span class="n">of</span> <span class="n">informational</span> <span class="n">output</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="s1">'WARNING'</span>
-  <span class="o">--</span><span class="n">development</span>         <span class="n">Work</span> <span class="k">with</span> <span class="n">the</span> <span class="n">development</span> <span class="n">environment</span><span class="p">,</span> <span class="ow">not</span> <span class="n">the</span> <span class="n">production</span> <span class="n">one</span><span class="o">.</span>
-  <span class="o">--</span><span class="n">root</span> <span class="n">ROOT</span>
-
-<span class="n">If</span> <span class="n">no</span> <span class="n">positional</span> <span class="n">argument</span> <span class="ow">is</span> <span class="n">given</span><span class="p">,</span> <span class="n">the</span> <span class="n">GUI</span> <span class="n">will</span> <span class="n">appear</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>If you want help on e.g. installation, put the <code class="docutils literal notranslate"><span class="pre">--help</span></code> after the <code class="docutils literal notranslate"><span class="pre">install</span></code>
-keyword:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="n">help</span>
-</pre></div>
-</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can also install only the packages that are necessary for the GUI if you do not
-intend to run calculations on this machine, but just create flowcharts and submit jobs
-to remote Dashboards:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">install</span> <span class="o">--</span><span class="n">gui</span><span class="o">-</span><span class="n">only</span> <span class="o">--</span><span class="nb">all</span>
+<p>If you do not intend to run calculations on this machine, but just create flowcharts
+and submit jobs to a server, install only the packages the GUI needs. This is quicker
+and does not need conda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">install</span> <span class="o">--</span><span class="n">gui</span><span class="o">-</span><span class="n">only</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
 </div>
-<p>After the Installer finishes, you can check on the created environments using the
-following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">-</span><span class="n">e</span>
+<p>To see what is installed, and which versions are available:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">show</span>
 </pre></div>
 </div>
-<p>which generates output like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># conda environments:</span>
-<span class="c1">#</span>
-<span class="n">base</span>                     <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span>
-<span class="n">seamm</span>                    <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">dev</span>                <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">dev</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">dftbplus</span>           <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">dftbplus</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span>             <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">mopac</span>              <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">mopac</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">packmol</span>            <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">packmol</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">psi4</span>               <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">psi4</span>
-<span class="n">seamm</span><span class="o">-</span><span class="n">torchani</span>           <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">psaxe</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">seamm</span><span class="o">-</span><span class="n">torchani</span>
+<p>and to see the environment itself:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">environment</span> <span class="n">show</span>
+
+<span class="n">Environment</span><span class="p">:</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">you</span><span class="o">/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">venv</span>
+<span class="n">Python</span><span class="p">:</span>      <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">you</span><span class="o">/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="p">(</span><span class="mf">3.12.14</span><span class="p">)</span>
+<span class="n">Packages</span><span class="p">:</span>    <span class="mi">175</span> <span class="n">installed</span><span class="p">,</span> <span class="mi">16</span> <span class="n">SEAMM</span>
 </pre></div>
 </div>
-<p>The extra software needed by individual plug-ins is installed in separate conda
-environments to avoid conflicts between packages.</p>
-<p>You can start the SEAMM GUI from the command line by typing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span>
+<p>The codes live in conda environments named <code class="docutils literal notranslate"><span class="pre">seamm-mopac</span></code>, <code class="docutils literal notranslate"><span class="pre">seamm-psi4</span></code>,
+<code class="docutils literal notranslate"><span class="pre">seamm-lammps</span></code>, and so on, so that they cannot conflict with each other or with SEAMM.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can always get help on the command line with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> (or <code class="docutils literal notranslate"><span class="pre">-h</span></code>) option,
+either for the manager as a whole or for one command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">install</span> <span class="o">--</span><span class="n">help</span>
 </pre></div>
 </div>
-<p>Naturally this will only work if you have a windowing system installed so that you can
-use graphics on the machine.</p>
+</div>
+<section id="running-seamm-from-the-terminal">
+<h2>Running SEAMM from the terminal<a class="headerlink" href="#running-seamm-from-the-terminal" title="Link to this heading">#</a></h2>
+<p>You never need to activate the environment: the shortcuts and services use it directly.
+To run SEAMM’s commands, such as <code class="docutils literal notranslate"><span class="pre">seamm</span></code> for the GUI or <code class="docutils literal notranslate"><span class="pre">run_flowchart</span></code>, from a
+terminal, either activate it for that terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">seamm</span>
+</pre></div>
+</div>
+<p>or put it on your path permanently by adding this line to <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> or
+<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">"$PATH:$HOME/SEAMM/venv/bin"</span>
+</pre></div>
+</div>
+<p>The GUI needs a windowing system, so it only works where you can use graphics on the
+machine.</p>
 </section>
 <section id="installing-shortcuts">
 <h2>Installing Shortcuts<a class="headerlink" href="#installing-shortcuts" title="Link to this heading">#</a></h2>
-<p>Even though you are installing from the command line, you can create shortcuts to
-make it easier to start SEAMM if you are using a windowing system:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">apps</span> <span class="n">create</span>
-</pre></div>
-</div>
-<p>will create the shortcuts and:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% seamm-installer apps show
+<p>To make it easy to start SEAMM and the SEAMM Manager from your desktop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% seamm-manager apps create
+% seamm-manager apps show
 
-╒═════════════════╤════════════════════════════════════╕
-│ App             │ Path                               │
-╞═════════════════╪════════════════════════════════════╡
-│ SEAMM           │ ~/Applications/SEAMM.app           │
-├─────────────────┼────────────────────────────────────┤
-│ SEAMM-Installer │ ~/Applications/SEAMM-Installer.app │
-╘═════════════════╧════════════════════════════════════╛
+╒═══════════════╤══════════════════════════════════╕
+│ App           │ Path                             │
+╞═══════════════╪══════════════════════════════════╡
+│ SEAMM         │ ~/Applications/SEAMM.app         │
+├───────────────┼──────────────────────────────────┤
+│ SEAMM-Manager │ ~/Applications/SEAMM-Manager.app │
+╘═══════════════╧══════════════════════════════════╛
 </pre></div>
 </div>
-<p>will show you where the created shortcuts are. Depending on your windowing system,
-you can drag the shortcuts to the desktop, launcher, or dock so that you can easily
-start SEAMM and the Installer.</p>
+<p>Depending on your windowing system, you can drag the shortcuts to the desktop, launcher,
+or dock.</p>
 </section>
 <section id="installing-the-services">
 <h2>Installing the Services<a class="headerlink" href="#installing-the-services" title="Link to this heading">#</a></h2>
-<p>If you plan to run jobs on the machine, you should install the services for the
-Dashboard and JobServer, so that they remain running even when you are not logged in. To
-do so use the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">seamm</span><span class="o">-</span><span class="n">installer</span> <span class="n">services</span> <span class="n">create</span>
-
-<span class="n">Created</span> <span class="ow">and</span> <span class="n">started</span> <span class="n">the</span> <span class="n">service</span> <span class="n">dashboard</span>
-<span class="n">Created</span> <span class="ow">and</span> <span class="n">started</span> <span class="n">the</span> <span class="n">service</span> <span class="n">jobserver</span>
+<p>If you plan to run jobs on the machine, create the JobServer service, so that it keeps
+running even when you are not logged in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">create</span> <span class="n">jobserver</span>
 </pre></div>
 </div>
-<p>To check on the status of the services:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% seamm-installer services status
-
-╒═══════════╤══════════╤═════════╤════════╕
-│ Service   │ Status   │ Root    │ Port   │
-╞═══════════╪══════════╪═════════╪════════╡
-│ dashboard │ running  │ ~/SEAMM │ 55055  │
-├───────────┼──────────┼─────────┼────────┤
-│ jobserver │ running  │ ~/SEAMM │ ---    │
-╘═══════════╧══════════╧═════════╧════════╛
+<p>The web interface, where you follow jobs and look at their results, is installed into an
+environment of its own and then run as a service. On a personal machine, where only you
+use it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">install</span> <span class="n">seamm</span><span class="o">-</span><span class="n">webui</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">create</span> <span class="n">webui</span> <span class="o">--</span><span class="n">webui</span><span class="o">-</span><span class="n">host</span> <span class="mf">127.0.0.1</span>
 </pre></div>
 </div>
-<p>This shows that both services are running and that you can access the Dashboard at port
-55055 (the default).</p>
+<p>It is then at <a class="reference external" href="http://localhost:55055">http://localhost:55055</a>, with no login. On a server that other people or
+machines reach, leave out <code class="docutils literal notranslate"><span class="pre">--webui-host</span> <span class="pre">127.0.0.1</span></code>. The web interface then listens on
+the network, serves HTTPS with a self-signed certificate, and asks each user to log in.
+The installation creates an <code class="docutils literal notranslate"><span class="pre">admin</span></code> account with the password <code class="docutils literal notranslate"><span class="pre">admin</span></code>; change it
+straight away (see <a class="reference internal" href="dashboard_management.html#dashboard-management"><span class="std std-ref">Managing the Dashboard</span></a>). <code class="docutils literal notranslate"><span class="pre">--port</span></code> chooses a port other than
+55055.</p>
+<p>To check on the services:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% seamm-manager services status
+
+╒═══════════╤═════════════╤═════════════════╤════════╤════════╕
+│ Service   │ Status      │ Root            │ Port   │ Name   │
+╞═══════════╪═════════════╪═════════════════╪════════╪════════╡
+│ jobserver │ running     │ /Users/you/SEAMM│ ---    │ ---    │
+├───────────┼─────────────┼─────────────────┼────────┼────────┤
+│ webui     │ running     │ /Users/you/SEAMM│ 55055  │ ---    │
+╘═══════════╧═════════════╧═════════════════╧════════╧════════╛
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">services</span> <span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">restart</span></code> control them. On a Mac they
+are launchd agents and on Linux systemd user services.</p>
 <p>Congratulations! SEAMM is fully installed and ready to go. The
 <a class="reference internal" href="../tutorials/index.html"><span class="doc">Tutorials</span></a> is a good place to start.</p>
+</section>
+<section id="keeping-seamm-up-to-date">
+<h2>Keeping SEAMM up to date<a class="headerlink" href="#keeping-seamm-up-to-date" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">update</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+<p>updates the manager itself, then every installed package to the newest tested set, and
+restarts the JobServer if it needs to be. The package list and lock file are refreshed
+nightly, so a release made today appears tomorrow; <code class="docutils literal notranslate"><span class="pre">update</span> <span class="pre">--latest</span></code> asks PyPI
+directly if you need it today.</p>
+<p>After every change the manager writes the full list of installed versions to
+<code class="docutils literal notranslate"><span class="pre">~/SEAMM/environments</span></code>, so you can always see what changed and when.</p>
+<p>If the environment is ever damaged:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">environment</span> <span class="n">recreate</span>
+</pre></div>
+</div>
+<p>deletes and rebuilds it and reinstalls the packages that were in it, in well under a
+minute. Your jobs, configuration and the codes’ conda environments are not touched.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When a plug-in updates its code’s conda environment, Python packages that its
+environment file names without a version are installed only if missing and otherwise
+left alone. So a build you installed by hand, for instance PyTorch for your GPU’s
+CUDA driver, survives updates. To change it, reinstall it by hand in that environment.</p>
+</div>
 </section>
 </section>
 
@@ -881,11 +755,11 @@ do so use the following command:</p>
       </div>
     </a>
     <a class="right-next"
-       href="dashboard_management.html"
+       href="migrating.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Managing the Dashboard</p>
+        <p class="prev-next-title">Moving from the SEAMM Installer</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

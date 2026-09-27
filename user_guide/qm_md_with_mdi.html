@@ -610,14 +610,14 @@ the QM engines (<strong>MOPAC</strong> or <strong>xTB</strong>):</p>
 <ul>
 <li><p><strong>A QM engine</strong> – install at least one:</p>
 <ul class="simple">
-<li><p><strong>MOPAC</strong> – <code class="docutils literal notranslate"><span class="pre">seamm-installer</span> <span class="pre">install</span> <span class="pre">mopac</span></code> (creates the <code class="docutils literal notranslate"><span class="pre">seamm-mopac</span></code>
+<li><p><strong>MOPAC</strong> – <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">mopac-step</span></code> (creates the <code class="docutils literal notranslate"><span class="pre">seamm-mopac</span></code>
 environment).</p></li>
-<li><p><strong>xTB</strong> – <code class="docutils literal notranslate"><span class="pre">seamm-installer</span> <span class="pre">install</span> <span class="pre">xtb</span></code> (creates the <code class="docutils literal notranslate"><span class="pre">seamm-xtb</span></code>
+<li><p><strong>xTB</strong> – <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">xtb-step</span></code> (creates the <code class="docutils literal notranslate"><span class="pre">seamm-xtb</span></code>
 environment).</p></li>
 </ul>
 </li>
 <li><p><strong>LAMMPS built with MDI</strong> – the SEAMM LAMMPS install
-(<code class="docutils literal notranslate"><span class="pre">seamm-installer</span> <span class="pre">install</span> <span class="pre">lammps</span></code>) includes the MDI package, which provides
+(<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">lammps-step</span></code>) includes the MDI package, which provides
 the <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code> that LAMMPS needs. You can confirm it with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">run</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span> <span class="n">lmp</span> <span class="o">-</span><span class="n">h</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">mdi</span>
 </pre></div>
@@ -735,12 +735,12 @@ periodic for a molecular system.</p></td>
 </tr>
 <tr class="row-even"><td><p>“model chemistry … is not available”</p></td>
 <td><p>The Model Chemistry step found no installed program offering it. Make
-sure a QM engine is installed (<code class="docutils literal notranslate"><span class="pre">seamm-installer</span> <span class="pre">install</span> <span class="pre">mopac</span></code> or
-<code class="docutils literal notranslate"><span class="pre">seamm-installer</span> <span class="pre">install</span> <span class="pre">xtb</span></code>).</p></td>
+sure a QM engine is installed (<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">mopac-step</span></code> or
+<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">xtb-step</span></code>).</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code> unknown / LAMMPS error about MDI</p></td>
 <td><p>Your LAMMPS was built without the MDI package. Reinstall the SEAMM LAMMPS
-(<code class="docutils literal notranslate"><span class="pre">seamm-installer</span> <span class="pre">install</span> <span class="pre">lammps</span></code>).</p></td>
+(<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">lammps-step</span></code>).</p></td>
 </tr>
 <tr class="row-even"><td><p>The run hangs at the start, or “address already in use”</p></td>
 <td><p>A networking hiccup connecting the two codes (a port collision). Re-run

@@ -497,14 +497,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../installation/index.html">Installing SEAMM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../installation/seamm-manager.html">Installing SEAMM with the Manager</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/migrating.html">Moving from the SEAMM Installer</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../installation/docker.html">Installing SEAMM using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../installation/starting-seamm.html">Starting the SEAMM GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../installation/seamm-environment.html">Starting the SEAMM environment &amp; Dashboard</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../installation/conda.html">Installing SEAMM using Conda</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/graphical.html">Graphical Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../installation/command-line.html">Command Line Installation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/dashboard_management.html">Managing the Dashboard</a></li>
@@ -660,8 +661,8 @@ the <code class="docutils literal notranslate"><span class="pre">Download</span>
 <section id="running-the-flowchart">
 <h2>Running the Flowchart<a class="headerlink" href="#running-the-flowchart" title="Link to this heading">#</a></h2>
 <p>Now open a terminal or command window and go to the temporary directory that you
-made. Activate the <strong>seamm</strong> conda environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+made. Activate the SEAMM environment, so that its commands are on your path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 </pre></div>
 </div>
 <p>Now execute the flowchart:</p>

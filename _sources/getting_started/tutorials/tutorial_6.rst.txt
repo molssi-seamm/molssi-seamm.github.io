@@ -51,9 +51,9 @@ flowchart into this directory:
 Running the Flowchart
 ---------------------
 Now open a terminal or command window and go to the temporary directory that you
-made. Activate the **seamm** conda environment::
+made. Activate the SEAMM environment, so that its commands are on your path::
 
-  conda activate seamm
+  source ~/SEAMM/venv/bin/activate
 
 Now execute the flowchart::
 
