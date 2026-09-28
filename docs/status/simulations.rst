@@ -12,7 +12,9 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
    energy_step_,          |energy2|,       |energy3|,                 |energy4|,       |energy6|,	|energy7|
    forcefield_step_,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield6|,	|ffield7|
    lammps_step_,          |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps6|,	|lammps7|
+   model_chemistry_step_, |modelchem2|,         N/A,                       |modelchem4|,        |modelchem6|,     |modelchem7|
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac6|,	|mopac7|
+   orca_step_,            |orca2|,         N/A,                       |orca4|,        |orca6|,     |orca7|
    psi4_step_,            |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_6|,	|psi4_7|
    xnn_step_,             |xnn2|,          |xnn3|,                    |xnn4|,          |xnn6|,	|xnn7|
 
@@ -188,3 +190,43 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
 .. |xnn7| image:: https://img.shields.io/pypi/dm/xnn_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/xnn_step
    :alt: PyPI - Downloads
+
+.. model_chemistry_step badges
+
+.. _model_chemistry_step: https://molssi-seamm.github.io/model_chemistry_step/index.html
+
+.. |modelchem2| image:: https://codecov.io/gh/molssi-seamm/model_chemistry_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/model_chemistry_step
+   :alt: Code Coverage
+
+.. |modelchem4| image:: https://github.com/molssi-seamm/model_chemistry_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/model_chemistry_step/index.html
+   :alt: Documentation Status
+
+.. |modelchem6| image:: https://img.shields.io/pypi/v/model-chemistry-step.svg
+   :target: https://pypi.org/project/model-chemistry-step/
+   :alt: PyPI version
+
+.. |modelchem7| image:: https://img.shields.io/pypi/dm/model-chemistry-step.svg
+   :target: https://pypi.org/project/model-chemistry-step/
+   :alt: PyPI downloads
+
+.. orca_step badges
+
+.. _orca_step: https://molssi-seamm.github.io/orca_step/index.html
+
+.. |orca2| image:: https://codecov.io/gh/molssi-seamm/orca_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/orca_step
+   :alt: Code Coverage
+
+.. |orca4| image:: https://github.com/molssi-seamm/orca_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/orca_step/index.html
+   :alt: Documentation Status
+
+.. |orca6| image:: https://img.shields.io/pypi/v/orca-step.svg
+   :target: https://pypi.org/project/orca-step/
+   :alt: PyPI version
+
+.. |orca7| image:: https://img.shields.io/pypi/dm/orca-step.svg
+   :target: https://pypi.org/project/orca-step/
+   :alt: PyPI downloads

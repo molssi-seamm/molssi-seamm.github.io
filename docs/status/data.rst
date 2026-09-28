@@ -8,6 +8,7 @@ The current status and version for the Data :term:`plug-ins<plug-in>`:
    :header-rows: 1
 
    Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "------ Version ------",    "Downloads"
+   properties_step_,      |props2|,         N/A,                       |props4|,        |props6|,     |props7|
    read_structure_step_,  |structure2|,    |structure3|,     	       	 |structure4|,    |structure6|,	|structure7|
    table_step_,           |table2|,        |table3|,   	     	       	 |table4|,        |table6|,    	|table7|
 
@@ -59,3 +60,23 @@ The current status and version for the Data :term:`plug-ins<plug-in>`:
 .. |table7| image:: https://img.shields.io/pypi/dm/table_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/table_step
    :alt: PyPI - Downloads
+
+.. properties_step badges
+
+.. _properties_step: https://molssi-seamm.github.io/properties_step/index.html
+
+.. |props2| image:: https://codecov.io/gh/molssi-seamm/properties_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/properties_step
+   :alt: Code Coverage
+
+.. |props4| image:: https://github.com/molssi-seamm/properties_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/properties_step/index.html
+   :alt: Documentation Status
+
+.. |props6| image:: https://img.shields.io/pypi/v/properties-step.svg
+   :target: https://pypi.org/project/properties-step/
+   :alt: PyPI version
+
+.. |props7| image:: https://img.shields.io/pypi/dm/properties-step.svg
+   :target: https://pypi.org/project/properties-step/
+   :alt: PyPI downloads
