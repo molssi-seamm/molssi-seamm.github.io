@@ -18,6 +18,21 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    molsystem_,         |sy2|,           |sy3|,      	   		|sy4|,         	 |sy6|,     |sy7|
    reference_handler_, |rh2|,           |rh3|,      	   		|rh4|,         	 |rh6|,     |rh7|
 
+.. csv-table:: Supporting Packages
+   :header-rows: 1
+
+   "Package",             "Test Coverage", "------ Code Quality ------",   "Documentation", "------ Version ------", "Downloads"
+   cms_plots_,            |cmsp2|,         N/A,                       |cmsp4|,        |cmsp6|,     |cmsp7|
+   seamm_ase_,            |sase2|,         N/A,                       |sase4|,        |sase6|,     |sase7|
+   seamm_bsse_,           |sbsse2|,         N/A,                       |sbsse4|,        |sbsse6|,     |sbsse7|
+   seamm_dashboard_client_,|sdc2|,         N/A,                       |sdc4|,        |sdc6|,     |sdc7|
+   seamm_exec_,           |sexec2|,         N/A,                       |sexec4|,        |sexec6|,     |sexec7|
+   seamm_geometric_,      |sgeo2|,         N/A,                       |sgeo4|,        |sgeo6|,     |sgeo7|
+   seamm_mdi_,            |smdi2|,         N/A,                       |smdi4|,        |smdi6|,     |smdi7|
+   seamm_slurm_,          |sslurm2|,         N/A,                       |sslurm4|,        |sslurm6|,     |sslurm7|
+   seamm_thermochemistry_,|sthermo2|,         N/A,                       |sthermo4|,        |sthermo6|,     |sthermo7|
+   seamm_webui_,          |swebui2|,         N/A,                       |swebui4|,        |swebui6|,     |swebui7|
+
 .. seamm_manager badges
 
 .. _seamm_manager: https://molssi-seamm.github.io/seamm_manager/index.html
@@ -232,6 +247,206 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
 
 Plug-ins provide the functionality in SEAMM. Here are links to their
 status, grouped by category:
+
+.. cms_plots badges
+
+.. _cms_plots: https://molssi-seamm.github.io/cms_plots/index.html
+
+.. |cmsp2| image:: https://codecov.io/gh/molssi-seamm/cms_plots/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/cms_plots
+   :alt: Code Coverage
+
+.. |cmsp4| image:: https://github.com/molssi-seamm/cms_plots/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/cms_plots/index.html
+   :alt: Documentation Status
+
+.. |cmsp6| image:: https://img.shields.io/pypi/v/cms-plots.svg
+   :target: https://pypi.org/project/cms-plots/
+   :alt: PyPI version
+
+.. |cmsp7| image:: https://img.shields.io/pypi/dm/cms-plots.svg
+   :target: https://pypi.org/project/cms-plots/
+   :alt: PyPI downloads
+
+.. seamm_ase badges
+
+.. _seamm_ase: https://molssi-seamm.github.io/seamm_ase/index.html
+
+.. |sase2| image:: https://codecov.io/gh/molssi-seamm/seamm_ase/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_ase
+   :alt: Code Coverage
+
+.. |sase4| image:: https://github.com/molssi-seamm/seamm_ase/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_ase/index.html
+   :alt: Documentation Status
+
+.. |sase6| image:: https://img.shields.io/pypi/v/seamm-ase.svg
+   :target: https://pypi.org/project/seamm-ase/
+   :alt: PyPI version
+
+.. |sase7| image:: https://img.shields.io/pypi/dm/seamm-ase.svg
+   :target: https://pypi.org/project/seamm-ase/
+   :alt: PyPI downloads
+
+.. seamm_bsse badges
+
+.. _seamm_bsse: https://molssi-seamm.github.io/seamm_bsse/index.html
+
+.. |sbsse2| image:: https://codecov.io/gh/molssi-seamm/seamm_bsse/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_bsse
+   :alt: Code Coverage
+
+.. |sbsse4| image:: https://github.com/molssi-seamm/seamm_bsse/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_bsse/index.html
+   :alt: Documentation Status
+
+.. |sbsse6| image:: https://img.shields.io/pypi/v/seamm-bsse.svg
+   :target: https://pypi.org/project/seamm-bsse/
+   :alt: PyPI version
+
+.. |sbsse7| image:: https://img.shields.io/pypi/dm/seamm-bsse.svg
+   :target: https://pypi.org/project/seamm-bsse/
+   :alt: PyPI downloads
+
+.. seamm_dashboard_client badges
+
+.. _seamm_dashboard_client: https://molssi-seamm.github.io/seamm_dashboard_client/index.html
+
+.. |sdc2| image:: https://codecov.io/gh/molssi-seamm/seamm_dashboard_client/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_dashboard_client
+   :alt: Code Coverage
+
+.. |sdc4| image:: https://github.com/molssi-seamm/seamm_dashboard_client/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_dashboard_client/index.html
+   :alt: Documentation Status
+
+.. |sdc6| image:: https://img.shields.io/pypi/v/seamm-dashboard-client.svg
+   :target: https://pypi.org/project/seamm-dashboard-client/
+   :alt: PyPI version
+
+.. |sdc7| image:: https://img.shields.io/pypi/dm/seamm-dashboard-client.svg
+   :target: https://pypi.org/project/seamm-dashboard-client/
+   :alt: PyPI downloads
+
+.. seamm_exec badges
+
+.. _seamm_exec: https://molssi-seamm.github.io/seamm_exec/index.html
+
+.. |sexec2| image:: https://codecov.io/gh/molssi-seamm/seamm_exec/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_exec
+   :alt: Code Coverage
+
+.. |sexec4| image:: https://github.com/molssi-seamm/seamm_exec/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_exec/index.html
+   :alt: Documentation Status
+
+.. |sexec6| image:: https://img.shields.io/pypi/v/seamm-exec.svg
+   :target: https://pypi.org/project/seamm-exec/
+   :alt: PyPI version
+
+.. |sexec7| image:: https://img.shields.io/pypi/dm/seamm-exec.svg
+   :target: https://pypi.org/project/seamm-exec/
+   :alt: PyPI downloads
+
+.. seamm_geometric badges
+
+.. _seamm_geometric: https://molssi-seamm.github.io/seamm_geometric/index.html
+
+.. |sgeo2| image:: https://codecov.io/gh/molssi-seamm/seamm_geometric/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_geometric
+   :alt: Code Coverage
+
+.. |sgeo4| image:: https://github.com/molssi-seamm/seamm_geometric/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_geometric/index.html
+   :alt: Documentation Status
+
+.. |sgeo6| image:: https://img.shields.io/pypi/v/seamm-geometric.svg
+   :target: https://pypi.org/project/seamm-geometric/
+   :alt: PyPI version
+
+.. |sgeo7| image:: https://img.shields.io/pypi/dm/seamm-geometric.svg
+   :target: https://pypi.org/project/seamm-geometric/
+   :alt: PyPI downloads
+
+.. seamm_mdi badges
+
+.. _seamm_mdi: https://molssi-seamm.github.io/seamm_mdi/index.html
+
+.. |smdi2| image:: https://codecov.io/gh/molssi-seamm/seamm_mdi/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_mdi
+   :alt: Code Coverage
+
+.. |smdi4| image:: https://github.com/molssi-seamm/seamm_mdi/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_mdi/index.html
+   :alt: Documentation Status
+
+.. |smdi6| image:: https://img.shields.io/pypi/v/seamm-mdi.svg
+   :target: https://pypi.org/project/seamm-mdi/
+   :alt: PyPI version
+
+.. |smdi7| image:: https://img.shields.io/pypi/dm/seamm-mdi.svg
+   :target: https://pypi.org/project/seamm-mdi/
+   :alt: PyPI downloads
+
+.. seamm_slurm badges
+
+.. _seamm_slurm: https://molssi-seamm.github.io/seamm_slurm/index.html
+
+.. |sslurm2| image:: https://codecov.io/gh/molssi-seamm/seamm_slurm/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_slurm
+   :alt: Code Coverage
+
+.. |sslurm4| image:: https://github.com/molssi-seamm/seamm_slurm/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_slurm/index.html
+   :alt: Documentation Status
+
+.. |sslurm6| image:: https://img.shields.io/pypi/v/seamm-slurm.svg
+   :target: https://pypi.org/project/seamm-slurm/
+   :alt: PyPI version
+
+.. |sslurm7| image:: https://img.shields.io/pypi/dm/seamm-slurm.svg
+   :target: https://pypi.org/project/seamm-slurm/
+   :alt: PyPI downloads
+
+.. seamm_thermochemistry badges
+
+.. _seamm_thermochemistry: https://molssi-seamm.github.io/seamm_thermochemistry/index.html
+
+.. |sthermo2| image:: https://codecov.io/gh/molssi-seamm/seamm_thermochemistry/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_thermochemistry
+   :alt: Code Coverage
+
+.. |sthermo4| image:: https://github.com/molssi-seamm/seamm_thermochemistry/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_thermochemistry/index.html
+   :alt: Documentation Status
+
+.. |sthermo6| image:: https://img.shields.io/pypi/v/seamm-thermochemistry.svg
+   :target: https://pypi.org/project/seamm-thermochemistry/
+   :alt: PyPI version
+
+.. |sthermo7| image:: https://img.shields.io/pypi/dm/seamm-thermochemistry.svg
+   :target: https://pypi.org/project/seamm-thermochemistry/
+   :alt: PyPI downloads
+
+.. seamm_webui badges
+
+.. _seamm_webui: https://molssi-seamm.github.io/seamm_webui/index.html
+
+.. |swebui2| image:: https://codecov.io/gh/molssi-seamm/seamm_webui/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_webui
+   :alt: Code Coverage
+
+.. |swebui4| image:: https://github.com/molssi-seamm/seamm_webui/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_webui/index.html
+   :alt: Documentation Status
+
+.. |swebui6| image:: https://img.shields.io/pypi/v/seamm-webui.svg
+   :target: https://pypi.org/project/seamm-webui/
+   :alt: PyPI version
+
+.. |swebui7| image:: https://img.shields.io/pypi/dm/seamm-webui.svg
+   :target: https://pypi.org/project/seamm-webui/
+   :alt: PyPI downloads
 
 .. toctree::
    :glob:
