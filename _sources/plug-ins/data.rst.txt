@@ -8,6 +8,7 @@ flowchart:
    :titlesonly:
    :maxdepth: 2
 
+   Properties <https://molssi-seamm.github.io/properties_step/index.html>
    QCArchive <https://molssi-seamm.github.io/qcarchive_step/index.html>
    Read Structure <https://molssi-seamm.github.io/read_structure_step/index.html>
    System <https://molssi-seamm.github.io/system_step/index.html>

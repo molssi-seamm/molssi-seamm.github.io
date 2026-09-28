@@ -12,7 +12,8 @@ simulation system:
    Dimer Builder <https://molssi-seamm.github.io/dimer_builder_step/index.html>
    Extract Clusters <https://molssi-seamm.github.io/extract_clusters_step/index.html>
    From SMILES <https://molssi-seamm.github.io/from_smiles_step/index.html>
+   Normal Mode Sampling <https://molssi-seamm.github.io/normal_mode_sampling_step/index.html>
    PACKMOL <https://molssi-seamm.github.io/packmol_step/index.html>
-   Set Cell <https://molssi-seamm.github.io/set_cell_step/index.html>   
+   Set Cell <https://molssi-seamm.github.io/set_cell_step/index.html>
    Strain <https://molssi-seamm.github.io/strain_step/index.html>
    Supercell <https://molssi-seamm.github.io/supercell_step/index.html>

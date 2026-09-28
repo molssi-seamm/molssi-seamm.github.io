@@ -12,6 +12,7 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
    dimer_builder_step_,   |dimer2|,        |dimer3|,                  |dimer4|,        |dimer6|,     |dimer7|
    extract_clusters_step_, |extract2|,     |extract3|,                |extract4|,      |extract6|,   |extract7|
    from_smiles_step_,     |smiles2|,       |smiles3|,  	     	       	 |smiles4|,       |smiles6|,	|smiles7|
+   normal_mode_sampling_step_,|nms2|,         N/A,                       |nms4|,        |nms6|,     |nms7|
    packmol_step_,         |packmol2|,      |packmol3|, 	     	       	 |packmol4|,      |packmol6|,	|packmol7|
    pyxtal_step_,          |pyxtal2|,       |pyxtal3|, 	     	       	 |pyxtal4|,       |pyxtal6|,	|pyxtal7|
    set_cell_step_,        |set_cell2|,     |set_cell3|,     	       	 |set_cell4|,     |set_cell6|,	|set_cell7|
@@ -263,3 +264,23 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
 .. |supercell7| image:: https://img.shields.io/pypi/dm/supercell_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/supercell_step
    :alt: PyPI - Downloads
+
+.. normal_mode_sampling_step badges
+
+.. _normal_mode_sampling_step: https://molssi-seamm.github.io/normal_mode_sampling_step/index.html
+
+.. |nms2| image:: https://codecov.io/gh/molssi-seamm/normal_mode_sampling_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/normal_mode_sampling_step
+   :alt: Code Coverage
+
+.. |nms4| image:: https://github.com/molssi-seamm/normal_mode_sampling_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/normal_mode_sampling_step/index.html
+   :alt: Documentation Status
+
+.. |nms6| image:: https://img.shields.io/pypi/v/normal-mode-sampling-step.svg
+   :target: https://pypi.org/project/normal-mode-sampling-step/
+   :alt: PyPI version
+
+.. |nms7| image:: https://img.shields.io/pypi/dm/normal-mode-sampling-step.svg
+   :target: https://pypi.org/project/normal-mode-sampling-step/
+   :alt: PyPI downloads
