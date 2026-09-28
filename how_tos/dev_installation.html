@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>How-To Move the Jobs Directory &#8212; SEAMM 1.0 documentation</title>
+    <title>Setting Up the Development Installation &#8212; SEAMM 1.0 documentation</title>
   
   
   
@@ -59,12 +59,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'how_tos/move_job_dir';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'how_tos/dev_installation';</script>
 
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Trying a New Release Beside Production" href="trial_installation.html" />
-    <link rel="prev" title="How-To Use a Queueing System Manually" href="manual_queues/index.html" />
+    <link rel="next" title="Background Information" href="../background/index.html" />
+    <link rel="prev" title="Trying a New Release Beside Production" href="trial_installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="1.0" />
@@ -497,9 +497,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="manual_queues/index.html">How-To Use a Queueing System Manually</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">How-To Move the Jobs Directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="move_job_dir.html">How-To Move the Jobs Directory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trial_installation.html">Trying a New Release Beside Production</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev_installation.html">Setting Up the Development Installation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setting Up the Development Installation</a></li>
 </ul>
 </div>
 </nav></div>
@@ -543,7 +543,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">How-To Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">How-To Move the Jobs Directory</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Setting Up the Development Installation</span></li>
   </ul>
 </nav>
 </div>
@@ -560,105 +560,122 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="how-to-move-the-jobs-directory">
-<span id="move-jobs-directory"></span><h1>How-To Move the Jobs Directory<a class="headerlink" href="#how-to-move-the-jobs-directory" title="Link to this heading">#</a></h1>
-<p>By default the datastore holds jobs in a directory tree rooted at <code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>. This
-is often perfectly fine, but if you find that you need to move the files to another
-directory, follow this guide. There are a couple reasons that you might want to move the
-jobs</p>
-<ol class="arabic simple">
-<li><p>The Jobs/ directory can become quite large. All the files for the jobs that you run
-end up under this top-level directory, so over time it grows and depending on what
-you run it can be quite large.</p></li>
-<li><p>Often computer centers either limit the size of your home directory, or access to it
-from the nodes is slow due to the way that it is mounted. In this case, there is
-usually a large, fast disk volume that you should use, so you need to move the Jobs/
-directory there.</p></li>
-</ol>
-<p>The obvious solution of moving <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code> somewhere else and making a link to it in
-your home directory does not work because of security issues. You can, however, move the
-<code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code> directory and tell SEAMM where it is, and if you do that you can also
-move <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code> if you want. First let’s see how to move the jobs directory.</p>
-<section id="moving-the-jobs-directory">
-<h2>Moving the Jobs Directory<a class="headerlink" href="#moving-the-jobs-directory" title="Link to this heading">#</a></h2>
-<p>Moving the Jobs directory to another location is straightforward. Just follow these
-steps</p>
-<ol class="arabic">
-<li><p>Activate the SEAMM environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+  <section id="setting-up-the-development-installation">
+<span id="dev-installation"></span><h1>Setting Up the Development Installation<a class="headerlink" href="#setting-up-the-development-installation" title="Link to this heading">#</a></h1>
+<p>To work on SEAMM or a plug-in you need somewhere to run your changes that is not your
+everyday installation. The SEAMM Manager keeps a <em>development installation</em> in
+<code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code>, beside the production one in <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code>: its own Python environment
+with the development tools, its own JobServer and web interface, its own jobs, and the
+source checkouts you are working on.</p>
+<p>This page assumes that <code class="docutils literal notranslate"><span class="pre">uv</span></code> and the SEAMM Manager are installed and that <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code>
+is set up (<a class="reference internal" href="../getting_started/installation/seamm-manager.html#seamm-manager-installation"><span class="std std-ref">Installing SEAMM with the Manager</span></a>).</p>
+<section id="creating-it">
+<h2>Creating it<a class="headerlink" href="#creating-it" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">install</span> <span class="o">--</span><span class="nb">all</span> <span class="n">development</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">update</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">latest</span>
 </pre></div>
 </div>
-</li>
-<li><p>Make sure that you have no jobs running, and stop the services:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">stop</span>
-</pre></div>
-</div>
-</li>
-<li><p>Make any parent directories that you need and copy or move the ~/SEAMM/Jobs directory
-to the new location:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">~/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">Jobs</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span>
-</pre></div>
-</div>
-</li>
-<li><p>Edit <code class="docutils literal notranslate"><span class="pre">~/SEAMM/seamm.ini</span></code> and change the following lines in the <code class="docutils literal notranslate"><span class="pre">[SEAMM]</span></code> section:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The location of the datastore</span>
-<span class="n">datastore</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span><span class="n">Jobs</span>
-</pre></div>
-</div>
-</li>
-<li><p>Remove the database:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span><span class="n">Jobs</span><span class="o">/</span><span class="n">seamm</span><span class="o">.</span><span class="n">db</span>
-</pre></div>
-</div>
-</li>
-<li><p>Test that the Dashboard runs properly from the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">dashboard</span>
-</pre></div>
-</div>
-<p>You should see quite lot of text scroll by. The end should look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Rule</span> <span class="s1">'/admin/manage_user/&lt;user_id&gt;/delete'</span> <span class="p">(</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">admin</span><span class="o">.</span><span class="n">delete_user</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="o">&lt;</span><span class="n">Rule</span> <span class="s1">'/admin/manage_group/&lt;group_id&gt;/delete'</span> <span class="p">(</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">admin</span><span class="o">.</span><span class="n">delete_group</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="o">&lt;</span><span class="n">Rule</span> <span class="s1">'/static/bootstrap/&lt;filename&gt;'</span> <span class="p">(</span><span class="n">GET</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">bootstrap</span><span class="o">.</span><span class="n">static</span><span class="o">&gt;</span><span class="p">])</span>
-<span class="n">waitress</span><span class="p">:</span><span class="n">INFO</span><span class="p">:</span><span class="n">Serving</span> <span class="n">on</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">55055</span>
-</pre></div>
-</div>
-<p>Once you see the <code class="docutils literal notranslate"><span class="pre">waitress</span></code> line, try accessing the Dashboard through your
-browser. If you are on the same machine, it is at <a class="reference external" href="http://localhost:55055">http://localhost:55055</a>.</p>
-</li>
-<li><p>If everything looks OK, kill the Dashboard <code class="docutils literal notranslate"><span class="pre">(&lt;ctrl-C&gt;)</span></code> and then restart the
-services:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">start</span>
-</pre></div>
-</div>
-<p>Check that you can access the Dashboard in your browser.</p>
-</li>
-</ol>
-<p>That is it!</p>
+<p><code class="docutils literal notranslate"><span class="pre">--development</span></code> is shorthand for <code class="docutils literal notranslate"><span class="pre">--root</span> <span class="pre">~/SEAMM_DEV</span></code>; <code class="docutils literal notranslate"><span class="pre">install</span> <span class="pre">...</span> <span class="pre">development</span></code>
+adds the development tools (black, flake8, pytest, sphinx and the documentation
+themes, build, twine, …). The second command takes the newest releases from PyPI,
+including any made today; without it you get the tested set published each night.</p>
+<p>The development installation shares <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code>’s codes: installing a plug-in copies
+<code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code>’s <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;.ini</span></code> into <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code> so that it runs MOPAC, LAMMPS, Psi4
+and the rest from the same conda environments, and it never creates or updates a conda
+environment. So nothing you do here can change the codes your production installation
+uses. If you are working on a code’s installation itself and need your own copies, use
+<code class="docutils literal notranslate"><span class="pre">install</span> <span class="pre">--code-environments</span> <span class="pre">prefixed</span></code> instead, which gives <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code> its own
+environments named <code class="docutils literal notranslate"><span class="pre">seamm-SEAMM_DEV-&lt;code&gt;</span></code>.</p>
 </section>
-<section id="moving-the-entire-seamm-directory">
-<h2>Moving the entire ~/SEAMM directory<a class="headerlink" href="#moving-the-entire-seamm-directory" title="Link to this heading">#</a></h2>
-<p>Above we said that it was not wise to move the ~/SEAMM directory. However, if you need
-to, there is a trick that works: use a soft-link <em>AND</em> redirect the Dashboard just as in
-the last section.</p>
+<section id="services-and-apps">
+<h2>Services and apps<a class="headerlink" href="#services-and-apps" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">install</span> <span class="n">seamm</span><span class="o">-</span><span class="n">webui</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">services</span> <span class="n">create</span> <span class="n">jobserver</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">services</span> <span class="n">create</span> <span class="n">webui</span> <span class="o">--</span><span class="n">webui</span><span class="o">-</span><span class="n">host</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">55155</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">apps</span> <span class="n">create</span>
+</pre></div>
+</div>
+<p>This gives:</p>
+<ul class="simple">
+<li><p>a JobServer <code class="docutils literal notranslate"><span class="pre">jobserver-SEAMM_DEV</span></code> for the development jobs, which run from
+<code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV/venv</span></code> with <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code>’s configuration;</p></li>
+<li><p>its web interface <code class="docutils literal notranslate"><span class="pre">webui-SEAMM_DEV</span></code> at <a class="reference external" href="http://localhost:55155">http://localhost:55155</a> (leave out <code class="docutils literal notranslate"><span class="pre">--port</span></code>
+to take the first free port instead);</p></li>
+<li><p>desktop apps <code class="docutils literal notranslate"><span class="pre">SEAMM</span> <span class="pre">(SEAMM_DEV)</span></code> and <code class="docutils literal notranslate"><span class="pre">SEAMM-Manager</span> <span class="pre">(SEAMM_DEV)</span></code>.</p></li>
+</ul>
+<p>On macOS the services show up in Activity Monitor as <code class="docutils literal notranslate"><span class="pre">SEAMM-JobServer-SEAMM_DEV</span></code> and
+<code class="docutils literal notranslate"><span class="pre">SEAMM-WebUI-SEAMM_DEV</span></code>. <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">services</span> <span class="pre">status</span> <span class="pre">--all</span></code> lists them beside
+production’s. To send development jobs to a cluster as well as run them locally, give
+the JobServer queues in <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV/&lt;host</span> <span class="pre">name&gt;.ini</span></code> (see <a class="reference internal" href="manual_queues/index.html#use-a-queueing-system-manually"><span class="std std-ref">How-To Use a Queueing System Manually</span></a>
+for running flowcharts in a queue).</p>
+</section>
+<section id="working-on-a-package">
+<h2>Working on a package<a class="headerlink" href="#working-on-a-package" title="Link to this heading">#</a></h2>
+<p>Activate the development environment in the terminal you work in, then use the
+package’s <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> from its checkout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/</span><span class="n">SEAMM_DEV</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">Work</span><span class="o">/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">mopac_step</span>
+<span class="n">make</span> <span class="nb">format</span> <span class="n">lint</span> <span class="n">install</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> installs your checkout into <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV/venv</span></code> (entry points, data
+files and all), so the development GUI, <code class="docutils literal notranslate"><span class="pre">run_flowchart</span></code> and the development
+JobServer’s jobs all use it; <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code>, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> use the same
+environment. For a package you change constantly, an editable install saves the
+reinstall:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">python</span> <span class="o">~/</span><span class="n">SEAMM_DEV</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">-</span><span class="n">e</span> <span class="o">~/</span><span class="n">Work</span><span class="o">/</span><span class="n">SEAMM</span><span class="o">/</span><span class="n">seamm_bsse</span>
+</pre></div>
+</div>
+<p>Keep <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV/venv</span></code> off your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> otherwise, and don’t activate it in the
+terminal you use for production, so that each terminal clearly uses one installation.</p>
+</section>
+<section id="keeping-it-up-to-date">
+<h2>Keeping it up to date<a class="headerlink" href="#keeping-it-up-to-date" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">development</span> <span class="n">update</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">latest</span>
+</pre></div>
+</div>
+<p>This updates the released packages and the development tools. A checkout you installed
+is replaced only if a newer release appears; run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> in it again
+afterwards if you are still working on it.</p>
+</section>
+<section id="moving-an-older-conda-based-seamm-dev">
+<h2>Moving an older conda-based ~/SEAMM_DEV<a class="headerlink" href="#moving-an-older-conda-based-seamm-dev" title="Link to this heading">#</a></h2>
+<p>Before the SEAMM Manager, the development installation was the conda environment
+<code class="docutils literal notranslate"><span class="pre">seamm-dev</span></code> with services named <code class="docutils literal notranslate"><span class="pre">dev_jobserver</span></code>, <code class="docutils literal notranslate"><span class="pre">dev_webui</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dev_dashboard</span></code>. Its jobs, projects and queue configuration in <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code> are
+kept. The steps:</p>
 <ol class="arabic">
-<li><p>Move <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code> to the new location, and then make a link to it. (Stop the services
-first!!!):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">~/</span><span class="n">SEAMM</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span>
-<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">newpath</span><span class="o">&gt;/</span><span class="n">SEAMM</span> <span class="o">~/</span>
+<li><p>Make sure no development jobs are running.</p></li>
+<li><p>Back up the jobs database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">SEAMM_DEV</span><span class="o">/</span><span class="n">Jobs</span><span class="o">/</span><span class="n">seamm</span><span class="o">.</span><span class="n">db</span> <span class="o">~/</span><span class="n">SEAMM_DEV</span><span class="o">/</span><span class="n">Jobs</span><span class="o">/</span><span class="n">seamm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">bak</span>
 </pre></div>
 </div>
 </li>
-<li><p>Now follow the steps 4 on above. Wherever it says <code class="docutils literal notranslate"><span class="pre">&lt;newpath&gt;</span></code> use
-<code class="docutils literal notranslate"><span class="pre">&lt;newpath&gt;/SEAMM</span></code>.</p></li>
+<li><p>Older databases were never brought under schema migrations. Check:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sqlite3</span> <span class="o">~/</span><span class="n">SEAMM_DEV</span><span class="o">/</span><span class="n">Jobs</span><span class="o">/</span><span class="n">seamm</span><span class="o">.</span><span class="n">db</span> <span class="s2">"select version_num from alembic_version"</span>
+</pre></div>
+</div>
+<p>If that reports <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">such</span> <span class="pre">table</span></code>, mark the database with the version its tables
+already have, so the installation can migrate it the rest of the way. For a
+database whose <code class="docutils literal notranslate"><span class="pre">flowcharts</span></code> table has a <code class="docutils literal notranslate"><span class="pre">flowchart_metadata</span></code> column and no
+<code class="docutils literal notranslate"><span class="pre">path</span></code> column – check with
+<code class="docutils literal notranslate"><span class="pre">sqlite3</span> <span class="pre">~/SEAMM_DEV/Jobs/seamm.db</span> <span class="pre">&quot;pragma</span> <span class="pre">table_info(flowcharts)&quot;</span></code> – that is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>seamm-manager --development environment create
+uv pip install --python ~/SEAMM_DEV/venv/bin/python seamm-datastore
+cd $(~/SEAMM_DEV/venv/bin/python -c "import seamm_datastore, pathlib; print(pathlib.Path(seamm_datastore.__file__).parent / 'database')")
+~/SEAMM_DEV/venv/bin/alembic -x uri=sqlite:///$HOME/SEAMM_DEV/Jobs/seamm.db stamp 7b24598d1fee
+</pre></div>
+</div>
+<p>Ask on the forum if your database looks different.</p>
+</li>
+<li><p>Create the installation, its services and apps as above. Creating the services
+stops and replaces the old <code class="docutils literal notranslate"><span class="pre">dev_jobserver</span></code> and <code class="docutils literal notranslate"><span class="pre">dev_webui</span></code> automatically, since
+they ran the same root; the web interface keeps the old port.</p></li>
+<li><p>Install the checkouts you had installed in <code class="docutils literal notranslate"><span class="pre">seamm-dev</span></code> into the new environment.</p></li>
+<li><p>Once you are satisfied, remove the old pieces: the <code class="docutils literal notranslate"><span class="pre">dev_dashboard</span></code> service (if you
+still ran the old Dashboard), the <code class="docutils literal notranslate"><span class="pre">SEAMM-dev</span></code> and <code class="docutils literal notranslate"><span class="pre">SEAMM-Installer-dev</span></code> apps, and
+the conda environment (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">remove</span> <span class="pre">-n</span> <span class="pre">seamm-dev</span></code>).</p></li>
 </ol>
-<p>Why do you also have to tell SEAMM where the datastore is, even if it still appears to
-be in <code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>? Because the Web server in the Dashboard will not access files
-outside the <code class="docutils literal notranslate"><span class="pre">Jobs/projects</span></code> directory because of security issues. If you don’t tell it
-where to look for the datastore it will look in <code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>, which it will find,
-but it will think the directory is <code class="docutils literal notranslate"><span class="pre">&lt;newpath&gt;/SEAMM/Jobs</span></code>. It will think it is outside
-the allowed path and prevent you from deleting jobs, submitting jobs, or do anything
-else that changes files. Not what you want! So you have to tell it the true path to the
-<code class="docutils literal notranslate"><span class="pre">Jobs/</span></code> directory. Then it will be happy!</p>
 </section>
 </section>
 
@@ -673,20 +690,20 @@ else that changes files. Not what you want! So you have to tell it the true path
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="manual_queues/index.html"
+       href="trial_installation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">How-To Use a Queueing System Manually</p>
+        <p class="prev-next-title">Trying a New Release Beside Production</p>
       </div>
     </a>
     <a class="right-next"
-       href="trial_installation.html"
+       href="../background/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Trying a New Release Beside Production</p>
+        <p class="prev-next-title">Background Information</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -709,8 +726,11 @@ else that changes files. Not what you want! So you have to tell it the true path
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-jobs-directory">Moving the Jobs Directory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-entire-seamm-directory">Moving the entire ~/SEAMM directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-it">Creating it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#services-and-apps">Services and apps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-a-package">Working on a package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-it-up-to-date">Keeping it up to date</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-an-older-conda-based-seamm-dev">Moving an older conda-based ~/SEAMM_DEV</a></li>
 </ul>
   </nav></div>
 
@@ -718,7 +738,7 @@ else that changes files. Not what you want! So you have to tell it the true path
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/how_tos/move_job_dir.rst.txt"
+      <li><a href="../_sources/how_tos/dev_installation.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
