@@ -144,6 +144,12 @@ restarts the JobServer if it needs to be. The package list and lock file are ref
 nightly, so a release made today appears tomorrow; ``update --latest`` asks PyPI
 directly if you need it today.
 
+.. important::
+   Updating from a version older than 2026.10 brings the new flowchart format, 3.0.
+   After the update, convert the jobs with ``seamm-manager flowcharts migrate``.
+   :ref:`upgrading-format3` explains the details, and how to convert your own
+   flowcharts.
+
 After every change the manager writes the full list of installed versions to
 ``~/SEAMM/environments``, so you can always see what changed and when.
 

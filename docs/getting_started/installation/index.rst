@@ -36,6 +36,11 @@ the machine. :ref:`seamm-manager-installation` walks you through it.
    receive updates. :ref:`migrating-from-seamm-installer` explains how to move to the
    SEAMM Manager.
 
+.. important::
+   SEAMM 2026.10 introduced a new flowchart format, 3.0. When you update an existing
+   installation, also convert its jobs: :ref:`upgrading-format3` explains how, and how to
+   convert your own flowcharts.
+
 .. Note::
    When you set up the web interface on a server, change the password of the ``admin``
    account. :ref:`dashboard-management` will walk you through this.
@@ -48,6 +53,7 @@ the machine. :ref:`seamm-manager-installation` walks you through it.
     :hidden:
 
     seamm-manager
+    upgrading_format3
     dashboard_management
 
 .. _uv: https://docs.astral.sh/uv/
