@@ -499,6 +499,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="migrating.html">Moving from the SEAMM Installer</a></li>
 </ul>
 </details></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading_format3.html">Upgrading to flowchart format 3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard_management.html">Managing the Dashboard</a></li>
 </ul>
 </details></li>
@@ -712,6 +713,13 @@ are launchd agents and on Linux systemd user services.</p>
 restarts the JobServer if it needs to be. The package list and lock file are refreshed
 nightly, so a release made today appears tomorrow; <code class="docutils literal notranslate"><span class="pre">update</span> <span class="pre">--latest</span></code> asks PyPI
 directly if you need it today.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Updating from a version older than 2026.10 brings the new flowchart format, 3.0.
+After the update, convert the jobs with <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">flowcharts</span> <span class="pre">migrate</span></code>.
+<a class="reference internal" href="upgrading_format3.html#upgrading-format3"><span class="std std-ref">Upgrading to flowchart format 3.0</span></a> explains the details, and how to convert your own
+flowcharts.</p>
+</div>
 <p>After every change the manager writes the full list of installed versions to
 <code class="docutils literal notranslate"><span class="pre">~/SEAMM/environments</span></code>, so you can always see what changed and when.</p>
 <p>If the environment is ever damaged:</p>
