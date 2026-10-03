@@ -13,6 +13,7 @@ SEAMM:
    FHI-aims <https://molssi-seamm.github.io/fhi_aims_step/index.html>
    Gaussian <https://molssi-seamm.github.io/gaussian_step/index.html>
    LAMMPS <https://molssi-seamm.github.io/lammps_step/index.html>
+   MBE <https://molssi-seamm.github.io/mbe_step/index.html>
    Model Chemistry <https://molssi-seamm.github.io/model_chemistry_step/index.html>
    MOPAC <https://molssi-seamm.github.io/mopac_step/index.html>
    ORCA <https://molssi-seamm.github.io/orca_step/index.html>

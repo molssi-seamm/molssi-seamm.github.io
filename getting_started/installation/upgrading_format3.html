@@ -752,7 +752,7 @@ converts nothing. Use <code class="docutils literal notranslate"><span class="pr
 <p>The report lists what the converter noticed, grouped by kind and counted. None of
 these messages stops the conversion:</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">dropped</span> <span class="pre">attributes</span> <span class="pre">...</span></code></dt><dd><p>Old versions of some plug-ins stored extra information in the flowchart beside the
+<dt><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">out</span> <span class="pre">...,</span> <span class="pre">which</span> <span class="pre">are</span> <span class="pre">not</span> <span class="pre">settings</span> <span class="pre">but</span> <span class="pre">a</span> <span class="pre">cache</span> <span class="pre">or</span> <span class="pre">run-time</span> <span class="pre">state</span></code> (in SEAMM 2026.10.2 and earlier, <code class="docutils literal notranslate"><span class="pre">dropped</span> <span class="pre">attributes</span> <span class="pre">...</span></code>)</dt><dd><p>Old versions of some plug-ins stored extra information in the flowchart beside the
 settings. One example is a cached copy of the VASP potential list. This information
 is not a setting, and the plug-in rebuilds it when it needs it, so the converter
 leaves it out. The message looks alarming, but it is expected.</p>

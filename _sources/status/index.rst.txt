@@ -28,6 +28,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    seamm_dashboard_client_,|sdc2|,         N/A,                       |sdc4|,        |sdc6|,     |sdc7|
    seamm_exec_,           |sexec2|,         N/A,                       |sexec4|,        |sexec6|,     |sexec7|
    seamm_geometric_,      |sgeo2|,         N/A,                       |sgeo4|,        |sgeo6|,     |sgeo7|
+   seamm_mbe_,            |smbe2|,         N/A,                       |smbe4|,        |smbe6|,     |smbe7|
    seamm_mdi_,            |smdi2|,         N/A,                       |smdi4|,        |smdi6|,     |smdi7|
    seamm_slurm_,          |sslurm2|,         N/A,                       |sslurm4|,        |sslurm6|,     |sslurm7|
    seamm_thermochemistry_,|sthermo2|,         N/A,                       |sthermo4|,        |sthermo6|,     |sthermo7|
@@ -306,6 +307,26 @@ status, grouped by category:
 
 .. |sbsse7| image:: https://img.shields.io/pypi/dm/seamm-bsse.svg
    :target: https://pypi.org/project/seamm-bsse/
+   :alt: PyPI downloads
+
+.. seamm_mbe badges
+
+.. _seamm_mbe: https://molssi-seamm.github.io/seamm_mbe/index.html
+
+.. |smbe2| image:: https://codecov.io/gh/molssi-seamm/seamm_mbe/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_mbe
+   :alt: Code Coverage
+
+.. |smbe4| image:: https://github.com/molssi-seamm/seamm_mbe/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_mbe/index.html
+   :alt: Documentation Status
+
+.. |smbe6| image:: https://img.shields.io/pypi/v/seamm-mbe.svg
+   :target: https://pypi.org/project/seamm-mbe/
+   :alt: PyPI version
+
+.. |smbe7| image:: https://img.shields.io/pypi/dm/seamm-mbe.svg
+   :target: https://pypi.org/project/seamm-mbe/
    :alt: PyPI downloads
 
 .. seamm_dashboard_client badges
