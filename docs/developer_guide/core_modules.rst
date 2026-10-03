@@ -35,6 +35,7 @@ and libraries that plug-ins share:
     seamm-mdi <https://molssi-seamm.github.io/seamm_mdi/index.html>
     seamm-thermochemistry <https://molssi-seamm.github.io/seamm_thermochemistry/index.html>
     seamm-bsse <https://molssi-seamm.github.io/seamm_bsse/index.html>
+    seamm-mbe <https://molssi-seamm.github.io/seamm_mbe/index.html>
     seamm-geometric <https://molssi-seamm.github.io/seamm_geometric/index.html>
     seamm-ase <https://molssi-seamm.github.io/seamm_ase/index.html>
     cms-plots <https://molssi-seamm.github.io/cms_plots/index.html>
