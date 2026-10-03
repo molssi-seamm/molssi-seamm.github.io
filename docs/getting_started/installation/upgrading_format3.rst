@@ -167,7 +167,7 @@ Messages you may see
 The report lists what the converter noticed, grouped by kind and counted. None of
 these messages stops the conversion:
 
-``dropped attributes ...``
+``left out ..., which are not settings but a cache or run-time state`` (in SEAMM 2026.10.2 and earlier, ``dropped attributes ...``)
    Old versions of some plug-ins stored extra information in the flowchart beside the
    settings. One example is a cached copy of the VASP potential list. This information
    is not a setting, and the plug-in rebuilds it when it needs it, so the converter
