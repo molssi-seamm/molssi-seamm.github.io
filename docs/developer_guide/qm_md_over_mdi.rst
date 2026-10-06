@@ -195,7 +195,7 @@ Builds the engine launch argv::
 * Returns a *list*; the caller renders it with ``shlex.join()`` so the ``-mdi``
   value is one correctly-quoted token.
 * Non-conda installs raise ``NotImplementedError`` -- flagged honestly rather
-  than mis-launched (local/modules/docker is future work).
+  than mis-launched (local/modules installations are future work).
 
 The engine script (Option C)
 -----------------------------
