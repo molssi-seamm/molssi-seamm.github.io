@@ -31,9 +31,11 @@ Glossary
       tasks or can be executed directly with no batch job involved.
 
    task
-      A batch process created by a step, often the execution of a
-      simulation engine such as `LAMMPS`, `GAMESS`, `Quantum Espresso`,
-      etc.
+      One calculation a step hands to SEAMM's task layer, usually a run of a
+      simulation engine such as ORCA, VASP or LAMMPS. A job's tasks run in
+      the job's own allocation, through the machine's TaskServer, or bundled
+      into batch jobs of their own, as the job's queue section says (see
+      :ref:`where-jobs-run`).
 
    job datastore
       is the central place where information about the jobs and their
