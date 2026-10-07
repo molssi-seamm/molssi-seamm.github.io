@@ -592,6 +592,31 @@ versions of SEAMM or the plug-ins.</p>
 <code class="docutils literal notranslate"><span class="pre">~/SEAMM/Jobs</span></code>, the configuration in <code class="docutils literal notranslate"><span class="pre">~/SEAMM/*.ini</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.seamm.d</span></code>, and the
 conda environments of the codes (<code class="docutils literal notranslate"><span class="pre">seamm-mopac</span></code>, <code class="docutils literal notranslate"><span class="pre">seamm-lammps</span></code>, …) are shared by
 both, and the manager uses them as they are.</p>
+<p>The new installation is SEAMM 2026.10 or later, which writes flowcharts in a new
+format, 3.0. So the move has two parts: install SEAMM with the manager, then convert
+your jobs’ flowcharts to the new format. Both are below.</p>
+<section id="before-you-start">
+<h2>Before you start<a class="headerlink" href="#before-you-start" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Wait until no jobs are running.</strong> The move recreates the JobServer and the
+conversion stops it for a minute or two.</p></li>
+<li><p><strong>Back up the</strong> <code class="docutils literal notranslate"><span class="pre">Jobs</span></code> <strong>directory</strong>, or at least its flowcharts and the database.
+The conversion makes its own backup of the database and keeps every original
+flowchart, but a copy of your own costs little. This keeps just the parts that
+change, and works with directory names that contain spaces:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/SEAMM
+<span class="gp">$ </span>find<span class="w"> </span>Jobs<span class="w"> </span>-name<span class="w"> </span>flowchart.flow<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>tar<span class="w"> </span>--null<span class="w"> </span>-czf<span class="w"> </span>~/SEAMM-flowcharts-backup.tgz<span class="w"> </span>-T<span class="w"> </span>-<span class="w"> </span>Jobs/seamm.db
+</pre></div>
+</div>
+</li>
+<li><p><strong>If several machines work together</strong>, for instance a GUI on your laptop that
+submits jobs to a server, move the <strong>server first</strong>. A new installation sends
+flowcharts in format 3.0, which an old one cannot read.</p></li>
+</ul>
+</section>
+<section id="moving-the-installation">
+<h2>Moving the installation<a class="headerlink" href="#moving-the-installation" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">uv</span></code> and the SEAMM Manager (<a class="reference internal" href="seamm-manager.html#seamm-manager-installation"><span class="std std-ref">Installing SEAMM with the Manager</span></a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">LsSf</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">astral</span><span class="o">.</span><span class="n">sh</span><span class="o">/</span><span class="n">uv</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">|</span> <span class="n">sh</span>
@@ -629,20 +654,42 @@ stop it and set up the web interface on the same port:</p>
 <a class="reference internal" href="command-line.html#command-line-installation"><span class="std std-ref">Command Line Installation</span></a>. The web interface shows the same jobs and projects,
 since it reads the same database.</p>
 </li>
-<li><p>Check that you can run a flowchart and see it in the web interface. Once you are
-satisfied, remove the old pieces:</p>
+<li><p>Check that you can run a flowchart and see it in the web interface.</p></li>
+</ol>
+</section>
+<section id="converting-the-jobs-flowcharts">
+<h2>Converting the jobs’ flowcharts<a class="headerlink" href="#converting-the-jobs-flowcharts" title="Link to this heading">#</a></h2>
+<p>Every job directory holds a copy of the job’s flowchart, and the jobs database keeps a
+record of each one, all in the old format 2.0. The new installation reads them, but
+until they are converted the web interface treats the old and new copies of the same
+flowchart as different flowcharts. <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span></code> ends by saying so when it
+finds old job flowcharts. Convert them in one step, which keeps the originals and backs
+up the database:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>seamm-manager<span class="w"> </span>flowcharts<span class="w"> </span>status<span class="w">     </span><span class="c1"># how many are still in format 2.0</span>
+<span class="gp">$ </span>seamm-manager<span class="w"> </span>flowcharts<span class="w"> </span>migrate<span class="w">    </span><span class="c1"># report, ask, then convert</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">migrate</span></code> first reports what it would do, then asks before changing anything.
+<a class="reference internal" href="upgrading_format3.html#upgrading-format3"><span class="std std-ref">Upgrading to flowchart format 3.0</span></a> explains each stage, the messages you may see, how to undo
+it, and how to convert your own flowcharts, the <code class="docutils literal notranslate"><span class="pre">.flow</span></code> files you keep outside the
+jobs. Those can wait: SEAMM still reads format 2.0, and the editor saves in 3.0 the
+next time you save one.</p>
+</section>
+<section id="removing-the-old-installation">
+<h2>Removing the old installation<a class="headerlink" href="#removing-the-old-installation" title="Link to this heading">#</a></h2>
+<p>Once you are satisfied, remove the old pieces:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">remove</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span>
 </pre></div>
 </div>
 <p>and delete the old <code class="docutils literal notranslate"><span class="pre">SEAMM-Installer</span></code> shortcut if you have one.</p>
-</li>
-</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have several SEAMM installations, for instance a production one in <code class="docutils literal notranslate"><span class="pre">~/SEAMM</span></code>
-and a development one in <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code>, move each separately. <code class="docutils literal notranslate"><span class="pre">--root</span></code> chooses
+and a development one in <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code>, move each separately, and convert each
+one’s jobs with <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">--root</span> <span class="pre">&lt;root&gt;</span> <span class="pre">flowcharts</span> <span class="pre">migrate</span></code>. <code class="docutils literal notranslate"><span class="pre">--root</span></code> chooses
 the root and <code class="docutils literal notranslate"><span class="pre">--development</span></code> is shorthand for <code class="docutils literal notranslate"><span class="pre">~/SEAMM_DEV</span></code>.</p>
 </div>
+</section>
 </section>
 
 
@@ -683,6 +730,21 @@ the root and <code class="docutils literal notranslate"><span class="pre">--deve
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-start">Before you start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-installation">Moving the installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-the-jobs-flowcharts">Converting the jobs’ flowcharts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-the-old-installation">Removing the old installation</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
