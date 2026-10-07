@@ -24,6 +24,7 @@ In addition, there are several other major codes in SEAMM:
     seamm-manager <https://molssi-seamm.github.io/seamm_manager/index.html>
     seamm-webui <https://molssi-seamm.github.io/seamm_webui/index.html>
     seamm-exec <https://molssi-seamm.github.io/seamm_exec/index.html>
+    seamm-scheduler <https://molssi-seamm.github.io/seamm_scheduler/index.html>
     seamm-slurm <https://molssi-seamm.github.io/seamm_slurm/index.html>
     seamm-dashboard-client <https://molssi-seamm.github.io/seamm_dashboard_client/index.html>
 

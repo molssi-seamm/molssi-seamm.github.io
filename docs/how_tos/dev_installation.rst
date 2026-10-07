@@ -55,8 +55,8 @@ This gives:
 On macOS the services show up in Activity Monitor as ``SEAMM-JobServer-SEAMM_DEV`` and
 ``SEAMM-WebUI-SEAMM_DEV``. ``seamm-manager services status --all`` lists them beside
 production's. To send development jobs to a cluster as well as run them locally, give
-the JobServer queues in ``~/SEAMM_DEV/<host name>.ini`` (see :ref:`use_a_queueing_system_manually`
-for running flowcharts in a queue).
+the JobServer queues in ``~/SEAMM_DEV/<host name>.ini`` (see :ref:`jobserver-queues`
+for the file and its keys).
 
 Working on a package
 --------------------

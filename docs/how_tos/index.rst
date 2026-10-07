@@ -10,6 +10,7 @@ This section gives examples of how to do realistic simulations with SEAMM.
    :maxdepth: 2
    :titlesonly:
 
+   jobserver_queues
    manual_queues/index
    move_job_dir
    trial_installation

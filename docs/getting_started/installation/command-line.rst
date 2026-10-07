@@ -95,6 +95,12 @@ or dock.
 Installing the Services
 -----------------------
 
+``seamm-manager install`` also writes ``~/SEAMM/taskserver.ini``, the capacity
+(cores and memory) of the machine's TaskServer, the small queue through which
+SEAMM shares the machine among the calculations of several flowcharts; see
+:ref:`where-jobs-run`. To send jobs to a cluster, or to run them under this
+machine's own SLURM, add a queue file as described in :ref:`jobserver-queues`.
+
 If you plan to run jobs on the machine, create the JobServer service, so that it keeps
 running even when you are not logged in::
 
