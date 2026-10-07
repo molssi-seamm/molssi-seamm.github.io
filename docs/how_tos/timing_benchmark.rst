@@ -1,8 +1,8 @@
 .. _timing-benchmark:
 
-**************************************
+***************************************
 How-To Seed the Timing of a New Machine
-**************************************
+***************************************
 
 SEAMM keeps a record of every calculation it runs -- the code, the size of the
 calculation, the cores it had, how long it took and on what kind of machine --
