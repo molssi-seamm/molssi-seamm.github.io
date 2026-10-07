@@ -95,6 +95,12 @@ or dock.
 Installing the Services
 -----------------------
 
+``seamm-manager install`` also writes ``~/SEAMM/taskserver.ini``, the capacity
+(cores and memory) of the machine's TaskServer, the small queue through which
+SEAMM shares the machine among the calculations of several flowcharts; see
+:ref:`where-jobs-run`. To send jobs to a cluster, or to run them under this
+machine's own SLURM, add a queue file as described in :ref:`jobserver-queues`.
+
 If you plan to run jobs on the machine, create the JobServer service, so that it keeps
 running even when you are not logged in::
 
@@ -152,6 +158,24 @@ directly if you need it today.
 
 After every change the manager writes the full list of installed versions to
 ``~/SEAMM/environments``, so you can always see what changed and when.
+
+An update never changes the environment in place. It builds a new, versioned
+environment beside the current one -- the current one plus the change -- then
+switches the link ``~/SEAMM/venv`` to it and restarts the services that need
+restarting. A job that was running keeps the environment it started in, since
+every job runs from the real path of its version, and a switch is refused while
+a process started through the link is still running (``--force`` overrides
+that, which is only safe with nothing running). This is what makes an update
+safe on a machine with jobs in flight, and what makes going back trivial::
+
+  seamm-manager environment versions    # the versions, and what is using each
+  seamm-manager environment rollback    # back to the previous version
+  seamm-manager environment switch <version>
+  seamm-manager environment prune       # remove old, unused versions
+
+``prune`` keeps the newest two for rollback and never removes a version a
+running process uses. Each version is about 1.5 GB, so prune now and then on a
+machine where space matters.
 
 If the environment is ever damaged::
 

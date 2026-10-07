@@ -30,6 +30,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    seamm_geometric_,      |sgeo2|,         N/A,                       |sgeo4|,        |sgeo6|,     |sgeo7|
    seamm_mbe_,            |smbe2|,         N/A,                       |smbe4|,        |smbe6|,     |smbe7|
    seamm_mdi_,            |smdi2|,         N/A,                       |smdi4|,        |smdi6|,     |smdi7|
+   seamm_scheduler_,      |ssched2|,         N/A,                       |ssched4|,        |ssched6|,     |ssched7|
    seamm_slurm_,          |sslurm2|,         N/A,                       |sslurm4|,        |sslurm6|,     |sslurm7|
    seamm_thermochemistry_,|sthermo2|,         N/A,                       |sthermo4|,        |sthermo6|,     |sthermo7|
    seamm_webui_,          |swebui2|,         N/A,                       |swebui4|,        |swebui6|,     |swebui7|
@@ -407,6 +408,26 @@ status, grouped by category:
 
 .. |smdi7| image:: https://img.shields.io/pypi/dm/seamm-mdi.svg
    :target: https://pypi.org/project/seamm-mdi/
+   :alt: PyPI downloads
+
+.. seamm_scheduler badges
+
+.. _seamm_scheduler: https://molssi-seamm.github.io/seamm_scheduler/index.html
+
+.. |ssched2| image:: https://codecov.io/gh/molssi-seamm/seamm_scheduler/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_scheduler
+   :alt: Code Coverage
+
+.. |ssched4| image:: https://github.com/molssi-seamm/seamm_scheduler/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_scheduler/index.html
+   :alt: Documentation Status
+
+.. |ssched6| image:: https://img.shields.io/pypi/v/seamm-scheduler.svg
+   :target: https://pypi.org/project/seamm-scheduler/
+   :alt: PyPI version
+
+.. |ssched7| image:: https://img.shields.io/pypi/dm/seamm-scheduler.svg
+   :target: https://pypi.org/project/seamm-scheduler/
    :alt: PyPI downloads
 
 .. seamm_slurm badges

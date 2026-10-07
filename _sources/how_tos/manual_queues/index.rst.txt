@@ -4,8 +4,10 @@
 How-To Use a Queueing System Manually
 *************************************
 
-There are two scenarios where you might want to run SEAMM jobs in a queueing system
-manually
+Normally the JobServer submits jobs to a queueing system for you, locally or on a
+remote cluster, once it has a queue file (see :ref:`jobserver-queues`). There are
+two scenarios where you might still want to run SEAMM jobs in a queueing system by
+hand
 
 #. You want to run calculations on a remote machine where you either can't or don't
    wish to set up a Dashboard,
@@ -32,7 +34,7 @@ documentation.
 Testing the Installation
 ------------------------
 Once you have SEAMM installed on the machine, the simplest way to test that everything
-is working is to run a quick flowchart :download:`quickmin.flowt <./quickmin.flow>`
+is working is to run a quick flowchart :download:`quickmin.flow <./quickmin.flow>`
 directly for the commandline. Computer centers frown on you running on the front end
 nodes, but the following flowchart will take less than a second so there is no
 problem. Follow these steps
@@ -129,43 +131,34 @@ will be covered in another How-To.
 Running and Adding the Job to the Dashboard
 -------------------------------------------
 
-If you can run the Dashboard on the remote machine and access its web-server, you can
-run the jobs in the queue and ask them to automatically insert themselves into the
-Datastore, where they can be viewd using a browser and the Dashboard.
+If you can run the web interface on the remote machine and reach its web server, you
+can run the jobs in the queue and ask them to insert themselves into the datastore,
+where they can be viewed in a browser as usual.
 
-First, get the Dashboard running on the remote machine. It is possible that you can
-install it as a service using the SEAMM installer, but many computer centers are
-configured not to allow users to run services on the login nodes. If so, you have two
-options. The easiest approach is to log into the front-end node, activate the SEAMM
-environment and run the dashboard interactively::
+First, get the web interface running on the remote machine. ``seamm-manager
+services start`` installs it as a service, but many computer centers do not allow
+users to run services on the login nodes. If so, log into the front-end node and run
+it from the installation directly::
 
-  $ source ~/SEAMM/venv/bin/activate
-  (venv) seamm-dashboard
-  dashboard:INFO:Logging to the console at level INFO.
-  dashboard:INFO:Logging to /home/psaxe/SEAMM/logs/dashboard.log at level WARNING.
-  dashboard:INFO:
-  dashboard:INFO:Where options are set:
-  dashboard:INFO:------------------------------------------------------------
-  dashboard:INFO:root                default         ~/SEAMM
+  $ ~/SEAMM/venv/bin/seamm-webui
   ...
 
-The disadvantage is that the Dashboard will stop running as soon as you close that
-window. You can get around this using ``nohup`` and putting it in the background::
+The disadvantage is that it stops as soon as you close that window. You can get
+around this using ``nohup`` and putting it in the background::
 
-  (venv) nohup seamm-dashboard >& dashboard.log &
+  $ nohup ~/SEAMM/venv/bin/seamm-webui >& webui.log &
   [1] 175118
-  (venv) 
 
-This redirected the output to the file ``dashboard.log``, and using ``nohup`` (which is
+This redirected the output to the file ``webui.log``, and using ``nohup`` (which is
 short for "no hang-up" from the old days of using telephone modems) plus putting the job
-in the background (the final "&") lets the Dashboard run even when you close the window
-and log off the machine. It uses almost no resources, some memory and almost no cpu
+in the background (the final "&") lets the web interface run even when you close the
+window and log off the machine. It uses almost no resources, some memory and almost no cpu
 time, so leaving it running is not usually an issue; however, many computer centers will
 not allow commands to run for more than a few hours and then will automatically kill
 them, so you may need to start the Dashboard again later.
 
-By default the Dashboard runs on port 55055, so if you can access that port on the
-machine, you can access the dashboard through your browser at ``http://<name or
+By default the web interface runs on port 55055, so if you can access that port on the
+machine, you can reach it through your browser at ``http://<name or
 ip>:55055``. It is worth a try! However, if that doesn't work, you can use ``ssh`` to
 tunnel to the machine::
 
@@ -220,8 +213,8 @@ Fill out the name and a decription of the new project. I used ``testing`` for th
    
    Adding a project
 
-You will also need your credentials for the Dashboard stored in the file
-``~/.seammrc``. It is simple, just name and password. Mine looks like this::
+You will also need your credentials for the web interface stored in the file
+``~/.seamm.d/seammrc``. It is simple, just name and password. Mine looks like this::
 
   [Dashboard: localhost]
   user = psaxe

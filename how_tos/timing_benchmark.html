@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>QM molecular dynamics (Model Chemistry + LAMMPS) &#8212; SEAMM 1.0 documentation</title>
+    <title>How-To Seed the Timing of a New Machine &#8212; SEAMM 1.0 documentation</title>
   
   
   
@@ -59,12 +59,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/qm_md_with_mdi';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'how_tos/timing_benchmark';</script>
 
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Developers Documentation" href="../developer_guide/index.html" />
-    <link rel="prev" title="Where Jobs Run" href="where_jobs_run.html" />
+    <link rel="next" title="How-To Use a Queueing System Manually" href="manual_queues/index.html" />
+    <link rel="prev" title="How-To Configure the JobServer’s Queues" href="jobserver_queues.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="1.0" />
@@ -156,8 +156,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../how_tos/index.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
     How-To Guide
   </a>
 </li>
@@ -170,8 +170,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
     User Guide
   </a>
 </li>
@@ -357,8 +357,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../how_tos/index.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
     How-To Guide
   </a>
 </li>
@@ -371,8 +371,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
     User Guide
   </a>
 </li>
@@ -496,8 +496,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="where_jobs_run.html">Where Jobs Run</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">QM molecular dynamics (Model Chemistry + LAMMPS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobserver_queues.html">How-To Configure the JobServer’s Queues</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How-To Seed the Timing of a New Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual_queues/index.html">How-To Use a Queueing System Manually</a></li>
+<li class="toctree-l1"><a class="reference internal" href="move_job_dir.html">How-To Move the Jobs Directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trial_installation.html">Trying a New Release Beside Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_installation.html">Setting Up the Development Installation</a></li>
 </ul>
 </div>
 </nav></div>
@@ -539,9 +543,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">How-To Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">QM molecular dynamics (Model Chemistry + LAMMPS)</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">How-To Seed the Timing of a New Machine</span></li>
   </ul>
 </nav>
 </div>
@@ -558,210 +562,116 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="qm-molecular-dynamics-model-chemistry-lammps">
-<span id="user-qm-md-with-mdi"></span><h1>QM molecular dynamics (Model Chemistry + LAMMPS)<a class="headerlink" href="#qm-molecular-dynamics-model-chemistry-lammps" title="Link to this heading">#</a></h1>
-<p>SEAMM can run LAMMPS molecular dynamics where the energies and forces come from
-a <strong>quantum-mechanical engine</strong> – currently MOPAC or xTB semiempirical methods
-– instead of a classical forcefield. You set this up with two steps in your
-flowchart:</p>
-<ol class="arabic simple">
-<li><p>a <strong>Model Chemistry</strong> step, where you pick the level of theory (e.g.
-<code class="docutils literal notranslate"><span class="pre">MOPAC:SQM&#64;PM6-ORG</span></code>); and</p></li>
-<li><p>a <strong>LAMMPS</strong> step, which automatically uses that model chemistry to drive the
-dynamics.</p></li>
-</ol>
-<p>The two communicate over the <a class="reference external" href="https://molssi-mdi.github.io/MDI_Library/">MDI</a> protocol behind the scenes – you do not
-have to configure any of that. This page shows how to build and run such a
-flowchart. Developers wanting the code-level details should read
-<a class="reference internal" href="../developer_guide/qm_md_over_mdi.html#dev-qm-md-over-mdi"><span class="std std-ref">QM-MD over MDI (the LAMMPS driver)</span></a>.</p>
-<nav class="contents local" id="contents">
-<p class="topic-title">Contents</p>
+  <section id="how-to-seed-the-timing-of-a-new-machine">
+<span id="timing-benchmark"></span><h1>How-To Seed the Timing of a New Machine<a class="headerlink" href="#how-to-seed-the-timing-of-a-new-machine" title="Link to this heading">#</a></h1>
+<p>SEAMM keeps a record of every calculation it runs – the code, the size of the
+calculation, the cores it had, how long it took and on what kind of machine –
+and fits a cost model to those records. The model gives each new calculation
+an estimated time, which sets the walltime of the batch jobs that carry it and
+how many calculations are packed into one. A machine the model has never seen
+gets no estimate worth having: the estimates fall back to each step’s rough
+built-in rule until there are records. This how-to seeds those records with a
+short, standard set of runs.</p>
+<section id="when-to-run-it">
+<h2>When to run it<a class="headerlink" href="#when-to-run-it" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="#how-it-fits-together" id="id1">How it fits together</a></p></li>
-<li><p><a class="reference internal" href="#prerequisites" id="id2">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#building-the-flowchart" id="id3">Building the flowchart</a></p></li>
-<li><p><a class="reference internal" href="#which-methods-can-be-used" id="id4">Which methods can be used</a></p></li>
-<li><p><a class="reference internal" href="#running-and-what-you-get" id="id5">Running and what you get</a></p></li>
-<li><p><a class="reference internal" href="#troubleshooting" id="id6">Troubleshooting</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id7">See also</a></p></li>
+<li><p>On a new machine or cluster before sending it production work, so that the
+first real jobs get sensible walltimes.</p></li>
+<li><p>On each <em>kind</em> of node a cluster has. The records are keyed by cluster,
+partition and CPU model, so a partition that mixes two processors is two
+machine classes; run the seed once on each, constraining the job to one
+node type at a time.</p></li>
+<li><p>After a change that affects speed: a new compiler build of a code, a new
+processor, a different MPI.</p></li>
 </ul>
-</nav>
-<section id="how-it-fits-together">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">How it fits together</a><a class="headerlink" href="#how-it-fits-together" title="Link to this heading">#</a></h2>
-<p>The Model Chemistry step does not compute anything itself. It records <em>which</em>
-level of theory you want and makes that choice available to the steps that come
-after it – exactly the way the Forcefield step provides a forcefield. The
-LAMMPS step then notices the choice and, instead of looking for a forcefield,
-launches the QM engine and asks it for forces at every MD step.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐     publishes the      ┌───────────────┐
-│ Model Chemistry  │  ── chosen model ─────► │     LAMMPS    │
-│  MOPAC:SQM@PM6-ORG│      chemistry          │  MD / minimize│
-└──────────────────┘                         └───────────────┘
-                                                 drives the QM engine
-                                                 (MOPAC) for E and F
+<p>Production runs keep adding records, so the model improves with use. What
+they cannot give is the parallel scaling: a campaign usually runs each kind of
+calculation at one fixed core count, and the fit then cannot separate the
+effect of cores from the effect of size. The seed benchmark runs the same
+calculations at several core counts, and that is what pins the scaling.</p>
+</section>
+<section id="what-it-runs">
+<h2>What it runs<a class="headerlink" href="#what-it-runs" title="Link to this heading">#</a></h2>
+<p>Each code step declares its own benchmark: the systems that drive its cost and
+the chemistries and tasks to run on them, with a size limit per tier. ORCA
+runs a few molecules from water to a 300-atom alkane at B3LYP, HF and MP2 in
+a small basis plus the MLFF labelling level in a triple-zeta basis, as
+energies, gradients and optimizations. MOPAC runs the same molecules up to
+3000 atoms with PM7 and PM6-ORG in both of its regimes. The <code class="docutils literal notranslate"><span class="pre">quick</span></code> tier
+keeps each code to minutes per core count; <code class="docutils literal notranslate"><span class="pre">full</span></code> extends the sizes and
+takes an hour or two. Any installed step that declares a benchmark is
+included.</p>
+<p>The runs are ordinary flowchart runs. Their records carry a tag naming the
+benchmark set, so the fit can tell them from production runs and a later set
+on the same machine can be compared with an earlier one.</p>
+</section>
+<section id="running-it">
+<h2>Running it<a class="headerlink" href="#running-it" title="Link to this heading">#</a></h2>
+<p>On a laptop or workstation, from the installation’s environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">seamm_exec</span><span class="o">.</span><span class="n">timing_benchmark</span> <span class="o">--</span><span class="n">codes</span> <span class="n">orca</span><span class="p">,</span><span class="n">mopac</span> <span class="o">--</span><span class="n">cores</span> <span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span> <span class="o">--</span><span class="n">fit</span>
 </pre></div>
 </div>
-<p>The order matters: the Model Chemistry step must come <strong>before</strong> the LAMMPS step
-in the flowchart, so the choice exists when LAMMPS runs.</p>
-</section>
-<section id="prerequisites">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
-<p>QM-MD spans several SEAMM environments. You need <strong>LAMMPS</strong> plus at least one of
-the QM engines (<strong>MOPAC</strong> or <strong>xTB</strong>):</p>
-<ul>
-<li><p><strong>A QM engine</strong> – install at least one:</p>
-<ul class="simple">
-<li><p><strong>MOPAC</strong> – <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">mopac-step</span></code> (creates the <code class="docutils literal notranslate"><span class="pre">seamm-mopac</span></code>
-environment).</p></li>
-<li><p><strong>xTB</strong> – <code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">xtb-step</span></code> (creates the <code class="docutils literal notranslate"><span class="pre">seamm-xtb</span></code>
-environment).</p></li>
-</ul>
-</li>
-<li><p><strong>LAMMPS built with MDI</strong> – the SEAMM LAMMPS install
-(<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">lammps-step</span></code>) includes the MDI package, which provides
-the <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code> that LAMMPS needs. You can confirm it with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">run</span> <span class="o">-</span><span class="n">n</span> <span class="n">seamm</span><span class="o">-</span><span class="n">lammps</span> <span class="n">lmp</span> <span class="o">-</span><span class="n">h</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">mdi</span>
+<p>This builds the benchmark flowchart from the installed steps, runs it once
+per core count for the codes that run in parallel (and once for the serial
+ones), tags the rows, and with <code class="docutils literal notranslate"><span class="pre">--fit</span></code> fits the models afterwards. Core
+counts above the machine’s usable cores are skipped; on Apple silicon only
+the performance cores count, since mixing in efficiency cores distorts the
+scaling.</p>
+<p>On a cluster, build the flowchart once and run it as a batch job that loops
+over the core counts, so that each pass has the cores it asks for and the
+rows carry the right partition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">seamm_exec</span><span class="o">.</span><span class="n">timing_benchmark</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">only</span> <span class="o">--</span><span class="n">codes</span> <span class="n">orca</span> <span class="o">-</span><span class="n">o</span> <span class="n">bench</span><span class="o">.</span><span class="n">flow</span>
 </pre></div>
 </div>
-</li>
-<li><p><strong>The Model Chemistry plug-in</strong> – installed with SEAMM itself.</p></li>
-</ul>
-<p>LAMMPS and the QM engine must be set up as <strong>conda</strong> installations (the default
-from the installer). Other installation types are not yet supported for QM-MD.</p>
-</section>
-<section id="building-the-flowchart">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Building the flowchart</a><a class="headerlink" href="#building-the-flowchart" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Add a Model Chemistry step.</strong> Drag it into the flowchart before LAMMPS.
-Open it and choose the model chemistry from the list – for example
-<code class="docutils literal notranslate"><span class="pre">MOPAC:SQM&#64;PM6-ORG</span></code>. The list is built from whatever program plug-ins you
-have installed that can provide a model chemistry.</p>
-<ul class="simple">
-<li><p>The names follow the pattern <code class="docutils literal notranslate"><span class="pre">Program:Type&#64;Method</span></code> – here MOPAC, a
-semiempirical QM method (<code class="docutils literal notranslate"><span class="pre">SQM</span></code>), <code class="docutils literal notranslate"><span class="pre">PM6-ORG</span></code>. xTB methods look like
-<code class="docutils literal notranslate"><span class="pre">xTB:SQM&#64;GFN2-xTB</span></code>.</p></li>
-<li><p>Turn on the <strong>periodic</strong> option if your system is periodic (a crystal or a
-liquid in a box). This filters the list to methods that have been validated
-for periodic systems (see the table below).</p></li>
-</ul>
-</li>
-<li><p><strong>Add a LAMMPS step</strong> after it. Inside the LAMMPS step build the simulation
-as usual: an <strong>Initialization</strong> sub-step, then <strong>Energy</strong>, <strong>Minimization</strong>,
-or <strong>Molecular dynamics</strong> (NVE / NVT / NPT) sub-steps. You do <strong>not</strong> add a
-Forcefield step and you do <strong>not</strong> choose a <code class="docutils literal notranslate"><span class="pre">pair_style</span></code> – the QM engine
-provides all the interactions.</p></li>
-<li><p><strong>Set the charge and spin multiplicity on your system</strong>, not in the Model
-Chemistry step. These come from the configuration (the standard SEAMM place
-for them) and are passed to the QM engine automatically.</p></li>
-</ol>
-<p>That is the whole setup. When you run the job, the LAMMPS step launches the QM
-engine, runs the dynamics, and shuts the engine down when it is done.</p>
-</section>
-<section id="which-methods-can-be-used">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Which methods can be used</a><a class="headerlink" href="#which-methods-can-be-used" title="Link to this heading">#</a></h2>
-<p>Only some methods can be driven over MDI. As of this writing:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 14.0%" />
-<col style="width: 43.0%" />
-<col style="width: 43.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Engine</p></th>
-<th class="head"><p>Drivable by MDI (any system)</p></th>
-<th class="head"><p>Validated for <strong>periodic</strong> systems</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>MOPAC</p></td>
-<td><p>PM7, PM6-D3H4, PM6-ORG, PM6, AM1, RM1</p></td>
-<td><p>PM7, PM6-ORG, PM6</p></td>
-</tr>
-<tr class="row-odd"><td><p>xTB</p></td>
-<td><p>GFN1-xTB, GFN2-xTB</p></td>
-<td><p>GFN1-xTB, GFN2-xTB</p></td>
-</tr>
-</tbody>
-</table>
+<p>The batch script then runs, for each core count <code class="docutils literal notranslate"><span class="pre">N</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SEAMM_TIMING_BENCHMARK</span><span class="o">=&lt;</span><span class="n">a</span> <span class="n">name</span> <span class="k">for</span> <span class="n">this</span> <span class="nb">set</span><span class="o">&gt;</span>
+<span class="n">export</span> <span class="n">SEAMM_CE</span><span class="o">=</span><span class="s1">'{"NTASKS": N, "MEM_PER_NODE": &lt;bytes&gt;, "MEM_PER_CPU": &lt;bytes&gt;, "NGPUS": 0}'</span>
+<span class="n">run_flowchart</span> <span class="n">bench</span><span class="o">.</span><span class="n">flow</span> <span class="o">--</span><span class="n">ncores</span> <span class="n">N</span> <span class="n">orca</span><span class="o">-</span><span class="n">step</span> <span class="o">--</span><span class="n">ncores</span> <span class="n">N</span>
+</pre></div>
 </div>
-<p>Use any method in the middle column for molecular (non-periodic) systems. If you
-turn on the <em>periodic</em> option, you must use a method from the right-hand column.
-If you pick a method that cannot be driven this way – or a non-periodic method
-for a periodic system – SEAMM stops with a clear error rather than producing
-wrong results.</p>
+<p>in a fresh directory per core count. <code class="docutils literal notranslate"><span class="pre">SEAMM_CE</span></code> caps what the code sees,
+and the <code class="docutils literal notranslate"><span class="pre">--ncores</span></code> options override any limit the machine’s <code class="docutils literal notranslate"><span class="pre">seamm.ini</span></code>
+sets. Ask the scheduler for the largest core count in the sweep and, to seed
+one node type of a mixed partition, constrain the job to it (SLURM’s
+<code class="docutils literal notranslate"><span class="pre">--constraint</span></code>). Sixteen cores and a few hours are enough for the quick
+tier.</p>
 </section>
-<section id="running-and-what-you-get">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Running and what you get</a><a class="headerlink" href="#running-and-what-you-get" title="Link to this heading">#</a></h2>
-<p>Run the job the normal way. In the LAMMPS step’s working directory you will see
-a few files specific to this path:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mdi_launch.sh</span></code> – the script SEAMM generated to start the QM engine and
-the LAMMPS driver together and connect them.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">input.dat</span></code> – the LAMMPS input. It contains a <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">...</span> <span class="pre">mdi/qm</span></code> line and,
-notably, <strong>no</strong> <code class="docutils literal notranslate"><span class="pre">pair_style</span></code>: that is expected, because the QM engine
-supplies the forces.</p></li>
-<li><p>the usual <code class="docutils literal notranslate"><span class="pre">log.lammps</span></code>, trajectory, and output files.</p></li>
-</ul>
-<p>The job output notes that energies and forces are being evaluated by a QM engine
-over MDI, and that LAMMPS itself runs on a single core (it only steers the
-dynamics; the QM engine does the heavy work).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>QM-MD is far more expensive per step than classical MD, and LAMMPS drives a
-single QM engine. Start small – a modest number of atoms and steps – to get
-a feel for the cost before scaling up.</p>
+<section id="fitting-and-checking">
+<h2>Fitting and checking<a class="headerlink" href="#fitting-and-checking" title="Link to this heading">#</a></h2>
+<p>The records are in <code class="docutils literal notranslate"><span class="pre">~/.seamm.d/timing/&lt;code&gt;.csv</span></code> of the user who ran
+them, on the machine that ran them. Fit the model there:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">seamm_exec</span><span class="o">.</span><span class="n">timing_model</span> <span class="n">fit</span> <span class="n">orca</span> <span class="n">mopac</span>
+</pre></div>
 </div>
-</section>
-<section id="troubleshooting">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 38.0%" />
-<col style="width: 62.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>What you see</p></th>
-<th class="head"><p>What to do</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>“… cannot be driven via MDI”</p></td>
-<td><p>The chosen method is not MDI-capable. Pick a method from the middle
-column of the table above.</p></td>
-</tr>
-<tr class="row-odd"><td><p>“… not validated for periodic systems”</p></td>
-<td><p>You enabled <em>periodic</em> with a method not on the periodic list. Pick a
-method from the right-hand column of the table above, or turn off
-periodic for a molecular system.</p></td>
-</tr>
-<tr class="row-even"><td><p>“model chemistry … is not available”</p></td>
-<td><p>The Model Chemistry step found no installed program offering it. Make
-sure a QM engine is installed (<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">mopac-step</span></code> or
-<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">xtb-step</span></code>).</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">mdi/qm</span></code> unknown / LAMMPS error about MDI</p></td>
-<td><p>Your LAMMPS was built without the MDI package. Reinstall the SEAMM LAMMPS
-(<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span> <span class="pre">lammps-step</span></code>).</p></td>
-</tr>
-<tr class="row-even"><td><p>The run hangs at the start, or “address already in use”</p></td>
-<td><p>A networking hiccup connecting the two codes (a port collision). Re-run
-the job; this is rare for a single job on a machine.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Energies look wrong for a charged or open-shell system</p></td>
-<td><p>Set the charge and spin multiplicity on the configuration – they are not
-set in the Model Chemistry step.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="see-also">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">See also</a><a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<p>The report says how many rows and machine classes the fit saw, how well it
+fits (the fraction of rows within a factor of 1.3 and of 2), the size and
+parallel exponents, the relative cost of each method class and task, and the
+start-up time per machine. Two things to look for:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../developer_guide/qm_md_over_mdi.html#dev-qm-md-over-mdi"><span class="std std-ref">QM-MD over MDI (the LAMMPS driver)</span></a> – the developer/code-level companion to this page.</p></li>
-<li><p>MOPAC semiempirical methods: <a class="github reference external" href="https://github.com/openmopac/mopac">openmopac/mopac</a></p></li>
-<li><p>xTB (GFN-xTB) methods: <a class="reference external" href="https://xtb-docs.readthedocs.io/">https://xtb-docs.readthedocs.io/</a></p></li>
+<li><p><strong>Was the parallel exponent fitted?</strong> The report says <code class="docutils literal notranslate"><span class="pre">[assumed]</span></code> when
+it was not. That happens when the core count followed the size in the
+records, as it does in production; the seed’s core sweep is what fixes it.</p></li>
+<li><p><strong>The size range.</strong> The model refuses to predict a calculation whose size
+lies outside what the records cover (by more than half again), or whose
+method class or kind of task the records lack; the step’s built-in rule is
+used instead. If your production calculations are larger than the seed, the
+first production runs extend the range and the model refits itself as the
+records grow.</p></li>
 </ul>
+<p>The model is written to <code class="docutils literal notranslate"><span class="pre">~/.seamm.d/timing/models/&lt;code&gt;.json</span></code> and used by
+the steps from then on; it is refitted automatically when the records have
+grown by a fifth or are a week older than the model.</p>
+</section>
+<section id="what-it-does-not-cover-yet">
+<h2>What it does not cover yet<a class="headerlink" href="#what-it-does-not-cover-yet" title="Link to this heading">#</a></h2>
+<p>Records and models live in the user’s home on each machine. A job submitted
+from one machine to run on another is estimated, for now, with the model of
+the machine that submits it; and a bundle that lands on a node type other
+than the one the flowchart runs on is recorded under the flowchart’s node
+type. Keeping a cluster’s queue sections to one node type (<code class="docutils literal notranslate"><span class="pre">constraint</span></code>)
+avoids the second; the first is being addressed in <code class="docutils literal notranslate"><span class="pre">seamm-exec</span></code>. The
+<code class="docutils literal notranslate"><span class="pre">seamm-exec</span></code> documentation describes the records, the model and the
+benchmark declaration a step makes.</p>
 </section>
 </section>
 
@@ -776,20 +686,20 @@ set in the Model Chemistry step.</p></td>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="where_jobs_run.html"
+       href="jobserver_queues.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Where Jobs Run</p>
+        <p class="prev-next-title">How-To Configure the JobServer’s Queues</p>
       </div>
     </a>
     <a class="right-next"
-       href="../developer_guide/index.html"
+       href="manual_queues/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Developers Documentation</p>
+        <p class="prev-next-title">How-To Use a Queueing System Manually</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -812,13 +722,11 @@ set in the Model Chemistry step.</p></td>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-fits-together">How it fits together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-flowchart">Building the flowchart</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-methods-can-be-used">Which methods can be used</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-and-what-you-get">Running and what you get</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See also</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-run-it">When to run it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-it-runs">What it runs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it">Running it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-and-checking">Fitting and checking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-it-does-not-cover-yet">What it does not cover yet</a></li>
 </ul>
   </nav></div>
 
@@ -826,7 +734,7 @@ set in the Model Chemistry step.</p></td>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/user_guide/qm_md_with_mdi.rst.txt"
+      <li><a href="../_sources/how_tos/timing_benchmark.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

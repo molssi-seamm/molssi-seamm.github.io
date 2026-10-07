@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Where Jobs Run &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/where_jobs_run';</script>
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="QM molecular dynamics (Model Chemistry + LAMMPS)" href="qm_md_with_mdi.html" />
+    <link rel="prev" title="User Guide" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../developer_guide/index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../developer_guide/index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Where Jobs Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qm_md_with_mdi.html">QM molecular dynamics (Model Chemistry + LAMMPS)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Where Jobs Run</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="where-jobs-run">
+<span id="id1"></span><h1>Where Jobs Run<a class="headerlink" href="#where-jobs-run" title="Link to this heading">#</a></h1>
+<p>A SEAMM <strong>job</strong> is one run of a flowchart. The JobServer starts it on its
+own machine or, through a queue section, as a batch job on a cluster (see
+<a class="reference internal" href="../how_tos/jobserver_queues.html#jobserver-queues"><span class="std std-ref">How-To Configure the JobServer’s Queues</span></a>). Inside the job, steps hand their calculations –
+an ORCA single point, a VASP cell, a MOPAC optimization – to SEAMM’s <strong>task
+layer</strong>. Where those <em>tasks</em> run is a separate choice: with the flowchart,
+sharing its allocation, or packed into batch jobs of their own. This page
+explains the choice, the keys that make it, and what happens to a task from
+submission to result.</p>
+<section id="the-job-and-its-tasks">
+<h2>The job and its tasks<a class="headerlink" href="#the-job-and-its-tasks" title="Link to this heading">#</a></h2>
+<p>The job’s own process is light: it reads the flowchart, builds inputs, and
+analyzes outputs. The expense is in the tasks. For a flowchart that runs one
+calculation after another, running the tasks where the job runs is simplest
+and right. For a flowchart that produces hundreds or thousands of
+independent calculations – labelling a training set, a many-body expansion,
+a parallel loop over structures – the job should run somewhere cheap and
+its tasks should go to the cluster as batch jobs, many at a time.</p>
+<p>The queue section a job runs under says both things:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code></dt><dd><p>where the <strong>flowchart</strong> runs: <code class="docutils literal notranslate"><span class="pre">local</span></code>, as a subprocess on the
+JobServer’s machine, or <code class="docutils literal notranslate"><span class="pre">queue</span></code>, as a batch job on the scheduler named
+by <code class="docutils literal notranslate"><span class="pre">scheduler</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tasks</span></code></dt><dd><p>where its <strong>tasks</strong> run: <code class="docutils literal notranslate"><span class="pre">pool</span></code>, in the job’s own allocation (the
+default, and what a section without <code class="docutils literal notranslate"><span class="pre">tasks</span> <span class="pre">=</span></code> means); <code class="docutils literal notranslate"><span class="pre">taskserver</span></code>,
+through the machine’s TaskServer; or <code class="docutils literal notranslate"><span class="pre">queue</span></code>, as batch jobs submitted
+by the task layer.</p>
+</dd>
+</dl>
+<p>A task’s placement is independent of the job’s. A flowchart that is itself a
+batch job on the cluster can still send its tasks to the same queue, and that
+is the usual arrangement for large campaigns.</p>
+</section>
+<section id="tasks-in-the-job-s-allocation">
+<h2>Tasks in the job’s allocation<a class="headerlink" href="#tasks-in-the-job-s-allocation" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">tasks</span> <span class="pre">=</span> <span class="pre">pool</span></code> the task layer runs the tasks in a pool sized to what
+the job has: the cores and memory of its SLURM allocation, or of the machine.
+Several tasks run at once when they fit. Nothing is submitted and nothing
+copied; each task’s directory is under the step’s directory in the job.</p>
+</section>
+<section id="the-taskserver">
+<h2>The TaskServer<a class="headerlink" href="#the-taskserver" title="Link to this heading">#</a></h2>
+<p>A machine without a queueing system – a laptop, a group’s workstation –
+can still share its cores and memory fairly among everything SEAMM runs on
+it. The TaskServer is a small queue for one machine, driven exactly like
+SLURM, with a capacity set in <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/taskserver.ini</span></code> that
+<code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span></code> writes with the machine’s physical cores and half
+its memory. A section with <code class="docutils literal notranslate"><span class="pre">tasks</span> <span class="pre">=</span> <span class="pre">taskserver</span></code> (or <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">queue</span></code> with
+<code class="docutils literal notranslate"><span class="pre">scheduler</span> <span class="pre">=</span> <span class="pre">seamm</span></code> for the flowcharts themselves) sends work through it,
+so two flowcharts running at once cannot oversubscribe the machine, and a
+job asking for more than the machine has is refused rather than run. Its
+page in the <code class="docutils literal notranslate"><span class="pre">seamm-scheduler</span></code> documentation has the details.</p>
+</section>
+<section id="tasks-as-batch-jobs">
+<h2>Tasks as batch jobs<a class="headerlink" href="#tasks-as-batch-jobs" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">tasks</span> <span class="pre">=</span> <span class="pre">queue</span></code> the task layer submits tasks to the scheduler, in
+<strong>bundles</strong>: one batch job that runs several tasks one after another, or
+side by side, inside one allocation. The section’s submission keys
+(<code class="docutils literal notranslate"><span class="pre">account</span></code>, <code class="docutils literal notranslate"><span class="pre">partition</span></code>, <code class="docutils literal notranslate"><span class="pre">qos</span></code>, <code class="docutils literal notranslate"><span class="pre">constraint</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, …) apply to
+the bundles, and a few keys shape them:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[tinkercliffs_mbe]</span>
+<span class="na">transport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ssh</span>
+<span class="na">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tinkercliffs</span>
+<span class="na">export</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">NONE</span>
+<span class="na">remote_root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/projects/seamm/seamm_jobserver_remote_chemai</span>
+<span class="na">remote_run_from_jobserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/projects/seamm/SEAMM/venv/bin/run_from_jobserver</span>
+<span class="na">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">seamm</span>
+<span class="na">partition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal_q</span>
+<span class="na">qos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tc_normal_short</span>
+<span class="na">constraint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">amd</span>
+<span class="na">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">ntasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">cpus_per_task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">mem_per_cpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8G</span>
+<span class="na">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1-00:00:00</span>
+<span class="na">max_concurrent_jobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">20</span>
+<span class="na">max_resubmits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
+<span class="c1"># The flowchart runs as a 1-core batch job on the cluster (the keys</span>
+<span class="c1"># above); its tasks go to the same cluster's queue as bundles:</span>
+<span class="na">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">queue</span>
+<span class="na">scheduler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">slurm</span>
+<span class="na">poll_interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">60</span>
+
+<span class="k">[tinkercliffs_mbe.limits]</span>
+<span class="na">overridable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">time, qos, mem_per_cpu</span>
+<span class="na">time.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">7-00:00:00</span>
+<span class="na">mem_per_cpu.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">120G</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">tasks</span> <span class="pre">=</span> <span class="pre">queue</span></code></dt><dd><p>Submit the job’s tasks as batch jobs.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">scheduler</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">slurm</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">pbs</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">bundle_tasks</span></code> or <code class="docutils literal notranslate"><span class="pre">bundle_walltime</span></code></dt><dd><p>How tasks are packed: a fixed number per bundle, or as many as fit the
+walltime from the tasks’ estimated times. Without either, the task layer
+packs by estimate within the section’s <code class="docutils literal notranslate"><span class="pre">time</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">max_queued_tasks</span></code></dt><dd><p>How many of the user’s bundle jobs may be in the queue at once; sites
+cap the number of jobs a user may hold, and several steps submitting at
+once share this count.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">inline_below</span></code></dt><dd><p>Tasks estimated to take less than this many seconds (default 60) run
+where the flowchart runs, when their program is installed there, rather
+than paying for a batch job.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">poll_interval</span></code></dt><dd><p>Seconds between checks on the bundles’ state.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">remote_root</span></code>, <code class="docutils literal notranslate"><span class="pre">shared_filesystem</span></code></dt><dd><p>Without a shared filesystem a task’s directory is copied to
+<code class="docutils literal notranslate"><span class="pre">remote_root</span></code> before its bundle runs and back after; with
+<code class="docutils literal notranslate"><span class="pre">shared_filesystem</span> <span class="pre">=</span> <span class="pre">yes</span></code>, or a local transport, nothing is copied.</p>
+</dd>
+</dl>
+<p>Each task’s size comes from the step: ranks, memory per rank and an estimated
+time, from the step’s own rule or from the fitted cost model when the machine
+has one. A bundle’s walltime is twice the estimate plus ten minutes. A task
+whose bundle ran out of time is submitted again with twice the time, and
+twice that after a second timeout; one that fails three times is reported,
+not retried, and the step says so. Finished tasks are kept: a job that is
+resubmitted, or run again by hand, reuses every result that exists and only
+submits what is missing.</p>
+<p>The program is configured <strong>on the machine that runs the bundle</strong>, from that
+installation’s <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/&lt;program&gt;.ini</span></code>, so ORCA need not be installed where
+the flowchart runs. Steps that still configure their program themselves are
+the exception: their tasks run where the flowchart runs, with a warning.</p>
+<p>Bundle files are under the step’s directory, in <code class="docutils literal notranslate"><span class="pre">tasks/_bundles/&lt;name&gt;/</span></code>:
+the bundle’s description, its script and the scheduler’s log. The step’s
+<code class="docutils literal notranslate"><span class="pre">tasks/manifest.json</span></code> records every task’s state, attempts and where it
+ran. A task past its attempts says in the manifest how to let it run again:
+change its input, or delete its entry.</p>
+</section>
+<section id="running-by-hand">
+<h2>Running by hand<a class="headerlink" href="#running-by-hand" title="Link to this heading">#</a></h2>
+<p>A flowchart run from the command line, in a batch script of your own, has no
+JobServer to hand it a section. Give it one with two environment
+variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SEAMM_TARGETS</span><span class="o">=/</span><span class="n">projects</span><span class="o">/</span><span class="n">seamm</span><span class="o">/</span><span class="n">me</span><span class="o">/</span><span class="n">targets</span><span class="o">.</span><span class="n">ini</span>   <span class="c1"># the ini file</span>
+<span class="n">export</span> <span class="n">SEAMM_TARGET</span><span class="o">=</span><span class="n">tc</span>                                 <span class="c1"># the section</span>
+<span class="n">run_flowchart</span> <span class="n">my</span><span class="o">.</span><span class="n">flow</span>
+</pre></div>
+</div>
+<p>The file has the same sections as a JobServer’s, with the submission keys
+and <code class="docutils literal notranslate"><span class="pre">tasks</span> <span class="pre">=</span> <span class="pre">queue</span></code>; <code class="docutils literal notranslate"><span class="pre">SEAMM_TARGETS</span></code> may be left out when the file is the
+installation’s own <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/&lt;hostname&gt;.ini</span></code>. Without either variable the
+tasks run in the pool, as before. A JobServer does the same thing for its
+jobs: it copies the job’s section into the job directory as <code class="docutils literal notranslate"><span class="pre">target.json</span></code>,
+which is why a section must never hold a secret.</p>
+<p>A second variable, <code class="docutils literal notranslate"><span class="pre">SEAMM_CE</span></code>, tells a flowchart how much of the machine
+it may use (cores, memory, GPUs) when it is not inside a SLURM allocation.
+Parallel loops set it for each iteration; the seed timing benchmark sets it
+to cap the cores a code sees at each point of its sweep.</p>
+</section>
+<section id="from-the-web-interface-to-a-cluster">
+<h2>From the web interface to a cluster<a class="headerlink" href="#from-the-web-interface-to-a-cluster" title="Link to this heading">#</a></h2>
+<p>The usual arrangement for a large campaign, as it runs today:</p>
+<ol class="arabic simple">
+<li><p>The web interface and JobServer run on a group server (<code class="docutils literal notranslate"><span class="pre">ChemAI</span></code>). Its
+<code class="docutils literal notranslate"><span class="pre">ChemAI.ini</span></code> has a local section for small jobs and several sections
+for the cluster (<code class="docutils literal notranslate"><span class="pre">tinkercliffs</span></code>, a debug one with a short walltime, a
+GPU one), all reached over ssh with their own <code class="docutils literal notranslate"><span class="pre">remote_root</span></code>; the MBE
+section above adds <code class="docutils literal notranslate"><span class="pre">tasks</span> <span class="pre">=</span> <span class="pre">queue</span></code>.</p></li>
+<li><p>A user builds a flowchart in the GUI and submits it from the web
+interface, choosing the cluster queue in the submit dialog and, if the
+queue’s limits allow, more time or memory.</p></li>
+<li><p>The JobServer copies the job directory to the cluster, submits the
+flowchart there as a one-core batch job, and polls it. The flowchart’s
+tasks are bundled by estimated time and submitted to the cluster’s queue
+under the user’s account, up to <code class="docutils literal notranslate"><span class="pre">max_queued_tasks</span></code> at a time, each with
+the section’s partition, QOS and constraint.</p></li>
+<li><p>Finished bundles leave their results in the task directories; the
+flowchart analyzes them as they arrive and writes its own results. When
+the job finishes, its directory is copied back and it appears in the
+web interface like any other.</p></li>
+<li><p>A job the cluster lost – preempted, out of walltime – is submitted
+again by the JobServer, up to <code class="docutils literal notranslate"><span class="pre">max_resubmits</span></code> times, and resumes from
+its checkpoint with every finished task kept.</p></li>
+</ol>
+<p>Every machine that runs tasks keeps timing records of them, in
+<code class="docutils literal notranslate"><span class="pre">~/.seamm.d/timing/</span></code>, from which a cost model is fitted so that estimates
+and bundle walltimes improve with use. The <code class="docutils literal notranslate"><span class="pre">seamm-exec</span></code> documentation
+describes the records, the model and the seed benchmark that places a new
+machine in it.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">User Guide</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="qm_md_with_mdi.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">QM molecular dynamics (Model Chemistry + LAMMPS)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-job-and-its-tasks">The job and its tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-in-the-job-s-allocation">Tasks in the job’s allocation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-taskserver">The TaskServer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-as-batch-jobs">Tasks as batch jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-by-hand">Running by hand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-web-interface-to-a-cluster">From the web interface to a cluster</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user_guide/where_jobs_run.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

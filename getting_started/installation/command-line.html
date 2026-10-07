@@ -669,6 +669,11 @@ or dock.</p>
 </section>
 <section id="installing-the-services">
 <h2>Installing the Services<a class="headerlink" href="#installing-the-services" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">seamm-manager</span> <span class="pre">install</span></code> also writes <code class="docutils literal notranslate"><span class="pre">~/SEAMM/taskserver.ini</span></code>, the capacity
+(cores and memory) of the machine’s TaskServer, the small queue through which
+SEAMM shares the machine among the calculations of several flowcharts; see
+<a class="reference internal" href="../../user_guide/where_jobs_run.html#where-jobs-run"><span class="std std-ref">Where Jobs Run</span></a>. To send jobs to a cluster, or to run them under this
+machine’s own SLURM, add a queue file as described in <a class="reference internal" href="../../how_tos/jobserver_queues.html#jobserver-queues"><span class="std std-ref">How-To Configure the JobServer’s Queues</span></a>.</p>
 <p>If you plan to run jobs on the machine, create the JobServer service, so that it keeps
 running even when you are not logged in:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">services</span> <span class="n">create</span> <span class="n">jobserver</span>
@@ -722,6 +727,23 @@ flowcharts.</p>
 </div>
 <p>After every change the manager writes the full list of installed versions to
 <code class="docutils literal notranslate"><span class="pre">~/SEAMM/environments</span></code>, so you can always see what changed and when.</p>
+<p>An update never changes the environment in place. It builds a new, versioned
+environment beside the current one – the current one plus the change – then
+switches the link <code class="docutils literal notranslate"><span class="pre">~/SEAMM/venv</span></code> to it and restarts the services that need
+restarting. A job that was running keeps the environment it started in, since
+every job runs from the real path of its version, and a switch is refused while
+a process started through the link is still running (<code class="docutils literal notranslate"><span class="pre">--force</span></code> overrides
+that, which is only safe with nothing running). This is what makes an update
+safe on a machine with jobs in flight, and what makes going back trivial:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">environment</span> <span class="n">versions</span>    <span class="c1"># the versions, and what is using each</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">environment</span> <span class="n">rollback</span>    <span class="c1"># back to the previous version</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">environment</span> <span class="n">switch</span> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span>
+<span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">environment</span> <span class="n">prune</span>       <span class="c1"># remove old, unused versions</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">prune</span></code> keeps the newest two for rollback and never removes a version a
+running process uses. Each version is about 1.5 GB, so prune now and then on a
+machine where space matters.</p>
 <p>If the environment is ever damaged:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seamm</span><span class="o">-</span><span class="n">manager</span> <span class="n">environment</span> <span class="n">recreate</span>
 </pre></div>

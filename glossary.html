@@ -622,9 +622,11 @@ references therein for more information.</p>
 single piece of work. Represented in a flowchart by a box, steps
 are implemented by plug-ins.</p>
 </dd>
-<dt id="term-task">task<a class="headerlink" href="#term-task" title="Link to this term">#</a></dt><dd><p>A batch process created by a step, often the execution of a
-simulation engine such as <cite>LAMMPS</cite>, <cite>GAMESS</cite>, <cite>Quantum Espresso</cite>,
-etc.</p>
+<dt id="term-task">task<a class="headerlink" href="#term-task" title="Link to this term">#</a></dt><dd><p>One calculation a step hands to SEAMM’s task layer, usually a run of a
+simulation engine such as ORCA, VASP or LAMMPS. A job’s tasks run in
+the job’s own allocation, through the machine’s TaskServer, or bundled
+into batch jobs of their own, as the job’s queue section says (see
+<a class="reference internal" href="user_guide/where_jobs_run.html#where-jobs-run"><span class="std std-ref">Where Jobs Run</span></a>).</p>
 </dd>
 <dt id="term-xTB">xTB<a class="headerlink" href="#term-xTB" title="Link to this term">#</a></dt><dd><p>The Extended tight-binding (xTB) model is a semiempirical DFT-based model that is
 similar to <a class="reference internal" href="#term-DFTB"><span class="xref std std-term">DFTB</span></a>. See <a class="reference external" href="https://wires.onlinelibrary.wiley.com/doi/full/10.1002/wcms.1493">Extended tight-binding quantum chemistry methods</a> for details

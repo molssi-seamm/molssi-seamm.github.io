@@ -64,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="How-To Move the Jobs Directory" href="../move_job_dir.html" />
-    <link rel="prev" title="How-To Guide" href="../index.html" />
+    <link rel="prev" title="How-To Seed the Timing of a New Machine" href="../timing_benchmark.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="1.0" />
@@ -496,6 +496,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jobserver_queues.html">How-To Configure the JobServer’s Queues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timing_benchmark.html">How-To Seed the Timing of a New Machine</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">How-To Use a Queueing System Manually</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../move_job_dir.html">How-To Move the Jobs Directory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trial_installation.html">Trying a New Release Beside Production</a></li>
@@ -562,8 +564,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   
   <section id="how-to-use-a-queueing-system-manually">
 <span id="use-a-queueing-system-manually"></span><h1>How-To Use a Queueing System Manually<a class="headerlink" href="#how-to-use-a-queueing-system-manually" title="Link to this heading">#</a></h1>
-<p>There are two scenarios where you might want to run SEAMM jobs in a queueing system
-manually</p>
+<p>Normally the JobServer submits jobs to a queueing system for you, locally or on a
+remote cluster, once it has a queue file (see <a class="reference internal" href="../jobserver_queues.html#jobserver-queues"><span class="std std-ref">How-To Configure the JobServer’s Queues</span></a>). There are
+two scenarios where you might still want to run SEAMM jobs in a queueing system by
+hand</p>
 <ol class="arabic simple">
 <li><p>You want to run calculations on a remote machine where you either can’t or don’t
 wish to set up a Dashboard,</p></li>
@@ -587,7 +591,7 @@ documentation.</p>
 <section id="testing-the-installation">
 <h2>Testing the Installation<a class="headerlink" href="#testing-the-installation" title="Link to this heading">#</a></h2>
 <p>Once you have SEAMM installed on the machine, the simplest way to test that everything
-is working is to run a quick flowchart <a class="reference download internal" download="" href="../../_downloads/14ce71c4edd1845f045b4bbc80408f5c/quickmin.flow"><code class="xref download docutils literal notranslate"><span class="pre">quickmin.flowt</span></code></a>
+is working is to run a quick flowchart <a class="reference download internal" download="" href="../../_downloads/14ce71c4edd1845f045b4bbc80408f5c/quickmin.flow"><code class="xref download docutils literal notranslate"><span class="pre">quickmin.flow</span></code></a>
 directly for the commandline. Computer centers frown on you running on the front end
 nodes, but the following flowchart will take less than a second so there is no
 problem. Follow these steps</p>
@@ -677,41 +681,32 @@ will be covered in another How-To.</p>
 </section>
 <section id="running-and-adding-the-job-to-the-dashboard">
 <h2>Running and Adding the Job to the Dashboard<a class="headerlink" href="#running-and-adding-the-job-to-the-dashboard" title="Link to this heading">#</a></h2>
-<p>If you can run the Dashboard on the remote machine and access its web-server, you can
-run the jobs in the queue and ask them to automatically insert themselves into the
-Datastore, where they can be viewd using a browser and the Dashboard.</p>
-<p>First, get the Dashboard running on the remote machine. It is possible that you can
-install it as a service using the SEAMM installer, but many computer centers are
-configured not to allow users to run services on the login nodes. If so, you have two
-options. The easiest approach is to log into the front-end node, activate the SEAMM
-environment and run the dashboard interactively:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ source ~/SEAMM/venv/bin/activate
-(venv) seamm-dashboard
-dashboard:INFO:Logging to the console at level INFO.
-dashboard:INFO:Logging to /home/psaxe/SEAMM/logs/dashboard.log at level WARNING.
-dashboard:INFO:
-dashboard:INFO:Where options are set:
-dashboard:INFO:------------------------------------------------------------
-dashboard:INFO:root                default         ~/SEAMM
+<p>If you can run the web interface on the remote machine and reach its web server, you
+can run the jobs in the queue and ask them to insert themselves into the datastore,
+where they can be viewed in a browser as usual.</p>
+<p>First, get the web interface running on the remote machine. <code class="docutils literal notranslate"><span class="pre">seamm-manager</span>
+<span class="pre">services</span> <span class="pre">start</span></code> installs it as a service, but many computer centers do not allow
+users to run services on the login nodes. If so, log into the front-end node and run
+it from the installation directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ~/SEAMM/venv/bin/seamm-webui
 ...
 </pre></div>
 </div>
-<p>The disadvantage is that the Dashboard will stop running as soon as you close that
-window. You can get around this using <code class="docutils literal notranslate"><span class="pre">nohup</span></code> and putting it in the background:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">venv</span><span class="p">)</span> <span class="n">nohup</span> <span class="n">seamm</span><span class="o">-</span><span class="n">dashboard</span> <span class="o">&gt;&amp;</span> <span class="n">dashboard</span><span class="o">.</span><span class="n">log</span> <span class="o">&amp;</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">175118</span>
-<span class="p">(</span><span class="n">venv</span><span class="p">)</span>
+<p>The disadvantage is that it stops as soon as you close that window. You can get
+around this using <code class="docutils literal notranslate"><span class="pre">nohup</span></code> and putting it in the background:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nohup ~/SEAMM/venv/bin/seamm-webui &gt;&amp; webui.log &amp;
+[1] 175118
 </pre></div>
 </div>
-<p>This redirected the output to the file <code class="docutils literal notranslate"><span class="pre">dashboard.log</span></code>, and using <code class="docutils literal notranslate"><span class="pre">nohup</span></code> (which is
+<p>This redirected the output to the file <code class="docutils literal notranslate"><span class="pre">webui.log</span></code>, and using <code class="docutils literal notranslate"><span class="pre">nohup</span></code> (which is
 short for “no hang-up” from the old days of using telephone modems) plus putting the job
-in the background (the final “&amp;”) lets the Dashboard run even when you close the window
-and log off the machine. It uses almost no resources, some memory and almost no cpu
+in the background (the final “&amp;”) lets the web interface run even when you close the
+window and log off the machine. It uses almost no resources, some memory and almost no cpu
 time, so leaving it running is not usually an issue; however, many computer centers will
 not allow commands to run for more than a few hours and then will automatically kill
 them, so you may need to start the Dashboard again later.</p>
-<p>By default the Dashboard runs on port 55055, so if you can access that port on the
-machine, you can access the dashboard through your browser at <code class="docutils literal notranslate"><span class="pre">http://&lt;name</span> <span class="pre">or</span>
+<p>By default the web interface runs on port 55055, so if you can access that port on the
+machine, you can reach it through your browser at <code class="docutils literal notranslate"><span class="pre">http://&lt;name</span> <span class="pre">or</span>
 <span class="pre">ip&gt;:55055</span></code>. It is worth a try! However, if that doesn’t work, you can use <code class="docutils literal notranslate"><span class="pre">ssh</span></code> to
 tunnel to the machine:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mi">55955</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">55055</span> <span class="o">&lt;</span><span class="n">machine</span><span class="o">&gt;</span>
@@ -760,8 +755,8 @@ on the actual words <code class="docutils literal notranslate"><span class="pre"
 <p><span class="caption-text">Adding a project</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>You will also need your credentials for the Dashboard stored in the file
-<code class="docutils literal notranslate"><span class="pre">~/.seammrc</span></code>. It is simple, just name and password. Mine looks like this:</p>
+<p>You will also need your credentials for the web interface stored in the file
+<code class="docutils literal notranslate"><span class="pre">~/.seamm.d/seammrc</span></code>. It is simple, just name and password. Mine looks like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Dashboard</span><span class="p">:</span> <span class="n">localhost</span><span class="p">]</span>
 <span class="n">user</span> <span class="o">=</span> <span class="n">psaxe</span>
 <span class="n">password</span> <span class="o">=</span> <span class="n">default</span>
@@ -816,12 +811,12 @@ remote machine, submit them to the queue, and see them in the Dahsboard.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="../timing_benchmark.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">How-To Guide</p>
+        <p class="prev-next-title">How-To Seed the Timing of a New Machine</p>
       </div>
     </a>
     <a class="right-next"
