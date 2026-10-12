@@ -608,7 +608,7 @@ the energy and forces. Programs are stripped to obtain the comparability key.</p
 <span class="n">owner</span>           <span class="o">=</span> <span class="n">program</span>          <span class="p">;</span> <span class="n">code</span> <span class="n">evaluating</span> <span class="n">the</span> <span class="n">PES</span> <span class="p">(</span><span class="n">only</span> <span class="k">if</span> <span class="o">!=</span> <span class="n">driver</span><span class="p">)</span>
 <span class="n">program</span>         <span class="o">=</span> <span class="n">token</span>            <span class="p">;</span> <span class="n">LAMMPS</span><span class="p">,</span> <span class="n">MOPAC</span><span class="p">,</span> <span class="n">xTB</span><span class="p">,</span> <span class="n">VASP</span><span class="p">,</span> <span class="n">Psi4</span><span class="p">,</span> <span class="o">...</span>
 <span class="n">task</span>            <span class="o">=</span> <span class="n">token</span>            <span class="p">;</span> <span class="n">SP</span> <span class="o">|</span> <span class="n">OPT</span> <span class="o">|</span> <span class="n">MD</span> <span class="o">|</span> <span class="n">FREQ</span> <span class="o">|</span> <span class="o">...</span>
-<span class="nb">type</span>            <span class="o">=</span> <span class="n">token</span>            <span class="p">;</span> <span class="n">SQM</span> <span class="o">|</span> <span class="n">DFT</span> <span class="o">|</span> <span class="n">QC</span> <span class="o">|</span> <span class="n">VFF</span> <span class="o">|</span> <span class="n">IP</span> <span class="o">|</span> <span class="n">rxnFF</span> <span class="o">|</span> <span class="n">ML</span> <span class="o">|</span> <span class="n">FF</span>
+<span class="nb">type</span>            <span class="o">=</span> <span class="n">token</span>            <span class="p">;</span> <span class="n">SQM</span> <span class="o">|</span> <span class="n">DFT</span> <span class="o">|</span> <span class="n">QC</span> <span class="o">|</span> <span class="n">FF</span> <span class="o">|</span> <span class="n">ReaxFF</span> <span class="o">|</span> <span class="n">IP</span> <span class="o">|</span> <span class="n">MLFF</span>
 <span class="n">method</span>          <span class="o">=</span> <span class="n">token</span>
 <span class="n">basis</span>           <span class="o">=</span> <span class="n">token</span>
 <span class="n">cutoff</span>          <span class="o">=</span> <span class="n">token</span>
@@ -675,40 +675,37 @@ cascade.</p>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DFT</span></code></p></td>
-<td><p>Kohn-Sham DFT: PBE, B3LYP, r2SCAN</p></td>
+<td><p>Kohn-Sham DFT: PBE, B3LYP, r2SCAN, double hybrids</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">QC</span></code></p></td>
-<td><p>Correlated / <em>ab initio</em> wavefunction: HF, MP2, CCSD(T)</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VFF</span></code></p></td>
-<td><p>Additive / valence molecular force fields: OPLS-AA, AMBER, CHARMM, GAFF</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IP</span></code></p></td>
-<td><p>Interatomic potentials: EAM, MEAM, Tersoff (the OpenKIM world)</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rxnFF</span></code></p></td>
-<td><p>Reactive force fields: ReaxFF, COMB</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ML</span></code></p></td>
-<td><p>Machine-learned potentials: MACE, ANI, NequIP</p></td>
-<td></td>
+<td><p>Correlated / <em>ab initio</em> wavefunction: HF, MP2, CCSD(T), DLPNO methods</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">QC&#64;HF</span></code>, <code class="docutils literal notranslate"><span class="pre">QC&#64;MP2</span></code> (not <code class="docutils literal notranslate"><span class="pre">HF&#64;...</span></code> / <code class="docutils literal notranslate"><span class="pre">MP2&#64;...</span></code>)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FF</span></code></p></td>
-<td><p>Force fields not covered above</p></td>
-<td><p>catch-all fallback</p></td>
+<td><p>Classical (valence) force fields: OPLS-AA, PCFF, Dreiding, AMBER, GAFF</p></td>
+<td><p>e.g. <code class="docutils literal notranslate"><span class="pre">FF&#64;oplsaa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ReaxFF</span></code></p></td>
+<td><p>Reactive force fields; the method is the parameter set</p></td>
+<td><p>e.g. <code class="docutils literal notranslate"><span class="pre">ReaxFF&#64;CHO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IP</span></code></p></td>
+<td><p>Interatomic potentials: EAM, MEAM, Tersoff (the OpenKIM world)</p></td>
+<td><p>e.g. <code class="docutils literal notranslate"><span class="pre">IP&#64;&lt;OpenKIM</span> <span class="pre">ID&gt;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MLFF</span></code></p></td>
+<td><p>Machine-learned force fields: MACE, ANI, NequIP</p></td>
+<td><p>e.g. <code class="docutils literal notranslate"><span class="pre">xnn:MLFF&#64;&lt;model&gt;</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>The force-field families are kept separate because their domains of
 applicability are disjoint – an EAM value is not comparable to an OPLS-AA value
-– and the split keeps the method cascade tractable. <code class="docutils literal notranslate"><span class="pre">FF</span></code> is only the
-fallback.</p>
+– and the split keeps the method cascade tractable. There is no catch-all type:
+a new family gets a name of its own. (These names were settled on 2026-10-11;
+earlier notes used <code class="docutils literal notranslate"><span class="pre">VFF</span></code>, <code class="docutils literal notranslate"><span class="pre">rxnFF</span></code> / <code class="docutils literal notranslate"><span class="pre">ReactiveFF</span></code> and <code class="docutils literal notranslate"><span class="pre">ML</span></code>.)</p>
 </section>
 <section id="programs-driver-and-owner">
 <h2>Programs: driver and owner<a class="headerlink" href="#programs-driver-and-owner" title="Link to this heading">#</a></h2>
@@ -716,7 +713,7 @@ fallback.</p>
 <strong>owner</strong> appears on the level side only when the driver delegates the PES to a
 different code over MDI:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|VFF&#64;OPLS-AA</span></code> – LAMMPS runs MD and evaluates OPLS-AA itself
+<li><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|FF&#64;oplsaa</span></code> – LAMMPS runs MD and evaluates OPLS-AA itself
 (driver == owner, so the owner is omitted).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|MOPAC:SQM&#64;PM6-ORG</span></code> – LAMMPS runs MD while MOPAC evaluates the
 PM6-ORG forces over MDI (driver LAMMPS, owner MOPAC).</p></li>
@@ -748,8 +745,8 @@ compound):</p>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|MOPAC:SQM&#64;PM6-ORG</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">MD|SQM&#64;PM6-ORG</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|VFF&#64;OPLS-AA</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">MD|VFF&#64;OPLS-AA</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|FF&#64;oplsaa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MD|FF&#64;oplsaa</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VASP:OPT|DFT&#64;PBE/PAW&#64;500eV</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">OPT|DFT&#64;PBE/PAW&#64;500eV</span></code></p></td>
@@ -823,19 +820,19 @@ the LAMMPS step composes <code class="docutils literal notranslate"><span class=
 <td><p>PM6-ORG</p></td>
 <td><p>–</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|VFF&#64;OPLS-AA</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|FF&#64;oplsaa</span></code></p></td>
 <td><p>LAMMPS</p></td>
 <td><p>MD</p></td>
 <td><p>LAMMPS</p></td>
-<td><p>VFF</p></td>
+<td><p>FF</p></td>
 <td><p>OPLS-AA</p></td>
 <td><p>–</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:OPT|VFF&#64;OPLS-AA</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:OPT|FF&#64;oplsaa</span></code></p></td>
 <td><p>LAMMPS</p></td>
 <td><p>OPT</p></td>
 <td><p>LAMMPS</p></td>
-<td><p>VFF</p></td>
+<td><p>FF</p></td>
 <td><p>OPLS-AA</p></td>
 <td><p>–</p></td>
 </tr>
@@ -855,13 +852,29 @@ the LAMMPS step composes <code class="docutils literal notranslate"><span class=
 <td><p>EAM</p></td>
 <td><p>–</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|rxnFF&#64;ReaxFF</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|ReaxFF&#64;CHO</span></code></p></td>
 <td><p>LAMMPS</p></td>
 <td><p>MD</p></td>
 <td><p>LAMMPS</p></td>
-<td><p>rxnFF</p></td>
 <td><p>ReaxFF</p></td>
+<td><p>CHO</p></td>
 <td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAMMPS:MD|xnn:MLFF&#64;&lt;model&gt;</span></code></p></td>
+<td><p>LAMMPS</p></td>
+<td><p>MD</p></td>
+<td><p>xnn</p></td>
+<td><p>MLFF</p></td>
+<td><p>&lt;model&gt;</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ORCA:SP|QC&#64;MP2/def2-TZVP</span></code></p></td>
+<td><p>ORCA</p></td>
+<td><p>SP</p></td>
+<td><p>ORCA</p></td>
+<td><p>QC</p></td>
+<td><p>MP2</p></td>
+<td><p>def2-TZVP</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VASP:OPT|DFT&#64;PBE/PAW&#64;500eV</span></code></p></td>
 <td><p>VASP</p></td>

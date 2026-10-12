@@ -666,6 +666,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dd class="field-even"><p>LAMMPS + MOPAC/xTB QM-MD via MDI</p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Superseded (2026-10-11).</strong> The plan is now lammps_step’s campaign
+<code class="docutils literal notranslate"><span class="pre">2026-10-11</span></code> (“Forcefields as model chemistries”), and the type names are
+settled: <code class="docutils literal notranslate"><span class="pre">FF</span></code> (not <code class="docutils literal notranslate"><span class="pre">VFF</span></code>), <code class="docutils literal notranslate"><span class="pre">ReaxFF</span></code> (not <code class="docutils literal notranslate"><span class="pre">ReactiveFF</span></code>), <code class="docutils literal notranslate"><span class="pre">IP</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MLFF</span></code> and <code class="docutils literal notranslate"><span class="pre">QC</span></code>, as on <a class="reference internal" href="../../../background/model_chemistry_naming.html"><span class="doc">Model Chemistry Naming Standard</span></a>. The
+open issue below – atom-type assignment – is answered there too. This note
+is kept as the record of the earlier sketch.</p>
+</div>
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
 <p>Subsume the Forcefield step into the Model Chemistry step and <strong>deprecate</strong> the
