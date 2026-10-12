@@ -108,7 +108,7 @@ cascade.
      - ``QC@HF``, ``QC@MP2`` (not ``HF@...`` / ``MP2@...``)
    * - ``FF``
      - Classical (valence) force fields: OPLS-AA, PCFF, Dreiding, AMBER, GAFF
-     - e.g. ``FF@OPLS-AA``
+     - e.g. ``FF@oplsaa``
    * - ``ReaxFF``
      - Reactive force fields; the method is the parameter set
      - e.g. ``ReaxFF@CHO``
@@ -133,7 +133,7 @@ The **driver** (immediately left of ``:`` ``task``) is always present. The
 **owner** appears on the level side only when the driver delegates the PES to a
 different code over MDI:
 
-* ``LAMMPS:MD|FF@OPLS-AA`` -- LAMMPS runs MD and evaluates OPLS-AA itself
+* ``LAMMPS:MD|FF@oplsaa`` -- LAMMPS runs MD and evaluates OPLS-AA itself
   (driver == owner, so the owner is omitted).
 * ``LAMMPS:MD|MOPAC:SQM@PM6-ORG`` -- LAMMPS runs MD while MOPAC evaluates the
   PM6-ORG forces over MDI (driver LAMMPS, owner MOPAC).
@@ -161,8 +161,8 @@ compound):
      - ``OPT|SQM@PM6-ORG``
    * - ``LAMMPS:MD|MOPAC:SQM@PM6-ORG``
      - ``MD|SQM@PM6-ORG``
-   * - ``LAMMPS:MD|FF@OPLS-AA``
-     - ``MD|FF@OPLS-AA``
+   * - ``LAMMPS:MD|FF@oplsaa``
+     - ``MD|FF@oplsaa``
    * - ``VASP:OPT|DFT@PBE/PAW@500eV``
      - ``OPT|DFT@PBE/PAW@500eV``
 
@@ -226,14 +226,14 @@ Examples
      - SQM
      - PM6-ORG
      - --
-   * - ``LAMMPS:MD|FF@OPLS-AA``
+   * - ``LAMMPS:MD|FF@oplsaa``
      - LAMMPS
      - MD
      - LAMMPS
      - FF
      - OPLS-AA
      - --
-   * - ``LAMMPS:OPT|FF@OPLS-AA``
+   * - ``LAMMPS:OPT|FF@oplsaa``
      - LAMMPS
      - OPT
      - LAMMPS
