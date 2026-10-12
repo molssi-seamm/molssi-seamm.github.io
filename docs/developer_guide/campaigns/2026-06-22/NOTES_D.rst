@@ -9,6 +9,15 @@ Phase D (sketch) -- Forcefield handling folded into Model Chemistry
 :Status: Design sketch only -- not started
 :Campaign: LAMMPS + MOPAC/xTB QM-MD via MDI
 
+.. note::
+
+   **Superseded (2026-10-11).** The plan is now lammps_step's campaign
+   ``2026-10-11`` ("Forcefields as model chemistries"), and the type names are
+   settled: ``FF`` (not ``VFF``), ``ReaxFF`` (not ``ReactiveFF``), ``IP``,
+   ``MLFF`` and ``QC``, as on :doc:`/background/model_chemistry_naming`. The
+   open issue below -- atom-type assignment -- is answered there too. This note
+   is kept as the record of the earlier sketch.
+
 
 Goal
 ====

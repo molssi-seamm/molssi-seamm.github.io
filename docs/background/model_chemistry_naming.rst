@@ -47,7 +47,7 @@ Grammar
    owner           = program          ; code evaluating the PES (only if != driver)
    program         = token            ; LAMMPS, MOPAC, xTB, VASP, Psi4, ...
    task            = token            ; SP | OPT | MD | FREQ | ...
-   type            = token            ; SQM | DFT | QC | VFF | IP | rxnFF | ML | FF
+   type            = token            ; SQM | DFT | QC | FF | ReaxFF | IP | MLFF
    method          = token
    basis           = token
    cutoff          = token
@@ -101,31 +101,29 @@ cascade.
      - Semiempirical QM: PM6, PM7, AM1, RM1, GFN2-xTB
      -
    * - ``DFT``
-     - Kohn-Sham DFT: PBE, B3LYP, r2SCAN
+     - Kohn-Sham DFT: PBE, B3LYP, r2SCAN, double hybrids
      -
    * - ``QC``
-     - Correlated / *ab initio* wavefunction: HF, MP2, CCSD(T)
-     -
-   * - ``VFF``
-     - Additive / valence molecular force fields: OPLS-AA, AMBER, CHARMM, GAFF
-     -
+     - Correlated / *ab initio* wavefunction: HF, MP2, CCSD(T), DLPNO methods
+     - ``QC@HF``, ``QC@MP2`` (not ``HF@...`` / ``MP2@...``)
+   * - ``FF``
+     - Classical (valence) force fields: OPLS-AA, PCFF, Dreiding, AMBER, GAFF
+     - e.g. ``FF@oplsaa``
+   * - ``ReaxFF``
+     - Reactive force fields; the method is the parameter set
+     - e.g. ``ReaxFF@CHO``
    * - ``IP``
      - Interatomic potentials: EAM, MEAM, Tersoff (the OpenKIM world)
-     -
-   * - ``rxnFF``
-     - Reactive force fields: ReaxFF, COMB
-     -
-   * - ``ML``
-     - Machine-learned potentials: MACE, ANI, NequIP
-     -
-   * - ``FF``
-     - Force fields not covered above
-     - catch-all fallback
+     - e.g. ``IP@<OpenKIM ID>``
+   * - ``MLFF``
+     - Machine-learned force fields: MACE, ANI, NequIP
+     - e.g. ``xnn:MLFF@<model>``
 
 The force-field families are kept separate because their domains of
 applicability are disjoint -- an EAM value is not comparable to an OPLS-AA value
--- and the split keeps the method cascade tractable. ``FF`` is only the
-fallback.
+-- and the split keeps the method cascade tractable. There is no catch-all type:
+a new family gets a name of its own. (These names were settled on 2026-10-11;
+earlier notes used ``VFF``, ``rxnFF`` / ``ReactiveFF`` and ``ML``.)
 
 
 Programs: driver and owner
@@ -135,7 +133,7 @@ The **driver** (immediately left of ``:`` ``task``) is always present. The
 **owner** appears on the level side only when the driver delegates the PES to a
 different code over MDI:
 
-* ``LAMMPS:MD|VFF@OPLS-AA`` -- LAMMPS runs MD and evaluates OPLS-AA itself
+* ``LAMMPS:MD|FF@oplsaa`` -- LAMMPS runs MD and evaluates OPLS-AA itself
   (driver == owner, so the owner is omitted).
 * ``LAMMPS:MD|MOPAC:SQM@PM6-ORG`` -- LAMMPS runs MD while MOPAC evaluates the
   PM6-ORG forces over MDI (driver LAMMPS, owner MOPAC).
@@ -163,8 +161,8 @@ compound):
      - ``OPT|SQM@PM6-ORG``
    * - ``LAMMPS:MD|MOPAC:SQM@PM6-ORG``
      - ``MD|SQM@PM6-ORG``
-   * - ``LAMMPS:MD|VFF@OPLS-AA``
-     - ``MD|VFF@OPLS-AA``
+   * - ``LAMMPS:MD|FF@oplsaa``
+     - ``MD|FF@oplsaa``
    * - ``VASP:OPT|DFT@PBE/PAW@500eV``
      - ``OPT|DFT@PBE/PAW@500eV``
 
@@ -228,18 +226,18 @@ Examples
      - SQM
      - PM6-ORG
      - --
-   * - ``LAMMPS:MD|VFF@OPLS-AA``
+   * - ``LAMMPS:MD|FF@oplsaa``
      - LAMMPS
      - MD
      - LAMMPS
-     - VFF
+     - FF
      - OPLS-AA
      - --
-   * - ``LAMMPS:OPT|VFF@OPLS-AA``
+   * - ``LAMMPS:OPT|FF@oplsaa``
      - LAMMPS
      - OPT
      - LAMMPS
-     - VFF
+     - FF
      - OPLS-AA
      - --
    * - ``LAMMPS:MD|MOPAC:SQM@PM6-ORG``
@@ -256,13 +254,27 @@ Examples
      - IP
      - EAM
      - --
-   * - ``LAMMPS:MD|rxnFF@ReaxFF``
+   * - ``LAMMPS:MD|ReaxFF@CHO``
      - LAMMPS
      - MD
      - LAMMPS
-     - rxnFF
      - ReaxFF
+     - CHO
      - --
+   * - ``LAMMPS:MD|xnn:MLFF@<model>``
+     - LAMMPS
+     - MD
+     - xnn
+     - MLFF
+     - <model>
+     - --
+   * - ``ORCA:SP|QC@MP2/def2-TZVP``
+     - ORCA
+     - SP
+     - ORCA
+     - QC
+     - MP2
+     - def2-TZVP
    * - ``VASP:OPT|DFT@PBE/PAW@500eV``
      - VASP
      - OPT
