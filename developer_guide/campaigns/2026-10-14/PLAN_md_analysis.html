@@ -1,0 +1,1512 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The design &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/campaigns/2026-10-14/PLAN_md_analysis';</script>
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Glossary" href="../../../glossary.html" />
+    <link rel="prev" title="2026-10-14 MD analysis: H5MD output, a shared library and analysis steps" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../software_ecosystem/index.html">Software Ecosystem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_datastore.html">Job Datastore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qm_md_over_mdi.html">QM-MD over MDI (the LAMMPS driver)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../new-plug-in/index.html">Creating a New Plug-in</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/properties.html">Saving Properties in the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/creating.html">Creating the Initial Code and Uploading to GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tips-and-tricks/index.html">Tips and Tricks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/index.html">Tutorials for Developers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/development_environment.html">Installing the Development Environment</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/simple_plugin/index.html">A simple plug-in: PySCF</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/cookiecutter.html">Creating the plug-in with the seamm-cookiecutter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/compiling.html">“Compiling” the plug-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/code_overview.html">An overview of the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/customizing.html">Customizing the plug-in to run PySCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/flowchart.html">Create a test flowchart</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../core_modules.html">Core Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm/index.html"> seamm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/molsystem/index.html"> molsystem</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_util/index.html"> seamm-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_manager/index.html"> seamm-manager</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_webui/index.html"> seamm-webui</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_exec/index.html"> seamm-exec</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_scheduler/index.html"> seamm-scheduler</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_slurm/index.html"> seamm-slurm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_dashboard_client/index.html"> seamm-dashboard-client</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_mdi/index.html"> seamm-mdi</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_thermochemistry/index.html"> seamm-thermochemistry</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_bsse/index.html"> seamm-bsse</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_mbe/index.html"> seamm-mbe</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_geometric/index.html"> seamm-geometric</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ase/index.html"> seamm-ase</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/cms_plots/index.html"> cms-plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Campaigns</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-19/index.html">2026-06-19 MDI engines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/PLAN_mopac_mdi.html">Development Plan: QM/MD via MDI in SEAMM — MOPAC First</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_future_investigations.html">Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_mopac_mdi_validation.html">Validation Notes: MOPAC Native MDI Engine for LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_qm_mdi_engines_validation.html">Validation Notes: tblite MDI Engine and MOPAC Python-Wrapper MDI Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_semiempirical_density_comparison.html">Scientific Finding: Semiempirical Method Accuracy for Liquid Methanol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-22/index.html">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PLAN_model_chemistry_step.html">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_A.html">Phase A – MOPAC-side MDI engine launch contract and port strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_B.html">Phase B – Model Chemistry Step (selection + storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_C.html">Phase C – LAMMPS consumption of the model chemistry (MDI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_D.html">Phase D (sketch) – Forcefield handling folded into Model Chemistry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PROJECT_HANDOFF.html">Project handoff – LAMMPS + MOPAC QM-MD coupling via MDI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-26/index.html">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/PLAN_long_range_electrostatics_mlff.html">Plan: Long-Range Electrostatics for Short-Range MLFFs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/NOTES_atomic_charge_methods.html">Notes: Atomic Charge Methods and MLFF Long-Range Prior Art</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2026-10-14 MD analysis: H5MD output, a shared library and analysis steps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">The design</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developers Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Campaigns</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2026-10-14 MD analysis: H5MD output, a shared library and analysis steps</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The design</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-design">
+<h1>The design<a class="headerlink" href="#the-design" title="Link to this heading">#</a></h1>
+<p>Status: <strong>agreed</strong> (2026-10-14). Nothing is implemented yet.</p>
+<section id="decisions-already-made">
+<h2>Decisions already made<a class="headerlink" href="#decisions-already-made" title="Link to this heading">#</a></h2>
+<p>Paul, 2026-10-14:</p>
+<ol class="arabic simple">
+<li><p><strong>The contract is general enough for GROMACS.</strong> A GROMACS step is not part of this
+campaign, but nothing in the analysis may depend on LAMMPS’s files or commands.</p></li>
+<li><p><strong>MDAnalysis is an acceptable dependency</strong> for analysis steps, as are MDAKits such
+as SolvationAnalysis. Neither becomes a dependency of core SEAMM.</p></li>
+<li><p><strong>One H5MD file per MD run</strong> holds the trajectory (if one was sampled), every time
+series as an H5MD <em>observable</em>, the run’s parameters and SEAMM’s provenance. A run
+without a trajectory still writes the file, containing only observables. That is
+valid H5MD, though it may surprise people at first.</p></li>
+<li><p><strong>SEAMM writes the H5MD file from the code’s native output</strong> at the end of each
+run or segment. During the run the code writes its usual files, so crash safety
+and following a run with <code class="docutils literal notranslate"><span class="pre">tail</span></code> are unchanged.</p></li>
+<li><p><strong>Native files are kept after conversion at first.</strong> Once the conversion is
+trusted, the default becomes deleting them.</p></li>
+</ol>
+<p>After reviewing the design:</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>The analyses are separate steps</strong> (Viscosity, Structure, Dielectric constant, and
+so on) built on the shared library, not one “Liquid properties” step.</p></li>
+<li><p><strong>The names:</strong> <code class="docutils literal notranslate"><span class="pre">seamm_md_analysis</span></code> for the library, <code class="docutils literal notranslate"><span class="pre">md.h5md</span></code> for the file, and
+<code class="docutils literal notranslate"><span class="pre">_md_runs</span></code> for the workspace variable.</p></li>
+<li><p><strong>Diffusivity uses the viscosity from a preceding Viscosity step by default</strong> for
+the Yeh–Hummer correction, and the user can override it with a value of their own.</p></li>
+<li><p><strong>Non-periodic systems</strong> must at least not cause problems (see <em>Non-periodic
+systems</em>).</p></li>
+</ol>
+</section>
+<section id="where-things-stand">
+<h2>Where things stand<a class="headerlink" href="#where-things-stand" title="Link to this heading">#</a></h2>
+<p>Checked in the code on 2026-10-14:</p>
+<ul>
+<li><p><strong>LAMMPS sampling.</strong> The NVE, NVT and NPT sub-steps (<code class="docutils literal notranslate"><span class="pre">nve.py</span></code>, from which the
+other two inherit) can sample:</p>
+<ul class="simple">
+<li><p>a trajectory as <code class="docutils literal notranslate"><span class="pre">trajectory.dump_trj.gz</span></code>: <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">element</span> <span class="pre">[q]</span> <span class="pre">xu</span> <span class="pre">yu</span> <span class="pre">zu</span></code>, plus
+optional forces and velocities;</p></li>
+<li><p>thermo and the pressure tensor alongside it (<code class="docutils literal notranslate"><span class="pre">trajectory.trj</span></code>);</p></li>
+<li><p>atomic positions and velocities (<code class="docutils literal notranslate"><span class="pre">atomic_*.dump_trj</span></code>);</p></li>
+<li><p>molecular centre-of-mass positions and velocities (<code class="docutils literal notranslate"><span class="pre">com_*.trj</span></code>, from
+<code class="docutils literal notranslate"><span class="pre">chunk/atom</span> <span class="pre">molecule</span></code>);</p></li>
+<li><p>the heat flux (<code class="docutils literal notranslate"><span class="pre">heat_flux.trj</span></code>, already converted to W m⁻²);</p></li>
+<li><p>the shear stress: <code class="docutils literal notranslate"><span class="pre">Pxy</span> <span class="pre">Pxz</span> <span class="pre">Pyz</span></code> only (<code class="docutils literal notranslate"><span class="pre">shear_stress.trj</span></code>).</p></li>
+</ul>
+<p>Each <code class="docutils literal notranslate"><span class="pre">.trj</span></code> file starts with a <code class="docutils literal notranslate"><span class="pre">!MolSSI</span> <span class="pre">trajectory</span> <span class="pre">2.0</span></code> line holding a JSON
+header (<code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">dt</span></code>, <code class="docutils literal notranslate"><span class="pre">tunits</span></code>, <code class="docutils literal notranslate"><span class="pre">nsteps</span></code>), followed by column
+names. <strong>The columns have no units.</strong> They are implicitly in the LAMMPS unit style
+of the run.</p>
+</li>
+<li><p><strong>Thermo statistics.</strong> <code class="docutils literal notranslate"><span class="pre">LAMMPS.analyze_trajectory</span></code> uses pymbar’s
+<code class="docutils literal notranslate"><span class="pre">detect_equilibration</span></code> and <code class="docutils literal notranslate"><span class="pre">subsample_correlated_data</span></code> on the state file to
+report each property as mean ± error, together with its equilibration time.</p></li>
+<li><p><strong>“Run until converged” exists only in the GUI.</strong> <code class="docutils literal notranslate"><span class="pre">nve_parameters.py</span></code> defines
+<code class="docutils literal notranslate"><span class="pre">run_control</span></code> with that choice and <code class="docutils literal notranslate"><span class="pre">tk_nve.py</span></code> shows it, but nothing in the run
+code reads it. Every run has a fixed length.</p></li>
+<li><p><strong>The Custom sub-step</strong> inserts a script verbatim. Its fixes and computes stay in
+force for every later sub-step, and SEAMM never analyses their output.</p></li>
+<li><p><strong>diffusivity_step and thermal_conductivity_step</strong> each wrap a sub-flowchart and run
+it <code class="docutils literal notranslate"><span class="pre">nruns</span></code> times as independent replicas. They find their input by globbing for a
+filename: <code class="docutils literal notranslate"><span class="pre">**/com_positions.trj</span></code> (falling back to <code class="docutils literal notranslate"><span class="pre">atomic_positions.dump_trj</span></code>)
+and <code class="docutils literal notranslate"><span class="pre">**/com_velocities.trj</span></code>, or <code class="docutils literal notranslate"><span class="pre">**/heat_flux.trj</span></code>. If the user forgot to turn
+that sampling on, the step finds nothing, but only after all the MD has run.</p></li>
+<li><p><strong>The helper code has been copied between the two and has drifted:</strong> <code class="docutils literal notranslate"><span class="pre">fmt_err</span></code>
+(with different signatures), <code class="docutils literal notranslate"><span class="pre">axb</span></code>, <code class="docutils literal notranslate"><span class="pre">create_helfand_moments</span></code>, the
+Helfand-moment fits and plots, and the readers <code class="docutils literal notranslate"><span class="pre">read_dump_trajectory</span></code> and
+<code class="docutils literal notranslate"><span class="pre">read_vector_trajectory</span></code> (in diffusivity only).</p></li>
+<li><p><strong>trajectory_analysis_step</strong> is an unfinished stub from 2021.</p></li>
+<li><p><strong>Whole-flowchart checks.</strong> <code class="docutils literal notranslate"><span class="pre">seamm.builder.validate</span></code> checks a flowchart as a
+whole; today it only checks that a Model Chemistry step comes first. It is called
+by <code class="docutils literal notranslate"><span class="pre">seamm</span> <span class="pre">flowchart</span> <span class="pre">validate</span></code> and by the MCP tools, but <strong>not</strong> by the Tk editor
+or <code class="docutils literal notranslate"><span class="pre">run_flowchart</span></code>.</p></li>
+</ul>
+</section>
+<section id="h5md-facts-checked-on-2026-10-14">
+<h2>H5MD facts checked on 2026-10-14<a class="headerlink" href="#h5md-facts-checked-on-2026-10-14" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>HDF5 file locking</strong> works correctly on ARC <code class="docutils literal notranslate"><span class="pre">/projects</span></code> and home (NFS,
+HDF5 2.0) and on ChemAI <code class="docutils literal notranslate"><span class="pre">/home</span></code> (ext4) and <code class="docutils literal notranslate"><span class="pre">/D3</span></code> (ZFS, HDF5 2.1). A second
+writer is refused, a reader can open the file with <code class="docutils literal notranslate"><span class="pre">locking=False</span></code>, and there
+were no spurious “unable to lock file” errors.</p></li>
+<li><p><strong>HDF5 1.14.6 reads files written by 2.0</strong>, even with <code class="docutils literal notranslate"><span class="pre">libver=&quot;latest&quot;</span></code>.</p></li>
+<li><p><strong>h5py is already in every SEAMM installation</strong>, because vasp_step requires it.</p></li>
+<li><p><strong>LAMMPS’s own</strong> <code class="docutils literal notranslate"><span class="pre">dump</span> <span class="pre">h5md</span></code> (our conda-forge build, 29 Aug 2024):</p>
+<ul class="simple">
+<li><p>writes no unit attributes anywhere;</p></li>
+<li><p>stores positions as uncompressed float64;</p></li>
+<li><p>supports only orthogonal boxes (its error message says the opposite).</p></li>
+</ul>
+<p>MDAnalysis refuses the file unless <code class="docutils literal notranslate"><span class="pre">convert_units=False</span></code>. <strong>SEAMM therefore
+writes the H5MD file itself.</strong></p>
+</li>
+<li><p><strong>MDAnalysis 2.10</strong> reads a SEAMM-written H5MD file, including a triclinic box,
+units, gzip compression, float32 positions and appended frames, with three
+conditions:</p>
+<ul class="simple">
+<li><p><strong>It needs a topology.</strong> We build it from the molsystem configuration
+(<code class="docutils literal notranslate"><span class="pre">Universe.empty</span></code> plus <code class="docutils literal notranslate"><span class="pre">load_new</span></code>).</p></li>
+<li><p><strong>It accepts only its own unit spellings</strong>, such as <code class="docutils literal notranslate"><span class="pre">Angstrom</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Angstrom</span> <span class="pre">ps-1</span></code>.</p></li>
+<li><p><strong>It attaches observables to frames by index, ignoring each observable’s own
+step and time.</strong> An observable sampled more often than the frames is silently
+misaligned: with temperature every 5 steps and frames every 20, frame 1
+(step 20) was given the temperature from step 5. <strong>High-rate time series must
+therefore be read with h5py on their own time axis, never through MDAnalysis’s
+per-frame data.</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MD step (LAMMPS now, GROMACS later)
+  │  native output during the run (dump, .trj, log)
+  │  at the end of each run or segment: convert ──► &lt;sub-step dir&gt;/md.h5md
+  │  add a record to the workspace variable _md_runs
+  ▼
+analysis steps (Diffusivity, Thermal conductivity, Viscosity, Structure, ...)
+  │  mode "run replicas":           wrap the MD in a sub-flowchart, as now
+  │  mode "analyse preceding MD":   read the records in _md_runs
+  ▼
+seamm_md_analysis library
+  readers (H5MD; legacy .trj and dump), statistics, correlations,
+  Green–Kubo and Helfand fits, block and replica errors, graphs
+  MDAnalysis Universe from molsystem + H5MD, for structural analysis
+  ▼
+results: SEAMM properties, tables, .graph files
+</pre></div>
+</div>
+</section>
+<section id="the-data-contract-seamm-s-h5md-layout">
+<h2>The data contract: SEAMM’s H5MD layout<a class="headerlink" href="#the-data-contract-seamm-s-h5md-layout" title="Link to this heading">#</a></h2>
+<p><strong>The file.</strong> Each NVE, NVT or NPT sub-step writes <code class="docutils literal notranslate"><span class="pre">md.h5md</span></code> in its own directory.
+It is H5MD 1.1 written with h5py, with the file format pinned to
+<code class="docutils literal notranslate"><span class="pre">libver=(&quot;earliest&quot;,</span> <span class="pre">&quot;v110&quot;)</span></code>. It is written to <code class="docutils literal notranslate"><span class="pre">md.h5md.tmp</span></code> and then
+renamed (<code class="docutils literal notranslate"><span class="pre">os.replace</span></code>), so an interrupted conversion never leaves a damaged file
+under the real name.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 46.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Contents</p></th>
+<th class="head"><p>Required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">h5md/</span></code> (attribute <code class="docutils literal notranslate"><span class="pre">version</span></code> = 1.1)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">creator</span></code> (<code class="docutils literal notranslate"><span class="pre">SEAMM</span> <span class="pre">&lt;step&gt;</span></code>, its version) and <code class="docutils literal notranslate"><span class="pre">author</span></code> (the job’s user).</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">h5md/modules/units</span></code></p></td>
+<td><p>Declares that unit attributes are present.</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">particles/all/box</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dimension</span></code> 3, <code class="docutils literal notranslate"><span class="pre">boundary</span></code> periodic or none; <code class="docutils literal notranslate"><span class="pre">edges</span></code> as a 3×3 matrix
+(rows are the cell vectors). It is time-dependent for NPT runs and fixed
+otherwise.</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">particles/all/id</span></code>, <code class="docutils literal notranslate"><span class="pre">species</span></code>, <code class="docutils literal notranslate"><span class="pre">mass</span></code>, <code class="docutils literal notranslate"><span class="pre">charge</span></code></p></td>
+<td><p>Fixed per run: the SEAMM atom ids in configuration order, atomic numbers,
+masses, and the forcefield charges. <code class="docutils literal notranslate"><span class="pre">charge</span></code> is omitted when the model
+supplies no charges (MLFFs).</p></td>
+<td><p>id, species, mass</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">particles/all/position</span></code></p></td>
+<td><p><strong>Unwrapped</strong> positions (attribute <code class="docutils literal notranslate"><span class="pre">seamm_unwrapped</span> <span class="pre">=</span> <span class="pre">1</span></code>, no <code class="docutils literal notranslate"><span class="pre">image</span></code>
+dataset), float32, in Angstrom.</p></td>
+<td><p>if sampled</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">particles/all/velocity</span></code>, <code class="docutils literal notranslate"><span class="pre">force</span></code></p></td>
+<td><p>float32.</p></td>
+<td><p>if sampled</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">particles/molecules/position</span></code>, <code class="docutils literal notranslate"><span class="pre">velocity</span></code></p></td>
+<td><p>Centre-of-mass positions and velocities of the molecules, with
+<code class="docutils literal notranslate"><span class="pre">particles/molecules/id</span></code> giving the molecule’s index in the configuration.</p></td>
+<td><p>if sampled</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">observables/&lt;name&gt;</span></code></p></td>
+<td><p>The time series, each with its own <code class="docutils literal notranslate"><span class="pre">step</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code>. Names
+are listed in the next table.</p></td>
+<td><p>each as sampled</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">observables/user/&lt;name&gt;</span></code></p></td>
+<td><p>The user’s extra properties (see <em>The LAMMPS step</em>).</p></td>
+<td><p>if defined</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">parameters/</span></code></p></td>
+<td><p>Attributes: ensemble, temperature, pressure, timestep, thermostat and its
+damping, barostat, number of steps.</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">parameters/seamm/</span></code></p></td>
+<td><p>Provenance: job id, step id and title, configuration id, model chemistry,
+code name and version, the SEAMM package version, hashes of model files,
+and a segment table (first and last step, wall time and node of each
+segment).</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Standard observable names.</strong> Analysis steps ask for these names. The MD steps map
+their own output onto them.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 14.0%" />
+<col style="width: 22.0%" />
+<col style="width: 38.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Shape</p></th>
+<th class="head"><p>Units written</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">temperature</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">K</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pressure</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p>code’s (<code class="docutils literal notranslate"><span class="pre">atm</span></code>)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pressure_tensor</span></code></p></td>
+<td><p>3×3</p></td>
+<td><p>code’s (<code class="docutils literal notranslate"><span class="pre">atm</span></code>)</p></td>
+<td><p>The full symmetric tensor (see the LAMMPS changes below).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">total_energy</span></code>, <code class="docutils literal notranslate"><span class="pre">kinetic_energy</span></code>, <code class="docutils literal notranslate"><span class="pre">potential_energy</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p>code’s (<code class="docutils literal notranslate"><span class="pre">kcal</span> <span class="pre">mol-1</span></code>)</p></td>
+<td><p>The LAMMPS <code class="docutils literal notranslate"><span class="pre">emol</span></code> and <code class="docutils literal notranslate"><span class="pre">epair</span></code> terms go under the same names as the code
+uses (<code class="docutils literal notranslate"><span class="pre">molecular_energy</span></code>, <code class="docutils literal notranslate"><span class="pre">pair_energy</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">volume</span></code>, <code class="docutils literal notranslate"><span class="pre">density</span></code></p></td>
+<td><p>scalar</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Angstrom3</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">cm-3</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">heat_flux</span></code></p></td>
+<td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code></p></td>
+<td><p>Already converted in the LAMMPS input.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">total_dipole</span></code></p></td>
+<td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">Angstrom</span></code></p></td>
+<td><p>New. Needs charges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hbond_count</span></code>, <code class="docutils literal notranslate"><span class="pre">hbond_energy</span></code></p></td>
+<td><p>scalar</p></td>
+<td></td>
+<td><p>DREIDING hydrogen bonds, when present.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Units.</strong> Every <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">time</span></code> dataset carries a <code class="docutils literal notranslate"><span class="pre">unit</span></code> attribute.</p>
+<ul class="simple">
+<li><p>Values are stored in the units the code produced, with no lossy conversion. They
+are converted on reading with pint.</p></li>
+<li><p>Unit strings use H5MD’s syntax (space-separated factors, negative powers as
+<code class="docutils literal notranslate"><span class="pre">-1</span></code>), with MDAnalysis’s spellings for lengths, so that MDAnalysis can read
+trajectories: <code class="docutils literal notranslate"><span class="pre">Angstrom</span></code>, <code class="docutils literal notranslate"><span class="pre">Angstrom</span> <span class="pre">ps-1</span></code>, <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p></li>
+<li><p>The library owns the translation of these strings to pint, with tests.</p></li>
+</ul>
+<p><strong>Rates.</strong> Each observable and each particle property has its own sampling rate.
+An observable produced by on-the-fly averaging in the code has an attribute
+<code class="docutils literal notranslate"><span class="pre">seamm_average_window</span></code>, the number of MD steps it averages over. It is 1 for
+instantaneous values, which are the default.</p>
+<p><strong>Storage.</strong></p>
+<ul class="simple">
+<li><p>Positions, velocities and forces are float32, chunked by frame, and not
+compressed by default, since gzip gains little on coordinates. A setting turns
+compression on.</p></li>
+<li><p>Observables are float64 with gzip and shuffle. Even a million points of a 3×3
+tensor take only about 70 MB before compression.</p></li>
+<li><p>Only the standard gzip filter is used, because readers may not have plug-in
+filters.</p></li>
+</ul>
+<p><strong>Segments.</strong> When a run is split into segments (for “run until converged”, for
+restarts, or for preemption):</p>
+<ol class="arabic simple">
+<li><p>Each segment is converted into <code class="docutils literal notranslate"><span class="pre">md.seg-NNNN.h5md</span></code> as soon as it ends.</p></li>
+<li><p>At the end of the sub-step the segments are joined into <code class="docutils literal notranslate"><span class="pre">md.h5md</span></code>, through a
+temporary file and a rename, and the segment files are removed.</p></li>
+<li><p>The library reads either one file or the list of segments, so analysis works on a
+run that has not finished.</p></li>
+</ol>
+<p>Appending to a single file in place was rejected because a crash during the append
+would put everything written so far at risk. HDF5 virtual datasets were also
+rejected as needless complexity.</p>
+<p><strong>Native files.</strong> A LAMMPS setting, “keep native MD output”, is <code class="docutils literal notranslate"><span class="pre">yes</span></code> for now and
+will later change to <code class="docutils literal notranslate"><span class="pre">no</span></code>. The text summaries and <code class="docutils literal notranslate"><span class="pre">.graph</span></code> files that people look
+at are unchanged in either case.</p>
+<p><strong>File locking.</strong> Nothing special is needed on our systems. Readers open the files
+read-only. If a site does show locking errors, the fix is
+<code class="docutils literal notranslate"><span class="pre">HDF5_USE_FILE_LOCKING=FALSE</span></code> in the environment section of that installation’s
+ini file; this is documented, not set by default.</p>
+</section>
+<section id="how-analysis-finds-the-data-md-runs">
+<h2>How analysis finds the data: <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code><a class="headerlink" href="#how-analysis-finds-the-data-md-runs" title="Link to this heading">#</a></h2>
+<p>Globbing for filenames is replaced by an explicit record. After converting, each MD
+sub-step appends one entry to the workspace variable <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"&lt;absolute path to md.h5md&gt;"</span><span class="p">,</span>
+    <span class="s2">"step"</span><span class="p">:</span> <span class="s2">"&lt;step id and title&gt;"</span><span class="p">,</span>
+    <span class="s2">"code"</span><span class="p">:</span> <span class="s2">"LAMMPS"</span><span class="p">,</span>
+    <span class="s2">"ensemble"</span><span class="p">:</span> <span class="s2">"NVT"</span><span class="p">,</span>
+    <span class="s2">"configuration"</span><span class="p">:</span> <span class="s2">"&lt;system/configuration ids&gt;"</span><span class="p">,</span>
+    <span class="s2">"particles"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"position"</span><span class="p">:</span> <span class="s2">"1 ps"</span><span class="p">,</span> <span class="s2">"velocity"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">},</span>
+    <span class="s2">"observables"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"pressure_tensor"</span><span class="p">:</span> <span class="s2">"5 fs"</span><span class="p">,</span> <span class="s2">"temperature"</span><span class="p">:</span> <span class="s2">"5 fs"</span><span class="p">,</span> <span class="o">...</span><span class="p">},</span>
+    <span class="s2">"time"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"0 ps"</span><span class="p">,</span> <span class="s2">"2000 ps"</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>An analysis step in mode B (“analyse preceding MD”) chooses its input with a
+<strong>Source</strong> parameter:</p>
+<ul class="simple">
+<li><p><strong>the last MD run</strong> (the default);</p></li>
+<li><p><strong>all MD runs of the last MD step</strong>, for production split into several sub-steps;</p></li>
+<li><p><strong>all MD runs since the start of the enclosing loop</strong>, which treats repeated runs
+in a Loop step as replicas (see <em>Two modes</em>);</p></li>
+<li><p><strong>file(s)</strong>, a path or a <code class="docutils literal notranslate"><span class="pre">job://&lt;n&gt;/...</span></code> reference to another job’s
+<code class="docutils literal notranslate"><span class="pre">md.h5md</span></code>, to analyse old runs.</p></li>
+</ul>
+</section>
+<section id="requirements-and-catching-mistakes-before-the-md-runs">
+<h2>Requirements and catching mistakes before the MD runs<a class="headerlink" href="#requirements-and-catching-mistakes-before-the-md-runs" title="Link to this heading">#</a></h2>
+<p>The flowchart editor should make invalid combinations impossible to pick rather than
+catch them at run time. For analysis this means the user cannot forget to sample what
+the analysis needs. Two small protocols are added:</p>
+<ul class="simple">
+<li><p><strong>MD sub-steps</strong> implement <code class="docutils literal notranslate"><span class="pre">md_provides(P)</span></code>, which returns what they will write:
+each particle property and observable, with its sampling interval.</p></li>
+<li><p><strong>Analysis steps</strong> implement <code class="docutils literal notranslate"><span class="pre">md_requirements(P)</span></code>, which returns what they need:
+names, the longest acceptable sampling interval (for example 5 fs for a Green–Kubo
+pressure tensor), and optionally the shortest useful run length.</p></li>
+</ul>
+<p>How they are used:</p>
+<ul class="simple">
+<li><p><strong>Mode A (replicas).</strong> At run time the analysis step walks its sub-flowchart and
+turns on whatever sampling the MD sub-steps lack, through
+<code class="docutils literal notranslate"><span class="pre">request_sampling(name,</span> <span class="pre">interval)</span></code>. It prints what it changed. The user can no
+longer forget it.</p></li>
+<li><p><strong>Mode B (preceding MD).</strong> There are two checks:</p>
+<ul>
+<li><p><strong>In the GUI.</strong> The analysis step’s dialog compares its requirements with
+<code class="docutils literal notranslate"><span class="pre">md_provides</span></code> of the MD sub-step it will read, shows a warning line for each
+gap, and offers a button to turn the sampling on in that sub-step.</p></li>
+<li><p><strong>In the flowchart check.</strong> <code class="docutils literal notranslate"><span class="pre">seamm.builder.validate</span></code> gets a generic hook,
+<code class="docutils literal notranslate"><span class="pre">node.check_flowchart(preceding)</span></code>, which the analysis steps implement. This
+catches flowcharts that were edited by hand or built by scripts.</p></li>
+</ul>
+</li>
+<li><p><strong>Run validate before the run.</strong> The flowchart check is called by the Tk editor
+before submitting, and by <code class="docutils literal notranslate"><span class="pre">run_flowchart</span></code> before the first step. A missing
+requirement stops the job before the MD runs rather than after it. This is a
+change to core seamm and is useful beyond analysis.</p></li>
+</ul>
+</section>
+<section id="two-modes-for-each-analysis-step">
+<h2>Two modes for each analysis step<a class="headerlink" href="#two-modes-for-each-analysis-step" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Mode A, “run replicas”:</strong> as now. The step wraps the MD in a sub-flowchart, runs
+it N times, and takes the error bars from the spread of the replicas.</p></li>
+<li><p><strong>Mode B, “analyse preceding MD”:</strong> the step reads <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code>. Error bars come
+from block averages over the run, or from the spread across runs when the Source
+includes several. One production run can then feed several analyses:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>LAMMPS (NPT equilibration, NVT production)
+  → Viscosity → Diffusivity (Yeh–Hummer from the viscosity)
+  → Dielectric constant → Structure
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Mode B with a Loop step around the LAMMPS step gives replicas without a wrapping
+step. Mode A may eventually become a convenience on top of this, but it stays for
+now, because existing flowcharts use it.</p>
+</section>
+<section id="the-shared-library-seamm-md-analysis">
+<h2>The shared library: <code class="docutils literal notranslate"><span class="pre">seamm_md_analysis</span></code><a class="headerlink" href="#the-shared-library-seamm-md-analysis" title="Link to this heading">#</a></h2>
+<p>A new library package. Per the usual rule, it is released before the steps that pin
+it. It holds one copy of everything currently duplicated, plus the H5MD reader.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">io</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">open_md(paths)</span></code> returns an <code class="docutils literal notranslate"><span class="pre">MDData</span></code> for one file or a list of segment
+files, with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">observable(name,</span> <span class="pre">units=None)</span></code>, which returns a <code class="docutils literal notranslate"><span class="pre">TimeSeries</span></code> (values,
+times, pint units, averaging window), read by h5py on the observable’s own
+time axis;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">observables()</span></code>, <code class="docutils literal notranslate"><span class="pre">parameters</span></code>, <code class="docutils literal notranslate"><span class="pre">provenance</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iter_frames(group,</span> <span class="pre">fields,</span> <span class="pre">chunk)</span></code> for streaming frames;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">universe(configuration)</span></code>, which builds an MDAnalysis <code class="docutils literal notranslate"><span class="pre">Universe</span></code> from
+the molsystem configuration (atoms, elements, masses, charges, bonds,
+molecules as residues) and loads the H5MD trajectory. MDAnalysis is
+imported here only.</p></li>
+</ul>
+<p>The legacy readers for <code class="docutils literal notranslate"><span class="pre">.trj</span></code> and <code class="docutils literal notranslate"><span class="pre">.dump_trj</span></code> files are also here, so old
+jobs can still be analysed.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stats</span></code></p></td>
+<td><p>Equilibration detection and statistical inefficiency (wrapping pymbar), block
+averages, mean ± error, combining replicas, and a single <code class="docutils literal notranslate"><span class="pre">fmt_err</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">correlate</span></code></p></td>
+<td><p>FFT auto- and cross-correlation functions and their error estimates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transport</span></code></p></td>
+<td><p>Green–Kubo integrals and their fits; Helfand moments and slope fits; MSD by FFT
+(centre of mass or chunked over atoms); the Yeh–Hummer correction. Each
+returns an <code class="docutils literal notranslate"><span class="pre">Estimate</span></code> (value, error, units, details for plotting).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">plots</span></code></p></td>
+<td><p>The plotly figures written as <code class="docutils literal notranslate"><span class="pre">.graph</span></code> files: correlation functions,
+Green–Kubo integrals, Helfand moments, MSD.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>Dependencies:</strong> numpy, scipy, pymbar, h5py and pint, all already present in
+SEAMM installations. MDAnalysis is an optional extra (<code class="docutils literal notranslate"><span class="pre">seamm-md-analysis[structure]</span></code>)
+required only by the steps that use it.</p></li>
+<li><p><strong>Memory:</strong> trajectories are always streamed, never loaded whole. Observables are
+small enough to read whole.</p></li>
+<li><p><strong>Tests:</strong> synthetic series with known answers. For example, an
+Ornstein–Uhlenbeck process has a known Green–Kubo integral, and a random walk has a
+known MSD slope. H5MD round trips are tested, as is a regression test that the
+MDAnalysis observable trap does not reach our results.</p></li>
+</ul>
+</section>
+<section id="the-lammps-step">
+<h2>The LAMMPS step<a class="headerlink" href="#the-lammps-step" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>The H5MD writer.</strong> At the end of each NVE, NVT or NPT run (and later each
+segment), the step streams the native files into <code class="docutils literal notranslate"><span class="pre">md.h5md</span></code>:</p>
+<ul class="simple">
+<li><p>Units come from the run’s LAMMPS unit style (<code class="docutils literal notranslate"><span class="pre">lammps_units.py</span></code>).</p></li>
+<li><p>Triclinic boxes are handled.</p></li>
+<li><p>The step adds its record to <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code>.</p></li>
+<li><p>LAMMPS’s own <code class="docutils literal notranslate"><span class="pre">dump</span> <span class="pre">h5md</span></code> is not used, for the reasons above.</p></li>
+</ul>
+</li>
+<li><p><strong>The full pressure tensor</strong> replaces the three-component shear-stress sampling.
+Viscosity by Green–Kubo then averages five independent components (<code class="docutils literal notranslate"><span class="pre">Pxy</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Pxz</span></code>, <code class="docutils literal notranslate"><span class="pre">Pyz</span></code>, <code class="docutils literal notranslate"><span class="pre">(Pxx−Pyy)/2</span></code> and <code class="docutils literal notranslate"><span class="pre">(Pyy−Pzz)/2</span></code>) rather than three, which
+improves the statistics at no extra cost. The old “shear stress” choice maps onto
+the new one, so existing flowcharts keep working.</p></li>
+<li><p><strong>Total dipole</strong> sampling, using the forcefield charges. It is not offered for
+MLFFs until the engine can return charges over MDI.</p></li>
+<li><p><strong>Extra commands and extra properties</strong> in the NVE, NVT and NPT sub-steps (designed
+earlier on 2026-10-14):</p>
+<ul class="simple">
+<li><p><em>Extra commands:</em> <code class="docutils literal notranslate"><span class="pre">compute</span></code>, <code class="docutils literal notranslate"><span class="pre">fix</span></code>, <code class="docutils literal notranslate"><span class="pre">variable</span></code> and <code class="docutils literal notranslate"><span class="pre">dump</span></code> lines that
+apply to that sub-step only; SEAMM issues <code class="docutils literal notranslate"><span class="pre">unfix</span></code>/<code class="docutils literal notranslate"><span class="pre">uncompute</span></code> at its end.</p></li>
+<li><p><em>Extra properties:</em> name, LAMMPS expression, units, and the treatment (average,
+autocorrelation, or a Green–Kubo integral with a prefactor). They are sampled
+with the built-in properties into <code class="docutils literal notranslate"><span class="pre">observables/user/&lt;name&gt;</span></code>, and get the same
+graphs, mean ± error and results.</p></li>
+</ul>
+</li>
+<li><p><strong>On-the-fly reductions</strong> are used where they save storage. By default the step
+writes the raw series at the rate the analysis needs. <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">ave/correlate/long</span></code>
+is used only when the raw series would be too large. Its output is stored as an
+observable with <code class="docutils literal notranslate"><span class="pre">seamm_average_window</span></code> and a <code class="docutils literal notranslate"><span class="pre">seamm_kind</span> <span class="pre">=</span> <span class="pre">&quot;correlation&quot;</span></code>
+attribute, and the library accepts either form. Structural quantities such as
+g(r) are always computed from the stored trajectory, never on the fly, so they can
+be re-analysed with different settings.</p></li>
+<li><p><strong>“Run until converged”, implemented with segments.</strong> The step runs a segment,
+converts it, and asks the library whether the chosen properties have reached the
+requested accuracy; if not, it runs another segment. The segments are also the
+unit for restarts and for preemption and requeueing in the task layer, so this
+item goes with that work.</p></li>
+</ol>
+</section>
+<section id="the-analysis-steps">
+<h2>The analysis steps<a class="headerlink" href="#the-analysis-steps" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Needs</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Diffusivity (exists)</p></td>
+<td><p>Molecular COM positions or velocities, or atomic ones</p></td>
+<td><p>Moves onto the library and gains mode B. A new “viscosity” choice for
+Yeh–Hummer: “from the preceding Viscosity step” (the default) or “given
+value”. The output says which was used. If no Viscosity step precedes it and
+no value is given, Yeh–Hummer is skipped, with a note.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thermal conductivity (exists)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">heat_flux</span></code> at ≤ a few fs</p></td>
+<td><p>Moves onto the library and gains mode B.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Viscosity</strong> (new)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pressure_tensor</span></code> at ≤ 5 fs</p></td>
+<td><p>Green–Kubo and Helfand, as in Thermal conductivity. Publishes its result for
+Diffusivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Structure</strong> (new, replaces the 2021 stub)</p></td>
+<td><p>Positions at about 0.5–1 ps</p></td>
+<td><p>Partial g(r) and coordination numbers (MDAnalysis <code class="docutils literal notranslate"><span class="pre">InterRDF</span></code>); solvation
+shells, ion pairing (contact and solvent-separated pairs, aggregates) and
+residence times through SolvationAnalysis.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Dielectric constant</strong> (new)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">total_dipole</span></code> (or positions and charges)</p></td>
+<td><p>Our own code: MDAnalysis’s <code class="docutils literal notranslate"><span class="pre">DielectricConstant</span></code> assumes no free charges,
+so it cannot be used for electrolytes. For an electrolyte, use the dipole of
+the neutral molecules or separate out the ionic current; which one is to be
+settled in that phase. Contributing it upstream to MDAnalysis is worth
+considering.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Later</p></td>
+<td></td>
+<td><p>Ionic conductivity (Nernst–Einstein and the full Einstein/Green–Kubo form, as
+in mdgo), reorientation times, the vibrational density of states, and dHvap
+(needs an isolated-molecule reference run).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="non-periodic-systems">
+<h2>Non-periodic systems<a class="headerlink" href="#non-periodic-systems" title="Link to this heading">#</a></h2>
+<p>The LAMMPS step already runs molecular (non-periodic) systems, with a shrink-wrapped
+box (<code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">s</span> <span class="pre">s</span> <span class="pre">s</span></code>). What it does with them today, checked 2026-10-14:</p>
+<ul class="simple">
+<li><p>NPT stops with an error, but only at run time.</p></li>
+<li><p>The stress tensor is only sampled for periodic systems.</p></li>
+<li><p>The pressure (<code class="docutils literal notranslate"><span class="pre">v_press</span></code>) is still reported. With a shrink-wrapped box its volume
+is meaningless, and so is the pressure.</p></li>
+<li><p>Heat-flux and shear-stress sampling are not guarded. Both divide by the box volume.</p></li>
+<li><p>Neither Diffusivity nor Thermal conductivity checks for periodicity. Diffusivity
+reads <code class="docutils literal notranslate"><span class="pre">cell.a</span></code> for Yeh–Hummer, and Thermal conductivity reads the volume.</p></li>
+</ul>
+<p>Checked with MDAnalysis 2.10, 2026-10-14:</p>
+<ul class="simple">
+<li><p>An H5MD file with <code class="docutils literal notranslate"><span class="pre">boundary</span></code> none and <strong>no</strong> <code class="docutils literal notranslate"><span class="pre">edges</span></code> reads correctly.
+<code class="docutils literal notranslate"><span class="pre">dimensions</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and distances are computed without periodic images.</p></li>
+<li><p><strong>If</strong> <code class="docutils literal notranslate"><span class="pre">edges</span></code> <strong>is present</strong>, MDAnalysis treats the box as periodic even when
+the boundary is none, so it would apply minimum-image distances to a molecule.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">InterRDF</span></code> fails with a division by zero when there is no box, because g(r) is
+normalized by the density. SolvationAnalysis uses <code class="docutils literal notranslate"><span class="pre">InterRDF</span></code> to find its shell
+cutoffs, so it fails the same way.</p></li>
+</ul>
+<p>The design therefore treats periodicity explicitly:</p>
+<ol class="arabic simple">
+<li><p><strong>H5MD writer.</strong></p>
+<ul class="simple">
+<li><p>For a non-periodic run, <code class="docutils literal notranslate"><span class="pre">box</span></code> has <code class="docutils literal notranslate"><span class="pre">boundary</span></code> none and <strong>no</strong> <code class="docutils literal notranslate"><span class="pre">edges</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pressure</span></code>, <code class="docutils literal notranslate"><span class="pre">pressure_tensor</span></code>, <code class="docutils literal notranslate"><span class="pre">volume</span></code> and <code class="docutils literal notranslate"><span class="pre">density</span></code> observables
+are not written.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parameters/seamm</span></code> records the periodicity, as does the run’s record in
+<code class="docutils literal notranslate"><span class="pre">_md_runs</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>LAMMPS sampling.</strong> For a non-periodic system, heat-flux and pressure-tensor
+sampling are skipped with a warning in the output, and the pressure is no longer
+reported. The GUI cannot hide these choices, because it does not know the
+structure until run time.</p></li>
+<li><p><strong>Requirements carry periodicity.</strong> <code class="docutils literal notranslate"><span class="pre">md_requirements</span></code> can say <code class="docutils literal notranslate"><span class="pre">periodic</span></code>:</p>
+<ul class="simple">
+<li><p>required by Viscosity, Thermal conductivity and Diffusivity, since a diffusion
+constant of a cluster is not a bulk property and Yeh–Hummer needs the cell;</p></li>
+<li><p>required by the Dielectric constant, since the fluctuation formula differs for
+a finite sample, which can be added later if wanted;</p></li>
+<li><p>required by the parts of Structure that need a density: g(r) and
+SolvationAnalysis. Coordination numbers within a fixed cutoff and ion-pair
+counts work for both kinds of system, using our own distance code, so Structure
+offers only those for a non-periodic system.</p></li>
+</ul>
+</li>
+<li><p><strong>Checking before the MD runs.</strong> Periodicity is only known once the structure
+exists, so the flowchart check cannot catch it. Instead:</p>
+<ul class="simple">
+<li><p><em>Mode A:</em> the analysis step checks its input structure when it starts, before
+running any replica.</p></li>
+<li><p><em>Mode B:</em> before an MD sub-step runs, it calls <code class="docutils literal notranslate"><span class="pre">check_configuration</span></code> on the
+analysis steps that follow it and will read its output: those up to the next MD
+step. Any failure stops the job before the MD with a clear message. As a
+backstop, every analysis step also checks the periodicity recorded in its
+input and stops with a clear message rather than producing a meaningless
+number.</p></li>
+</ul>
+</li>
+<li><p><strong>The library</strong> functions that need a volume (Green–Kubo prefactors, g(r)
+normalization, Yeh–Hummer) raise a clear error when given a non-periodic run,
+rather than dividing by a meaningless volume.</p></li>
+</ol>
+</section>
+<section id="gromacs-later">
+<h2>GROMACS later<a class="headerlink" href="#gromacs-later" title="Link to this heading">#</a></h2>
+<p>To feed these analysis steps, a GROMACS step would:</p>
+<ul class="simple">
+<li><p>use the H5MD file GROMACS 2026 writes natively (or convert <code class="docutils literal notranslate"><span class="pre">.xtc</span></code> and <code class="docutils literal notranslate"><span class="pre">.trr</span></code>
+files from older versions);</p></li>
+<li><p>add the observables from its <code class="docutils literal notranslate"><span class="pre">.edr</span></code> energy file (read with <code class="docutils literal notranslate"><span class="pre">pyedr</span></code>) under the
+standard names, with the pressure tensor in full;</p></li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">parameters/seamm</span></code> and its record in <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code>;</p></li>
+<li><p>implement <code class="docutils literal notranslate"><span class="pre">md_provides</span></code>.</p></li>
+</ul>
+<p>The topology comes from molsystem, as for LAMMPS. Nothing in the library or the
+analysis steps would change.</p>
+</section>
+<section id="phases">
+<h2>Phases<a class="headerlink" href="#phases" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>seamm_md_analysis 1:</strong> <code class="docutils literal notranslate"><span class="pre">stats</span></code>, <code class="docutils literal notranslate"><span class="pre">correlate</span></code>, <code class="docutils literal notranslate"><span class="pre">transport</span></code>, <code class="docutils literal notranslate"><span class="pre">plots</span></code> and the
+legacy readers. Diffusivity and Thermal conductivity move onto it with no change
+for users; the regression tests check that the numbers are the same on stored
+test data.</p></li>
+<li><p><strong>H5MD:</strong></p>
+<ul class="simple">
+<li><p>the non-periodic fixes in the LAMMPS step (pressure, heat flux and stress
+sampling) and the periodicity checks in the two existing steps;</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">io</span></code> module, with the layout written down as a specification page in the
+library’s documentation;</p></li>
+<li><p>the LAMMPS writer and <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code>;</p></li>
+<li><p>Diffusivity and Thermal conductivity read H5MD, falling back to the legacy
+files.</p></li>
+</ul>
+</li>
+<li><p><strong>Requirements:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">md_provides</span></code> / <code class="docutils literal notranslate"><span class="pre">md_requirements</span></code>, including periodicity, and
+<code class="docutils literal notranslate"><span class="pre">check_configuration</span></code>;</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">check_flowchart</span></code> hook in <code class="docutils literal notranslate"><span class="pre">seamm.builder.validate</span></code>, called from the Tk
+editor and <code class="docutils literal notranslate"><span class="pre">run_flowchart</span></code>;</p></li>
+<li><p>automatic sampling in mode A;</p></li>
+<li><p>mode B in both existing steps.</p></li>
+</ul>
+</li>
+<li><p><strong>Viscosity:</strong> the full pressure tensor in LAMMPS, the Viscosity step, and
+Yeh–Hummer using its result.</p></li>
+<li><p><strong>Extra commands and extra properties</strong> in the LAMMPS MD sub-steps.</p></li>
+<li><p><strong>Structure:</strong> MDAnalysis and SolvationAnalysis.</p></li>
+<li><p><strong>Dielectric constant:</strong> total-dipole sampling and the step. Ionic conductivity
+follows.</p></li>
+<li><p><strong>Segmented runs:</strong> “run until converged”, restarts, and preemption with the task
+layer.</p></li>
+</ol>
+<p>Each phase is released before the next starts, with the library released before the
+steps that pin it.</p>
+</section>
+<section id="validation">
+<h2>Validation<a class="headerlink" href="#validation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The library tests use synthetic data with known answers (above).</p></li>
+<li><p>Run-path tests through <code class="docutils literal notranslate"><span class="pre">seamm_exec.testing</span></code> for the LAMMPS writer and each mode.</p></li>
+<li><p><strong>Real data:</strong> re-analyse a science production run with the new steps and compare
+with their scripts’ viscosity, diffusion constants and coordination numbers. Small
+LAMMPS test runs (a few hundred atoms) can run locally; anything larger runs on ARC
+or ChemAI.</p></li>
+</ul>
+</section>
+<section id="open-questions">
+<h2>Open questions<a class="headerlink" href="#open-questions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Should the electrolyte dielectric constant be contributed to MDAnalysis</strong> rather
+than kept in SEAMM?</p></li>
+<li><p><strong>Should running ``validate`` before every job be a separate, earlier change to
+core seamm?</strong> It would also catch the Model Chemistry ordering problem at run
+time.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2026-10-14 MD analysis: H5MD output, a shared library and analysis steps</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../glossary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Glossary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decisions-already-made">Decisions already made</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-things-stand">Where things stand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#h5md-facts-checked-on-2026-10-14">H5MD facts checked on 2026-10-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-contract-seamm-s-h5md-layout">The data contract: SEAMM’s H5MD layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-analysis-finds-the-data-md-runs">How analysis finds the data: <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-catching-mistakes-before-the-md-runs">Requirements and catching mistakes before the MD runs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-modes-for-each-analysis-step">Two modes for each analysis step</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shared-library-seamm-md-analysis">The shared library: <code class="docutils literal notranslate"><span class="pre">seamm_md_analysis</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lammps-step">The LAMMPS step</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-analysis-steps">The analysis steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-periodic-systems">Non-periodic systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gromacs-later">GROMACS later</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phases">Phases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation">Validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions">Open questions</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/developer_guide/campaigns/2026-10-14/PLAN_md_analysis.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
