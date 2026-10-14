@@ -8,6 +8,7 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
    :header-rows: 1
 
    Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "------ Version ------",    "Downloads"
+   active_learning_step_, |al2|,           N/A,                       |al4|,         |al6|,      |al7|
    crystal_builder_step_, |crystal2|,      |crystal3|,       	         |crystal4|,      |crystal6|,   |crystal7|
    dimer_builder_step_,   |dimer2|,        |dimer3|,                  |dimer4|,        |dimer6|,     |dimer7|
    extract_clusters_step_, |extract2|,     |extract3|,                |extract4|,      |extract6|,   |extract7|
@@ -19,6 +20,26 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
    strain_step_,          |strain2|,       |strain3|,	        	 |strain4|,       |strain6|,	|strain7|
    supercell_step_,       |supercell2|,    |supercell3|,		 |supercell4|,    |supercell6|,	|supercell7|
 
+
+.. active_learning_step badges
+
+.. _active_learning_step: https://molssi-seamm.github.io/active_learning_step/index.html
+
+.. |al2| image:: https://codecov.io/gh/molssi-seamm/active_learning_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/active_learning_step
+   :alt: Code Coverage
+
+.. |al4| image:: https://github.com/molssi-seamm/active_learning_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/active_learning_step/index.html
+   :alt: Documentation Status
+
+.. |al6| image:: https://img.shields.io/pypi/v/active-learning-step.svg
+   :target: https://pypi.org/project/active-learning-step/
+   :alt: PyPI version
+
+.. |al7| image:: https://img.shields.io/pypi/dm/active-learning-step.svg
+   :target: https://pypi.org/project/active-learning-step/
+   :alt: PyPI downloads
 
 .. crystal builder step badges
 
