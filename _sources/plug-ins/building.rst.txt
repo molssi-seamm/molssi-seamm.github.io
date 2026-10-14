@@ -8,6 +8,7 @@ simulation system:
    :titlesonly:
    :maxdepth: 2
 
+   Active Learning <https://molssi-seamm.github.io/active_learning_step/index.html>
    Crystal Builder <https://molssi-seamm.github.io/crystal_builder_step/index.html>
    Dimer Builder <https://molssi-seamm.github.io/dimer_builder_step/index.html>
    Extract Clusters <https://molssi-seamm.github.io/extract_clusters_step/index.html>
