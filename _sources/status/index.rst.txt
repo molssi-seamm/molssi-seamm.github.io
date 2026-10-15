@@ -29,6 +29,7 @@ The current status and version for the modules and :term:`plug-ins<plug-in>`:
    seamm_exec_,           |sexec2|,         N/A,                       |sexec4|,        |sexec6|,     |sexec7|
    seamm_geometric_,      |sgeo2|,         N/A,                       |sgeo4|,        |sgeo6|,     |sgeo7|
    seamm_mbe_,            |smbe2|,         N/A,                       |smbe4|,        |smbe6|,     |smbe7|
+   seamm_md_analysis_,    |smda2|,         N/A,                       |smda4|,        |smda6|,     |smda7|
    seamm_mdi_,            |smdi2|,         N/A,                       |smdi4|,        |smdi6|,     |smdi7|
    seamm_scheduler_,      |ssched2|,         N/A,                       |ssched4|,        |ssched6|,     |ssched7|
    seamm_slurm_,          |sslurm2|,         N/A,                       |sslurm4|,        |sslurm6|,     |sslurm7|
@@ -388,6 +389,26 @@ status, grouped by category:
 
 .. |sgeo7| image:: https://img.shields.io/pypi/dm/seamm-geometric.svg
    :target: https://pypi.org/project/seamm-geometric/
+   :alt: PyPI downloads
+
+.. seamm_md_analysis badges
+
+.. _seamm_md_analysis: https://molssi-seamm.github.io/seamm_md_analysis/index.html
+
+.. |smda2| image:: https://codecov.io/gh/molssi-seamm/seamm_md_analysis/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/seamm_md_analysis
+   :alt: Code Coverage
+
+.. |smda4| image:: https://github.com/molssi-seamm/seamm_md_analysis/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/seamm_md_analysis/index.html
+   :alt: Documentation Status
+
+.. |smda6| image:: https://img.shields.io/pypi/v/seamm-md-analysis.svg
+   :target: https://pypi.org/project/seamm-md-analysis/
+   :alt: PyPI version
+
+.. |smda7| image:: https://img.shields.io/pypi/dm/seamm-md-analysis.svg
+   :target: https://pypi.org/project/seamm-md-analysis/
    :alt: PyPI downloads
 
 .. seamm_mdi badges
