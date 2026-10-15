@@ -16,3 +16,4 @@ over a number of runs and getting the error bars.
    Thermal Conductivity <https://molssi-seamm.github.io/thermal_conductivity/index.html>
    Thermochemistry <https://molssi-seamm.github.io/thermochemistry_step/index.html>
    Thermomechanical <https://molssi-seamm.github.io/thermomechanical_step/index.html>
+   Viscosity <https://molssi-seamm.github.io/viscosity_step/index.html>
