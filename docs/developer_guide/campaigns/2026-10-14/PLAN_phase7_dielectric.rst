@@ -52,7 +52,7 @@ graph of the running estimate shows the convergence.
 - *Nernst–Einstein*, from the self-diffusion coefficients of the ions:
   σ_NE = e² / (V k_B T) Σ_species N_s z_s² D_s.
 - *Einstein–Helfand*, from the collective displacement of the charges,
-  σ = lim_{t→∞} ⟨|Σᵢ qᵢ (rᵢ(t) − rᵢ(0))|²⟩ / (6 V k_B t), which includes the
+  σ = lim_{t→∞} ⟨‖Σᵢ qᵢ (rᵢ(t) − rᵢ(0))‖²⟩ / (6 V k_B t), which includes the
   correlations between ions (ion pairing lowers it).
 - Their ratio, the *ionicity* σ/σ_NE.
 
