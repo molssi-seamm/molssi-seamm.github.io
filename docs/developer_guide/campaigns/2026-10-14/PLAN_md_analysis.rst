@@ -2,7 +2,7 @@ The design
 ==========
 
 Status: **agreed** (2026-10-14). Phases 1-4 are released (2026-10-14 to 10-16) and
-rolled out to every installation; phase 5 is implemented (``PLAN_phase5_extras.rst``, lammps_step PR #131) and phase 6 planned (``PLAN_phase6_structure.rst``).
+rolled out to every installation; phase 5 (lammps-step 2026.10.16.1, with the SHAKE fix in 2026.10.16.3) and phase 6 (liquid-structure-step 2026.10.16) are released; phase 7 is planned (``PLAN_phase7_dielectric.rst``).
 See *Phases* for the releases.
 
 Decisions already made
@@ -616,10 +616,10 @@ Phases
    tensor in LAMMPS, the Viscosity step, and Yeh–Hummer using its result.
 #. **Extra commands and extra properties** in the LAMMPS MD sub-steps (*implemented*,
    lammps_step PR #131; the plan is ``PLAN_phase5_extras.rst``).
-#. **Structure:** MDAnalysis and SolvationAnalysis (*next*; the detailed plan is
-   ``PLAN_phase6_structure.rst``).
-#. **Dielectric constant:** total-dipole sampling and the step. Ionic conductivity
-   follows.
+#. **Structure:** the Liquid Structure step (*done*: liquid-structure-step
+   2026.10.16; the plan is ``PLAN_phase6_structure.rst``).
+#. **Dielectric constant:** the step, and the ionic conductivity (*next*; the
+   detailed plan is ``PLAN_phase7_dielectric.rst``).
 #. **Segmented runs:** "run until converged", restarts, and preemption with the task
    layer.
 
