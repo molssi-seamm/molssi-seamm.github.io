@@ -1,0 +1,1034 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Phase 5: extra commands and extra properties in the MD sub-steps &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/campaigns/2026-10-14/PLAN_phase5_extras';</script>
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Phase 6: the structure of liquids and solutions" href="PLAN_phase6_structure.html" />
+    <link rel="prev" title="The design" href="PLAN_md_analysis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../software_ecosystem/index.html">Software Ecosystem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_datastore.html">Job Datastore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qm_md_over_mdi.html">QM-MD over MDI (the LAMMPS driver)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../new-plug-in/index.html">Creating a New Plug-in</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/properties.html">Saving Properties in the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/creating.html">Creating the Initial Code and Uploading to GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tips-and-tricks/index.html">Tips and Tricks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/index.html">Tutorials for Developers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/development_environment.html">Installing the Development Environment</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/simple_plugin/index.html">A simple plug-in: PySCF</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/cookiecutter.html">Creating the plug-in with the seamm-cookiecutter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/compiling.html">“Compiling” the plug-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/code_overview.html">An overview of the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/customizing.html">Customizing the plug-in to run PySCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/flowchart.html">Create a test flowchart</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../core_modules.html">Core Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm/index.html"> seamm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/molsystem/index.html"> molsystem</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_util/index.html"> seamm-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_manager/index.html"> seamm-manager</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_webui/index.html"> seamm-webui</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_exec/index.html"> seamm-exec</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_scheduler/index.html"> seamm-scheduler</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_slurm/index.html"> seamm-slurm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_dashboard_client/index.html"> seamm-dashboard-client</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_mdi/index.html"> seamm-mdi</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_thermochemistry/index.html"> seamm-thermochemistry</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_bsse/index.html"> seamm-bsse</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_mbe/index.html"> seamm-mbe</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_geometric/index.html"> seamm-geometric</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ase/index.html"> seamm-ase</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/cms_plots/index.html"> cms-plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Campaigns</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-19/index.html">2026-06-19 MDI engines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/PLAN_mopac_mdi.html">Development Plan: QM/MD via MDI in SEAMM — MOPAC First</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_future_investigations.html">Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_mopac_mdi_validation.html">Validation Notes: MOPAC Native MDI Engine for LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_qm_mdi_engines_validation.html">Validation Notes: tblite MDI Engine and MOPAC Python-Wrapper MDI Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_semiempirical_density_comparison.html">Scientific Finding: Semiempirical Method Accuracy for Liquid Methanol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-22/index.html">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PLAN_model_chemistry_step.html">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_A.html">Phase A – MOPAC-side MDI engine launch contract and port strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_B.html">Phase B – Model Chemistry Step (selection + storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_C.html">Phase C – LAMMPS consumption of the model chemistry (MDI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_D.html">Phase D (sketch) – Forcefield handling folded into Model Chemistry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PROJECT_HANDOFF.html">Project handoff – LAMMPS + MOPAC QM-MD coupling via MDI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-26/index.html">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/PLAN_long_range_electrostatics_mlff.html">Plan: Long-Range Electrostatics for Short-Range MLFFs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/NOTES_atomic_charge_methods.html">Notes: Atomic Charge Methods and MLFF Long-Range Prior Art</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2026-10-14 MD analysis: H5MD output, a shared library and analysis steps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="PLAN_md_analysis.html">The design</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Phase 5: extra commands and extra properties in the MD sub-steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PLAN_phase6_structure.html">Phase 6: the structure of liquids and solutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../2026-10-16/index.html">2026-10-16 Labelling and training MLFFs entirely in SEAMM</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developers Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Campaigns</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2026-10-14 MD analysis: H5MD output, a shared library and analysis steps</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Phase 5: extra commands and extra properties in the MD sub-steps</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="phase-5-extra-commands-and-extra-properties-in-the-md-sub-steps">
+<h1>Phase 5: extra commands and extra properties in the MD sub-steps<a class="headerlink" href="#phase-5-extra-commands-and-extra-properties-in-the-md-sub-steps" title="Link to this heading">#</a></h1>
+<p>Status: <strong>implemented</strong> (2026-10-16, lammps_step ace06b2, local; HISTORY 2026.10.16.1), awaiting the PR. Differences from the plan: the Green-Kubo error uses blocks only when each block still reaches the plateau (20 of the fit’s slowest time constants); results of Green-Kubo integrals are given in familiar units when their dimensions match (mPa*s, W/(m K), S/m, m^2/s); the extra columns are not checked against the built-in names, since they are prefixed (<code class="docutils literal notranslate"><span class="pre">x_&lt;name&gt;</span></code>). The real check against the Viscosity step on the SPC/E regression is still to run (a 20 ps local run gave 0.48 mPa*s from Pxy alone).</p>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>Let a user measure things during an NVE, NVT or NPT run without leaving SEAMM: add
+LAMMPS <code class="docutils literal notranslate"><span class="pre">compute</span></code>, <code class="docutils literal notranslate"><span class="pre">fix</span></code>, <code class="docutils literal notranslate"><span class="pre">variable</span></code> and <code class="docutils literal notranslate"><span class="pre">dump</span></code> lines that apply to that
+sub-step only, and name quantities to be sampled, analysed and stored like the
+built-in ones – a mean with its error, an autocorrelation, or a Green–Kubo
+integral. The design (Paul’s notes, 2026-10-14, “A generic hook for custom fixes
+and computes”) is summarized in the design document under <em>The LAMMPS step</em>; this
+page is the plan to build it.</p>
+<p>The Custom sub-step stays for commands that change the system. Its commands stay in
+force for every later sub-step and SEAMM never analyses their output; the new
+fields are scoped to one sub-step and analysed.</p>
+</section>
+<section id="where-it-goes-in-the-code">
+<h2>Where it goes in the code<a class="headerlink" href="#where-it-goes-in-the-code" title="Link to this heading">#</a></h2>
+<p>NVT inherits from NVE and NPT from NVT, and the three repeat the same input
+pattern: the thermo and state properties (<code class="docutils literal notranslate"><span class="pre">properties</span></code>/<code class="docutils literal notranslate"><span class="pre">title2</span></code>), the
+<code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">ave/time</span></code> writing <code class="docutils literal notranslate"><span class="pre">&lt;ensemble&gt;_state.trj</span></code>, the trajectory dumps, the run,
+and numbered <code class="docutils literal notranslate"><span class="pre">unfix</span></code>/<code class="docutils literal notranslate"><span class="pre">uncompute</span></code>/<code class="docutils literal notranslate"><span class="pre">undump</span></code> at the end. The heat-flux code is
+already shared the same way (<code class="docutils literal notranslate"><span class="pre">NVE.heat_flux_input</span></code> and <code class="docutils literal notranslate"><span class="pre">heat_flux_cleanup</span></code>).
+The new code follows that pattern: shared methods on <code class="docutils literal notranslate"><span class="pre">NVE</span></code> that the three
+<code class="docutils literal notranslate"><span class="pre">get_input</span></code> methods call.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NVE.extra_input(P)</span></code>: the user’s commands, validated, and the variables that
+wrap the extra properties; returns the lines, the state columns to add, and the
+cleanup lines.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAMMPS.analyze_trajectory</span></code> (<code class="docutils literal notranslate"><span class="pre">lammps.py</span></code>) handles the new columns with the
+built-ins’ code, using units and titles from the property definitions instead of
+<code class="docutils literal notranslate"><span class="pre">LAMMPS.display_units</span></code>/<code class="docutils literal notranslate"><span class="pre">display_title</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">md_h5md.py</span></code> writes the new columns as <code class="docutils literal notranslate"><span class="pre">observables/user/&lt;name&gt;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tk_nve.py</span></code> gets the GUI section, which <code class="docutils literal notranslate"><span class="pre">tk_nvt.py</span></code> and <code class="docutils literal notranslate"><span class="pre">tk_npt.py</span></code>
+inherit.</p></li>
+</ul>
+<p>The Heat Flux sub-step is an NVE run with its own <code class="docutils literal notranslate"><span class="pre">get_input</span></code>; it does not get
+the fields in this phase (see <em>Open questions</em>).</p>
+</section>
+<section id="the-parameters">
+<h2>1. The parameters<a class="headerlink" href="#the-parameters" title="Link to this heading">#</a></h2>
+<p>Added to the NVE parameters, so NVT and NPT have them too:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">extra</span> <span class="pre">commands</span></code>: a multi-line string, empty by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra</span> <span class="pre">properties</span></code>: a list (as the Packmol step’s <code class="docutils literal notranslate"><span class="pre">molecules</span></code>), each row a
+dict:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: an identifier (letters, digits and <code class="docutils literal notranslate"><span class="pre">_</span></code>, starting with a letter),
+unique in the sub-step and not one of the built-in column names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">expression</span></code>: a LAMMPS equal-style expression – <code class="docutils literal notranslate"><span class="pre">c_dip[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">v_myvar</span></code>,
+a thermo keyword such as <code class="docutils literal notranslate"><span class="pre">density</span></code> or <code class="docutils literal notranslate"><span class="pre">lx</span></code>, or arithmetic of these.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: see <em>Units</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">treatment</span></code>: <code class="docutils literal notranslate"><span class="pre">average</span></code> (default), <code class="docutils literal notranslate"><span class="pre">autocorrelation</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Green-Kubo</span> <span class="pre">integral</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefactor</span></code>: for a Green–Kubo integral only (see <em>Treatments</em>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">store</span></code>: whether the mean (or integral) is saved as a property of the
+configuration (see <em>Results</em>); off by default.</p></li>
+</ul>
+</li>
+</ul>
+<p>Flowcharts written before have neither, and behave as now.</p>
+</section>
+<section id="the-input">
+<h2>2. The input<a class="headerlink" href="#the-input" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">extra_input</span></code> puts, after the ensemble’s own fix and before the sampling fixes
+(so that the sampling can refer to what the user defined):</p>
+<ol class="arabic simple">
+<li><p>The user’s commands, as written, after checking them:</p>
+<ul class="simple">
+<li><p>Only <code class="docutils literal notranslate"><span class="pre">compute</span></code>, <code class="docutils literal notranslate"><span class="pre">fix</span></code>, <code class="docutils literal notranslate"><span class="pre">variable</span></code> and <code class="docutils literal notranslate"><span class="pre">dump</span></code> lines, comments and blank
+lines are allowed; continuation lines (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) are joined first. Anything else
+(<code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">thermo_modify</span></code>, <code class="docutils literal notranslate"><span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">unfix</span></code> …) is refused with a
+message pointing to the Custom sub-step.</p></li>
+<li><p>Each defined ID (fix, compute, dump) or variable name is recorded. IDs that
+are all digits, or that SEAMM uses itself (the numbered fixes, <code class="docutils literal notranslate"><span class="pre">S_p</span></code>,
+<code class="docutils literal notranslate"><span class="pre">flux_p</span></code>, <code class="docutils literal notranslate"><span class="pre">hb</span></code> and the other names in the generated input), are refused,
+so the user’s cleanup can never remove SEAMM’s.</p></li>
+</ul>
+</li>
+<li><p>For each extra property, <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">seamm_x_&lt;name&gt;</span> <span class="pre">equal</span> <span class="pre">&lt;expression&gt;</span></code>. The
+wrapper makes every kind of expression samplable by <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">ave/time</span></code>, which
+takes only <code class="docutils literal notranslate"><span class="pre">c_</span></code>, <code class="docutils literal notranslate"><span class="pre">v_</span></code> and <code class="docutils literal notranslate"><span class="pre">f_</span></code> references, and lets LAMMPS report a bad
+expression at the start of the run rather than at the first sample.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v_seamm_x_&lt;name&gt;</span></code> is appended to the properties of both <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">ave/time</span></code>
+lines (summary and state), with the column title <code class="docutils literal notranslate"><span class="pre">x_&lt;name&gt;</span></code>.</p></li>
+</ol>
+<p>After the run, before SEAMM’s own cleanup: <code class="docutils literal notranslate"><span class="pre">uncompute</span></code>, <code class="docutils literal notranslate"><span class="pre">unfix</span></code> and <code class="docutils literal notranslate"><span class="pre">undump</span></code>
+for each recorded ID, and <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">&lt;name&gt;</span> <span class="pre">delete</span></code> for each user variable and
+each wrapper, in the reverse order of definition (a fix may use a compute).</p>
+</section>
+<section id="units">
+<h2>3. Units<a class="headerlink" href="#units" title="Link to this heading">#</a></h2>
+<p>An MLFF run uses LAMMPS’s <code class="docutils literal notranslate"><span class="pre">metal</span></code> units and a classical forcefield <code class="docutils literal notranslate"><span class="pre">real</span></code>, so an
+expression’s units depend on the forcefield. The <code class="docutils literal notranslate"><span class="pre">units</span></code> field therefore takes
+either:</p>
+<ul class="simple">
+<li><p><strong>a LAMMPS quantity</strong> – <code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">pressure</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code>,
+<code class="docutils literal notranslate"><span class="pre">distance</span></code>, <code class="docutils literal notranslate"><span class="pre">volume</span></code>, <code class="docutils literal notranslate"><span class="pre">density</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">velocity</span></code>, <code class="docutils literal notranslate"><span class="pre">force</span></code>,
+<code class="docutils literal notranslate"><span class="pre">charge</span></code>, <code class="docutils literal notranslate"><span class="pre">dipole</span></code>, or <code class="docutils literal notranslate"><span class="pre">dimensionless</span></code> – converted from the run’s unit
+style by <code class="docutils literal notranslate"><span class="pre">lammps_units.py</span></code>, so the same flowchart works with either kind of
+forcefield (<strong>recommended</strong>, and the default <code class="docutils literal notranslate"><span class="pre">dimensionless</span></code>); or</p></li>
+<li><p><strong>an explicit unit</strong> (<code class="docutils literal notranslate"><span class="pre">atm</span></code>, <code class="docutils literal notranslate"><span class="pre">kcal/mol</span></code>, <code class="docutils literal notranslate"><span class="pre">Debye</span></code> …), taken as the units
+of the value LAMMPS reports, with a note in the GUI that it is then the user’s
+job to match the forcefield’s unit style.</p></li>
+</ul>
+<p>Results are converted to SEAMM’s preferred units for the quantity, as for the
+built-in columns.</p>
+</section>
+<section id="treatments">
+<h2>4. Treatments<a class="headerlink" href="#treatments" title="Link to this heading">#</a></h2>
+<p>All three run on the production part of the series, after the equilibration that
+pymbar detects, as for the built-in properties.</p>
+<ul class="simple">
+<li><p><strong>Average:</strong> exactly the built-in analysis – mean, standard error, statistical
+inefficiency, correlation time, the time-series and ACF graphs, and a row in the
+printed table.</p></li>
+<li><p><strong>Autocorrelation:</strong> in addition, the normalized autocorrelation function with
+its error (<code class="docutils literal notranslate"><span class="pre">seamm_md_analysis.correlate.autocorrelation_functions</span></code> and
+<code class="docutils literal notranslate"><span class="pre">acf_err</span></code>), its integrated correlation time, and a graph.</p></li>
+<li><p><strong>Green–Kubo integral:</strong> <code class="docutils literal notranslate"><span class="pre">prefactor</span> <span class="pre">×</span> <span class="pre">∫⟨δA(0)</span> <span class="pre">δA(t)⟩</span> <span class="pre">dt</span></code>, fitted with
+<code class="docutils literal notranslate"><span class="pre">seamm_md_analysis.transport.fit_green_kubo_integral</span></code> as the Viscosity and
+Thermal Conductivity steps do, with its error and the running-integral graph.
+The prefactor is one of <code class="docutils literal notranslate"><span class="pre">V/kT</span></code> (stress-like, as for the viscosity),
+<code class="docutils literal notranslate"><span class="pre">V/kT²</span></code> (heat-flux-like), <code class="docutils literal notranslate"><span class="pre">1/(V</span> <span class="pre">kT)</span></code> (current-like, as for the ionic
+conductivity) or <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">value</span> <span class="pre">with</span> <span class="pre">units</span></code>. The result’s units are those of
+prefactor × A² × time. The step warns when the sampling interval is not well
+below the correlation time, since the integral then has little meaning.</p></li>
+</ul>
+</section>
+<section id="storage-and-results">
+<h2>5. Storage and results<a class="headerlink" href="#storage-and-results" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>H5MD:</strong> each property is written to <code class="docutils literal notranslate"><span class="pre">observables/user/&lt;name&gt;</span></code> (step, time,
+value) with its unit and the attributes <code class="docutils literal notranslate"><span class="pre">seamm_expression</span></code> and
+<code class="docutils literal notranslate"><span class="pre">seamm_treatment</span></code>; the <code class="docutils literal notranslate"><span class="pre">_md_runs</span></code> record lists them, so a later analysis step
+can find them by name.</p></li>
+<li><p><strong>Printed output and graphs:</strong> as for the built-in properties, under the
+property’s own name and units.</p></li>
+<li><p><strong>Results:</strong> the step’s results metadata is fixed, so per-name results cannot be
+offered for variables and tables the usual way. The plan: one result,
+<code class="docutils literal notranslate"><span class="pre">extra</span> <span class="pre">properties</span></code>, holding a dict per name (mean, error, units, and the
+correlation time or integral) for variables and the job’s JSON; and, for rows
+with <code class="docutils literal notranslate"><span class="pre">store</span></code> on, a property of the configuration named
+<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;#LAMMPS#{model}</span></code>, created on first use (see <em>Open questions</em>).</p></li>
+</ul>
+</section>
+<section id="the-gui">
+<h2>6. The GUI<a class="headerlink" href="#the-gui" title="Link to this heading">#</a></h2>
+<p>A collapsible “Extra commands and properties” section in the NVE, NVT and NPT
+dialogs (in <code class="docutils literal notranslate"><span class="pre">tk_nve.py</span></code>):</p>
+<ul class="simple">
+<li><p>a text box for the commands;</p></li>
+<li><p>a table with a row per property (as the Packmol step’s molecules table):
+name, expression, units (a combobox of the quantities, also accepting an
+explicit unit), treatment (a combobox), the prefactor – <strong>shown only for a
+Green–Kubo integral</strong>, per the GUI rule – and the store checkbox; add and
+remove buttons.</p></li>
+</ul>
+<p>The dialog checks names and commands as they are entered (the rules in 1 and 2),
+and the same checks run when the flowchart is checked before a job
+(<code class="docutils literal notranslate"><span class="pre">check_flowchart</span></code>) and at run time, as a backstop for hand-edited flowcharts.</p>
+</section>
+<section id="tests">
+<h2>7. Tests<a class="headerlink" href="#tests" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Input:</strong> generated lines for each sub-step; IDs and variables collected and
+cleaned up in reverse order; continuation lines and comments; refused command
+words and ID clashes; the wrapper variables and the extra state columns.</p></li>
+<li><p><strong>Analysis:</strong> a synthetic state file with a user column of known statistics
+(mean and error; an exponentially correlated series whose ACF and Green–Kubo
+integral are known analytically), in both unit styles.</p></li>
+<li><p><strong>H5MD:</strong> the <code class="docutils literal notranslate"><span class="pre">observables/user</span></code> datasets and attributes, read back through
+<code class="docutils literal notranslate"><span class="pre">seamm_md_analysis.io</span></code>.</p></li>
+<li><p><strong>GUI:</strong> the dialog built headlessly and <code class="docutils literal notranslate"><span class="pre">reset_dialog</span></code> run over every
+treatment (the prefactor shown only for Green–Kubo).</p></li>
+<li><p><strong>Run path:</strong> a small LAMMPS run (a few hundred atoms, locally) through
+<code class="docutils literal notranslate"><span class="pre">seamm_exec.testing</span></code> with, for example, <code class="docutils literal notranslate"><span class="pre">compute</span> <span class="pre">msd</span></code> and an extra property
+on <code class="docutils literal notranslate"><span class="pre">c_msd[4]</span></code>.</p></li>
+<li><p><strong>Real check:</strong> on ARC or ChemAI, the shear viscosity of the SPC/E regression
+cell as a user Green–Kubo integral of <code class="docutils literal notranslate"><span class="pre">pxy</span></code> with prefactor <code class="docutils literal notranslate"><span class="pre">V/kT</span></code>, against
+the Viscosity step’s value on the same run (it uses five components, so the
+one-component value agrees within its larger error).</p></li>
+</ul>
+</section>
+<section id="releases">
+<h2>8. Releases<a class="headerlink" href="#releases" title="Link to this heading">#</a></h2>
+<p>lammps-step only; seamm-md-analysis already has the functions needed. The user guide
+gets a section with three worked examples (a custom energy average, the MSD, a
+Green–Kubo integral). Released, then rolled out with the usual checks and gating.</p>
+</section>
+<section id="decisions-paul-2026-10-16">
+<h2>Decisions (Paul, 2026-10-16)<a class="headerlink" href="#decisions-paul-2026-10-16" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Command words:</strong> <code class="docutils literal notranslate"><span class="pre">compute</span></code>, <code class="docutils literal notranslate"><span class="pre">fix</span></code>, <code class="docutils literal notranslate"><span class="pre">variable</span></code> and <code class="docutils literal notranslate"><span class="pre">dump</span></code> only; no
+<code class="docutils literal notranslate"><span class="pre">group</span></code>, which would persist into later sub-steps.</p></li>
+<li><p><strong>Units:</strong> LAMMPS quantities are the recommended form; explicit units are
+accepted.</p></li>
+<li><p><strong>Vector properties:</strong> not in this phase; averaging components in the
+autocorrelation and Green–Kubo treatments comes with the dielectric constant
+(phase 7).</p></li>
+<li><p><strong>Stored properties:</strong> both the <code class="docutils literal notranslate"><span class="pre">extra</span> <span class="pre">properties</span></code> result and, per row, an
+optional configuration property, off by default.</p></li>
+<li><p><strong>Heat Flux sub-step:</strong> left until its input is reworked onto the shared code.</p></li>
+</ol>
+</section>
+<section id="the-questions-as-they-were-put">
+<h2>The questions as they were put<a class="headerlink" href="#the-questions-as-they-were-put" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Allowed command words.</strong> <code class="docutils literal notranslate"><span class="pre">compute</span></code>, <code class="docutils literal notranslate"><span class="pre">fix</span></code>, <code class="docutils literal notranslate"><span class="pre">variable</span></code> and <code class="docutils literal notranslate"><span class="pre">dump</span></code> only,
+as designed? <code class="docutils literal notranslate"><span class="pre">group</span></code> is the obvious candidate to add (a compute on a group of
+atoms), but a group persists and changes the system’s definition for later
+sub-steps.</p></li>
+<li><p><strong>Units.</strong> LAMMPS quantities as the recommended form, with explicit units
+allowed (as above), or quantities only?</p></li>
+<li><p><strong>Vector properties.</strong> Green–Kubo integrals are usually averaged over components
+(the dipole’s x, y, z; several stress components). Allow an expression list,
+<code class="docutils literal notranslate"><span class="pre">c_dip[1],</span> <span class="pre">c_dip[2],</span> <span class="pre">c_dip[3]</span></code>, whose components’ correlation functions are
+averaged, in this phase – or keep phase 5 scalar and add it with the dielectric
+constant (phase 7)?</p></li>
+<li><p><strong>Stored properties.</strong> Create configuration properties named by the user on
+the fly (<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;#LAMMPS#{model}</span></code>), or only the <code class="docutils literal notranslate"><span class="pre">extra</span> <span class="pre">properties</span></code> result?</p></li>
+<li><p><strong>The Heat Flux sub-step.</strong> Give it the same fields now, or leave it until it is
+reworked onto the shared input?</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PLAN_md_analysis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The design</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PLAN_phase6_structure.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Phase 6: the structure of liquids and solutions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-it-goes-in-the-code">Where it goes in the code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parameters">1. The parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input">2. The input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units">3. Units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treatments">4. Treatments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-and-results">5. Storage and results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gui">6. The GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">7. Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#releases">8. Releases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decisions-paul-2026-10-16">Decisions (Paul, 2026-10-16)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-questions-as-they-were-put">The questions as they were put</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/developer_guide/campaigns/2026-10-14/PLAN_phase5_extras.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1277 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2026-10-16 Labelling and training MLFFs entirely in SEAMM &#8212; SEAMM 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQXXTJ2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get plotly for graphs -->
+<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+
+
+    <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/campaigns/2026-10-16/index';</script>
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Glossary" href="../../../glossary.html" />
+    <link rel="prev" title="Phase 6: the structure of liquids and solutions" href="../2026-10-14/PLAN_phase6_structure.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/SEAMM logo.png" class="logo__image only-light" alt="SEAMM 1.0 documentation - Home"/>
+    <img src="../../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt="SEAMM 1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../how_tos/index.html">
+    How-To Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../background/index.html">
+    Background Information
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Developers Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../glossary.html">
+    Glossary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../plug-ins/index.html">
+    Plug-ins
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../status/index.html">
+    Status
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../statistics/index.html">
+    Statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_team.html">
+    SEAMM Developers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../acknowledgements.html">
+    Acknowledgements
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/molssi-seamm.github.io" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../home_for_tools.html">A Home for Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../software_ecosystem/index.html">Software Ecosystem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart.html">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/flowchart_interpreter.html">Flowchart Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_manager.html">Job Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_ecosystem/job_datastore.html">Job Datastore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plug-ins.html">Plug-ins</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../forcefields/index.html">Handling Forcefields and Interatomic Potentials in SEAMM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/plugin_anatomy.html">Anatomy of a Forcefield Plug-in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/selection.html">Selecting a Forcefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/atom_typing.html">Atom Typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/energy_expression.html">Energy Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forcefields/using_energy_expressions.html">Using the Energy Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qm_md_over_mdi.html">QM-MD over MDI (the LAMMPS driver)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../new-plug-in/index.html">Creating a New Plug-in</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/properties.html">Saving Properties in the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new-plug-in/creating.html">Creating the Initial Code and Uploading to GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tips-and-tricks/index.html">Tips and Tricks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tips-and-tricks/update-with-cookiecutter.html">Updating with Cookiecutter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/index.html">Tutorials for Developers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/development_environment.html">Installing the Development Environment</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/simple_plugin/index.html">A simple plug-in: PySCF</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/cookiecutter.html">Creating the plug-in with the seamm-cookiecutter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/compiling.html">“Compiling” the plug-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/code_overview.html">An overview of the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/customizing.html">Customizing the plug-in to run PySCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/simple_plugin/flowchart.html">Create a test flowchart</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../core_modules.html">Core Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm/index.html"> seamm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/molsystem/index.html"> molsystem</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_util/index.html"> seamm-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_widgets/index.html"> seamm-widgets</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ff_util/index.html"> seamm-ff-util</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_jobserver/index.html"> seamm-jobserver</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_manager/index.html"> seamm-manager</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_webui/index.html"> seamm-webui</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_exec/index.html"> seamm-exec</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_scheduler/index.html"> seamm-scheduler</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_slurm/index.html"> seamm-slurm</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_dashboard_client/index.html"> seamm-dashboard-client</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_mdi/index.html"> seamm-mdi</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_thermochemistry/index.html"> seamm-thermochemistry</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_bsse/index.html"> seamm-bsse</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_mbe/index.html"> seamm-mbe</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_geometric/index.html"> seamm-geometric</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/seamm_ase/index.html"> seamm-ase</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://molssi-seamm.github.io/cms_plots/index.html"> cms-plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Campaigns</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-19/index.html">2026-06-19 MDI engines</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/PLAN_mopac_mdi.html">Development Plan: QM/MD via MDI in SEAMM — MOPAC First</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_future_investigations.html">Notes on Open Investigations: MOPAC Conda Packaging and VASP via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_mopac_mdi_validation.html">Validation Notes: MOPAC Native MDI Engine for LAMMPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_qm_mdi_engines_validation.html">Validation Notes: tblite MDI Engine and MOPAC Python-Wrapper MDI Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-19/NOTES_semiempirical_density_comparison.html">Scientific Finding: Semiempirical Method Accuracy for Liquid Methanol</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-22/index.html">2026-06-22 Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PLAN_model_chemistry_step.html">Plan: Model Chemistry Step, Metadata Protocol, and MOPAC/xTB via MDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_A.html">Phase A – MOPAC-side MDI engine launch contract and port strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_B.html">Phase B – Model Chemistry Step (selection + storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_C.html">Phase C – LAMMPS consumption of the model chemistry (MDI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/NOTES_D.html">Phase D (sketch) – Forcefield handling folded into Model Chemistry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-22/PROJECT_HANDOFF.html">Project handoff – LAMMPS + MOPAC QM-MD coupling via MDI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-06-26/index.html">2026-06-26 Long-Range Electrostatics for Short-Range MLFFs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/PLAN_long_range_electrostatics_mlff.html">Plan: Long-Range Electrostatics for Short-Range MLFFs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-06-26/NOTES_atomic_charge_methods.html">Notes: Atomic Charge Methods and MLFF Long-Range Prior Art</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2026-10-14/index.html">2026-10-14 MD analysis: H5MD output, a shared library and analysis steps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2026-10-14/PLAN_md_analysis.html">The design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-10-14/PLAN_phase5_extras.html">Phase 5: extra commands and extra properties in the MD sub-steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2026-10-14/PLAN_phase6_structure.html">Phase 6: the structure of liquids and solutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2026-10-16 Labelling and training MLFFs entirely in SEAMM</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developers Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Campaigns</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">2026-10-16 Labelling and training MLFFs entirely in SEAMM</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="labelling-and-training-mlffs-entirely-in-seamm">
+<h1>2026-10-16 Labelling and training MLFFs entirely in SEAMM<a class="headerlink" href="#labelling-and-training-mlffs-entirely-in-seamm" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>Run the whole cycle that makes a machine-learned force field – generating
+structures, choosing which to label, labelling them, assembling the training
+sets, training and validating the models – as SEAMM flowcharts submitted to a
+JobServer, without the hand-made batch scripts, watchers and one-off
+corrections the campaign sessions (mbe, mlff, science) use today.</p>
+<p>This document is the checklist: for each stage, what SEAMM already does, what is
+still done outside it, and what is needed. It is a living document; the science
+plans stay in the <code class="docutils literal notranslate"><span class="pre">~/Sites</span></code> lab notebook (the carbonate plan is
+<code class="docutils literal notranslate"><span class="pre">mlff-training/2026-10-08_carbonate-electrolyte-training-plan</span></code>, the water plan
+<code class="docutils literal notranslate"><span class="pre">mlff-training/2026-07-15_water-mlff-training-plan</span></code>), and each step’s own
+campaign notes hold its design.</p>
+<p><strong>Status of this list (2026-10-16):</strong> the labelling requirements (section 2) are
+mbe’s, sent after carbonate wave 2; structures, selection, collection and
+validation (section 3) are science’s, in its order of priority; training and
+models, and mlff’s parts of collection and validation, are mlff’s. Section 4
+puts the sessions’ priorities side by side.</p>
+</section>
+<section id="the-stages">
+<h2>1. The stages<a class="headerlink" href="#the-stages" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 12.0%" />
+<col style="width: 36.0%" />
+<col style="width: 40.0%" />
+<col style="width: 12.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Stage</p></th>
+<th class="head"><p>In SEAMM now</p></th>
+<th class="head"><p>Outside SEAMM now</p></th>
+<th class="head"><p>Owner</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Structures</p></td>
+<td><p>Packmol, LAMMPS (classical and MLFF MD via xnn), Normal Mode Sampling, Dimer Builder, Extract Clusters; the OPLS reference cells and Li-salt cell builds are SEAMM jobs</p></td>
+<td><p>MD frame pools as plain LAMMPS Slurm jobs; seeded starts, cluster carving and n-mer sampling scripts; reference-cell density analysis</p></td>
+<td><p>science</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selection</p></td>
+<td><p>active_learning_step (QBC committee scoring, 2026.10.14.1) and <code class="docutils literal notranslate"><span class="pre">seamm-al</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">score/select</span></code> run as a CLI from a frozen copy in the MLFF env on ChemAI; group quotas, budget and frame decorrelation by scripts; no contact check</p></td>
+<td><p>science, worker</p></td>
+</tr>
+<tr class="row-even"><td><p>Labelling</p></td>
+<td><p>mbe_step + seamm_mbe (VASP monomers/cell, ORCA pairs/triples), the task layer and bundles, the cost model and <code class="docutils literal notranslate"><span class="pre">seamm-timing</span></code></p></td>
+<td><p>Evaluator jobs submitted by hand on ARC; watchers on the Mac; restart and manifest repair scripts (section 2)</p></td>
+<td><p>mbe</p></td>
+</tr>
+<tr class="row-odd"><td><p>Collection</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mbe_labels.extxyz</span></code> per cell</p></td>
+<td><p>Every correction as a script editing extxyz text: Pulay stress offset, minus-D4 twins, ΔfE and <code class="docutils literal notranslate"><span class="pre">total_charge</span></code> headers, the CCSD(T) Δ-model patch, merging, the force filter; energy caps undecided</p></td>
+<td><p>mbe, science</p></td>
+</tr>
+<tr class="row-even"><td><p>Training</p></td>
+<td><p>The Active Learning step’s Train Committee sub-step (wraps <code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">train</span></code> as a job task in the MLFF environment; can save the committee as an xnn model that Model Chemistry offers), Check Committee, Score Pool</p></td>
+<td><p>Every production committee so far: Sina’s <code class="docutils literal notranslate"><span class="pre">train_cmte013.py</span></code> with a Python data module per experiment, Slurm scripts on ChemAI’s A100s, a hand-built conda env; scoring by script. The step has run only in smoke tests</p></td>
+<td><p>mlff</p></td>
+</tr>
+<tr class="row-odd"><td><p>Validation</p></td>
+<td><p>LAMMPS MD with a committee as the model chemistry (works, but 120 ms/step against 76 direct); the Density, Diffusivity, Viscosity and Thermal Conductivity steps; <code class="docutils literal notranslate"><span class="pre">seamm_md_analysis</span></code></p></td>
+<td><p>Production MD as hand-launched MDI pairs with hand-written LAMMPS inputs; liquid analysis scripts: ρ, g(r) and ΔH_vap; dielectric and dipoles from the LES latent charges; CIP/SSIP; same-resolution g_OO against Skinner; molecular vs atomic pressure</p></td>
+<td><p>mlff, science</p></td>
+</tr>
+<tr class="row-even"><td><p>Models</p></td>
+<td><p>xnn_step model chemistries; Train Committee’s “save as xnn model”</p></td>
+<td><p>Checkpoints in experiment folders, provenance from folder names, Slurm logs and journals; the production MLFF env switched by hand in <code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code>/<code class="docutils literal notranslate"><span class="pre">xnn.ini</span></code>; each xnn release validated by hand; distribution waits on Sina</p></td>
+<td><p>mlff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="labelling-through-the-jobserver-mbe-2026-10-16">
+<h2>2. Labelling through the JobServer (mbe, 2026-10-16)<a class="headerlink" href="#labelling-through-the-jobserver-mbe-2026-10-16" title="Link to this heading">#</a></h2>
+<p>The path already works: ChemAI’s <code class="docutils literal notranslate"><span class="pre">[tinkercliffs_mbe]</span></code> queue passed a smoke test
+(ChemAI job 5172, 2026-10-06), and the JobServer resubmits a lost evaluator in
+place. Throughput is the same either way (about 550 starts per hour per cluster;
+<code class="docutils literal notranslate"><span class="pre">MaxSubmitPU</span></code> 1000 on <code class="docutils literal notranslate"><span class="pre">tc_normal_base</span></code>). Most important first; 2.1-2.3 are the
+minimum to run as well as now, plus 2.4 if Owl is used.</p>
+<dl>
+<dt>2.1 <strong>Changing the settings of running jobs.</strong> <code class="docutils literal notranslate"><span class="pre">target.json</span></code> is copied from the</dt><dd><p>queue’s section when the job is submitted (<code class="docutils literal notranslate"><span class="pre">seamm_scheduler</span></code> <code class="docutils literal notranslate"><span class="pre">config.py</span></code>).
+In wave 2, <code class="docutils literal notranslate"><span class="pre">estimate_scale</span></code>, <code class="docutils literal notranslate"><span class="pre">min_task_walltime</span></code> and <code class="docutils literal notranslate"><span class="pre">constraint</span></code> were
+changed five times, each followed by a restart of every evaluator; through
+ChemAI that would need <code class="docutils literal notranslate"><span class="pre">ChemAI.ini</span></code> edited (Paul only), the JobServer
+restarted, and every running job’s <code class="docutils literal notranslate"><span class="pre">target.json</span></code> edited by hand.
+<em>Needed:</em> an action (REST/WebUI) that pushes the queue section’s current
+settings to running jobs, and evaluators that re-read the scheduling settings
+(estimate scale, minimum task time, constraint, nice) from <code class="docutils literal notranslate"><span class="pre">target.json</span></code> as
+they go. The connection settings (root, transport) stay fixed for a job’s
+life.</p>
+<p><em>Also needed: who sets the bundle size.</em> mbe_step passes its own tasks per
+bundle (“molecular bundle”, 4) and bundle walltime (“bundle walltime”, 8 h)
+from the flowchart (<code class="docutils literal notranslate"><span class="pre">mbe_step/levels.py</span></code>), and these override the
+target’s: a target <code class="docutils literal notranslate"><span class="pre">bundle_walltime</span></code> had no effect on 2026-10-16. Decide
+which wins, target or step, and make tasks per bundle adjustable on a running
+job. It is the real throughput lever: with starts capped per cluster, running
+bundles ≈ starts per hour × bundle hours, so longer bundles are the only way
+to keep more running.</p>
+</dd>
+<dt>2.2 <strong>A deliberate “restart job”.</strong> Only <code class="docutils literal notranslate"><span class="pre">_finalize_or_resubmit_slurm_job</span></code></dt><dd><p>exists, and it resubmits only after the evaluator is lost. <em>Needed:</em> cancel
+the evaluator and resubmit it in place, adopting the queued and running
+bundles. <em>Prerequisite, done:</em> the manifests lost archive references when an
+evaluator was stopped just after a bundle was archived, so restarts reran
+finished tasks (up to 646 missing references in one cell after the
+timing-lock stall, 0-6 per cell on ordinary cancels; 55 rerun on
+TinkerCliffs at 04:2x after an incomplete repair); mbe ran
+<code class="docutils literal notranslate"><span class="pre">carb_production/reconcile_manifests.py</span> <span class="pre">--apply</span></code> before every resubmit.
+<strong>Fixed in seamm-exec 2026.10.16.3</strong> (the archive is recorded before the
+directories are removed; damaged manifests heal on restore), on ARC since
+2026-10-16 13:34; the script retires once no evaluator runs the old
+version.</p>
+</dd>
+</dl>
+<p>2.3 <strong>Scheduler housekeeping now done by watchers on the Mac.</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><em>Starvation.</em> A new evaluator queues FIFO behind its own job’s pending
+bundles at the same priority. mbe nices the bundles to 10 during
+restarts and back to 0 afterwards; a niced backlog left in place is
+starved by newer bundles (it happened on 2026-10-16). <em>Needed:</em> a target
+option such as <code class="docutils literal notranslate"><span class="pre">bundle_nice</span></code> (adjustable on running jobs, 2.1), or a
+higher priority for evaluators.</p></li>
+<li><p><em>TinkerCliffs “env retrieval failed” holds</em> are released automatically
+by the watcher. <em>Needed:</em> the JobServer’s poller releases them.</p></li>
+</ol>
+</div></blockquote>
+<dl>
+<dt>2.4 <strong>Owl.</strong> ChemAI has no Owl section (configuration). Owl matters for two</dt><dd><p>reasons: the start ceiling is per cluster, so two clusters double the
+throughput; and Owl is faster for the expensive tasks (revDSD TZ pairs:
+median 763 s on Owl against 1,348 s on TinkerCliffs, 1.77x, 2026-10-16).
+<em>Needed later:</em> a “move job to another queue” action, so a cell can be
+restarted on another cluster (<code class="docutils literal notranslate"><span class="pre">/projects</span></code> is shared, so nothing is
+restaged).</p>
+<p>A queue’s <code class="docutils literal notranslate"><span class="pre">constraint</span></code> matters to the time estimates as well as to where
+bundles run: estimates are keyed by <code class="docutils literal notranslate"><span class="pre">cluster:partition:cpu_model</span></code>, so
+TinkerCliffs’ MBE queue pins <code class="docutils literal notranslate"><span class="pre">constraint</span> <span class="pre">=</span> <span class="pre">amd</span></code> until the estimates follow
+the bundle’s node type (seamm_exec campaign 2026-10-05, phase 5 as revised
+2026-10-16).</p>
+</dd>
+<dt>2.5 <strong>Queue settings.</strong> <code class="docutils literal notranslate"><span class="pre">[tinkercliffs_mbe]</span></code> uses <code class="docutils literal notranslate"><span class="pre">tc_normal_short</span></code> (2x cost)</dt><dd><p>with a 1-day limit; wave-2 evaluators run longer than a day. Production
+needs <code class="docutils literal notranslate"><span class="pre">_base</span></code> with 7 days: an ini change, to be the documented default for
+campaign queues.</p>
+</dd>
+<dt>2.6 <strong>Progress view.</strong> Results stage back to ChemAI only at the end of a job</dt><dd><p>(the dashboard’s on-demand pull exists). mbe watches per-level task counts
+(done, pending), OOM/TIMEOUT/NODE_FAIL bundles and <code class="docutils literal notranslate"><span class="pre">seamm-timing</span> <span class="pre">check</span></code>.
+<em>Needed:</em> a per-job task progress view in the WebUI, including estimate ÷
+wall per group (<code class="docutils literal notranslate"><span class="pre">seamm-timing</span> <span class="pre">check</span></code> for the job), the first thing to look
+at after every update.</p>
+</dd>
+</dl>
+<p>2.7 <strong>Checks before a pilot.</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><em>Which ARC user ChemAI’s ssh runs as.</em> <strong>Answered:</strong> <code class="docutils literal notranslate"><span class="pre">psaxe</span></code> (the
+JobServer runs as <code class="docutils literal notranslate"><span class="pre">seamm</span></code> only on ChemAI), so jobs from ChemAI share
+<code class="docutils literal notranslate"><span class="pre">~/.seamm.d/timing</span></code> and the timing model with the direct runs. The
+queue’s <code class="docutils literal notranslate"><span class="pre">remote_root</span></code> is <code class="docutils literal notranslate"><span class="pre">/projects/seamm/seamm_jobserver_remote_chemai</span></code>
+(<code class="docutils literal notranslate"><span class="pre">/home</span></code> is slow from compute nodes).</p></li>
+<li><p><em>Each cell’s job-directory size</em> when it stages back to ChemAI. Open.</p></li>
+</ol>
+</div></blockquote>
+<p><em>Proposed pilot (mbe):</em> one or two cells of the next wave through ChemAI, the
+rest as now. It needs <code class="docutils literal notranslate"><span class="pre">ChemAI.ini</span></code> edits (an Owl section, <code class="docutils literal notranslate"><span class="pre">_base</span></code>), which are
+Paul’s call.</p>
+<p>Also open for labelling: a k-point spacing option in mbe_step for cells smaller
+than 10 Å (vasp_step takes <code class="docutils literal notranslate"><span class="pre">options[&quot;k_spacing&quot;]</span></code>; the 2026-10-06 smoke cell
+failed on it; deferred by Paul 2026-10-09).</p>
+</section>
+<section id="the-other-stages">
+<h2>3. The other stages<a class="headerlink" href="#the-other-stages" title="Link to this heading">#</a></h2>
+<p>Science’s order of priority: collection, selection, structures, validation.
+Paths are on ChemAI unless marked.</p>
+<p>3.1 <strong>Collection</strong> (science, with mbe and mlff) – priority 1.</p>
+<blockquote>
+<div><p><em>Outside SEAMM today</em>, all as scripts that edit the extxyz text (not through
+ASE, which drops the DDEC6 charge column and the info keys xnn needs):</p>
+<ul class="simple">
+<li><p>the Pulay stress offset: fitted offsets (water: quadratic in mass density;
+NaCl uses water’s; EC a constant +2030 atm; FEC 2740 + 1680(ρ_rel − 1)),
+applied by mlff’s <code class="docutils literal notranslate"><span class="pre">make_stressfix.py</span></code> / <code class="docutils literal notranslate"><span class="pre">make_stressfix_full.py</span></code> into
+<code class="docutils literal notranslate"><span class="pre">*_pulayfix</span></code> copies with a <code class="docutils literal notranslate"><span class="pre">stress_pulay_shift_atm</span></code> header
+(<code class="docutils literal notranslate"><span class="pre">/D3/sina/xnns/research/experiments/arc/2026-10-13_1400_pulay_stressfix_labels_psaxe/</span></code>;
+notebook <code class="docutils literal notranslate"><span class="pre">mlff-training/2026-10-13_vasp-pulay-stress</span></code>);</p></li>
+<li><p>minus-D4 twins: <code class="docutils literal notranslate"><span class="pre">ion_d4/d4_twins.py</span></code> (NaCl), <code class="docutils literal notranslate"><span class="pre">dmc_twins.py</span></code> (DMC),
+subtracting xnn’s D4, checked against ORCA’s D4 (≤ 1e-5 meV/atom);</p></li>
+<li><p>the ΔfE convention and the <code class="docutils literal notranslate"><span class="pre">total_charge</span></code> info key for ion sets: header
+edits, by hand or per-set converters (<code class="docutils literal notranslate"><span class="pre">qz_tools/convert_qz.py</span></code> for the
+EC/FEC/DMC QZ sets);</p></li>
+<li><p>the CCSD(T) Δ-model patch (2026-10-16): <code class="docutils literal notranslate"><span class="pre">/D3/psaxe/ccsdt_dm2/patch_dm2.py</span></code>
+adds ΔE/ΔF/Δσ from <code class="docutils literal notranslate"><span class="pre">dmodel2.py</span></code> and its coefficients, and
+<code class="docutils literal notranslate"><span class="pre">verify_patch.py</span></code> checks everything else is byte-identical; 13 water sets
+in <code class="docutils literal notranslate"><span class="pre">patched/</span></code> with a README and <code class="docutils literal notranslate"><span class="pre">SHA256SUMS</span></code> (notebook
+<code class="docutils literal notranslate"><span class="pre">mlff-training/2026-10-16_water-ccsdt-delta-model</span></code>);</p></li>
+<li><p>merging the cells’ labels into sets passes through two hands for EC/FEC.
+mbe concatenates each cell’s <code class="docutils literal notranslate"><span class="pre">3/mbe_labels.extxyz</span></code> into
+<code class="docutils literal notranslate"><span class="pre">/projects/seamm/psaxe/{ec,fec}_production/wave&lt;N&gt;_labels.extxyz</span></code>, adding
+<code class="docutils literal notranslate"><span class="pre">frame=&lt;cell</span> <span class="pre">name&gt;</span></code> to each frame (wave 1: a one-off command, no saved
+script). mlff then makes the route-B D4 twins
+(<code class="docutils literal notranslate"><span class="pre">/projects/seamm/psaxe/ecfec_mlff/tools/subtract_d4_cells.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">d4_twins.slurm</span></code>, importing science’s <code class="docutils literal notranslate"><span class="pre">periodic/tools/route_b_d4.py</span></code>),
+the stress-shifted variants (wave 1: opt-in
+<code class="docutils literal notranslate"><span class="pre">ECFEC_CELLS_VARIANT=_stressfix</span></code>, mbe’s first finite-difference
+estimate, +2100/+2700 atm), and the splits together with the molecular QZ
+no-CP sets in <code class="docutils literal notranslate"><span class="pre">ecfec_data.py</span></code>. Those sets are copies made on 2026-10-12
+in the experiment folder
+(<code class="docutils literal notranslate"><span class="pre">/D3/sina/xnns/research/experiments/arc/2026-10-12_0930_mace_ecfec_wave1_psaxe/Molecular/</span></code>),
+byte-identical to Dropbox <code class="docutils literal notranslate"><span class="pre">GM/TrainingData/Molecular/{EC,FEC}</span></code> but not
+linked to it, so an update there does not reach a fit unless copied
+again; they come from the TinkerCliffs QZ relabel
+(<code class="docutils literal notranslate"><span class="pre">/projects/seamm/psaxe/qz_relabel</span></code>, <code class="docutils literal notranslate"><span class="pre">README_QZ.md</span></code>) through
+<code class="docutils literal notranslate"><span class="pre">qz_tools/convert_qz.py</span></code> and route-B D4 twins. For wave 2 mbe applies the Pulay
+offset at collection (science’s fits: EC +2030 atm; FEC +2656/+2740/+2824
+atm at ρ_rel 0.95/1.00/1.05), marked in each frame’s info
+(<code class="docutils literal notranslate"><span class="pre">pulay_offset_atm</span></code>) and in the file name
+(<code class="docutils literal notranslate"><span class="pre">wave2_labels_pulayfix.extxyz</span></code>). <strong>Risk: the offset applied twice</strong> if
+mlff’s stress-shift path ran on those files too. Guarded for the wave-2
+refit (mlff, 2026-10-16): the files are read as delivered, the data module
+refuses a frame carrying <code class="docutils literal notranslate"><span class="pre">pulay_offset_atm</span></code> when a shift is asked for
+and checks every wave-2 frame carries the expected offset, and the wave-1
+cells get the same fitted offsets rather than the first estimates (mlff to
+settle with science which way). The case for recording every correction
+in the data, which the training-set step would make structural;</p></li>
+<li><p>the force filter (|F| &gt; 20 eV/Å, applied to the control forces in both
+arms of an A/B test): in mlff’s data modules;</p></li>
+<li><p>energy caps for high-energy tails (DMC normal-mode monomers: p95 5.3 eV,
+maximum 12 eV above the minimum): Paul’s decision, not implemented.</p></li>
+</ul>
+<p><em>Needed:</em> a <strong>training-set step</strong> that gathers the labels across many cell
+jobs (three hand-made pieces owned by two sessions today) and applies
+an ordered list of recorded corrections, each with its parameters and a
+version – the Pulay offset per code, cutoff and element set; the ΔfE
+reference atoms; D4 removal; a Δ-model as a plug-in callable; an energy cap
+or weight; the force filter – writes extxyz losslessly (every per-atom
+column and info key) and records the provenance chain (source sets,
+corrections, hashes) in the set’s header or a sidecar.</p>
+<p><em>Blockers:</em> a lossless extxyz writer in SEAMM (ASE’s is not); a home for the
+correction definitions (offset fits, Δ-model coefficients) as versioned
+data; the A/B pattern (patched and control sets with identical frames and
+filters) as a first-class option.</p>
+<p><em>mlff’s part:</em> each experiment’s Python data module (<code class="docutils literal notranslate"><span class="pre">h2o_data.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">nacl_data.py</span></code>) combines the label files per source (folders of
+symlinks to the label variants: the <code class="docutils literal notranslate"><span class="pre">*_pulayfix</span></code> copies, the CCSD(T)-Δ
+patched sets, the <code class="docutils literal notranslate"><span class="pre">*_minusD4</span></code> labels), applies the force cap
+(<code class="docutils literal notranslate"><span class="pre">FMAX_CUT</span></code>, filtered on the control labels in both arms), checks the
+monomer energy reference, makes the per-source splits, and picks the label
+variant through an environment variable (<code class="docutils literal notranslate"><span class="pre">XNN_ARM=ctl|ccsdt</span></code>). D4 is
+subtracted and recorded as the checkpoint’s dispersion record. <em>Needed:</em>
+the training-set step writes the set and a <strong>manifest that Train Committee
+reads</strong> – files, the D4 record, the Pulay offset, any Δ correction (named,
+with its coefficients file), the force cap; <code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">train</span></code>’s
+<code class="docutils literal notranslate"><span class="pre">manifest.json</span></code>/<code class="docutils literal notranslate"><span class="pre">frames.csv</span></code> already hold the md5s, so it is mostly an
+extension of that.</p>
+</div></blockquote>
+<p>3.2 <strong>Selection</strong> (science, with worker) – priority 2.</p>
+<blockquote>
+<div><p><em>Outside SEAMM today:</em> <code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">score/select</span></code> as a CLI in the MLFF
+environment, from a frozen copy (<code class="docutils literal notranslate"><span class="pre">/D3/psaxe/active_learning</span></code>, frozen
+cc078f3, then 5d55e69); the wave-2 selection by <code class="docutils literal notranslate"><span class="pre">select_w2.sh</span></code> (stage 1:
+the top cell per liquid, density and temperature group; stage 2: the rest
+by rank within a core-hour budget) and <code class="docutils literal notranslate"><span class="pre">greedy_w2.py</span></code> (no adjacent frames
+of a run: they share about 70 % of their neighbour shells), result
+TinkerCliffs <code class="docutils literal notranslate"><span class="pre">carb_production/wave2_final_AL.txt</span></code>; ranking by ρ_P + ρ_F
+from a final-committee check (ChemAI 12035).</p>
+<p><em>Needed:</em> <code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">select</span></code> as a step; group quotas, a core-hour budget
+(from the <code class="docutils literal notranslate"><span class="pre">seamm-timing</span></code> estimates) and a frame-decorrelation rule as its
+options; a <strong>contact check</strong> beside the committee spreads – MD frames with
+unlabelled tight O···O or ion contacts score like OPLS frames (2026-10-13).</p>
+<p><em>Blocker for wave 3:</em> the contact check (worker).</p>
+</div></blockquote>
+<p>3.3 <strong>Structures</strong> (science) – priority 3.</p>
+<blockquote>
+<div><p>The OPLS reference cells and the Li-salt cell builds are SEAMM jobs (EC/FEC
+references ChemAI 5122-5131; Li-salt builds 5258-5262; NaCl step-4 frames
+5177-5188).</p>
+<p><em>Outside SEAMM today:</em> MD frame pools as plain LAMMPS Slurm jobs
+(<code class="docutils literal notranslate"><span class="pre">frames_li.slurm</span></code> in <code class="docutils literal notranslate"><span class="pre">/home/psaxe/li_frames</span></code>, 11965-11970: six
+conditions × ρ {0.95, 1, 1.05} × T {298, 358} K → 336 frames; the
+scaled-charge runs, <code class="docutils literal notranslate"><span class="pre">make_scaled.py</span></code>, 11954/11955); seeded starts
+(<code class="docutils literal notranslate"><span class="pre">make_liec4.py</span></code>, Li(EC)<sub>4</sub><sup>+</sup> seeds for Packmol); carving
+(<code class="docutils literal notranslate"><span class="pre">carve_li_cluster.py</span></code>, Li⁺-centred neutral clusters within 4.5 Å;
+<code class="docutils literal notranslate"><span class="pre">sample_dm.py</span></code> in <code class="docutils literal notranslate"><span class="pre">/D3/psaxe/ccsdt_dm</span></code>, connected n-mers from MD dumps;
+<code class="docutils literal notranslate"><span class="pre">gen_ion_frame.py</span></code>, clusters in boxes for the cell pipeline – Extract
+Clusters covers part of this); reference-cell analysis (the density from
+⟨P⟩ through −P/K_T, block-averaged from <code class="docutils literal notranslate"><span class="pre">nvt_state.trj</span></code>, never the stored
+scalars).</p>
+<p><em>Needed:</em> an <strong>MD frame-pool step</strong> on top of the LAMMPS step (a grid of
+conditions, frames per condition, decorrelation spacing); Extract Clusters
+options for ion-centred, charge-neutral carving and for sampling connected
+n-mers with a stated distribution, recording the sampler’s distribution
+against the liquid’s (2026-10-16: the motif-balanced sampler put 33 % of
+triples in closed triangles, against 5 % in the liquid).</p>
+<p><em>Packmol losing the P-F bonds of a second configuration source (ChemAI
+5260, 2026-10-10)</em> was fixed in packmol-step 2026.10.10 and molsystem
+2026.10.10.</p>
+</div></blockquote>
+<p>3.4 <strong>Validation</strong> (science, with mlff) – priority 4.</p>
+<blockquote>
+<div><p><em>Outside SEAMM today:</em> <code class="docutils literal notranslate"><span class="pre">analyze_liquid.py</span></code> (ρ, g(r), ΔH_vap through
+<code class="docutils literal notranslate"><span class="pre">model.json</span></code>’s <code class="docutils literal notranslate"><span class="pre">e_monomer_min</span></code>; generalized for <code class="docutils literal notranslate"><span class="pre">nper</span></code>/<code class="docutils literal notranslate"><span class="pre">msite</span></code>);
+<code class="docutils literal notranslate"><span class="pre">mlff_dipoles.py</span></code>, <code class="docutils literal notranslate"><span class="pre">eps_both.py</span></code>, <code class="docutils literal notranslate"><span class="pre">ct_check.py</span></code> (the dielectric
+constant from the LES latent dipoles, the 4×4 channel matrix, a
+charge-transfer check; Falcon <code class="docutils literal notranslate"><span class="pre">/projects/seamm/psaxe/liqval_mlff</span></code> and
+ChemAI); <code class="docutils literal notranslate"><span class="pre">analyze_nacl_md.py</span></code> (CIP/SSIP with a fixed cutoff,
+coordination numbers); the same-resolution g_OO against Skinner
+(<code class="docutils literal notranslate"><span class="pre">~/Sites/mlff-training/2026-09-16_trimer-mlff-liquid-density/skinner_same_resolution.py</span></code>,
+Q_max 21.8, variable Lorch; mlff’s <code class="docutils literal notranslate"><span class="pre">skinner_cmp.py</span></code> is a copy); mlff’s
+frozen-frame committee comparison of molecular and atomic pressure
+(<code class="docutils literal notranslate"><span class="pre">pmol.py</span></code>, <code class="docutils literal notranslate"><span class="pre">/D3/psaxe/mlff_scores/pmol</span></code>: whole molecules about their
+centres of mass, and the virial-theorem check
+⟨P_mol − P_atom⟩ = 2 N_mol kT / V, N_mol the number of molecules).</p>
+<p><em>Needed,</em> as options of <code class="docutils literal notranslate"><span class="pre">seamm_md_analysis</span></code> or the Density step: g(r) at
+the resolution of a stated experimental reference; block-averaged density
+with block-size errors; molecular against atomic pressure; evaluating
+committee A on trajectory B.</p>
+<p><em>Blocker:</em> the LES dipole/BEC question (2026-10-14), which decides whether a
+dielectric constant or IR spectrum from the latent charges is usable at all.</p>
+<p><em>mlff’s part, outside SEAMM today:</em> the MD itself – the committee-mean
+MDI pair launched by hand from Slurm (<code class="docutils literal notranslate"><span class="pre">ccsdt_md.slurm</span></code>,
+<code class="docutils literal notranslate"><span class="pre">cmte_md.slurm</span></code>: <code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">1</span> <span class="pre">mdi_bind.sh</span> <span class="pre">seamm-al</span> <span class="pre">engine</span> <span class="pre">--members</span> <span class="pre">…</span>
+<span class="pre">--spreads</span> <span class="pre">:</span> <span class="pre">-np</span> <span class="pre">1</span> <span class="pre">mdi_bind.sh</span> <span class="pre">lmp</span> <span class="pre">-mdi</span> <span class="pre">…</span> <span class="pre">-in</span> <span class="pre">input.dat</span></code>) with the LAMMPS
+input (relax, NVT, NPT equilibration, production) and <code class="docutils literal notranslate"><span class="pre">water512.data</span></code>
+written by hand; and the scripts <code class="docutils literal notranslate"><span class="pre">/D3/psaxe/mlff_rho_prod.py</span></code>
+(block-averaged ρ with its standard error), <code class="docutils literal notranslate"><span class="pre">goo.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">skinner_cmp.py</span></code> (O-O peaks and n_OO; same resolution as Skinner 2013),
+<code class="docutils literal notranslate"><span class="pre">analyze_nacl_md.py</span></code> + <code class="docutils literal notranslate"><span class="pre">cip_fixed.py</span></code>, and <code class="docutils literal notranslate"><span class="pre">pmol.py</span></code>, <code class="docutils literal notranslate"><span class="pre">pmol2.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">geom.py</span></code> in <code class="docutils literal notranslate"><span class="pre">/D3/psaxe/mlff_scores/pmol*</span></code> (atomic against molecular
+virial on fixed frames, committees cross-evaluated, O-H/HOH/H-bond counts).</p>
+<p><em>mlff’s needs:</em></p>
+<ol class="loweralpha simple">
+<li><p><strong>Close the GPU-path gap</strong> through SEAMM (120 against 76 ms/step; ChemAI
+12250 against 12253): <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS=1</span></code> is the suspect
+(<code class="docutils literal notranslate"><span class="pre">lammps.py</span></code> near line 1928, <code class="docutils literal notranslate"><span class="pre">mdi_bind.sh</span></code> line 309), a 15-minute
+test. Then validation MD can go through the LAMMPS step.</p></li>
+<li><p><strong>Batch the members in the engine:</strong> <code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">engine</span></code> uses about 40 %
+of the GPU (py-spy, 2026-10-16), launching the five members one by one;
+evaluating them in one batch helps both paths (two MDs per GPU is the
+cheap stopgap).</p></li>
+<li><p>The analyses above as options of <code class="docutils literal notranslate"><span class="pre">seamm_md_analysis</span></code> or the MD steps:
+block-averaged density with its error, g(r) peaks and n_OO with the
+same-resolution comparison, ion coordination and CIP with fixed cutoffs;
+later molecular pressure and monomer geometry.</p></li>
+<li><p>Cross-evaluation – committee A on committee B’s trajectory, P_atom and
+P_mol per frame – as a Score Pool option.</p></li>
+</ol>
+</div></blockquote>
+<p>3.5 <strong>Training</strong> (mlff).</p>
+<blockquote>
+<div><p><em>Outside SEAMM today:</em> every production committee (<code class="docutils literal notranslate"><span class="pre">g7_cmte</span></code>,
+<code class="docutils literal notranslate"><span class="pre">nacl_cmte</span></code>, <code class="docutils literal notranslate"><span class="pre">nacl_les1_cmte</span></code>, <code class="docutils literal notranslate"><span class="pre">g7_ccsdt</span></code>/<code class="docutils literal notranslate"><span class="pre">g7_ctl</span></code>) was trained
+with Sina’s research script <code class="docutils literal notranslate"><span class="pre">train_cmte013.py</span></code> and his samplers
+(<code class="docutils literal notranslate"><span class="pre">homogeneous.py</span></code>), copied into each experiment folder
+<code class="docutils literal notranslate"><span class="pre">/D3/sina/xnns/research/experiments/arc/&lt;date&gt;_&lt;name&gt;_psaxe/</span></code> (latest
+<code class="docutils literal notranslate"><span class="pre">2026-10-15_2130_ccsdt_committees_psaxe</span></code>), with the training set as the
+experiment’s Python data module (3.1). Slurm: <code class="docutils literal notranslate"><span class="pre">chemai_cmte.slurm.g7_template</span></code>,
+<code class="docutils literal notranslate"><span class="pre">chemai_ccsdt_cmte.slurm</span></code> (one A100, 12 CPUs, 64 GB, five members in
+sequence, <code class="docutils literal notranslate"><span class="pre">--nfold</span> <span class="pre">5</span> <span class="pre">--fold-seed</span> <span class="pre">0</span> <span class="pre">--seed</span> <span class="pre">1000+M</span></code>, label md5s logged) and
+<code class="docutils literal notranslate"><span class="pre">dryrun.sh</span></code> (a CPU <code class="docutils literal notranslate"><span class="pre">--dry-run</span></code> comparing manifests across arms). The
+environment is the hand-built conda clone <code class="docutils literal notranslate"><span class="pre">seamm-lammps-xnn0141</span></code>, without
+SEAMM. Scoring: <code class="docutils literal notranslate"><span class="pre">/D3/psaxe/mlff_score_cmte.py</span></code> and its Slurm scripts in
+<code class="docutils literal notranslate"><span class="pre">/D3/psaxe/mlff_scores/</span></code> (CPU, float64; per-group E/F/S MAE on the data
+module’s validation and test splits). The Train Committee step and
+<code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">train</span></code> have run only in smoke tests
+(<code class="docutils literal notranslate"><span class="pre">/D3/psaxe/active_learning/smoke_p2</span></code>, <code class="docutils literal notranslate"><span class="pre">smoke_013</span></code>).</p>
+<p><em>Needed:</em></p>
+<ol class="loweralpha simple">
+<li><p><strong>A gate:</strong> Train Committee (or <code class="docutils literal notranslate"><span class="pre">seamm-al</span> <span class="pre">train</span></code>) with the same recipe,
+data and folds reproduces <code class="docutils literal notranslate"><span class="pre">train_cmte013</span></code>: identical folds and batch
+order (checkable in the manifests and the dry run), and test scores
+within the seed-to-seed spread of <code class="docutils literal notranslate"><span class="pre">train_cmte013</span></code> itself (GPU training
+is not deterministic, so not bitwise). The samplers are ported
+(<code class="docutils literal notranslate"><span class="pre">sampler_equivalence.txt</span></code>) but the end-to-end match was never run;
+whether Sina’s per-source splits and <code class="docutils literal notranslate"><span class="pre">--stratify</span></code> give the same folds
+needs checking.</p></li>
+<li><p>The training set comes from collection (3.1) as files and a manifest,
+not a Python module; the force cap, per-source weights and label
+variants become recorded options there.</p></li>
+<li><p><strong>Members as parallel GPU tasks</strong> through the task layer (ChemAI’s two
+A100s, ARC’s A100s); the step now trains them in one task, and “members
+to train” only splits them by hand.</p></li>
+<li><p>The test-split score table (what <code class="docutils literal notranslate"><span class="pre">mlff_score_cmte.py</span></code> prints) as a
+Check Committee option.</p></li>
+</ol>
+<p><em>Blockers:</em> none from Sina (the xnn Trainer’s sampler hook is in xnn 0.12
+and later).</p>
+</div></blockquote>
+<p>3.6 <strong>Models</strong> (mlff).</p>
+<blockquote>
+<div><p><em>Outside SEAMM today:</em> the checkpoints stay in the experiment folders
+(<code class="docutils literal notranslate"><span class="pre">runs/&lt;name&gt;/m0-4/best.pt</span></code> and <code class="docutils literal notranslate"><span class="pre">fold_manifest.json</span></code>); the provenance is
+the folder name, the Slurm logs (md5s) and the journals. The production
+environment is switched by hand: <code class="docutils literal notranslate"><span class="pre">lammps.ini</span></code> and <code class="docutils literal notranslate"><span class="pre">xnn.ini</span></code> on ChemAI
+and ARC point at a conda clone (now <code class="docutils literal notranslate"><span class="pre">seamm-lammps-xnn0141</span></code>; <code class="docutils literal notranslate"><span class="pre">.bak</span></code>
+files; <code class="docutils literal notranslate"><span class="pre">xnn0130</span></code> is the rollback), built by hand (clone and pip) and kept
+out of seamm-manager’s way. Each xnn release is validated by hand (float64
+bitwise against the previous version, a GPU PME check, an MDI-pair check).</p>
+<p><em>Needed:</em></p>
+<ol class="loweralpha simple">
+<li><p>Train Committee’s “save as xnn model” used for real committees, with the
+model record carrying the recipe, the training-set manifest (md5s), the
+folds, the xnn and torch versions and the dispersion record (what it
+stores today is unchecked).</p></li>
+<li><p><strong>MLFF environments managed by seamm-manager</strong> (the driver-aware torch
+installer, seamm_manager#31, exists) instead of hand clones, with a
+versioned switch and rollback; LAMMPS-MDI, cuequivariance and xnn in
+one environment (memory: mlff-pair-needs-combined-env).</p></li>
+<li><p>Distribution (<code class="docutils literal notranslate"><span class="pre">.mlff.json</span></code> sidecar and catalog): waits on Sina.</p></li>
+</ol>
+</div></blockquote>
+<dl class="simple">
+<dt>3.7 <strong>Labelling, from science.</strong> Every label pipeline records VeryTightSCF and</dt><dd><p>the NoCOSX element list as checked parameters: TightSCF’s error on isolated
+monomers (−0.05 kJ/mol each, not additive) cost a day on 2026-10-16.</p>
+</dd>
+<dt>3.8 <strong>Infrastructure shared by all stages.</strong> The time estimates and their check</dt><dd><p>(seamm-exec 2026.10.16-2026.10.16.2, <code class="docutils literal notranslate"><span class="pre">seamm-timing</span> <span class="pre">check</span></code>); estimating for
+the target’s node type (seamm_exec campaign 2026-10-05, phase 5 as revised
+2026-10-16); the GPU MLFF path through SEAMM (3.4 a); xnns 0.14.1 on ARC at
+475 ms/step against 0.13.0’s 424 (graph build 35 against 18 ms), not
+investigated; job-start validation that catches undefined flowchart
+variables.</p>
+</dd>
+</dl>
+</section>
+<section id="priorities">
+<h2>4. Priorities<a class="headerlink" href="#priorities" title="Link to this heading">#</a></h2>
+<p>Each session’s order, most important first.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 90.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Session</p></th>
+<th class="head"><p>Priorities</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mbe</p></td>
+<td><p>Labelling through the JobServer: live settings for running jobs and who
+sets the bundle size (2.1), a restart action (2.2), bundle priority and
+hold release (2.3); then Owl (2.4); proposed pilot of one or two cells</p></td>
+</tr>
+<tr class="row-odd"><td><p>science</p></td>
+<td><p>Collection: the training-set step (3.1); selection as a step with the
+contact check, which blocks wave 3 (3.2); structures: the frame-pool
+step and carving options (3.3); validation analyses (3.4)</p></td>
+</tr>
+<tr class="row-even"><td><p>mlff</p></td>
+<td><p>The training gate (3.5 a), then the EC/FEC refit after wave 2 through
+the step; the GPU-path speed test (3.4 a); the collection manifest with
+science (3.1); members as parallel GPU tasks and the score table
+(3.5 c, d); the analyses as steps and batched members in the engine
+(3.4 b, c); model provenance, managed environments, distribution (3.6)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Common threads: the <strong>training-set step and its manifest</strong> (science’s first,
+mlff’s third) is what lets both selection and training leave their scripts; the
+<strong>training gate</strong> decides whether the existing Train Committee step can take
+the next production committee; and the <strong>GPU-path test</strong> is the cheapest item
+on the list.</p>
+</section>
+<section id="log">
+<h2>5. Log<a class="headerlink" href="#log" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>2026-10-16: document started (Paul). Labelling list from mbe; manifest
+archive-reference bug fixed (seamm-exec 2026.10.16.3); ORCA estimates use the
+model again (orca-step 2026.10.16, .1) and record their source (2026.10.16.2).
+mbe’s corrections to section 2; science’s stages (section 3.1-3.4, 3.7);
+mlff’s stages (3.1, 3.4-3.6) and the priorities (section 4); mlff’s
+corrections.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../2026-10-14/PLAN_phase6_structure.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Phase 6: the structure of liquids and solutions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../glossary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Glossary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stages">1. The stages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labelling-through-the-jobserver-mbe-2026-10-16">2. Labelling through the JobServer (mbe, 2026-10-16)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-other-stages">3. The other stages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priorities">4. Priorities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log">5. Log</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/developer_guide/campaigns/2026-10-16/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../../../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../../../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../../../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

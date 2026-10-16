@@ -63,7 +63,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Glossary" href="../../../glossary.html" />
+    <link rel="next" title="Phase 5: extra commands and extra properties in the MD sub-steps" href="PLAN_phase5_extras.html" />
     <link rel="prev" title="2026-10-14 MD analysis: H5MD output, a shared library and analysis steps" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -584,8 +584,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2026-10-14 MD analysis: H5MD output, a shared library and analysis steps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">The design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PLAN_phase5_extras.html">Phase 5: extra commands and extra properties in the MD sub-steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PLAN_phase6_structure.html">Phase 6: the structure of liquids and solutions</a></li>
 </ul>
 </details></li>
+<li class="toctree-l2"><a class="reference internal" href="../2026-10-16/index.html">2026-10-16 Labelling and training MLFFs entirely in SEAMM</a></li>
 </ul>
 </details></li>
 </ul>
@@ -656,7 +659,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   
   <section id="the-design">
 <h1>The design<a class="headerlink" href="#the-design" title="Link to this heading">#</a></h1>
-<p>Status: <strong>agreed</strong> (2026-10-14). Nothing is implemented yet.</p>
+<p>Status: <strong>agreed</strong> (2026-10-14). Phases 1-4 are released (2026-10-14 to 10-16) and
+rolled out to every installation; phase 5 is implemented (<code class="docutils literal notranslate"><span class="pre">PLAN_phase5_extras.rst</span></code>, lammps_step PR #131) and phase 6 planned (<code class="docutils literal notranslate"><span class="pre">PLAN_phase6_structure.rst</span></code>).
+See <em>Phases</em> for the releases.</p>
 <section id="decisions-already-made">
 <h2>Decisions already made<a class="headerlink" href="#decisions-already-made" title="Link to this heading">#</a></h2>
 <p>Paul, 2026-10-14:</p>
@@ -1298,11 +1303,13 @@ analysis steps would change.</p>
 <section id="phases">
 <h2>Phases<a class="headerlink" href="#phases" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>seamm_md_analysis 1:</strong> <code class="docutils literal notranslate"><span class="pre">stats</span></code>, <code class="docutils literal notranslate"><span class="pre">correlate</span></code>, <code class="docutils literal notranslate"><span class="pre">transport</span></code>, <code class="docutils literal notranslate"><span class="pre">plots</span></code> and the
-legacy readers. Diffusivity and Thermal conductivity move onto it with no change
-for users; the regression tests check that the numbers are the same on stored
-test data.</p></li>
-<li><p><strong>H5MD:</strong></p>
+<li><p><strong>seamm_md_analysis 1</strong> (<em>done</em>: seamm-md-analysis 2026.10.14; diffusivity-step
+and thermal-conductivity-step 2026.10.15): <code class="docutils literal notranslate"><span class="pre">stats</span></code>, <code class="docutils literal notranslate"><span class="pre">correlate</span></code>,
+<code class="docutils literal notranslate"><span class="pre">transport</span></code>, <code class="docutils literal notranslate"><span class="pre">plots</span></code> and the legacy readers. Diffusivity and Thermal
+conductivity move onto it with no change for users; the regression tests check
+that the numbers are the same on stored test data.</p></li>
+<li><p><strong>H5MD</strong> (<em>done</em>: seamm-md-analysis 2026.10.15, lammps-step 2026.10.15.1,
+diffusivity-step and thermal-conductivity-step 2026.10.15.1):</p>
 <ul class="simple">
 <li><p>the non-periodic fixes in the LAMMPS step (pressure, heat flux and stress
 sampling) and the periodicity checks in the two existing steps;</p></li>
@@ -1313,7 +1320,9 @@ library’s documentation;</p></li>
 files.</p></li>
 </ul>
 </li>
-<li><p><strong>Requirements:</strong></p>
+<li><p><strong>Requirements</strong> (<em>done</em>: seamm-md-analysis 2026.10.15.1, seamm 2026.10.15,
+lammps-step 2026.10.15.2, diffusivity-step and thermal-conductivity-step
+2026.10.15.2):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">md_provides</span></code> / <code class="docutils literal notranslate"><span class="pre">md_requirements</span></code>, including periodicity, and
 <code class="docutils literal notranslate"><span class="pre">check_configuration</span></code>;</p></li>
@@ -1323,10 +1332,16 @@ editor and <code class="docutils literal notranslate"><span class="pre">run_flow
 <li><p>mode B in both existing steps.</p></li>
 </ul>
 </li>
-<li><p><strong>Viscosity:</strong> the full pressure tensor in LAMMPS, the Viscosity step, and
-Yeh–Hummer using its result.</p></li>
-<li><p><strong>Extra commands and extra properties</strong> in the LAMMPS MD sub-steps.</p></li>
-<li><p><strong>Structure:</strong> MDAnalysis and SolvationAnalysis.</p></li>
+<li><p><strong>Viscosity</strong> (<em>done</em>: seamm-md-analysis 2026.10.15.2, lammps-step 2026.10.15.3,
+viscosity-step 2026.10.15 with the SPC/E regression in 2026.10.15.1,
+diffusivity-step 2026.10.15.3; follow-ups on 2026-10-16: the heat flux of liquids
+corrected and rigid models from the forcefield in lammps-step 2026.10.16,
+seamm-md-analysis and thermal-conductivity-step 2026.10.16): the full pressure
+tensor in LAMMPS, the Viscosity step, and Yeh–Hummer using its result.</p></li>
+<li><p><strong>Extra commands and extra properties</strong> in the LAMMPS MD sub-steps (<em>implemented</em>,
+lammps_step PR #131; the plan is <code class="docutils literal notranslate"><span class="pre">PLAN_phase5_extras.rst</span></code>).</p></li>
+<li><p><strong>Structure:</strong> MDAnalysis and SolvationAnalysis (<em>next</em>; the detailed plan is
+<code class="docutils literal notranslate"><span class="pre">PLAN_phase6_structure.rst</span></code>).</p></li>
 <li><p><strong>Dielectric constant:</strong> total-dipole sampling and the step. Ionic conductivity
 follows.</p></li>
 <li><p><strong>Segmented runs:</strong> “run until converged”, restarts, and preemption with the task
@@ -1378,11 +1393,11 @@ time.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="../../../glossary.html"
+       href="PLAN_phase5_extras.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Glossary</p>
+        <p class="prev-next-title">Phase 5: extra commands and extra properties in the MD sub-steps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
