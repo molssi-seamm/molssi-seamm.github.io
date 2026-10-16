@@ -188,14 +188,29 @@ Paths are on ChemAI unless marked.
       ``verify_patch.py`` checks everything else is byte-identical; 13 water sets
       in ``patched/`` with a README and ``SHA256SUMS`` (notebook
       ``mlff-training/2026-10-16_water-ccsdt-delta-model``);
-    - merging the cells' ``mbe_labels.extxyz`` into sets (*to confirm*: mbe or
-      science; the water and NaCl sets reached mlff as finished sets);
+    - merging the cells' labels into sets passes through two hands for EC/FEC.
+      mbe concatenates each cell's ``3/mbe_labels.extxyz`` into
+      ``/projects/seamm/psaxe/{ec,fec}_production/wave<N>_labels.extxyz``, adding
+      ``frame=<cell name>`` to each frame (wave 1: a one-off command, no saved
+      script). mlff then makes the route-B D4 twins
+      (``/projects/seamm/psaxe/ecfec_mlff/tools/subtract_d4_cells.py`` and
+      ``d4_twins.slurm``, importing science's ``periodic/tools/route_b_d4.py``),
+      the stress-shifted variants, and the splits together with the molecular
+      QZ no-CP sets in ``ecfec_data.py``. For wave 2 mbe applies the Pulay
+      offset at collection (science's fits: EC +2030 atm; FEC +2656/+2740/+2824
+      atm at ρ_rel 0.95/1.00/1.05), marked in each frame's info
+      (``pulay_offset_atm``) and in the file name
+      (``wave2_labels_pulayfix.extxyz``). **Risk: the offset applied twice** if
+      mlff's stress-shift path runs on those files too -- the case for recording
+      every correction in the data, which the training-set step would make
+      structural;
     - the force filter (\|F\| > 20 eV/Å, applied to the control forces in both
       arms of an A/B test): in mlff's data modules;
     - energy caps for high-energy tails (DMC normal-mode monomers: p95 5.3 eV,
       maximum 12 eV above the minimum): Paul's decision, not implemented.
 
-    *Needed:* a **training-set step** that takes labelled structures and applies
+    *Needed:* a **training-set step** that gathers the labels across many cell
+    jobs (three hand-made pieces owned by two sessions today) and applies
     an ordered list of recorded corrections, each with its parameters and a
     version -- the Pulay offset per code, cutoff and element set; the ΔfE
     reference atoms; D4 removal; a Δ-model as a plug-in callable; an energy cap
