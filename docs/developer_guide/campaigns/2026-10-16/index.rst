@@ -20,7 +20,7 @@ campaign notes hold its design.
 **Status of this list (2026-10-16):** the labelling requirements (section 2) are
 mbe's, sent after carbonate wave 2; structures, selection, collection and
 validation (section 3) are science's, in its order of priority; training and
-models, and mlff's parts of collection and validation, are mlff's. Section 5
+models, and mlff's parts of collection and validation, are mlff's. Section 4
 puts the sessions' priorities side by side.
 
 1. The stages
@@ -188,9 +188,10 @@ Paths are on ChemAI unless marked.
       ``verify_patch.py`` checks everything else is byte-identical; 13 water sets
       in ``patched/`` with a README and ``SHA256SUMS`` (notebook
       ``mlff-training/2026-10-16_water-ccsdt-delta-model``);
-    - merging the cells' ``mbe_labels.extxyz`` into sets, and the force filter
-      (\|F\| > 20 eV/Å, applied to the control forces in both arms of an A/B
-      test): mlff's scripts;
+    - merging the cells' ``mbe_labels.extxyz`` into sets (*to confirm*: mbe or
+      science; the water and NaCl sets reached mlff as finished sets);
+    - the force filter (\|F\| > 20 eV/Å, applied to the control forces in both
+      arms of an A/B test): in mlff's data modules;
     - energy caps for high-energy tails (DMC normal-mode monomers: p95 5.3 eV,
       maximum 12 eV above the minimum): Paul's decision, not implemented.
 
@@ -282,7 +283,7 @@ Paths are on ChemAI unless marked.
     frozen-frame committee comparison of molecular and atomic pressure
     (``pmol.py``, ``/D3/psaxe/mlff_scores/pmol``: whole molecules about their
     centres of mass, and the virial-theorem check
-    ⟨P_mol − P_atom⟩ = 2N·kT/V).
+    ⟨P_mol − P_atom⟩ = 2 N_mol kT / V, N_mol the number of molecules).
 
     *Needed,* as options of ``seamm_md_analysis`` or the Density step: g(r) at
     the resolution of a stated experimental reference; block-averaged density
@@ -343,8 +344,10 @@ Paths are on ChemAI unless marked.
     *Needed:*
 
     a. **A gate:** Train Committee (or ``seamm-al train``) with the same recipe,
-       data and folds reproduces ``train_cmte013`` -- the same folds, and the
-       same scores (bitwise in float64). The samplers are ported
+       data and folds reproduces ``train_cmte013``: identical folds and batch
+       order (checkable in the manifests and the dry run), and test scores
+       within the seed-to-seed spread of ``train_cmte013`` itself (GPU training
+       is not deterministic, so not bitwise). The samplers are ported
        (``sampler_equivalence.txt``) but the end-to-end match was never run;
        whether Sina's per-source splits and ``--stratify`` give the same folds
        needs checking.
@@ -395,7 +398,7 @@ Paths are on ChemAI unless marked.
     investigated; job-start validation that catches undefined flowchart
     variables.
 
-5. Priorities
+4. Priorities
 -------------
 
 Each session's order, most important first.
@@ -427,11 +430,12 @@ mlff's third) is what lets both selection and training leave their scripts; the
 the next production committee; and the **GPU-path test** is the cheapest item
 on the list.
 
-4. Log
+5. Log
 ------
 
 - 2026-10-16: document started (Paul). Labelling list from mbe; manifest
   archive-reference bug fixed (seamm-exec 2026.10.16.3); ORCA estimates use the
   model again (orca-step 2026.10.16, .1) and record their source (2026.10.16.2).
   mbe's corrections to section 2; science's stages (section 3.1-3.4, 3.7);
-  mlff's stages (3.1, 3.4-3.6) and the priorities (section 5).
+  mlff's stages (3.1, 3.4-3.6) and the priorities (section 4); mlff's
+  corrections.
