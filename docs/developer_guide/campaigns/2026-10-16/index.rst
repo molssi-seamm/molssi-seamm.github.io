@@ -25,29 +25,42 @@ for each is to check and complete its stage (marked *to confirm*).
 1. The stages
 -------------
 
-============= ============================================== =============================================== ==========
-Stage         In SEAMM now                                   Outside SEAMM now                               Owner
-============= ============================================== =============================================== ==========
-Structures    Packmol, LAMMPS (classical and MLFF MD via     Cell and frame selection scripts; Li-salt        science
-              xnn), Normal Mode Sampling, Dimer Builder,     frames; OPLS reference cells (*to confirm*)
-              Extract Clusters
-Selection     active_learning_step (QBC committee scoring,   ``seamm-al score/select`` run as a CLI in the    science,
-              2026.10.14.1) and ``seamm-al``                 MLFF conda env on ChemAI; no contact check       worker
-                                                             (spreads miss the tight-contact wall)
-Labelling     mbe_step + seamm_mbe (VASP monomers/cell,      Evaluator jobs submitted by hand on ARC;          mbe
-              ORCA pairs/triples), the task layer and        watchers on the Mac; restart and manifest
-              bundles, cost model and ``seamm-timing``       repair scripts (section 2)
-Collection    ``mbe_labels.extxyz`` per cell                 Merging into training sets; the Pulay stress     mbe,
-                                                             offset (``*_pulayfix`` copies); the DfE          science
-                                                             convention; energy caps for high-energy tails
-Training      ``seamm-al train`` (xnn recipe, k-fold          Slurm scripts on ChemAI's GPUs in the MLFF       mlff
-              committees, Sina's samplers)                   conda env, outside any flowchart
-Validation    LAMMPS MD with the MLFF as a model chemistry;  Liquid analysis scripts (``analyze_liquid.py``,  mlff,
-              Density, Diffusivity, Viscosity, Thermal       ``analyze_nacl_md.py``, ``mlff_dipoles.py``):    science
-              Conductivity steps; ``seamm_md_analysis``      ΔH_vap, RDF/CIP, dielectric, dipoles
-Models        xnn_step model chemistries                     Checkpoints and provenance by hand; the          mlff
-                                                             distribution design waits on Sina
-============= ============================================== =============================================== ==========
+.. list-table::
+   :header-rows: 1
+   :widths: 12 36 40 12
+
+   * - Stage
+     - In SEAMM now
+     - Outside SEAMM now
+     - Owner
+   * - Structures
+     - Packmol, LAMMPS (classical and MLFF MD via xnn), Normal Mode Sampling, Dimer Builder, Extract Clusters
+     - Cell and frame selection scripts; Li-salt frames; OPLS reference cells (*to confirm*)
+     - science
+   * - Selection
+     - active_learning_step (QBC committee scoring, 2026.10.14.1) and ``seamm-al``
+     - ``seamm-al score/select`` run as a CLI in the MLFF conda env on ChemAI; no contact check (spreads miss the tight-contact wall)
+     - science, worker
+   * - Labelling
+     - mbe_step + seamm_mbe (VASP monomers/cell, ORCA pairs/triples), the task layer and bundles, the cost model and ``seamm-timing``
+     - Evaluator jobs submitted by hand on ARC; watchers on the Mac; restart and manifest repair scripts (section 2)
+     - mbe
+   * - Collection
+     - ``mbe_labels.extxyz`` per cell
+     - Merging into training sets; the Pulay stress offset (``*_pulayfix`` copies); the DfE convention; energy caps for high-energy tails
+     - mbe, science
+   * - Training
+     - ``seamm-al train`` (xnn recipe, k-fold committees, Sina's samplers)
+     - Slurm scripts on ChemAI's GPUs in the MLFF conda env, outside any flowchart
+     - mlff
+   * - Validation
+     - LAMMPS MD with the MLFF as a model chemistry; the Density, Diffusivity, Viscosity and Thermal Conductivity steps; ``seamm_md_analysis``
+     - Liquid analysis scripts (``analyze_liquid.py``, ``analyze_nacl_md.py``, ``mlff_dipoles.py``): ΔH_vap, RDF/CIP, dielectric, dipoles
+     - mlff, science
+   * - Models
+     - xnn_step model chemistries
+     - Checkpoints and provenance by hand; the distribution design waits on Sina
+     - mlff
 
 2. Labelling through the JobServer (mbe, 2026-10-16)
 ----------------------------------------------------
@@ -148,7 +161,7 @@ than 10 Å (vasp_step takes ``options["k_spacing"]``; the 2026-10-06 smoke cell
 failed on it; deferred by Paul 2026-10-09).
 
 3. The other stages (*to confirm* by their owners)
--------------------------------------------------
+--------------------------------------------------
 
 3.1 **Selection.** ``seamm-al select`` inside a flowchart step on the MLFF
     environment rather than as a CLI; a contact check beside the committee
