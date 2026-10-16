@@ -153,6 +153,16 @@ the block errors of a histogram, which the dielectric step may reuse); then the 
 step's first release, with its docs and its entries on the main documentation site
 (the *Analysis* plug-ins page and the status badges).
 
+Revision (Paul, 2026-10-16, during implementation)
+-----------------------------------------------------
+
+SolvationAnalysis turned out to be GPL-3 (MDAnalysis has been LGPL-3 since 2.8, which
+is fine for a BSD-3 plug-in). Paul chose to write the solvation-shell analysis in the
+step instead -- per-solvent coordination numbers, shell compositions, pairing and
+residence times, on the same distance code as the ion pairing -- so the step has no
+GPL dependency. Section 5 and decision 5 below are superseded; the shells also work
+for non-periodic systems when the cutoffs are given.
+
 Decisions (Paul, 2026-10-16: the recommendations below)
 -------------------------------------------------------
 
