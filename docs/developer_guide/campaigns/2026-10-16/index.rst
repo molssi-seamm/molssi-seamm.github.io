@@ -19,9 +19,9 @@ campaign notes hold its design.
 
 **Status of this list (2026-10-16):** the labelling requirements (section 2) are
 mbe's, sent after carbonate wave 2; structures, selection, collection and
-validation (section 3) are science's, in its order of priority. Training and
-models are a first sketch by the design session, for mlff to check (marked *to
-confirm*).
+validation (section 3) are science's, in its order of priority; training and
+models, and mlff's parts of collection and validation, are mlff's. Section 5
+puts the sessions' priorities side by side.
 
 1. The stages
 -------------
@@ -51,16 +51,16 @@ confirm*).
      - Every correction as a script editing extxyz text: Pulay stress offset, minus-D4 twins, ΔfE and ``total_charge`` headers, the CCSD(T) Δ-model patch, merging, the force filter; energy caps undecided
      - mbe, science
    * - Training
-     - ``seamm-al train`` (xnn recipe, k-fold committees, Sina's samplers)
-     - Slurm scripts on ChemAI's GPUs in the MLFF conda env, outside any flowchart
+     - The Active Learning step's Train Committee sub-step (wraps ``seamm-al train`` as a job task in the MLFF environment; can save the committee as an xnn model that Model Chemistry offers), Check Committee, Score Pool
+     - Every production committee so far: Sina's ``train_cmte013.py`` with a Python data module per experiment, Slurm scripts on ChemAI's A100s, a hand-built conda env; scoring by script. The step has run only in smoke tests
      - mlff
    * - Validation
-     - LAMMPS MD with the MLFF as a model chemistry; the Density, Diffusivity, Viscosity and Thermal Conductivity steps; ``seamm_md_analysis``
-     - Liquid analysis scripts: ρ, g(r) and ΔH_vap; dielectric and dipoles from the LES latent charges; CIP/SSIP; same-resolution g_OO against Skinner; molecular vs atomic pressure
+     - LAMMPS MD with a committee as the model chemistry (works, but 120 ms/step against 76 direct); the Density, Diffusivity, Viscosity and Thermal Conductivity steps; ``seamm_md_analysis``
+     - Production MD as hand-launched MDI pairs with hand-written LAMMPS inputs; liquid analysis scripts: ρ, g(r) and ΔH_vap; dielectric and dipoles from the LES latent charges; CIP/SSIP; same-resolution g_OO against Skinner; molecular vs atomic pressure
      - mlff, science
    * - Models
-     - xnn_step model chemistries
-     - Checkpoints and provenance by hand; the distribution design waits on Sina
+     - xnn_step model chemistries; Train Committee's "save as xnn model"
+     - Checkpoints in experiment folders, provenance from folder names, Slurm logs and journals; the production MLFF env switched by hand in ``lammps.ini``/``xnn.ini``; each xnn release validated by hand; distribution waits on Sina
      - mlff
 
 2. Labelling through the JobServer (mbe, 2026-10-16)
@@ -207,6 +207,20 @@ Paths are on ChemAI unless marked.
     data; the A/B pattern (patched and control sets with identical frames and
     filters) as a first-class option.
 
+    *mlff's part:* each experiment's Python data module (``h2o_data.py``,
+    ``nacl_data.py``) combines the label files per source (folders of
+    symlinks to the label variants: the ``*_pulayfix`` copies, the CCSD(T)-Δ
+    patched sets, the ``*_minusD4`` labels), applies the force cap
+    (``FMAX_CUT``, filtered on the control labels in both arms), checks the
+    monomer energy reference, makes the per-source splits, and picks the label
+    variant through an environment variable (``XNN_ARM=ctl|ccsdt``). D4 is
+    subtracted and recorded as the checkpoint's dispersion record. *Needed:*
+    the training-set step writes the set and a **manifest that Train Committee
+    reads** -- files, the D4 record, the Pulay offset, any Δ correction (named,
+    with its coefficients file), the force cap; ``seamm-al train``'s
+    ``manifest.json``/``frames.csv`` already hold the md5s, so it is mostly an
+    extension of that.
+
 3.2 **Selection** (science, with worker) -- priority 2.
 
     *Outside SEAMM today:* ``seamm-al score/select`` as a CLI in the MLFF
@@ -278,14 +292,96 @@ Paths are on ChemAI unless marked.
     *Blocker:* the LES dipole/BEC question (2026-10-14), which decides whether a
     dielectric constant or IR spectrum from the latent charges is usable at all.
 
-3.5 **Training** (mlff; *to confirm*). ``seamm-al train`` as a flowchart step
-    that submits the committee members as GPU tasks through the task layer
-    (ChemAI's GPUs, ARC's A100s), with the checkpoints and the recipe stored as
-    the model's provenance.
+    *mlff's part, outside SEAMM today:* the MD itself -- the committee-mean
+    MDI pair launched by hand from Slurm (``ccsdt_md.slurm``,
+    ``cmte_md.slurm``: ``mpirun -np 1 mdi_bind.sh seamm-al engine --members …
+    --spreads : -np 1 mdi_bind.sh lmp -mdi … -in input.dat``) with the LAMMPS
+    input (relax, NVT, NPT equilibration, production) and ``water512.data``
+    written by hand; and the scripts ``/D3/psaxe/mlff_rho_prod.py``
+    (block-averaged ρ with its standard error), ``goo.py`` and
+    ``skinner_cmp.py`` (O-O peaks and n_OO; same resolution as Skinner 2013),
+    ``analyze_nacl_md.py`` + ``cip_fixed.py``, and ``pmol.py``, ``pmol2.py``,
+    ``geom.py`` in ``/D3/psaxe/mlff_scores/pmol*`` (atomic against molecular
+    virial on fixed frames, committees cross-evaluated, O-H/HOH/H-bond counts).
 
-3.6 **Models** (mlff; *to confirm*). Registering a trained committee as an
-    xnn_step model chemistry (name, checkpoints, provenance), and the
-    distribution design (``.mlff.json`` sidecar and catalog; waits on Sina).
+    *mlff's needs:*
+
+    a. **Close the GPU-path gap** through SEAMM (120 against 76 ms/step; ChemAI
+       12250 against 12253): ``OMP_NUM_THREADS=1`` is the suspect
+       (``lammps.py`` near line 1928, ``mdi_bind.sh`` line 309), a 15-minute
+       test. Then validation MD can go through the LAMMPS step.
+    b. **Batch the members in the engine:** ``seamm-al engine`` uses about 40 %
+       of the GPU (py-spy, 2026-10-16), launching the five members one by one;
+       evaluating them in one batch helps both paths (two MDs per GPU is the
+       cheap stopgap).
+    c. The analyses above as options of ``seamm_md_analysis`` or the MD steps:
+       block-averaged density with its error, g(r) peaks and n_OO with the
+       same-resolution comparison, ion coordination and CIP with fixed cutoffs;
+       later molecular pressure and monomer geometry.
+    d. Cross-evaluation -- committee A on committee B's trajectory, P_atom and
+       P_mol per frame -- as a Score Pool option.
+
+3.5 **Training** (mlff).
+
+    *Outside SEAMM today:* every production committee (``g7_cmte``,
+    ``nacl_cmte``, ``nacl_les1_cmte``, ``g7_ccsdt``/``g7_ctl``) was trained
+    with Sina's research script ``train_cmte013.py`` and his samplers
+    (``homogeneous.py``), copied into each experiment folder
+    ``/D3/sina/xnns/research/experiments/arc/<date>_<name>_psaxe/`` (latest
+    ``2026-10-15_2130_ccsdt_committees_psaxe``), with the training set as the
+    experiment's Python data module (3.1). Slurm: ``chemai_cmte.slurm.g7_template``,
+    ``chemai_ccsdt_cmte.slurm`` (one A100, 12 CPUs, 64 GB, five members in
+    sequence, ``--nfold 5 --fold-seed 0 --seed 1000+M``, label md5s logged) and
+    ``dryrun.sh`` (a CPU ``--dry-run`` comparing manifests across arms). The
+    environment is the hand-built conda clone ``seamm-lammps-xnn0141``, without
+    SEAMM. Scoring: ``/D3/psaxe/mlff_score_cmte.py`` and its Slurm scripts in
+    ``/D3/psaxe/mlff_scores/`` (CPU, float64; per-group E/F/S MAE on the data
+    module's validation and test splits). The Train Committee step and
+    ``seamm-al train`` have run only in smoke tests
+    (``/D3/psaxe/active_learning/smoke_p2``, ``smoke_013``).
+
+    *Needed:*
+
+    a. **A gate:** Train Committee (or ``seamm-al train``) with the same recipe,
+       data and folds reproduces ``train_cmte013`` -- the same folds, and the
+       same scores (bitwise in float64). The samplers are ported
+       (``sampler_equivalence.txt``) but the end-to-end match was never run;
+       whether Sina's per-source splits and ``--stratify`` give the same folds
+       needs checking.
+    b. The training set comes from collection (3.1) as files and a manifest,
+       not a Python module; the force cap, per-source weights and label
+       variants become recorded options there.
+    c. **Members as parallel GPU tasks** through the task layer (ChemAI's two
+       A100s, ARC's A100s); the step now trains them in one task, and "members
+       to train" only splits them by hand.
+    d. The test-split score table (what ``mlff_score_cmte.py`` prints) as a
+       Check Committee option.
+
+    *Blockers:* none from Sina (the xnn Trainer's sampler hook is in xnn 0.12
+    and later).
+
+3.6 **Models** (mlff).
+
+    *Outside SEAMM today:* the checkpoints stay in the experiment folders
+    (``runs/<name>/m0-4/best.pt`` and ``fold_manifest.json``); the provenance is
+    the folder name, the Slurm logs (md5s) and the journals. The production
+    environment is switched by hand: ``lammps.ini`` and ``xnn.ini`` on ChemAI
+    and ARC point at a conda clone (now ``seamm-lammps-xnn0141``; ``.bak``
+    files; ``xnn0130`` is the rollback), built by hand (clone and pip) and kept
+    out of seamm-manager's way. Each xnn release is validated by hand (float64
+    bitwise against the previous version, a GPU PME check, an MDI-pair check).
+
+    *Needed:*
+
+    a. Train Committee's "save as xnn model" used for real committees, with the
+       model record carrying the recipe, the training-set manifest (md5s), the
+       folds, the xnn and torch versions and the dispersion record (what it
+       stores today is unchecked).
+    b. **MLFF environments managed by seamm-manager** (the driver-aware torch
+       installer, seamm_manager#31, exists) instead of hand clones, with a
+       versioned switch and rollback; LAMMPS-MDI, cuequivariance and xnn in
+       one environment (memory: mlff-pair-needs-combined-env).
+    c. Distribution (``.mlff.json`` sidecar and catalog): waits on Sina.
 
 3.7 **Labelling, from science.** Every label pipeline records VeryTightSCF and
     the NoCOSX element list as checked parameters: TightSCF's error on isolated
@@ -294,9 +390,42 @@ Paths are on ChemAI unless marked.
 3.8 **Infrastructure shared by all stages.** The time estimates and their check
     (seamm-exec 2026.10.16-2026.10.16.2, ``seamm-timing check``); estimating for
     the target's node type (seamm_exec campaign 2026-10-05, phase 5 as revised
-    2026-10-16); the GPU MLFF path through SEAMM being 1.5x slower than direct
-    (120 against 76 ms/step, ``OMP_NUM_THREADS=1`` suspected, untested);
-    job-start validation that catches undefined flowchart variables.
+    2026-10-16); the GPU MLFF path through SEAMM (3.4 a); xnns 0.14.1 on ARC at
+    475 ms/step against 0.13.0's 424 (graph build 35 against 18 ms), not
+    investigated; job-start validation that catches undefined flowchart
+    variables.
+
+5. Priorities
+-------------
+
+Each session's order, most important first.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 90
+
+   * - Session
+     - Priorities
+   * - mbe
+     - Labelling through the JobServer: live settings for running jobs and who
+       sets the bundle size (2.1), a restart action (2.2), bundle priority and
+       hold release (2.3); then Owl (2.4); proposed pilot of one or two cells
+   * - science
+     - Collection: the training-set step (3.1); selection as a step with the
+       contact check, which blocks wave 3 (3.2); structures: the frame-pool
+       step and carving options (3.3); validation analyses (3.4)
+   * - mlff
+     - The training gate (3.5 a), then the EC/FEC refit after wave 2 through
+       the step; the GPU-path speed test (3.4 a); the collection manifest with
+       science (3.1); members as parallel GPU tasks and the score table
+       (3.5 c, d); the analyses as steps and batched members in the engine
+       (3.4 b, c); model provenance, managed environments, distribution (3.6)
+
+Common threads: the **training-set step and its manifest** (science's first,
+mlff's third) is what lets both selection and training leave their scripts; the
+**training gate** decides whether the existing Train Committee step can take
+the next production committee; and the **GPU-path test** is the cheapest item
+on the list.
 
 4. Log
 ------
@@ -304,4 +433,5 @@ Paths are on ChemAI unless marked.
 - 2026-10-16: document started (Paul). Labelling list from mbe; manifest
   archive-reference bug fixed (seamm-exec 2026.10.16.3); ORCA estimates use the
   model again (orca-step 2026.10.16, .1) and record their source (2026.10.16.2).
-  mbe's corrections to section 2; science's stages (section 3.1-3.4, 3.7).
+  mbe's corrections to section 2; science's stages (section 3.1-3.4, 3.7);
+  mlff's stages (3.1, 3.4-3.6) and the priorities (section 5).
