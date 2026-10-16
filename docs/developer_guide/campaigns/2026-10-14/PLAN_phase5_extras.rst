@@ -1,7 +1,7 @@
 Phase 5: extra commands and extra properties in the MD sub-steps
 =================================================================
 
-Status: **proposed** (2026-10-16), for Paul's review. Nothing is implemented.
+Status: **agreed** (2026-10-16, with the decisions below); being implemented.
 
 Goal
 ----
@@ -194,8 +194,22 @@ lammps-step only; seamm-md-analysis already has the functions needed. The user g
 gets a section with three worked examples (a custom energy average, the MSD, a
 Green–Kubo integral). Released, then rolled out with the usual checks and gating.
 
-Open questions
---------------
+Decisions (Paul, 2026-10-16)
+----------------------------
+
+#. **Command words:** ``compute``, ``fix``, ``variable`` and ``dump`` only; no
+   ``group``, which would persist into later sub-steps.
+#. **Units:** LAMMPS quantities are the recommended form; explicit units are
+   accepted.
+#. **Vector properties:** not in this phase; averaging components in the
+   autocorrelation and Green–Kubo treatments comes with the dielectric constant
+   (phase 7).
+#. **Stored properties:** both the ``extra properties`` result and, per row, an
+   optional configuration property, off by default.
+#. **Heat Flux sub-step:** left until its input is reworked onto the shared code.
+
+The questions as they were put
+------------------------------
 
 #. **Allowed command words.** ``compute``, ``fix``, ``variable`` and ``dump`` only,
    as designed? ``group`` is the obvious candidate to add (a compute on a group of
