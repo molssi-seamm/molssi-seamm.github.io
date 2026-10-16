@@ -1,7 +1,9 @@
 The design
 ==========
 
-Status: **agreed** (2026-10-14). Nothing is implemented yet.
+Status: **agreed** (2026-10-14). Phases 1-4 are released (2026-10-14 to 10-16) and
+rolled out to every installation; phase 5 is implemented (``PLAN_phase5_extras.rst``, lammps_step PR #131) and phase 6 planned (``PLAN_phase6_structure.rst``).
+See *Phases* for the releases.
 
 Decisions already made
 ----------------------
@@ -579,11 +581,13 @@ analysis steps would change.
 Phases
 ------
 
-#. **seamm_md_analysis 1:** ``stats``, ``correlate``, ``transport``, ``plots`` and the
-   legacy readers. Diffusivity and Thermal conductivity move onto it with no change
-   for users; the regression tests check that the numbers are the same on stored
-   test data.
-#. **H5MD:**
+#. **seamm_md_analysis 1** (*done*: seamm-md-analysis 2026.10.14; diffusivity-step
+   and thermal-conductivity-step 2026.10.15): ``stats``, ``correlate``,
+   ``transport``, ``plots`` and the legacy readers. Diffusivity and Thermal
+   conductivity move onto it with no change for users; the regression tests check
+   that the numbers are the same on stored test data.
+#. **H5MD** (*done*: seamm-md-analysis 2026.10.15, lammps-step 2026.10.15.1,
+   diffusivity-step and thermal-conductivity-step 2026.10.15.1):
 
    - the non-periodic fixes in the LAMMPS step (pressure, heat flux and stress
      sampling) and the periodicity checks in the two existing steps;
@@ -593,7 +597,9 @@ Phases
    - Diffusivity and Thermal conductivity read H5MD, falling back to the legacy
      files.
 
-#. **Requirements:**
+#. **Requirements** (*done*: seamm-md-analysis 2026.10.15.1, seamm 2026.10.15,
+   lammps-step 2026.10.15.2, diffusivity-step and thermal-conductivity-step
+   2026.10.15.2):
 
    - ``md_provides`` / ``md_requirements``, including periodicity, and
      ``check_configuration``;
@@ -602,10 +608,16 @@ Phases
    - automatic sampling in mode A;
    - mode B in both existing steps.
 
-#. **Viscosity:** the full pressure tensor in LAMMPS, the Viscosity step, and
-   Yeh–Hummer using its result.
-#. **Extra commands and extra properties** in the LAMMPS MD sub-steps.
-#. **Structure:** MDAnalysis and SolvationAnalysis.
+#. **Viscosity** (*done*: seamm-md-analysis 2026.10.15.2, lammps-step 2026.10.15.3,
+   viscosity-step 2026.10.15 with the SPC/E regression in 2026.10.15.1,
+   diffusivity-step 2026.10.15.3; follow-ups on 2026-10-16: the heat flux of liquids
+   corrected and rigid models from the forcefield in lammps-step 2026.10.16,
+   seamm-md-analysis and thermal-conductivity-step 2026.10.16): the full pressure
+   tensor in LAMMPS, the Viscosity step, and Yeh–Hummer using its result.
+#. **Extra commands and extra properties** in the LAMMPS MD sub-steps (*implemented*,
+   lammps_step PR #131; the plan is ``PLAN_phase5_extras.rst``).
+#. **Structure:** MDAnalysis and SolvationAnalysis (*next*; the detailed plan is
+   ``PLAN_phase6_structure.rst``).
 #. **Dielectric constant:** total-dipole sampling and the step. Ionic conductivity
    follows.
 #. **Segmented runs:** "run until converged", restarts, and preemption with the task
