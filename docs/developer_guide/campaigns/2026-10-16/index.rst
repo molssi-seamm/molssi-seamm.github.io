@@ -195,15 +195,28 @@ Paths are on ChemAI unless marked.
       script). mlff then makes the route-B D4 twins
       (``/projects/seamm/psaxe/ecfec_mlff/tools/subtract_d4_cells.py`` and
       ``d4_twins.slurm``, importing science's ``periodic/tools/route_b_d4.py``),
-      the stress-shifted variants, and the splits together with the molecular
-      QZ no-CP sets in ``ecfec_data.py``. For wave 2 mbe applies the Pulay
+      the stress-shifted variants (wave 1: opt-in
+      ``ECFEC_CELLS_VARIANT=_stressfix``, mbe's first finite-difference
+      estimate, +2100/+2700 atm), and the splits together with the molecular QZ
+      no-CP sets in ``ecfec_data.py``. Those sets are copies made on 2026-10-12
+      in the experiment folder
+      (``/D3/sina/xnns/research/experiments/arc/2026-10-12_0930_mace_ecfec_wave1_psaxe/Molecular/``),
+      byte-identical to Dropbox ``GM/TrainingData/Molecular/{EC,FEC}`` but not
+      linked to it, so an update there does not reach a fit unless copied
+      again; they come from the TinkerCliffs QZ relabel
+      (``/projects/seamm/psaxe/qz_relabel``, ``README_QZ.md``) through
+      ``qz_tools/convert_qz.py`` and route-B D4 twins. For wave 2 mbe applies the Pulay
       offset at collection (science's fits: EC +2030 atm; FEC +2656/+2740/+2824
       atm at ρ_rel 0.95/1.00/1.05), marked in each frame's info
       (``pulay_offset_atm``) and in the file name
       (``wave2_labels_pulayfix.extxyz``). **Risk: the offset applied twice** if
-      mlff's stress-shift path runs on those files too -- the case for recording
-      every correction in the data, which the training-set step would make
-      structural;
+      mlff's stress-shift path ran on those files too. Guarded for the wave-2
+      refit (mlff, 2026-10-16): the files are read as delivered, the data module
+      refuses a frame carrying ``pulay_offset_atm`` when a shift is asked for
+      and checks every wave-2 frame carries the expected offset, and the wave-1
+      cells get the same fitted offsets rather than the first estimates (mlff to
+      settle with science which way). The case for recording every correction
+      in the data, which the training-set step would make structural;
     - the force filter (\|F\| > 20 eV/Å, applied to the control forces in both
       arms of an A/B test): in mlff's data modules;
     - energy caps for high-energy tails (DMC normal-mode monomers: p95 5.3 eV,
