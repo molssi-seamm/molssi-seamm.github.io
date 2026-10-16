@@ -66,20 +66,32 @@ minimum to run as well as now, plus 2.4 if Owl is used.
     restarted, and every running job's ``target.json`` edited by hand.
     *Needed:* an action (REST/WebUI) that pushes the queue section's current
     settings to running jobs, and evaluators that re-read the scheduling settings
-    (estimate scale, minimum task time, bundle walltime, constraint, nice) from
-    ``target.json`` as they go. The connection settings (root, transport) stay
-    fixed for a job's life.
+    (estimate scale, minimum task time, constraint, nice) from ``target.json`` as
+    they go. The connection settings (root, transport) stay fixed for a job's
+    life.
+
+    *Also needed: who sets the bundle size.* mbe_step passes its own tasks per
+    bundle ("molecular bundle", 4) and bundle walltime ("bundle walltime", 8 h)
+    from the flowchart (``mbe_step/levels.py``), and these override the
+    target's: a target ``bundle_walltime`` had no effect on 2026-10-16. Decide
+    which wins, target or step, and make tasks per bundle adjustable on a running
+    job. It is the real throughput lever: with starts capped per cluster, running
+    bundles ≈ starts per hour × bundle hours, so longer bundles are the only way
+    to keep more running.
 
 2.2 **A deliberate "restart job".** Only ``_finalize_or_resubmit_slurm_job``
     exists, and it resubmits only after the evaluator is lost. *Needed:* cancel
     the evaluator and resubmit it in place, adopting the queued and running
     bundles. *Prerequisite, done:* the manifests lost archive references when an
     evaluator was stopped just after a bundle was archived, so restarts reran
-    finished tasks (55 on TinkerCliffs at 04:2x on 2026-10-16; up to 646 missing
-    in one cell); mbe ran ``carb_production/reconcile_manifests.py --apply``
-    before every resubmit. **Fixed in seamm-exec 2026.10.16.3** (the archive is
-    recorded before the directories are removed; damaged manifests heal on
-    restore); to be rolled out on ARC, then the script retired.
+    finished tasks (up to 646 missing references in one cell after the
+    timing-lock stall, 0-6 per cell on ordinary cancels; 55 rerun on
+    TinkerCliffs at 04:2x after an incomplete repair); mbe ran
+    ``carb_production/reconcile_manifests.py --apply`` before every resubmit.
+    **Fixed in seamm-exec 2026.10.16.3** (the archive is recorded before the
+    directories are removed; damaged manifests heal on restore), on ARC since
+    2026-10-16 13:34; the script retires once no evaluator runs the old
+    version.
 
 2.3 **Scheduler housekeeping now done by watchers on the Mac.**
 
@@ -92,9 +104,19 @@ minimum to run as well as now, plus 2.4 if Owl is used.
     b. *TinkerCliffs "env retrieval failed" holds* are released automatically
        by the watcher. *Needed:* the JobServer's poller releases them.
 
-2.4 **Owl.** ChemAI has no Owl section (configuration). *Needed later:* a "move
-    job to another queue" action, so a cell can be restarted on another cluster
-    (``/projects`` is shared, so nothing is restaged).
+2.4 **Owl.** ChemAI has no Owl section (configuration). Owl matters for two
+    reasons: the start ceiling is per cluster, so two clusters double the
+    throughput; and Owl is faster for the expensive tasks (revDSD TZ pairs:
+    median 763 s on Owl against 1,348 s on TinkerCliffs, 1.77x, 2026-10-16).
+    *Needed later:* a "move job to another queue" action, so a cell can be
+    restarted on another cluster (``/projects`` is shared, so nothing is
+    restaged).
+
+    A queue's ``constraint`` matters to the time estimates as well as to where
+    bundles run: estimates are keyed by ``cluster:partition:cpu_model``, so
+    TinkerCliffs' MBE queue pins ``constraint = amd`` until the estimates follow
+    the bundle's node type (seamm_exec campaign 2026-10-05, phase 5 as revised
+    2026-10-16).
 
 2.5 **Queue settings.** ``[tinkercliffs_mbe]`` uses ``tc_normal_short`` (2x cost)
     with a 1-day limit; wave-2 evaluators run longer than a day. Production
@@ -104,7 +126,9 @@ minimum to run as well as now, plus 2.4 if Owl is used.
 2.6 **Progress view.** Results stage back to ChemAI only at the end of a job
     (the dashboard's on-demand pull exists). mbe watches per-level task counts
     (done, pending), OOM/TIMEOUT/NODE_FAIL bundles and ``seamm-timing check``.
-    *Needed:* a per-job task progress view in the WebUI.
+    *Needed:* a per-job task progress view in the WebUI, including estimate ÷
+    wall per group (``seamm-timing check`` for the job), the first thing to look
+    at after every update.
 
 2.7 **Checks before a pilot.**
 
