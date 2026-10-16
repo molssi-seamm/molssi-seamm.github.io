@@ -1,7 +1,7 @@
 Phase 5: extra commands and extra properties in the MD sub-steps
 =================================================================
 
-Status: **agreed** (2026-10-16, with the decisions below); being implemented.
+Status: **implemented** (2026-10-16, lammps_step ace06b2, local; HISTORY 2026.10.16.1), awaiting the PR. Differences from the plan: the Green-Kubo error uses blocks only when each block still reaches the plateau (20 of the fit's slowest time constants); results of Green-Kubo integrals are given in familiar units when their dimensions match (mPa*s, W/(m K), S/m, m^2/s); the extra columns are not checked against the built-in names, since they are prefixed (``x_<name>``). The real check against the Viscosity step on the SPC/E regression is still to run (a 20 ps local run gave 0.48 mPa*s from Pxy alone).
 
 Goal
 ----
