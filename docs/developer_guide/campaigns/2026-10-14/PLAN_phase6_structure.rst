@@ -1,7 +1,7 @@
 Phase 6: the structure of liquids and solutions
 ================================================
 
-Status: **agreed** (2026-10-16, Paul accepted the five recommendations); being implemented as ``liquid_structure_step``.
+Status: **implemented** (2026-10-16) as ``liquid_structure_step`` (local commit 03c88b5; the GitHub repository is not created yet). Differences from the plan: the g(r) are the step's own code (MDAnalysis ``capped_distance``) rather than ``InterRDF``, which gives the block errors directly and also the counts without a cell; the solvation shells are the step's own code (see the revision below); shells and ion pairing use the heavy atoms of each species, so a molecule is in a shell when its coordinating atoms are. Checked on 1 molal NaCl in SPC/E water; the real-data check against science's run 12197 is still to do.
 
 Goal
 ----

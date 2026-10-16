@@ -9,6 +9,7 @@ The current status and version for the Properties :term:`plug-ins<plug-in>`:
 
    Plug-In,               "Test Coverage", "------ Code Quality ------", "Documentation", "------ Version ------",    "Downloads"
    diffusivity_step_,     |diff2|,         N/A,                       |diff4|,        |diff6|,     |diff7|
+   liquid_structure_step_, |ls2|,         N/A,                       |ls4|,        |ls6|,     |ls7|
    thermal_conductivity_, |tc2|,         N/A,                       |tc4|,        |tc6|,     |tc7|
    viscosity_step_,       |visc2|,         N/A,                       |visc4|,        |visc6|,     |visc7|
 
@@ -71,4 +72,24 @@ The current status and version for the Properties :term:`plug-ins<plug-in>`:
 
 .. |visc7| image:: https://img.shields.io/pypi/dm/viscosity-step.svg
    :target: https://pypi.org/project/viscosity-step/
+   :alt: PyPI downloads
+
+.. liquid_structure_step badges
+
+.. _liquid_structure_step: https://molssi-seamm.github.io/liquid_structure_step/index.html
+
+.. |ls2| image:: https://codecov.io/gh/molssi-seamm/liquid_structure_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/liquid_structure_step
+   :alt: Code Coverage
+
+.. |ls4| image:: https://github.com/molssi-seamm/liquid_structure_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/liquid_structure_step/index.html
+   :alt: Documentation Status
+
+.. |ls6| image:: https://img.shields.io/pypi/v/liquid-structure-step.svg
+   :target: https://pypi.org/project/liquid-structure-step/
+   :alt: PyPI version
+
+.. |ls7| image:: https://img.shields.io/pypi/dm/liquid-structure-step.svg
+   :target: https://pypi.org/project/liquid-structure-step/
    :alt: PyPI downloads
