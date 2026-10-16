@@ -1,7 +1,7 @@
 Phase 7: the dielectric constant and the ionic conductivity
 ============================================================
 
-Status: **proposed** (2026-10-16), for Paul's review. Nothing is implemented.
+Status: **agreed** (2026-10-16: Paul accepted the five recommendations in section 6); being implemented.
 
 Goal
 ----
@@ -126,8 +126,8 @@ Released first, then the two steps, as in the earlier phases.
   1 molal NaCl in SPC/E for the dielectric decrement and the conductivity, against
   published values for the same models and science's ``eps_both.py``.
 
-6. Decisions for Paul
----------------------
+6. Decisions (Paul, 2026-10-16: the recommendations below)
+----------------------------------------------------------
 
 #. **Electrolytes: the dipole of the neutral molecules** (recommended), with a later
    option to separate the ionic current rigorously (including the ion-solvent cross
