@@ -1,7 +1,7 @@
 Phase 6: the structure of liquids and solutions
 ================================================
 
-Status: **proposed** (2026-10-16), for Paul's review. Nothing is implemented.
+Status: **agreed** (2026-10-16, Paul accepted the five recommendations); being implemented as ``liquid_structure_step``.
 
 Goal
 ----
@@ -153,8 +153,8 @@ the block errors of a histogram, which the dielectric step may reuse); then the 
 step's first release, with its docs and its entries on the main documentation site
 (the *Analysis* plug-ins page and the status badges).
 
-Decisions for Paul
-------------------
+Decisions (Paul, 2026-10-16: the recommendations below)
+-------------------------------------------------------
 
 #. **The name.** "Structure" is taken. Recommended: **Liquid Structure**
    (``liquid_structure_step``), which says what it is for; or **Structural
