@@ -586,6 +586,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">The design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PLAN_phase5_extras.html">Phase 5: extra commands and extra properties in the MD sub-steps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PLAN_phase6_structure.html">Phase 6: the structure of liquids and solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PLAN_phase7_dielectric.html">Phase 7: the dielectric constant and the ionic conductivity</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../2026-10-16/index.html">2026-10-16 Labelling and training MLFFs entirely in SEAMM</a></li>
@@ -660,7 +661,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section id="the-design">
 <h1>The design<a class="headerlink" href="#the-design" title="Link to this heading">#</a></h1>
 <p>Status: <strong>agreed</strong> (2026-10-14). Phases 1-4 are released (2026-10-14 to 10-16) and
-rolled out to every installation; phase 5 is implemented (<code class="docutils literal notranslate"><span class="pre">PLAN_phase5_extras.rst</span></code>, lammps_step PR #131) and phase 6 planned (<code class="docutils literal notranslate"><span class="pre">PLAN_phase6_structure.rst</span></code>).
+rolled out to every installation; phase 5 (lammps-step 2026.10.16.1, with the SHAKE fix in 2026.10.16.3) and phase 6 (liquid-structure-step 2026.10.16) are released; phase 7 is planned (<code class="docutils literal notranslate"><span class="pre">PLAN_phase7_dielectric.rst</span></code>).
 See <em>Phases</em> for the releases.</p>
 <section id="decisions-already-made">
 <h2>Decisions already made<a class="headerlink" href="#decisions-already-made" title="Link to this heading">#</a></h2>
@@ -1340,10 +1341,13 @@ seamm-md-analysis and thermal-conductivity-step 2026.10.16): the full pressure
 tensor in LAMMPS, the Viscosity step, and Yeh–Hummer using its result.</p></li>
 <li><p><strong>Extra commands and extra properties</strong> in the LAMMPS MD sub-steps (<em>implemented</em>,
 lammps_step PR #131; the plan is <code class="docutils literal notranslate"><span class="pre">PLAN_phase5_extras.rst</span></code>).</p></li>
-<li><p><strong>Structure:</strong> MDAnalysis and SolvationAnalysis (<em>next</em>; the detailed plan is
-<code class="docutils literal notranslate"><span class="pre">PLAN_phase6_structure.rst</span></code>).</p></li>
-<li><p><strong>Dielectric constant:</strong> total-dipole sampling and the step. Ionic conductivity
-follows.</p></li>
+<li><p><strong>Structure:</strong> the Liquid Structure step (<em>done</em>: liquid-structure-step
+2026.10.16; the plan is <code class="docutils literal notranslate"><span class="pre">PLAN_phase6_structure.rst</span></code>).</p></li>
+<li><p><strong>Dielectric constant:</strong> the step, and the ionic conductivity (<em>done</em>:
+seamm-md-analysis 2026.10.16.1 and lammps-step 2026.10.16.4, then
+seamm-md-analysis 2026.10.17 with dielectric-constant-step and
+ionic-conductivity-step 2026.10.17; the plan and the validation are in
+<code class="docutils literal notranslate"><span class="pre">PLAN_phase7_dielectric.rst</span></code>).</p></li>
 <li><p><strong>Segmented runs:</strong> “run until converged”, restarts, and preemption with the task
 layer.</p></li>
 </ol>

@@ -59,6 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer_guide/campaigns/2026-10-14/index';</script>
 
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -586,6 +587,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="PLAN_md_analysis.html">The design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PLAN_phase5_extras.html">Phase 5: extra commands and extra properties in the MD sub-steps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PLAN_phase6_structure.html">Phase 6: the structure of liquids and solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PLAN_phase7_dielectric.html">Phase 7: the dielectric constant and the ionic conductivity</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../2026-10-16/index.html">2026-10-16 Labelling and training MLFFs entirely in SEAMM</a></li>
@@ -724,6 +726,17 @@ decisions are summarized in the design document.</p>
 <li class="toctree-l2"><a class="reference internal" href="PLAN_phase6_structure.html#releases">10. Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PLAN_phase6_structure.html#revision-paul-2026-10-16-during-implementation">Revision (Paul, 2026-10-16, during implementation)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PLAN_phase6_structure.html#decisions-paul-2026-10-16-the-recommendations-below">Decisions (Paul, 2026-10-16: the recommendations below)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PLAN_phase7_dielectric.html">Phase 7: the dielectric constant and the ionic conductivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#the-physics">1. The physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#where-the-dipole-and-the-displacements-come-from">2. Where the dipole and the displacements come from</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#the-steps">3. The steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#the-library-seamm-md-analysis-electric">4. The library: <code class="docutils literal notranslate"><span class="pre">seamm_md_analysis.electric</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#tests-and-validation">5. Tests and validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#decisions-paul-2026-10-16-the-recommendations-below">6. Decisions (Paul, 2026-10-16: the recommendations below)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLAN_phase7_dielectric.html#validation-2026-10-16-17">7. Validation (2026-10-16/17)</a></li>
 </ul>
 </li>
 </ul>

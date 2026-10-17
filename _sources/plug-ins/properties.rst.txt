@@ -9,8 +9,10 @@ over a number of runs and getting the error bars.
    :maxdepth: 2
 
 
+   Dielectric Constant <https://molssi-seamm.github.io/dielectric_constant_step/index.html>
    Diffusivity <https://molssi-seamm.github.io/diffusivity_step/index.html>
    Energy Scan <https://molssi-seamm.github.io/energy_scan_step/index.html>
+   Ionic Conductivity <https://molssi-seamm.github.io/ionic_conductivity_step/index.html>
    Liquid Structure <https://molssi-seamm.github.io/liquid_structure_step/index.html>
    Reaction Path <https://molssi-seamm.github.io/reaction_path_step/index.html>
    Structure <https://molssi-seamm.github.io/structure_step/index.html>
