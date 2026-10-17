@@ -618,8 +618,11 @@ Phases
    lammps_step PR #131; the plan is ``PLAN_phase5_extras.rst``).
 #. **Structure:** the Liquid Structure step (*done*: liquid-structure-step
    2026.10.16; the plan is ``PLAN_phase6_structure.rst``).
-#. **Dielectric constant:** the step, and the ionic conductivity (*next*; the
-   detailed plan is ``PLAN_phase7_dielectric.rst``).
+#. **Dielectric constant:** the step, and the ionic conductivity (*done*:
+   seamm-md-analysis 2026.10.16.1 and lammps-step 2026.10.16.4, then
+   seamm-md-analysis 2026.10.17 with dielectric-constant-step and
+   ionic-conductivity-step 2026.10.17; the plan and the validation are in
+   ``PLAN_phase7_dielectric.rst``).
 #. **Segmented runs:** "run until converged", restarts, and preemption with the task
    layer.
 

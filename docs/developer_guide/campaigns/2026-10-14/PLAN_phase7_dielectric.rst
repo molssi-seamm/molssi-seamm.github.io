@@ -1,7 +1,11 @@
 Phase 7: the dielectric constant and the ionic conductivity
 ============================================================
 
-Status: **agreed** (2026-10-16: Paul accepted the five recommendations in section 6); being implemented.
+Status: **done** (2026-10-17). The library module ``seamm_md_analysis.electric`` was
+released in seamm-md-analysis 2026.10.16.1, the kspace style in ``md.h5md`` in
+lammps-step 2026.10.16.4, and the two steps as dielectric-constant-step and
+ionic-conductivity-step 2026.10.17 (Paul accepted the five recommendations in
+section 6 on 2026-10-16). The validation is in section 7.
 
 Goal
 ----
@@ -141,3 +145,29 @@ Released first, then the two steps, as in the earlier phases.
    accepting per-species charges given by the user.
 #. **Nernst–Einstein from the step's own MSD of the ions** (recommended: one step,
    one run, consistent frames), or from a preceding Diffusivity step's results?
+
+7. Validation (2026-10-16/17)
+-----------------------------
+
+Run through the JobServer on the development installation (project *Validation*),
+with five independent 2 ns NVT runs at 298 K after 100 ps of equilibration, positions
+every 0.5 ps, PPPM:
+
+- **SPC/E water** (216 molecules), mode A: ε = 72.4 ± 1.9 and a dipole correlation
+  time of 10.1 ps, in line with the published value for the model (about 70).
+- **1 molal NaCl in SPC/E** (9 ion pairs, 512 waters), the MD in a loop and both
+  steps analysing "the last MD run of each loop iteration":
+
+  - ε of the water 57.3 ± 1.4 (correlation time 11.7 ps): the dielectric decrement
+    of about 15 expected at 1 m;
+  - σ (Einstein–Helfand) 3.1 ± 0.9 S/m, σ_NE 6.3 S/m, ionicity 0.49;
+  - D(Na⁺) 0.69 ± 0.12 and D(Cl⁻) 1.06 ± 0.10 × 10⁻⁹ m²/s, without the
+    Yeh–Hummer correction (about +0.33 × 10⁻⁹ m²/s for this cell).
+
+  The ionicity looks low and σ has a large error: the collective MSD needs longer or
+  more runs than five of 2 ns.
+
+The first NaCl job found a bug: in a loop, a step's name includes the iteration's
+directory (``4.iter_2.0.4``), so only the last iteration's run was analysed. It was
+fixed in seamm-md-analysis 2026.10.17, and the results above are from a re-analysis
+of the same trajectories with the fixed version.
