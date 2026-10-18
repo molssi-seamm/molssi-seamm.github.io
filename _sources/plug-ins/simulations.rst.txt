@@ -19,7 +19,10 @@ SEAMM:
    ORCA <https://molssi-seamm.github.io/orca_step/index.html>
    Psi4 <https://molssi-seamm.github.io/psi4_step/index.html>
    QuickMin <https://molssi-seamm.github.io/quickmin_step/index.html>
-   TorchANI <https://molssi-seamm.github.io/torchani_step/index.html>
    VASP <https://molssi-seamm.github.io/vasp-step/index.html>
    xnn <https://molssi-seamm.github.io/xnn_step/index.html>
    xTB <https://molssi-seamm.github.io/xtb-step/index.html>
+
+The TorchANI step, for the ANI machine-learned potentials, was deprecated in October
+2026 and is no longer installed. Machine-learned potentials are provided by the xnn
+step, through the Model Chemistry step.
