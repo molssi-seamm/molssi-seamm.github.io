@@ -13,6 +13,7 @@ The current status and version for the Properties :term:`plug-ins<plug-in>`:
    ionic_conductivity_step_, |ic2|,         N/A,                       |ic4|,        |ic6|,     |ic7|
    liquid_structure_step_, |ls2|,         N/A,                       |ls4|,        |ls6|,     |ls7|
    thermal_conductivity_, |tc2|,         N/A,                       |tc4|,        |tc6|,     |tc7|
+   vibrational_analysis_step_, |va2|,         N/A,                       |va4|,        |va6|,     |va7|
    viscosity_step_,       |visc2|,         N/A,                       |visc4|,        |visc6|,     |visc7|
 
 
@@ -54,6 +55,26 @@ The current status and version for the Properties :term:`plug-ins<plug-in>`:
 
 .. |tc7| image:: https://img.shields.io/pypi/dm/thermal-conductivity-step.svg
    :target: https://pypi.org/project/thermal-conductivity-step/
+   :alt: PyPI downloads
+
+.. vibrational_analysis_step badges
+
+.. _vibrational_analysis_step: https://molssi-seamm.github.io/vibrational_analysis_step/index.html
+
+.. |va2| image:: https://codecov.io/gh/molssi-seamm/vibrational_analysis_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/vibrational_analysis_step
+   :alt: Code Coverage
+
+.. |va4| image:: https://github.com/molssi-seamm/vibrational_analysis_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/vibrational_analysis_step/index.html
+   :alt: Documentation Status
+
+.. |va6| image:: https://img.shields.io/pypi/v/vibrational-analysis-step.svg
+   :target: https://pypi.org/project/vibrational-analysis-step/
+   :alt: PyPI version
+
+.. |va7| image:: https://img.shields.io/pypi/dm/vibrational-analysis-step.svg
+   :target: https://pypi.org/project/vibrational-analysis-step/
    :alt: PyPI downloads
 
 .. viscosity_step badges
