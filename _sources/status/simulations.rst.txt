@@ -11,6 +11,7 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
    dftbplus_step_,        |dftb2|,         |dftb3|,  	     	       	 |dftb4|,         |dftb6|,	|dftb7|
    energy_step_,          |energy2|,       |energy3|,                 |energy4|,       |energy6|,	|energy7|
    forcefield_step_,      |ffield2|,       |ffield3|,  	     	       	 |ffield4|,       |ffield6|,	|ffield7|
+   interaction_eda_step_, |ieda2|,         N/A,                       |ieda4|,         |ieda6|,     |ieda7|
    lammps_step_,          |lammps2|,       |lammps3|,  	     	       	 |lammps4|,       |lammps6|,	|lammps7|
    mbe_step_,             |mbe2|,          N/A,                       |mbe4|,          |mbe6|,     |mbe7|
    model_chemistry_step_, |modelchem2|,         N/A,                       |modelchem4|,        |modelchem6|,     |modelchem7|
@@ -210,6 +211,26 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
 
 .. |modelchem7| image:: https://img.shields.io/pypi/dm/model-chemistry-step.svg
    :target: https://pypi.org/project/model-chemistry-step/
+   :alt: PyPI downloads
+
+.. interaction_eda_step badges
+
+.. _interaction_eda_step: https://molssi-seamm.github.io/interaction_eda_step/index.html
+
+.. |ieda2| image:: https://codecov.io/gh/molssi-seamm/interaction_eda_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/interaction_eda_step
+   :alt: Code Coverage
+
+.. |ieda4| image:: https://github.com/molssi-seamm/interaction_eda_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/interaction_eda_step/index.html
+   :alt: Documentation Status
+
+.. |ieda6| image:: https://img.shields.io/pypi/v/interaction-eda-step.svg
+   :target: https://pypi.org/project/interaction-eda-step/
+   :alt: PyPI version
+
+.. |ieda7| image:: https://img.shields.io/pypi/dm/interaction-eda-step.svg
+   :target: https://pypi.org/project/interaction-eda-step/
    :alt: PyPI downloads
 
 .. mbe_step badges

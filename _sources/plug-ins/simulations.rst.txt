@@ -12,6 +12,7 @@ SEAMM:
    Energy <https://molssi-seamm.github.io/energy_step/index.html>
    FHI-aims <https://molssi-seamm.github.io/fhi_aims_step/index.html>
    Gaussian <https://molssi-seamm.github.io/gaussian_step/index.html>
+   Interaction EDA <https://molssi-seamm.github.io/interaction_eda_step/index.html>
    LAMMPS <https://molssi-seamm.github.io/lammps_step/index.html>
    MBE <https://molssi-seamm.github.io/mbe_step/index.html>
    Model Chemistry <https://molssi-seamm.github.io/model_chemistry_step/index.html>
