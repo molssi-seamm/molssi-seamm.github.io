@@ -189,9 +189,12 @@ The usual arrangement for a large campaign, as it runs today:
    flowchart analyzes them as they arrive and writes its own results. When
    the job finishes, its directory is copied back and it appears in the
    web interface like any other.
-#. A job the cluster lost -- preempted, out of walltime -- is submitted
+#. A job the cluster lost -- a failed node, preemption -- is submitted
    again by the JobServer, up to ``max_resubmits`` times, and resumes from
-   its checkpoint with every finished task kept.
+   its checkpoint with every finished task kept. A job that reached its
+   walltime or ran out of memory is not: it is marked as an error, so the
+   walltime caps what it spends, unless the section sets
+   ``timeout_resubmits`` to carry jobs on across walltimes.
 
 Every machine that runs tasks keeps timing records of them, in
 ``~/.seamm.d/timing/``, from which a cost model is fitted so that estimates

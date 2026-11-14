@@ -789,8 +789,14 @@ memory by default will otherwise run one job at a time.</p>
 rest wait in the dashboard as <em>submitted</em>.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">max_resubmits</span></code></dt><dd><p>How many times a job the queue lost (the node failed, the job was
-preempted, it ran out of walltime) is submitted again before it is
-marked failed. A resubmitted job resumes from its checkpoint.</p>
+preempted) is submitted again before it is marked failed. A resubmitted
+job resumes from its checkpoint.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">timeout_resubmits</span></code></dt><dd><p>How many times a job that reached its walltime is submitted again to
+resume (default 0, at most <code class="docutils literal notranslate"><span class="pre">max_resubmits</span></code>). By default such a job is
+marked failed, so the walltime caps what a job spends; set this for a
+queue whose walltime is deliberately shorter than its jobs. A job that
+ran out of memory is never submitted again.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">tasks</span></code> and its companions</dt><dd><p>Where the job’s calculations run; see <a class="reference internal" href="../user_guide/where_jobs_run.html#where-jobs-run"><span class="std std-ref">Where Jobs Run</span></a>.</p>
 </dd>

@@ -733,9 +733,12 @@ the section’s partition, QOS and constraint.</p></li>
 flowchart analyzes them as they arrive and writes its own results. When
 the job finishes, its directory is copied back and it appears in the
 web interface like any other.</p></li>
-<li><p>A job the cluster lost – preempted, out of walltime – is submitted
+<li><p>A job the cluster lost – a failed node, preemption – is submitted
 again by the JobServer, up to <code class="docutils literal notranslate"><span class="pre">max_resubmits</span></code> times, and resumes from
-its checkpoint with every finished task kept.</p></li>
+its checkpoint with every finished task kept. A job that reached its
+walltime or ran out of memory is not: it is marked as an error, so the
+walltime caps what it spends, unless the section sets
+<code class="docutils literal notranslate"><span class="pre">timeout_resubmits</span></code> to carry jobs on across walltimes.</p></li>
 </ol>
 <p>Every machine that runs tasks keeps timing records of them, in
 <code class="docutils literal notranslate"><span class="pre">~/.seamm.d/timing/</span></code>, from which a cost model is fitted so that estimates
