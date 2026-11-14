@@ -246,8 +246,14 @@ the submission directives
     rest wait in the dashboard as *submitted*.
 ``max_resubmits``
     How many times a job the queue lost (the node failed, the job was
-    preempted, it ran out of walltime) is submitted again before it is
-    marked failed. A resubmitted job resumes from its checkpoint.
+    preempted) is submitted again before it is marked failed. A resubmitted
+    job resumes from its checkpoint.
+``timeout_resubmits``
+    How many times a job that reached its walltime is submitted again to
+    resume (default 0, at most ``max_resubmits``). By default such a job is
+    marked failed, so the walltime caps what a job spends; set this for a
+    queue whose walltime is deliberately shorter than its jobs. A job that
+    ran out of memory is never submitted again.
 ``tasks`` and its companions
     Where the job's calculations run; see :ref:`where-jobs-run`.
 
