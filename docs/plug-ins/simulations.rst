@@ -19,6 +19,7 @@ SEAMM:
    MOPAC <https://molssi-seamm.github.io/mopac_step/index.html>
    ORCA <https://molssi-seamm.github.io/orca_step/index.html>
    Psi4 <https://molssi-seamm.github.io/psi4_step/index.html>
+   PySCF <https://molssi-seamm.github.io/pyscf_step/index.html>
    QuickMin <https://molssi-seamm.github.io/quickmin_step/index.html>
    VASP <https://molssi-seamm.github.io/vasp-step/index.html>
    xnn <https://molssi-seamm.github.io/xnn_step/index.html>

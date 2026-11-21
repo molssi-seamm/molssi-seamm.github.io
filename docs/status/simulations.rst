@@ -18,6 +18,7 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
    mopac_step_,           |mopac2|,        |mopac3|,   	     	       	 |mopac4|,        |mopac6|,	|mopac7|
    orca_step_,            |orca2|,         N/A,                       |orca4|,        |orca6|,     |orca7|
    psi4_step_,            |psi4_2|,        |psi4_3|, 	     	       	 |psi4_4|,        |psi4_6|,	|psi4_7|
+   pyscf_step_,           |pyscf2|,        N/A,                       |pyscf4|,        |pyscf6|,     |pyscf7|
    xnn_step_,             |xnn2|,          |xnn3|,                    |xnn4|,          |xnn6|,	|xnn7|
 
 
@@ -120,6 +121,26 @@ The current status and version for the Simulation :term:`plug-ins<plug-in>`:
 .. |mopac7| image:: https://img.shields.io/pypi/dm/mopac_step?cacheSeconds=36000
    :target: https://pypistats.org/packages/mopac_step
    :alt: PyPI - Downloads
+
+.. pyscf_step badges
+
+.. _pyscf_step: https://molssi-seamm.github.io/pyscf_step/index.html
+
+.. |pyscf2| image:: https://codecov.io/gh/molssi-seamm/pyscf_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/pyscf_step
+   :alt: Code Coverage
+
+.. |pyscf4| image:: https://github.com/molssi-seamm/pyscf_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/pyscf_step/index.html
+   :alt: Documentation Status
+
+.. |pyscf6| image:: https://img.shields.io/pypi/v/pyscf-step.svg
+   :target: https://pypi.org/project/pyscf-step/
+   :alt: PyPI version
+
+.. |pyscf7| image:: https://img.shields.io/pypi/dm/pyscf-step.svg
+   :target: https://pypi.org/project/pyscf-step/
+   :alt: PyPI downloads
 
 .. Psi4 step badges
 
