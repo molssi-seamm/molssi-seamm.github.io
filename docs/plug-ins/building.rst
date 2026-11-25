@@ -18,3 +18,4 @@ simulation system:
    Set Cell <https://molssi-seamm.github.io/set_cell_step/index.html>
    Strain <https://molssi-seamm.github.io/strain_step/index.html>
    Supercell <https://molssi-seamm.github.io/supercell_step/index.html>
+   Training Structures <https://molssi-seamm.github.io/training_structures_step/index.html>
