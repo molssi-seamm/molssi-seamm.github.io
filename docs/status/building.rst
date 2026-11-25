@@ -19,6 +19,7 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
    set_cell_step_,        |set_cell2|,     |set_cell3|,     	       	 |set_cell4|,     |set_cell6|,	|set_cell7|
    strain_step_,          |strain2|,       |strain3|,	        	 |strain4|,       |strain6|,	|strain7|
    supercell_step_,       |supercell2|,    |supercell3|,		 |supercell4|,    |supercell6|,	|supercell7|
+   training_structures_step_, |ts2|,     N/A,                       |ts4|,         |ts6|,      |ts7|
 
 
 .. active_learning_step badges
@@ -304,4 +305,24 @@ The current status and version for the Building :term:`plug-ins<plug-in>`:
 
 .. |nms7| image:: https://img.shields.io/pypi/dm/normal-mode-sampling-step.svg
    :target: https://pypi.org/project/normal-mode-sampling-step/
+   :alt: PyPI downloads
+
+.. training_structures_step badges
+
+.. _training_structures_step: https://molssi-seamm.github.io/training_structures_step/index.html
+
+.. |ts2| image:: https://codecov.io/gh/molssi-seamm/training_structures_step/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/molssi-seamm/training_structures_step
+   :alt: Code Coverage
+
+.. |ts4| image:: https://github.com/molssi-seamm/training_structures_step/actions/workflows/Release.yaml/badge.svg
+   :target: https://molssi-seamm.github.io/training_structures_step/index.html
+   :alt: Documentation Status
+
+.. |ts6| image:: https://img.shields.io/pypi/v/training-structures-step.svg
+   :target: https://pypi.org/project/training-structures-step/
+   :alt: PyPI version
+
+.. |ts7| image:: https://img.shields.io/pypi/dm/training-structures-step.svg
+   :target: https://pypi.org/project/training-structures-step/
    :alt: PyPI downloads
